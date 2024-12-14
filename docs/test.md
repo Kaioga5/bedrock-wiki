@@ -57,9 +57,7 @@ Indentation works like `code`:
 }
 ```
 
-<CodeHeader>
-    func
-</CodeHeader>
+<CodeHeader>func</CodeHeader>
 
 ```mcfunction
 scoreboard players add @a joined 0
@@ -83,9 +81,7 @@ execute if score initialised world matches 0 run say New world created!
 scoreboard players set initialised world 1
 ```
 
-<CodeHeader>
-    func
-</CodeHeader>
+<CodeHeader>func</CodeHeader>
 
 ```yaml
 scoreboard players add @a joined 0
@@ -216,3 +212,5 @@ Some text...
 `somelongsinglecodeline:rjseut;lwkporiv;jr;oiU;OIRJB;OUBSOIU;LJ;OIJLj;fgdhokfdxhlpjklfjoijselvjlisue;vltjvzsa\dfhgz\dfgiuszehgiushezdgiuhsdghiksdaghkdsgaghkjsdhksdauhugkysdiuhiui`
 
 </Spoiler>
+
+<Table />

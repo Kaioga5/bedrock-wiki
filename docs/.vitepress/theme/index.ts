@@ -16,6 +16,7 @@ import Spoiler from "./components/content/Spoiler.vue";
 import Tag from "./components/content/Tag.vue";
 import WikiImage from "./components/content/WikiImage.vue";
 import YouTubeEmbed from "./components/content/YouTubeEmbed.vue";
+import Table from "./components/content/Table.vue";
 
 const contentComponents: Record<string, Component> = {
   Button,
@@ -29,6 +30,7 @@ const contentComponents: Record<string, Component> = {
   Tag,
   WikiImage,
   YouTubeEmbed,
+  Table,
 };
 
 export default {
