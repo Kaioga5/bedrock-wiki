@@ -1,91 +1,54 @@
-<template>
-  <div>
-    <input type="file" @change="handleFileUpload" />
+<script setup lang="ts">
+import { computed } from "vue";
+import TableCell from "./TableCell.vue";
 
-    <table v-if="tableData.length">
-      <thead>
-        <tr>
-          <th v-for="header in tableHeaders" :key="header">{{ header }}</th>
-        </tr>
-      </thead>
+import { data as tables } from "../../data/tables.data";
+import useData from "../../composables/data";
 
-      <tbody>
-        <tr v-for="(row, rowIndex) in tableData" :key="rowIndex">
-          <td v-for="header in tableHeaders" :key="header">
-            <ul v-if="Array.isArray(row[header])">
-              <li
-                v-for="(item, index) in row[header].slice(0, showLimit(rowIndex, header))"
-                :key="item"
-              >
-                {{ item }}
-              </li>
+const { page } = useData();
 
-              <span
-                v-if="row[header].length > showLimit(rowIndex, header)"
-                style="cursor: pointer; color: blue"
-                @click="expandList(rowIndex, header)"
-              >
-                Show more...
-              </span>
-            </ul>
+const props = defineProps<{
+  data: string;
+}>();
 
-            <span v-else>{{ row[header] || "N/A" }}</span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</template>
+const tablePath = computed(() => {
+  let path = "docs/public";
 
-<script setup>
-import { ref } from "vue";
+  if (props.data[0] !== "/") {
+    path += "/assets/tables/" + page.value.relativePath.replace(/\.md$/, "/");
+  }
 
-const tableData = ref([]);
+  path += props.data;
 
-const tableHeaders = ref([]);
+  return path;
+});
 
-const showLimits = ref({});
-
-const handleFileUpload = async (event) => {
-  const file = event.target.files[0];
-
-  if (!file) return;
-
-  const reader = new FileReader();
-
-  reader.onload = (e) => {
-    const jsonData = JSON.parse(e.target.result);
-
-    if (jsonData && jsonData.content && jsonData.header) {
-      tableHeaders.value = jsonData.header;
-
-      tableData.value = jsonData.content;
-
-      initShowLimits();
-    }
-  };
-
-  reader.readAsText(file);
-};
-
-const initShowLimits = () => {
-  tableData.value.forEach((row, rowIndex) => {
-    tableHeaders.value.forEach((header) => {
-      if (Array.isArray(row[header])) {
-        showLimits.value[`${rowIndex}-${header}`] = 10;
-      }
-    });
-  });
-};
-
-const showLimit = (rowIndex, header) => {
-  return showLimits.value[`${rowIndex}-${header}`] || 10;
-};
-
-const expandList = (rowIndex, header) => {
-  const key = `${rowIndex}-${header}`;
-
-  showLimits.value[key] = showLimits.value[key] + 10;
-};
+const table = computed(() => tables[tablePath.value]);
 </script>
 
+<template>
+  <table>
+    <thead>
+      <tr>
+        <th
+          v-for="(column, columnId) in table.columns"
+          :key="columnId"
+          :style="{ textAlign: column.text_align }"
+        >
+          {{ column.name }}
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr v-for="(row, rowIndex) in table.rows" :key="rowIndex">
+        <TableCell
+          v-for="(column, columnId) in table.columns"
+          :key="columnId"
+          :column
+          :value="row[columnId]"
+        />
+      </tr>
+    </tbody>
+  </table>
+</template>
