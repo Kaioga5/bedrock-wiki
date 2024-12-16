@@ -62,13 +62,14 @@ export interface Table {
   rows: TableRow[];
 }
 
-export type TableCell = (boolean | number | string) | (string | number)[];
-
 export interface TableColumn {
   name: string;
   text_align: "left" | "center" | "right";
+  default: TableCell;
 }
 
 export interface TableRow {
   [column: string]: TableCell;
 }
+
+export type TableCell = (boolean | number | string) | (string | number)[];

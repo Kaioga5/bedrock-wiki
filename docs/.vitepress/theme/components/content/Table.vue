@@ -46,7 +46,7 @@ const table = computed(() => tables[tablePath.value]);
           v-for="(column, columnId) in table.columns"
           :key="columnId"
           :column
-          :value="row[columnId]"
+          :value="row[columnId] ?? column.default"
         />
       </tr>
     </tbody>

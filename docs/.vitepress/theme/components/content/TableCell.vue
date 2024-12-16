@@ -33,12 +33,12 @@ const showMore = ref(false);
     </ul>
 
     <span v-else-if="typeof value === 'string'">{{
-      (showMore ? value : value.substring(0, shortTextLength)) ?? "N/A"
+      showMore ? value : value.substring(0, shortTextLength)
     }}</span>
 
     <span v-else-if="typeof value === 'boolean'">{{ value ? "✔️" : "❌" }}</span>
 
-    <span v-else>{{ value ?? "N/A" }}</span>
+    <span v-else>{{ value }}</span>
 
     <template v-if="canShowMore">
       <button
