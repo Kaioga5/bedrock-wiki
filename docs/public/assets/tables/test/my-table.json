@@ -22,6 +22,15 @@
       "boolean_column": false,
       "number_column": 2,
       "my_other_column": "Proident amet id ut exercitation. Do esse exercitation eiusmod Lorem incididunt exercitation esse fugiat Lorem et. Magna eu ex excepteur qui est consectetur nostrud dolor ea est. Occaecat aliqua eu reprehenderit excepteur aute qui laborum consectetur incididunt eu anim pariatur."
+    },
+    {
+      "number_column": 3,
+      "boolean_column": false,
+      "my_other_column": [
+        "Proident amet id ut exercitation.",
+        "Do esse exercitation eiusmod Lorem incididunt exercitation esse fugiat Lorem et.",
+        "Magna eu ex excepteur qui est consectetur nostrud dolor ea est."
+      ]
     }
   ]
 }
