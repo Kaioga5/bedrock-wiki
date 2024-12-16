@@ -213,4 +213,6 @@ Some text...
 
 </Spoiler>
 
-<Table />
+## Tables
+
+<Table data="my-table.json" />
