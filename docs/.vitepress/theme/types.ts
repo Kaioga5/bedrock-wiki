@@ -54,3 +54,21 @@ export interface Tag {
 export type Tags = Record<string, Tag>;
 
 export type Redirects = Record<string, string>;
+
+export interface Table {
+  columns: {
+    [id: string]: TableColumn;
+  };
+  rows: TableRow[];
+}
+
+export type TableCell = (boolean | number | string) | (string | number)[];
+
+export interface TableColumn {
+  name: string;
+  text_align: "left" | "center" | "right";
+}
+
+export interface TableRow {
+  [column: string]: TableCell;
+}
