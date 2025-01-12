@@ -3,8 +3,14 @@ title: Spawning Tamed Entities
 category: Tutorials
 tags:
     - intermediate
-mention:
+mentions:
     - Axelpvz2030
+    - aexer0e
+    - SirLich
+    - MedicalJewel105
+    - SmokeyStack
+    - ThomasOrs
+description: In this tutorial, you will learn how to spawn a pre-tamed entity by running an event on the player you want the entity tamed to, and by throwing an item that transforms into a tamed entity upon impact.
 ---
 
 In this tutorial, you will learn how to spawn a pre-tamed entity by running an event on the player you want the entity tamed to, and by throwing an item that transforms into a tamed entity upon impact.
@@ -64,7 +70,7 @@ You can find the BP player entity file in the vanilla behavior pack provided by 
 
 ## pretamed_wolf.json
 
-Afterwards, we'll need to create a simple custom entity that will have the `minecraft:arrow` runtime identifier (other projectile runtime identifiers work as well), an empty projectile component, and a trasnfomation component to turn into a tamed wolf.
+Afterwards, we'll need to create a simple custom entity that will have the `minecraft:arrow` runtime identifier (other projectile runtime identifiers work as well), an empty projectile component, and a transformation component to turn into a tamed wolf.
 
 <CodeHeader>BP/entities/pretamed_wolf.json</CodeHeader>
 
@@ -92,9 +98,13 @@ Afterwards, we'll need to create a simple custom entity that will have the `mine
 
 And now, you can spawn a tamed wolf next to the player with `/event entity @p wiki:spawn_tamed_wolf`. You can also spawn it with a `wiki:pretamed_wolf` spawn egg by setting `is_spawnable` to `true`!
 
+:::warning
+If you want to spawn a custom entity instead of a wolf using this method, you will need to make sure that the entity has the minecraft:is_tamed component for it to work properly. Otherwise, some behaviors will not function as expected for a tamed entity.
+:::
+
 ## Integrating Item Projectiles (Alternate Method)
 
-Introduced as one of [1.16's experimental item features](/items/items-16), the `shoot` event property can be used to make projectiles that transform into tamed entities upon impact.
+Introduced as one of [1.16's experimental item features](/items/item-components), the `shoot` event property can be used to make projectiles that transform into tamed entities upon impact.
 
 <CodeHeader>BP/items/throwable_pretamed_wolf.json</CodeHeader>
 
@@ -151,9 +161,7 @@ We'll also need to make some adjustment to our custom projectile entity so that 
                     "impact_damage":{
                         "damage":0
                     },
-                    "stick_in_ground":{
-                        
-                    },
+                    "stick_in_ground":{},
                     "definition_event":{
                         "event_trigger":{
                             "event":"wiki:on_hit"

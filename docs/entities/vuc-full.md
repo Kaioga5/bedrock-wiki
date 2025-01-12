@@ -3,19 +3,16 @@ title: Vanilla Usage Components - Full
 category: Documentation
 mentions:
     - MedicalJewel105
+description: Automatically generated list of entity components used in vanilla.
 hidden: true
 ---
 
 This page was created with [Wiki Content Generator](https://github.com/Bedrock-OSS/bedrock-wiki-content-generator). If there are issues, contact us on [Bedrock OSS](https://discord.gg/XjV87YN) Discord server.
-Includes all examples. Namespace `minecraft` was removed. *Last updated for 1.19.40*
+Includes all examples. Namespace `minecraft` and some formatting have been removed to make the page load quickly. *Last updated for 1.21.50*
 
 ## addrider
 
-<Spoiler title="Show">
-
 cave_spider
-
-<CodeHeader>#component_groups/minecraft:spider_jockey</CodeHeader>
 
 ```json
 "minecraft:addrider": {
@@ -23,15 +20,11 @@ cave_spider
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:spider_stray_jockey</CodeHeader>
-
 ```json
 "minecraft:addrider": {
     "entity_type": "minecraft:skeleton.stray"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:spider_wither_jockey</CodeHeader>
 
 ```json
 "minecraft:addrider": {
@@ -41,15 +34,11 @@ cave_spider
 
 ravager
 
-<CodeHeader>#component_groups/minecraft:pillager_rider</CodeHeader>
-
 ```json
 "minecraft:addrider": {
     "entity_type": "minecraft:pillager"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:pillager_rider_for_raid</CodeHeader>
 
 ```json
 "minecraft:addrider": {
@@ -57,8 +46,6 @@ ravager
     "spawn_event": "minecraft:spawn_for_raid"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:evoker_rider_for_raid</CodeHeader>
 
 ```json
 "minecraft:addrider": {
@@ -67,8 +54,6 @@ ravager
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:pillager_captain_rider</CodeHeader>
-
 ```json
 "minecraft:addrider": {
     "entity_type": "minecraft:pillager",
@@ -76,15 +61,11 @@ ravager
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:vindicator_rider</CodeHeader>
-
 ```json
 "minecraft:addrider": {
     "entity_type": "minecraft:vindicator"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:vindicator_captain_rider</CodeHeader>
 
 ```json
 "minecraft:addrider": {
@@ -95,23 +76,17 @@ ravager
 
 spider
 
-<CodeHeader>#component_groups/minecraft:spider_jockey</CodeHeader>
-
 ```json
 "minecraft:addrider": {
     "entity_type": "minecraft:skeleton"
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:spider_stray_jockey</CodeHeader>
-
 ```json
 "minecraft:addrider": {
     "entity_type": "minecraft:skeleton.stray"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:spider_wither_jockey</CodeHeader>
 
 ```json
 "minecraft:addrider": {
@@ -121,16 +96,12 @@ spider
 
 strider
 
-<CodeHeader>#component_groups/minecraft:strider_piglin_jockey</CodeHeader>
-
 ```json
 "minecraft:addrider": {
     "entity_type": "minecraft:zombie_pigman",
     "spawn_event": "minecraft:spawn_as_strider_jockey"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:strider_parent_jockey</CodeHeader>
 
 ```json
 "minecraft:addrider": {
@@ -139,15 +110,9 @@ strider
 }
 ```
 
-</Spoiler>
-
 ## admire_item
 
-<Spoiler title="Show">
-
 piglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:admire_item": {
@@ -156,15 +121,27 @@ piglin
 }
 ```
 
-</Spoiler>
-
 ## ageable
 
-<Spoiler title="Show">
+armadillo
+
+```json
+"minecraft:ageable": {
+    "duration": 1200,
+    "interact_filters": {
+        "test": "enum_property",
+        "domain": "minecraft:armadillo_state",
+        "value": "unrolled"
+    },
+    "feed_items": "spider_eye",
+    "grow_up": {
+        "event": "minecraft:ageable_grow_up",
+        "target": "self"
+    }
+}
+```
 
 axolotl
-
-<CodeHeader>#component_groups/axolotl_baby</CodeHeader>
 
 ```json
 "minecraft:ageable": {
@@ -180,22 +157,34 @@ axolotl
 
 bee
 
-<CodeHeader>#component_groups/bee_baby</CodeHeader>
-
 ```json
 "minecraft:ageable": {
     "duration": 1200,
     "feed_items": [
-        "minecraft:red_flower",
-        "minecraft:yellow_flower",
+        "minecraft:poppy",
+        "minecraft:blue_orchid",
+        "minecraft:allium",
+        "minecraft:azure_bluet",
+        "minecraft:red_tulip",
+        "minecraft:orange_tulip",
+        "minecraft:white_tulip",
+        "minecraft:pink_tulip",
+        "minecraft:oxeye_daisy",
+        "minecraft:cornflower",
+        "minecraft:lily_of_the_valley",
+        "minecraft:dandelion",
         "minecraft:wither_rose",
-        "minecraft:double_plant:0",
-        "minecraft:double_plant:1",
-        "minecraft:double_plant:4",
-        "minecraft:double_plant:5",
+        "minecraft:sunflower",
+        "minecraft:lilac",
+        "minecraft:rose_bush",
+        "minecraft:peony",
         "minecraft:flowering_azalea",
         "minecraft:azalea_leaves_flowered",
-        "minecraft:mangrove_propagule"
+        "minecraft:mangrove_propagule",
+        "minecraft:pitcher_plant",
+        "minecraft:torchflower",
+        "minecraft:cherry_leaves",
+        "minecraft:pink_petals"
     ],
     "grow_up": {
         "event": "minecraft:ageable_grow_up",
@@ -204,9 +193,20 @@ bee
 }
 ```
 
-cat
+camel
 
-<CodeHeader>#component_groups/minecraft:cat_baby</CodeHeader>
+```json
+"minecraft:ageable": {
+    "duration": 1200,
+    "feed_items": "cactus",
+    "grow_up": {
+        "event": "minecraft:ageable_grow_up",
+        "target": "self"
+    }
+}
+```
+
+cat
 
 ```json
 "minecraft:ageable": {
@@ -224,8 +224,6 @@ cat
 
 chicken
 
-<CodeHeader>#component_groups/minecraft:chicken_baby</CodeHeader>
-
 ```json
 "minecraft:ageable": {
     "duration": 1200,
@@ -233,7 +231,9 @@ chicken
         "wheat_seeds",
         "beetroot_seeds",
         "melon_seeds",
-        "pumpkin_seeds"
+        "pumpkin_seeds",
+        "pitcher_pod",
+        "torchflower_seeds"
     ],
     "grow_up": {
         "event": "minecraft:ageable_grow_up",
@@ -243,8 +243,6 @@ chicken
 ```
 
 cow
-
-<CodeHeader>#component_groups/minecraft:cow_baby</CodeHeader>
 
 ```json
 "minecraft:ageable": {
@@ -258,8 +256,6 @@ cow
 ```
 
 dolphin
-
-<CodeHeader>#component_groups/dolphin_baby</CodeHeader>
 
 ```json
 "minecraft:ageable": {
@@ -276,8 +272,6 @@ dolphin
 ```
 
 donkey
-
-<CodeHeader>#component_groups/minecraft:donkey_baby</CodeHeader>
 
 ```json
 "minecraft:ageable": {
@@ -321,8 +315,6 @@ donkey
 
 fox
 
-<CodeHeader>#component_groups/minecraft:fox_baby</CodeHeader>
-
 ```json
 "minecraft:ageable": {
     "duration": 1200,
@@ -339,8 +331,6 @@ fox
 
 goat
 
-<CodeHeader>#component_groups/goat_baby</CodeHeader>
-
 ```json
 "minecraft:ageable": {
     "duration": 1200,
@@ -353,8 +343,6 @@ goat
 ```
 
 hoglin
-
-<CodeHeader>#component_groups/minecraft:hoglin_baby</CodeHeader>
 
 ```json
 "minecraft:ageable": {
@@ -370,8 +358,6 @@ hoglin
 ```
 
 horse
-
-<CodeHeader>#component_groups/minecraft:horse_baby</CodeHeader>
 
 ```json
 "minecraft:ageable": {
@@ -415,8 +401,6 @@ horse
 
 llama
 
-<CodeHeader>#component_groups/minecraft:llama_baby</CodeHeader>
-
 ```json
 "minecraft:ageable": {
     "duration": 1200,
@@ -439,8 +423,6 @@ llama
 
 mooshroom
 
-<CodeHeader>#component_groups/minecraft:cow_baby</CodeHeader>
-
 ```json
 "minecraft:ageable": {
     "duration": 1200,
@@ -453,8 +435,6 @@ mooshroom
 ```
 
 mule
-
-<CodeHeader>#component_groups/minecraft:mule_baby</CodeHeader>
 
 ```json
 "minecraft:ageable": {
@@ -498,8 +478,6 @@ mule
 
 ocelot
 
-<CodeHeader>#component_groups/minecraft:ocelot_baby</CodeHeader>
-
 ```json
 "minecraft:ageable": {
     "duration": 1200,
@@ -516,8 +494,6 @@ ocelot
 
 panda
 
-<CodeHeader>#component_groups/minecraft:panda_baby</CodeHeader>
-
 ```json
 "minecraft:ageable": {
     "duration": 1200,
@@ -530,8 +506,6 @@ panda
 ```
 
 pig
-
-<CodeHeader>#component_groups/minecraft:pig_baby</CodeHeader>
 
 ```json
 "minecraft:ageable": {
@@ -550,8 +524,6 @@ pig
 
 polar_bear
 
-<CodeHeader>#component_groups/minecraft:baby</CodeHeader>
-
 ```json
 "minecraft:ageable": {
     "duration": 1200,
@@ -564,15 +536,13 @@ polar_bear
 
 rabbit
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:ageable": {
     "duration": 1200,
     "feed_items": [
         "golden_carrot",
         "carrot",
-        "yellow_flower"
+        "dandelion"
     ],
     "grow_up": {
         "event": "grow_up",
@@ -582,8 +552,6 @@ rabbit
 ```
 
 sheep
-
-<CodeHeader>#component_groups/minecraft:sheep_baby</CodeHeader>
 
 ```json
 "minecraft:ageable": {
@@ -598,8 +566,6 @@ sheep
 
 skeleton_horse
 
-<CodeHeader>#component_groups/minecraft:skeleton_horse_baby</CodeHeader>
-
 ```json
 "minecraft:ageable": {
     "duration": 1200,
@@ -610,9 +576,22 @@ skeleton_horse
 }
 ```
 
-strider
+sniffer
 
-<CodeHeader>#component_groups/minecraft:strider_baby</CodeHeader>
+```json
+"minecraft:ageable": {
+    "duration": 2400,
+    "feed_items": [
+        "torchflower_seeds"
+    ],
+    "grow_up": {
+        "event": "minecraft:ageable_grow_up",
+        "target": "self"
+    }
+}
+```
+
+strider
 
 ```json
 "minecraft:ageable": {
@@ -629,8 +608,6 @@ strider
 
 tadpole
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:ageable": {
     "duration": 1200,
@@ -645,8 +622,6 @@ tadpole
 ```
 
 trader_llama
-
-<CodeHeader>#component_groups/minecraft:llama_baby</CodeHeader>
 
 ```json
 "minecraft:ageable": {
@@ -670,8 +645,6 @@ trader_llama
 
 turtle
 
-<CodeHeader>#component_groups/minecraft:baby</CodeHeader>
-
 ```json
 "minecraft:ageable": {
     "duration": 1200,
@@ -690,8 +663,6 @@ turtle
 
 villager
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:ageable": {
     "duration": 1200,
@@ -704,8 +675,6 @@ villager
 
 villager_v2
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:ageable": {
     "duration": 1200,
@@ -717,8 +686,6 @@ villager_v2
 ```
 
 wolf
-
-<CodeHeader>#component_groups/minecraft:wolf_baby</CodeHeader>
 
 ```json
 "minecraft:ageable": {
@@ -745,8 +712,6 @@ wolf
 
 zombie_horse
 
-<CodeHeader>#component_groups/minecraft:horse_baby</CodeHeader>
-
 ```json
 "minecraft:ageable": {
     "duration": 1200,
@@ -757,15 +722,9 @@ zombie_horse
 }
 ```
 
-</Spoiler>
-
 ## ambient_sound_interval
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:ambient_sound_interval": {
@@ -785,9 +744,13 @@ allay
 }
 ```
 
-bee
+armadillo
 
-<CodeHeader>#component_groups/look_for_food</CodeHeader>
+```json
+"minecraft:ambient_sound_interval": {}
+```
+
+bee
 
 ```json
 "minecraft:ambient_sound_interval": {
@@ -797,8 +760,6 @@ bee
 }
 ```
 
-<CodeHeader>#component_groups/default_sound</CodeHeader>
-
 ```json
 "minecraft:ambient_sound_interval": {
     "event_name": "ambient",
@@ -807,9 +768,13 @@ bee
 }
 ```
 
-evocation_illager
+creaking
 
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
+```json
+"minecraft:ambient_sound_interval": {}
+```
+
+evocation_illager
 
 ```json
 "minecraft:ambient_sound_interval": {
@@ -821,23 +786,17 @@ evocation_illager
 
 fox
 
-<CodeHeader>#component_groups/minecraft:fox_ambient_normal</CodeHeader>
-
 ```json
 "minecraft:ambient_sound_interval": {
     "event_name": "ambient"
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:fox_ambient_sleep</CodeHeader>
-
 ```json
 "minecraft:ambient_sound_interval": {
     "event_name": "sleep"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:fox_ambient_night</CodeHeader>
 
 ```json
 "minecraft:ambient_sound_interval": {
@@ -849,8 +808,6 @@ fox
 
 pillager
 
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
-
 ```json
 "minecraft:ambient_sound_interval": {
     "value": 2.0,
@@ -860,8 +817,6 @@ pillager
 ```
 
 ravager
-
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
 
 ```json
 "minecraft:ambient_sound_interval": {
@@ -873,8 +828,6 @@ ravager
 
 vindicator
 
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
-
 ```json
 "minecraft:ambient_sound_interval": {
     "value": 2.0,
@@ -884,8 +837,6 @@ vindicator
 ```
 
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:ambient_sound_interval": {
@@ -907,8 +858,6 @@ warden
 
 witch
 
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
-
 ```json
 "minecraft:ambient_sound_interval": {
     "value": 2.0,
@@ -917,15 +866,9 @@ witch
 }
 ```
 
-</Spoiler>
-
 ## anger_level
 
-<Spoiler title="Show">
-
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:anger_level": {
@@ -965,21 +908,16 @@ warden
 }
 ```
 
-</Spoiler>
-
 ## angry
 
-<Spoiler title="Show">
-
 bee
-
-<CodeHeader>#component_groups/angry_bee</CodeHeader>
 
 ```json
 "minecraft:angry": {
     "duration": 25,
     "broadcastAnger": true,
     "broadcastRange": 20,
+    "broadcast_anger_when_dying": false,
     "broadcast_filters": {
         "test": "is_family",
         "operator": "!=",
@@ -994,8 +932,6 @@ bee
 
 cave_spider
 
-<CodeHeader>#component_groups/minecraft:spider_angry</CodeHeader>
-
 ```json
 "minecraft:angry": {
     "duration": 10,
@@ -1008,8 +944,6 @@ cave_spider
 ```
 
 dolphin
-
-<CodeHeader>#component_groups/dolphin_angry</CodeHeader>
 
 ```json
 "minecraft:angry": {
@@ -1025,8 +959,6 @@ dolphin
 
 enderman
 
-<CodeHeader>#component_groups/minecraft:enderman_angry</CodeHeader>
-
 ```json
 "minecraft:angry": {
     "duration": 25,
@@ -1038,8 +970,6 @@ enderman
 ```
 
 hoglin
-
-<CodeHeader>#component_groups/angry_hoglin</CodeHeader>
 
 ```json
 "minecraft:angry": {
@@ -1060,8 +990,6 @@ hoglin
 
 llama
 
-<CodeHeader>#component_groups/minecraft:llama_angry</CodeHeader>
-
 ```json
 "minecraft:angry": {
     "duration": 4,
@@ -1072,8 +1000,6 @@ llama
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:llama_angry_wolf</CodeHeader>
 
 ```json
 "minecraft:angry": {
@@ -1087,8 +1013,6 @@ llama
 ```
 
 panda
-
-<CodeHeader>#component_groups/minecraft:panda_angry</CodeHeader>
 
 ```json
 "minecraft:angry": {
@@ -1106,8 +1030,6 @@ panda
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:baby_scared</CodeHeader>
 
 ```json
 "minecraft:angry": {
@@ -1127,8 +1049,6 @@ panda
 ```
 
 piglin
-
-<CodeHeader>#component_groups/angry</CodeHeader>
 
 ```json
 "minecraft:angry": {
@@ -1170,8 +1090,6 @@ piglin
 
 piglin_brute
 
-<CodeHeader>#component_groups/angry</CodeHeader>
-
 ```json
 "minecraft:angry": {
     "duration": 30,
@@ -1206,8 +1124,6 @@ piglin_brute
 
 polar_bear
 
-<CodeHeader>#component_groups/minecraft:baby_scared</CodeHeader>
-
 ```json
 "minecraft:angry": {
     "duration": 1,
@@ -1219,8 +1135,6 @@ polar_bear
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:adult_hostile</CodeHeader>
 
 ```json
 "minecraft:angry": {
@@ -1236,13 +1150,12 @@ polar_bear
 
 silverfish
 
-<CodeHeader>#component_groups/minecraft:silverfish_angry</CodeHeader>
-
 ```json
 "minecraft:angry": {
     "duration": -1,
     "broadcast_anger": true,
     "broadcast_range": 20,
+    "broadcast_anger_when_dying": false,
     "calm_event": {
         "event": "minecraft:on_calm",
         "target": "self"
@@ -1251,8 +1164,6 @@ silverfish
 ```
 
 spider
-
-<CodeHeader>#component_groups/minecraft:spider_angry</CodeHeader>
 
 ```json
 "minecraft:angry": {
@@ -1267,8 +1178,6 @@ spider
 
 trader_llama
 
-<CodeHeader>#component_groups/minecraft:llama_angry</CodeHeader>
-
 ```json
 "minecraft:angry": {
     "duration": 4,
@@ -1280,8 +1189,6 @@ trader_llama
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:llama_angry_wolf</CodeHeader>
-
 ```json
 "minecraft:angry": {
     "duration": -1,
@@ -1292,8 +1199,6 @@ trader_llama
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:llama_defend_trader</CodeHeader>
 
 ```json
 "minecraft:angry": {
@@ -1307,8 +1212,6 @@ trader_llama
 
 vindicator
 
-<CodeHeader>#component_groups/minecraft:vindicator_aggro</CodeHeader>
-
 ```json
 "minecraft:angry": {
     "duration": -1,
@@ -1321,8 +1224,6 @@ vindicator
 ```
 
 wandering_trader
-
-<CodeHeader>#component_groups/minecraft:scared</CodeHeader>
 
 ```json
 "minecraft:angry": {
@@ -1347,29 +1248,44 @@ wandering_trader
 
 wolf
 
-<CodeHeader>#component_groups/minecraft:wolf_angry</CodeHeader>
-
 ```json
 "minecraft:angry": {
     "duration": 25,
     "broadcast_anger": true,
     "broadcast_range": 20,
+    "broadcast_anger_when_dying": false,
     "calm_event": {
         "event": "minecraft:on_calm",
         "target": "self"
+    }
+}
+```
+
+zoglin
+
+```json
+"minecraft:angry": {
+    "duration": 10,
+    "calm_event": {
+        "event": "become_calm_event",
+        "target": "self"
+    },
+    "angry_sound": "angry",
+    "sound_interval": {
+        "range_min": 2.0,
+        "range_max": 5.0
     }
 }
 ```
 
 zombie_pigman
 
-<CodeHeader>#component_groups/minecraft:pig_zombie_angry</CodeHeader>
-
 ```json
 "minecraft:angry": {
     "duration": 25,
     "broadcast_anger": true,
     "broadcast_range": 20,
+    "broadcast_anger_when_dying": false,
     "calm_event": {
         "event": "minecraft:on_calm",
         "target": "self"
@@ -1377,15 +1293,9 @@ zombie_pigman
 }
 ```
 
-</Spoiler>
-
 ## annotation.break_door
 
-<Spoiler title="Show">
-
 drowned
-
-<CodeHeader>#component_groups/minecraft:can_break_doors</CodeHeader>
 
 ```json
 "minecraft:annotation.break_door": {}
@@ -1393,15 +1303,11 @@ drowned
 
 husk
 
-<CodeHeader>#component_groups/minecraft:can_break_doors</CodeHeader>
-
 ```json
 "minecraft:annotation.break_door": {}
 ```
 
 vindicator
-
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
 
 ```json
 "minecraft:annotation.break_door": {
@@ -1412,15 +1318,11 @@ vindicator
 
 zombie
 
-<CodeHeader>#component_groups/minecraft:can_break_doors</CodeHeader>
-
 ```json
 "minecraft:annotation.break_door": {}
 ```
 
 zombie_villager
-
-<CodeHeader>#component_groups/can_break_doors</CodeHeader>
 
 ```json
 "minecraft:annotation.break_door": {}
@@ -1428,21 +1330,13 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader>#component_groups/can_break_doors</CodeHeader>
-
 ```json
 "minecraft:annotation.break_door": {}
 ```
 
-</Spoiler>
-
 ## annotation.open_door
 
-<Spoiler title="Show">
-
 piglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:annotation.open_door": {}
@@ -1450,15 +1344,11 @@ piglin
 
 piglin_brute
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:annotation.open_door": {}
 ```
 
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:annotation.open_door": {}
@@ -1466,26 +1356,90 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:annotation.open_door": {}
 ```
 
-</Spoiler>
-
 ## area_attack
 
-<Spoiler title="Show">
+magma_cube
+
+```json
+"minecraft:area_attack": {
+    "damage_range": 0.15,
+    "damage_per_tick": 6,
+    "damage_cooldown": 0.5,
+    "cause": "entity_attack",
+    "entity_filter": {
+        "any_of": [
+            {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+            },
+            {
+                "test": "is_family",
+                "subject": "other",
+                "value": "irongolem"
+            }
+        ]
+    }
+}
+```
+
+```json
+"minecraft:area_attack": {
+    "damage_range": 0.15,
+    "damage_per_tick": 4,
+    "damage_cooldown": 0.5,
+    "cause": "entity_attack",
+    "entity_filter": {
+        "any_of": [
+            {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+            },
+            {
+                "test": "is_family",
+                "subject": "other",
+                "value": "irongolem"
+            }
+        ]
+    }
+}
+```
+
+```json
+"minecraft:area_attack": {
+    "damage_range": 0.15,
+    "damage_per_tick": 3,
+    "damage_cooldown": 0.5,
+    "cause": "entity_attack",
+    "entity_filter": {
+        "any_of": [
+            {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+            },
+            {
+                "test": "is_family",
+                "subject": "other",
+                "value": "irongolem"
+            }
+        ]
+    }
+}
+```
 
 pufferfish
-
-<CodeHeader>#component_groups/minecraft:full_puff</CodeHeader>
 
 ```json
 "minecraft:area_attack": {
     "damage_range": 0.2,
     "damage_per_tick": 2,
+    "damage_cooldown": 0.5,
     "cause": "contact",
     "entity_filter": {
         "any_of": [
@@ -1504,15 +1458,67 @@ pufferfish
 }
 ```
 
-</Spoiler>
+slime
+
+```json
+"minecraft:area_attack": {
+    "damage_range": 0.15,
+    "damage_per_tick": 4,
+    "damage_cooldown": 0.5,
+    "cause": "entity_attack",
+    "entity_filter": {
+        "any_of": [
+            {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+            },
+            {
+                "test": "is_family",
+                "subject": "other",
+                "value": "irongolem"
+            },
+            {
+                "test": "is_family",
+                "subject": "other",
+                "value": "snowgolem"
+            }
+        ]
+    }
+}
+```
+
+```json
+"minecraft:area_attack": {
+    "damage_range": 0.15,
+    "damage_per_tick": 2,
+    "damage_cooldown": 0.5,
+    "cause": "entity_attack",
+    "entity_filter": {
+        "any_of": [
+            {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+            },
+            {
+                "test": "is_family",
+                "subject": "other",
+                "value": "irongolem"
+            },
+            {
+                "test": "is_family",
+                "subject": "other",
+                "value": "snowgolem"
+            }
+        ]
+    }
+}
+```
 
 ## attack
 
-<Spoiler title="Show">
-
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1522,15 +1528,11 @@ axolotl
 
 bee
 
-<CodeHeader>#component_groups/easy_attack</CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 2
 }
 ```
-
-<CodeHeader>#component_groups/normal_attack</CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1539,8 +1541,6 @@ bee
     "effect_duration": 10
 }
 ```
-
-<CodeHeader>#component_groups/hard_attack</CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1552,17 +1552,21 @@ bee
 
 blaze
 
-<CodeHeader>#component_groups/melee_mode</CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 6
 }
 ```
 
-cave_spider
+bogged
 
-<CodeHeader>#component_groups/minecraft:spider_poison_easy</CodeHeader>
+```json
+"minecraft:attack": {
+    "damage": 3
+}
+```
+
+cave_spider
 
 ```json
 "minecraft:attack": {
@@ -1572,8 +1576,6 @@ cave_spider
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:spider_poison_normal</CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 2,
@@ -1581,8 +1583,6 @@ cave_spider
     "effect_duration": 7
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:spider_poison_hard</CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1592,9 +1592,15 @@ cave_spider
 }
 ```
 
-creeper
+creaking
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:attack": {
+    "damage": 3
+}
+```
+
+creeper
 
 ```json
 "minecraft:attack": {
@@ -1604,8 +1610,6 @@ creeper
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 3
@@ -1613,8 +1617,6 @@ dolphin
 ```
 
 drowned
-
-<CodeHeader>#component_groups/minecraft:melee_mode</CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1624,8 +1626,6 @@ drowned
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 5
@@ -1633,8 +1633,6 @@ elder_guardian
 ```
 
 enderman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1644,8 +1642,6 @@ enderman
 
 endermite
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 2
@@ -1653,8 +1649,6 @@ endermite
 ```
 
 ender_dragon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1664,8 +1658,6 @@ ender_dragon
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 2
@@ -1674,15 +1666,11 @@ fox
 
 goat
 
-<CodeHeader>#component_groups/goat_baby</CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 1
 }
 ```
-
-<CodeHeader>#component_groups/goat_adult</CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1692,8 +1680,6 @@ goat
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 5
@@ -1702,15 +1688,11 @@ guardian
 
 hoglin
 
-<CodeHeader>#component_groups/minecraft:hoglin_baby</CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 1.0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:hoglin_adult</CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1723,8 +1705,6 @@ hoglin
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 3,
@@ -1734,8 +1714,6 @@ husk
 ```
 
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1748,23 +1726,17 @@ iron_golem
 
 magma_cube
 
-<CodeHeader>#component_groups/minecraft:slime_large</CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 6
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:slime_medium</CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 4
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:slime_small</CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1774,15 +1746,11 @@ magma_cube
 
 panda
 
-<CodeHeader>#component_groups/minecraft:panda_adult</CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 2.0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:panda_aggressive</CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1792,8 +1760,6 @@ panda
 
 phantom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 6
@@ -1801,8 +1767,6 @@ phantom
 ```
 
 piglin
-
-<CodeHeader>#component_groups/melee_unit</CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1812,8 +1776,6 @@ piglin
 
 piglin_brute
 
-<CodeHeader>#component_groups/melee_unit</CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 7
@@ -1821,8 +1783,6 @@ piglin_brute
 ```
 
 pillager
-
-<CodeHeader>#component_groups/minecraft:melee_attack</CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1832,8 +1792,6 @@ pillager
 
 player
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 1
@@ -1841,8 +1799,6 @@ player
 ```
 
 polar_bear
-
-<CodeHeader>#component_groups/minecraft:adult_hostile</CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1852,8 +1808,6 @@ polar_bear
 
 ravager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 12.0
@@ -1861,8 +1815,6 @@ ravager
 ```
 
 silverfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1872,8 +1824,6 @@ silverfish
 
 skeleton
 
-<CodeHeader>#component_groups/minecraft:melee_attack</CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 2
@@ -1882,23 +1832,17 @@ skeleton
 
 slime
 
-<CodeHeader>#component_groups/minecraft:slime_large</CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 4
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:slime_medium</CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 2
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:slime_small</CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1908,8 +1852,6 @@ slime
 
 snow_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 2
@@ -1918,8 +1860,6 @@ snow_golem
 
 spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 2
@@ -1927,8 +1867,6 @@ spider
 ```
 
 stray
-
-<CodeHeader>#component_groups/minecraft:melee_attack</CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1940,8 +1878,6 @@ stray
 
 vex
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 3
@@ -1949,8 +1885,6 @@ vex
 ```
 
 vindicator
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1960,8 +1894,6 @@ vindicator
 
 warden
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 30
@@ -1969,8 +1901,6 @@ warden
 ```
 
 wither_skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -1982,15 +1912,11 @@ wither_skeleton
 
 wolf
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 3
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:wolf_tame</CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -2000,15 +1926,11 @@ wolf
 
 zoglin
 
-<CodeHeader>#component_groups/zoglin_baby</CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 0.5
 }
 ```
-
-<CodeHeader>#component_groups/zoglin_adult</CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -2021,8 +1943,6 @@ zoglin
 
 zombie
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 3
@@ -2030,8 +1950,6 @@ zombie
 ```
 
 zombie_pigman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:attack": {
@@ -2041,8 +1959,6 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 3
@@ -2051,23 +1967,15 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack": {
     "damage": 3
 }
 ```
 
-</Spoiler>
-
 ## attack_cooldown
 
-<Spoiler title="Show">
-
 axolotl
-
-<CodeHeader>#component_groups/attack_cooldown</CodeHeader>
 
 ```json
 "minecraft:attack_cooldown": {
@@ -2080,8 +1988,6 @@ axolotl
 ```
 
 goat
-
-<CodeHeader>#component_groups/attack_cooldown</CodeHeader>
 
 ```json
 "minecraft:attack_cooldown": {
@@ -2098,8 +2004,6 @@ goat
 
 hoglin
 
-<CodeHeader>#component_groups/attack_cooldown</CodeHeader>
-
 ```json
 "minecraft:attack_cooldown": {
     "attack_cooldown_time": [
@@ -2115,8 +2019,6 @@ hoglin
 
 piglin
 
-<CodeHeader>#component_groups/attack_cooldown</CodeHeader>
-
 ```json
 "minecraft:attack_cooldown": {
     "attack_cooldown_time": [
@@ -2130,15 +2032,9 @@ piglin
 }
 ```
 
-</Spoiler>
-
 ## attack_damage
 
-<Spoiler title="Show">
-
 cat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:attack_damage": {
@@ -2148,23 +2044,15 @@ cat
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:attack_damage": {
     "value": 3
 }
 ```
 
-</Spoiler>
-
 ## balloonable
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:balloonable": {
@@ -2172,9 +2060,13 @@ allay
 }
 ```
 
-bee
+armadillo
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:balloonable": {}
+```
+
+bee
 
 ```json
 "minecraft:balloonable": {
@@ -2184,15 +2076,17 @@ bee
 
 boat
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:balloonable": {}
+```
+
+camel
 
 ```json
 "minecraft:balloonable": {}
 ```
 
 cat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:balloonable": {
@@ -2202,15 +2096,11 @@ cat
 
 chest_boat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:balloonable": {}
 ```
 
 chicken
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:balloonable": {
@@ -2220,31 +2110,25 @@ chicken
 
 cow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:balloonable": {}
 ```
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:balloonable": {}
+"minecraft:balloonable": {
+    "mass": 0.4
+}
 ```
 
 donkey
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:balloonable": {}
 ```
 
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:balloonable": {
@@ -2254,8 +2138,6 @@ fox
 
 glow_squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:balloonable": {
     "mass": 0.5
@@ -2264,15 +2146,11 @@ glow_squid
 
 goat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:balloonable": {}
 ```
 
 hoglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:balloonable": {}
@@ -2280,15 +2158,11 @@ hoglin
 
 horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:balloonable": {}
 ```
 
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:balloonable": {
@@ -2298,15 +2172,11 @@ iron_golem
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:balloonable": {}
 ```
 
 mooshroom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:balloonable": {}
@@ -2314,15 +2184,11 @@ mooshroom
 
 mule
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:balloonable": {}
 ```
 
 ocelot
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:balloonable": {
@@ -2332,23 +2198,17 @@ ocelot
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:balloonable": {}
 ```
 
 parrot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:balloonable": {}
 ```
 
 pig
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:balloonable": {
@@ -2358,15 +2218,11 @@ pig
 
 polar_bear
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:balloonable": {}
 ```
 
 rabbit
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:balloonable": {
@@ -2376,8 +2232,6 @@ rabbit
 
 sheep
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:balloonable": {
     "mass": 0.75
@@ -2386,7 +2240,11 @@ sheep
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:balloonable": {}
+```
+
+sniffer
 
 ```json
 "minecraft:balloonable": {}
@@ -2394,15 +2252,11 @@ skeleton_horse
 
 snow_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:balloonable": {}
 ```
 
 squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:balloonable": {
@@ -2412,23 +2266,17 @@ squid
 
 strider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:balloonable": {}
 ```
 
 trader_llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:balloonable": {}
 ```
 
 wolf
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:balloonable": {
@@ -2438,29 +2286,19 @@ wolf
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:balloonable": {}
 ```
 
 zombie_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:balloonable": {}
 ```
 
-</Spoiler>
-
 ## barter
 
-<Spoiler title="Show">
-
 piglin
-
-<CodeHeader>#component_groups/piglin_adult</CodeHeader>
 
 ```json
 "minecraft:barter": {
@@ -2469,15 +2307,9 @@ piglin
 }
 ```
 
-</Spoiler>
-
 ## behavior.admire_item
 
-<Spoiler title="Show">
-
 piglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.admire_item": {
@@ -2498,15 +2330,9 @@ piglin
 }
 ```
 
-</Spoiler>
-
 ## behavior.avoid_block
 
-<Spoiler title="Show">
-
 hoglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.avoid_block": {
@@ -2538,8 +2364,6 @@ hoglin
 
 piglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.avoid_block": {
     "priority": 9,
@@ -2562,15 +2386,29 @@ piglin
 }
 ```
 
-</Spoiler>
-
 ## behavior.avoid_mob_type
 
-<Spoiler title="Show">
+bogged
+
+```json
+"minecraft:behavior.avoid_mob_type": {
+    "priority": 4,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "wolf"
+            },
+            "max_dist": 6,
+            "walk_speed_multiplier": 1.2,
+            "sprint_speed_multiplier": 1.2
+        }
+    ]
+}
+```
 
 cat
-
-<CodeHeader>#component_groups/minecraft:cat_wild</CodeHeader>
 
 ```json
 "minecraft:behavior.avoid_mob_type": {
@@ -2590,9 +2428,36 @@ cat
 }
 ```
 
-creeper
+cave_spider
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.avoid_mob_type": {
+    "priority": 2,
+    "entity_types": [
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "armadillo"
+                    },
+                    {
+                        "test": "enum_property",
+                        "subject": "other",
+                        "domain": "minecraft:armadillo_state",
+                        "value": "unrolled"
+                    }
+                ]
+            },
+            "max_dist": 6,
+            "sprint_speed_multiplier": 1.2
+        }
+    ]
+}
+```
+
+creeper
 
 ```json
 "minecraft:behavior.avoid_mob_type": {
@@ -2621,8 +2486,6 @@ creeper
 ```
 
 dolphin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.avoid_mob_type": {
@@ -2654,8 +2517,6 @@ dolphin
 
 evocation_illager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.avoid_mob_type": {
     "priority": 5,
@@ -2669,14 +2530,21 @@ evocation_illager
             "max_dist": 8,
             "walk_speed_multiplier": 0.6,
             "sprint_speed_multiplier": 1.0
+        },
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "creaking"
+            },
+            "max_dist": 8,
+            "sprint_speed_multiplier": 1.2
         }
     ]
 }
 ```
 
 cod
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.avoid_mob_type": {
@@ -2706,8 +2574,6 @@ cod
 ```
 
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.avoid_mob_type": {
@@ -2759,8 +2625,6 @@ fox
 
 guardian
 
-<CodeHeader>#component_groups/minecraft:guardian_passive</CodeHeader>
-
 ```json
 "minecraft:behavior.avoid_mob_type": {
     "priority": 1,
@@ -2780,8 +2644,6 @@ guardian
 ```
 
 hoglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.avoid_mob_type": {
@@ -2818,8 +2680,6 @@ hoglin
 
 ocelot
 
-<CodeHeader>#component_groups/minecraft:ocelot_wild</CodeHeader>
-
 ```json
 "minecraft:behavior.avoid_mob_type": {
     "priority": 5,
@@ -2839,8 +2699,6 @@ ocelot
 ```
 
 panda
-
-<CodeHeader>#component_groups/minecraft:panda_worried</CodeHeader>
 
 ```json
 "minecraft:behavior.avoid_mob_type": {
@@ -2863,8 +2721,6 @@ panda
 ```
 
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.avoid_mob_type": {
@@ -2894,8 +2750,6 @@ phantom
 ```
 
 piglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.avoid_mob_type": {
@@ -2957,9 +2811,26 @@ piglin
 }
 ```
 
-pufferfish
+pillager
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.avoid_mob_type": {
+    "priority": 1,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "creaking"
+            },
+            "max_dist": 8,
+            "sprint_speed_multiplier": 1.2
+        }
+    ]
+}
+```
+
+pufferfish
 
 ```json
 "minecraft:behavior.avoid_mob_type": {
@@ -2989,8 +2860,6 @@ pufferfish
 ```
 
 rabbit
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.avoid_mob_type": {
@@ -3032,8 +2901,6 @@ rabbit
 
 salmon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.avoid_mob_type": {
     "priority": 1,
@@ -3064,8 +2931,6 @@ salmon
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.avoid_mob_type": {
     "priority": 4,
@@ -3084,9 +2949,36 @@ skeleton
 }
 ```
 
-stray
+spider
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.avoid_mob_type": {
+    "priority": 2,
+    "entity_types": [
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "armadillo"
+                    },
+                    {
+                        "test": "enum_property",
+                        "subject": "other",
+                        "domain": "minecraft:armadillo_state",
+                        "value": "unrolled"
+                    }
+                ]
+            },
+            "max_dist": 6,
+            "sprint_speed_multiplier": 1.2
+        }
+    ]
+}
+```
+
+stray
 
 ```json
 "minecraft:behavior.avoid_mob_type": {
@@ -3107,8 +2999,6 @@ stray
 ```
 
 tropicalfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.avoid_mob_type": {
@@ -3138,8 +3028,6 @@ tropicalfish
 ```
 
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.avoid_mob_type": {
@@ -3179,8 +3067,6 @@ villager
 ```
 
 villager_v2
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.avoid_mob_type": {
@@ -3224,9 +3110,26 @@ villager_v2
 }
 ```
 
-wandering_trader
+vindicator
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.avoid_mob_type": {
+    "priority": 2,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "creaking"
+            },
+            "max_dist": 8,
+            "sprint_speed_multiplier": 1.2
+        }
+    ]
+}
+```
+
+wandering_trader
 
 ```json
 "minecraft:behavior.avoid_mob_type": {
@@ -3277,8 +3180,6 @@ wandering_trader
 
 wolf
 
-<CodeHeader>#component_groups/minecraft:wolf_wild</CodeHeader>
-
 ```json
 "minecraft:behavior.avoid_mob_type": {
     "priority": 3,
@@ -3298,15 +3199,9 @@ wolf
 }
 ```
 
-</Spoiler>
-
 ## behavior.barter
 
-<Spoiler title="Show">
-
 piglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.barter": {
@@ -3314,15 +3209,9 @@ piglin
 }
 ```
 
-</Spoiler>
-
 ## behavior.beg
 
-<Spoiler title="Show">
-
 wolf
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.beg": {
@@ -3349,15 +3238,18 @@ wolf
 }
 ```
 
-</Spoiler>
-
 ## behavior.breed
 
-<Spoiler title="Show">
+armadillo
+
+```json
+"minecraft:behavior.breed": {
+    "priority": 2,
+    "speed_multiplier": 1.0
+}
+```
 
 axolotl
-
-<CodeHeader>#component_groups/axolotl_adult</CodeHeader>
 
 ```json
 "minecraft:behavior.breed": {
@@ -3368,8 +3260,6 @@ axolotl
 
 bee
 
-<CodeHeader>#component_groups/bee_adult</CodeHeader>
-
 ```json
 "minecraft:behavior.breed": {
     "priority": 4,
@@ -3377,9 +3267,16 @@ bee
 }
 ```
 
-cat
+camel
 
-<CodeHeader>#component_groups/minecraft:cat_adult</CodeHeader>
+```json
+"minecraft:behavior.breed": {
+    "priority": 2,
+    "speed_multiplier": 1.0
+}
+```
+
+cat
 
 ```json
 "minecraft:behavior.breed": {
@@ -3390,8 +3287,6 @@ cat
 
 chicken
 
-<CodeHeader>#component_groups/minecraft:chicken_adult</CodeHeader>
-
 ```json
 "minecraft:behavior.breed": {
     "priority": 3,
@@ -3401,16 +3296,12 @@ chicken
 
 cow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.breed": {
     "priority": 3,
     "speed_multiplier": 1.0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:cow_adult</CodeHeader>
 
 ```json
 "minecraft:behavior.breed": {
@@ -3421,8 +3312,6 @@ cow
 
 donkey
 
-<CodeHeader>#component_groups/minecraft:donkey_adult</CodeHeader>
-
 ```json
 "minecraft:behavior.breed": {
     "priority": 2,
@@ -3431,8 +3320,6 @@ donkey
 ```
 
 fox
-
-<CodeHeader>#component_groups/minecraft:fox_adult</CodeHeader>
 
 ```json
 "minecraft:behavior.breed": {
@@ -3443,8 +3330,6 @@ fox
 
 frog
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.breed": {
     "priority": 4
@@ -3452,8 +3337,6 @@ frog
 ```
 
 goat
-
-<CodeHeader>#component_groups/goat_adult</CodeHeader>
 
 ```json
 "minecraft:behavior.breed": {
@@ -3464,8 +3347,6 @@ goat
 
 hoglin
 
-<CodeHeader>#component_groups/minecraft:hoglin_adult</CodeHeader>
-
 ```json
 "minecraft:behavior.breed": {
     "priority": 3,
@@ -3474,8 +3355,6 @@ hoglin
 ```
 
 horse
-
-<CodeHeader>#component_groups/minecraft:horse_adult</CodeHeader>
 
 ```json
 "minecraft:behavior.breed": {
@@ -3486,8 +3365,6 @@ horse
 
 llama
 
-<CodeHeader>#component_groups/minecraft:llama_adult</CodeHeader>
-
 ```json
 "minecraft:behavior.breed": {
     "priority": 4,
@@ -3497,16 +3374,12 @@ llama
 
 mooshroom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.breed": {
     "priority": 3,
     "speed_multiplier": 1.0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:cow_adult</CodeHeader>
 
 ```json
 "minecraft:behavior.breed": {
@@ -3517,8 +3390,6 @@ mooshroom
 
 ocelot
 
-<CodeHeader>#component_groups/minecraft:ocelot_trusting</CodeHeader>
-
 ```json
 "minecraft:behavior.breed": {
     "priority": 3,
@@ -3528,16 +3399,12 @@ ocelot
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.breed": {
     "priority": 3,
     "speed_multiplier": 1.0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:panda_adult</CodeHeader>
 
 ```json
 "minecraft:behavior.breed": {
@@ -3548,8 +3415,6 @@ panda
 
 pig
 
-<CodeHeader>#component_groups/minecraft:pig_adult</CodeHeader>
-
 ```json
 "minecraft:behavior.breed": {
     "priority": 4,
@@ -3559,16 +3424,12 @@ pig
 
 rabbit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.breed": {
     "priority": 2,
     "speed_multiplier": 0.8
 }
 ```
-
-<CodeHeader>#component_groups/adult</CodeHeader>
 
 ```json
 "minecraft:behavior.breed": {
@@ -3579,7 +3440,14 @@ rabbit
 
 sheep
 
-<CodeHeader>#component_groups/minecraft:sheep_adult</CodeHeader>
+```json
+"minecraft:behavior.breed": {
+    "priority": 3,
+    "speed_multiplier": 1.0
+}
+```
+
+sniffer
 
 ```json
 "minecraft:behavior.breed": {
@@ -3590,8 +3458,6 @@ sheep
 
 strider
 
-<CodeHeader>#component_groups/minecraft:strider_adult</CodeHeader>
-
 ```json
 "minecraft:behavior.breed": {
     "priority": 4,
@@ -3600,8 +3466,6 @@ strider
 ```
 
 trader_llama
-
-<CodeHeader>#component_groups/minecraft:llama_adult</CodeHeader>
 
 ```json
 "minecraft:behavior.breed": {
@@ -3612,8 +3476,6 @@ trader_llama
 
 turtle
 
-<CodeHeader>#component_groups/minecraft:adult</CodeHeader>
-
 ```json
 "minecraft:behavior.breed": {
     "priority": 2,
@@ -3623,8 +3485,6 @@ turtle
 
 wolf
 
-<CodeHeader>#component_groups/minecraft:wolf_tame</CodeHeader>
-
 ```json
 "minecraft:behavior.breed": {
     "priority": 2,
@@ -3632,15 +3492,9 @@ wolf
 }
 ```
 
-</Spoiler>
-
 ## behavior.celebrate
 
-<Spoiler title="Show">
-
 evocation_illager
-
-<CodeHeader>#component_groups/minecraft:celebrate</CodeHeader>
 
 ```json
 "minecraft:behavior.celebrate": {
@@ -3663,8 +3517,6 @@ evocation_illager
 ```
 
 pillager
-
-<CodeHeader>#component_groups/minecraft:celebrate</CodeHeader>
 
 ```json
 "minecraft:behavior.celebrate": {
@@ -3688,8 +3540,6 @@ pillager
 
 ravager
 
-<CodeHeader>#component_groups/minecraft:celebrate</CodeHeader>
-
 ```json
 "minecraft:behavior.celebrate": {
     "priority": 5,
@@ -3711,8 +3561,6 @@ ravager
 ```
 
 vindicator
-
-<CodeHeader>#component_groups/minecraft:celebrate</CodeHeader>
 
 ```json
 "minecraft:behavior.celebrate": {
@@ -3736,8 +3584,6 @@ vindicator
 
 witch
 
-<CodeHeader>#component_groups/minecraft:celebrate</CodeHeader>
-
 ```json
 "minecraft:behavior.celebrate": {
     "priority": 5,
@@ -3758,15 +3604,9 @@ witch
 }
 ```
 
-</Spoiler>
-
 ## behavior.celebrate_survive
 
-<Spoiler title="Show">
-
 villager
-
-<CodeHeader>#component_groups/minecraft:celebrate</CodeHeader>
 
 ```json
 "minecraft:behavior.celebrate_survive": {
@@ -3785,8 +3625,6 @@ villager
 
 villager_v2
 
-<CodeHeader>#component_groups/minecraft:celebrate</CodeHeader>
-
 ```json
 "minecraft:behavior.celebrate_survive": {
     "priority": 5,
@@ -3802,15 +3640,9 @@ villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.charge_attack
 
-<Spoiler title="Show">
-
 vex
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.charge_attack": {
@@ -3818,15 +3650,9 @@ vex
 }
 ```
 
-</Spoiler>
-
 ## behavior.charge_held_item
 
-<Spoiler title="Show">
-
 piglin
-
-<CodeHeader>#component_groups/ranged_unit</CodeHeader>
 
 ```json
 "minecraft:behavior.charge_held_item": {
@@ -3839,8 +3665,6 @@ piglin
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.charge_held_item": {
     "priority": 3,
@@ -3850,15 +3674,9 @@ pillager
 }
 ```
 
-</Spoiler>
-
 ## behavior.circle_around_anchor
 
-<Spoiler title="Show">
-
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.circle_around_anchor": {
@@ -3883,15 +3701,9 @@ phantom
 }
 ```
 
-</Spoiler>
-
 ## behavior.controlled_by_player
 
-<Spoiler title="Show">
-
 pig
-
-<CodeHeader>#component_groups/minecraft:pig_saddled</CodeHeader>
 
 ```json
 "minecraft:behavior.controlled_by_player": {
@@ -3901,8 +3713,6 @@ pig
 
 strider
 
-<CodeHeader>#component_groups/minecraft:strider_saddled</CodeHeader>
-
 ```json
 "minecraft:behavior.controlled_by_player": {
     "priority": 0,
@@ -3910,15 +3720,9 @@ strider
 }
 ```
 
-</Spoiler>
-
 ## behavior.croak
 
-<Spoiler title="Show">
-
 frog
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.croak": {
@@ -3943,15 +3747,9 @@ frog
 }
 ```
 
-</Spoiler>
-
 ## behavior.defend_trusted_target
 
-<Spoiler title="Show">
-
 fox
-
-<CodeHeader>#component_groups/minecraft:trusting_fox</CodeHeader>
 
 ```json
 "minecraft:behavior.defend_trusted_target": {
@@ -3967,15 +3765,9 @@ fox
 }
 ```
 
-</Spoiler>
-
 ## behavior.defend_village_target
 
-<Spoiler title="Show">
-
 iron_golem
-
-<CodeHeader>#component_groups/minecraft:village_created</CodeHeader>
 
 ```json
 "minecraft:behavior.defend_village_target": {
@@ -4001,15 +3793,9 @@ iron_golem
 }
 ```
 
-</Spoiler>
-
 ## behavior.delayed_attack
 
-<Spoiler title="Show">
-
 ravager
-
-<CodeHeader>#component_groups/minecraft:hostile</CodeHeader>
 
 ```json
 "minecraft:behavior.delayed_attack": {
@@ -4025,15 +3811,9 @@ ravager
 }
 ```
 
-</Spoiler>
-
 ## behavior.dig
 
-<Spoiler title="Show">
-
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.dig": {
@@ -4050,15 +3830,9 @@ warden
 }
 ```
 
-</Spoiler>
-
 ## behavior.dragonchargeplayer
 
-<Spoiler title="Show">
-
 ender_dragon
-
-<CodeHeader>#component_groups/dragon_flying</CodeHeader>
 
 ```json
 "minecraft:behavior.dragonchargeplayer": {
@@ -4066,15 +3840,9 @@ ender_dragon
 }
 ```
 
-</Spoiler>
-
 ## behavior.dragondeath
 
-<Spoiler title="Show">
-
 ender_dragon
-
-<CodeHeader>#component_groups/dragon_death</CodeHeader>
 
 ```json
 "minecraft:behavior.dragondeath": {
@@ -4082,15 +3850,9 @@ ender_dragon
 }
 ```
 
-</Spoiler>
-
 ## behavior.dragonflaming
 
-<Spoiler title="Show">
-
 ender_dragon
-
-<CodeHeader>#component_groups/dragon_sitting</CodeHeader>
 
 ```json
 "minecraft:behavior.dragonflaming": {
@@ -4098,15 +3860,9 @@ ender_dragon
 }
 ```
 
-</Spoiler>
-
 ## behavior.dragonholdingpattern
 
-<Spoiler title="Show">
-
 ender_dragon
-
-<CodeHeader>#component_groups/dragon_flying</CodeHeader>
 
 ```json
 "minecraft:behavior.dragonholdingpattern": {
@@ -4114,15 +3870,9 @@ ender_dragon
 }
 ```
 
-</Spoiler>
-
 ## behavior.dragonlanding
 
-<Spoiler title="Show">
-
 ender_dragon
-
-<CodeHeader>#component_groups/dragon_sitting</CodeHeader>
 
 ```json
 "minecraft:behavior.dragonlanding": {
@@ -4130,15 +3880,9 @@ ender_dragon
 }
 ```
 
-</Spoiler>
-
 ## behavior.dragonscanning
 
-<Spoiler title="Show">
-
 ender_dragon
-
-<CodeHeader>#component_groups/dragon_sitting</CodeHeader>
 
 ```json
 "minecraft:behavior.dragonscanning": {
@@ -4146,15 +3890,9 @@ ender_dragon
 }
 ```
 
-</Spoiler>
-
 ## behavior.dragonstrafeplayer
 
-<Spoiler title="Show">
-
 ender_dragon
-
-<CodeHeader>#component_groups/dragon_flying</CodeHeader>
 
 ```json
 "minecraft:behavior.dragonstrafeplayer": {
@@ -4162,15 +3900,9 @@ ender_dragon
 }
 ```
 
-</Spoiler>
-
 ## behavior.dragontakeoff
 
-<Spoiler title="Show">
-
 ender_dragon
-
-<CodeHeader>#component_groups/dragon_flying</CodeHeader>
 
 ```json
 "minecraft:behavior.dragontakeoff": {
@@ -4178,15 +3910,9 @@ ender_dragon
 }
 ```
 
-</Spoiler>
-
 ## behavior.drink_milk
 
-<Spoiler title="Show">
-
 wandering_trader
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.drink_milk": {
@@ -4212,15 +3938,9 @@ wandering_trader
 }
 ```
 
-</Spoiler>
-
 ## behavior.drink_potion
 
-<Spoiler title="Show">
-
 wandering_trader
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.drink_potion": {
@@ -4319,15 +4039,119 @@ wandering_trader
 }
 ```
 
-</Spoiler>
+witch
+
+```json
+"minecraft:behavior.drink_potion": {
+    "priority": 1,
+    "speed_modifier": -0.25,
+    "potions": [
+        {
+            "id": 19,
+            "chance": 0.15,
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "is_underwater",
+                        "subject": "self",
+                        "value": true
+                    },
+                    {
+                        "none_of": [
+                            {
+                                "test": "has_mob_effect",
+                                "subject": "self",
+                                "value": "water_breathing"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": 12,
+            "chance": 0.15,
+            "filters": {
+                "all_of": [
+                    {
+                        "any_of": [
+                            {
+                                "test": "on_fire",
+                                "subject": "self",
+                                "value": true
+                            },
+                            {
+                                "test": "on_hot_block",
+                                "subject": "self",
+                                "value": true
+                            },
+                            {
+                                "test": "taking_fire_damage",
+                                "subject": "self",
+                                "value": true
+                            }
+                        ]
+                    },
+                    {
+                        "none_of": [
+                            {
+                                "test": "has_mob_effect",
+                                "subject": "self",
+                                "value": "fire_resistance"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": 21,
+            "chance": 0.05,
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "is_missing_health",
+                        "subject": "self",
+                        "value": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": 14,
+            "chance": 0.25,
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "has_target",
+                        "subject": "self",
+                        "value": true
+                    },
+                    {
+                        "none_of": [
+                            {
+                                "test": "has_mob_effect",
+                                "subject": "self",
+                                "value": "speed"
+                            }
+                        ]
+                    },
+                    {
+                        "test": "target_distance",
+                        "subject": "self",
+                        "value": 11.0,
+                        "operator": ">="
+                    }
+                ]
+            }
+        }
+    ]
+}
+```
 
 ## behavior.drop_item_for
 
-<Spoiler title="Show">
-
 cat
-
-<CodeHeader>#component_groups/minecraft:cat_gift_for_owner</CodeHeader>
 
 ```json
 "minecraft:behavior.drop_item_for": {
@@ -4375,15 +4199,9 @@ cat
 }
 ```
 
-</Spoiler>
-
 ## behavior.eat_block
 
-<Spoiler title="Show">
-
 sheep
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.eat_block": {
@@ -4407,15 +4225,9 @@ sheep
 }
 ```
 
-</Spoiler>
-
 ## behavior.eat_carried_item
 
-<Spoiler title="Show">
-
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.eat_carried_item": {
@@ -4424,15 +4236,9 @@ fox
 }
 ```
 
-</Spoiler>
-
 ## behavior.eat_mob
 
-<Spoiler title="Show">
-
 frog
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.eat_mob": {
@@ -4446,15 +4252,9 @@ frog
 }
 ```
 
-</Spoiler>
-
 ## behavior.emerge
 
-<Spoiler title="Show">
-
 warden
-
-<CodeHeader>#component_groups/emerging</CodeHeader>
 
 ```json
 "minecraft:behavior.emerge": {
@@ -4466,15 +4266,9 @@ warden
 }
 ```
 
-</Spoiler>
-
 ## behavior.enderman_leave_block
 
-<Spoiler title="Show">
-
 enderman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.enderman_leave_block": {
@@ -4482,15 +4276,9 @@ enderman
 }
 ```
 
-</Spoiler>
-
 ## behavior.enderman_take_block
 
-<Spoiler title="Show">
-
 enderman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.enderman_take_block": {
@@ -4498,15 +4286,25 @@ enderman
 }
 ```
 
-</Spoiler>
-
 ## behavior.equip_item
 
-<Spoiler title="Show">
+bogged
+
+```json
+"minecraft:behavior.equip_item": {
+    "priority": 3
+}
+```
 
 drowned
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.equip_item": {
+    "priority": 3
+}
+```
+
+evocation_illager
 
 ```json
 "minecraft:behavior.equip_item": {
@@ -4516,8 +4314,6 @@ drowned
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.equip_item": {
     "priority": 2
@@ -4525,8 +4321,6 @@ fox
 ```
 
 husk
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.equip_item": {
@@ -4536,8 +4330,6 @@ husk
 
 piglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.equip_item": {
     "priority": 5
@@ -4545,8 +4337,6 @@ piglin
 ```
 
 pillager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.equip_item": {
@@ -4556,8 +4346,6 @@ pillager
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.equip_item": {
     "priority": 3
@@ -4566,7 +4354,13 @@ skeleton
 
 stray
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.equip_item": {
+    "priority": 3
+}
+```
+
+vindicator
 
 ```json
 "minecraft:behavior.equip_item": {
@@ -4576,8 +4370,6 @@ stray
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.equip_item": {
     "priority": 3
@@ -4585,8 +4377,6 @@ wither_skeleton
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.equip_item": {
@@ -4596,8 +4386,6 @@ zombie
 
 zombie_pigman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.equip_item": {
     "priority": 3
@@ -4605,8 +4393,6 @@ zombie_pigman
 ```
 
 zombie_villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.equip_item": {
@@ -4616,29 +4402,19 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.equip_item": {
     "priority": 3
 }
 ```
 
-</Spoiler>
-
 ## behavior.explore_outskirts
 
-<Spoiler title="Show">
-
 villager_v2
-
-<CodeHeader>#component_groups/job_specific_goals</CodeHeader>
 
 ```json
 "minecraft:behavior.explore_outskirts": {}
 ```
-
-<CodeHeader>#component_groups/wander_schedule_villager</CodeHeader>
 
 ```json
 "minecraft:behavior.explore_outskirts": {
@@ -4661,15 +4437,9 @@ villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.fertilize_farm_block
 
-<Spoiler title="Show">
-
 villager_v2
-
-<CodeHeader>#component_groups/work_schedule_farmer</CodeHeader>
 
 ```json
 "minecraft:behavior.fertilize_farm_block": {
@@ -4677,15 +4447,9 @@ villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.find_cover
 
-<Spoiler title="Show">
-
 fox
-
-<CodeHeader>#component_groups/minecraft:fox_thunderstorm</CodeHeader>
 
 ```json
 "minecraft:behavior.find_cover": {
@@ -4695,8 +4459,6 @@ fox
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:fox_day</CodeHeader>
-
 ```json
 "minecraft:behavior.find_cover": {
     "priority": 9,
@@ -4705,15 +4467,9 @@ fox
 }
 ```
 
-</Spoiler>
-
 ## behavior.find_mount
 
-<Spoiler title="Show">
-
 husk
-
-<CodeHeader>#component_groups/minecraft:zombie_husk_jockey</CodeHeader>
 
 ```json
 "minecraft:behavior.find_mount": {
@@ -4724,11 +4480,9 @@ husk
 
 parrot
 
-<CodeHeader>#component_groups/minecraft:parrot_tame</CodeHeader>
-
 ```json
 "minecraft:behavior.find_mount": {
-    "priority": 3,
+    "priority": 4,
     "within_radius": 16,
     "avoid_water": true,
     "start_delay": 100,
@@ -4738,8 +4492,6 @@ parrot
 ```
 
 piglin
-
-<CodeHeader>#component_groups/piglin_jockey</CodeHeader>
 
 ```json
 "minecraft:behavior.find_mount": {
@@ -4752,8 +4504,6 @@ piglin
 
 zombie
 
-<CodeHeader>#component_groups/minecraft:zombie_jockey</CodeHeader>
-
 ```json
 "minecraft:behavior.find_mount": {
     "priority": 1,
@@ -4765,8 +4515,6 @@ zombie
 
 zombie_villager
 
-<CodeHeader>#component_groups/jockey</CodeHeader>
-
 ```json
 "minecraft:behavior.find_mount": {
     "priority": 1,
@@ -4776,8 +4524,6 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader>#component_groups/jockey</CodeHeader>
-
 ```json
 "minecraft:behavior.find_mount": {
     "priority": 1,
@@ -4785,15 +4531,9 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.find_underwater_treasure
 
-<Spoiler title="Show">
-
 dolphin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.find_underwater_treasure": {
@@ -4804,15 +4544,57 @@ dolphin
 }
 ```
 
-</Spoiler>
+## behavior.fire_at_target
+
+breeze
+
+```json
+"minecraft:behavior.fire_at_target": {
+    "projectile_def": "minecraft:breeze_wind_charge_projectile",
+    "priority": 2,
+    "filters": {
+        "all_of": [
+            {
+                "test": "is_navigating",
+                "value": false
+            }
+        ]
+    },
+    "attack_range": [
+        0,
+        16
+    ],
+    "attack_cooldown": 0.5,
+    "pre_shoot_delay": 0.75,
+    "post_shoot_delay": 0.2,
+    "ranged_fov": 90.0,
+    "owner_anchor": 2,
+    "owner_offset": [
+        0.0,
+        0.3,
+        0.0
+    ],
+    "target_anchor": 0,
+    "target_offset": [
+        0.0,
+        0.5,
+        0.0
+    ]
+}
+```
 
 ## behavior.flee_sun
 
-<Spoiler title="Show">
+bogged
+
+```json
+"minecraft:behavior.flee_sun": {
+    "priority": 2,
+    "speed_multiplier": 1
+}
+```
 
 drowned
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.flee_sun": {
@@ -4823,8 +4605,6 @@ drowned
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.flee_sun": {
     "priority": 2,
@@ -4833,8 +4613,6 @@ skeleton
 ```
 
 stray
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.flee_sun": {
@@ -4845,8 +4623,6 @@ stray
 
 zombie_villager
 
-<CodeHeader>#component_groups/from_abandoned_village</CodeHeader>
-
 ```json
 "minecraft:behavior.flee_sun": {
     "priority": 4,
@@ -4856,8 +4632,6 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader>#component_groups/from_abandoned_village</CodeHeader>
-
 ```json
 "minecraft:behavior.flee_sun": {
     "priority": 4,
@@ -4865,15 +4639,9 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.float
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float": {
@@ -4881,9 +4649,15 @@ allay
 }
 ```
 
-bat
+armadillo
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.float": {
+    "priority": 0
+}
+```
+
+bat
 
 ```json
 "minecraft:behavior.float": {
@@ -4893,8 +4667,6 @@ bat
 
 bee
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 19
@@ -4903,7 +4675,13 @@ bee
 
 blaze
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.float": {
+    "priority": 0
+}
+```
+
+breeze
 
 ```json
 "minecraft:behavior.float": {
@@ -4911,9 +4689,16 @@ blaze
 }
 ```
 
-cat
+camel
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.float": {
+    "priority": 0,
+    "sink_with_passengers": true
+}
+```
+
+cat
 
 ```json
 "minecraft:behavior.float": {
@@ -4923,8 +4708,6 @@ cat
 
 cave_spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 1
@@ -4932,8 +4715,6 @@ cave_spider
 ```
 
 chicken
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float": {
@@ -4943,7 +4724,13 @@ chicken
 
 cow
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.float": {
+    "priority": 0
+}
+```
+
+creaking
 
 ```json
 "minecraft:behavior.float": {
@@ -4953,8 +4740,6 @@ cow
 
 creeper
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 0
@@ -4962,8 +4747,6 @@ creeper
 ```
 
 donkey
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float": {
@@ -4973,8 +4756,6 @@ donkey
 
 enderman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 0
@@ -4982,8 +4763,6 @@ enderman
 ```
 
 endermite
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float": {
@@ -4993,8 +4772,6 @@ endermite
 
 evocation_illager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 0
@@ -5002,8 +4779,6 @@ evocation_illager
 ```
 
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float": {
@@ -5013,8 +4788,6 @@ fox
 
 ghast
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 0
@@ -5022,8 +4795,6 @@ ghast
 ```
 
 goat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float": {
@@ -5033,8 +4804,6 @@ goat
 
 horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 0
@@ -5042,8 +4811,6 @@ horse
 ```
 
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float": {
@@ -5053,8 +4820,6 @@ llama
 
 mooshroom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 0
@@ -5062,8 +4827,6 @@ mooshroom
 ```
 
 mule
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float": {
@@ -5073,8 +4836,6 @@ mule
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 0
@@ -5082,8 +4843,6 @@ ocelot
 ```
 
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float": {
@@ -5093,17 +4852,13 @@ panda
 
 parrot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
-    "priority": 0
+    "priority": 1
 }
 ```
 
 pig
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float": {
@@ -5113,8 +4868,6 @@ pig
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 0
@@ -5122,8 +4875,6 @@ pillager
 ```
 
 polar_bear
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float": {
@@ -5133,8 +4884,6 @@ polar_bear
 
 rabbit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 0
@@ -5142,8 +4891,6 @@ rabbit
 ```
 
 ravager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float": {
@@ -5153,8 +4900,6 @@ ravager
 
 sheep
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 0
@@ -5163,17 +4908,21 @@ sheep
 
 silverfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 1
 }
 ```
 
-spider
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.float": {
+    "priority": 0
+}
+```
+
+spider
 
 ```json
 "minecraft:behavior.float": {
@@ -5183,8 +4932,6 @@ spider
 
 trader_llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 0
@@ -5192,8 +4939,6 @@ trader_llama
 ```
 
 vex
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float": {
@@ -5203,8 +4948,6 @@ vex
 
 villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 0
@@ -5212,8 +4955,6 @@ villager
 ```
 
 villager_v2
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float": {
@@ -5223,8 +4964,6 @@ villager_v2
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 0
@@ -5232,8 +4971,6 @@ vindicator
 ```
 
 wandering_trader
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float": {
@@ -5243,8 +4980,6 @@ wandering_trader
 
 warden
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 0
@@ -5252,8 +4987,6 @@ warden
 ```
 
 witch
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float": {
@@ -5263,8 +4996,6 @@ witch
 
 wither
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 1
@@ -5273,23 +5004,15 @@ wither
 
 wolf
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float": {
     "priority": 0
 }
 ```
 
-</Spoiler>
-
 ## behavior.float_wander
 
-<Spoiler title="Show">
-
 bat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.float_wander": {
@@ -5306,8 +5029,6 @@ bat
 
 ghast
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.float_wander": {
     "priority": 2,
@@ -5315,15 +5036,9 @@ ghast
 }
 ```
 
-</Spoiler>
-
 ## behavior.follow_caravan
 
-<Spoiler title="Show">
-
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.follow_caravan": {
@@ -5342,8 +5057,6 @@ llama
 
 trader_llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.follow_caravan": {
     "priority": 3,
@@ -5359,34 +5072,22 @@ trader_llama
 }
 ```
 
-</Spoiler>
-
 ## behavior.follow_mob
-
-<Spoiler title="Show">
 
 parrot
 
-<CodeHeader>#component_groups/minecraft:parrot_wild</CodeHeader>
-
 ```json
 "minecraft:behavior.follow_mob": {
-    "priority": 3,
+    "priority": 4,
     "speed_multiplier": 1.0,
     "stop_distance": 3,
     "search_range": 20
 }
 ```
 
-</Spoiler>
-
 ## behavior.follow_owner
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.follow_owner": {
@@ -5401,8 +5102,6 @@ allay
 
 cat
 
-<CodeHeader>#component_groups/minecraft:cat_tame</CodeHeader>
-
 ```json
 "minecraft:behavior.follow_owner": {
     "priority": 4,
@@ -5413,8 +5112,6 @@ cat
 ```
 
 ocelot
-
-<CodeHeader>#component_groups/minecraft:ocelot_tame</CodeHeader>
 
 ```json
 "minecraft:behavior.follow_owner": {
@@ -5427,11 +5124,9 @@ ocelot
 
 parrot
 
-<CodeHeader>#component_groups/minecraft:parrot_tame</CodeHeader>
-
 ```json
 "minecraft:behavior.follow_owner": {
-    "priority": 2,
+    "priority": 3,
     "speed_multiplier": 1.0,
     "start_distance": 5,
     "stop_distance": 1
@@ -5439,8 +5134,6 @@ parrot
 ```
 
 wolf
-
-<CodeHeader>#component_groups/minecraft:wolf_tame</CodeHeader>
 
 ```json
 "minecraft:behavior.follow_owner": {
@@ -5451,15 +5144,18 @@ wolf
 }
 ```
 
-</Spoiler>
-
 ## behavior.follow_parent
 
-<Spoiler title="Show">
+armadillo
+
+```json
+"minecraft:behavior.follow_parent": {
+    "priority": 5,
+    "speed_multiplier": 1.25
+}
+```
 
 axolotl
-
-<CodeHeader>#component_groups/axolotl_baby</CodeHeader>
 
 ```json
 "minecraft:behavior.follow_parent": {
@@ -5470,8 +5166,6 @@ axolotl
 
 bee
 
-<CodeHeader>#component_groups/bee_baby</CodeHeader>
-
 ```json
 "minecraft:behavior.follow_parent": {
     "priority": 11,
@@ -5479,9 +5173,16 @@ bee
 }
 ```
 
-chicken
+camel
 
-<CodeHeader>#component_groups/minecraft:chicken_baby</CodeHeader>
+```json
+"minecraft:behavior.follow_parent": {
+    "priority": 5,
+    "speed_multiplier": 2.5
+}
+```
+
+chicken
 
 ```json
 "minecraft:behavior.follow_parent": {
@@ -5492,16 +5193,12 @@ chicken
 
 cow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.follow_parent": {
     "priority": 5,
     "speed_multiplier": 1.1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:cow_baby</CodeHeader>
 
 ```json
 "minecraft:behavior.follow_parent": {
@@ -5512,8 +5209,6 @@ cow
 
 dolphin
 
-<CodeHeader>#component_groups/dolphin_baby</CodeHeader>
-
 ```json
 "minecraft:behavior.follow_parent": {
     "priority": 4,
@@ -5522,8 +5217,6 @@ dolphin
 ```
 
 donkey
-
-<CodeHeader>#component_groups/minecraft:donkey_baby</CodeHeader>
 
 ```json
 "minecraft:behavior.follow_parent": {
@@ -5534,8 +5227,6 @@ donkey
 
 fox
 
-<CodeHeader>#component_groups/minecraft:fox_baby</CodeHeader>
-
 ```json
 "minecraft:behavior.follow_parent": {
     "priority": 9,
@@ -5544,8 +5235,6 @@ fox
 ```
 
 goat
-
-<CodeHeader>#component_groups/goat_baby</CodeHeader>
 
 ```json
 "minecraft:behavior.follow_parent": {
@@ -5556,8 +5245,6 @@ goat
 
 hoglin
 
-<CodeHeader>#component_groups/minecraft:hoglin_baby</CodeHeader>
-
 ```json
 "minecraft:behavior.follow_parent": {
     "priority": 6,
@@ -5566,8 +5253,6 @@ hoglin
 ```
 
 horse
-
-<CodeHeader>#component_groups/minecraft:horse_baby</CodeHeader>
 
 ```json
 "minecraft:behavior.follow_parent": {
@@ -5578,8 +5263,6 @@ horse
 
 llama
 
-<CodeHeader>#component_groups/minecraft:llama_baby</CodeHeader>
-
 ```json
 "minecraft:behavior.follow_parent": {
     "priority": 5,
@@ -5589,16 +5272,12 @@ llama
 
 mooshroom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.follow_parent": {
     "priority": 5,
     "speed_multiplier": 1.1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:cow_baby</CodeHeader>
 
 ```json
 "minecraft:behavior.follow_parent": {
@@ -5609,8 +5288,6 @@ mooshroom
 
 mule
 
-<CodeHeader>#component_groups/minecraft:mule_baby</CodeHeader>
-
 ```json
 "minecraft:behavior.follow_parent": {
     "priority": 4,
@@ -5619,8 +5296,6 @@ mule
 ```
 
 panda
-
-<CodeHeader>#component_groups/minecraft:panda_baby</CodeHeader>
 
 ```json
 "minecraft:behavior.follow_parent": {
@@ -5631,8 +5306,6 @@ panda
 
 pig
 
-<CodeHeader>#component_groups/minecraft:pig_baby</CodeHeader>
-
 ```json
 "minecraft:behavior.follow_parent": {
     "priority": 6,
@@ -5641,8 +5314,6 @@ pig
 ```
 
 polar_bear
-
-<CodeHeader>#component_groups/minecraft:baby</CodeHeader>
 
 ```json
 "minecraft:behavior.follow_parent": {
@@ -5653,8 +5324,6 @@ polar_bear
 
 rabbit
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:behavior.follow_parent": {
     "priority": 6,
@@ -5664,16 +5333,12 @@ rabbit
 
 sheep
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.follow_parent": {
     "priority": 5,
     "speed_multiplier": 1.1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:sheep_baby</CodeHeader>
 
 ```json
 "minecraft:behavior.follow_parent": {
@@ -5684,8 +5349,6 @@ sheep
 
 skeleton_horse
 
-<CodeHeader>#component_groups/minecraft:skeleton_horse_baby</CodeHeader>
-
 ```json
 "minecraft:behavior.follow_parent": {
     "priority": 4,
@@ -5694,8 +5357,6 @@ skeleton_horse
 ```
 
 strider
-
-<CodeHeader>#component_groups/minecraft:strider_baby</CodeHeader>
 
 ```json
 "minecraft:behavior.follow_parent": {
@@ -5706,8 +5367,6 @@ strider
 
 trader_llama
 
-<CodeHeader>#component_groups/minecraft:llama_baby</CodeHeader>
-
 ```json
 "minecraft:behavior.follow_parent": {
     "priority": 5,
@@ -5717,8 +5376,6 @@ trader_llama
 
 zombie_horse
 
-<CodeHeader>#component_groups/minecraft:horse_baby</CodeHeader>
-
 ```json
 "minecraft:behavior.follow_parent": {
     "priority": 4,
@@ -5726,15 +5383,9 @@ zombie_horse
 }
 ```
 
-</Spoiler>
-
 ## behavior.follow_target_captain
 
-<Spoiler title="Show">
-
 pillager
-
-<CodeHeader>#component_groups/minecraft:patrol_follower</CodeHeader>
 
 ```json
 "minecraft:behavior.follow_target_captain": {
@@ -5747,8 +5398,6 @@ pillager
 
 vindicator
 
-<CodeHeader>#component_groups/minecraft:patrol_follower</CodeHeader>
-
 ```json
 "minecraft:behavior.follow_target_captain": {
     "priority": 5,
@@ -5758,15 +5407,9 @@ vindicator
 }
 ```
 
-</Spoiler>
-
 ## behavior.go_and_give_items_to_noteblock
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.go_and_give_items_to_noteblock": {
@@ -5782,15 +5425,9 @@ allay
 }
 ```
 
-</Spoiler>
-
 ## behavior.go_and_give_items_to_owner
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.go_and_give_items_to_owner": {
@@ -5806,15 +5443,9 @@ allay
 }
 ```
 
-</Spoiler>
-
 ## behavior.go_home
 
-<Spoiler title="Show">
-
 bee
-
-<CodeHeader>#component_groups/return_to_home</CodeHeader>
 
 ```json
 "minecraft:behavior.go_home": {
@@ -5873,8 +5504,6 @@ bee
 
 piglin_brute
 
-<CodeHeader>#component_groups/go_back_to_spawn</CodeHeader>
-
 ```json
 "minecraft:behavior.go_home": {
     "priority": 6,
@@ -5892,8 +5521,6 @@ piglin_brute
 
 turtle
 
-<CodeHeader>#component_groups/minecraft:pregnant</CodeHeader>
-
 ```json
 "minecraft:behavior.go_home": {
     "priority": 1,
@@ -5909,15 +5536,9 @@ turtle
 }
 ```
 
-</Spoiler>
-
 ## behavior.guardian_attack
 
-<Spoiler title="Show">
-
 elder_guardian
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.guardian_attack": {
@@ -5927,31 +5548,21 @@ elder_guardian
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.guardian_attack": {
     "priority": 4
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:guardian_aggressive</CodeHeader>
-
 ```json
 "minecraft:behavior.guardian_attack": {
     "priority": 4
 }
 ```
-
-</Spoiler>
 
 ## behavior.harvest_farm_block
 
-<Spoiler title="Show">
-
 villager
-
-<CodeHeader>#component_groups/behavior_peasant</CodeHeader>
 
 ```json
 "minecraft:behavior.harvest_farm_block": {
@@ -5962,13 +5573,9 @@ villager
 
 villager_v2
 
-<CodeHeader>#component_groups/job_specific_goals</CodeHeader>
-
 ```json
 "minecraft:behavior.harvest_farm_block": {}
 ```
-
-<CodeHeader>#component_groups/work_schedule_farmer</CodeHeader>
 
 ```json
 "minecraft:behavior.harvest_farm_block": {
@@ -5976,15 +5583,9 @@ villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.hide
 
-<Spoiler title="Show">
-
 villager_v2
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.hide": {
@@ -5995,15 +5596,9 @@ villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.hold_ground
 
-<Spoiler title="Show">
-
 pillager
-
-<CodeHeader>#component_groups/minecraft:patrol_captain</CodeHeader>
 
 ```json
 "minecraft:behavior.hold_ground": {
@@ -6018,8 +5613,6 @@ pillager
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:patrol_follower</CodeHeader>
-
 ```json
 "minecraft:behavior.hold_ground": {
     "priority": 6,
@@ -6033,15 +5626,9 @@ pillager
 }
 ```
 
-</Spoiler>
-
 ## behavior.hurt_by_target
 
-<Spoiler title="Show">
-
 bee
-
-<CodeHeader>#component_groups/track_attacker</CodeHeader>
 
 ```json
 "minecraft:behavior.hurt_by_target": {
@@ -6051,27 +5638,107 @@ bee
 
 blaze
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
     "priority": 1
+}
+```
+
+bogged
+
+```json
+"minecraft:behavior.hurt_by_target": {
+    "priority": 1,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "breeze"
+            }
+        }
+    ]
+}
+```
+
+breeze
+
+```json
+"minecraft:behavior.hurt_by_target": {
+    "priority": 4,
+    "entity_types": [
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "skeleton"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "stray"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "zombie"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "husk"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "spider"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "cavespider"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "slime"
+                    }
+                ]
+            }
+        }
+    ]
 }
 ```
 
 cave_spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 1,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "breeze"
+            }
+        }
+    ]
 }
 ```
 
 creeper
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.hurt_by_target": {
@@ -6081,8 +5748,6 @@ creeper
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
     "priority": 1
@@ -6090,8 +5755,6 @@ dolphin
 ```
 
 drowned
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.hurt_by_target": {
@@ -6101,8 +5764,6 @@ drowned
 
 enderman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
     "priority": 3
@@ -6111,17 +5772,22 @@ enderman
 
 evocation_illager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 1,
+    "entity_types": {
+        "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "illager"
+        },
+        "max_dist": 64
+    }
 }
 ```
 
 ghast
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.hurt_by_target": {
@@ -6131,8 +5797,6 @@ ghast
 
 hoglin
 
-<CodeHeader>#component_groups/minecraft:hoglin_adult</CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
     "priority": 2
@@ -6141,17 +5805,23 @@ hoglin
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 1,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "breeze"
+            }
+        }
+    ]
 }
 ```
 
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.hurt_by_target": {
@@ -6166,8 +5836,6 @@ iron_golem
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:player_created</CodeHeader>
 
 ```json
 "minecraft:behavior.hurt_by_target": {
@@ -6195,8 +5863,6 @@ iron_golem
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
     "priority": 1,
@@ -6206,8 +5872,6 @@ llama
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
     "priority": 1
@@ -6215,8 +5879,6 @@ panda
 ```
 
 piglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.hurt_by_target": {
@@ -6226,8 +5888,6 @@ piglin
 
 piglin_brute
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
     "priority": 1
@@ -6235,8 +5895,6 @@ piglin_brute
 ```
 
 pillager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.hurt_by_target": {
@@ -6255,17 +5913,13 @@ pillager
 
 polar_bear
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 2
 }
 ```
 
 ravager
-
-<CodeHeader>#component_groups/minecraft:hostile</CodeHeader>
 
 ```json
 "minecraft:behavior.hurt_by_target": {
@@ -6284,8 +5938,6 @@ ravager
 
 shulker
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
     "priority": 2,
@@ -6302,8 +5954,6 @@ shulker
 
 silverfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
     "priority": 1,
@@ -6313,37 +5963,59 @@ silverfish
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 1,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "breeze"
+            }
+        }
+    ]
 }
 ```
 
 spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 1,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "breeze"
+            }
+        }
+    ]
 }
 ```
 
 stray
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 1,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "breeze"
+            }
+        }
+    ]
 }
 ```
 
 trader_llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.hurt_by_target": {
@@ -6362,8 +6034,6 @@ trader_llama
 
 turtle
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
     "priority": 1
@@ -6371,8 +6041,6 @@ turtle
 ```
 
 vex
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.hurt_by_target": {
@@ -6382,17 +6050,22 @@ vex
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 1,
+    "entity_types": {
+        "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "illager"
+        },
+        "max_dist": 64
+    }
 }
 ```
 
 witch
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.hurt_by_target": {
@@ -6402,8 +6075,6 @@ witch
 
 wither
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
     "priority": 2
@@ -6411,8 +6082,6 @@ wither
 ```
 
 wither_skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.hurt_by_target": {
@@ -6422,8 +6091,6 @@ wither_skeleton
 
 wolf
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
     "priority": 3
@@ -6431,8 +6098,6 @@ wolf
 ```
 
 zoglin
-
-<CodeHeader>#component_groups/zoglin_adult</CodeHeader>
 
 ```json
 "minecraft:behavior.hurt_by_target": {
@@ -6442,17 +6107,23 @@ zoglin
 
 zombie
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 1,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "breeze"
+            }
+        }
+    ]
 }
 ```
 
 zombie_pigman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.hurt_by_target": {
@@ -6462,8 +6133,6 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
     "priority": 1
@@ -6472,29 +6141,19 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.hurt_by_target": {
     "priority": 1
 }
 ```
 
-</Spoiler>
-
 ## behavior.inspect_bookshelf
 
-<Spoiler title="Show">
-
 villager_v2
-
-<CodeHeader>#component_groups/job_specific_goals</CodeHeader>
 
 ```json
 "minecraft:behavior.inspect_bookshelf": {}
 ```
-
-<CodeHeader>#component_groups/work_schedule_librarian</CodeHeader>
 
 ```json
 "minecraft:behavior.inspect_bookshelf": {
@@ -6507,15 +6166,9 @@ villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.investigate_suspicious_location
 
-<Spoiler title="Show">
-
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.investigate_suspicious_location": {
@@ -6524,15 +6177,69 @@ warden
 }
 ```
 
-</Spoiler>
+## behavior.jump_around_target
+
+breeze
+
+```json
+"minecraft:behavior.jump_around_target": {
+    "priority": 5,
+    "filters": {
+        "all_of": [
+            {
+                "any_of": [
+                    {
+                        "test": "in_water",
+                        "value": true
+                    },
+                    {
+                        "test": "on_ground",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "test": "is_riding",
+                "value": false
+            },
+            {
+                "test": "in_lava",
+                "value": false
+            }
+        ]
+    },
+    "jump_cooldown_duration": 0.5,
+    "jump_cooldown_when_hurt_duration": 0.1,
+    "last_hurt_duration": 2.0,
+    "prepare_jump_duration": 0.5,
+    "max_jump_velocity": 1.4,
+    "check_collision": false,
+    "entity_bounding_box_scale": 0.7,
+    "line_of_sight_obstruction_height_ignore": 4,
+    "valid_distance_to_target": [
+        4.0,
+        20.0
+    ],
+    "landing_position_spread_degrees": 90,
+    "landing_distance_from_target": [
+        4.0,
+        8.0
+    ],
+    "required_vertical_space": 4,
+    "snap_to_surface_block_range": 10,
+    "jump_angles": [
+        40.0,
+        55.0,
+        60.0,
+        75.0,
+        80.0
+    ]
+}
+```
 
 ## behavior.jump_to_block
 
-<Spoiler title="Show">
-
 frog
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.jump_to_block": {
@@ -6560,8 +6267,6 @@ frog
 
 goat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.jump_to_block": {
     "priority": 8,
@@ -6577,15 +6282,9 @@ goat
 }
 ```
 
-</Spoiler>
-
 ## behavior.knockback_roar
 
-<Spoiler title="Show">
-
 ravager
-
-<CodeHeader>#component_groups/roaring</CodeHeader>
 
 ```json
 "minecraft:behavior.knockback_roar": {
@@ -6615,15 +6314,9 @@ ravager
 }
 ```
 
-</Spoiler>
-
 ## behavior.lay_down
 
-<Spoiler title="Show">
-
 panda
-
-<CodeHeader>#component_groups/minecraft:panda_lazy</CodeHeader>
 
 ```json
 "minecraft:behavior.lay_down": {
@@ -6633,15 +6326,9 @@ panda
 }
 ```
 
-</Spoiler>
-
 ## behavior.lay_egg
 
-<Spoiler title="Show">
-
 frog
-
-<CodeHeader>#component_groups/pregnant</CodeHeader>
 
 ```json
 "minecraft:behavior.lay_egg": {
@@ -6670,8 +6357,6 @@ frog
 
 turtle
 
-<CodeHeader>#component_groups/minecraft:wants_to_lay_egg</CodeHeader>
-
 ```json
 "minecraft:behavior.lay_egg": {
     "priority": 1,
@@ -6686,15 +6371,9 @@ turtle
 }
 ```
 
-</Spoiler>
-
 ## behavior.leap_at_target
 
-<Spoiler title="Show">
-
 cat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.leap_at_target": {
@@ -6705,8 +6384,6 @@ cat
 
 cave_spider
 
-<CodeHeader>#component_groups/minecraft:spider_hostile</CodeHeader>
-
 ```json
 "minecraft:behavior.leap_at_target": {
     "priority": 4,
@@ -6714,8 +6391,6 @@ cave_spider
     "must_be_on_ground": false
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:spider_angry</CodeHeader>
 
 ```json
 "minecraft:behavior.leap_at_target": {
@@ -6727,8 +6402,6 @@ cave_spider
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.leap_at_target": {
     "priority": 3,
@@ -6737,8 +6410,6 @@ ocelot
 ```
 
 spider
-
-<CodeHeader>#component_groups/minecraft:spider_angry</CodeHeader>
 
 ```json
 "minecraft:behavior.leap_at_target": {
@@ -6750,24 +6421,16 @@ spider
 
 wolf
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.leap_at_target": {
     "priority": 4,
-    "target_dist": 0.4
+    "yd": 0.4
 }
 ```
 
-</Spoiler>
-
 ## behavior.look_at_entity
 
-<Spoiler title="Show">
-
 evocation_illager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_entity": {
@@ -6783,8 +6446,6 @@ evocation_illager
 
 ravager
 
-<CodeHeader>#component_groups/minecraft:hostile</CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_entity": {
     "priority": 10,
@@ -6799,8 +6460,6 @@ ravager
 ```
 
 vex
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_entity": {
@@ -6815,15 +6474,9 @@ vex
 }
 ```
 
-</Spoiler>
-
 ## behavior.look_at_player
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -6833,9 +6486,19 @@ allay
 }
 ```
 
-axolotl
+armadillo
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.look_at_player": {
+    "priority": 7,
+    "target_distance": 6.0,
+    "probability": 0.02,
+    "min_look_time": 40,
+    "max_look_time": 80
+}
+```
+
+axolotl
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -6845,9 +6508,35 @@ axolotl
 }
 ```
 
-cat
+bogged
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.look_at_player": {
+    "priority": 7,
+    "look_distance": 8
+}
+```
+
+breeze
+
+```json
+"minecraft:behavior.look_at_player": {
+    "priority": 7,
+    "look_distance": 16
+}
+```
+
+camel
+
+```json
+"minecraft:behavior.look_at_player": {
+    "priority": 7,
+    "target_distance": 6.0,
+    "probability": 0.02
+}
+```
+
+cat
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -6856,8 +6545,6 @@ cat
 ```
 
 cave_spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -6869,8 +6556,6 @@ cave_spider
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 7,
@@ -6880,8 +6565,6 @@ chicken
 ```
 
 cow
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -6893,8 +6576,6 @@ cow
 
 creeper
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 6,
@@ -6904,8 +6585,6 @@ creeper
 
 dolphin
 
-<CodeHeader>#component_groups/dolphin_swimming_navigation</CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 8,
@@ -6914,8 +6593,6 @@ dolphin
 ```
 
 donkey
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -6927,8 +6604,6 @@ donkey
 
 drowned
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 8,
@@ -6938,8 +6613,6 @@ drowned
 ```
 
 elder_guardian
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -6951,8 +6624,6 @@ elder_guardian
 
 enderman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 8,
@@ -6962,8 +6633,6 @@ enderman
 ```
 
 evocation_illager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -6975,8 +6644,6 @@ evocation_illager
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 14,
@@ -6986,8 +6653,6 @@ fox
 ```
 
 frog
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -6999,8 +6664,6 @@ frog
 
 goat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 10,
@@ -7010,8 +6673,6 @@ goat
 ```
 
 guardian
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7023,8 +6684,6 @@ guardian
 
 hoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 8,
@@ -7034,8 +6693,6 @@ hoglin
 ```
 
 horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7047,8 +6704,6 @@ horse
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 8,
@@ -7058,8 +6713,6 @@ husk
 ```
 
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7071,8 +6724,6 @@ iron_golem
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 7,
@@ -7082,8 +6733,6 @@ llama
 ```
 
 mooshroom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7095,8 +6744,6 @@ mooshroom
 
 mule
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 7,
@@ -7106,8 +6753,6 @@ mule
 ```
 
 npc
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7119,8 +6764,6 @@ npc
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 9
@@ -7128,8 +6771,6 @@ ocelot
 ```
 
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7141,18 +6782,14 @@ panda
 
 parrot
 
-<CodeHeader>#component_groups/minecraft:parrot_not_riding_player</CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
-    "priority": 1,
+    "priority": 2,
     "look_distance": 8.0
 }
 ```
 
 pig
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7164,8 +6801,6 @@ pig
 
 piglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 11,
@@ -7174,8 +6809,6 @@ piglin
 ```
 
 piglin_brute
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7186,8 +6819,6 @@ piglin_brute
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 9,
@@ -7196,8 +6827,6 @@ pillager
 ```
 
 polar_bear
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7209,8 +6838,6 @@ polar_bear
 
 rabbit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 11
@@ -7218,8 +6845,6 @@ rabbit
 ```
 
 ravager
-
-<CodeHeader>#component_groups/minecraft:hostile</CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7232,8 +6857,6 @@ ravager
 
 sheep
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 8,
@@ -7243,8 +6866,6 @@ sheep
 ```
 
 shulker
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7256,8 +6877,6 @@ shulker
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 7,
@@ -7267,8 +6886,6 @@ skeleton
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 7,
@@ -7277,9 +6894,17 @@ skeleton_horse
 }
 ```
 
-snow_golem
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.look_at_player": {
+    "priority": 8,
+    "target_distance": 6.0,
+    "probability": 0.02
+}
+```
+
+snow_golem
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7289,8 +6914,6 @@ snow_golem
 ```
 
 spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7302,8 +6925,6 @@ spider
 
 stray
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 7,
@@ -7312,8 +6933,6 @@ stray
 ```
 
 strider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7325,8 +6944,6 @@ strider
 
 tadpole
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 3,
@@ -7336,8 +6953,6 @@ tadpole
 ```
 
 trader_llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7349,8 +6964,6 @@ trader_llama
 
 turtle
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 8,
@@ -7361,8 +6974,6 @@ turtle
 
 vex
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 9,
@@ -7372,8 +6983,6 @@ vex
 ```
 
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7385,8 +6994,6 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 9,
@@ -7397,8 +7004,6 @@ villager_v2
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 10,
@@ -7408,8 +7013,6 @@ vindicator
 ```
 
 wandering_trader
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7421,18 +7024,14 @@ wandering_trader
 
 witch
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 5,
-    "look_distance": 8.0
+    "look_distance": 16.0
 }
 ```
 
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7443,8 +7042,6 @@ wither
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 7,
@@ -7453,8 +7050,6 @@ wither_skeleton
 ```
 
 wolf
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7466,8 +7061,6 @@ wolf
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 8,
@@ -7477,8 +7070,6 @@ zoglin
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7490,8 +7081,6 @@ zombie
 
 zombie_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 7,
@@ -7501,8 +7090,6 @@ zombie_horse
 ```
 
 zombie_pigman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_player": {
@@ -7514,8 +7101,6 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 10,
@@ -7526,8 +7111,6 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 10,
@@ -7536,15 +7119,9 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.look_at_target
 
-<Spoiler title="Show">
-
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_target": {
@@ -7552,15 +7129,9 @@ wither
 }
 ```
 
-</Spoiler>
-
 ## behavior.look_at_trading_player
 
-<Spoiler title="Show">
-
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.look_at_trading_player": {
@@ -7570,8 +7141,6 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_trading_player": {
     "priority": 7
@@ -7580,23 +7149,15 @@ villager_v2
 
 wandering_trader
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.look_at_trading_player": {
     "priority": 4
 }
 ```
 
-</Spoiler>
-
 ## behavior.make_love
 
-<Spoiler title="Show">
-
 villager
-
-<CodeHeader>#component_groups/adult</CodeHeader>
 
 ```json
 "minecraft:behavior.make_love": {
@@ -7606,26 +7167,31 @@ villager
 
 villager_v2
 
-<CodeHeader>#component_groups/make_and_receive_love</CodeHeader>
-
 ```json
 "minecraft:behavior.make_love": {
     "priority": 5
 }
 ```
 
-</Spoiler>
-
 ## behavior.melee_attack
 
-<Spoiler title="Show">
-
-axolotl
-
-<CodeHeader></CodeHeader>
+creeper
 
 ```json
 "minecraft:behavior.melee_attack": {
+    "priority": 4,
+    "speed_multiplier": 1.25,
+    "track_target": false,
+    "reach_multiplier": 0.0
+}
+```
+
+## behavior.melee_box_attack
+
+axolotl
+
+```json
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "on_kill": {
         "event": "killed_enemy_event",
@@ -7636,10 +7202,8 @@ axolotl
 
 bee
 
-<CodeHeader>#component_groups/angry_bee</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 2,
     "attack_once": true,
     "speed_multiplier": 1.4,
@@ -7652,56 +7216,52 @@ bee
 
 blaze
 
-<CodeHeader>#component_groups/melee_mode</CodeHeader>
+```json
+"minecraft:behavior.melee_box_attack": {
+    "priority": 3
+}
+```
+
+bogged
 
 ```json
-"minecraft:behavior.melee_attack": {
-    "priority": 3
+"minecraft:behavior.melee_box_attack": {
+    "priority": 4,
+    "track_target": true,
+    "speed_multiplier": 1.25
 }
 ```
 
 cave_spider
 
-<CodeHeader>#component_groups/minecraft:spider_hostile</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 3,
     "track_target": true,
-    "random_stop_interval": 100,
-    "reach_multiplier": 0.8
+    "random_stop_interval": 100
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:spider_angry</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 3,
-    "track_target": true,
-    "reach_multiplier": 1.4
+    "track_target": true
 }
 ```
 
-creeper
-
-<CodeHeader></CodeHeader>
+creaking
 
 ```json
-"minecraft:behavior.melee_attack": {
-    "priority": 4,
-    "speed_multiplier": 1.25,
-    "track_target": false,
-    "reach_multiplier": 0.0
+"minecraft:behavior.melee_box_attack": {
+    "priority": 2,
+    "cooldown_time": 2.0
 }
 ```
 
 dolphin
 
-<CodeHeader>#component_groups/dolphin_adult</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 2,
     "track_target": true
 }
@@ -7709,10 +7269,9 @@ dolphin
 
 drowned
 
-<CodeHeader>#component_groups/minecraft:melee_mode</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
+    "can_spread_on_fire": true,
     "priority": 3,
     "speed_multiplier": 1,
     "track_target": false,
@@ -7722,20 +7281,16 @@ drowned
 
 enderman
 
-<CodeHeader>#component_groups/minecraft:enderman_angry</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 2
 }
 ```
 
 endermite
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 3,
     "track_target": true
 }
@@ -7743,70 +7298,55 @@ endermite
 
 fox
 
-<CodeHeader>#component_groups/minecraft:docile_fox</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 10,
     "track_target": true,
-    "require_complete_path": true,
-    "reach_multiplier": 1.5
+    "require_complete_path": true
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:defending_fox</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 1,
     "track_target": true,
-    "require_complete_path": true,
-    "reach_multiplier": 1.5
+    "require_complete_path": true
 }
 ```
 
 hoglin
 
-<CodeHeader>#component_groups/minecraft:hoglin_baby</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "speed_multiplier": 1,
     "track_target": true,
-    "reach_multiplier": 1.0,
     "cooldown_time": 0.75
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:hoglin_adult</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "speed_multiplier": 1,
     "track_target": true,
-    "reach_multiplier": 2.15,
     "cooldown_time": 2
 }
 ```
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
+    "can_spread_on_fire": true,
     "priority": 3
 }
 ```
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 1,
     "track_target": true
 }
@@ -7814,33 +7354,25 @@ iron_golem
 
 panda
 
-<CodeHeader>#component_groups/minecraft:panda_adult</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 2,
     "attack_once": true,
-    "track_target": true,
-    "reach_multiplier": 1.0
+    "track_target": true
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:panda_aggressive</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 2,
-    "track_target": true,
-    "reach_multiplier": 1.0
+    "track_target": true
 }
 ```
 
 piglin
 
-<CodeHeader>#component_groups/melee_unit</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 8,
     "speed_multiplier": 1.0,
     "track_target": true
@@ -7849,10 +7381,8 @@ piglin
 
 piglin_brute
 
-<CodeHeader>#component_groups/melee_unit</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "speed_multiplier": 1,
     "track_target": true
@@ -7861,10 +7391,8 @@ piglin_brute
 
 pillager
 
-<CodeHeader>#component_groups/minecraft:melee_attack</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "track_target": true
 }
@@ -7872,10 +7400,8 @@ pillager
 
 silverfish
 
-<CodeHeader>#component_groups/minecraft:silverfish_angry</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "track_target": true
 }
@@ -7883,10 +7409,8 @@ silverfish
 
 skeleton
 
-<CodeHeader>#component_groups/minecraft:melee_attack</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "track_target": true,
     "speed_multiplier": 1.25
@@ -7895,22 +7419,17 @@ skeleton
 
 spider
 
-<CodeHeader>#component_groups/minecraft:spider_angry</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 3,
-    "track_target": true,
-    "reach_multiplier": 0.8
+    "track_target": true
 }
 ```
 
 stray
 
-<CodeHeader>#component_groups/minecraft:melee_attack</CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "track_target": true,
     "speed_multiplier": 1.25
@@ -7919,20 +7438,16 @@ stray
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 3
 }
 ```
 
 warden
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "speed_multiplier": 1.2,
     "melee_fov": 360
@@ -7941,10 +7456,8 @@ warden
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "track_target": true,
     "speed_multiplier": 1.25
@@ -7953,22 +7466,17 @@ wither_skeleton
 
 wolf
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 5
 }
 ```
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
-    "reach_multiplier": 2.15,
     "speed_multiplier": 1.4,
     "track_target": true
 }
@@ -7976,20 +7484,17 @@ zoglin
 
 zombie
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
+    "can_spread_on_fire": true,
     "priority": 3
 }
 ```
 
 zombie_pigman
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "speed_multiplier": 1.5
 }
@@ -7997,39 +7502,29 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
+    "can_spread_on_fire": true,
     "priority": 6
 }
 ```
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
+    "can_spread_on_fire": true,
     "priority": 6
 }
 ```
 
-</Spoiler>
-
 ## behavior.mingle
 
-<Spoiler title="Show">
-
 villager_v2
-
-<CodeHeader>#component_groups/job_specific_goals</CodeHeader>
 
 ```json
 "minecraft:behavior.mingle": {}
 ```
-
-<CodeHeader>#component_groups/gather_schedule_villager</CodeHeader>
 
 ```json
 "minecraft:behavior.mingle": {
@@ -8042,15 +7537,9 @@ villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.mount_pathing
 
-<Spoiler title="Show">
-
 cat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.mount_pathing": {
@@ -8063,8 +7552,6 @@ cat
 
 cave_spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.mount_pathing": {
     "priority": 5,
@@ -8075,8 +7562,6 @@ cave_spider
 ```
 
 chicken
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.mount_pathing": {
@@ -8089,8 +7574,6 @@ chicken
 
 cow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.mount_pathing": {
     "priority": 2,
@@ -8101,8 +7584,6 @@ cow
 ```
 
 donkey
-
-<CodeHeader>#component_groups/minecraft:donkey_wild</CodeHeader>
 
 ```json
 "minecraft:behavior.mount_pathing": {
@@ -8115,8 +7596,6 @@ donkey
 
 horse
 
-<CodeHeader>#component_groups/minecraft:horse_wild</CodeHeader>
-
 ```json
 "minecraft:behavior.mount_pathing": {
     "priority": 2,
@@ -8127,8 +7606,6 @@ horse
 ```
 
 husk
-
-<CodeHeader>#component_groups/minecraft:zombie_husk_adult</CodeHeader>
 
 ```json
 "minecraft:behavior.mount_pathing": {
@@ -8141,8 +7618,6 @@ husk
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.mount_pathing": {
     "priority": 1,
@@ -8153,8 +7628,6 @@ llama
 ```
 
 mooshroom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.mount_pathing": {
@@ -8167,8 +7640,6 @@ mooshroom
 
 mule
 
-<CodeHeader>#component_groups/minecraft:mule_wild</CodeHeader>
-
 ```json
 "minecraft:behavior.mount_pathing": {
     "priority": 2,
@@ -8179,8 +7650,6 @@ mule
 ```
 
 ocelot
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.mount_pathing": {
@@ -8193,8 +7662,6 @@ ocelot
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.mount_pathing": {
     "priority": 5,
@@ -8205,8 +7672,6 @@ panda
 ```
 
 pig
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.mount_pathing": {
@@ -8219,8 +7684,6 @@ pig
 
 ravager
 
-<CodeHeader>#component_groups/minecraft:hostile</CodeHeader>
-
 ```json
 "minecraft:behavior.mount_pathing": {
     "priority": 5,
@@ -8231,8 +7694,6 @@ ravager
 ```
 
 sheep
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.mount_pathing": {
@@ -8245,8 +7706,6 @@ sheep
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.mount_pathing": {
     "priority": 2,
@@ -8257,8 +7716,6 @@ skeleton_horse
 ```
 
 spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.mount_pathing": {
@@ -8271,8 +7728,6 @@ spider
 
 trader_llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.mount_pathing": {
     "priority": 1,
@@ -8283,8 +7738,6 @@ trader_llama
 ```
 
 wolf
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.mount_pathing": {
@@ -8297,8 +7750,6 @@ wolf
 
 zombie
 
-<CodeHeader>#component_groups/minecraft:zombie_adult</CodeHeader>
-
 ```json
 "minecraft:behavior.mount_pathing": {
     "priority": 2,
@@ -8309,8 +7760,6 @@ zombie
 ```
 
 zombie_horse
-
-<CodeHeader>#component_groups/minecraft:horse_adult</CodeHeader>
 
 ```json
 "minecraft:behavior.mount_pathing": {
@@ -8323,8 +7772,6 @@ zombie_horse
 
 zombie_pigman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.mount_pathing": {
     "priority": 2,
@@ -8335,8 +7782,6 @@ zombie_pigman
 ```
 
 zombie_villager
-
-<CodeHeader>#component_groups/adult</CodeHeader>
 
 ```json
 "minecraft:behavior.mount_pathing": {
@@ -8349,8 +7794,6 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader>#component_groups/adult</CodeHeader>
-
 ```json
 "minecraft:behavior.mount_pathing": {
     "priority": 5,
@@ -8360,15 +7803,39 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
+## behavior.move_around_target
+
+breeze
+
+```json
+"minecraft:behavior.move_around_target": {
+    "priority": 3,
+    "destination_position_range": [
+        4.0,
+        8.0
+    ],
+    "movement_speed": 1.2,
+    "destination_pos_spread_degrees": 360,
+    "filters": {
+        "all_of": [
+            {
+                "test": "on_ground",
+                "value": true
+            },
+            {
+                "test": "target_distance",
+                "subject": "self",
+                "value": 24.0,
+                "operator": "<="
+            }
+        ]
+    }
+}
+```
 
 ## behavior.move_indoors
 
-<Spoiler title="Show">
-
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.move_indoors": {
@@ -8379,8 +7846,6 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.move_indoors": {
     "priority": 6,
@@ -8389,15 +7854,9 @@ villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.move_outdoors
 
-<Spoiler title="Show">
-
 villager
-
-<CodeHeader>#component_groups/minecraft:celebrate</CodeHeader>
 
 ```json
 "minecraft:behavior.move_outdoors": {
@@ -8409,8 +7868,6 @@ villager
 
 villager_v2
 
-<CodeHeader>#component_groups/minecraft:celebrate</CodeHeader>
-
 ```json
 "minecraft:behavior.move_outdoors": {
     "priority": 2,
@@ -8419,15 +7876,9 @@ villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.move_through_village
 
-<Spoiler title="Show">
-
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.move_through_village": {
@@ -8437,15 +7888,9 @@ iron_golem
 }
 ```
 
-</Spoiler>
-
 ## behavior.move_to_block
 
-<Spoiler title="Show">
-
 bee
-
-<CodeHeader>#component_groups/look_for_food</CodeHeader>
 
 ```json
 "minecraft:behavior.move_to_block": {
@@ -8469,16 +7914,31 @@ bee
         "value": false
     },
     "target_blocks": [
-        "minecraft:red_flower",
-        "minecraft:yellow_flower",
+        "minecraft:poppy",
+        "minecraft:blue_orchid",
+        "minecraft:allium",
+        "minecraft:azure_bluet",
+        "minecraft:red_tulip",
+        "minecraft:orange_tulip",
+        "minecraft:white_tulip",
+        "minecraft:pink_tulip",
+        "minecraft:oxeye_daisy",
+        "minecraft:cornflower",
+        "minecraft:lily_of_the_valley",
+        "minecraft:dandelion",
         "minecraft:wither_rose",
-        "minecraft:double_plant:8",
-        "minecraft:double_plant:9",
-        "minecraft:double_plant:12",
-        "minecraft:double_plant:13",
+        "minecraft:sunflower",
+        "minecraft:lilac",
+        "minecraft:rose_bush",
+        "minecraft:peony",
         "minecraft:flowering_azalea",
         "minecraft:azalea_leaves_flowered",
-        "minecraft:mangrove_propagule"
+        "minecraft:mangrove_propagule",
+        "minecraft:pitcher_plant",
+        "minecraft:torchflower",
+        "minecraft:cherry_leaves",
+        "minecraft:pink_petals",
+        "minecraft:open_eyeblossom"
     ],
     "on_stay_completed": [
         {
@@ -8488,8 +7948,6 @@ bee
     ]
 }
 ```
-
-<CodeHeader>#component_groups/find_hive</CodeHeader>
 
 ```json
 "minecraft:behavior.move_to_block": {
@@ -8511,15 +7969,9 @@ bee
 }
 ```
 
-</Spoiler>
-
 ## behavior.move_to_land
 
-<Spoiler title="Show">
-
 frog
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.move_to_land": {
@@ -8533,8 +7985,6 @@ frog
 
 turtle
 
-<CodeHeader>#component_groups/minecraft:adult</CodeHeader>
-
 ```json
 "minecraft:behavior.move_to_land": {
     "priority": 6,
@@ -8544,15 +7994,9 @@ turtle
 }
 ```
 
-</Spoiler>
-
 ## behavior.move_to_liquid
 
-<Spoiler title="Show">
-
 strider
-
-<CodeHeader>#component_groups/minecraft:strider_pathing_behaviors</CodeHeader>
 
 ```json
 "minecraft:behavior.move_to_liquid": {
@@ -8565,15 +8009,9 @@ strider
 }
 ```
 
-</Spoiler>
-
 ## behavior.move_to_random_block
 
-<Spoiler title="Show">
-
 pillager
-
-<CodeHeader>#component_groups/minecraft:patrol_captain</CodeHeader>
 
 ```json
 "minecraft:behavior.move_to_random_block": {
@@ -8586,8 +8024,6 @@ pillager
 
 vindicator
 
-<CodeHeader>#component_groups/minecraft:patrol_captain</CodeHeader>
-
 ```json
 "minecraft:behavior.move_to_random_block": {
     "priority": 5,
@@ -8597,15 +8033,9 @@ vindicator
 }
 ```
 
-</Spoiler>
-
 ## behavior.move_to_village
 
-<Spoiler title="Show">
-
 evocation_illager
-
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
 
 ```json
 "minecraft:behavior.move_to_village": {
@@ -8615,8 +8045,6 @@ evocation_illager
 ```
 
 pillager
-
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
 
 ```json
 "minecraft:behavior.move_to_village": {
@@ -8628,8 +8056,6 @@ pillager
 
 ravager
 
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
-
 ```json
 "minecraft:behavior.move_to_village": {
     "priority": 5,
@@ -8639,8 +8065,6 @@ ravager
 ```
 
 vindicator
-
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
 
 ```json
 "minecraft:behavior.move_to_village": {
@@ -8652,8 +8076,6 @@ vindicator
 
 witch
 
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
-
 ```json
 "minecraft:behavior.move_to_village": {
     "priority": 3,
@@ -8662,15 +8084,9 @@ witch
 }
 ```
 
-</Spoiler>
-
 ## behavior.move_to_water
 
-<Spoiler title="Show">
-
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.move_to_water": {
@@ -8684,8 +8100,6 @@ axolotl
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.move_to_water": {
     "priority": 1,
@@ -8695,8 +8109,6 @@ dolphin
 ```
 
 frog
-
-<CodeHeader>#component_groups/pregnant</CodeHeader>
 
 ```json
 "minecraft:behavior.move_to_water": {
@@ -8709,8 +8121,6 @@ frog
 
 turtle
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.move_to_water": {
     "priority": 4,
@@ -8719,8 +8129,6 @@ turtle
     "goal_radius": 1.5
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:baby</CodeHeader>
 
 ```json
 "minecraft:behavior.move_to_water": {
@@ -8731,15 +8139,9 @@ turtle
 }
 ```
 
-</Spoiler>
-
 ## behavior.move_towards_dwelling_restriction
 
-<Spoiler title="Show">
-
 cat
-
-<CodeHeader>#component_groups/minecraft:cat_wild</CodeHeader>
 
 ```json
 "minecraft:behavior.move_towards_dwelling_restriction": {
@@ -8748,8 +8150,6 @@ cat
 ```
 
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.move_towards_dwelling_restriction": {
@@ -8760,8 +8160,6 @@ iron_golem
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.move_towards_dwelling_restriction": {
     "priority": 11,
@@ -8769,15 +8167,9 @@ villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.move_towards_home_restriction
 
-<Spoiler title="Show">
-
 bee
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.move_towards_home_restriction": {
@@ -8786,8 +8178,6 @@ bee
 ```
 
 elder_guardian
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.move_towards_home_restriction": {
@@ -8798,8 +8188,6 @@ elder_guardian
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.move_towards_home_restriction": {
     "priority": 5,
@@ -8809,8 +8197,6 @@ guardian
 
 wandering_trader
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.move_towards_home_restriction": {
     "priority": 6,
@@ -8818,15 +8204,9 @@ wandering_trader
 }
 ```
 
-</Spoiler>
-
 ## behavior.move_towards_target
 
-<Spoiler title="Show">
-
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.move_towards_target": {
@@ -8836,15 +8216,9 @@ iron_golem
 }
 ```
 
-</Spoiler>
-
 ## behavior.nap
 
-<Spoiler title="Show">
-
 fox
-
-<CodeHeader>#component_groups/minecraft:fox_day</CodeHeader>
 
 ```json
 "minecraft:behavior.nap": {
@@ -8906,15 +8280,9 @@ fox
 }
 ```
 
-</Spoiler>
-
 ## behavior.nearest_attackable_target
 
-<Spoiler title="Show">
-
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -8998,8 +8366,6 @@ axolotl
 
 bee
 
-<CodeHeader>#component_groups/take_nearest_target</CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 2,
@@ -9018,8 +8384,6 @@ bee
 
 blaze
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 2,
@@ -9037,9 +8401,82 @@ blaze
 }
 ```
 
-cat
+bogged
 
-<CodeHeader>#component_groups/minecraft:cat_wild</CodeHeader>
+```json
+"minecraft:behavior.nearest_attackable_target": {
+    "priority": 2,
+    "must_see": true,
+    "reselect_targets": true,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+            },
+            "max_dist": 16
+        },
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "irongolem"
+            },
+            "max_dist": 16
+        },
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "baby_turtle"
+                    },
+                    {
+                        "test": "in_water",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": true
+                    }
+                ]
+            },
+            "max_dist": 16
+        }
+    ]
+}
+```
+
+breeze
+
+```json
+"minecraft:behavior.nearest_attackable_target": {
+    "priority": 1,
+    "within_radius": 24,
+    "scan_interval": 10,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+            },
+            "max_dist": 24
+        },
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "irongolem"
+            },
+            "max_dist": 24
+        }
+    ],
+    "must_see": true
+}
+```
+
+cat
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -9079,8 +8516,6 @@ cat
 
 cave_spider
 
-<CodeHeader>#component_groups/minecraft:spider_hostile</CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 2,
@@ -9112,8 +8547,6 @@ cave_spider
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:spider_angry</CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -9149,8 +8582,6 @@ cave_spider
 
 creeper
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 1,
@@ -9170,8 +8601,6 @@ creeper
 ```
 
 drowned
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -9285,8 +8714,6 @@ drowned
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 1,
@@ -9321,8 +8748,6 @@ elder_guardian
 
 enderman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 5,
@@ -9342,8 +8767,6 @@ enderman
 ```
 
 endermite
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -9373,8 +8796,6 @@ endermite
 ```
 
 evocation_illager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -9432,8 +8853,6 @@ evocation_illager
 
 frog
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 8,
@@ -9482,8 +8901,6 @@ frog
 
 ghast
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 2,
@@ -9502,8 +8919,6 @@ ghast
 ```
 
 goat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -9536,8 +8951,6 @@ goat
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 1,
@@ -9569,8 +8982,6 @@ guardian
     "must_see": true
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:guardian_aggressive</CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -9606,8 +9017,6 @@ guardian
 
 hoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 4,
@@ -9637,8 +9046,6 @@ hoglin
 ```
 
 husk
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -9711,8 +9118,6 @@ husk
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 3,
@@ -9777,8 +9182,6 @@ iron_golem
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 2,
@@ -9810,8 +9213,6 @@ llama
 
 magma_cube
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 2,
@@ -9839,8 +9240,6 @@ magma_cube
 ```
 
 ocelot
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -9879,8 +9278,6 @@ ocelot
 
 phantom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 1,
@@ -9903,8 +9300,6 @@ phantom
 ```
 
 piglin
-
-<CodeHeader>#component_groups/alert_for_attack_targets</CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -10012,8 +9407,6 @@ piglin
 }
 ```
 
-<CodeHeader>#component_groups/take_target_as_response_to_block_break</CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 7,
@@ -10032,8 +9425,6 @@ piglin
 
 piglin_brute
 
-<CodeHeader>#component_groups/take_target_as_response_to_block_break</CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 3,
@@ -10051,8 +9442,6 @@ piglin_brute
 ```
 
 pillager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -10107,8 +9496,6 @@ pillager
 
 polar_bear
 
-<CodeHeader>#component_groups/minecraft:baby_wild</CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 4,
@@ -10124,8 +9511,6 @@ polar_bear
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:adult_wild</CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -10145,8 +9530,6 @@ polar_bear
 ```
 
 ravager
-
-<CodeHeader>#component_groups/minecraft:hostile</CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -10200,8 +9583,6 @@ ravager
 
 shulker
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 3,
@@ -10218,8 +9599,6 @@ shulker
 ```
 
 silverfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -10253,8 +9632,6 @@ silverfish
 ```
 
 skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -10302,8 +9679,6 @@ skeleton
 
 slime
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 2,
@@ -10337,8 +9712,6 @@ slime
 
 snow_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 1,
@@ -10356,8 +9729,6 @@ snow_golem
 ```
 
 spider
-
-<CodeHeader>#component_groups/minecraft:spider_hostile</CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -10392,8 +9763,6 @@ spider
 ```
 
 stray
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -10441,8 +9810,6 @@ stray
 
 trader_llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 2,
@@ -10473,8 +9840,6 @@ trader_llama
 ```
 
 vex
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -10527,8 +9892,6 @@ vex
 
 vindicator
 
-<CodeHeader>#component_groups/minecraft:vindicator_johnny</CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 2,
@@ -10538,22 +9901,16 @@ vindicator
     "entity_types": [
         {
             "filters": {
-                "all_of": [
-                    {
-                        "test": "is_family",
-                        "subject": "other",
-                        "operator": "!=",
-                        "value": "illager"
-                    }
-                ]
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "illager"
             },
             "max_dist": 12
         }
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:default_targeting</CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -10611,44 +9968,7 @@ vindicator
 }
 ```
 
-witch
-
-<CodeHeader></CodeHeader>
-
-```json
-"minecraft:behavior.nearest_attackable_target": {
-    "priority": 2,
-    "entity_types": [
-        {
-            "filters": {
-                "any_of": [
-                    {
-                        "test": "is_family",
-                        "subject": "other",
-                        "value": "player"
-                    },
-                    {
-                        "test": "is_family",
-                        "subject": "other",
-                        "value": "snowgolem"
-                    },
-                    {
-                        "test": "is_family",
-                        "subject": "other",
-                        "value": "irongolem"
-                    }
-                ]
-            },
-            "max_dist": 10
-        }
-    ],
-    "must_reach": true
-}
-```
-
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -10687,8 +10007,6 @@ wither
 ```
 
 wither_skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -10752,8 +10070,6 @@ wither_skeleton
 ```
 
 wolf
-
-<CodeHeader>#component_groups/minecraft:wolf_wild</CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -10828,8 +10144,6 @@ wolf
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:wolf_tame</CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 5,
@@ -10848,8 +10162,6 @@ wolf
 ```
 
 zoglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -10881,8 +10193,6 @@ zoglin
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_attackable_target": {
@@ -10956,8 +10266,6 @@ zombie
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 2,
@@ -11028,8 +10336,6 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.nearest_attackable_target": {
     "priority": 2,
@@ -11090,15 +10396,9 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.nearest_prioritized_attackable_target
 
-<Spoiler title="Show">
-
 fox
-
-<CodeHeader>#component_groups/minecraft:fox_red</CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_prioritized_attackable_target": {
@@ -11174,8 +10474,6 @@ fox
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:fox_arctic</CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_prioritized_attackable_target": {
@@ -11253,8 +10551,6 @@ fox
 ```
 
 piglin_brute
-
-<CodeHeader>#component_groups/alert_for_attack_targets</CodeHeader>
 
 ```json
 "minecraft:behavior.nearest_prioritized_attackable_target": {
@@ -11285,15 +10581,71 @@ piglin_brute
 }
 ```
 
-</Spoiler>
+witch
+
+```json
+"minecraft:behavior.nearest_prioritized_attackable_target": {
+    "priority": 2,
+    "entity_types": [
+        {
+            "filters": {
+                "any_of": [
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "player"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "snowgolem"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "irongolem"
+                    }
+                ]
+            },
+            "priority": 1,
+            "max_dist": 10
+        },
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "is_raider",
+                        "subject": "other",
+                        "value": true
+                    },
+                    {
+                        "test": "is_raider",
+                        "subject": "self",
+                        "value": true
+                    },
+                    {
+                        "none_of": [
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "witch"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "priority": 2,
+            "cooldown": 10,
+            "max_dist": 10
+        }
+    ],
+    "must_reach": true
+}
+```
 
 ## behavior.ocelot_sit_on_block
 
-<Spoiler title="Show">
-
 cat
-
-<CodeHeader>#component_groups/minecraft:cat_tame</CodeHeader>
 
 ```json
 "minecraft:behavior.ocelot_sit_on_block": {
@@ -11304,8 +10656,6 @@ cat
 
 ocelot
 
-<CodeHeader>#component_groups/minecraft:ocelot_tame</CodeHeader>
-
 ```json
 "minecraft:behavior.ocelot_sit_on_block": {
     "priority": 6,
@@ -11313,15 +10663,9 @@ ocelot
 }
 ```
 
-</Spoiler>
-
 ## behavior.ocelotattack
 
-<Spoiler title="Show">
-
 cat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.ocelotattack": {
@@ -11341,8 +10685,6 @@ cat
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.ocelotattack": {
     "priority": 4,
@@ -11359,31 +10701,27 @@ ocelot
 }
 ```
 
-</Spoiler>
-
 ## behavior.offer_flower
-
-<Spoiler title="Show">
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.offer_flower": {
-    "priority": 5
+    "priority": 5,
+    "filters": {
+        "all_of": [
+            {
+                "test": "is_daytime",
+                "value": true
+            }
+        ]
+    }
 }
 ```
 
-</Spoiler>
-
 ## behavior.open_door
 
-<Spoiler title="Show">
-
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.open_door": {
@@ -11392,15 +10730,9 @@ villager
 }
 ```
 
-</Spoiler>
-
 ## behavior.owner_hurt_by_target
 
-<Spoiler title="Show">
-
 wolf
-
-<CodeHeader>#component_groups/minecraft:wolf_tame</CodeHeader>
 
 ```json
 "minecraft:behavior.owner_hurt_by_target": {
@@ -11408,15 +10740,9 @@ wolf
 }
 ```
 
-</Spoiler>
-
 ## behavior.owner_hurt_target
 
-<Spoiler title="Show">
-
 wolf
-
-<CodeHeader>#component_groups/minecraft:wolf_tame</CodeHeader>
 
 ```json
 "minecraft:behavior.owner_hurt_target": {
@@ -11424,15 +10750,9 @@ wolf
 }
 ```
 
-</Spoiler>
-
 ## behavior.panic
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.panic": {
@@ -11441,9 +10761,17 @@ allay
 }
 ```
 
-bee
+armadillo
 
-<CodeHeader>#component_groups/escape_fire</CodeHeader>
+```json
+"minecraft:behavior.panic": {
+    "priority": 1,
+    "ignore_mob_damage": true,
+    "speed_multiplier": 2.0
+}
+```
+
+bee
 
 ```json
 "minecraft:behavior.panic": {
@@ -11453,19 +10781,24 @@ bee
 }
 ```
 
-<CodeHeader>#component_groups/countdown_to_perish</CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 1,
     "speed_multiplier": 1.25,
     "force": true
+}
+```
+
+camel
+
+```json
+"minecraft:behavior.panic": {
+    "priority": 1,
+    "speed_multiplier": 4
 }
 ```
 
 cat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.panic": {
@@ -11476,8 +10809,6 @@ cat
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 1,
@@ -11486,8 +10817,6 @@ chicken
 ```
 
 cow
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.panic": {
@@ -11498,8 +10827,6 @@ cow
 
 dolphin
 
-<CodeHeader>#component_groups/dolphin_baby</CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 1,
@@ -11508,8 +10835,6 @@ dolphin
 ```
 
 donkey
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.panic": {
@@ -11520,16 +10845,12 @@ donkey
 
 fox
 
-<CodeHeader>#component_groups/minecraft:docile_fox</CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 1,
     "speed_multiplier": 1.25
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:defending_fox</CodeHeader>
 
 ```json
 "minecraft:behavior.panic": {
@@ -11540,8 +10861,6 @@ fox
 
 frog
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 1,
@@ -11550,8 +10869,6 @@ frog
 ```
 
 goat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.panic": {
@@ -11562,8 +10879,6 @@ goat
 
 hoglin
 
-<CodeHeader>#component_groups/minecraft:hoglin_baby</CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 1,
@@ -11572,8 +10887,6 @@ hoglin
 ```
 
 horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.panic": {
@@ -11584,8 +10897,6 @@ horse
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 4,
@@ -11594,8 +10905,6 @@ llama
 ```
 
 mooshroom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.panic": {
@@ -11606,8 +10915,6 @@ mooshroom
 
 mule
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 1,
@@ -11616,8 +10923,6 @@ mule
 ```
 
 ocelot
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.panic": {
@@ -11628,16 +10933,12 @@ ocelot
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 1,
     "speed_multiplier": 1.25
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:panda_lazy</CodeHeader>
 
 ```json
 "minecraft:behavior.panic": {
@@ -11646,30 +10947,35 @@ panda
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:panda_aggressive</CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 1,
     "speed_multiplier": 1.25,
+    "damage_sources": [
+        "campfire",
+        "fire",
+        "fire_tick",
+        "freezing",
+        "lightning",
+        "lava",
+        "magma",
+        "temperature",
+        "soul_campfire"
+    ],
     "ignore_mob_damage": true
 }
 ```
 
 parrot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
-    "priority": 0,
+    "priority": 1,
     "speed_multiplier": 1.25
 }
 ```
 
 pig
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.panic": {
@@ -11680,8 +10986,6 @@ pig
 
 piglin
 
-<CodeHeader>#component_groups/piglin_baby</CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 1,
@@ -11689,9 +10993,28 @@ piglin
 }
 ```
 
-rabbit
+polar_bear
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.panic": {
+    "priority": 1,
+    "speed_multiplier": 1.25,
+    "damage_sources": [
+        "campfire",
+        "fire",
+        "fire_tick",
+        "freezing",
+        "lightning",
+        "lava",
+        "magma",
+        "temperature",
+        "soul_campfire"
+    ],
+    "ignore_mob_damage": true
+}
+```
+
+rabbit
 
 ```json
 "minecraft:behavior.panic": {
@@ -11702,8 +11025,6 @@ rabbit
 
 sheep
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 1,
@@ -11713,8 +11034,6 @@ sheep
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 1,
@@ -11722,9 +11041,16 @@ skeleton_horse
 }
 ```
 
-strider
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.panic": {
+    "priority": 1,
+    "speed_multiplier": 2
+}
+```
+
+strider
 
 ```json
 "minecraft:behavior.panic": {
@@ -11740,8 +11066,6 @@ strider
 
 tadpole
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 1,
@@ -11751,8 +11075,6 @@ tadpole
 
 trader_llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 4,
@@ -11761,8 +11083,6 @@ trader_llama
 ```
 
 turtle
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.panic": {
@@ -11774,8 +11094,6 @@ turtle
 
 villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 3,
@@ -11784,8 +11102,6 @@ villager
 ```
 
 villager_v2
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.panic": {
@@ -11796,8 +11112,6 @@ villager_v2
 
 wandering_trader
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.panic": {
     "priority": 1,
@@ -11805,9 +11119,35 @@ wandering_trader
 }
 ```
 
-zombie_horse
+wolf
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.panic": {
+    "priority": 2,
+    "speed_multiplier": 1.25,
+    "damage_sources": [
+        "campfire",
+        "fire",
+        "fire_tick",
+        "freezing",
+        "lightning",
+        "lava",
+        "magma",
+        "temperature",
+        "soul_campfire"
+    ],
+    "ignore_mob_damage": true
+}
+```
+
+```json
+"minecraft:behavior.panic": {
+    "priority": 1,
+    "speed_multiplier": 1.25
+}
+```
+
+zombie_horse
 
 ```json
 "minecraft:behavior.panic": {
@@ -11816,15 +11156,9 @@ zombie_horse
 }
 ```
 
-</Spoiler>
-
 ## behavior.pet_sleep_with_owner
 
-<Spoiler title="Show">
-
 cat
-
-<CodeHeader>#component_groups/minecraft:cat_tame</CodeHeader>
 
 ```json
 "minecraft:behavior.pet_sleep_with_owner": {
@@ -11836,15 +11170,9 @@ cat
 }
 ```
 
-</Spoiler>
-
 ## behavior.pickup_items
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader>#component_groups/pickup_item</CodeHeader>
 
 ```json
 "minecraft:behavior.pickup_items": {
@@ -11860,9 +11188,20 @@ allay
 }
 ```
 
-drowned
+bogged
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.pickup_items": {
+    "priority": 5,
+    "max_dist": 3,
+    "goal_radius": 2,
+    "speed_multiplier": 1.0,
+    "pickup_based_on_chance": true,
+    "can_pickup_any_item": true
+}
+```
+
+drowned
 
 ```json
 "minecraft:behavior.pickup_items": {
@@ -11878,9 +11217,18 @@ drowned
 }
 ```
 
-fox
+evocation_illager
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.pickup_items": {
+    "priority": 7,
+    "max_dist": 3,
+    "goal_radius": 2,
+    "speed_multiplier": 1.0
+}
+```
+
+fox
 
 ```json
 "minecraft:behavior.pickup_items": {
@@ -11892,8 +11240,6 @@ fox
 ```
 
 husk
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.pickup_items": {
@@ -11911,8 +11257,6 @@ husk
 
 piglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.pickup_items": {
     "priority": 6,
@@ -11927,8 +11271,6 @@ piglin
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.pickup_items": {
     "priority": 7,
@@ -11939,8 +11281,6 @@ pillager
 ```
 
 skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.pickup_items": {
@@ -11955,8 +11295,6 @@ skeleton
 
 stray
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.pickup_items": {
     "priority": 5,
@@ -11970,8 +11308,6 @@ stray
 
 villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.pickup_items": {
     "priority": 9,
@@ -11984,8 +11320,6 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.pickup_items": {
     "priority": 4,
@@ -11996,9 +11330,18 @@ villager_v2
 }
 ```
 
-wither_skeleton
+vindicator
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.pickup_items": {
+    "priority": 7,
+    "max_dist": 3,
+    "goal_radius": 2,
+    "speed_multiplier": 1.0
+}
+```
+
+wither_skeleton
 
 ```json
 "minecraft:behavior.pickup_items": {
@@ -12011,8 +11354,6 @@ wither_skeleton
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.pickup_items": {
@@ -12030,8 +11371,6 @@ zombie
 
 zombie_pigman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.pickup_items": {
     "priority": 6,
@@ -12045,15 +11384,13 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.pickup_items": {
     "priority": 8,
     "max_dist": 3,
     "goal_radius": 2,
     "speed_multiplier": 1.0,
-    "pickup_based_on_chance": true,
+    "pickup_based_on_chance": false,
     "can_pickup_any_item": true,
     "excluded_items": [
         "minecraft:glow_ink_sac"
@@ -12063,8 +11400,6 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.pickup_items": {
     "priority": 8,
@@ -12079,15 +11414,9 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.play
 
-<Spoiler title="Show">
-
 villager
-
-<CodeHeader>#component_groups/baby</CodeHeader>
 
 ```json
 "minecraft:behavior.play": {
@@ -12098,12 +11427,10 @@ villager
 
 villager_v2
 
-<CodeHeader>#component_groups/play_schedule_villager</CodeHeader>
-
 ```json
 "minecraft:behavior.play": {
     "priority": 8,
-    "speed_multiplier": 0.32,
+    "speed_multiplier": 0.6,
     "friend_types": [
         {
             "filters": {
@@ -12126,15 +11453,9 @@ villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.play_dead
 
-<Spoiler title="Show">
-
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.play_dead": {
@@ -12164,15 +11485,15 @@ axolotl
 }
 ```
 
-</Spoiler>
-
 ## behavior.player_ride_tamed
 
-<Spoiler title="Show">
+camel
+
+```json
+"minecraft:behavior.player_ride_tamed": {}
+```
 
 donkey
-
-<CodeHeader>#component_groups/minecraft:donkey_tamed</CodeHeader>
 
 ```json
 "minecraft:behavior.player_ride_tamed": {}
@@ -12180,15 +11501,11 @@ donkey
 
 horse
 
-<CodeHeader>#component_groups/minecraft:horse_saddled</CodeHeader>
-
 ```json
 "minecraft:behavior.player_ride_tamed": {}
 ```
 
 mule
-
-<CodeHeader>#component_groups/minecraft:mule_saddled</CodeHeader>
 
 ```json
 "minecraft:behavior.player_ride_tamed": {}
@@ -12196,29 +11513,19 @@ mule
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.player_ride_tamed": {}
 ```
 
 zombie_horse
 
-<CodeHeader>#component_groups/minecraft:horse_adult</CodeHeader>
-
 ```json
 "minecraft:behavior.player_ride_tamed": {}
 ```
 
-</Spoiler>
-
 ## behavior.raid_garden
 
-<Spoiler title="Show">
-
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.raid_garden": {
@@ -12239,8 +11546,6 @@ fox
 
 rabbit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.raid_garden": {
     "priority": 5,
@@ -12248,19 +11553,14 @@ rabbit
         "minecraft:carrots"
     ],
     "search_range": 16,
-    "goal_radius": 0.8
+    "goal_radius": 1.0,
+    "speed_multiplier": 0.6
 }
 ```
 
-</Spoiler>
-
 ## behavior.ram_attack
 
-<Spoiler title="Show">
-
 goat
-
-<CodeHeader>#component_groups/ram_default</CodeHeader>
 
 ```json
 "minecraft:behavior.ram_attack": {
@@ -12286,8 +11586,6 @@ goat
 }
 ```
 
-<CodeHeader>#component_groups/ram_screamer</CodeHeader>
-
 ```json
 "minecraft:behavior.ram_attack": {
     "priority": 5,
@@ -12312,15 +11610,9 @@ goat
 }
 ```
 
-</Spoiler>
-
 ## behavior.random_breach
 
-<Spoiler title="Show">
-
 dolphin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_breach": {
@@ -12331,19 +11623,13 @@ dolphin
 }
 ```
 
-</Spoiler>
-
 ## behavior.random_fly
-
-<Spoiler title="Show">
 
 parrot
 
-<CodeHeader>#component_groups/minecraft:parrot_wild</CodeHeader>
-
 ```json
 "minecraft:behavior.random_fly": {
-    "priority": 2,
+    "priority": 3,
     "xz_dist": 15,
     "y_dist": 1,
     "y_offset": 0,
@@ -12353,15 +11639,9 @@ parrot
 }
 ```
 
-</Spoiler>
-
 ## behavior.random_hover
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_hover": {
@@ -12379,8 +11659,6 @@ allay
 
 bee
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_hover": {
     "priority": 12,
@@ -12395,15 +11673,17 @@ bee
 }
 ```
 
-</Spoiler>
-
 ## behavior.random_look_around
-
-<Spoiler title="Show">
 
 allay
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.random_look_around": {
+    "priority": 8
+}
+```
+
+armadillo
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12413,17 +11693,37 @@ allay
 
 blaze
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 5
 }
 ```
 
-cave_spider
+bogged
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.random_look_around": {
+    "priority": 8
+}
+```
+
+breeze
+
+```json
+"minecraft:behavior.random_look_around": {
+    "priority": 8
+}
+```
+
+camel
+
+```json
+"minecraft:behavior.random_look_around": {
+    "priority": 8
+}
+```
+
+cave_spider
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12433,8 +11733,6 @@ cave_spider
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 8
@@ -12442,8 +11740,6 @@ chicken
 ```
 
 cow
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12453,8 +11749,6 @@ cow
 
 creeper
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 6
@@ -12462,8 +11756,6 @@ creeper
 ```
 
 dolphin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12473,8 +11765,6 @@ dolphin
 
 donkey
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 8
@@ -12482,8 +11772,6 @@ donkey
 ```
 
 drowned
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12493,8 +11781,6 @@ drowned
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 9
@@ -12502,8 +11788,6 @@ elder_guardian
 ```
 
 enderman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12513,8 +11797,6 @@ enderman
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 15
@@ -12522,8 +11804,6 @@ fox
 ```
 
 goat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12533,8 +11813,6 @@ goat
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 9
@@ -12542,8 +11820,6 @@ guardian
 ```
 
 hoglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12553,8 +11829,6 @@ hoglin
 
 horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 8
@@ -12562,8 +11836,6 @@ horse
 ```
 
 husk
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12573,8 +11845,6 @@ husk
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 8
@@ -12582,8 +11852,6 @@ iron_golem
 ```
 
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12593,8 +11861,6 @@ llama
 
 mooshroom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 9
@@ -12602,8 +11868,6 @@ mooshroom
 ```
 
 mule
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12613,8 +11877,6 @@ mule
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 9
@@ -12622,8 +11884,6 @@ panda
 ```
 
 pig
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12633,8 +11893,6 @@ pig
 
 piglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 12
@@ -12642,8 +11900,6 @@ piglin
 ```
 
 piglin_brute
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12653,8 +11909,6 @@ piglin_brute
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 10
@@ -12662,8 +11916,6 @@ pillager
 ```
 
 polar_bear
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12673,8 +11925,6 @@ polar_bear
 
 sheep
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 9
@@ -12682,8 +11932,6 @@ sheep
 ```
 
 shulker
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12693,8 +11941,6 @@ shulker
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 8
@@ -12703,17 +11949,21 @@ skeleton
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 8
 }
 ```
 
-snow_golem
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.random_look_around": {
+    "priority": 9
+}
+```
+
+snow_golem
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12723,8 +11973,6 @@ snow_golem
 
 spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 7
@@ -12732,8 +11980,6 @@ spider
 ```
 
 stray
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12743,8 +11989,6 @@ stray
 
 strider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 10
@@ -12752,8 +11996,6 @@ strider
 ```
 
 trader_llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12763,8 +12005,6 @@ trader_llama
 
 wandering_trader
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 9
@@ -12773,8 +12013,6 @@ wandering_trader
 
 warden
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 11
@@ -12782,8 +12020,6 @@ warden
 ```
 
 witch
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12794,8 +12030,6 @@ witch
 
 wither
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 7
@@ -12803,8 +12037,6 @@ wither
 ```
 
 wither_skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12814,8 +12046,6 @@ wither_skeleton
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 9
@@ -12823,8 +12053,6 @@ zoglin
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12834,8 +12062,6 @@ zombie
 
 zombie_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 8
@@ -12843,8 +12069,6 @@ zombie_horse
 ```
 
 zombie_pigman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around": {
@@ -12854,8 +12078,6 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 11
@@ -12864,23 +12086,33 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 11
 }
 ```
 
-</Spoiler>
-
 ## behavior.random_look_around_and_sit
 
-<Spoiler title="Show">
+camel
+
+```json
+"minecraft:behavior.random_look_around_and_sit": {
+    "priority": 4,
+    "continue_if_leashed": true,
+    "continue_sitting_on_reload": true,
+    "min_look_count": 2,
+    "max_look_count": 5,
+    "min_look_time": 80,
+    "max_look_time": 100,
+    "min_angle_of_view_horizontal": -30,
+    "max_angle_of_view_horizontal": 30,
+    "random_look_around_cooldown": 5,
+    "probability": 0.001
+}
+```
 
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_look_around_and_sit": {
@@ -12893,15 +12125,67 @@ fox
 }
 ```
 
-</Spoiler>
+## behavior.random_search_and_dig
+
+sniffer
+
+```json
+"minecraft:behavior.random_search_and_dig": {
+    "priority": 5,
+    "speed_multiplier": 1.25,
+    "find_valid_position_retries": 5,
+    "target_blocks": [
+        "minecraft:dirt",
+        "minecraft:coarse_dirt",
+        "minecraft:grass",
+        "minecraft:podzol",
+        "minecraft:dirt_with_roots",
+        "minecraft:moss_block",
+        "minecraft:pale_moss_block",
+        "minecraft:mud",
+        "minecraft:muddy_mangrove_roots"
+    ],
+    "goal_radius": 2.0,
+    "search_range_xz": 20.0,
+    "search_range_y": 3,
+    "cooldown_range": 0.0,
+    "digging_duration_range": [
+        8.0,
+        10.0
+    ],
+    "item_table": "loot_tables/gameplay/entities/sniffer_seeds.json",
+    "spawn_item_after_seconds": 6.0,
+    "spawn_item_pos_offset": 2.25,
+    "on_searching_start": {
+        "event": "on_searching_start",
+        "target": "self"
+    },
+    "on_fail_during_searching": {
+        "event": "on_fail_during_searching",
+        "target": "self"
+    },
+    "on_digging_start": {
+        "event": "on_digging_start",
+        "target": "self"
+    },
+    "on_item_found": {
+        "event": "on_item_found",
+        "target": "self"
+    },
+    "on_fail_during_digging": {
+        "event": "on_fail_during_digging",
+        "target": "self"
+    },
+    "on_success": {
+        "event": "on_search_and_digging_success",
+        "target": "self"
+    }
+}
+```
 
 ## behavior.random_sitting
 
-<Spoiler title="Show">
-
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_sitting": {
@@ -12913,8 +12197,6 @@ panda
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:panda_lazy</CodeHeader>
-
 ```json
 "minecraft:behavior.random_sitting": {
     "priority": 6,
@@ -12925,15 +12207,18 @@ panda
 }
 ```
 
-</Spoiler>
-
 ## behavior.random_stroll
 
-<Spoiler title="Show">
+armadillo
+
+```json
+"minecraft:behavior.random_stroll": {
+    "priority": 6,
+    "speed_multiplier": 1.0
+}
+```
 
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -12944,8 +12229,6 @@ axolotl
 
 blaze
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 4,
@@ -12953,9 +12236,34 @@ blaze
 }
 ```
 
-cat
+bogged
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.random_stroll": {
+    "priority": 6,
+    "speed_multiplier": 1
+}
+```
+
+breeze
+
+```json
+"minecraft:behavior.random_stroll": {
+    "priority": 6,
+    "speed_multiplier": 1.0
+}
+```
+
+camel
+
+```json
+"minecraft:behavior.random_stroll": {
+    "priority": 6,
+    "speed_multiplier": 2
+}
+```
+
+cat
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -12966,8 +12274,6 @@ cat
 
 cave_spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 6,
@@ -12976,8 +12282,6 @@ cave_spider
 ```
 
 chicken
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -12988,8 +12292,6 @@ chicken
 
 cow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 6,
@@ -12997,9 +12299,16 @@ cow
 }
 ```
 
-creeper
+creaking
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.random_stroll": {
+    "priority": 7,
+    "speed_multiplier": 0.3
+}
+```
+
+creeper
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13010,8 +12319,6 @@ creeper
 
 donkey
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 6,
@@ -13020,8 +12327,6 @@ donkey
 ```
 
 drowned
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13032,8 +12337,6 @@ drowned
 
 enderman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 7,
@@ -13042,8 +12345,6 @@ enderman
 ```
 
 endermite
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13054,8 +12355,6 @@ endermite
 
 evocation_illager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 8,
@@ -13064,8 +12363,6 @@ evocation_illager
 ```
 
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13076,8 +12373,6 @@ fox
 
 frog
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 11
@@ -13085,8 +12380,6 @@ frog
 ```
 
 goat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13097,8 +12390,6 @@ goat
 
 hoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 7,
@@ -13107,8 +12398,6 @@ hoglin
 ```
 
 horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13119,8 +12408,6 @@ horse
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 7,
@@ -13129,8 +12416,6 @@ husk
 ```
 
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13142,8 +12427,6 @@ iron_golem
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 6,
@@ -13152,8 +12435,6 @@ llama
 ```
 
 mooshroom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13164,8 +12445,6 @@ mooshroom
 
 mule
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 6,
@@ -13174,8 +12453,6 @@ mule
 ```
 
 ocelot
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13186,8 +12463,6 @@ ocelot
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 14,
@@ -13196,8 +12471,6 @@ panda
 ```
 
 pig
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13208,8 +12481,6 @@ pig
 
 piglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 10,
@@ -13218,8 +12489,6 @@ piglin
 ```
 
 piglin_brute
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13230,8 +12499,6 @@ piglin_brute
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 8,
@@ -13241,8 +12508,6 @@ pillager
 
 polar_bear
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 5
@@ -13250,8 +12515,6 @@ polar_bear
 ```
 
 rabbit
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13264,16 +12527,12 @@ rabbit
 
 ravager
 
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 6,
     "speed_multiplier": 1.0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:hostile</CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13284,8 +12543,6 @@ ravager
 
 sheep
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 7,
@@ -13294,8 +12551,6 @@ sheep
 ```
 
 skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13306,8 +12561,6 @@ skeleton
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 6,
@@ -13315,9 +12568,16 @@ skeleton_horse
 }
 ```
 
-snow_golem
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.random_stroll": {
+    "priority": 7,
+    "speed_multiplier": 1
+}
+```
+
+snow_golem
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13328,8 +12588,6 @@ snow_golem
 
 spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 6,
@@ -13338,8 +12596,6 @@ spider
 ```
 
 stray
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13350,8 +12606,6 @@ stray
 
 strider
 
-<CodeHeader>#component_groups/minecraft:strider_pathing_behaviors</CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 8,
@@ -13360,8 +12614,6 @@ strider
 ```
 
 trader_llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13372,8 +12624,6 @@ trader_llama
 
 turtle
 
-<CodeHeader>#component_groups/minecraft:adult</CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 9,
@@ -13382,8 +12632,6 @@ turtle
 ```
 
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13394,8 +12642,6 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 11,
@@ -13404,8 +12650,6 @@ villager_v2
 ```
 
 vindicator
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13416,8 +12660,6 @@ vindicator
 
 wandering_trader
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 7,
@@ -13426,8 +12668,6 @@ wandering_trader
 ```
 
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13438,8 +12678,6 @@ warden
 
 witch
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 4,
@@ -13448,8 +12686,6 @@ witch
 ```
 
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13460,8 +12696,6 @@ wither
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 6,
@@ -13470,8 +12704,6 @@ wither_skeleton
 ```
 
 wolf
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13482,8 +12714,6 @@ wolf
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 7,
@@ -13492,8 +12722,6 @@ zoglin
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13504,8 +12732,6 @@ zombie
 
 zombie_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 6,
@@ -13514,8 +12740,6 @@ zombie_horse
 ```
 
 zombie_pigman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_stroll": {
@@ -13526,8 +12750,6 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 9,
@@ -13537,8 +12759,6 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_stroll": {
     "priority": 9,
@@ -13546,15 +12766,9 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.random_swim
 
-<Spoiler title="Show">
-
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_swim": {
@@ -13567,8 +12781,6 @@ axolotl
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_swim": {
     "priority": 5,
@@ -13579,8 +12791,6 @@ dolphin
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_swim": {
     "priority": 7,
@@ -13590,8 +12800,6 @@ elder_guardian
 ```
 
 cod
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_swim": {
@@ -13605,8 +12813,6 @@ cod
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_swim": {
     "priority": 7,
@@ -13617,8 +12823,6 @@ guardian
 ```
 
 pufferfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_swim": {
@@ -13632,8 +12836,6 @@ pufferfish
 
 salmon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_swim": {
     "speed_multiplier": 1.0,
@@ -13646,8 +12848,6 @@ salmon
 
 tadpole
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_swim": {
     "priority": 2,
@@ -13656,8 +12856,6 @@ tadpole
 ```
 
 tropicalfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.random_swim": {
@@ -13671,8 +12869,6 @@ tropicalfish
 
 turtle
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.random_swim": {
     "priority": 7,
@@ -13682,15 +12878,9 @@ turtle
 }
 ```
 
-</Spoiler>
-
 ## behavior.ranged_attack
 
-<Spoiler title="Show">
-
 blaze
-
-<CodeHeader>#component_groups/ranged_mode</CodeHeader>
 
 ```json
 "minecraft:behavior.ranged_attack": {
@@ -13705,9 +12895,17 @@ blaze
 }
 ```
 
-drowned
+bogged
 
-<CodeHeader>#component_groups/minecraft:ranged_mode</CodeHeader>
+```json
+"minecraft:behavior.ranged_attack": {
+    "priority": 0,
+    "attack_interval": 3.5,
+    "attack_radius": 15.0
+}
+```
+
+drowned
 
 ```json
 "minecraft:behavior.ranged_attack": {
@@ -13721,8 +12919,6 @@ drowned
 
 ghast
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.ranged_attack": {
     "priority": 1,
@@ -13734,8 +12930,6 @@ ghast
 
 llama
 
-<CodeHeader>#component_groups/minecraft:llama_angry</CodeHeader>
-
 ```json
 "minecraft:behavior.ranged_attack": {
     "priority": 2,
@@ -13744,8 +12938,6 @@ llama
     "charge_charged_trigger": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:llama_angry_wolf</CodeHeader>
 
 ```json
 "minecraft:behavior.ranged_attack": {
@@ -13757,8 +12949,6 @@ llama
 ```
 
 piglin
-
-<CodeHeader>#component_groups/ranged_unit</CodeHeader>
 
 ```json
 "minecraft:behavior.ranged_attack": {
@@ -13774,8 +12964,6 @@ piglin
 
 pillager
 
-<CodeHeader>#component_groups/minecraft:ranged_attack</CodeHeader>
-
 ```json
 "minecraft:behavior.ranged_attack": {
     "priority": 4,
@@ -13787,8 +12975,6 @@ pillager
 
 shulker
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.ranged_attack": {
     "attack_interval_min": 1,
@@ -13799,8 +12985,6 @@ shulker
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.ranged_attack": {
     "priority": 0,
@@ -13809,8 +12993,6 @@ skeleton
     "attack_radius": 15.0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:ranged_attack</CodeHeader>
 
 ```json
 "minecraft:behavior.ranged_attack": {
@@ -13823,8 +13005,6 @@ skeleton
 
 snow_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.ranged_attack": {
     "priority": 1,
@@ -13836,8 +13016,6 @@ snow_golem
 
 stray
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.ranged_attack": {
     "priority": 0,
@@ -13846,8 +13024,6 @@ stray
     "attack_radius": 15.0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:ranged_attack</CodeHeader>
 
 ```json
 "minecraft:behavior.ranged_attack": {
@@ -13860,8 +13036,6 @@ stray
 
 trader_llama
 
-<CodeHeader>#component_groups/minecraft:llama_angry</CodeHeader>
-
 ```json
 "minecraft:behavior.ranged_attack": {
     "priority": 2,
@@ -13871,8 +13045,6 @@ trader_llama
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:llama_angry_wolf</CodeHeader>
-
 ```json
 "minecraft:behavior.ranged_attack": {
     "priority": 2,
@@ -13881,8 +13053,6 @@ trader_llama
     "charge_charged_trigger": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:llama_defend_trader</CodeHeader>
 
 ```json
 "minecraft:behavior.ranged_attack": {
@@ -13895,8 +13065,6 @@ trader_llama
 
 witch
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.ranged_attack": {
     "priority": 2,
@@ -13907,15 +13075,9 @@ witch
 }
 ```
 
-</Spoiler>
-
 ## behavior.receive_love
 
-<Spoiler title="Show">
-
 villager
-
-<CodeHeader>#component_groups/adult</CodeHeader>
 
 ```json
 "minecraft:behavior.receive_love": {
@@ -13925,23 +13087,15 @@ villager
 
 villager_v2
 
-<CodeHeader>#component_groups/make_and_receive_love</CodeHeader>
-
 ```json
 "minecraft:behavior.receive_love": {
     "priority": 6
 }
 ```
 
-</Spoiler>
-
 ## behavior.restrict_open_door
 
-<Spoiler title="Show">
-
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.restrict_open_door": {
@@ -13949,15 +13103,9 @@ villager
 }
 ```
 
-</Spoiler>
-
 ## behavior.rise_to_liquid_level
 
-<Spoiler title="Show">
-
 strider
-
-<CodeHeader>#component_groups/minecraft:strider_pathing_behaviors</CodeHeader>
 
 ```json
 "minecraft:behavior.rise_to_liquid_level": {
@@ -13968,15 +13116,9 @@ strider
 }
 ```
 
-</Spoiler>
-
 ## behavior.roar
 
-<Spoiler title="Show">
-
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.roar": {
@@ -13985,15 +13127,9 @@ warden
 }
 ```
 
-</Spoiler>
-
 ## behavior.roll
 
-<Spoiler title="Show">
-
 panda
-
-<CodeHeader>#component_groups/minecraft:panda_baby</CodeHeader>
 
 ```json
 "minecraft:behavior.roll": {
@@ -14002,8 +13138,6 @@ panda
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:panda_playful</CodeHeader>
-
 ```json
 "minecraft:behavior.roll": {
     "priority": 12,
@@ -14011,15 +13145,9 @@ panda
 }
 ```
 
-</Spoiler>
-
 ## behavior.run_around_like_crazy
 
-<Spoiler title="Show">
-
 donkey
-
-<CodeHeader>#component_groups/minecraft:donkey_adult</CodeHeader>
 
 ```json
 "minecraft:behavior.run_around_like_crazy": {
@@ -14030,8 +13158,6 @@ donkey
 
 horse
 
-<CodeHeader>#component_groups/minecraft:horse_adult</CodeHeader>
-
 ```json
 "minecraft:behavior.run_around_like_crazy": {
     "priority": 1,
@@ -14040,8 +13166,6 @@ horse
 ```
 
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.run_around_like_crazy": {
@@ -14052,8 +13176,6 @@ llama
 
 mule
 
-<CodeHeader>#component_groups/minecraft:mule_adult</CodeHeader>
-
 ```json
 "minecraft:behavior.run_around_like_crazy": {
     "priority": 1,
@@ -14063,8 +13185,6 @@ mule
 
 trader_llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.run_around_like_crazy": {
     "priority": 1,
@@ -14072,15 +13192,9 @@ trader_llama
 }
 ```
 
-</Spoiler>
-
 ## behavior.scared
 
-<Spoiler title="Show">
-
 panda
-
-<CodeHeader>#component_groups/minecraft:panda_worried</CodeHeader>
 
 ```json
 "minecraft:behavior.scared": {
@@ -14089,15 +13203,9 @@ panda
 }
 ```
 
-</Spoiler>
-
 ## behavior.send_event
 
-<Spoiler title="Show">
-
 evocation_illager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.send_event": {
@@ -14137,15 +13245,9 @@ evocation_illager
 }
 ```
 
-</Spoiler>
-
 ## behavior.share_items
 
-<Spoiler title="Show">
-
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.share_items": {
@@ -14167,8 +13269,6 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.share_items": {
     "priority": 10,
@@ -14187,15 +13287,9 @@ villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.silverfish_merge_with_stone
 
-<Spoiler title="Show">
-
 silverfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.silverfish_merge_with_stone": {
@@ -14203,15 +13297,9 @@ silverfish
 }
 ```
 
-</Spoiler>
-
 ## behavior.silverfish_wake_up_friends
 
-<Spoiler title="Show">
-
 silverfish
-
-<CodeHeader>#component_groups/minecraft:silverfish_angry</CodeHeader>
 
 ```json
 "minecraft:behavior.silverfish_wake_up_friends": {
@@ -14219,15 +13307,9 @@ silverfish
 }
 ```
 
-</Spoiler>
-
 ## behavior.skeleton_horse_trap
 
-<Spoiler title="Show">
-
 skeleton_horse
-
-<CodeHeader>#component_groups/minecraft:skeleton_trap</CodeHeader>
 
 ```json
 "minecraft:behavior.skeleton_horse_trap": {
@@ -14237,21 +13319,13 @@ skeleton_horse
 }
 ```
 
-</Spoiler>
-
 ## behavior.sleep
 
-<Spoiler title="Show">
-
 villager_v2
-
-<CodeHeader>#component_groups/job_specific_goals</CodeHeader>
 
 ```json
 "minecraft:behavior.sleep": {}
 ```
-
-<CodeHeader>#component_groups/bed_schedule_villager</CodeHeader>
 
 ```json
 "minecraft:behavior.sleep": {
@@ -14265,15 +13339,9 @@ villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.slime_attack
 
-<Spoiler title="Show">
-
 magma_cube
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.slime_attack": {
@@ -14283,23 +13351,15 @@ magma_cube
 
 slime
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.slime_attack": {
     "priority": 3
 }
 ```
-
-</Spoiler>
 
 ## behavior.slime_float
 
-<Spoiler title="Show">
-
 magma_cube
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.slime_float": {
@@ -14311,8 +13371,6 @@ magma_cube
 
 slime
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.slime_float": {
     "priority": 1,
@@ -14320,16 +13378,10 @@ slime
     "speed_multiplier": 1.2
 }
 ```
-
-</Spoiler>
 
 ## behavior.slime_keep_on_jumping
 
-<Spoiler title="Show">
-
 magma_cube
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.slime_keep_on_jumping": {
@@ -14340,24 +13392,16 @@ magma_cube
 
 slime
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.slime_keep_on_jumping": {
     "priority": 5,
     "speed_multiplier": 1.0
 }
 ```
-
-</Spoiler>
 
 ## behavior.slime_random_direction
 
-<Spoiler title="Show">
-
 magma_cube
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.slime_random_direction": {
@@ -14370,8 +13414,6 @@ magma_cube
 
 slime
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.slime_random_direction": {
     "priority": 4,
@@ -14381,15 +13423,9 @@ slime
 }
 ```
 
-</Spoiler>
-
 ## behavior.snacking
 
-<Spoiler title="Show">
-
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.snacking": {
@@ -14404,8 +13440,6 @@ panda
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:panda_lazy</CodeHeader>
-
 ```json
 "minecraft:behavior.snacking": {
     "priority": 3,
@@ -14419,15 +13453,9 @@ panda
 }
 ```
 
-</Spoiler>
-
 ## behavior.sneeze
 
-<Spoiler title="Show">
-
 panda
-
-<CodeHeader>#component_groups/minecraft:panda_baby</CodeHeader>
 
 ```json
 "minecraft:behavior.sneeze": {
@@ -14474,8 +13502,6 @@ panda
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:panda_sneezing</CodeHeader>
-
 ```json
 "minecraft:behavior.sneeze": {
     "priority": 7,
@@ -14521,15 +13547,9 @@ panda
 }
 ```
 
-</Spoiler>
-
 ## behavior.sniff
 
-<Spoiler title="Show">
-
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.sniff": {
@@ -14545,15 +13565,9 @@ warden
 }
 ```
 
-</Spoiler>
-
 ## behavior.sonic_boom
 
-<Spoiler title="Show">
-
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.sonic_boom": {
@@ -14573,15 +13587,9 @@ warden
 }
 ```
 
-</Spoiler>
-
 ## behavior.squid_dive
 
-<Spoiler title="Show">
-
 glow_squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.squid_dive": {
@@ -14591,23 +13599,15 @@ glow_squid
 
 squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.squid_dive": {
     "priority": 2
 }
 ```
-
-</Spoiler>
 
 ## behavior.squid_flee
 
-<Spoiler title="Show">
-
 glow_squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.squid_flee": {
@@ -14617,23 +13617,15 @@ glow_squid
 
 squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.squid_flee": {
     "priority": 2
 }
 ```
-
-</Spoiler>
 
 ## behavior.squid_idle
 
-<Spoiler title="Show">
-
 glow_squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.squid_idle": {
@@ -14643,23 +13635,15 @@ glow_squid
 
 squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.squid_idle": {
     "priority": 2
 }
 ```
-
-</Spoiler>
 
 ## behavior.squid_move_away_from_ground
 
-<Spoiler title="Show">
-
 glow_squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.squid_move_away_from_ground": {
@@ -14669,23 +13653,15 @@ glow_squid
 
 squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.squid_move_away_from_ground": {
     "priority": 1
 }
 ```
-
-</Spoiler>
 
 ## behavior.squid_out_of_water
 
-<Spoiler title="Show">
-
 glow_squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.squid_out_of_water": {
@@ -14695,23 +13671,15 @@ glow_squid
 
 squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.squid_out_of_water": {
     "priority": 2
 }
 ```
 
-</Spoiler>
-
 ## behavior.stalk_and_pounce_on_target
 
-<Spoiler title="Show">
-
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.stalk_and_pounce_on_target": {
@@ -14733,15 +13701,9 @@ fox
 }
 ```
 
-</Spoiler>
-
 ## behavior.stay_near_noteblock
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.stay_near_noteblock": {
@@ -14752,15 +13714,9 @@ allay
 }
 ```
 
-</Spoiler>
-
 ## behavior.stay_while_sitting
 
-<Spoiler title="Show">
-
 cat
-
-<CodeHeader>#component_groups/minecraft:cat_tame</CodeHeader>
 
 ```json
 "minecraft:behavior.stay_while_sitting": {
@@ -14770,8 +13726,6 @@ cat
 
 ocelot
 
-<CodeHeader>#component_groups/minecraft:ocelot_tame</CodeHeader>
-
 ```json
 "minecraft:behavior.stay_while_sitting": {
     "priority": 3
@@ -14780,17 +13734,13 @@ ocelot
 
 parrot
 
-<CodeHeader>#component_groups/minecraft:parrot_tame</CodeHeader>
-
 ```json
 "minecraft:behavior.stay_while_sitting": {
-    "priority": 1
+    "priority": 2
 }
 ```
 
 wolf
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.stay_while_sitting": {
@@ -14798,15 +13748,9 @@ wolf
 }
 ```
 
-</Spoiler>
-
 ## behavior.stomp_attack
 
-<Spoiler title="Show">
-
 polar_bear
-
-<CodeHeader>#component_groups/minecraft:adult_hostile</CodeHeader>
 
 ```json
 "minecraft:behavior.stomp_attack": {
@@ -14818,15 +13762,9 @@ polar_bear
 }
 ```
 
-</Spoiler>
-
 ## behavior.stomp_turtle_egg
 
-<Spoiler title="Show">
-
 drowned
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.stomp_turtle_egg": {
@@ -14841,8 +13779,6 @@ drowned
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.stomp_turtle_egg": {
     "priority": 4,
@@ -14855,8 +13791,6 @@ husk
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.stomp_turtle_egg": {
@@ -14871,8 +13805,6 @@ zombie
 
 zombie_pigman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.stomp_turtle_egg": {
     "priority": 5,
@@ -14885,8 +13817,6 @@ zombie_pigman
 ```
 
 zombie_villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.stomp_turtle_egg": {
@@ -14901,8 +13831,6 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.stomp_turtle_egg": {
     "priority": 4,
@@ -14914,15 +13842,9 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## behavior.stroll_towards_village
 
-<Spoiler title="Show">
-
 fox
-
-<CodeHeader>#component_groups/minecraft:fox_night</CodeHeader>
 
 ```json
 "minecraft:behavior.stroll_towards_village": {
@@ -14935,15 +13857,9 @@ fox
 }
 ```
 
-</Spoiler>
-
 ## behavior.summon_entity
 
-<Spoiler title="Show">
-
 evocation_illager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.summon_entity": {
@@ -15016,7 +13932,8 @@ evocation_illager
                     "summon_cap": 8,
                     "summon_cap_radius": 16.0,
                     "size": 1.0,
-                    "sound_event": "prepare.summon"
+                    "sound_event": "prepare.summon",
+                    "summon_event": "minecraft:add_damage_timer"
                 }
             ]
         }
@@ -15024,15 +13941,9 @@ evocation_illager
 }
 ```
 
-</Spoiler>
-
 ## behavior.swell
 
-<Spoiler title="Show">
-
 creeper
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.swell": {
@@ -15042,15 +13953,9 @@ creeper
 }
 ```
 
-</Spoiler>
-
 ## behavior.swim_idle
 
-<Spoiler title="Show">
-
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.swim_idle": {
@@ -15062,8 +13967,6 @@ axolotl
 
 cod
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.swim_idle": {
     "priority": 5,
@@ -15073,8 +13976,6 @@ cod
 ```
 
 salmon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.swim_idle": {
@@ -15086,8 +13987,6 @@ salmon
 
 tropicalfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.swim_idle": {
     "priority": 5,
@@ -15096,15 +13995,19 @@ tropicalfish
 }
 ```
 
-</Spoiler>
+## behavior.swim_up_for_breath
+
+dolphin
+
+```json
+"minecraft:behavior.swim_up_for_breath": {
+    "priority": 1
+}
+```
 
 ## behavior.swim_wander
 
-<Spoiler title="Show">
-
 cod
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.swim_wander": {
@@ -15118,8 +14021,6 @@ cod
 
 pufferfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.swim_wander": {
     "priority": 5,
@@ -15131,8 +14032,6 @@ pufferfish
 ```
 
 salmon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.swim_wander": {
@@ -15146,8 +14045,6 @@ salmon
 
 tropicalfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.swim_wander": {
     "priority": 4,
@@ -15158,15 +14055,9 @@ tropicalfish
 }
 ```
 
-</Spoiler>
-
 ## behavior.swim_with_entity
 
-<Spoiler title="Show">
-
 dolphin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.swim_with_entity": {
@@ -15192,15 +14083,9 @@ dolphin
 }
 ```
 
-</Spoiler>
-
 ## behavior.swoop_attack
 
-<Spoiler title="Show">
-
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.swoop_attack": {
@@ -15214,41 +14099,43 @@ phantom
 }
 ```
 
-</Spoiler>
-
 ## behavior.take_flower
-
-<Spoiler title="Show">
 
 villager
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:behavior.take_flower": {
-    "priority": 7
+    "priority": 7,
+    "filters": {
+        "all_of": [
+            {
+                "test": "is_daytime",
+                "value": true
+            }
+        ]
+    }
 }
 ```
 
 villager_v2
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:behavior.take_flower": {
-    "priority": 9
+    "priority": 9,
+    "filters": {
+        "all_of": [
+            {
+                "test": "is_daytime",
+                "value": true
+            }
+        ]
+    }
 }
 ```
 
-</Spoiler>
-
 ## behavior.target_when_pushed
 
-<Spoiler title="Show">
-
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.target_when_pushed": {
@@ -15276,15 +14163,120 @@ iron_golem
 }
 ```
 
-</Spoiler>
+## behavior.teleport_to_owner
+
+cat
+
+```json
+"minecraft:behavior.teleport_to_owner": {
+    "priority": 0,
+    "filters": {
+        "all_of": [
+            {
+                "test": "owner_distance",
+                "operator": ">",
+                "value": 12
+            },
+            {
+                "test": "is_panicking"
+            }
+        ]
+    }
+}
+```
+
+ocelot
+
+```json
+"minecraft:behavior.teleport_to_owner": {
+    "priority": 0,
+    "filters": {
+        "all_of": [
+            {
+                "test": "owner_distance",
+                "operator": ">",
+                "value": 12
+            },
+            {
+                "test": "is_panicking"
+            }
+        ]
+    }
+}
+```
+
+parrot
+
+```json
+"minecraft:behavior.teleport_to_owner": {
+    "priority": 0,
+    "filters": {
+        "all_of": [
+            {
+                "test": "owner_distance",
+                "operator": ">",
+                "value": 12
+            },
+            {
+                "test": "is_panicking"
+            }
+        ]
+    }
+}
+```
+
+wolf
+
+```json
+"minecraft:behavior.teleport_to_owner": {
+    "priority": 1,
+    "filters": {
+        "any_of": [
+            {
+                "all_of": [
+                    {
+                        "test": "owner_distance",
+                        "operator": ">",
+                        "value": 12
+                    },
+                    {
+                        "test": "is_panicking"
+                    }
+                ]
+            },
+            {
+                "all_of": [
+                    {
+                        "test": "owner_distance",
+                        "operator": ">",
+                        "value": 24
+                    },
+                    {
+                        "test": "has_target"
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
 
 ## behavior.tempt
 
-<Spoiler title="Show">
+armadillo
+
+```json
+"minecraft:behavior.tempt": {
+    "priority": 3,
+    "speed_multiplier": 1.25,
+    "can_tempt_vertically": true,
+    "items": [
+        "spider_eye"
+    ]
+}
+```
 
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.tempt": {
@@ -15299,8 +14291,6 @@ axolotl
 
 bee
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.tempt": {
     "priority": 5,
@@ -15308,23 +14298,49 @@ bee
     "within_radius": 8,
     "can_tempt_vertically": true,
     "items": [
-        "minecraft:red_flower",
-        "minecraft:yellow_flower",
+        "minecraft:poppy",
+        "minecraft:blue_orchid",
+        "minecraft:allium",
+        "minecraft:azure_bluet",
+        "minecraft:red_tulip",
+        "minecraft:orange_tulip",
+        "minecraft:white_tulip",
+        "minecraft:pink_tulip",
+        "minecraft:oxeye_daisy",
+        "minecraft:cornflower",
+        "minecraft:lily_of_the_valley",
+        "minecraft:dandelion",
         "minecraft:wither_rose",
-        "minecraft:double_plant:0",
-        "minecraft:double_plant:1",
-        "minecraft:double_plant:4",
-        "minecraft:double_plant:5",
+        "minecraft:sunflower",
+        "minecraft:lilac",
+        "minecraft:rose_bush",
+        "minecraft:peony",
         "minecraft:flowering_azalea",
         "minecraft:azalea_leaves_flowered",
-        "minecraft:mangrove_propagule"
+        "minecraft:mangrove_propagule",
+        "minecraft:pitcher_plant",
+        "minecraft:torchflower",
+        "minecraft:cherry_leaves",
+        "minecraft:pink_petals",
+        "minecraft:open_eyeblossom"
+    ]
+}
+```
+
+camel
+
+```json
+"minecraft:behavior.tempt": {
+    "priority": 3,
+    "speed_multiplier": 2.5,
+    "can_tempt_vertically": true,
+    "items": [
+        "cactus"
     ]
 }
 ```
 
 cat
-
-<CodeHeader>#component_groups/minecraft:cat_wild</CodeHeader>
 
 ```json
 "minecraft:behavior.tempt": {
@@ -15332,14 +14348,17 @@ cat
     "speed_multiplier": 0.5,
     "within_radius": 16,
     "can_get_scared": true,
+    "tempt_sound": "tempt",
+    "sound_interval": [
+        0,
+        100
+    ],
     "items": [
         "fish",
         "salmon"
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:cat_tame</CodeHeader>
 
 ```json
 "minecraft:behavior.tempt": {
@@ -15355,8 +14374,6 @@ cat
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.tempt": {
     "priority": 4,
@@ -15365,14 +14382,14 @@ chicken
         "wheat_seeds",
         "beetroot_seeds",
         "melon_seeds",
-        "pumpkin_seeds"
+        "pumpkin_seeds",
+        "pitcher_pod",
+        "torchflower_seeds"
     ]
 }
 ```
 
 cow
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.tempt": {
@@ -15386,30 +14403,19 @@ cow
 
 donkey
 
-<CodeHeader>#component_groups/minecraft:donkey_tamed</CodeHeader>
-
 ```json
 "minecraft:behavior.tempt": {
     "priority": 5,
     "speed_multiplier": 1.2,
     "items": [
-        "apple",
-        "carrot",
         "golden_apple",
         "appleEnchanted",
-        "golden_carrot",
-        "carrotOnAStick",
-        "hay_block",
-        "sugar",
-        "bread",
-        "wheat"
+        "golden_carrot"
     ]
 }
 ```
 
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.tempt": {
@@ -15426,8 +14432,6 @@ fox
 
 frog
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.tempt": {
     "priority": 5,
@@ -15441,8 +14445,6 @@ frog
 
 goat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.tempt": {
     "priority": 4,
@@ -15454,8 +14456,6 @@ goat
 ```
 
 horse
-
-<CodeHeader>#component_groups/minecraft:horse_tamed</CodeHeader>
 
 ```json
 "minecraft:behavior.tempt": {
@@ -15469,9 +14469,19 @@ horse
 }
 ```
 
-mooshroom
+llama
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.tempt": {
+    "priority": 5,
+    "speed_multiplier": 1.2,
+    "items": [
+        "hay_block"
+    ]
+}
+```
+
+mooshroom
 
 ```json
 "minecraft:behavior.tempt": {
@@ -15485,30 +14495,19 @@ mooshroom
 
 mule
 
-<CodeHeader>#component_groups/minecraft:mule_tamed</CodeHeader>
-
 ```json
 "minecraft:behavior.tempt": {
     "priority": 5,
     "speed_multiplier": 1.2,
     "items": [
-        "apple",
-        "carrot",
         "golden_apple",
         "appleEnchanted",
-        "golden_carrot",
-        "carrotOnAStick",
-        "hay_block",
-        "sugar",
-        "bread",
-        "wheat"
+        "golden_carrot"
     ]
 }
 ```
 
 ocelot
-
-<CodeHeader>#component_groups/minecraft:ocelot_wild</CodeHeader>
 
 ```json
 "minecraft:behavior.tempt": {
@@ -15522,8 +14521,6 @@ ocelot
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:ocelot_trusting</CodeHeader>
 
 ```json
 "minecraft:behavior.tempt": {
@@ -15539,8 +14536,6 @@ ocelot
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.tempt": {
     "priority": 4,
@@ -15552,8 +14547,6 @@ panda
 ```
 
 pig
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.tempt": {
@@ -15570,8 +14563,6 @@ pig
 
 rabbit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.tempt": {
     "priority": 3,
@@ -15579,14 +14570,12 @@ rabbit
     "items": [
         "golden_carrot",
         "carrot",
-        "yellow_flower"
+        "dandelion"
     ]
 }
 ```
 
 sheep
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.tempt": {
@@ -15598,9 +14587,19 @@ sheep
 }
 ```
 
-strider
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.tempt": {
+    "priority": 4,
+    "speed_multiplier": 1.25,
+    "items": [
+        "torchflower_seeds"
+    ]
+}
+```
+
+strider
 
 ```json
 "minecraft:behavior.tempt": {
@@ -15621,8 +14620,6 @@ strider
 
 tadpole
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.tempt": {
     "priority": 5,
@@ -15634,9 +14631,19 @@ tadpole
 }
 ```
 
-turtle
+trader_llama
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:behavior.tempt": {
+    "priority": 5,
+    "speed_multiplier": 1.2,
+    "items": [
+        "hay_block"
+    ]
+}
+```
+
+turtle
 
 ```json
 "minecraft:behavior.tempt": {
@@ -15649,21 +14656,167 @@ turtle
 }
 ```
 
-</Spoiler>
+## behavior.timer_flag_1
+
+armadillo
+
+```json
+"minecraft:behavior.timer_flag_1": {
+    "priority": 0,
+    "cooldown_range": 2.5,
+    "duration_range": [
+        5.0,
+        20.0
+    ],
+    "on_start": {
+        "event": "minecraft:stop_peeking"
+    },
+    "on_end": {
+        "event": "minecraft:start_peeking"
+    }
+}
+```
+
+```json
+"minecraft:behavior.timer_flag_1": {
+    "priority": 0,
+    "cooldown_range": 2.5,
+    "duration_range": 1.5,
+    "on_start": {
+        "event": "minecraft:start_unrolling"
+    }
+}
+```
+
+bee
+
+```json
+"minecraft:behavior.timer_flag_1": {
+    "priority": 0,
+    "cooldown_range": 0.0,
+    "duration_range": [
+        0.05,
+        0.05
+    ],
+    "on_end": {
+        "event": "minecraft:on_poison_effect_added",
+        "target": "self"
+    }
+}
+```
+
+```json
+"minecraft:behavior.timer_flag_1": {
+    "priority": 0,
+    "cooldown_range": 0.0,
+    "duration_range": [
+        0.05,
+        0.05
+    ],
+    "on_end": {
+        "event": "minecraft:on_wither_effect_added",
+        "target": "self"
+    }
+}
+```
+
+creaking
+
+```json
+"minecraft:behavior.timer_flag_1": {
+    "priority": 0,
+    "cooldown_range": 0.0,
+    "duration_range": [
+        2.25,
+        2.25
+    ],
+    "on_end": {
+        "event": "minecraft:crumble",
+        "target": "self"
+    }
+}
+```
+
+sniffer
+
+```json
+"minecraft:behavior.timer_flag_1": {
+    "priority": 6,
+    "control_flags": [
+        "move",
+        "look"
+    ],
+    "cooldown_range": [
+        400.0,
+        500.0
+    ],
+    "duration_range": 2.0,
+    "on_end": {
+        "event": "on_scenting_success",
+        "target": "self"
+    }
+}
+```
+
+## behavior.timer_flag_2
+
+sniffer
+
+```json
+"minecraft:behavior.timer_flag_2": {
+    "priority": 2,
+    "control_flags": [
+        "move"
+    ],
+    "cooldown_range": 0.0,
+    "duration_range": [
+        2.0,
+        5.0
+    ],
+    "on_end": {
+        "event": "on_rising_end",
+        "target": "self"
+    }
+}
+```
+
+## behavior.timer_flag_3
+
+sniffer
+
+```json
+"minecraft:behavior.timer_flag_3": {
+    "priority": 5,
+    "cooldown_range": 0.0,
+    "duration_range": [
+        2.0,
+        5.0
+    ],
+    "on_end": {
+        "event": "on_feeling_happy_end",
+        "target": "self"
+    }
+}
+```
 
 ## behavior.trade_interest
 
-<Spoiler title="Show">
-
 villager_v2
-
-<CodeHeader>#component_groups/trade_components</CodeHeader>
 
 ```json
 "minecraft:behavior.trade_interest": {}
 ```
 
-<CodeHeader>#component_groups/farmer</CodeHeader>
+```json
+"minecraft:behavior.trade_interest": {
+    "priority": 5,
+    "within_radius": 6.0,
+    "interest_time": 45.0,
+    "remove_item_time": 1.0,
+    "carried_item_switch_time": 2.0,
+    "cooldown": 2.0
+}
+```
 
 ```json
 "minecraft:behavior.trade_interest": {
@@ -15676,7 +14829,16 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/fisherman</CodeHeader>
+```json
+"minecraft:behavior.trade_interest": {
+    "priority": 5,
+    "within_radius": 6.0,
+    "interest_time": 45.0,
+    "remove_item_time": 1.0,
+    "carried_item_switch_time": 2.0,
+    "cooldown": 2.0
+}
+```
 
 ```json
 "minecraft:behavior.trade_interest": {
@@ -15689,7 +14851,16 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/shepherd</CodeHeader>
+```json
+"minecraft:behavior.trade_interest": {
+    "priority": 5,
+    "within_radius": 6.0,
+    "interest_time": 45.0,
+    "remove_item_time": 1.0,
+    "carried_item_switch_time": 2.0,
+    "cooldown": 2.0
+}
+```
 
 ```json
 "minecraft:behavior.trade_interest": {
@@ -15702,7 +14873,16 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/fletcher</CodeHeader>
+```json
+"minecraft:behavior.trade_interest": {
+    "priority": 5,
+    "within_radius": 6.0,
+    "interest_time": 45.0,
+    "remove_item_time": 1.0,
+    "carried_item_switch_time": 2.0,
+    "cooldown": 2.0
+}
+```
 
 ```json
 "minecraft:behavior.trade_interest": {
@@ -15715,7 +14895,16 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/librarian</CodeHeader>
+```json
+"minecraft:behavior.trade_interest": {
+    "priority": 5,
+    "within_radius": 6.0,
+    "interest_time": 45.0,
+    "remove_item_time": 1.0,
+    "carried_item_switch_time": 2.0,
+    "cooldown": 2.0
+}
+```
 
 ```json
 "minecraft:behavior.trade_interest": {
@@ -15728,8 +14917,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/cartographer</CodeHeader>
-
 ```json
 "minecraft:behavior.trade_interest": {
     "priority": 5,
@@ -15741,8 +14928,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/cleric</CodeHeader>
-
 ```json
 "minecraft:behavior.trade_interest": {
     "priority": 5,
@@ -15753,73 +14938,6 @@ villager_v2
     "cooldown": 2.0
 }
 ```
-
-<CodeHeader>#component_groups/armorer</CodeHeader>
-
-```json
-"minecraft:behavior.trade_interest": {
-    "priority": 5,
-    "within_radius": 6.0,
-    "interest_time": 45.0,
-    "remove_item_time": 1.0,
-    "carried_item_switch_time": 2.0,
-    "cooldown": 2.0
-}
-```
-
-<CodeHeader>#component_groups/weaponsmith</CodeHeader>
-
-```json
-"minecraft:behavior.trade_interest": {
-    "priority": 5,
-    "within_radius": 6.0,
-    "interest_time": 45.0,
-    "remove_item_time": 1.0,
-    "carried_item_switch_time": 2.0,
-    "cooldown": 2.0
-}
-```
-
-<CodeHeader>#component_groups/toolsmith</CodeHeader>
-
-```json
-"minecraft:behavior.trade_interest": {
-    "priority": 5,
-    "within_radius": 6.0,
-    "interest_time": 45.0,
-    "remove_item_time": 1.0,
-    "carried_item_switch_time": 2.0,
-    "cooldown": 2.0
-}
-```
-
-<CodeHeader>#component_groups/butcher</CodeHeader>
-
-```json
-"minecraft:behavior.trade_interest": {
-    "priority": 5,
-    "within_radius": 6.0,
-    "interest_time": 45.0,
-    "remove_item_time": 1.0,
-    "carried_item_switch_time": 2.0,
-    "cooldown": 2.0
-}
-```
-
-<CodeHeader>#component_groups/leatherworker</CodeHeader>
-
-```json
-"minecraft:behavior.trade_interest": {
-    "priority": 5,
-    "within_radius": 6.0,
-    "interest_time": 45.0,
-    "remove_item_time": 1.0,
-    "carried_item_switch_time": 2.0,
-    "cooldown": 2.0
-}
-```
-
-<CodeHeader>#component_groups/mason</CodeHeader>
 
 ```json
 "minecraft:behavior.trade_interest": {
@@ -15833,8 +14951,6 @@ villager_v2
 ```
 
 wandering_trader
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.trade_interest": {
@@ -15847,51 +14963,107 @@ wandering_trader
 }
 ```
 
-</Spoiler>
-
 ## behavior.trade_with_player
-
-<Spoiler title="Show">
 
 villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.trade_with_player": {
-    "priority": 1
+    "priority": 1,
+    "filters": {
+        "all_of": [
+            {
+                "all_of": [
+                    {
+                        "test": "in_water",
+                        "value": false
+                    }
+                ]
+            },
+            {
+                "any_of": [
+                    {
+                        "test": "on_ground",
+                        "value": true
+                    },
+                    {
+                        "test": "is_sleeping",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
 }
 ```
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.trade_with_player": {
-    "priority": 2
+    "priority": 2,
+    "filters": {
+        "all_of": [
+            {
+                "all_of": [
+                    {
+                        "test": "in_water",
+                        "value": false
+                    }
+                ]
+            },
+            {
+                "any_of": [
+                    {
+                        "test": "on_ground",
+                        "value": true
+                    },
+                    {
+                        "test": "is_sleeping",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
 }
 ```
 
 wandering_trader
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:behavior.trade_with_player": {
-    "priority": 1
+    "priority": 1,
+    "filters": {
+        "all_of": [
+            {
+                "all_of": [
+                    {
+                        "test": "in_water",
+                        "value": false
+                    }
+                ]
+            },
+            {
+                "any_of": [
+                    {
+                        "test": "on_ground",
+                        "value": true
+                    },
+                    {
+                        "test": "is_sleeping",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
 }
 ```
 
-</Spoiler>
-
 ## behavior.wither_random_attack_pos_goal
 
-<Spoiler title="Show">
-
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.wither_random_attack_pos_goal": {
@@ -15899,15 +15071,9 @@ wither
 }
 ```
 
-</Spoiler>
-
 ## behavior.wither_target_highest_damage
 
-<Spoiler title="Show">
-
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:behavior.wither_target_highest_damage": {
@@ -15915,21 +15081,30 @@ wither
 }
 ```
 
-</Spoiler>
-
 ## behavior.work
 
-<Spoiler title="Show">
-
 villager_v2
-
-<CodeHeader>#component_groups/job_specific_goals</CodeHeader>
 
 ```json
 "minecraft:behavior.work": {}
 ```
 
-<CodeHeader>#component_groups/work_schedule_villager</CodeHeader>
+```json
+"minecraft:behavior.work": {
+    "priority": 7,
+    "active_time": 250,
+    "speed_multiplier": 0.5,
+    "goal_cooldown": 200,
+    "sound_delay_min": 100,
+    "sound_delay_max": 200,
+    "can_work_in_rain": false,
+    "work_in_rain_tolerance": 100,
+    "on_arrival": {
+        "event": "minecraft:resupply_trades",
+        "target": "self"
+    }
+}
+```
 
 ```json
 "minecraft:behavior.work": {
@@ -15948,8 +15123,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/work_schedule_fisher</CodeHeader>
-
 ```json
 "minecraft:behavior.work": {
     "priority": 7,
@@ -15966,41 +15139,14 @@ villager_v2
     }
 }
 ```
-
-<CodeHeader>#component_groups/work_schedule_librarian</CodeHeader>
-
-```json
-"minecraft:behavior.work": {
-    "priority": 7,
-    "active_time": 250,
-    "speed_multiplier": 0.5,
-    "goal_cooldown": 200,
-    "sound_delay_min": 100,
-    "sound_delay_max": 200,
-    "can_work_in_rain": false,
-    "work_in_rain_tolerance": 100,
-    "on_arrival": {
-        "event": "minecraft:resupply_trades",
-        "target": "self"
-    }
-}
-```
-
-</Spoiler>
 
 ## behavior.work_composter
 
-<Spoiler title="Show">
-
 villager_v2
-
-<CodeHeader>#component_groups/job_specific_goals</CodeHeader>
 
 ```json
 "minecraft:behavior.work_composter": {}
 ```
-
-<CodeHeader>#component_groups/work_schedule_farmer</CodeHeader>
 
 ```json
 "minecraft:behavior.work_composter": {
@@ -16017,15 +15163,9 @@ villager_v2
 }
 ```
 
-</Spoiler>
-
 ## block_climber
 
-<Spoiler title="Show">
-
 endermite
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:block_climber": {}
@@ -16033,15 +15173,11 @@ endermite
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:block_climber": {}
 ```
 
 player
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:block_climber": {}
@@ -16049,29 +15185,19 @@ player
 
 rabbit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:block_climber": {}
 ```
 
 silverfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:block_climber": {}
 ```
 
-</Spoiler>
-
 ## block_sensor
 
-<Spoiler title="Show">
-
 bee
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:block_sensor": {
@@ -16097,8 +15223,6 @@ bee
 
 piglin
 
-<CodeHeader>#component_groups/piglin_adult</CodeHeader>
-
 ```json
 "minecraft:block_sensor": {
     "sensor_radius": 16,
@@ -16115,7 +15239,22 @@ piglin
                 "minecraft:trapped_chest",
                 "minecraft:ender_chest",
                 "minecraft:barrel",
-                "minecraft:shulker_box",
+                "minecraft:white_shulker_box",
+                "minecraft:orange_shulker_box",
+                "minecraft:magenta_shulker_box",
+                "minecraft:light_blue_shulker_box",
+                "minecraft:yellow_shulker_box",
+                "minecraft:lime_shulker_box",
+                "minecraft:pink_shulker_box",
+                "minecraft:gray_shulker_box",
+                "minecraft:light_gray_shulker_box",
+                "minecraft:cyan_shulker_box",
+                "minecraft:purple_shulker_box",
+                "minecraft:blue_shulker_box",
+                "minecraft:brown_shulker_box",
+                "minecraft:green_shulker_box",
+                "minecraft:red_shulker_box",
+                "minecraft:black_shulker_box",
                 "minecraft:undyed_shulker_box"
             ],
             "on_block_broken": "important_block_destroyed_event"
@@ -16124,19 +15263,27 @@ piglin
 }
 ```
 
-</Spoiler>
+## body_rotation_blocked
+
+armadillo
+
+```json
+"minecraft:body_rotation_blocked": {}
+```
+
+creaking
+
+```json
+"minecraft:body_rotation_blocked": {}
+```
 
 ## boostable
 
-<Spoiler title="Show">
-
 pig
-
-<CodeHeader>#component_groups/minecraft:pig_saddled</CodeHeader>
 
 ```json
 "minecraft:boostable": {
-    "speed_multiplier": 2.0,
+    "speed_multiplier": 1.35,
     "duration": 3.0,
     "boost_items": [
         {
@@ -16150,11 +15297,9 @@ pig
 
 strider
 
-<CodeHeader>#component_groups/minecraft:strider_saddled</CodeHeader>
-
 ```json
 "minecraft:boostable": {
-    "speed_multiplier": 2.0,
+    "speed_multiplier": 1.35,
     "duration": 16.0,
     "boost_items": [
         {
@@ -16166,15 +15311,9 @@ strider
 }
 ```
 
-</Spoiler>
-
 ## boss
 
-<Spoiler title="Show">
-
 ender_dragon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:boss": {
@@ -16185,8 +15324,6 @@ ender_dragon
 
 wither
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:boss": {
     "should_darken_sky": true,
@@ -16194,15 +15331,9 @@ wither
 }
 ```
 
-</Spoiler>
-
 ## break_blocks
 
-<Spoiler title="Show">
-
 ravager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:break_blocks": {
@@ -16238,7 +15369,7 @@ ravager
         "vine",
         "waterlily",
         "wheat",
-        "yellow_flower",
+        "dandelion",
         "azalea",
         "flowering_azalea",
         "azalea_leaves",
@@ -16250,20 +15381,17 @@ ravager
         "big_dripleaf",
         "spore_blossom",
         "hanging_roots",
-        "mangrove_leaves"
+        "mangrove_leaves",
+        "pale_hanging_moss",
+        "cherry_leaves",
+        "pale_oak_leaves"
     ]
 }
 ```
 
-</Spoiler>
-
 ## breathable
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16272,9 +15400,16 @@ allay
 }
 ```
 
-axolotl
+armadillo
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:breathable": {
+    "total_supply": 15,
+    "suffocate_time": 0
+}
+```
+
+axolotl
 
 ```json
 "minecraft:breathable": {
@@ -16288,8 +15423,6 @@ axolotl
 
 bat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16299,18 +15432,42 @@ bat
 
 bee
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:breathable": {
+    "totalSupply": 0,
+    "suffocateTime": -1
+}
+```
+
+bogged
 
 ```json
 "minecraft:breathable": {
-    "totalSupply": 15,
-    "suffocateTime": 0
+    "total_supply": 15,
+    "suffocate_time": 0,
+    "breathes_water": true
+}
+```
+
+breeze
+
+```json
+"minecraft:breathable": {
+    "total_supply": 15,
+    "suffocate_time": 0
+}
+```
+
+camel
+
+```json
+"minecraft:breathable": {
+    "total_supply": 15,
+    "suffocate_time": 0
 }
 ```
 
 cat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16321,8 +15478,6 @@ cat
 
 cave_spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16331,8 +15486,6 @@ cave_spider
 ```
 
 chicken
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16343,8 +15496,6 @@ chicken
 
 cow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16354,8 +15505,6 @@ cow
 
 creeper
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16364,8 +15513,6 @@ creeper
 ```
 
 dolphin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16379,8 +15526,6 @@ dolphin
 
 donkey
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16389,8 +15534,6 @@ donkey
 ```
 
 drowned
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16403,8 +15546,6 @@ drowned
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "breathes_water": true
@@ -16412,8 +15553,6 @@ elder_guardian
 ```
 
 enderman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16424,8 +15563,6 @@ enderman
 
 endermite
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16435,8 +15572,6 @@ endermite
 
 evocation_illager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16445,8 +15580,6 @@ evocation_illager
 ```
 
 cod
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16459,8 +15592,6 @@ cod
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "totalSupply": 15,
@@ -16469,8 +15600,6 @@ fox
 ```
 
 frog
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16484,8 +15613,6 @@ frog
 
 ghast
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16494,8 +15621,6 @@ ghast
 ```
 
 glow_squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16508,8 +15633,6 @@ glow_squid
 
 goat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16519,8 +15642,6 @@ goat
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "breathes_water": true
@@ -16528,8 +15649,6 @@ guardian
 ```
 
 hoglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16540,8 +15659,6 @@ hoglin
 
 horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16550,8 +15667,6 @@ horse
 ```
 
 husk
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16563,8 +15678,6 @@ husk
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16573,8 +15686,6 @@ llama
 ```
 
 magma_cube
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16586,8 +15697,6 @@ magma_cube
 
 mooshroom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16596,8 +15705,6 @@ mooshroom
 ```
 
 mule
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16608,8 +15715,6 @@ mule
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16618,8 +15723,6 @@ ocelot
 ```
 
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16630,8 +15733,6 @@ panda
 
 parrot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16640,8 +15741,6 @@ parrot
 ```
 
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16654,8 +15753,6 @@ phantom
 
 pig
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16664,8 +15761,6 @@ pig
 ```
 
 piglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16676,8 +15771,6 @@ piglin
 
 piglin_brute
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16687,8 +15780,6 @@ piglin_brute
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16697,8 +15788,6 @@ pillager
 ```
 
 player
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16711,8 +15800,6 @@ player
 
 polar_bear
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16721,8 +15808,6 @@ polar_bear
 ```
 
 pufferfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16735,8 +15820,6 @@ pufferfish
 
 rabbit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16746,8 +15829,6 @@ rabbit
 
 ravager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "suffocate_time": 0,
@@ -16756,8 +15837,6 @@ ravager
 ```
 
 salmon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16770,8 +15849,6 @@ salmon
 
 sheep
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16780,8 +15857,6 @@ sheep
 ```
 
 shulker
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16794,8 +15869,6 @@ shulker
 
 silverfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16804,8 +15877,6 @@ silverfish
 ```
 
 skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16817,8 +15888,6 @@ skeleton
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16829,7 +15898,14 @@ skeleton_horse
 
 slime
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:breathable": {
+    "total_supply": 15,
+    "suffocate_time": 0
+}
+```
+
+sniffer
 
 ```json
 "minecraft:breathable": {
@@ -16840,8 +15916,6 @@ slime
 
 snow_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16851,8 +15925,6 @@ snow_golem
 
 spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16861,8 +15933,6 @@ spider
 ```
 
 squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16875,8 +15945,6 @@ squid
 
 stray
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16886,8 +15954,6 @@ stray
 ```
 
 tadpole
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16901,8 +15967,6 @@ tadpole
 
 trader_llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16911,8 +15975,6 @@ trader_llama
 ```
 
 tropicalfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16924,8 +15986,6 @@ tropicalfish
 ```
 
 turtle
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16939,8 +15999,6 @@ turtle
 
 villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16949,8 +16007,6 @@ villager
 ```
 
 villager_v2
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16961,8 +16017,6 @@ villager_v2
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16971,8 +16025,6 @@ vindicator
 ```
 
 wandering_trader
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -16983,8 +16035,6 @@ wandering_trader
 
 warden
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -16993,8 +16043,6 @@ warden
 ```
 
 witch
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -17005,8 +16053,6 @@ witch
 
 wither
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -17015,8 +16061,6 @@ wither
 ```
 
 wither_skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -17028,8 +16072,6 @@ wither_skeleton
 
 wolf
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -17038,8 +16080,6 @@ wolf
 ```
 
 zoglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -17050,8 +16090,6 @@ zoglin
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -17064,8 +16102,6 @@ zombie
 
 zombie_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -17075,8 +16111,6 @@ zombie_horse
 ```
 
 zombie_pigman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:breathable": {
@@ -17088,8 +16122,6 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -17100,8 +16132,6 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breathable": {
     "total_supply": 15,
@@ -17110,15 +16140,35 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## breedable
 
-<Spoiler title="Show">
+armadillo
+
+```json
+"minecraft:breedable": {
+    "love_filters": {
+        "test": "enum_property",
+        "domain": "minecraft:armadillo_state",
+        "value": "unrolled"
+    },
+    "require_tame": false,
+    "breeds_with": [
+        {
+            "mate_type": "minecraft:armadillo",
+            "baby_type": "minecraft:armadillo",
+            "breed_event": {
+                "event": "minecraft:entity_born",
+                "target": "baby"
+            }
+        }
+    ],
+    "breed_items": [
+        "spider_eye"
+    ]
+}
+```
 
 axolotl
-
-<CodeHeader>#component_groups/axolotl_adult</CodeHeader>
 
 ```json
 "minecraft:breedable": {
@@ -17141,8 +16191,6 @@ axolotl
 
 bee
 
-<CodeHeader>#component_groups/bee_adult</CodeHeader>
-
 ```json
 "minecraft:breedable": {
     "require_tame": false,
@@ -17155,23 +16203,56 @@ bee
         }
     },
     "breed_items": [
-        "minecraft:red_flower",
-        "minecraft:yellow_flower",
+        "minecraft:poppy",
+        "minecraft:blue_orchid",
+        "minecraft:allium",
+        "minecraft:azure_bluet",
+        "minecraft:red_tulip",
+        "minecraft:orange_tulip",
+        "minecraft:white_tulip",
+        "minecraft:pink_tulip",
+        "minecraft:oxeye_daisy",
+        "minecraft:cornflower",
+        "minecraft:lily_of_the_valley",
+        "minecraft:dandelion",
         "minecraft:wither_rose",
-        "minecraft:double_plant:0",
-        "minecraft:double_plant:1",
-        "minecraft:double_plant:4",
-        "minecraft:double_plant:5",
+        "minecraft:sunflower",
+        "minecraft:lilac",
+        "minecraft:rose_bush",
+        "minecraft:peony",
         "minecraft:flowering_azalea",
         "minecraft:azalea_leaves_flowered",
-        "minecraft:mangrove_propagule"
+        "minecraft:mangrove_propagule",
+        "minecraft:pitcher_plant",
+        "minecraft:torchflower",
+        "minecraft:cherry_leaves",
+        "minecraft:pink_petals"
+    ]
+}
+```
+
+camel
+
+```json
+"minecraft:breedable": {
+    "require_tame": false,
+    "breeds_with": [
+        {
+            "mate_type": "minecraft:camel",
+            "baby_type": "minecraft:camel",
+            "breed_event": {
+                "event": "minecraft:entity_born",
+                "target": "baby"
+            }
+        }
+    ],
+    "breed_items": [
+        "cactus"
     ]
 }
 ```
 
 cat
-
-<CodeHeader>#component_groups/minecraft:cat_adult</CodeHeader>
 
 ```json
 "minecraft:breedable": {
@@ -17195,8 +16276,6 @@ cat
 
 chicken
 
-<CodeHeader>#component_groups/minecraft:chicken_adult</CodeHeader>
-
 ```json
 "minecraft:breedable": {
     "require_tame": false,
@@ -17212,14 +16291,14 @@ chicken
         "wheat_seeds",
         "beetroot_seeds",
         "melon_seeds",
-        "pumpkin_seeds"
+        "pumpkin_seeds",
+        "pitcher_pod",
+        "torchflower_seeds"
     ]
 }
 ```
 
 cow
-
-<CodeHeader>#component_groups/minecraft:cow_adult</CodeHeader>
 
 ```json
 "minecraft:breedable": {
@@ -17238,10 +16317,11 @@ cow
 
 donkey
 
-<CodeHeader>#component_groups/minecraft:donkey_tamed</CodeHeader>
-
 ```json
 "minecraft:breedable": {
+    "parent_centric_attribute_blending": [
+        "minecraft:health"
+    ],
     "require_tame": true,
     "inherit_tamed": false,
     "breeds_with": [
@@ -17272,8 +16352,6 @@ donkey
 
 fox
 
-<CodeHeader>#component_groups/minecraft:fox_adult</CodeHeader>
-
 ```json
 "minecraft:breedable": {
     "require_tame": false,
@@ -17294,8 +16372,6 @@ fox
 
 frog
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:breedable": {
     "require_tame": false,
@@ -17314,8 +16390,6 @@ frog
 ```
 
 goat
-
-<CodeHeader>#component_groups/goat_adult</CodeHeader>
 
 ```json
 "minecraft:breedable": {
@@ -17336,8 +16410,6 @@ goat
 ```
 
 hoglin
-
-<CodeHeader>#component_groups/minecraft:hoglin_adult</CodeHeader>
 
 ```json
 "minecraft:breedable": {
@@ -17364,10 +16436,13 @@ hoglin
 
 horse
 
-<CodeHeader>#component_groups/minecraft:horse_tamed</CodeHeader>
-
 ```json
 "minecraft:breedable": {
+    "parent_centric_attribute_blending": [
+        "minecraft:health",
+        "minecraft:movement",
+        "minecraft:horse.jump_strength"
+    ],
     "require_tame": true,
     "inherit_tamed": false,
     "breeds_with": [
@@ -17392,16 +16467,30 @@ horse
         "golden_carrot",
         "golden_apple",
         "appleEnchanted"
+    ],
+    "mutation_factor": {
+        "extra_variant": 0.2,
+        "variant": 0.111
+    },
+    "mutation_strategy": "random",
+    "random_variant_mutation_interval": [
+        0,
+        7
+    ],
+    "random_extra_variant_mutation_interval": [
+        0,
+        5
     ]
 }
 ```
 
 llama
 
-<CodeHeader>#component_groups/minecraft:llama_adult</CodeHeader>
-
 ```json
 "minecraft:breedable": {
+    "parent_centric_attribute_blending": [
+        "minecraft:health"
+    ],
     "require_tame": true,
     "inherit_tamed": false,
     "breeds_with": {
@@ -17419,8 +16508,6 @@ llama
 ```
 
 mooshroom
-
-<CodeHeader>#component_groups/minecraft:cow_adult</CodeHeader>
 
 ```json
 "minecraft:breedable": {
@@ -17444,8 +16531,6 @@ mooshroom
 
 ocelot
 
-<CodeHeader>#component_groups/minecraft:ocelot_trusting</CodeHeader>
-
 ```json
 "minecraft:breedable": {
     "require_tame": false,
@@ -17465,8 +16550,6 @@ ocelot
 ```
 
 panda
-
-<CodeHeader>#component_groups/minecraft:panda_adult</CodeHeader>
 
 ```json
 "minecraft:breedable": {
@@ -17494,8 +16577,6 @@ panda
 
 pig
 
-<CodeHeader>#component_groups/minecraft:pig_adult</CodeHeader>
-
 ```json
 "minecraft:breedable": {
     "require_tame": false,
@@ -17517,14 +16598,12 @@ pig
 
 rabbit
 
-<CodeHeader>#component_groups/adult</CodeHeader>
-
 ```json
 "minecraft:breedable": {
     "breed_items": [
         "golden_carrot",
         "carrot",
-        "yellow_flower"
+        "dandelion"
     ],
     "breeds_with": {
         "mate_type": "minecraft:rabbit",
@@ -17539,8 +16618,6 @@ rabbit
 
 sheep
 
-<CodeHeader>#component_groups/minecraft:sheep_adult</CodeHeader>
-
 ```json
 "minecraft:breedable": {
     "require_tame": false,
@@ -17552,9 +16629,28 @@ sheep
 }
 ```
 
-strider
+sniffer
 
-<CodeHeader>#component_groups/minecraft:strider_adult</CodeHeader>
+```json
+"minecraft:breedable": {
+    "require_tame": false,
+    "causes_pregnancy": true,
+    "breeds_with": [
+        {
+            "mate_type": "minecraft:sniffer",
+            "breed_event": {
+                "event": "on_pregnant",
+                "target": "self"
+            }
+        }
+    ],
+    "breed_items": [
+        "torchflower_seeds"
+    ]
+}
+```
+
+strider
 
 ```json
 "minecraft:breedable": {
@@ -17574,8 +16670,6 @@ strider
 ```
 
 trader_llama
-
-<CodeHeader>#component_groups/minecraft:llama_adult</CodeHeader>
 
 ```json
 "minecraft:breedable": {
@@ -17607,8 +16701,6 @@ trader_llama
 
 turtle
 
-<CodeHeader>#component_groups/minecraft:adult</CodeHeader>
-
 ```json
 "minecraft:breedable": {
     "require_tame": false,
@@ -17628,8 +16720,6 @@ turtle
 ```
 
 wolf
-
-<CodeHeader>#component_groups/minecraft:wolf_adult</CodeHeader>
 
 ```json
 "minecraft:breedable": {
@@ -17659,15 +16749,9 @@ wolf
 }
 ```
 
-</Spoiler>
-
 ## bribeable
 
-<Spoiler title="Show">
-
 dolphin
-
-<CodeHeader>#component_groups/dolphin_adult</CodeHeader>
 
 ```json
 "minecraft:bribeable": {
@@ -17678,16 +16762,10 @@ dolphin
 }
 ```
 
-</Spoiler>
-
 ## buoyant
-
-<Spoiler title="Show">
 
 boat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:buoyant": {
     "base_buoyancy": 1.0,
@@ -17702,8 +16780,6 @@ boat
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:floating</CodeHeader>
-
 ```json
 "minecraft:buoyant": {
     "base_buoyancy": 1.0,
@@ -17717,8 +16793,6 @@ boat
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:above_bubble_column_down</CodeHeader>
 
 ```json
 "minecraft:buoyant": {
@@ -17732,8 +16806,6 @@ boat
     "drag_down_on_buoyancy_removed": 0.7
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:above_bubble_column_up</CodeHeader>
 
 ```json
 "minecraft:buoyant": {
@@ -17750,8 +16822,6 @@ boat
 
 chest_boat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:buoyant": {
     "base_buoyancy": 1.0,
@@ -17766,8 +16836,6 @@ chest_boat
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:floating</CodeHeader>
-
 ```json
 "minecraft:buoyant": {
     "base_buoyancy": 1.0,
@@ -17781,8 +16849,6 @@ chest_boat
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:above_bubble_column_down</CodeHeader>
 
 ```json
 "minecraft:buoyant": {
@@ -17796,8 +16862,6 @@ chest_boat
     "drag_down_on_buoyancy_removed": 0.7
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:above_bubble_column_up</CodeHeader>
 
 ```json
 "minecraft:buoyant": {
@@ -17814,8 +16878,6 @@ chest_boat
 
 xp_orb
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:buoyant": {
     "apply_gravity": false,
@@ -17826,23 +16888,21 @@ xp_orb
 }
 ```
 
-</Spoiler>
-
 ## burns_in_daylight
 
-<Spoiler title="Show">
+bogged
+
+```json
+"minecraft:burns_in_daylight": {}
+```
 
 drowned
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:burns_in_daylight": {}
 ```
 
 magma_cube
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:burns_in_daylight": false
@@ -17850,15 +16910,11 @@ magma_cube
 
 phantom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:burns_in_daylight": {}
 ```
 
 skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:burns_in_daylight": {}
@@ -17866,15 +16922,11 @@ skeleton
 
 stray
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:burns_in_daylight": {}
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:burns_in_daylight": {}
@@ -17882,29 +16934,43 @@ zombie
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:burns_in_daylight": {}
 ```
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:burns_in_daylight": {}
 ```
 
-</Spoiler>
-
 ## can_climb
 
-<Spoiler title="Show">
+armadillo
+
+```json
+"minecraft:can_climb": {}
+```
 
 blaze
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:can_climb": {}
+```
+
+bogged
+
+```json
+"minecraft:can_climb": {}
+```
+
+breeze
+
+```json
+"minecraft:can_climb": {}
+```
+
+camel
 
 ```json
 "minecraft:can_climb": {}
@@ -17912,15 +16978,11 @@ blaze
 
 cat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 cave_spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -17928,15 +16990,17 @@ cave_spider
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 cow
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:can_climb": {}
+```
+
+creaking
 
 ```json
 "minecraft:can_climb": {}
@@ -17944,15 +17008,11 @@ cow
 
 creeper
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 dolphin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -17960,15 +17020,11 @@ dolphin
 
 drowned
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 enderman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -17976,15 +17032,11 @@ enderman
 
 endermite
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 evocation_illager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -17992,15 +17044,11 @@ evocation_illager
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 glow_squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -18008,15 +17056,11 @@ glow_squid
 
 goat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 hoglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -18024,15 +17068,11 @@ hoglin
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -18040,15 +17080,11 @@ iron_golem
 
 magma_cube
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 mooshroom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -18056,15 +17092,11 @@ mooshroom
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -18072,15 +17104,11 @@ panda
 
 pig
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 player
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -18088,15 +17116,11 @@ player
 
 polar_bear
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 rabbit
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -18104,15 +17128,11 @@ rabbit
 
 sheep
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 silverfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -18120,15 +17140,17 @@ silverfish
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 slime
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:can_climb": {}
+```
+
+sniffer
 
 ```json
 "minecraft:can_climb": {}
@@ -18136,15 +17158,11 @@ slime
 
 snow_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -18152,15 +17170,11 @@ spider
 
 squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 stray
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -18168,15 +17182,11 @@ stray
 
 vex
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -18184,15 +17194,11 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 wandering_trader
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -18200,23 +17206,17 @@ wandering_trader
 
 warden
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 witch
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -18224,15 +17224,11 @@ wither
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 wolf
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -18240,15 +17236,11 @@ wolf
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -18256,15 +17248,11 @@ zombie
 
 zombie_pigman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
 zombie_villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_climb": {}
@@ -18272,21 +17260,13 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_climb": {}
 ```
 
-</Spoiler>
-
 ## can_fly
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_fly": {}
@@ -18294,15 +17274,11 @@ allay
 
 bat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_fly": {}
 ```
 
 bee
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_fly": {}
@@ -18310,15 +17286,11 @@ bee
 
 ghast
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_fly": {}
 ```
 
 parrot
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:can_fly": {}
@@ -18326,21 +17298,45 @@ parrot
 
 wither
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_fly": {}
 ```
 
-</Spoiler>
+## can_join_raid
+
+evocation_illager
+
+```json
+"minecraft:can_join_raid": {}
+```
+
+pillager
+
+```json
+"minecraft:can_join_raid": {}
+```
+
+ravager
+
+```json
+"minecraft:can_join_raid": {}
+```
+
+vindicator
+
+```json
+"minecraft:can_join_raid": {}
+```
+
+witch
+
+```json
+"minecraft:can_join_raid": {}
+```
 
 ## can_power_jump
 
-<Spoiler title="Show">
-
 donkey
-
-<CodeHeader>#component_groups/minecraft:donkey_saddled</CodeHeader>
 
 ```json
 "minecraft:can_power_jump": {}
@@ -18348,15 +17344,11 @@ donkey
 
 horse
 
-<CodeHeader>#component_groups/minecraft:horse_saddled</CodeHeader>
-
 ```json
 "minecraft:can_power_jump": {}
 ```
 
 mule
-
-<CodeHeader>#component_groups/minecraft:mule_saddled</CodeHeader>
 
 ```json
 "minecraft:can_power_jump": {}
@@ -18364,21 +17356,21 @@ mule
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:can_power_jump": {}
 ```
 
-</Spoiler>
+## cannot_be_attacked
+
+ghast
+
+```json
+"minecraft:cannot_be_attacked": {}
+```
 
 ## celebrate_hunt
 
-<Spoiler title="Show">
-
 piglin
-
-<CodeHeader>#component_groups/piglin_adult</CodeHeader>
 
 ```json
 "minecraft:celebrate_hunt": {
@@ -18401,15 +17393,9 @@ piglin
 }
 ```
 
-</Spoiler>
-
 ## collision_box
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18418,9 +17404,16 @@ allay
 }
 ```
 
-armor_stand
+armadillo
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:collision_box": {
+    "width": 0.7,
+    "height": 0.65
+}
+```
+
+armor_stand
 
 ```json
 "minecraft:collision_box": {
@@ -18431,8 +17424,6 @@ armor_stand
 
 arrow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.25,
@@ -18441,8 +17432,6 @@ arrow
 ```
 
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18453,8 +17442,6 @@ axolotl
 
 bat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.5,
@@ -18463,8 +17450,6 @@ bat
 ```
 
 bee
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18475,8 +17460,6 @@ bee
 
 blaze
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.5,
@@ -18486,8 +17469,6 @@ blaze
 
 boat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 1.4,
@@ -18495,9 +17476,50 @@ boat
 }
 ```
 
-cat
+bogged
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:collision_box": {
+    "width": 0.6,
+    "height": 1.9
+}
+```
+
+breeze
+
+```json
+"minecraft:collision_box": {
+    "width": 0.6,
+    "height": 1.77
+}
+```
+
+breeze_wind_charge_projectile
+
+```json
+"minecraft:collision_box": {
+    "width": 0.3125,
+    "height": 0.3125
+}
+```
+
+camel
+
+```json
+"minecraft:collision_box": {
+    "width": 1.7,
+    "height": 2.375
+}
+```
+
+```json
+"minecraft:collision_box": {
+    "width": 1.7,
+    "height": 0.945
+}
+```
+
+cat
 
 ```json
 "minecraft:collision_box": {
@@ -18508,8 +17530,6 @@ cat
 
 cave_spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.7,
@@ -18518,8 +17538,6 @@ cave_spider
 ```
 
 chest_boat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18530,8 +17548,6 @@ chest_boat
 
 chest_minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.98,
@@ -18540,8 +17556,6 @@ chest_minecart
 ```
 
 chicken
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18552,8 +17566,6 @@ chicken
 
 command_block_minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.98,
@@ -18563,8 +17575,6 @@ command_block_minecart
 
 cow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.9,
@@ -18572,9 +17582,16 @@ cow
 }
 ```
 
-creeper
+creaking
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:collision_box": {
+    "width": 0.9,
+    "height": 2.7
+}
+```
+
+creeper
 
 ```json
 "minecraft:collision_box": {
@@ -18585,8 +17602,6 @@ creeper
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.9,
@@ -18595,8 +17610,6 @@ dolphin
 ```
 
 donkey
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18607,8 +17620,6 @@ donkey
 
 dragon_fireball
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.31,
@@ -18617,8 +17628,6 @@ dragon_fireball
 ```
 
 drowned
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18629,8 +17638,6 @@ drowned
 
 egg
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.25,
@@ -18639,8 +17646,6 @@ egg
 ```
 
 elder_guardian
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18651,8 +17656,6 @@ elder_guardian
 
 enderman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.6,
@@ -18661,8 +17664,6 @@ enderman
 ```
 
 endermite
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18673,18 +17674,14 @@ endermite
 
 ender_crystal
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
-    "width": 0.98,
-    "height": 0.98
+    "width": 2,
+    "height": 2
 }
 ```
 
 ender_dragon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18695,8 +17692,6 @@ ender_dragon
 
 ender_pearl
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.25,
@@ -18705,8 +17700,6 @@ ender_pearl
 ```
 
 evocation_illager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18717,8 +17710,6 @@ evocation_illager
 
 eye_of_ender_signal
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.25,
@@ -18727,8 +17718,6 @@ eye_of_ender_signal
 ```
 
 fireball
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18739,8 +17728,6 @@ fireball
 
 fireworks_rocket
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.25,
@@ -18749,8 +17736,6 @@ fireworks_rocket
 ```
 
 cod
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18761,8 +17746,6 @@ cod
 
 fishing_hook
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.15,
@@ -18771,8 +17754,6 @@ fishing_hook
 ```
 
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18783,8 +17764,6 @@ fox
 
 frog
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.5,
@@ -18793,8 +17772,6 @@ frog
 ```
 
 ghast
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18805,8 +17782,6 @@ ghast
 
 glow_squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.95,
@@ -18815,8 +17790,6 @@ glow_squid
 ```
 
 goat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18827,8 +17800,6 @@ goat
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.85,
@@ -18838,16 +17809,12 @@ guardian
 
 hoglin
 
-<CodeHeader>#component_groups/minecraft:hoglin_baby</CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.85,
     "height": 0.85
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:hoglin_adult</CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18858,8 +17825,6 @@ hoglin
 
 hopper_minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.98,
@@ -18868,8 +17833,6 @@ hopper_minecart
 ```
 
 horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18880,8 +17843,6 @@ horse
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.6,
@@ -18890,8 +17851,6 @@ husk
 ```
 
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18902,8 +17861,6 @@ iron_golem
 
 lingering_potion
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.25,
@@ -18912,8 +17869,6 @@ lingering_potion
 ```
 
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18924,8 +17879,6 @@ llama
 
 llama_spit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.31,
@@ -18935,7 +17888,12 @@ llama_spit
 
 magma_cube
 
-<CodeHeader>#component_groups/minecraft:slime_large</CodeHeader>
+```json
+"minecraft:collision_box": {
+    "width": 2.08,
+    "height": 2.08
+}
+```
 
 ```json
 "minecraft:collision_box": {
@@ -18944,16 +17902,12 @@ magma_cube
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:slime_medium</CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 1.04,
     "height": 1.02
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:slime_small</CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18964,8 +17918,6 @@ magma_cube
 
 minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.98,
@@ -18974,8 +17926,6 @@ minecart
 ```
 
 mooshroom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -18986,8 +17936,6 @@ mooshroom
 
 mule
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 1.4,
@@ -18996,8 +17944,6 @@ mule
 ```
 
 npc
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19008,8 +17954,6 @@ npc
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.6,
@@ -19019,18 +17963,14 @@ ocelot
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
-    "width": 1.7,
-    "height": 1.5
+    "width": 1.3,
+    "height": 1.25
 }
 ```
 
 parrot
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19041,8 +17981,6 @@ parrot
 
 phantom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.9,
@@ -19051,8 +17989,6 @@ phantom
 ```
 
 pig
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19063,8 +17999,6 @@ pig
 
 piglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.6,
@@ -19073,8 +18007,6 @@ piglin
 ```
 
 piglin_brute
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19085,8 +18017,6 @@ piglin_brute
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.6,
@@ -19095,8 +18025,6 @@ pillager
 ```
 
 player
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19107,18 +18035,14 @@ player
 
 polar_bear
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
-    "width": 1.3,
+    "width": 1.4,
     "height": 1.4
 }
 ```
 
 pufferfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19129,8 +18053,6 @@ pufferfish
 
 rabbit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.67,
@@ -19139,8 +18061,6 @@ rabbit
 ```
 
 ravager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19151,8 +18071,6 @@ ravager
 
 salmon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.5,
@@ -19161,8 +18079,6 @@ salmon
 ```
 
 sheep
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19173,8 +18089,6 @@ sheep
 
 shulker_bullet
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.625,
@@ -19183,8 +18097,6 @@ shulker_bullet
 ```
 
 silverfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19195,8 +18107,6 @@ silverfish
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.6,
@@ -19205,8 +18115,6 @@ skeleton
 ```
 
 skeleton_horse
-
-<CodeHeader>#component_groups/minecraft:skeleton_horse_adult</CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19217,7 +18125,12 @@ skeleton_horse
 
 slime
 
-<CodeHeader>#component_groups/minecraft:slime_large</CodeHeader>
+```json
+"minecraft:collision_box": {
+    "width": 2.08,
+    "height": 2.08
+}
+```
 
 ```json
 "minecraft:collision_box": {
@@ -19226,16 +18139,12 @@ slime
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:slime_medium</CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 1.04,
     "height": 1.04
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:slime_small</CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19246,8 +18155,6 @@ slime
 
 small_fireball
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.31,
@@ -19255,9 +18162,16 @@ small_fireball
 }
 ```
 
-snowball
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:collision_box": {
+    "width": 1.9,
+    "height": 1.75
+}
+```
+
+snowball
 
 ```json
 "minecraft:collision_box": {
@@ -19268,8 +18182,6 @@ snowball
 
 snow_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.4,
@@ -19278,8 +18190,6 @@ snow_golem
 ```
 
 spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19290,8 +18200,6 @@ spider
 
 splash_potion
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.25,
@@ -19300,8 +18208,6 @@ splash_potion
 ```
 
 squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19312,8 +18218,6 @@ squid
 
 stray
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.6,
@@ -19322,8 +18226,6 @@ stray
 ```
 
 strider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19334,8 +18236,6 @@ strider
 
 tadpole
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.8,
@@ -19344,8 +18244,6 @@ tadpole
 ```
 
 thrown_trident
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19356,8 +18254,6 @@ thrown_trident
 
 tnt
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.98,
@@ -19366,8 +18262,6 @@ tnt
 ```
 
 tnt_minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19378,8 +18272,6 @@ tnt_minecart
 
 trader_llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.9,
@@ -19388,8 +18280,6 @@ trader_llama
 ```
 
 tripod_camera
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19400,8 +18290,6 @@ tripod_camera
 
 tropicalfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.4,
@@ -19411,16 +18299,12 @@ tropicalfish
 
 turtle
 
-<CodeHeader>#component_groups/minecraft:baby</CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.6,
     "height": 0.2
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:adult</CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19431,8 +18315,6 @@ turtle
 
 vex
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.4,
@@ -19441,8 +18323,6 @@ vex
 ```
 
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19453,8 +18333,6 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.6,
@@ -19463,8 +18341,6 @@ villager_v2
 ```
 
 vindicator
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19475,8 +18351,6 @@ vindicator
 
 wandering_trader
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.6,
@@ -19486,8 +18360,6 @@ wandering_trader
 
 warden
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.9,
@@ -19495,9 +18367,16 @@ warden
 }
 ```
 
-witch
+wind_charge_projectile
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:collision_box": {
+    "width": 0.3125,
+    "height": 0.3125
+}
+```
+
+witch
 
 ```json
 "minecraft:collision_box": {
@@ -19508,8 +18387,6 @@ witch
 
 wither
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 1,
@@ -19518,8 +18395,6 @@ wither
 ```
 
 wither_skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19530,8 +18405,6 @@ wither_skeleton
 
 wither_skull
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.15,
@@ -19541,8 +18414,6 @@ wither_skull
 
 wither_skull_dangerous
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.15,
@@ -19551,8 +18422,6 @@ wither_skull_dangerous
 ```
 
 wolf
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19563,8 +18432,6 @@ wolf
 
 xp_bottle
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.25,
@@ -19573,8 +18440,6 @@ xp_bottle
 ```
 
 xp_orb
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19585,16 +18450,12 @@ xp_orb
 
 zoglin
 
-<CodeHeader>#component_groups/zoglin_baby</CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.85,
     "height": 0.85
 }
 ```
-
-<CodeHeader>#component_groups/zoglin_adult</CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19605,8 +18466,6 @@ zoglin
 
 zombie
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.6,
@@ -19615,8 +18474,6 @@ zombie
 ```
 
 zombie_horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19627,8 +18484,6 @@ zombie_horse
 
 zombie_pigman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.6,
@@ -19637,8 +18492,6 @@ zombie_pigman
 ```
 
 zombie_villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:collision_box": {
@@ -19649,8 +18502,6 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:collision_box": {
     "width": 0.6,
@@ -19658,15 +18509,9 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## color
 
-<Spoiler title="Show">
-
 cat
-
-<CodeHeader>#component_groups/minecraft:cat_tame</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -19676,15 +18521,11 @@ cat
 
 sheep
 
-<CodeHeader>#component_groups/minecraft:sheep_white</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:sheep_brown</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -19692,15 +18533,11 @@ sheep
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:sheep_black</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 15
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:sheep_gray</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -19708,23 +18545,17 @@ sheep
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:sheep_light_gray</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 7
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:sheep_pink</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 6
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:sheep_red</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -19734,23 +18565,17 @@ sheep
 
 tropicalfish
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_base_white</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 0
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_base_orange</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_base_magenta</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -19758,15 +18583,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_base_lightblue</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 3
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_base_yellow</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -19774,15 +18595,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_base_lightgreen</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 5
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_base_pink</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -19790,15 +18607,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_base_gray</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 7
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_base_silver</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -19806,15 +18619,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_base_cyan</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 9
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_base_purple</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -19822,15 +18631,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_base_blue</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 11
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_base_brown</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -19838,15 +18643,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_base_green</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 13
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_base_red</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -19854,39 +18655,29 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:anenonme</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 1
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:black_tang</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 7
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:blue_dory</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 7
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:butterfly_fish</CodeHeader>
 
 ```json
 "minecraft:color": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:cichlid</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -19894,15 +18685,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:clownfish</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:cc_betta</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -19910,15 +18697,17 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:dog_fish</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 10
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:e_red_snapper</CodeHeader>
+```json
+"minecraft:color": {
+    "value": 0
+}
+```
 
 ```json
 "minecraft:color": {
@@ -19926,31 +18715,17 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:goat_fish</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 0
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:moorish_idol</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:ornate_butterfly</CodeHeader>
-
-```json
-"minecraft:color": {
-    "value": 0
-}
-```
-
-<CodeHeader>#component_groups/minecraft:parrot_fish</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -19958,23 +18733,17 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:queen_angel_fish</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 5
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:red_cichlid</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 14
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:red_lipped_benny</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -19982,15 +18751,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:red_snapper</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 14
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:threadfin</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -19998,15 +18763,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tomato_clown</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 14
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:triggerfish</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -20014,15 +18775,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:yellow_tang</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 4
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:yellowtail_parrot</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -20032,23 +18789,15 @@ tropicalfish
 
 wolf
 
-<CodeHeader>#component_groups/minecraft:wolf_tame</CodeHeader>
-
 ```json
 "minecraft:color": {
     "value": 14
 }
 ```
 
-</Spoiler>
-
 ## color2
 
-<Spoiler title="Show">
-
 tropicalfish
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_pattern_white</CodeHeader>
 
 ```json
 "minecraft:color2": {
@@ -20056,15 +18805,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_pattern_orange</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_pattern_magenta</CodeHeader>
 
 ```json
 "minecraft:color2": {
@@ -20072,23 +18817,17 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_pattern_lightblue</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 3
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_pattern_yellow</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 4
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_pattern_lightgreen</CodeHeader>
 
 ```json
 "minecraft:color2": {
@@ -20096,23 +18835,17 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_pattern_pink</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 6
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_pattern_gray</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 7
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_pattern_silver</CodeHeader>
 
 ```json
 "minecraft:color2": {
@@ -20120,15 +18853,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_pattern_cyan</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 9
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_pattern_purple</CodeHeader>
 
 ```json
 "minecraft:color2": {
@@ -20136,15 +18865,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_pattern_blue</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 11
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_pattern_brown</CodeHeader>
 
 ```json
 "minecraft:color2": {
@@ -20152,15 +18877,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_pattern_green</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 13
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_pattern_red</CodeHeader>
 
 ```json
 "minecraft:color2": {
@@ -20168,23 +18889,17 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:anenonme</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 7
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:black_tang</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 7
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:blue_dory</CodeHeader>
 
 ```json
 "minecraft:color2": {
@@ -20192,23 +18907,17 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:butterfly_fish</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 7
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:cichlid</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 7
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:clownfish</CodeHeader>
 
 ```json
 "minecraft:color2": {
@@ -20216,23 +18925,17 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:cc_betta</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 3
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:dog_fish</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 4
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:e_red_snapper</CodeHeader>
 
 ```json
 "minecraft:color2": {
@@ -20240,23 +18943,17 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:goat_fish</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 4
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:moorish_idol</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 7
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:ornate_butterfly</CodeHeader>
 
 ```json
 "minecraft:color2": {
@@ -20264,15 +18961,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:parrot_fish</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 6
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:queen_angel_fish</CodeHeader>
 
 ```json
 "minecraft:color2": {
@@ -20280,15 +18973,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:red_cichlid</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:red_lipped_benny</CodeHeader>
 
 ```json
 "minecraft:color2": {
@@ -20296,15 +18985,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:red_snapper</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:threadfin</CodeHeader>
 
 ```json
 "minecraft:color2": {
@@ -20312,7 +18997,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tomato_clown</CodeHeader>
+```json
+"minecraft:color2": {
+    "value": 0
+}
+```
 
 ```json
 "minecraft:color2": {
@@ -20320,53 +19009,29 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:triggerfish</CodeHeader>
-
-```json
-"minecraft:color2": {
-    "value": 0
-}
-```
-
-<CodeHeader>#component_groups/minecraft:yellow_tang</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 4
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:yellowtail_parrot</CodeHeader>
-
 ```json
 "minecraft:color2": {
     "value": 4
 }
 ```
-
-</Spoiler>
 
 ## combat_regeneration
 
-<Spoiler title="Show">
-
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:combat_regeneration": {}
 ```
 
-</Spoiler>
-
 ## conditional_bandwidth_optimization
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -20374,7 +19039,11 @@ allay
 
 area_effect_cloud
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:conditional_bandwidth_optimization": {}
+```
+
+armadillo
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -20382,15 +19051,11 @@ area_effect_cloud
 
 armor_stand
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 arrow
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -20404,15 +19069,11 @@ arrow
 
 bat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 bee
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -20420,15 +19081,11 @@ bee
 
 blaze
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 boat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -20455,9 +19112,37 @@ boat
 }
 ```
 
-cat
+bogged
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:conditional_bandwidth_optimization": {}
+```
+
+breeze
+
+```json
+"minecraft:conditional_bandwidth_optimization": {}
+```
+
+breeze_wind_charge_projectile
+
+```json
+"minecraft:conditional_bandwidth_optimization": {
+    "default_values": {
+        "max_optimized_distance": 80.0,
+        "max_dropped_ticks": 7,
+        "use_motion_prediction_hints": true
+    }
+}
+```
+
+camel
+
+```json
+"minecraft:conditional_bandwidth_optimization": {}
+```
+
+cat
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -20465,15 +19150,11 @@ cat
 
 cave_spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 chest_boat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -20502,8 +19183,6 @@ chest_boat
 
 chest_minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {
     "default_values": {
@@ -20530,15 +19209,11 @@ chest_minecart
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 command_block_minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -20566,15 +19241,11 @@ command_block_minecart
 
 cow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 creeper
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -20582,31 +19253,35 @@ creeper
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 donkey
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
-drowned
+dragon_fireball
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:conditional_bandwidth_optimization": {
+    "default_values": {
+        "max_optimized_distance": 80.0,
+        "max_dropped_ticks": 7,
+        "use_motion_prediction_hints": true
+    }
+}
+```
+
+drowned
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 egg
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -20620,15 +19295,11 @@ egg
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 enderman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -20642,23 +19313,17 @@ enderman
 
 endermite
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 ender_crystal
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 ender_pearl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -20672,15 +19337,11 @@ ender_pearl
 
 evocation_illager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 eye_of_ender_signal
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -20694,8 +19355,6 @@ eye_of_ender_signal
 
 fireball
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {
     "default_values": {
@@ -20707,8 +19366,6 @@ fireball
 ```
 
 fireworks_rocket
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -20722,15 +19379,11 @@ fireworks_rocket
 
 cod
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 fishing_hook
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -20744,15 +19397,11 @@ fishing_hook
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 ghast
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -20760,23 +19409,17 @@ ghast
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 hoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 hopper_minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -20804,15 +19447,11 @@ hopper_minecart
 
 horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 husk
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -20820,15 +19459,11 @@ husk
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 lightning_bolt
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -20841,8 +19476,6 @@ lightning_bolt
 ```
 
 lingering_potion
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -20856,15 +19489,11 @@ lingering_potion
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 llama_spit
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -20878,15 +19507,11 @@ llama_spit
 
 magma_cube
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -20914,15 +19539,11 @@ minecart
 
 mooshroom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 mule
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -20930,15 +19551,11 @@ mule
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -20946,15 +19563,11 @@ panda
 
 parrot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -20962,15 +19575,11 @@ phantom
 
 pig
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 piglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -20978,15 +19587,11 @@ piglin
 
 piglin_brute
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 pillager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -20994,15 +19599,11 @@ pillager
 
 player
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 polar_bear
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -21010,15 +19611,11 @@ polar_bear
 
 pufferfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 rabbit
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -21026,15 +19623,11 @@ rabbit
 
 ravager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 salmon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -21042,15 +19635,11 @@ salmon
 
 sheep
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 shulker
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -21064,8 +19653,6 @@ shulker
 
 shulker_bullet
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {
     "default_values": {
@@ -21078,15 +19665,11 @@ shulker_bullet
 
 silverfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -21094,23 +19677,17 @@ skeleton
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 slime
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 small_fireball
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -21122,9 +19699,13 @@ small_fireball
 }
 ```
 
-snowball
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:conditional_bandwidth_optimization": {}
+```
+
+snowball
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -21138,23 +19719,17 @@ snowball
 
 snow_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 splash_potion
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -21168,15 +19743,11 @@ splash_potion
 
 squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 stray
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -21184,15 +19755,11 @@ stray
 
 strider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 thrown_trident
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -21206,8 +19773,6 @@ thrown_trident
 
 tnt
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {
     "default_values": {
@@ -21219,8 +19784,6 @@ tnt
 ```
 
 tnt_minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -21248,15 +19811,11 @@ tnt_minecart
 
 trader_llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 tripod_camera
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -21264,15 +19823,11 @@ tripod_camera
 
 tropicalfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 turtle
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -21280,15 +19835,11 @@ turtle
 
 vex
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -21296,15 +19847,11 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 vindicator
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -21312,15 +19859,23 @@ vindicator
 
 wandering_trader
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
-witch
+wind_charge_projectile
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:conditional_bandwidth_optimization": {
+    "default_values": {
+        "max_optimized_distance": 80.0,
+        "max_dropped_ticks": 7,
+        "use_motion_prediction_hints": true
+    }
+}
+```
+
+witch
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -21328,23 +19883,17 @@ witch
 
 wither
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 wither_skull
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -21358,8 +19907,6 @@ wither_skull
 
 wither_skull_dangerous
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {
     "default_values": {
@@ -21372,15 +19919,11 @@ wither_skull_dangerous
 
 wolf
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 xp_bottle
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {
@@ -21394,8 +19937,6 @@ xp_bottle
 
 xp_orb
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {
     "default_values": {
@@ -21408,15 +19949,11 @@ xp_orb
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -21424,15 +19961,11 @@ zombie
 
 zombie_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 zombie_pigman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
@@ -21440,29 +19973,19 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
-</Spoiler>
-
 ## custom_hit_test
 
-<Spoiler title="Show">
-
 hoglin
-
-<CodeHeader>#component_groups/minecraft:hoglin_baby</CodeHeader>
 
 ```json
 "minecraft:custom_hit_test": {
@@ -21479,8 +20002,6 @@ hoglin
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:hoglin_adult</CodeHeader>
 
 ```json
 "minecraft:custom_hit_test": {
@@ -21500,8 +20021,6 @@ hoglin
 
 zoglin
 
-<CodeHeader>#component_groups/zoglin_baby</CodeHeader>
-
 ```json
 "minecraft:custom_hit_test": {
     "hitboxes": [
@@ -21517,8 +20036,6 @@ zoglin
     ]
 }
 ```
-
-<CodeHeader>#component_groups/zoglin_adult</CodeHeader>
 
 ```json
 "minecraft:custom_hit_test": {
@@ -21536,15 +20053,9 @@ zoglin
 }
 ```
 
-</Spoiler>
-
 ## damage_over_time
 
-<Spoiler title="Show">
-
 axolotl
-
-<CodeHeader>#component_groups/axolotl_dried</CodeHeader>
 
 ```json
 "minecraft:damage_over_time": {
@@ -21555,8 +20066,6 @@ axolotl
 
 dolphin
 
-<CodeHeader>#component_groups/dolphin_dried</CodeHeader>
-
 ```json
 "minecraft:damage_over_time": {
     "damage_per_hurt": 1,
@@ -21564,15 +20073,18 @@ dolphin
 }
 ```
 
-</Spoiler>
+vex
+
+```json
+"minecraft:damage_over_time": {
+    "damage_per_hurt": 1,
+    "time_between_hurt": 1.0
+}
+```
 
 ## damage_sensor
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:damage_sensor": {
@@ -21600,9 +20112,65 @@ allay
 }
 ```
 
-axolotl
+armadillo
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:damage_sensor": {
+    "triggers": {
+        "on_damage": {
+            "filters": {
+                "any_of": [
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "mob"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "player"
+                    }
+                ]
+            },
+            "event": "minecraft:threat_detected"
+        }
+    }
+}
+```
+
+```json
+"minecraft:damage_sensor": {
+    "triggers": [
+        {
+            "on_damage": {
+                "filters": {
+                    "any_of": [
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "mob"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        }
+                    ]
+                },
+                "event": "minecraft:threat_detected"
+            },
+            "damage_multiplier": 0.5,
+            "damage_modifier": -1.0
+        },
+        {
+            "damage_multiplier": 0.5,
+            "damage_modifier": -1.0
+        }
+    ]
+}
+```
+
+axolotl
 
 ```json
 "minecraft:damage_sensor": {
@@ -21616,8 +20184,6 @@ axolotl
 
 bat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:damage_sensor": {
     "triggers": {
@@ -21629,21 +20195,29 @@ bat
 
 bee
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:damage_sensor": {
-    "triggers": {
-        "cause": "fall",
-        "deals_damage": false
-    }
+    "triggers": [
+        {
+            "cause": "fall",
+            "deals_damage": "no"
+        },
+        {
+            "on_damage": {
+                "filters": {
+                    "test": "is_block",
+                    "subject": "block",
+                    "value": "minecraft:sweet_berry_bush"
+                }
+            },
+            "deals_damage": "no"
+        }
+    ]
 }
 ```
 
 blaze
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:damage_sensor": {
     "triggers": {
@@ -21653,23 +20227,44 @@ blaze
 }
 ```
 
-cat
+breeze
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:damage_sensor": {
+    "triggers": [
+        {
+            "cause": "fall",
+            "deals_damage": false
+        },
+        {
+            "on_damage": {
+                "filters": {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "operator": "!=",
+                    "value": "wind_charge"
+                }
+            },
+            "cause": "projectile",
+            "deals_damage": false
+        }
+    ]
+}
+```
+
+cat
 
 ```json
 "minecraft:damage_sensor": {
     "triggers": {
         "cause": "fall",
-        "deals_damage": false
+        "deals_damage": "no"
     }
 }
 ```
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:damage_sensor": {
     "triggers": {
@@ -21679,9 +20274,55 @@ chicken
 }
 ```
 
-creeper
+creaking
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:damage_sensor": {
+    "triggers": [
+        {
+            "cause": "void",
+            "deals_damage": "yes"
+        },
+        {
+            "on_damage": {
+                "filters": {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                },
+                "event": "minecraft:damaged_by_player"
+            },
+            "cause": "all",
+            "deals_damage": "no_but_side_effects_apply"
+        },
+        {
+            "on_damage": {
+                "filters": {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "mob"
+                },
+                "event": "minecraft:damaged_by_entity"
+            },
+            "cause": "all",
+            "deals_damage": "no_but_side_effects_apply"
+        },
+        {
+            "on_damage": {
+                "event": "minecraft:damaged_by_entity"
+            },
+            "cause": "projectile",
+            "deals_damage": "no_but_side_effects_apply"
+        },
+        {
+            "cause": "all",
+            "deals_damage": "no_but_side_effects_apply"
+        }
+    ]
+}
+```
+
+creeper
 
 ```json
 "minecraft:damage_sensor": {
@@ -21701,20 +20342,16 @@ creeper
 
 ender_dragon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:damage_sensor": {
     "triggers": {
         "cause": "fall",
-        "deals_damage": false
+        "deals_damage": "no"
     }
 }
 ```
 
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:damage_sensor": {
@@ -21727,15 +20364,13 @@ fox
                     "value": "minecraft:sweet_berry_bush"
                 }
             },
-            "deals_damage": false
+            "deals_damage": "no"
         }
     ]
 }
 ```
 
 frog
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:damage_sensor": {
@@ -21749,8 +20384,6 @@ frog
 
 ghast
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:damage_sensor": {
     "triggers": {
@@ -21761,8 +20394,6 @@ ghast
 ```
 
 goat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:damage_sensor": {
@@ -21776,8 +20407,6 @@ goat
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:damage_sensor": {
     "triggers": {
@@ -21788,8 +20417,6 @@ iron_golem
 ```
 
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:damage_sensor": {
@@ -21807,8 +20434,6 @@ llama
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:in_caravan</CodeHeader>
-
 ```json
 "minecraft:damage_sensor": {
     "triggers": {
@@ -21820,8 +20445,6 @@ llama
 
 magma_cube
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:damage_sensor": {
     "triggers": {
@@ -21832,8 +20455,6 @@ magma_cube
 ```
 
 mooshroom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:damage_sensor": {
@@ -21857,7 +20478,7 @@ mooshroom
                 },
                 "event": "minecraft:become_brown"
             },
-            "deals_damage": false,
+            "deals_damage": "no",
             "on_damage_sound_event": "convert_mooshroom"
         },
         {
@@ -21879,7 +20500,7 @@ mooshroom
                 },
                 "event": "minecraft:become_red"
             },
-            "deals_damage": false,
+            "deals_damage": "no",
             "on_damage_sound_event": "convert_mooshroom"
         }
     ]
@@ -21887,8 +20508,6 @@ mooshroom
 ```
 
 npc
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:damage_sensor": {
@@ -21901,33 +20520,27 @@ npc
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:damage_sensor": {
     "triggers": {
         "cause": "fall",
-        "deals_damage": false
+        "deals_damage": "no"
     }
 }
 ```
 
 parrot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:damage_sensor": {
     "triggers": {
         "cause": "fall",
-        "deals_damage": false
+        "deals_damage": "no"
     }
 }
 ```
 
 pig
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:damage_sensor": {
@@ -21952,63 +20565,7 @@ pig
 }
 ```
 
-pillager
-
-<CodeHeader>#component_groups/minecraft:illager_squad_captain</CodeHeader>
-
-```json
-"minecraft:damage_sensor": {
-    "triggers": {
-        "on_damage": {
-            "filters": {
-                "all_of": [
-                    {
-                        "test": "has_damage",
-                        "value": "fatal"
-                    },
-                    {
-                        "test": "is_family",
-                        "subject": "other",
-                        "value": "player"
-                    }
-                ]
-            },
-            "event": "minecraft:gain_bad_omen",
-            "target": "other"
-        }
-    }
-}
-```
-
-<CodeHeader>#component_groups/minecraft:patrol_captain</CodeHeader>
-
-```json
-"minecraft:damage_sensor": {
-    "triggers": {
-        "on_damage": {
-            "filters": {
-                "all_of": [
-                    {
-                        "test": "has_damage",
-                        "value": "fatal"
-                    },
-                    {
-                        "test": "is_family",
-                        "subject": "other",
-                        "value": "player"
-                    }
-                ]
-            },
-            "event": "minecraft:gain_bad_omen",
-            "target": "other"
-        }
-    }
-}
-```
-
 skeleton
-
-<CodeHeader>#component_groups/minecraft:lightning_immune</CodeHeader>
 
 ```json
 "minecraft:damage_sensor": {
@@ -22024,8 +20581,6 @@ skeleton
 ```
 
 skeleton_horse
-
-<CodeHeader>#component_groups/minecraft:lightning_immune</CodeHeader>
 
 ```json
 "minecraft:damage_sensor": {
@@ -22044,8 +20599,6 @@ skeleton_horse
 
 snow_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:damage_sensor": {
     "triggers": {
@@ -22056,8 +20609,6 @@ snow_golem
 ```
 
 trader_llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:damage_sensor": {
@@ -22085,8 +20636,6 @@ trader_llama
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:in_caravan</CodeHeader>
-
 ```json
 "minecraft:damage_sensor": {
     "triggers": {
@@ -22097,8 +20646,6 @@ trader_llama
 ```
 
 turtle
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:damage_sensor": {
@@ -22111,8 +20658,6 @@ turtle
 ```
 
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:damage_sensor": {
@@ -22158,8 +20703,6 @@ villager
 ```
 
 villager_v2
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:damage_sensor": {
@@ -22211,63 +20754,7 @@ villager_v2
 }
 ```
 
-vindicator
-
-<CodeHeader>#component_groups/minecraft:illager_squad_captain</CodeHeader>
-
-```json
-"minecraft:damage_sensor": {
-    "triggers": {
-        "on_damage": {
-            "filters": {
-                "all_of": [
-                    {
-                        "test": "has_damage",
-                        "value": "fatal"
-                    },
-                    {
-                        "test": "is_family",
-                        "subject": "other",
-                        "value": "player"
-                    }
-                ]
-            },
-            "event": "minecraft:gain_bad_omen",
-            "target": "other"
-        }
-    }
-}
-```
-
-<CodeHeader>#component_groups/minecraft:patrol_captain</CodeHeader>
-
-```json
-"minecraft:damage_sensor": {
-    "triggers": {
-        "on_damage": {
-            "filters": {
-                "all_of": [
-                    {
-                        "test": "has_damage",
-                        "value": "fatal"
-                    },
-                    {
-                        "test": "is_family",
-                        "subject": "other",
-                        "value": "player"
-                    }
-                ]
-            },
-            "event": "minecraft:gain_bad_omen",
-            "target": "other"
-        }
-    }
-}
-```
-
 wandering_trader
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:damage_sensor": {
@@ -22297,9 +20784,13 @@ wandering_trader
 }
 ```
 
-wither
+witch
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:damage_sensor": {}
+```
+
+wither
 
 ```json
 "minecraft:damage_sensor": {
@@ -22316,15 +20807,29 @@ wither
 }
 ```
 
-</Spoiler>
+## dash
+
+camel
+
+```json
+"minecraft:dash": {
+    "cooldown_time": 2.75,
+    "horizontal_momentum": 20.0,
+    "vertical_momentum": 0.6
+}
+```
 
 ## despawn
 
-<Spoiler title="Show">
+armadillo
+
+```json
+"minecraft:despawn": {
+    "despawn_from_distance": {}
+}
+```
 
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22334,8 +20839,6 @@ axolotl
 
 bat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22344,7 +20847,21 @@ bat
 
 blaze
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:despawn": {
+    "despawn_from_distance": {}
+}
+```
+
+bogged
+
+```json
+"minecraft:despawn": {
+    "despawn_from_distance": {}
+}
+```
+
+camel
 
 ```json
 "minecraft:despawn": {
@@ -22354,8 +20871,6 @@ blaze
 
 cat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22363,8 +20878,6 @@ cat
 ```
 
 cave_spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22374,8 +20887,6 @@ cave_spider
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22383,8 +20894,6 @@ chicken
 ```
 
 cow
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22394,8 +20903,6 @@ cow
 
 creeper
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22403,8 +20910,6 @@ creeper
 ```
 
 dolphin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22414,8 +20919,6 @@ dolphin
 
 donkey
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22423,8 +20926,6 @@ donkey
 ```
 
 drowned
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22434,8 +20935,6 @@ drowned
 
 enderman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22443,8 +20942,6 @@ enderman
 ```
 
 endermite
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22454,8 +20951,6 @@ endermite
 
 evocation_illager
 
-<CodeHeader>#component_groups/minecraft:raid_despawn</CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22463,8 +20958,6 @@ evocation_illager
 ```
 
 cod
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22477,8 +20970,6 @@ cod
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22486,8 +20977,6 @@ fox
 ```
 
 frog
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22497,8 +20986,6 @@ frog
 
 ghast
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22506,8 +20993,6 @@ ghast
 ```
 
 glow_squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22517,8 +21002,6 @@ glow_squid
 
 goat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22526,8 +21009,6 @@ goat
 ```
 
 guardian
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22537,8 +21018,6 @@ guardian
 
 hoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22546,8 +21025,6 @@ hoglin
 ```
 
 horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22557,8 +21034,6 @@ horse
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22566,8 +21041,6 @@ husk
 ```
 
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22577,8 +21050,6 @@ llama
 
 magma_cube
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22586,8 +21057,6 @@ magma_cube
 ```
 
 mooshroom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22597,8 +21066,6 @@ mooshroom
 
 mule
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22606,8 +21073,6 @@ mule
 ```
 
 ocelot
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22617,8 +21082,6 @@ ocelot
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22626,8 +21089,6 @@ panda
 ```
 
 parrot
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22637,8 +21098,6 @@ parrot
 
 phantom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22646,8 +21105,6 @@ phantom
 ```
 
 pig
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22657,8 +21114,6 @@ pig
 
 piglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22666,8 +21121,6 @@ piglin
 ```
 
 piglin_brute
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22715,8 +21168,6 @@ piglin_brute
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22725,8 +21176,6 @@ pillager
 
 polar_bear
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22734,8 +21183,6 @@ polar_bear
 ```
 
 pufferfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22748,8 +21195,6 @@ pufferfish
 
 rabbit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22758,8 +21203,6 @@ rabbit
 
 ravager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22767,8 +21210,6 @@ ravager
 ```
 
 salmon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22781,8 +21222,6 @@ salmon
 
 sheep
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22790,8 +21229,6 @@ sheep
 ```
 
 silverfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22801,8 +21238,6 @@ silverfish
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22810,8 +21245,6 @@ skeleton
 ```
 
 skeleton_horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22821,8 +21254,6 @@ skeleton_horse
 
 slime
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22830,8 +21261,6 @@ slime
 ```
 
 spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22841,8 +21270,6 @@ spider
 
 squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22850,8 +21277,6 @@ squid
 ```
 
 stray
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22861,8 +21286,6 @@ stray
 
 strider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22870,8 +21293,6 @@ strider
 ```
 
 tadpole
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22881,8 +21302,6 @@ tadpole
 
 trader_llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22890,8 +21309,6 @@ trader_llama
 ```
 
 tropicalfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22904,8 +21321,6 @@ tropicalfish
 
 turtle
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22913,8 +21328,6 @@ turtle
 ```
 
 vex
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22924,8 +21337,6 @@ vex
 
 vindicator
 
-<CodeHeader>#component_groups/minecraft:raid_despawn</CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22933,8 +21344,6 @@ vindicator
 ```
 
 wandering_trader
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22967,8 +21376,6 @@ wandering_trader
 
 witch
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22976,8 +21383,6 @@ witch
 ```
 
 wither_skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -22987,8 +21392,6 @@ wither_skeleton
 
 wolf
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -22996,8 +21399,6 @@ wolf
 ```
 
 zoglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -23045,8 +21446,6 @@ zoglin
 
 zombie
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -23054,8 +21453,6 @@ zombie
 ```
 
 zombie_horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -23065,8 +21462,6 @@ zombie_horse
 
 zombie_pigman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
@@ -23074,8 +21469,6 @@ zombie_pigman
 ```
 
 zombie_villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:despawn": {
@@ -23085,23 +21478,77 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:despawn": {
     "despawn_from_distance": {}
 }
 ```
 
-</Spoiler>
+## dimension_bound
+
+arrow
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+creaking
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+dragon_fireball
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+ender_dragon
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+fireball
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+fishing_hook
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+small_fireball
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+thrown_trident
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+wither_skull
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+wither_skull_dangerous
+
+```json
+"minecraft:dimension_bound": {}
+```
 
 ## drying_out_timer
 
-<Spoiler title="Show">
-
 axolotl
-
-<CodeHeader>#component_groups/axolotl_on_land</CodeHeader>
 
 ```json
 "minecraft:drying_out_timer": {
@@ -23121,8 +21568,6 @@ axolotl
 
 dolphin
 
-<CodeHeader>#component_groups/dolphin_on_land</CodeHeader>
-
 ```json
 "minecraft:drying_out_timer": {
     "total_time": 120,
@@ -23139,15 +21584,9 @@ dolphin
 }
 ```
 
-</Spoiler>
-
 ## dweller
 
-<Spoiler title="Show">
-
 cat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:dweller": {
@@ -23163,8 +21602,6 @@ cat
 
 evocation_illager
 
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
-
 ```json
 "minecraft:dweller": {
     "dwelling_type": "village",
@@ -23178,8 +21615,6 @@ evocation_illager
 ```
 
 iron_golem
-
-<CodeHeader>#component_groups/minecraft:village_created</CodeHeader>
 
 ```json
 "minecraft:dweller": {
@@ -23195,8 +21630,6 @@ iron_golem
 
 pillager
 
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
-
 ```json
 "minecraft:dweller": {
     "dwelling_type": "village",
@@ -23210,8 +21643,6 @@ pillager
 ```
 
 ravager
-
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
 
 ```json
 "minecraft:dweller": {
@@ -23227,8 +21658,6 @@ ravager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:dweller": {
     "dwelling_type": "village",
@@ -23240,8 +21669,6 @@ villager_v2
     "first_founding_reward": 5
 }
 ```
-
-<CodeHeader>#component_groups/farmer</CodeHeader>
 
 ```json
 "minecraft:dweller": {
@@ -23256,8 +21683,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/fisherman</CodeHeader>
-
 ```json
 "minecraft:dweller": {
     "dwelling_type": "village",
@@ -23270,8 +21695,6 @@ villager_v2
     "first_founding_reward": 5
 }
 ```
-
-<CodeHeader>#component_groups/shepherd</CodeHeader>
 
 ```json
 "minecraft:dweller": {
@@ -23286,8 +21709,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/fletcher</CodeHeader>
-
 ```json
 "minecraft:dweller": {
     "dwelling_type": "village",
@@ -23300,8 +21721,6 @@ villager_v2
     "first_founding_reward": 5
 }
 ```
-
-<CodeHeader>#component_groups/librarian</CodeHeader>
 
 ```json
 "minecraft:dweller": {
@@ -23316,8 +21735,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/cartographer</CodeHeader>
-
 ```json
 "minecraft:dweller": {
     "dwelling_type": "village",
@@ -23330,8 +21747,6 @@ villager_v2
     "first_founding_reward": 5
 }
 ```
-
-<CodeHeader>#component_groups/cleric</CodeHeader>
 
 ```json
 "minecraft:dweller": {
@@ -23346,8 +21761,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/armorer</CodeHeader>
-
 ```json
 "minecraft:dweller": {
     "dwelling_type": "village",
@@ -23360,8 +21773,6 @@ villager_v2
     "first_founding_reward": 5
 }
 ```
-
-<CodeHeader>#component_groups/weaponsmith</CodeHeader>
 
 ```json
 "minecraft:dweller": {
@@ -23376,8 +21787,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/toolsmith</CodeHeader>
-
 ```json
 "minecraft:dweller": {
     "dwelling_type": "village",
@@ -23390,8 +21799,6 @@ villager_v2
     "first_founding_reward": 5
 }
 ```
-
-<CodeHeader>#component_groups/butcher</CodeHeader>
 
 ```json
 "minecraft:dweller": {
@@ -23406,8 +21813,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/leatherworker</CodeHeader>
-
 ```json
 "minecraft:dweller": {
     "dwelling_type": "village",
@@ -23420,8 +21825,6 @@ villager_v2
     "first_founding_reward": 5
 }
 ```
-
-<CodeHeader>#component_groups/mason</CodeHeader>
 
 ```json
 "minecraft:dweller": {
@@ -23438,8 +21841,6 @@ villager_v2
 
 vindicator
 
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
-
 ```json
 "minecraft:dweller": {
     "dwelling_type": "village",
@@ -23454,8 +21855,6 @@ vindicator
 
 witch
 
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
-
 ```json
 "minecraft:dweller": {
     "dwelling_type": "village",
@@ -23468,21 +21867,13 @@ witch
 }
 ```
 
-</Spoiler>
-
 ## economy_trade_table
 
-<Spoiler title="Show">
-
 villager_v2
-
-<CodeHeader>#component_groups/trade_components</CodeHeader>
 
 ```json
 "minecraft:economy_trade_table": {}
 ```
-
-<CodeHeader>#component_groups/farmer</CodeHeader>
 
 ```json
 "minecraft:economy_trade_table": {
@@ -23491,17 +21882,15 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
-
-<CodeHeader>#component_groups/fisherman</CodeHeader>
 
 ```json
 "minecraft:economy_trade_table": {
@@ -23510,17 +21899,15 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
-
-<CodeHeader>#component_groups/shepherd</CodeHeader>
 
 ```json
 "minecraft:economy_trade_table": {
@@ -23529,17 +21916,15 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
-
-<CodeHeader>#component_groups/fletcher</CodeHeader>
 
 ```json
 "minecraft:economy_trade_table": {
@@ -23548,17 +21933,15 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
-
-<CodeHeader>#component_groups/librarian</CodeHeader>
 
 ```json
 "minecraft:economy_trade_table": {
@@ -23567,17 +21950,15 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
-
-<CodeHeader>#component_groups/cartographer</CodeHeader>
 
 ```json
 "minecraft:economy_trade_table": {
@@ -23586,17 +21967,15 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
-
-<CodeHeader>#component_groups/cleric</CodeHeader>
 
 ```json
 "minecraft:economy_trade_table": {
@@ -23605,17 +21984,15 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
-
-<CodeHeader>#component_groups/armorer</CodeHeader>
 
 ```json
 "minecraft:economy_trade_table": {
@@ -23624,17 +22001,15 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
-
-<CodeHeader>#component_groups/weaponsmith</CodeHeader>
 
 ```json
 "minecraft:economy_trade_table": {
@@ -23643,17 +22018,15 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
-
-<CodeHeader>#component_groups/toolsmith</CodeHeader>
 
 ```json
 "minecraft:economy_trade_table": {
@@ -23662,17 +22035,15 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
-
-<CodeHeader>#component_groups/butcher</CodeHeader>
 
 ```json
 "minecraft:economy_trade_table": {
@@ -23681,17 +22052,15 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
-
-<CodeHeader>#component_groups/leatherworker</CodeHeader>
 
 ```json
 "minecraft:economy_trade_table": {
@@ -23700,17 +22069,15 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
-
-<CodeHeader>#component_groups/mason</CodeHeader>
 
 ```json
 "minecraft:economy_trade_table": {
@@ -23719,19 +22086,17 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
 
 wandering_trader
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:economy_trade_table": {
@@ -23741,188 +22106,316 @@ wandering_trader
 }
 ```
 
-</Spoiler>
-
 ## entity_sensor
 
-<Spoiler title="Show">
-
-parrot
-
-<CodeHeader>#component_groups/minecraft:parrot_not_riding_player</CodeHeader>
+armadillo
 
 ```json
 "minecraft:entity_sensor": {
-    "sensor_range": 2.0,
-    "relative_range": false,
-    "event_filters": {
-        "all_of": [
-            {
-                "test": "is_riding",
-                "subject": "self",
-                "operator": "equals",
-                "value": true
-            },
-            {
-                "test": "has_component",
-                "subject": "self",
-                "operator": "equals",
-                "value": "minecraft:behavior.look_at_player"
+    "subsensors": [
+        {
+            "event": "minecraft:no_threat_detected",
+            "cooldown": 0.2,
+            "range": [
+                7.0,
+                2.0
+            ],
+            "minimum_count": 0,
+            "maximum_count": 0,
+            "event_filters": {
+                "any_of": [
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "undead"
+                    },
+                    {
+                        "all_of": [
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            },
+                            {
+                                "any_of": [
+                                    {
+                                        "test": "was_last_hurt_by",
+                                        "subject": "other"
+                                    },
+                                    {
+                                        "test": "is_sprinting",
+                                        "subject": "other"
+                                    },
+                                    {
+                                        "test": "is_riding",
+                                        "subject": "other"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
-        ]
-    },
-    "event": "minecraft:on_riding_player"
+        },
+        {
+            "event": "minecraft:threat_detected",
+            "cooldown": 0.2,
+            "range": [
+                7.0,
+                2.0
+            ],
+            "minimum_count": 1,
+            "event_filters": {
+                "any_of": [
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "undead"
+                    },
+                    {
+                        "all_of": [
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            },
+                            {
+                                "any_of": [
+                                    {
+                                        "test": "was_last_hurt_by",
+                                        "subject": "other"
+                                    },
+                                    {
+                                        "test": "is_sprinting",
+                                        "subject": "other"
+                                    },
+                                    {
+                                        "test": "is_riding",
+                                        "subject": "other"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:parrot_riding_player</CodeHeader>
+parrot
 
 ```json
 "minecraft:entity_sensor": {
-    "sensor_range": 2.0,
     "relative_range": false,
-    "event_filters": {
-        "all_of": [
-            {
-                "test": "is_riding",
-                "subject": "self",
-                "operator": "equals",
-                "value": false
+    "subsensors": [
+        {
+            "range": [
+                2.0,
+                2.0
+            ],
+            "event_filters": {
+                "all_of": [
+                    {
+                        "test": "is_riding",
+                        "subject": "self",
+                        "operator": "equals",
+                        "value": true
+                    },
+                    {
+                        "test": "has_component",
+                        "subject": "self",
+                        "operator": "equals",
+                        "value": "minecraft:behavior.look_at_player"
+                    }
+                ]
             },
-            {
-                "test": "has_component",
-                "subject": "self",
-                "operator": "not",
-                "value": "minecraft:behavior.look_at_player"
-            }
-        ]
-    },
-    "event": "minecraft:on_not_riding_player"
+            "event": "minecraft:on_riding_player"
+        }
+    ]
+}
+```
+
+```json
+"minecraft:entity_sensor": {
+    "relative_range": false,
+    "subsensors": [
+        {
+            "range": [
+                2.0,
+                2.0
+            ],
+            "event_filters": {
+                "all_of": [
+                    {
+                        "test": "is_riding",
+                        "subject": "self",
+                        "operator": "equals",
+                        "value": false
+                    },
+                    {
+                        "test": "has_component",
+                        "subject": "self",
+                        "operator": "not",
+                        "value": "minecraft:behavior.look_at_player"
+                    }
+                ]
+            },
+            "event": "minecraft:on_not_riding_player"
+        }
+    ]
 }
 ```
 
 pufferfish
 
-<CodeHeader>#component_groups/minecraft:normal_puff</CodeHeader>
-
 ```json
 "minecraft:entity_sensor": {
-    "sensor_range": 2.5,
     "relative_range": false,
-    "minimum_count": 1,
-    "event_filters": {
-        "any_of": [
-            {
-                "test": "is_family",
-                "subject": "other",
-                "value": "mob"
-            },
-            {
-                "all_of": [
+    "subsensors": [
+        {
+            "range": 2.5,
+            "minimum_count": 1,
+            "event_filters": {
+                "any_of": [
                     {
                         "test": "is_family",
                         "subject": "other",
-                        "value": "player"
+                        "value": "mob"
                     },
                     {
-                        "none_of": {
-                            "test": "has_ability",
-                            "subject": "other",
-                            "value": "instabuild"
-                        }
+                        "all_of": [
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            },
+                            {
+                                "test": "has_ability",
+                                "subject": "other",
+                                "operator": "not",
+                                "value": "instabuild"
+                            }
+                        ]
                     }
                 ]
-            }
-        ]
-    },
-    "event": "minecraft:start_half_puff"
+            },
+            "event": "minecraft:start_half_puff"
+        }
+    ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:half_puff_secondary</CodeHeader>
 
 ```json
 "minecraft:entity_sensor": {
-    "sensor_range": 2.5,
     "relative_range": false,
-    "minimum_count": 1,
-    "event_filters": {
-        "any_of": [
-            {
-                "test": "is_family",
-                "subject": "other",
-                "value": "mob"
-            },
-            {
-                "all_of": [
+    "subsensors": [
+        {
+            "range": 2.5,
+            "minimum_count": 1,
+            "event_filters": {
+                "any_of": [
                     {
                         "test": "is_family",
                         "subject": "other",
-                        "value": "player"
+                        "value": "mob"
                     },
                     {
-                        "none_of": {
-                            "test": "has_ability",
-                            "subject": "other",
-                            "value": "instabuild"
-                        }
+                        "all_of": [
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            },
+                            {
+                                "test": "has_ability",
+                                "subject": "other",
+                                "operator": "not",
+                                "value": "instabuild"
+                            }
+                        ]
                     }
                 ]
-            }
-        ]
-    },
-    "event": "minecraft:start_full_puff"
+            },
+            "event": "minecraft:start_full_puff"
+        }
+    ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:deflate_sensor</CodeHeader>
 
 ```json
 "minecraft:entity_sensor": {
-    "sensor_range": 2.9,
     "relative_range": false,
-    "require_all": true,
-    "event_filters": {
-        "none_of": [
-            {
-                "test": "is_family",
-                "subject": "other",
-                "value": "mob"
-            },
-            {
-                "all_of": [
+    "subsensors": [
+        {
+            "range": 2.9,
+            "minimum_count": 0,
+            "maximum_count": 0,
+            "event_filters": {
+                "any_of": [
                     {
                         "test": "is_family",
                         "subject": "other",
-                        "value": "player"
+                        "value": "mob"
                     },
                     {
-                        "none_of": {
-                            "test": "has_ability",
-                            "subject": "other",
-                            "value": "instabuild"
-                        }
+                        "all_of": [
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            },
+                            {
+                                "test": "has_ability",
+                                "subject": "other",
+                                "operator": "not",
+                                "value": "instabuild"
+                            }
+                        ]
                     }
                 ]
-            }
-        ],
-        "test": "distance_to_nearest_player",
-        "operator": ">",
-        "value": 2.9
-    },
-    "event": "minecraft:from_full_puff"
+            },
+            "event": "minecraft:from_full_puff"
+        }
+    ]
 }
 ```
-
-</Spoiler>
 
 ## environment_sensor
 
-<Spoiler title="Show">
+armadillo
+
+```json
+"minecraft:environment_sensor": {
+    "triggers": [
+        {
+            "filters": {
+                "any_of": [
+                    {
+                        "test": "on_fire"
+                    },
+                    {
+                        "test": "in_water"
+                    },
+                    {
+                        "test": "is_panicking"
+                    },
+                    {
+                        "test": "is_leashed"
+                    },
+                    {
+                        "test": "is_riding"
+                    }
+                ]
+            },
+            "event": "minecraft:unroll"
+        }
+    ]
+}
+```
 
 axolotl
-
-<CodeHeader>#component_groups/axolotl_in_water</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -23938,8 +22431,6 @@ axolotl
     ]
 }
 ```
-
-<CodeHeader>#component_groups/axolotl_on_land_in_rain</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -23966,8 +22457,6 @@ axolotl
 
 bee
 
-<CodeHeader>#component_groups/shelter_detection</CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": [
@@ -23989,8 +22478,8 @@ bee
                         ]
                     },
                     {
-                        "test": "has_component",
-                        "value": "minecraft:is_charged",
+                        "test": "bool_property",
+                        "domain": "minecraft:has_nectar",
                         "operator": "!="
                     },
                     {
@@ -24003,8 +22492,6 @@ bee
     ]
 }
 ```
-
-<CodeHeader>#component_groups/abort_shelter_detection</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24029,9 +22516,142 @@ bee
 }
 ```
 
-cave_spider
+bogged
 
-<CodeHeader>#component_groups/minecraft:spider_neutral</CodeHeader>
+```json
+"minecraft:environment_sensor": {
+    "triggers": [
+        {
+            "filters": {
+                "test": "is_underwater",
+                "subject": "self",
+                "operator": "==",
+                "value": true
+            },
+            "event": "minecraft:melee_mode"
+        },
+        {
+            "filters": {
+                "test": "has_ranged_weapon",
+                "subject": "self",
+                "operator": "==",
+                "value": false
+            },
+            "event": "minecraft:melee_mode"
+        }
+    ]
+}
+```
+
+```json
+"minecraft:environment_sensor": {
+    "triggers": [
+        {
+            "filters": {
+                "test": "is_underwater",
+                "subject": "self",
+                "operator": "==",
+                "value": true
+            },
+            "event": "minecraft:melee_mode"
+        },
+        {
+            "filters": {
+                "test": "has_ranged_weapon",
+                "subject": "self",
+                "operator": "==",
+                "value": false
+            },
+            "event": "minecraft:melee_mode"
+        }
+    ]
+}
+```
+
+```json
+"minecraft:environment_sensor": {
+    "triggers": [
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "in_water",
+                        "subject": "self",
+                        "operator": "==",
+                        "value": false
+                    },
+                    {
+                        "test": "has_ranged_weapon",
+                        "subject": "self",
+                        "operator": "==",
+                        "value": true
+                    }
+                ]
+            },
+            "event": "minecraft:ranged_mode"
+        }
+    ]
+}
+```
+
+breeze
+
+```json
+"minecraft:environment_sensor": {
+    "triggers": [
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "on_ground",
+                        "subject": "self",
+                        "value": true
+                    },
+                    {
+                        "test": "has_target",
+                        "subject": "self",
+                        "value": true
+                    },
+                    {
+                        "test": "bool_property",
+                        "operator": "==",
+                        "domain": "minecraft:is_playing_idle_ground_sound"
+                    }
+                ]
+            },
+            "event": "minecraft:stop_playing_idle_ground_sound"
+        },
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "bool_property",
+                        "operator": "!=",
+                        "domain": "minecraft:is_playing_idle_ground_sound"
+                    },
+                    {
+                        "any_of": [
+                            {
+                                "test": "on_ground",
+                                "subject": "self",
+                                "value": false
+                            },
+                            {
+                                "test": "has_target",
+                                "subject": "self",
+                                "value": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            "event": "minecraft:start_playing_idle_ground_sound"
+        }
+    ]
+}
+```
+
+cave_spider
 
 ```json
 "minecraft:environment_sensor": {
@@ -24046,8 +22666,6 @@ cave_spider
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:spider_hostile</CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": {
@@ -24061,9 +22679,83 @@ cave_spider
 }
 ```
 
-dolphin
+creaking
 
-<CodeHeader>#component_groups/dolphin_swimming_navigation</CodeHeader>
+```json
+"minecraft:environment_sensor": {
+    "triggers": [
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "any_of": [
+                            {
+                                "test": "enum_property",
+                                "domain": "minecraft:creaking_state",
+                                "value": "hostile_observed"
+                            },
+                            {
+                                "test": "enum_property",
+                                "domain": "minecraft:creaking_state",
+                                "value": "hostile_unobserved"
+                            }
+                        ]
+                    },
+                    {
+                        "any_of": [
+                            {
+                                "test": "has_target",
+                                "value": false
+                            },
+                            {
+                                "test": "actor_health",
+                                "subject": "target",
+                                "value": 0
+                            },
+                            {
+                                "test": "target_distance",
+                                "operator": ">",
+                                "value": 24
+                            }
+                        ]
+                    }
+                ]
+            },
+            "event": "minecraft:become_neutral"
+        },
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "int_property",
+                        "domain": "minecraft:creaking_swaying_ticks",
+                        "operator": ">",
+                        "value": 0
+                    },
+                    {
+                        "test": "int_property",
+                        "domain": "minecraft:creaking_swaying_ticks",
+                        "operator": "<=",
+                        "value": 5
+                    }
+                ]
+            },
+            "event": "minecraft:increment_swaying_ticks"
+        },
+        {
+            "filters": {
+                "test": "int_property",
+                "domain": "minecraft:creaking_swaying_ticks",
+                "operator": ">",
+                "value": 5
+            },
+            "event": "minecraft:reset_swaying_ticks"
+        }
+    ]
+}
+```
+
+dolphin
 
 ```json
 "minecraft:environment_sensor": {
@@ -24088,8 +22780,6 @@ dolphin
     ]
 }
 ```
-
-<CodeHeader>#component_groups/dolphin_on_land_in_rain</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24116,8 +22806,6 @@ dolphin
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": [
@@ -24138,8 +22826,6 @@ fox
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:defending_fox</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24180,8 +22866,6 @@ fox
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:fox_thunderstorm</CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": [
@@ -24221,8 +22905,6 @@ fox
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:fox_day</CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": [
@@ -24243,8 +22925,6 @@ fox
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:fox_night</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24269,8 +22949,6 @@ fox
 
 hoglin
 
-<CodeHeader>#component_groups/zombification_sensor</CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": {
@@ -24284,8 +22962,6 @@ hoglin
     }
 }
 ```
-
-<CodeHeader>#component_groups/start_zombification</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24303,8 +22979,6 @@ hoglin
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": [
@@ -24321,8 +22995,6 @@ husk
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:look_to_start_zombie_transformation</CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": {
@@ -24336,8 +23008,6 @@ husk
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:start_zombie_transformation</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24355,8 +23025,6 @@ husk
 
 piglin
 
-<CodeHeader>#component_groups/zombification_sensor</CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": {
@@ -24370,8 +23038,6 @@ piglin
     }
 }
 ```
-
-<CodeHeader>#component_groups/start_zombification</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24389,8 +23055,6 @@ piglin
 
 piglin_brute
 
-<CodeHeader>#component_groups/zombification_sensor</CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": {
@@ -24404,8 +23068,6 @@ piglin_brute
     }
 }
 ```
-
-<CodeHeader>#component_groups/start_zombification</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24423,8 +23085,6 @@ piglin_brute
 
 pillager
 
-<CodeHeader>#component_groups/minecraft:ranged_attack</CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": {
@@ -24438,8 +23098,6 @@ pillager
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:melee_attack</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24456,8 +23114,6 @@ pillager
 ```
 
 player
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24476,14 +23132,12 @@ player
                 }
             ]
         },
-        "event": "minecraft:trigger_raid"
+        "event": "minecraft:gain_raid_omen"
     }
 }
 ```
 
 skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24519,8 +23173,6 @@ skeleton
 }
 ```
 
-<CodeHeader>#component_groups/in_powder_snow</CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": [
@@ -24536,8 +23188,6 @@ skeleton
     ]
 }
 ```
-
-<CodeHeader>#component_groups/got_out_of_powder_snow_environment_sensor</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24583,8 +23233,6 @@ skeleton
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:ranged_attack</CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": [
@@ -24618,8 +23266,6 @@ skeleton
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:melee_attack</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24658,8 +23304,6 @@ skeleton
 
 spider
 
-<CodeHeader>#component_groups/minecraft:spider_neutral</CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": {
@@ -24672,8 +23316,6 @@ spider
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:spider_hostile</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24690,8 +23332,6 @@ spider
 
 stray
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": [
@@ -24717,8 +23357,6 @@ stray
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:ranged_attack</CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": [
@@ -24743,8 +23381,6 @@ stray
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:melee_attack</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24773,8 +23409,6 @@ stray
 ```
 
 strider
-
-<CodeHeader>#component_groups/minecraft:start_suffocating</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24820,8 +23454,6 @@ strider
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:detect_suffocating</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24880,8 +23512,6 @@ strider
 
 trader_llama
 
-<CodeHeader>#component_groups/minecraft:llama_wandering_trader</CodeHeader>
-
 ```json
 "minecraft:environment_sensor": {
     "triggers": [
@@ -24925,9 +23555,53 @@ trader_llama
 }
 ```
 
-zombie
+wolf
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:environment_sensor": {
+    "triggers": [
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "bool_property",
+                        "operator": "!=",
+                        "domain": "minecraft:has_increased_max_health"
+                    },
+                    {
+                        "test": "has_component",
+                        "value": "minecraft:is_tamed"
+                    }
+                ]
+            },
+            "event": "minecraft:increase_max_health"
+        },
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "bool_property",
+                        "operator": "!=",
+                        "domain": "minecraft:is_armorable"
+                    },
+                    {
+                        "test": "has_component",
+                        "operator": "!=",
+                        "value": "minecraft:is_baby"
+                    },
+                    {
+                        "test": "has_component",
+                        "value": "minecraft:is_tamed"
+                    }
+                ]
+            },
+            "event": "minecraft:become_armorable"
+        }
+    ]
+}
+```
+
+zombie
 
 ```json
 "minecraft:environment_sensor": {
@@ -24941,8 +23615,6 @@ zombie
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:look_to_start_drowned_transformation</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24957,8 +23629,6 @@ zombie
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:start_drowned_transformation</CodeHeader>
 
 ```json
 "minecraft:environment_sensor": {
@@ -24974,15 +23644,33 @@ zombie
 }
 ```
 
-</Spoiler>
-
 ## equip_item
 
-<Spoiler title="Show">
+bogged
+
+```json
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
+```
 
 drowned
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
+```
+
+evocation_illager
 
 ```json
 "minecraft:equip_item": {}
@@ -24990,31 +23678,35 @@ drowned
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:equip_item": {}
 ```
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:equip_item": {}
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
 ```
 
 piglin
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:equip_item": {}
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
 ```
 
 pillager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:equip_item": {}
@@ -25022,15 +23714,29 @@ pillager
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:equip_item": {}
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
 ```
 
 stray
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
+```
+
+vindicator
 
 ```json
 "minecraft:equip_item": {}
@@ -25038,23 +23744,29 @@ stray
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:equip_item": {}
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
 ```
 
 zombie
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:equip_item": {}
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
 ```
 
 zombie_pigman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:equip_item": {}
@@ -25062,29 +23774,39 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:equip_item": {}
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
 ```
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:equip_item": {}
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
 ```
-
-</Spoiler>
 
 ## equipment
 
-<Spoiler title="Show">
+bogged
+
+```json
+"minecraft:equipment": {
+    "table": "loot_tables/entities/skeleton_gear.json"
+}
+```
 
 drowned
-
-<CodeHeader>#component_groups/minecraft:ranged_equipment</CodeHeader>
 
 ```json
 "minecraft:equipment": {
@@ -25097,8 +23819,6 @@ drowned
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:melee_equipment</CodeHeader>
 
 ```json
 "minecraft:equipment": {
@@ -25114,8 +23834,6 @@ drowned
 
 fox
 
-<CodeHeader>#component_groups/minecraft:fox_with_item</CodeHeader>
-
 ```json
 "minecraft:equipment": {
     "table": "loot_tables/entities/fox_equipment.json",
@@ -25130,8 +23848,6 @@ fox
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:equipment": {
     "table": "loot_tables/entities/zombie_equipment.json"
@@ -25140,15 +23856,11 @@ husk
 
 piglin
 
-<CodeHeader>#component_groups/ranged_unit</CodeHeader>
-
 ```json
 "minecraft:equipment": {
     "table": "loot_tables/entities/piglin_gear_ranged.json"
 }
 ```
-
-<CodeHeader>#component_groups/melee_unit</CodeHeader>
 
 ```json
 "minecraft:equipment": {
@@ -25158,8 +23870,6 @@ piglin
 
 piglin_brute
 
-<CodeHeader>#component_groups/melee_unit</CodeHeader>
-
 ```json
 "minecraft:equipment": {
     "table": "loot_tables/entities/piglin_brute_gear.json"
@@ -25168,15 +23878,11 @@ piglin_brute
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:equipment": {
     "table": "loot_tables/entities/pillager_gear.json"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:illager_squad_captain</CodeHeader>
 
 ```json
 "minecraft:equipment": {
@@ -25189,8 +23895,6 @@ pillager
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:patrol_captain</CodeHeader>
 
 ```json
 "minecraft:equipment": {
@@ -25206,8 +23910,6 @@ pillager
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:equipment": {
     "table": "loot_tables/entities/skeleton_gear.json"
@@ -25215,8 +23917,6 @@ skeleton
 ```
 
 stray
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:equipment": {
@@ -25226,25 +23926,32 @@ stray
 
 vex
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:equipment": {
     "table": "loot_tables/entities/vex_gear.json"
 }
 ```
 
-vindicator
+villager_v2
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:equipment": {
+    "slot_drop_chance": [
+        {
+            "slot": "slot.weapon.mainhand",
+            "drop_chance": 0.0
+        }
+    ]
+}
+```
+
+vindicator
 
 ```json
 "minecraft:equipment": {
     "table": "loot_tables/entities/vindicator_gear.json"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:illager_squad_captain</CodeHeader>
 
 ```json
 "minecraft:equipment": {
@@ -25257,8 +23964,6 @@ vindicator
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:patrol_captain</CodeHeader>
 
 ```json
 "minecraft:equipment": {
@@ -25274,8 +23979,6 @@ vindicator
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:equipment": {
     "table": "loot_tables/entities/wither_skeleton_gear.json"
@@ -25283,8 +23986,6 @@ wither_skeleton
 ```
 
 zombie
-
-<CodeHeader>#component_groups/minecraft:can_have_equipment</CodeHeader>
 
 ```json
 "minecraft:equipment": {
@@ -25294,15 +23995,11 @@ zombie
 
 zombie_pigman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:equipment": {
     "table": "loot_tables/entities/zombie_pigman_gear.json"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:strider_jockey</CodeHeader>
 
 ```json
 "minecraft:equipment": {
@@ -25310,15 +24007,31 @@ zombie_pigman
 }
 ```
 
-</Spoiler>
-
 ## equippable
 
-<Spoiler title="Show">
+camel
+
+```json
+"minecraft:equippable": {
+    "slots": [
+        {
+            "slot": 0,
+            "item": "saddle",
+            "accepted_items": [
+                "saddle"
+            ],
+            "on_equip": {
+                "event": "minecraft:camel_saddled"
+            },
+            "on_unequip": {
+                "event": "minecraft:camel_unsaddled"
+            }
+        }
+    ]
+}
+```
 
 donkey
-
-<CodeHeader>#component_groups/minecraft:donkey_tamed</CodeHeader>
 
 ```json
 "minecraft:equippable": {
@@ -25341,8 +24054,6 @@ donkey
 ```
 
 horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:equippable": {
@@ -25376,8 +24087,6 @@ horse
 
 llama
 
-<CodeHeader>#component_groups/minecraft:llama_tamed</CodeHeader>
-
 ```json
 "minecraft:equippable": {
     "slots": [
@@ -25393,8 +24102,6 @@ llama
 ```
 
 mule
-
-<CodeHeader>#component_groups/minecraft:mule_tamed</CodeHeader>
 
 ```json
 "minecraft:equippable": {
@@ -25418,8 +24125,6 @@ mule
 
 trader_llama
 
-<CodeHeader>#component_groups/minecraft:llama_tamed</CodeHeader>
-
 ```json
 "minecraft:equippable": {
     "slots": [
@@ -25434,15 +24139,9 @@ trader_llama
 }
 ```
 
-</Spoiler>
-
 ## exhaustion_values
 
-<Spoiler title="Show">
-
 player
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:exhaustion_values": {
@@ -25458,15 +24157,18 @@ player
 }
 ```
 
-</Spoiler>
-
 ## experience_reward
 
-<Spoiler title="Show">
+armadillo
+
+```json
+"minecraft:experience_reward": {
+    "on_bred": "Math.Random(1,7)",
+    "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+}
+```
 
 axolotl
-
-<CodeHeader>#component_groups/axolotl_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25477,8 +24179,6 @@ axolotl
 
 bee
 
-<CodeHeader>#component_groups/bee_adult</CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_bred": "Math.Random(1,7)",
@@ -25488,17 +24188,39 @@ bee
 
 blaze
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 10 : 0"
 }
 ```
 
-cat
+bogged
 
-<CodeHeader>#component_groups/minecraft:cat_adult</CodeHeader>
+```json
+"minecraft:experience_reward": {
+    "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
+}
+```
+
+breeze
+
+```json
+"minecraft:experience_reward": {
+    "on_bred": "Math.Random(1,7)",
+    "on_death": "query.last_hit_by_player ? 10 : 0"
+}
+```
+
+camel
+
+```json
+"minecraft:experience_reward": {
+    "on_bred": "Math.Random(1,7)",
+    "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+}
+```
+
+cat
 
 ```json
 "minecraft:experience_reward": {
@@ -25509,8 +24231,6 @@ cat
 
 cave_spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 5 : 0"
@@ -25518,8 +24238,6 @@ cave_spider
 ```
 
 chicken
-
-<CodeHeader>#component_groups/minecraft:chicken_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25530,8 +24248,6 @@ chicken
 
 cow
 
-<CodeHeader>#component_groups/minecraft:cow_adult</CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_bred": "Math.Random(1,7)",
@@ -25541,8 +24257,6 @@ cow
 
 creeper
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 5 : 0"
@@ -25551,8 +24265,6 @@ creeper
 
 dolphin
 
-<CodeHeader>#component_groups/dolphin_adult</CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
@@ -25560,8 +24272,6 @@ dolphin
 ```
 
 donkey
-
-<CodeHeader>#component_groups/minecraft:donkey_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25572,15 +24282,11 @@ donkey
 
 drowned
 
-<CodeHeader>#component_groups/minecraft:baby_drowned</CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 12 + (query.equipment_count * Math.Random(1,3)) : 0"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:adult_drowned</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25590,8 +24296,6 @@ drowned
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 10 : 0"
@@ -25599,8 +24303,6 @@ elder_guardian
 ```
 
 enderman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25610,8 +24312,6 @@ enderman
 
 endermite
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 3 : 0"
@@ -25619,8 +24319,6 @@ endermite
 ```
 
 evocation_illager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25630,8 +24328,6 @@ evocation_illager
 
 cod
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
@@ -25639,8 +24335,6 @@ cod
 ```
 
 fox
-
-<CodeHeader>#component_groups/minecraft:fox_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25651,8 +24345,6 @@ fox
 
 frog
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_bred": "Math.Random(1,7)",
@@ -25662,8 +24354,6 @@ frog
 
 ghast
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
@@ -25672,8 +24362,6 @@ ghast
 
 glow_squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "!query.is_baby && query.last_hit_by_player ? Math.Random(1,3) : 0"
@@ -25681,8 +24369,6 @@ glow_squid
 ```
 
 goat
-
-<CodeHeader>#component_groups/goat_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25693,8 +24379,6 @@ goat
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 10 : 0"
@@ -25702,8 +24386,6 @@ guardian
 ```
 
 hoglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25714,8 +24396,6 @@ hoglin
 
 horse
 
-<CodeHeader>#component_groups/minecraft:horse_adult</CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_bred": "Math.Random(1,7)",
@@ -25725,15 +24405,11 @@ horse
 
 husk
 
-<CodeHeader>#component_groups/minecraft:zombie_husk_baby</CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 12 + (query.equipment_count * Math.Random(1,3)) : 0"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:zombie_husk_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25742,8 +24418,6 @@ husk
 ```
 
 llama
-
-<CodeHeader>#component_groups/minecraft:llama_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25754,8 +24428,6 @@ llama
 
 magma_cube
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? query.variant : 0"
@@ -25763,8 +24435,6 @@ magma_cube
 ```
 
 mooshroom
-
-<CodeHeader>#component_groups/minecraft:cow_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25775,8 +24445,6 @@ mooshroom
 
 mule
 
-<CodeHeader>#component_groups/minecraft:mule_adult</CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
@@ -25784,8 +24452,6 @@ mule
 ```
 
 ocelot
-
-<CodeHeader>#component_groups/minecraft:ocelot_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25796,8 +24462,6 @@ ocelot
 
 panda
 
-<CodeHeader>#component_groups/minecraft:panda_adult</CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_bred": "Math.Random(1,7)",
@@ -25807,8 +24471,6 @@ panda
 
 parrot
 
-<CodeHeader>#component_groups/minecraft:parrot_adult</CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
@@ -25817,8 +24479,6 @@ parrot
 
 phantom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 5 : 0"
@@ -25826,8 +24486,6 @@ phantom
 ```
 
 pig
-
-<CodeHeader>#component_groups/minecraft:pig_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25838,15 +24496,11 @@ pig
 
 piglin
 
-<CodeHeader>#component_groups/piglin_baby</CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 1 + (query.equipment_count * Math.Random(1,2)) : 0"
 }
 ```
-
-<CodeHeader>#component_groups/piglin_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25856,8 +24510,6 @@ piglin
 
 piglin_brute
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 20 : 0"
@@ -25865,8 +24517,6 @@ piglin_brute
 ```
 
 pillager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25876,8 +24526,6 @@ pillager
 
 player
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "Math.Min(query.player_level * 7, 100)"
@@ -25885,8 +24533,6 @@ player
 ```
 
 polar_bear
-
-<CodeHeader>#component_groups/minecraft:adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25896,8 +24542,6 @@ polar_bear
 
 pufferfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
@@ -25905,8 +24549,6 @@ pufferfish
 ```
 
 rabbit
-
-<CodeHeader>#component_groups/adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25917,8 +24559,6 @@ rabbit
 
 ravager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 20 : 0"
@@ -25927,8 +24567,6 @@ ravager
 
 salmon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
@@ -25936,8 +24574,6 @@ salmon
 ```
 
 sheep
-
-<CodeHeader>#component_groups/minecraft:sheep_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25948,8 +24584,6 @@ sheep
 
 shulker
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 5 : 0"
@@ -25957,8 +24591,6 @@ shulker
 ```
 
 silverfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25968,8 +24600,6 @@ silverfish
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
@@ -25977,8 +24607,6 @@ skeleton
 ```
 
 skeleton_horse
-
-<CodeHeader>#component_groups/minecraft:skeleton_horse_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -25988,17 +24616,22 @@ skeleton_horse
 
 slime
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? query.variant : 0"
 }
 ```
 
-spider
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:experience_reward": {
+    "on_bred": "Math.Random(1,7)",
+    "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+}
+```
+
+spider
 
 ```json
 "minecraft:experience_reward": {
@@ -26008,8 +24641,6 @@ spider
 
 squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "!query.is_baby && query.last_hit_by_player ? Math.Random(1,3) : 0"
@@ -26018,8 +24649,6 @@ squid
 
 stray
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
@@ -26027,8 +24656,6 @@ stray
 ```
 
 strider
-
-<CodeHeader>#component_groups/minecraft:strider_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -26039,8 +24666,6 @@ strider
 
 trader_llama
 
-<CodeHeader>#component_groups/minecraft:llama_adult</CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_bred": "Math.Random(1,7)",
@@ -26050,8 +24675,6 @@ trader_llama
 
 tropicalfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
@@ -26059,8 +24682,6 @@ tropicalfish
 ```
 
 turtle
-
-<CodeHeader>#component_groups/minecraft:adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -26071,8 +24692,6 @@ turtle
 
 vex
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
@@ -26081,8 +24700,6 @@ vex
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? (query.is_baby ? 12 : 5) + (Math.die_roll(query.equipment_count,1,3)) : 0"
@@ -26090,8 +24707,6 @@ vindicator
 ```
 
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -26102,8 +24717,6 @@ warden
 
 witch
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? (query.is_baby ? 12 : 5) + (Math.die_roll(query.equipment_count,1,3)) : 0"
@@ -26111,8 +24724,6 @@ witch
 ```
 
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -26122,8 +24733,6 @@ wither
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
@@ -26131,8 +24740,6 @@ wither_skeleton
 ```
 
 wolf
-
-<CodeHeader>#component_groups/minecraft:wolf_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -26143,26 +24750,19 @@ wolf
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
-    "on_bred": "Math.Random(1,7)",
     "on_death": "query.last_hit_by_player ? 5 : 0"
 }
 ```
 
 zombie
 
-<CodeHeader>#component_groups/minecraft:zombie_baby</CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 12 + (query.equipment_count * Math.Random(1,3)) : 0"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:zombie_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -26172,8 +24772,6 @@ zombie
 
 zombie_horse
 
-<CodeHeader>#component_groups/minecraft:horse_adult</CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
@@ -26182,15 +24780,11 @@ zombie_horse
 
 zombie_pigman
 
-<CodeHeader>#component_groups/minecraft:pig_zombie_baby</CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 12 + (query.equipment_count * Math.Random(1,3)) : 0"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:pig_zombie_adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -26200,15 +24794,11 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 12 + (query.equipment_count * Math.Random(1,3)) : 0"
 }
 ```
-
-<CodeHeader>#component_groups/adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -26218,15 +24808,11 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 12 + (query.equipment_count * Math.Random(1,3)) : 0"
 }
 ```
-
-<CodeHeader>#component_groups/adult</CodeHeader>
 
 ```json
 "minecraft:experience_reward": {
@@ -26234,15 +24820,27 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## explode
 
-<Spoiler title="Show">
+breeze_wind_charge_projectile
+
+```json
+"minecraft:explode": {
+    "power": 3.0,
+    "particle_effect": "breeze_wind_burst",
+    "sound_effect": "breeze_wind_charge.burst",
+    "knockback_scaling": 0.6,
+    "negates_fall_damage": false,
+    "causes_fire": false,
+    "breaks_blocks": false,
+    "allow_underwater": true,
+    "toggles_blocks": true,
+    "damage_scaling": 0,
+    "max_resistance": 0
+}
+```
 
 creeper
-
-<CodeHeader>#component_groups/minecraft:exploding</CodeHeader>
 
 ```json
 "minecraft:explode": {
@@ -26253,8 +24851,6 @@ creeper
     "destroy_affected_by_griefing": true
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:charged_exploding</CodeHeader>
 
 ```json
 "minecraft:explode": {
@@ -26266,8 +24862,6 @@ creeper
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:forced_exploding</CodeHeader>
-
 ```json
 "minecraft:explode": {
     "fuse_length": 1.5,
@@ -26277,8 +24871,6 @@ creeper
     "destroy_affected_by_griefing": true
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:forced_charged_exploding</CodeHeader>
 
 ```json
 "minecraft:explode": {
@@ -26292,8 +24884,6 @@ creeper
 
 ender_crystal
 
-<CodeHeader>#component_groups/crystal_exploding</CodeHeader>
-
 ```json
 "minecraft:explode": {
     "fuse_length": 0,
@@ -26305,8 +24895,6 @@ ender_crystal
 ```
 
 fireball
-
-<CodeHeader>#component_groups/minecraft:exploding</CodeHeader>
 
 ```json
 "minecraft:explode": {
@@ -26321,8 +24909,6 @@ fireball
 
 tnt
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:explode": {
     "fuse_length": 4,
@@ -26331,8 +24917,6 @@ tnt
     "causes_fire": false
 }
 ```
-
-<CodeHeader>#component_groups/from_explosion</CodeHeader>
 
 ```json
 "minecraft:explode": {
@@ -26348,8 +24932,6 @@ tnt
 
 tnt_minecart
 
-<CodeHeader>#component_groups/minecraft:primed_tnt</CodeHeader>
-
 ```json
 "minecraft:explode": {
     "fuse_length": 4,
@@ -26358,8 +24940,6 @@ tnt_minecart
     "causes_fire": false
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:instant_explode_tnt</CodeHeader>
 
 ```json
 "minecraft:explode": {
@@ -26370,9 +24950,25 @@ tnt_minecart
 }
 ```
 
-wither_skull
+wind_charge_projectile
 
-<CodeHeader>#component_groups/minecraft:exploding</CodeHeader>
+```json
+"minecraft:explode": {
+    "power": 1.2,
+    "particle_effect": "wind_burst",
+    "sound_effect": "wind_charge.burst",
+    "knockback_scaling": 1.22,
+    "negates_fall_damage": true,
+    "causes_fire": false,
+    "breaks_blocks": false,
+    "allow_underwater": true,
+    "toggles_blocks": true,
+    "damage_scaling": 0,
+    "max_resistance": 0
+}
+```
+
+wither_skull
 
 ```json
 "minecraft:explode": {
@@ -26386,8 +24982,6 @@ wither_skull
 
 wither_skull_dangerous
 
-<CodeHeader>#component_groups/minecraft:exploding</CodeHeader>
-
 ```json
 "minecraft:explode": {
     "fuse_length": 0,
@@ -26399,15 +24993,15 @@ wither_skull_dangerous
 }
 ```
 
-</Spoiler>
-
 ## fire_immune
-
-<Spoiler title="Show">
 
 blaze
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:fire_immune": {}
+```
+
+creaking
 
 ```json
 "minecraft:fire_immune": {}
@@ -26415,15 +25009,11 @@ blaze
 
 ender_crystal
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:fire_immune": true
 ```
 
 ender_dragon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:fire_immune": true
@@ -26431,15 +25021,11 @@ ender_dragon
 
 ghast
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:fire_immune": {}
 ```
 
 magma_cube
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:fire_immune": {}
@@ -26447,15 +25033,11 @@ magma_cube
 
 npc
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:fire_immune": true
 ```
 
 shulker
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:fire_immune": true
@@ -26463,15 +25045,11 @@ shulker
 
 strider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:fire_immune": {}
 ```
 
 vex
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:fire_immune": {}
@@ -26479,15 +25057,11 @@ vex
 
 warden
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:fire_immune": {}
 ```
 
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:fire_immune": {}
@@ -26495,15 +25069,11 @@ wither
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:fire_immune": {}
 ```
 
 zoglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:fire_immune": {}
@@ -26511,21 +25081,13 @@ zoglin
 
 zombie_pigman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:fire_immune": {}
 ```
 
-</Spoiler>
-
 ## flocking
 
-<Spoiler title="Show">
-
 dolphin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:flocking": {
@@ -26552,8 +25114,6 @@ dolphin
 
 cod
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:flocking": {
     "in_water": true,
@@ -26578,8 +25138,6 @@ cod
 ```
 
 pufferfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:flocking": {
@@ -26606,8 +25164,6 @@ pufferfish
 
 salmon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:flocking": {
     "in_water": true,
@@ -26633,8 +25189,6 @@ salmon
 
 tropicalfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:flocking": {
     "in_water": true,
@@ -26658,15 +25212,9 @@ tropicalfish
 }
 ```
 
-</Spoiler>
-
 ## flying_speed
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:flying_speed": {
@@ -26676,8 +25224,6 @@ allay
 
 bee
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:flying_speed": {
     "value": 0.15
@@ -26686,23 +25232,15 @@ bee
 
 ender_dragon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:flying_speed": {
     "value": 0.6
 }
 ```
 
-</Spoiler>
-
 ## follow_range
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:follow_range": {
@@ -26712,8 +25250,6 @@ allay
 
 bee
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:follow_range": {
     "value": 1024
@@ -26722,8 +25258,6 @@ bee
 
 blaze
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:follow_range": {
     "value": 48,
@@ -26731,9 +25265,24 @@ blaze
 }
 ```
 
-dolphin
+breeze
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:follow_range": {
+    "value": 32.0
+}
+```
+
+creaking
+
+```json
+"minecraft:follow_range": {
+    "value": 32,
+    "max": 32
+}
+```
+
+dolphin
 
 ```json
 "minecraft:follow_range": {
@@ -26744,8 +25293,6 @@ dolphin
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:follow_range": {
     "value": 16,
@@ -26755,18 +25302,14 @@ elder_guardian
 
 enderman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:follow_range": {
-    "value": 32,
-    "max": 32
+    "value": 64,
+    "max": 64
 }
 ```
 
 evocation_illager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:follow_range": {
@@ -26775,8 +25318,6 @@ evocation_illager
 ```
 
 ghast
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:follow_range": {
@@ -26787,8 +25328,6 @@ ghast
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:follow_range": {
     "value": 16,
@@ -26798,8 +25337,6 @@ guardian
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:follow_range": {
     "value": 64
@@ -26807,8 +25344,6 @@ iron_golem
 ```
 
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:follow_range": {
@@ -26818,8 +25353,6 @@ llama
 ```
 
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:follow_range": {
@@ -26830,8 +25363,6 @@ phantom
 
 piglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:follow_range": {
     "value": 64
@@ -26839,8 +25370,6 @@ piglin
 ```
 
 piglin_brute
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:follow_range": {
@@ -26850,8 +25379,6 @@ piglin_brute
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:follow_range": {
     "value": 64
@@ -26859,8 +25386,6 @@ pillager
 ```
 
 polar_bear
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:follow_range": {
@@ -26870,17 +25395,21 @@ polar_bear
 
 ravager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:follow_range": {
     "value": 64
 }
 ```
 
-trader_llama
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:follow_range": {
+    "value": 64.0
+}
+```
+
+trader_llama
 
 ```json
 "minecraft:follow_range": {
@@ -26891,8 +25420,6 @@ trader_llama
 
 turtle
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:follow_range": {
     "value": 1024
@@ -26900,8 +25427,6 @@ turtle
 ```
 
 villager_v2
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:follow_range": {
@@ -26911,8 +25436,6 @@ villager_v2
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:follow_range": {
     "value": 64
@@ -26921,15 +25444,11 @@ vindicator
 
 warden
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:follow_range": 30
 ```
 
 witch
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:follow_range": {
@@ -26937,15 +25456,9 @@ witch
 }
 ```
 
-</Spoiler>
-
 ## game_event_movement_tracking
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:game_event_movement_tracking": {
@@ -26955,8 +25468,6 @@ allay
 
 bat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:game_event_movement_tracking": {
     "emit_flap": true
@@ -26964,8 +25475,6 @@ bat
 ```
 
 bee
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:game_event_movement_tracking": {
@@ -26975,8 +25484,6 @@ bee
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:game_event_movement_tracking": {
     "emit_flap": true
@@ -26984,8 +25491,6 @@ chicken
 ```
 
 ender_dragon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:game_event_movement_tracking": {
@@ -26995,8 +25500,6 @@ ender_dragon
 
 parrot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:game_event_movement_tracking": {
     "emit_flap": true
@@ -27004,8 +25507,6 @@ parrot
 ```
 
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:game_event_movement_tracking": {
@@ -27015,8 +25516,6 @@ phantom
 
 vex
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:game_event_movement_tracking": {
     "emit_move": false,
@@ -27024,15 +25523,9 @@ vex
 }
 ```
 
-</Spoiler>
-
 ## genetics
 
-<Spoiler title="Show">
-
 goat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:genetics": {
@@ -27073,8 +25566,6 @@ goat
 ```
 
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:genetics": {
@@ -27141,15 +25632,9 @@ panda
 }
 ```
 
-</Spoiler>
-
 ## giveable
 
-<Spoiler title="Show">
-
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:giveable": {
@@ -27167,15 +25652,9 @@ panda
 }
 ```
 
-</Spoiler>
-
 ## group_size
 
-<Spoiler title="Show">
-
 hoglin
-
-<CodeHeader>#component_groups/minecraft:hoglin_adult</CodeHeader>
 
 ```json
 "minecraft:group_size": {
@@ -27198,8 +25677,6 @@ hoglin
 
 piglin
 
-<CodeHeader>#component_groups/piglin_adult</CodeHeader>
-
 ```json
 "minecraft:group_size": {
     "radius": 32,
@@ -27219,15 +25696,9 @@ piglin
 }
 ```
 
-</Spoiler>
-
 ## grows_crop
 
-<Spoiler title="Show">
-
 bee
-
-<CodeHeader>#component_groups/has_nectar</CodeHeader>
 
 ```json
 "minecraft:grows_crop": {
@@ -27236,15 +25707,22 @@ bee
 }
 ```
 
-</Spoiler>
-
 ## healable
 
-<Spoiler title="Show">
+camel
+
+```json
+"minecraft:healable": {
+    "items": [
+        {
+            "item": "cactus",
+            "heal_amount": 2
+        }
+    ]
+}
+```
 
 cat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:healable": {
@@ -27262,8 +25740,6 @@ cat
 ```
 
 donkey
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:healable": {
@@ -27302,8 +25778,6 @@ donkey
 
 horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:healable": {
     "items": [
@@ -27341,8 +25815,6 @@ horse
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:healable": {
     "items": [
@@ -27359,8 +25831,6 @@ llama
 ```
 
 mule
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:healable": {
@@ -27398,8 +25868,6 @@ mule
 ```
 
 parrot
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:healable": {
@@ -27426,9 +25894,20 @@ parrot
 }
 ```
 
-trader_llama
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:healable": {
+    "items": [
+        {
+            "item": "torchflower_seeds",
+            "heal_amount": 2
+        }
+    ]
+}
+```
+
+trader_llama
 
 ```json
 "minecraft:healable": {
@@ -27447,96 +25926,88 @@ trader_llama
 
 wolf
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:healable": {
     "items": [
         {
             "item": "porkchop",
-            "heal_amount": 3
+            "heal_amount": 6
         },
         {
             "item": "cooked_porkchop",
-            "heal_amount": 8
+            "heal_amount": 16
         },
         {
             "item": "fish",
-            "heal_amount": 2
-        },
-        {
-            "item": "salmon",
-            "heal_amount": 2
-        },
-        {
-            "item": "clownfish",
-            "heal_amount": 1
-        },
-        {
-            "item": "pufferfish",
-            "heal_amount": 1
-        },
-        {
-            "item": "cooked_fish",
-            "heal_amount": 5
-        },
-        {
-            "item": "cooked_salmon",
-            "heal_amount": 6
-        },
-        {
-            "item": "beef",
-            "heal_amount": 3
-        },
-        {
-            "item": "cooked_beef",
-            "heal_amount": 8
-        },
-        {
-            "item": "chicken",
-            "heal_amount": 2
-        },
-        {
-            "item": "cooked_chicken",
-            "heal_amount": 6
-        },
-        {
-            "item": "muttonRaw",
-            "heal_amount": 2
-        },
-        {
-            "item": "muttonCooked",
-            "heal_amount": 6
-        },
-        {
-            "item": "rotten_flesh",
             "heal_amount": 4
         },
         {
+            "item": "salmon",
+            "heal_amount": 4
+        },
+        {
+            "item": "clownfish",
+            "heal_amount": 2
+        },
+        {
+            "item": "pufferfish",
+            "heal_amount": 2
+        },
+        {
+            "item": "cooked_fish",
+            "heal_amount": 10
+        },
+        {
+            "item": "cooked_salmon",
+            "heal_amount": 12
+        },
+        {
+            "item": "beef",
+            "heal_amount": 6
+        },
+        {
+            "item": "cooked_beef",
+            "heal_amount": 16
+        },
+        {
+            "item": "chicken",
+            "heal_amount": 4
+        },
+        {
+            "item": "cooked_chicken",
+            "heal_amount": 12
+        },
+        {
+            "item": "muttonRaw",
+            "heal_amount": 4
+        },
+        {
+            "item": "muttonCooked",
+            "heal_amount": 12
+        },
+        {
+            "item": "rotten_flesh",
+            "heal_amount": 8
+        },
+        {
             "item": "rabbit",
-            "heal_amount": 3
+            "heal_amount": 6
         },
         {
             "item": "cooked_rabbit",
-            "heal_amount": 5
+            "heal_amount": 10
         },
         {
             "item": "rabbit_stew",
-            "heal_amount": 10
+            "heal_amount": 20
         }
     ]
 }
 ```
 
-</Spoiler>
-
 ## health
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27544,9 +26015,15 @@ allay
 }
 ```
 
-armor_stand
+armadillo
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:health": {
+    "value": 12
+}
+```
+
+armor_stand
 
 ```json
 "minecraft:health": {
@@ -27557,8 +26034,6 @@ armor_stand
 
 axolotl
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 14
@@ -27566,8 +26041,6 @@ axolotl
 ```
 
 bat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27578,8 +26051,6 @@ bat
 
 bee
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 10,
@@ -27589,8 +26060,6 @@ bee
 
 blaze
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 20,
@@ -27598,9 +26067,33 @@ blaze
 }
 ```
 
-cat
+bogged
 
-<CodeHeader>#component_groups/minecraft:cat_wild</CodeHeader>
+```json
+"minecraft:health": {
+    "value": 16,
+    "max": 16
+}
+```
+
+breeze
+
+```json
+"minecraft:health": {
+    "value": 30,
+    "max": 30
+}
+```
+
+camel
+
+```json
+"minecraft:health": {
+    "value": 32
+}
+```
+
+cat
 
 ```json
 "minecraft:health": {
@@ -27608,8 +26101,6 @@ cat
     "max": 10
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:cat_tame</CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27620,8 +26111,6 @@ cat
 
 cave_spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 12,
@@ -27630,8 +26119,6 @@ cave_spider
 ```
 
 chicken
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27642,8 +26129,6 @@ chicken
 
 cow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 10,
@@ -27651,9 +26136,16 @@ cow
 }
 ```
 
-creeper
+creaking
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:health": {
+    "value": 1,
+    "max": 1
+}
+```
+
+creeper
 
 ```json
 "minecraft:health": {
@@ -27664,8 +26156,6 @@ creeper
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 10,
@@ -27674,8 +26164,6 @@ dolphin
 ```
 
 donkey
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27688,8 +26176,6 @@ donkey
 
 drowned
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 20,
@@ -27698,8 +26184,6 @@ drowned
 ```
 
 elder_guardian
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27710,8 +26194,6 @@ elder_guardian
 
 enderman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 40,
@@ -27720,8 +26202,6 @@ enderman
 ```
 
 endermite
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27732,8 +26212,6 @@ endermite
 
 ender_crystal
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 1,
@@ -27742,8 +26220,6 @@ ender_crystal
 ```
 
 ender_dragon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27754,8 +26230,6 @@ ender_dragon
 
 evocation_illager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 24,
@@ -27764,8 +26238,6 @@ evocation_illager
 ```
 
 cod
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27776,18 +26248,14 @@ cod
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
-    "value": 20,
-    "max": 20
+    "value": 10,
+    "max": 10
 }
 ```
 
 frog
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27796,8 +26264,6 @@ frog
 ```
 
 ghast
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27808,8 +26274,6 @@ ghast
 
 glow_squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 10,
@@ -27818,8 +26282,6 @@ glow_squid
 ```
 
 goat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27830,8 +26292,6 @@ goat
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 30,
@@ -27841,8 +26301,6 @@ guardian
 
 hoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 40,
@@ -27851,8 +26309,6 @@ hoglin
 ```
 
 horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27865,8 +26321,6 @@ horse
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 20,
@@ -27876,8 +26330,6 @@ husk
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 100,
@@ -27886,8 +26338,6 @@ iron_golem
 ```
 
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27900,8 +26350,6 @@ llama
 
 magma_cube
 
-<CodeHeader>#component_groups/minecraft:slime_large</CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 16,
@@ -27909,16 +26357,12 @@ magma_cube
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:slime_medium</CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 4,
     "max": 4
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:slime_small</CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27929,8 +26373,6 @@ magma_cube
 
 mooshroom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 10,
@@ -27939,8 +26381,6 @@ mooshroom
 ```
 
 mule
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27953,16 +26393,12 @@ mule
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 10,
     "max": 10
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:ocelot_tame</CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27973,16 +26409,12 @@ ocelot
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 20,
     "max": 20
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:panda_weak</CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -27993,8 +26425,6 @@ panda
 
 parrot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 6,
@@ -28003,8 +26433,6 @@ parrot
 ```
 
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28015,8 +26443,6 @@ phantom
 
 pig
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 10,
@@ -28025,8 +26451,6 @@ pig
 ```
 
 piglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28037,8 +26461,6 @@ piglin
 
 piglin_brute
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 50,
@@ -28047,8 +26469,6 @@ piglin_brute
 ```
 
 pillager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28059,8 +26479,6 @@ pillager
 
 polar_bear
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 30
@@ -28068,8 +26486,6 @@ polar_bear
 ```
 
 pufferfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28080,8 +26496,6 @@ pufferfish
 
 rabbit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 3,
@@ -28090,8 +26504,6 @@ rabbit
 ```
 
 ravager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28102,8 +26514,6 @@ ravager
 
 salmon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 3,
@@ -28112,8 +26522,6 @@ salmon
 ```
 
 sheep
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28124,8 +26532,6 @@ sheep
 
 shulker
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 30,
@@ -28134,8 +26540,6 @@ shulker
 ```
 
 silverfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28146,8 +26550,6 @@ silverfish
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 20,
@@ -28156,8 +26558,6 @@ skeleton
 ```
 
 skeleton_horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28168,16 +26568,12 @@ skeleton_horse
 
 slime
 
-<CodeHeader>#component_groups/minecraft:slime_large</CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 16,
     "max": 16
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:slime_medium</CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28186,8 +26582,6 @@ slime
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:slime_small</CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 1,
@@ -28195,9 +26589,15 @@ slime
 }
 ```
 
-snow_golem
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:health": {
+    "value": 14
+}
+```
+
+snow_golem
 
 ```json
 "minecraft:health": {
@@ -28208,8 +26608,6 @@ snow_golem
 
 spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 16,
@@ -28218,8 +26616,6 @@ spider
 ```
 
 squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28230,8 +26626,6 @@ squid
 
 stray
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 20,
@@ -28240,8 +26634,6 @@ stray
 ```
 
 strider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28252,8 +26644,6 @@ strider
 
 tadpole
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 6
@@ -28261,8 +26651,6 @@ tadpole
 ```
 
 trader_llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28275,8 +26663,6 @@ trader_llama
 
 tripod_camera
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 4,
@@ -28285,8 +26671,6 @@ tripod_camera
 ```
 
 tropicalfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28297,8 +26681,6 @@ tropicalfish
 
 turtle
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 30
@@ -28306,8 +26688,6 @@ turtle
 ```
 
 vex
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28318,8 +26698,6 @@ vex
 
 villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 20,
@@ -28328,8 +26706,6 @@ villager
 ```
 
 villager_v2
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28340,8 +26716,6 @@ villager_v2
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 24,
@@ -28351,8 +26725,6 @@ vindicator
 
 wandering_trader
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 20,
@@ -28361,8 +26733,6 @@ wandering_trader
 ```
 
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28373,8 +26743,6 @@ warden
 
 witch
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 26,
@@ -28383,8 +26751,6 @@ witch
 ```
 
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28395,8 +26761,6 @@ wither
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 20,
@@ -28406,8 +26770,6 @@ wither_skeleton
 
 wolf
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 8,
@@ -28415,18 +26777,14 @@ wolf
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:wolf_tame</CodeHeader>
-
 ```json
 "minecraft:health": {
-    "value": 20,
-    "max": 20
+    "value": 40,
+    "max": 40
 }
 ```
 
 xp_orb
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28437,8 +26795,6 @@ xp_orb
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 40,
@@ -28447,8 +26803,6 @@ zoglin
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28459,8 +26813,6 @@ zombie
 
 zombie_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 15,
@@ -28469,8 +26821,6 @@ zombie_horse
 ```
 
 zombie_pigman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:health": {
@@ -28481,8 +26831,6 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 20,
@@ -28492,8 +26840,6 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:health": {
     "value": 20,
@@ -28501,15 +26847,9 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## heartbeat
 
-<Spoiler title="Show">
-
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:heartbeat": {
@@ -28517,32 +26857,21 @@ warden
 }
 ```
 
-</Spoiler>
-
 ## hide
 
-<Spoiler title="Show">
-
 villager_v2
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hide": {}
 ```
 
-</Spoiler>
-
 ## home
-
-<Spoiler title="Show">
 
 bee
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:home": {
+    "restriction_type": "random_movement",
     "restriction_radius": 22,
     "home_block_list": [
         "minecraft:bee_nest",
@@ -28551,9 +26880,16 @@ bee
 }
 ```
 
-elder_guardian
+creaking
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:home": {
+    "restriction_type": "all_movement",
+    "restriction_radius": 32
+}
+```
+
+elder_guardian
 
 ```json
 "minecraft:home": {
@@ -28563,8 +26899,6 @@ elder_guardian
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:home": {
     "restriction_radius": 16
@@ -28573,15 +26907,11 @@ guardian
 
 piglin_brute
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:home": {}
 ```
 
 turtle
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:home": {}
@@ -28589,23 +26919,15 @@ turtle
 
 wandering_trader
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:home": {
     "restriction_radius": 16
 }
 ```
 
-</Spoiler>
-
 ## horse.jump_strength
 
-<Spoiler title="Show">
-
 donkey
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:horse.jump_strength": {
@@ -28614,8 +26936,6 @@ donkey
 ```
 
 horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:horse.jump_strength": {
@@ -28628,8 +26948,6 @@ horse
 
 mule
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:horse.jump_strength": {
     "value": 0.5
@@ -28637,8 +26955,6 @@ mule
 ```
 
 skeleton_horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:horse.jump_strength": {
@@ -28651,8 +26967,6 @@ skeleton_horse
 
 zombie_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:horse.jump_strength": {
     "value": {
@@ -28662,15 +26976,9 @@ zombie_horse
 }
 ```
 
-</Spoiler>
-
 ## hurt_on_condition
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -28689,9 +26997,24 @@ allay
 }
 ```
 
-armor_stand
+armadillo
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:hurt_on_condition": {
+    "damage_conditions": [
+        {
+            "filters": {
+                "test": "in_lava",
+                "subject": "self"
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+        }
+    ]
+}
+```
+
+armor_stand
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -28712,8 +27035,6 @@ armor_stand
 
 arrow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -28732,8 +27053,6 @@ arrow
 ```
 
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -28754,8 +27073,6 @@ axolotl
 
 bat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -28775,17 +27092,13 @@ bat
 
 bee
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
         {
             "filters": {
                 "test": "in_lava",
-                "subject": "self",
-                "operator": "==",
-                "value": true
+                "subject": "self"
             },
             "cause": "lava",
             "damage_per_tick": 4
@@ -28793,8 +27106,6 @@ bee
     ]
 }
 ```
-
-<CodeHeader>#component_groups/perish</CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -28808,8 +27119,6 @@ bee
 ```
 
 blaze
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -28829,7 +27138,62 @@ blaze
 
 boat
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:hurt_on_condition": {
+    "damage_conditions": [
+        {
+            "filters": {
+                "test": "in_lava",
+                "subject": "self",
+                "operator": "==",
+                "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+        }
+    ]
+}
+```
+
+bogged
+
+```json
+"minecraft:hurt_on_condition": {
+    "damage_conditions": [
+        {
+            "filters": {
+                "test": "in_lava",
+                "subject": "self",
+                "operator": "==",
+                "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+        }
+    ]
+}
+```
+
+breeze
+
+```json
+"minecraft:hurt_on_condition": {
+    "damage_conditions": [
+        {
+            "filters": {
+                "test": "in_lava",
+                "subject": "self",
+                "operator": "==",
+                "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+        }
+    ]
+}
+```
+
+camel
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -28850,8 +27214,6 @@ boat
 
 cat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -28871,8 +27233,6 @@ cat
 
 cave_spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -28891,8 +27251,6 @@ cave_spider
 ```
 
 chest_boat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -28913,8 +27271,6 @@ chest_boat
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -28934,8 +27290,6 @@ chicken
 
 cow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -28953,9 +27307,23 @@ cow
 }
 ```
 
-creeper
+creaking
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:hurt_on_condition": {
+    "damage_conditions": [
+        {
+            "filters": {
+                "test": "in_lava"
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+        }
+    ]
+}
+```
+
+creeper
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -28976,8 +27344,6 @@ creeper
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -28996,8 +27362,6 @@ dolphin
 ```
 
 donkey
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29018,8 +27382,6 @@ donkey
 
 drowned
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29038,8 +27400,6 @@ drowned
 ```
 
 elder_guardian
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29060,26 +27420,20 @@ elder_guardian
 
 enderman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
         {
             "filters": {
                 "test": "in_lava",
-                "subject": "self",
-                "operator": "==",
-                "value": true
+                "subject": "self"
             },
             "cause": "lava",
             "damage_per_tick": 4
         },
         {
             "filters": {
-                "test": "in_contact_with_water",
-                "operator": "==",
-                "value": true
+                "test": "in_contact_with_water"
             },
             "cause": "drowning",
             "damage_per_tick": 1
@@ -29089,8 +27443,6 @@ enderman
 ```
 
 endermite
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29111,8 +27463,6 @@ endermite
 
 evocation_illager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29131,8 +27481,6 @@ evocation_illager
 ```
 
 cod
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29153,8 +27501,6 @@ cod
 
 frog
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29173,8 +27519,6 @@ frog
 ```
 
 glow_squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29195,8 +27539,6 @@ glow_squid
 
 goat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29215,8 +27557,6 @@ goat
 ```
 
 guardian
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29237,8 +27577,6 @@ guardian
 
 hoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29257,8 +27595,6 @@ hoglin
 ```
 
 horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29279,8 +27615,6 @@ horse
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29299,8 +27633,6 @@ husk
 ```
 
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29321,17 +27653,13 @@ iron_golem
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
         {
             "filters": {
                 "test": "in_lava",
-                "subject": "self",
-                "operator": "==",
-                "value": true
+                "subject": "self"
             },
             "cause": "lava",
             "damage_per_tick": 4
@@ -29341,8 +27669,6 @@ llama
 ```
 
 mooshroom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29362,8 +27688,6 @@ mooshroom
 ```
 
 mule
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29384,8 +27708,6 @@ mule
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29404,8 +27726,6 @@ ocelot
 ```
 
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29426,8 +27746,6 @@ panda
 
 parrot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29446,8 +27764,6 @@ parrot
 ```
 
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29468,8 +27784,6 @@ phantom
 
 pig
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29488,8 +27802,6 @@ pig
 ```
 
 piglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29510,8 +27822,6 @@ piglin
 
 piglin_brute
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29530,8 +27840,6 @@ piglin_brute
 ```
 
 pillager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29552,8 +27860,6 @@ pillager
 
 player
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29572,8 +27878,6 @@ player
 ```
 
 polar_bear
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29594,8 +27898,6 @@ polar_bear
 
 pufferfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29614,8 +27916,6 @@ pufferfish
 ```
 
 rabbit
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29636,17 +27936,13 @@ rabbit
 
 ravager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
         {
             "filters": {
                 "test": "in_lava",
-                "subject": "self",
-                "operator": "==",
-                "value": true
+                "subject": "self"
             },
             "cause": "lava",
             "damage_per_tick": 4
@@ -29656,8 +27952,6 @@ ravager
 ```
 
 salmon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29678,8 +27972,6 @@ salmon
 
 sheep
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29698,8 +27990,6 @@ sheep
 ```
 
 silverfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29720,8 +28010,6 @@ silverfish
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29740,8 +28028,6 @@ skeleton
 ```
 
 skeleton_horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29762,8 +28048,6 @@ skeleton_horse
 
 slime
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29781,9 +28065,24 @@ slime
 }
 ```
 
-snow_golem
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:hurt_on_condition": {
+    "damage_conditions": [
+        {
+            "filters": {
+                "test": "in_lava",
+                "subject": "self"
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+        }
+    ]
+}
+```
+
+snow_golem
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29800,9 +28099,19 @@ snow_golem
         },
         {
             "filters": {
-                "test": "is_temperature_value",
-                "operator": ">",
-                "value": 1.0
+                "all_of": [
+                    {
+                        "test": "is_temperature_value",
+                        "operator": ">",
+                        "value": 1.0
+                    },
+                    {
+                        "test": "has_component",
+                        "subject": "self",
+                        "operator": "!=",
+                        "value": "minecraft:effect.fire_resistance"
+                    }
+                ]
             },
             "cause": "temperature",
             "damage_per_tick": 1
@@ -29821,8 +28130,6 @@ snow_golem
 ```
 
 spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29843,8 +28150,6 @@ spider
 
 squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29863,8 +28168,6 @@ squid
 ```
 
 stray
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29885,8 +28188,6 @@ stray
 
 strider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29904,8 +28205,6 @@ strider
 ```
 
 tadpole
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29926,8 +28225,6 @@ tadpole
 
 trader_llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29946,8 +28243,6 @@ trader_llama
 ```
 
 tripod_camera
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -29968,8 +28263,6 @@ tripod_camera
 
 tropicalfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -29988,8 +28281,6 @@ tropicalfish
 ```
 
 turtle
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -30010,8 +28301,6 @@ turtle
 
 villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -30030,8 +28319,6 @@ villager
 ```
 
 villager_v2
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -30052,8 +28339,6 @@ villager_v2
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -30072,8 +28357,6 @@ vindicator
 ```
 
 wandering_trader
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -30094,8 +28377,6 @@ wandering_trader
 
 witch
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -30114,8 +28395,6 @@ witch
 ```
 
 wolf
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -30136,8 +28415,6 @@ wolf
 
 zombie
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -30156,8 +28433,6 @@ zombie
 ```
 
 zombie_horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -30178,8 +28453,6 @@ zombie_horse
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -30199,8 +28472,6 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:hurt_on_condition": {
     "damage_conditions": [
@@ -30218,15 +28489,15 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## input_ground_controlled
 
-<Spoiler title="Show">
+camel
+
+```json
+"minecraft:input_ground_controlled": {}
+```
 
 donkey
-
-<CodeHeader>#component_groups/minecraft:donkey_saddled</CodeHeader>
 
 ```json
 "minecraft:input_ground_controlled": {}
@@ -30234,15 +28505,11 @@ donkey
 
 horse
 
-<CodeHeader>#component_groups/minecraft:horse_saddled</CodeHeader>
-
 ```json
 "minecraft:input_ground_controlled": {}
 ```
 
 mule
-
-<CodeHeader>#component_groups/minecraft:mule_saddled</CodeHeader>
 
 ```json
 "minecraft:input_ground_controlled": {}
@@ -30250,21 +28517,13 @@ mule
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:input_ground_controlled": {}
 ```
 
-</Spoiler>
-
 ## inside_block_notifier
 
-<Spoiler title="Show">
-
 boat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:inside_block_notifier": {
@@ -30307,8 +28566,6 @@ boat
 
 chest_boat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:inside_block_notifier": {
     "block_list": [
@@ -30348,15 +28605,9 @@ chest_boat
 }
 ```
 
-</Spoiler>
-
 ## insomnia
 
-<Spoiler title="Show">
-
 player
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:insomnia": {
@@ -30364,15 +28615,17 @@ player
 }
 ```
 
-</Spoiler>
+## instant_despawn
+
+creaking
+
+```json
+"minecraft:instant_despawn": {}
+```
 
 ## interact
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:interact": {
@@ -30385,6 +28638,11 @@ allay
                             "test": "is_family",
                             "subject": "other",
                             "value": "player"
+                        },
+                        {
+                            "test": "is_sneak_held",
+                            "subject": "other",
+                            "value": false
                         }
                     ]
                 }
@@ -30397,9 +28655,182 @@ allay
 }
 ```
 
-cow
+armadillo
 
-<CodeHeader>#component_groups/minecraft:cow_adult</CodeHeader>
+```json
+"minecraft:interact": {
+    "interactions": [
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "brush"
+                        }
+                    ]
+                }
+            },
+            "play_sounds": "mob.armadillo.brush",
+            "interact_text": "action.interact.brush",
+            "hurt_item": 16,
+            "swing": true,
+            "spawn_items": {
+                "table": "loot_tables/entities/armadillo_brush.json"
+            }
+        }
+    ]
+}
+```
+
+bee
+
+```json
+"minecraft:interact": {
+    "interactions": [
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "domain": "hand",
+                            "subject": "other",
+                            "value": "minecraft:open_eyeblossom"
+                        }
+                    ]
+                },
+                "event": "fed_open_eyeblossom"
+            },
+            "use_item": true,
+            "particle_on_start": {
+                "particle_type": "food"
+            },
+            "interact_text": "action.interact.feed"
+        },
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "domain": "hand",
+                            "subject": "other",
+                            "value": "minecraft:wither_rose"
+                        }
+                    ]
+                },
+                "event": "fed_wither_rose"
+            },
+            "use_item": true,
+            "particle_on_start": {
+                "particle_type": "food"
+            },
+            "interact_text": "action.interact.feed"
+        }
+    ]
+}
+```
+
+bogged
+
+```json
+"minecraft:interact": {
+    "interactions": [
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "shears"
+                        },
+                        {
+                            "test": "has_component",
+                            "operator": "!=",
+                            "value": "minecraft:is_sheared"
+                        }
+                    ]
+                },
+                "event": "be_sheared",
+                "target": "self"
+            },
+            "use_item": false,
+            "hurt_item": 1,
+            "play_sounds": "shear",
+            "spawn_items": {
+                "table": "loot_tables/entities/bogged_shear.json"
+            },
+            "interact_text": "action.interact.shear"
+        }
+    ]
+}
+```
+
+camel
+
+```json
+"minecraft:interact": {
+    "interactions": [
+        {
+            "play_sounds": "saddle",
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "self",
+                            "domain": "inventory",
+                            "operator": "not",
+                            "value": "saddle"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "saddle"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_sneak_held",
+                            "subject": "other",
+                            "value": false
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "equip_item_slot": "0",
+            "interact_text": "action.interact.saddle"
+        }
+    ]
+}
+```
+
+cow
 
 ```json
 "minecraft:interact": {
@@ -30432,8 +28863,6 @@ cow
 ```
 
 creeper
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:interact": {
@@ -30472,7 +28901,47 @@ creeper
 
 donkey
 
-<CodeHeader>#component_groups/minecraft:donkey_unchested</CodeHeader>
+```json
+"minecraft:interact": {
+    "interactions": [
+        {
+            "play_sounds": "armor.equip_generic",
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "self",
+                            "domain": "inventory",
+                            "operator": "not",
+                            "value": "saddle"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "saddle"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_sneak_held",
+                            "subject": "other",
+                            "value": false
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "equip_item_slot": "0",
+            "interact_text": "action.interact.equip"
+        }
+    ]
+}
+```
 
 ```json
 "minecraft:interact": {
@@ -30483,9 +28952,49 @@ donkey
                 "filters": {
                     "all_of": [
                         {
+                            "test": "has_equipment",
+                            "subject": "self",
+                            "domain": "inventory",
+                            "operator": "not",
+                            "value": "saddle"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "saddle"
+                        },
+                        {
                             "test": "is_family",
                             "subject": "other",
                             "value": "player"
+                        },
+                        {
+                            "test": "is_sneak_held",
+                            "subject": "other",
+                            "value": false
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "equip_item_slot": "0",
+            "interact_text": "action.interact.saddle"
+        },
+        {
+            "play_sounds": "armor.equip_generic",
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_sneaking",
+                            "subject": "other",
+                            "value": false
                         },
                         {
                             "test": "has_equipment",
@@ -30505,9 +29014,49 @@ donkey
 }
 ```
 
-goat
+```json
+"minecraft:interact": {
+    "interactions": [
+        {
+            "play_sounds": "armor.equip_generic",
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "self",
+                            "domain": "inventory",
+                            "operator": "not",
+                            "value": "saddle"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "saddle"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_sneaking",
+                            "subject": "other",
+                            "value": false
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "equip_item_slot": "0",
+            "interact_text": "action.interact.saddle"
+        }
+    ]
+}
+```
 
-<CodeHeader>#component_groups/interact_default</CodeHeader>
+goat
 
 ```json
 "minecraft:interact": {
@@ -30545,8 +29094,6 @@ goat
 }
 ```
 
-<CodeHeader>#component_groups/interact_screamer</CodeHeader>
-
 ```json
 "minecraft:interact": {
     "interactions": [
@@ -30583,9 +29130,129 @@ goat
 }
 ```
 
-iron_golem
+horse
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:interact": {
+    "interactions": [
+        {
+            "play_sounds": "armor.equip_generic",
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "none_of": [
+                                {
+                                    "test": "has_equipment",
+                                    "subject": "self",
+                                    "domain": "inventory",
+                                    "value": "leather_horse_armor"
+                                },
+                                {
+                                    "test": "has_equipment",
+                                    "subject": "self",
+                                    "domain": "inventory",
+                                    "value": "iron_horse_armor"
+                                },
+                                {
+                                    "test": "has_equipment",
+                                    "subject": "self",
+                                    "domain": "inventory",
+                                    "value": "golden_horse_armor"
+                                },
+                                {
+                                    "test": "has_equipment",
+                                    "subject": "self",
+                                    "domain": "inventory",
+                                    "value": "diamond_horse_armor"
+                                }
+                            ]
+                        },
+                        {
+                            "any_of": [
+                                {
+                                    "test": "has_equipment",
+                                    "subject": "player",
+                                    "domain": "hand",
+                                    "value": "leather_horse_armor"
+                                },
+                                {
+                                    "test": "has_equipment",
+                                    "subject": "player",
+                                    "domain": "hand",
+                                    "value": "iron_horse_armor"
+                                },
+                                {
+                                    "test": "has_equipment",
+                                    "subject": "player",
+                                    "domain": "hand",
+                                    "value": "golden_horse_armor"
+                                },
+                                {
+                                    "test": "has_equipment",
+                                    "subject": "player",
+                                    "domain": "hand",
+                                    "value": "diamond_horse_armor"
+                                }
+                            ]
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_sneak_held",
+                            "subject": "other",
+                            "value": false
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "equip_item_slot": "1",
+            "interact_text": "action.interact.equiphorsearmor"
+        },
+        {
+            "play_sounds": "saddle",
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "self",
+                            "domain": "inventory",
+                            "operator": "not",
+                            "value": "saddle"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "saddle"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_sneak_held",
+                            "subject": "other",
+                            "value": false
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "equip_item_slot": "0",
+            "interact_text": "action.interact.saddle"
+        }
+    ]
+}
+```
+
+iron_golem
 
 ```json
 "minecraft:interact": {
@@ -30623,8 +29290,6 @@ iron_golem
 
 llama
 
-<CodeHeader>#component_groups/minecraft:llama_unchested</CodeHeader>
-
 ```json
 "minecraft:interact": {
     "interactions": [
@@ -30639,6 +29304,11 @@ llama
                             "value": "player"
                         },
                         {
+                            "test": "is_sneaking",
+                            "subject": "other",
+                            "value": false
+                        },
+                        {
                             "test": "has_equipment",
                             "domain": "hand",
                             "subject": "other",
@@ -30651,14 +29321,89 @@ llama
             },
             "use_item": true,
             "interact_text": "action.interact.attachchest"
+        },
+        {
+            "play_sounds": "armor.equip_generic",
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "self",
+                            "domain": "inventory",
+                            "operator": "not",
+                            "value": "carpet"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "carpet"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_sneaking",
+                            "subject": "other",
+                            "value": false
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "equip_item_slot": "0",
+            "interact_text": "action.interact.equipcarpet"
+        }
+    ]
+}
+```
+
+```json
+"minecraft:interact": {
+    "interactions": [
+        {
+            "play_sounds": "armor.equip_generic",
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "self",
+                            "domain": "inventory",
+                            "operator": "not",
+                            "value": "carpet"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "carpet"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_sneaking",
+                            "subject": "other",
+                            "value": false
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "equip_item_slot": "0",
+            "interact_text": "action.interact.equipcarpet"
         }
     ]
 }
 ```
 
 mooshroom
-
-<CodeHeader>#component_groups/minecraft:cow_adult</CodeHeader>
 
 ```json
 "minecraft:interact": {
@@ -30703,7 +29448,7 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:2"
+                            "value": "allium"
                         },
                         {
                             "test": "is_family",
@@ -30744,7 +29489,7 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:3"
+                            "value": "azure_bluet"
                         },
                         {
                             "test": "is_family",
@@ -30785,7 +29530,7 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:1"
+                            "value": "blue_orchid"
                         },
                         {
                             "test": "is_family",
@@ -30826,7 +29571,7 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:9"
+                            "value": "cornflower"
                         },
                         {
                             "test": "is_family",
@@ -30867,7 +29612,7 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "yellow_flower"
+                            "value": "dandelion"
                         },
                         {
                             "test": "is_family",
@@ -30908,7 +29653,7 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:10"
+                            "value": "lily_of_the_valley"
                         },
                         {
                             "test": "is_family",
@@ -30949,7 +29694,7 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:8"
+                            "value": "oxeye_daisy"
                         },
                         {
                             "test": "is_family",
@@ -30990,7 +29735,7 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:0"
+                            "value": "poppy"
                         },
                         {
                             "test": "is_family",
@@ -31031,25 +29776,25 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:4"
+                            "value": "red_tulip"
                         },
                         {
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:5"
+                            "value": "orange_tulip"
                         },
                         {
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:6"
+                            "value": "white_tulip"
                         },
                         {
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:7"
+                            "value": "pink_tulip"
                         }
                     ],
                     "all_of": [
@@ -31114,6 +29859,129 @@ mooshroom
                     ]
                 },
                 "event": "minecraft:ate_rose",
+                "target": "self"
+            },
+            "use_item": true,
+            "play_sounds": "eat",
+            "particle_on_start": {
+                "particle_type": "smoke",
+                "particle_y_offset": 0.25,
+                "particle_offset_towards_interactor": true
+            },
+            "interact_text": "action.interact.feed"
+        },
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "torchflower"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_variant",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": 1
+                        },
+                        {
+                            "test": "is_mark_variant",
+                            "subject": "self",
+                            "operator": "!=",
+                            "value": 10
+                        }
+                    ]
+                },
+                "event": "minecraft:ate_torchflower",
+                "target": "self"
+            },
+            "use_item": true,
+            "play_sounds": "eat",
+            "particle_on_start": {
+                "particle_type": "smoke",
+                "particle_y_offset": 0.25,
+                "particle_offset_towards_interactor": true
+            },
+            "interact_text": "action.interact.feed"
+        },
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "open_eyeblossom"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_variant",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": 1
+                        },
+                        {
+                            "test": "is_mark_variant",
+                            "subject": "self",
+                            "operator": "!=",
+                            "value": 11
+                        }
+                    ]
+                },
+                "event": "minecraft:ate_open_eyeblossom",
+                "target": "self"
+            },
+            "use_item": true,
+            "play_sounds": "eat",
+            "particle_on_start": {
+                "particle_type": "smoke",
+                "particle_y_offset": 0.25,
+                "particle_offset_towards_interactor": true
+            },
+            "interact_text": "action.interact.feed"
+        },
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "closed_eyeblossom"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_variant",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": 1
+                        },
+                        {
+                            "test": "is_mark_variant",
+                            "subject": "self",
+                            "operator": "!=",
+                            "value": 12
+                        }
+                    ]
+                },
+                "event": "minecraft:ate_closed_eyeblossom",
                 "target": "self"
             },
             "use_item": true,
@@ -31234,8 +30102,6 @@ mooshroom
 
 mule
 
-<CodeHeader>#component_groups/minecraft:mule_unchested</CodeHeader>
-
 ```json
 "minecraft:interact": {
     "interactions": [
@@ -31254,6 +30120,11 @@ mule
                             "test": "is_family",
                             "subject": "other",
                             "value": "player"
+                        },
+                        {
+                            "test": "is_sneak_held",
+                            "subject": "other",
+                            "value": false
                         }
                     ]
                 },
@@ -31262,14 +30133,89 @@ mule
             },
             "use_item": true,
             "interact_text": "action.interact.attachchest"
+        },
+        {
+            "play_sounds": "armor.equip_generic",
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "self",
+                            "domain": "inventory",
+                            "operator": "not",
+                            "value": "saddle"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "saddle"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_sneak_held",
+                            "subject": "other",
+                            "value": false
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "equip_item_slot": "0",
+            "interact_text": "action.interact.saddle"
+        }
+    ]
+}
+```
+
+```json
+"minecraft:interact": {
+    "interactions": [
+        {
+            "play_sounds": "armor.equip_generic",
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "self",
+                            "domain": "inventory",
+                            "operator": "not",
+                            "value": "saddle"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "saddle"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_sneak_held",
+                            "subject": "other",
+                            "value": false
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "equip_item_slot": "0",
+            "interact_text": "action.interact.saddle"
         }
     ]
 }
 ```
 
 pig
-
-<CodeHeader>#component_groups/minecraft:pig_unsaddled</CodeHeader>
 
 ```json
 "minecraft:interact": {
@@ -31293,8 +30239,6 @@ pig
 ```
 
 piglin
-
-<CodeHeader>#component_groups/interactable_piglin</CodeHeader>
 
 ```json
 "minecraft:interact": {
@@ -31334,8 +30278,6 @@ piglin
 ```
 
 sheep
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:interact": {
@@ -31384,8 +30326,6 @@ sheep
 ```
 
 shulker
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:interact": {
@@ -31852,8 +30792,6 @@ shulker
 
 snow_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:interact": {
     "interactions": [
@@ -31898,8 +30836,6 @@ snow_golem
 
 strider
 
-<CodeHeader>#component_groups/minecraft:strider_unsaddled</CodeHeader>
-
 ```json
 "minecraft:interact": {
     "interactions": [
@@ -31922,8 +30858,6 @@ strider
 ```
 
 tnt_minecart
-
-<CodeHeader>#component_groups/minecraft:inactive</CodeHeader>
 
 ```json
 "minecraft:interact": {
@@ -31997,8 +30931,6 @@ tnt_minecart
 
 trader_llama
 
-<CodeHeader>#component_groups/minecraft:llama_unchested</CodeHeader>
-
 ```json
 "minecraft:interact": {
     "interactions": [
@@ -32030,9 +30962,144 @@ trader_llama
 }
 ```
 
-zombie_villager
+wolf
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:interact": {
+    "interactions": [
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "self",
+                            "domain": "armor",
+                            "operator": "not",
+                            "value": "wolf_armor"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "wolf_armor"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_owner",
+                            "subject": "other",
+                            "value": true
+                        },
+                        {
+                            "test": "is_sneak_held",
+                            "subject": "other",
+                            "value": false
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "equip_item_slot": "slot.armor.body",
+            "play_sounds": "armor.equip_wolf",
+            "interact_text": "action.interact.equipwolfarmor"
+        },
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "self",
+                            "domain": "armor",
+                            "value": "wolf_armor"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "shears"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_owner",
+                            "subject": "other",
+                            "value": true
+                        },
+                        {
+                            "test": "is_sneak_held",
+                            "subject": "other",
+                            "value": false
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "hurt_item": 1,
+            "drop_item_slot": "slot.armor.body",
+            "play_sounds": "armor.unequip_wolf",
+            "interact_text": "action.interact.removewolfarmor",
+            "vibration": "shear"
+        },
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "is_sitting",
+                            "subject": "self"
+                        },
+                        {
+                            "test": "has_damaged_equipment",
+                            "subject": "self",
+                            "domain": "armor",
+                            "value": "wolf_armor"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_owner",
+                            "subject": "other",
+                            "value": true
+                        },
+                        {
+                            "test": "is_sneak_held",
+                            "subject": "other",
+                            "value": false
+                        },
+                        {
+                            "test": "has_equipment",
+                            "domain": "hand",
+                            "subject": "other",
+                            "value": "armadillo_scute"
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "repair_entity_item": {
+                "slot": "slot.armor.body",
+                "amount": 8
+            },
+            "use_item": true,
+            "play_sounds": "armor.repair_wolf",
+            "interact_text": "action.interact.repairwolfarmor"
+        }
+    ]
+}
+```
+
+zombie_villager
 
 ```json
 "minecraft:interact": {
@@ -32064,8 +31131,6 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:interact": {
     "interactions": {
@@ -32094,15 +31159,9 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## inventory
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:inventory": {
@@ -32110,9 +31169,15 @@ allay
 }
 ```
 
-chest_boat
+camel
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:inventory": {
+    "container_type": "horse"
+}
+```
+
+chest_boat
 
 ```json
 "minecraft:inventory": {
@@ -32124,8 +31189,6 @@ chest_boat
 
 chest_minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:inventory": {
     "container_type": "minecart_chest",
@@ -32136,15 +31199,11 @@ chest_minecart
 
 command_block_minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:inventory": {}
 ```
 
 donkey
-
-<CodeHeader>#component_groups/minecraft:donkey_tamed</CodeHeader>
 
 ```json
 "minecraft:inventory": {
@@ -32154,8 +31213,6 @@ donkey
 ```
 
 hopper_minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:inventory": {
@@ -32167,8 +31224,6 @@ hopper_minecart
 
 horse
 
-<CodeHeader>#component_groups/minecraft:horse_tamed</CodeHeader>
-
 ```json
 "minecraft:inventory": {
     "inventory_size": 2,
@@ -32177,8 +31232,6 @@ horse
 ```
 
 llama
-
-<CodeHeader>#component_groups/minecraft:llama_tamed</CodeHeader>
 
 ```json
 "minecraft:inventory": {
@@ -32190,8 +31243,6 @@ llama
 
 mule
 
-<CodeHeader>#component_groups/minecraft:mule_tamed</CodeHeader>
-
 ```json
 "minecraft:inventory": {
     "inventory_size": 16,
@@ -32200,8 +31251,6 @@ mule
 ```
 
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:inventory": {
@@ -32212,8 +31261,6 @@ panda
 
 piglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:inventory": {
     "inventory_size": 8
@@ -32221,8 +31268,6 @@ piglin
 ```
 
 trader_llama
-
-<CodeHeader>#component_groups/minecraft:llama_tamed</CodeHeader>
 
 ```json
 "minecraft:inventory": {
@@ -32234,8 +31279,6 @@ trader_llama
 
 villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:inventory": {
     "inventory_size": 8,
@@ -32245,8 +31288,6 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:inventory": {
     "inventory_size": 8,
@@ -32254,15 +31295,15 @@ villager_v2
 }
 ```
 
-</Spoiler>
-
 ## is_baby
 
-<Spoiler title="Show">
+armadillo
+
+```json
+"minecraft:is_baby": {}
+```
 
 axolotl
-
-<CodeHeader>#component_groups/axolotl_baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32270,7 +31311,11 @@ axolotl
 
 bee
 
-<CodeHeader>#component_groups/bee_baby</CodeHeader>
+```json
+"minecraft:is_baby": {}
+```
+
+camel
 
 ```json
 "minecraft:is_baby": {}
@@ -32278,15 +31323,11 @@ bee
 
 cat
 
-<CodeHeader>#component_groups/minecraft:cat_baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 chicken
-
-<CodeHeader>#component_groups/minecraft:chicken_baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32294,23 +31335,17 @@ chicken
 
 cow
 
-<CodeHeader>#component_groups/minecraft:cow_baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 dolphin
 
-<CodeHeader>#component_groups/dolphin_baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 donkey
-
-<CodeHeader>#component_groups/minecraft:donkey_baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32318,15 +31353,11 @@ donkey
 
 drowned
 
-<CodeHeader>#component_groups/minecraft:baby_drowned</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 fox
-
-<CodeHeader>#component_groups/minecraft:fox_baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32334,15 +31365,11 @@ fox
 
 glow_squid
 
-<CodeHeader>#component_groups/minecraft:squid_baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 goat
-
-<CodeHeader>#component_groups/goat_baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32350,15 +31377,11 @@ goat
 
 hoglin
 
-<CodeHeader>#component_groups/minecraft:hoglin_baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 horse
-
-<CodeHeader>#component_groups/minecraft:horse_baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32366,15 +31389,11 @@ horse
 
 husk
 
-<CodeHeader>#component_groups/minecraft:zombie_husk_baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 llama
-
-<CodeHeader>#component_groups/minecraft:llama_baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32382,15 +31401,11 @@ llama
 
 mooshroom
 
-<CodeHeader>#component_groups/minecraft:cow_baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 mule
-
-<CodeHeader>#component_groups/minecraft:mule_baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32398,15 +31413,11 @@ mule
 
 ocelot
 
-<CodeHeader>#component_groups/minecraft:ocelot_baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 panda
-
-<CodeHeader>#component_groups/minecraft:panda_baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32414,15 +31425,11 @@ panda
 
 pig
 
-<CodeHeader>#component_groups/minecraft:pig_baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 piglin
-
-<CodeHeader>#component_groups/piglin_baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32430,23 +31437,17 @@ piglin
 
 polar_bear
 
-<CodeHeader>#component_groups/minecraft:baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 rabbit
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 sheep
-
-<CodeHeader>#component_groups/minecraft:sheep_baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32454,7 +31455,11 @@ sheep
 
 skeleton_horse
 
-<CodeHeader>#component_groups/minecraft:skeleton_horse_baby</CodeHeader>
+```json
+"minecraft:is_baby": {}
+```
+
+sniffer
 
 ```json
 "minecraft:is_baby": {}
@@ -32462,15 +31467,11 @@ skeleton_horse
 
 squid
 
-<CodeHeader>#component_groups/minecraft:squid_baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 strider
-
-<CodeHeader>#component_groups/minecraft:strider_baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32478,15 +31479,11 @@ strider
 
 tadpole
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 trader_llama
-
-<CodeHeader>#component_groups/minecraft:llama_baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32494,15 +31491,11 @@ trader_llama
 
 turtle
 
-<CodeHeader>#component_groups/minecraft:baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 villager
-
-<CodeHeader>#component_groups/baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32510,15 +31503,11 @@ villager
 
 villager_v2
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 wolf
-
-<CodeHeader>#component_groups/minecraft:wolf_baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32526,15 +31515,11 @@ wolf
 
 zoglin
 
-<CodeHeader>#component_groups/zoglin_baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 zombie
-
-<CodeHeader>#component_groups/minecraft:zombie_baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32542,15 +31527,11 @@ zombie
 
 zombie_horse
 
-<CodeHeader>#component_groups/minecraft:horse_baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 zombie_pigman
-
-<CodeHeader>#component_groups/minecraft:pig_zombie_baby</CodeHeader>
 
 ```json
 "minecraft:is_baby": {}
@@ -32558,51 +31539,27 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
 zombie_villager_v2
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:is_baby": {}
 ```
 
-</Spoiler>
-
 ## is_charged
-
-<Spoiler title="Show">
-
-bee
-
-<CodeHeader>#component_groups/has_nectar</CodeHeader>
-
-```json
-"minecraft:is_charged": {}
-```
 
 creeper
 
-<CodeHeader>#component_groups/minecraft:charged_creeper</CodeHeader>
-
 ```json
 "minecraft:is_charged": {}
 ```
 
-</Spoiler>
-
 ## is_chested
 
-<Spoiler title="Show">
-
 donkey
-
-<CodeHeader>#component_groups/minecraft:donkey_chested</CodeHeader>
 
 ```json
 "minecraft:is_chested": {}
@@ -32610,15 +31567,11 @@ donkey
 
 llama
 
-<CodeHeader>#component_groups/minecraft:llama_chested</CodeHeader>
-
 ```json
 "minecraft:is_chested": {}
 ```
 
 mule
-
-<CodeHeader>#component_groups/minecraft:mule_chested</CodeHeader>
 
 ```json
 "minecraft:is_chested": {}
@@ -32626,21 +31579,13 @@ mule
 
 trader_llama
 
-<CodeHeader>#component_groups/minecraft:llama_chested</CodeHeader>
-
 ```json
 "minecraft:is_chested": {}
 ```
 
-</Spoiler>
-
 ## is_dyeable
 
-<Spoiler title="Show">
-
 cat
-
-<CodeHeader>#component_groups/minecraft:cat_tame</CodeHeader>
 
 ```json
 "minecraft:is_dyeable": {
@@ -32650,8 +31595,6 @@ cat
 
 sheep
 
-<CodeHeader>#component_groups/minecraft:sheep_dyeable</CodeHeader>
-
 ```json
 "minecraft:is_dyeable": {
     "interact_text": "action.interact.dye"
@@ -32660,23 +31603,21 @@ sheep
 
 wolf
 
-<CodeHeader>#component_groups/minecraft:wolf_tame</CodeHeader>
-
 ```json
 "minecraft:is_dyeable": {
     "interact_text": "action.interact.dye"
 }
 ```
 
-</Spoiler>
-
 ## is_hidden_when_invisible
-
-<Spoiler title="Show">
 
 allay
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:is_hidden_when_invisible": {}
+```
+
+armadillo
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32684,15 +31625,11 @@ allay
 
 axolotl
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 bat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32700,15 +31637,29 @@ bat
 
 bee
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 blaze
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:is_hidden_when_invisible": {}
+```
+
+bogged
+
+```json
+"minecraft:is_hidden_when_invisible": {}
+```
+
+breeze
+
+```json
+"minecraft:is_hidden_when_invisible": {}
+```
+
+camel
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32716,15 +31667,11 @@ blaze
 
 cat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 cave_spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32732,15 +31679,17 @@ cave_spider
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 cow
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:is_hidden_when_invisible": {}
+```
+
+creaking
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32748,23 +31697,17 @@ cow
 
 creeper
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 donkey
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32772,15 +31715,11 @@ donkey
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 enderman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32788,15 +31727,11 @@ enderman
 
 endermite
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 ender_dragon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32804,15 +31739,11 @@ ender_dragon
 
 evocation_illager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 cod
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32820,15 +31751,11 @@ cod
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 frog
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32836,15 +31763,11 @@ frog
 
 ghast
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 glow_squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32852,15 +31775,11 @@ glow_squid
 
 goat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 guardian
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32868,23 +31787,17 @@ guardian
 
 hoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 husk
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32892,15 +31805,11 @@ husk
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32908,23 +31817,17 @@ llama
 
 magma_cube
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 mooshroom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 mule
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32932,15 +31835,11 @@ mule
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32948,15 +31847,11 @@ panda
 
 parrot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32964,15 +31859,11 @@ phantom
 
 pig
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 piglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32980,15 +31871,11 @@ piglin
 
 piglin_brute
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 pillager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -32996,15 +31883,11 @@ pillager
 
 player
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 polar_bear
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -33012,15 +31895,11 @@ polar_bear
 
 pufferfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 rabbit
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -33028,23 +31907,17 @@ rabbit
 
 ravager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 salmon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 sheep
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -33052,23 +31925,17 @@ sheep
 
 shulker
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 silverfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -33076,23 +31943,23 @@ skeleton
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 slime
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:is_hidden_when_invisible": {}
+```
+
+sniffer
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 snow_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -33100,15 +31967,11 @@ snow_golem
 
 spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -33116,15 +31979,11 @@ squid
 
 stray
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 strider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -33132,15 +31991,11 @@ strider
 
 tadpole
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 trader_llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -33148,15 +32003,11 @@ trader_llama
 
 tropicalfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 turtle
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -33164,15 +32015,11 @@ turtle
 
 vex
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -33180,15 +32027,11 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 vindicator
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -33196,15 +32039,11 @@ vindicator
 
 wandering_trader
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -33212,15 +32051,11 @@ warden
 
 witch
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -33228,15 +32063,11 @@ wither
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 wolf
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -33244,15 +32075,11 @@ wolf
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -33260,15 +32087,11 @@ zombie
 
 zombie_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 zombie_pigman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -33276,55 +32099,35 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_hidden_when_invisible": {}
 ```
 
-</Spoiler>
-
 ## is_ignited
-
-<Spoiler title="Show">
 
 tnt_minecart
 
-<CodeHeader>#component_groups/minecraft:primed_tnt</CodeHeader>
-
 ```json
 "minecraft:is_ignited": {}
 ```
 
-<CodeHeader>#component_groups/minecraft:instant_explode_tnt</CodeHeader>
-
 ```json
 "minecraft:is_ignited": {}
 ```
-
-</Spoiler>
 
 ## is_illager_captain
 
-<Spoiler title="Show">
-
 pillager
-
-<CodeHeader>#component_groups/minecraft:illager_squad_captain</CodeHeader>
 
 ```json
 "minecraft:is_illager_captain": {}
 ```
-
-<CodeHeader>#component_groups/minecraft:patrol_captain</CodeHeader>
 
 ```json
 "minecraft:is_illager_captain": {}
@@ -33332,27 +32135,31 @@ pillager
 
 vindicator
 
-<CodeHeader>#component_groups/minecraft:illager_squad_captain</CodeHeader>
+```json
+"minecraft:is_illager_captain": {}
+```
 
 ```json
 "minecraft:is_illager_captain": {}
 ```
 
-<CodeHeader>#component_groups/minecraft:patrol_captain</CodeHeader>
+## is_pregnant
+
+sniffer
 
 ```json
-"minecraft:is_illager_captain": {}
+"minecraft:is_pregnant": {}
 ```
-
-</Spoiler>
 
 ## is_saddled
 
-<Spoiler title="Show">
+camel
+
+```json
+"minecraft:is_saddled": {}
+```
 
 donkey
-
-<CodeHeader>#component_groups/minecraft:donkey_saddled</CodeHeader>
 
 ```json
 "minecraft:is_saddled": {}
@@ -33360,15 +32167,11 @@ donkey
 
 horse
 
-<CodeHeader>#component_groups/minecraft:horse_saddled</CodeHeader>
-
 ```json
 "minecraft:is_saddled": {}
 ```
 
 mule
-
-<CodeHeader>#component_groups/minecraft:mule_saddled</CodeHeader>
 
 ```json
 "minecraft:is_saddled": {}
@@ -33376,29 +32179,19 @@ mule
 
 pig
 
-<CodeHeader>#component_groups/minecraft:pig_saddled</CodeHeader>
-
 ```json
 "minecraft:is_saddled": {}
 ```
 
 strider
 
-<CodeHeader>#component_groups/minecraft:strider_saddled</CodeHeader>
-
 ```json
 "minecraft:is_saddled": {}
 ```
 
-</Spoiler>
-
 ## is_shaking
 
-<Spoiler title="Show">
-
 hoglin
-
-<CodeHeader>#component_groups/start_zombification</CodeHeader>
 
 ```json
 "minecraft:is_shaking": {}
@@ -33406,13 +32199,9 @@ hoglin
 
 husk
 
-<CodeHeader>#component_groups/minecraft:convert_to_zombie</CodeHeader>
-
 ```json
 "minecraft:is_shaking": {}
 ```
-
-<CodeHeader>#component_groups/minecraft:convert_to_baby_zombie</CodeHeader>
 
 ```json
 "minecraft:is_shaking": {}
@@ -33420,15 +32209,11 @@ husk
 
 piglin
 
-<CodeHeader>#component_groups/start_zombification</CodeHeader>
-
 ```json
 "minecraft:is_shaking": {}
 ```
 
 piglin_brute
-
-<CodeHeader>#component_groups/start_zombification</CodeHeader>
 
 ```json
 "minecraft:is_shaking": {}
@@ -33436,15 +32221,11 @@ piglin_brute
 
 skeleton
 
-<CodeHeader>#component_groups/in_powder_snow</CodeHeader>
-
 ```json
 "minecraft:is_shaking": {}
 ```
 
 strider
-
-<CodeHeader>#component_groups/minecraft:start_suffocating</CodeHeader>
 
 ```json
 "minecraft:is_shaking": {}
@@ -33452,13 +32233,9 @@ strider
 
 zombie
 
-<CodeHeader>#component_groups/minecraft:convert_to_drowned</CodeHeader>
-
 ```json
 "minecraft:is_shaking": {}
 ```
-
-<CodeHeader>#component_groups/minecraft:convert_to_baby_drowned</CodeHeader>
 
 ```json
 "minecraft:is_shaking": {}
@@ -33466,29 +32243,25 @@ zombie
 
 zombie_villager
 
-<CodeHeader>#component_groups/to_villager</CodeHeader>
-
 ```json
 "minecraft:is_shaking": {}
 ```
 
 zombie_villager_v2
 
-<CodeHeader>#component_groups/to_villager</CodeHeader>
-
 ```json
 "minecraft:is_shaking": {}
 ```
 
-</Spoiler>
-
 ## is_sheared
 
-<Spoiler title="Show">
+bogged
+
+```json
+"minecraft:is_sheared": {}
+```
 
 sheep
-
-<CodeHeader>#component_groups/minecraft:sheep_sheared</CodeHeader>
 
 ```json
 "minecraft:is_sheared": {}
@@ -33496,21 +32269,13 @@ sheep
 
 snow_golem
 
-<CodeHeader>#component_groups/minecraft:snowman_sheared</CodeHeader>
-
 ```json
 "minecraft:is_sheared": {}
 ```
 
-</Spoiler>
-
 ## is_stackable
 
-<Spoiler title="Show">
-
 boat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_stackable": {}
@@ -33518,15 +32283,11 @@ boat
 
 chest_boat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_stackable": {}
 ```
 
 chest_minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_stackable": {
@@ -33536,15 +32297,11 @@ chest_minecart
 
 hopper_minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_stackable": {}
 ```
 
 minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:is_stackable": {}
@@ -33552,35 +32309,27 @@ minecart
 
 tnt_minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_stackable": {}
 ```
 
-</Spoiler>
-
 ## is_stunned
 
-<Spoiler title="Show">
-
 ravager
-
-<CodeHeader>#component_groups/stunned</CodeHeader>
 
 ```json
 "minecraft:is_stunned": {}
 ```
 
-</Spoiler>
-
 ## is_tamed
 
-<Spoiler title="Show">
+camel
+
+```json
+"minecraft:is_tamed": {}
+```
 
 cat
-
-<CodeHeader>#component_groups/minecraft:cat_tame</CodeHeader>
 
 ```json
 "minecraft:is_tamed": {}
@@ -33588,15 +32337,11 @@ cat
 
 donkey
 
-<CodeHeader>#component_groups/minecraft:donkey_tamed</CodeHeader>
-
 ```json
 "minecraft:is_tamed": {}
 ```
 
 horse
-
-<CodeHeader>#component_groups/minecraft:horse_tamed</CodeHeader>
 
 ```json
 "minecraft:is_tamed": {}
@@ -33604,15 +32349,11 @@ horse
 
 llama
 
-<CodeHeader>#component_groups/minecraft:llama_tamed</CodeHeader>
-
 ```json
 "minecraft:is_tamed": {}
 ```
 
 mule
-
-<CodeHeader>#component_groups/minecraft:mule_tamed</CodeHeader>
 
 ```json
 "minecraft:is_tamed": {}
@@ -33620,15 +32361,11 @@ mule
 
 ocelot
 
-<CodeHeader>#component_groups/minecraft:ocelot_tame</CodeHeader>
-
 ```json
 "minecraft:is_tamed": {}
 ```
 
 parrot
-
-<CodeHeader>#component_groups/minecraft:parrot_tame</CodeHeader>
 
 ```json
 "minecraft:is_tamed": {}
@@ -33636,15 +32373,11 @@ parrot
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_tamed": {}
 ```
 
 trader_llama
-
-<CodeHeader>#component_groups/minecraft:llama_tamed</CodeHeader>
 
 ```json
 "minecraft:is_tamed": {}
@@ -33652,29 +32385,19 @@ trader_llama
 
 wolf
 
-<CodeHeader>#component_groups/minecraft:wolf_tame</CodeHeader>
-
 ```json
 "minecraft:is_tamed": {}
 ```
 
 zombie_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:is_tamed": {}
 ```
 
-</Spoiler>
-
 ## item_controllable
 
-<Spoiler title="Show">
-
 pig
-
-<CodeHeader>#component_groups/minecraft:pig_saddled</CodeHeader>
 
 ```json
 "minecraft:item_controllable": {
@@ -33684,51 +32407,37 @@ pig
 
 strider
 
-<CodeHeader>#component_groups/minecraft:strider_saddled</CodeHeader>
-
 ```json
 "minecraft:item_controllable": {
     "control_items": "warped_fungus_on_a_stick"
 }
 ```
 
-</Spoiler>
-
 ## item_hopper
 
-<Spoiler title="Show">
-
 hopper_minecart
-
-<CodeHeader>#component_groups/minecraft:hopper_active</CodeHeader>
 
 ```json
 "minecraft:item_hopper": {}
 ```
 
-</Spoiler>
-
 ## jump.dynamic
 
-<Spoiler title="Show">
-
 rabbit
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.dynamic": {}
 ```
 
-</Spoiler>
-
 ## jump.static
-
-<Spoiler title="Show">
 
 allay
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:jump.static": {}
+```
+
+armadillo
 
 ```json
 "minecraft:jump.static": {}
@@ -33736,15 +32445,11 @@ allay
 
 axolotl
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 bat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -33752,15 +32457,29 @@ bat
 
 bee
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 blaze
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:jump.static": {}
+```
+
+bogged
+
+```json
+"minecraft:jump.static": {}
+```
+
+breeze
+
+```json
+"minecraft:jump.static": {}
+```
+
+camel
 
 ```json
 "minecraft:jump.static": {}
@@ -33768,15 +32487,11 @@ blaze
 
 cat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 cave_spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -33784,15 +32499,17 @@ cave_spider
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 cow
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:jump.static": {}
+```
+
+creaking
 
 ```json
 "minecraft:jump.static": {}
@@ -33800,15 +32517,11 @@ cow
 
 creeper
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 dolphin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {
@@ -33818,15 +32531,11 @@ dolphin
 
 donkey
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 drowned
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -33834,15 +32543,11 @@ drowned
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 enderman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -33850,15 +32555,11 @@ enderman
 
 endermite
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 evocation_illager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -33866,15 +32567,11 @@ evocation_illager
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 frog
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -33882,15 +32579,11 @@ frog
 
 ghast
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 glow_squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -33898,15 +32591,11 @@ glow_squid
 
 goat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 guardian
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -33914,15 +32603,11 @@ guardian
 
 hoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -33930,15 +32615,11 @@ horse
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -33946,15 +32627,11 @@ iron_golem
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 magma_cube
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -33962,15 +32639,11 @@ magma_cube
 
 mooshroom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 mule
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -33978,15 +32651,11 @@ mule
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -33994,15 +32663,11 @@ panda
 
 parrot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 pig
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -34010,15 +32675,11 @@ pig
 
 piglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 piglin_brute
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -34026,15 +32687,11 @@ piglin_brute
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 polar_bear
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -34042,15 +32699,11 @@ polar_bear
 
 ravager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 sheep
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -34058,15 +32711,11 @@ sheep
 
 silverfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -34074,15 +32723,17 @@ skeleton
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 slime
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:jump.static": {}
+```
+
+sniffer
 
 ```json
 "minecraft:jump.static": {}
@@ -34090,15 +32741,11 @@ slime
 
 snow_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -34106,15 +32753,11 @@ spider
 
 squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 stray
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -34122,15 +32765,11 @@ stray
 
 strider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 trader_llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -34138,15 +32777,11 @@ trader_llama
 
 turtle
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 vex
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -34154,15 +32789,11 @@ vex
 
 villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 villager_v2
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -34170,15 +32801,11 @@ villager_v2
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 wandering_trader
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -34186,15 +32813,11 @@ wandering_trader
 
 warden
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 witch
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -34202,15 +32825,11 @@ witch
 
 wither
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 wither_skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -34218,15 +32837,11 @@ wither_skeleton
 
 wolf
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 zoglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -34234,15 +32849,11 @@ zoglin
 
 zombie
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 zombie_horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -34250,15 +32861,11 @@ zombie_horse
 
 zombie_pigman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
 zombie_villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:jump.static": {}
@@ -34266,21 +32873,35 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:jump.static": {}
 ```
 
-</Spoiler>
-
 ## knockback_resistance
-
-<Spoiler title="Show">
 
 armor_stand
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:knockback_resistance": {
+    "value": 1.0
+}
+```
+
+breeze
+
+```json
+"minecraft:knockback_resistance": {
+    "value": 0.0
+}
+```
+
+creaking
+
+```json
+"minecraft:knockback_resistance": {
+    "value": 0.0
+}
+```
 
 ```json
 "minecraft:knockback_resistance": {
@@ -34289,8 +32910,6 @@ armor_stand
 ```
 
 ender_dragon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:knockback_resistance": {
@@ -34301,8 +32920,6 @@ ender_dragon
 
 hoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:knockback_resistance": {
     "value": 0.6
@@ -34310,8 +32927,6 @@ hoglin
 ```
 
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:knockback_resistance": {
@@ -34321,8 +32936,6 @@ iron_golem
 
 ravager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:knockback_resistance": {
     "value": 0.75
@@ -34330,8 +32943,6 @@ ravager
 ```
 
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:knockback_resistance": {
@@ -34341,23 +32952,15 @@ warden
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:knockback_resistance": {
     "value": 0.6
 }
 ```
 
-</Spoiler>
-
 ## lava_movement
 
-<Spoiler title="Show">
-
 strider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:lava_movement": {
@@ -34365,15 +32968,19 @@ strider
 }
 ```
 
-</Spoiler>
-
 ## leashable
-
-<Spoiler title="Show">
 
 allay
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:leashable": {
+    "soft_distance": 4.0,
+    "hard_distance": 6.0,
+    "max_distance": 10.0
+}
+```
+
+armadillo
 
 ```json
 "minecraft:leashable": {
@@ -34385,8 +32992,6 @@ allay
 
 axolotl
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {
     "soft_distance": 4.0,
@@ -34396,8 +33001,6 @@ axolotl
 ```
 
 bee
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:leashable": {
@@ -34409,7 +33012,15 @@ bee
 
 boat
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:leashable": {
+    "soft_distance": 4.0,
+    "hard_distance": 6.0,
+    "max_distance": 10.0
+}
+```
+
+camel
 
 ```json
 "minecraft:leashable": {
@@ -34421,8 +33032,6 @@ boat
 
 cat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {
     "soft_distance": 4.0,
@@ -34432,8 +33041,6 @@ cat
 ```
 
 chest_boat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:leashable": {
@@ -34445,8 +33052,6 @@ chest_boat
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {
     "soft_distance": 4.0,
@@ -34456,8 +33061,6 @@ chicken
 ```
 
 cow
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:leashable": {
@@ -34469,8 +33072,6 @@ cow
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {
     "soft_distance": 4.0,
@@ -34480,8 +33081,6 @@ dolphin
 ```
 
 donkey
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:leashable": {
@@ -34493,8 +33092,6 @@ donkey
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {
     "soft_distance": 4.0,
@@ -34505,15 +33102,11 @@ fox
 
 frog
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {}
 ```
 
 glow_squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:leashable": {
@@ -34524,8 +33117,6 @@ glow_squid
 ```
 
 goat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:leashable": {
@@ -34537,8 +33128,6 @@ goat
 
 hoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {
     "soft_distance": 4.0,
@@ -34548,8 +33137,6 @@ hoglin
 ```
 
 horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:leashable": {
@@ -34561,8 +33148,6 @@ horse
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {
     "soft_distance": 4.0,
@@ -34572,8 +33157,6 @@ iron_golem
 ```
 
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:leashable": {
@@ -34586,8 +33169,6 @@ llama
 
 mooshroom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {
     "soft_distance": 4.0,
@@ -34598,8 +33179,6 @@ mooshroom
 
 mule
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {
     "soft_distance": 4.0,
@@ -34609,8 +33188,6 @@ mule
 ```
 
 ocelot
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:leashable": {
@@ -34630,8 +33207,6 @@ ocelot
 
 parrot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {
     "soft_distance": 4.0,
@@ -34641,8 +33216,6 @@ parrot
 ```
 
 pig
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:leashable": {
@@ -34654,8 +33227,6 @@ pig
 
 polar_bear
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {
     "soft_distance": 4.0,
@@ -34665,8 +33236,6 @@ polar_bear
 ```
 
 rabbit
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:leashable": {
@@ -34678,8 +33247,6 @@ rabbit
 
 sheep
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {
     "soft_distance": 4.0,
@@ -34690,7 +33257,15 @@ sheep
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:leashable": {
+    "soft_distance": 4.0,
+    "hard_distance": 6.0,
+    "max_distance": 10.0
+}
+```
+
+sniffer
 
 ```json
 "minecraft:leashable": {
@@ -34702,8 +33277,6 @@ skeleton_horse
 
 snow_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {
     "soft_distance": 4.0,
@@ -34713,8 +33286,6 @@ snow_golem
 ```
 
 squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:leashable": {
@@ -34726,8 +33297,6 @@ squid
 
 strider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {
     "soft_distance": 4.0,
@@ -34737,8 +33306,6 @@ strider
 ```
 
 trader_llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:leashable": {
@@ -34750,8 +33317,6 @@ trader_llama
 ```
 
 wolf
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:leashable": {
@@ -34771,8 +33336,6 @@ wolf
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {
     "soft_distance": 4.0,
@@ -34783,8 +33346,6 @@ zoglin
 
 zombie_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:leashable": {
     "soft_distance": 4.0,
@@ -34793,33 +33354,84 @@ zombie_horse
 }
 ```
 
-</Spoiler>
+## looked_at
 
-## lookat
-
-<Spoiler title="Show">
-
-enderman
-
-<CodeHeader></CodeHeader>
+creaking
 
 ```json
-"minecraft:lookat": {
-    "search_radius": 64.0,
-    "set_target": true,
-    "look_cooldown": 5.0,
+"minecraft:looked_at": {
+    "search_radius": 12.0,
+    "look_at_locations": [
+        {
+            "location": "head"
+        },
+        {
+            "location": "body"
+        },
+        {
+            "location": "feet",
+            "vertical_offset": 0.5
+        }
+    ],
+    "set_target": "once_and_keep_scanning",
+    "find_players_only": true,
+    "looked_at_cooldown": 0.1,
+    "field_of_view": 120,
+    "scale_fov_by_distance": false,
+    "line_of_sight_obstruction_type": "collision_for_camera",
+    "looked_at_event": {
+        "event": "minecraft:become_hostile",
+        "filter": "self"
+    },
     "filters": {
-        "all_of": [
+        "test": "actor_health",
+        "subject": "other",
+        "operator": ">",
+        "value": 0
+    }
+}
+```
+
+```json
+"minecraft:looked_at": {
+    "search_radius": 24.0,
+    "look_at_locations": [
+        {
+            "location": "head"
+        },
+        {
+            "location": "body"
+        },
+        {
+            "location": "feet",
+            "vertical_offset": 0.5
+        }
+    ],
+    "set_target": "never",
+    "find_players_only": true,
+    "looked_at_cooldown": 0.1,
+    "field_of_view": 120,
+    "scale_fov_by_distance": false,
+    "line_of_sight_obstruction_type": "collision_for_camera",
+    "looked_at_event": {
+        "event": "minecraft:on_target_start_looking",
+        "filter": "self"
+    },
+    "not_looked_at_event": {
+        "event": "minecraft:on_target_stop_looking",
+        "filter": "self"
+    },
+    "filters": {
+        "none_of": [
             {
-                "subject": "other",
-                "test": "is_family",
-                "value": "player"
+                "test": "actor_health",
+                "subject": "target",
+                "value": 0
             },
             {
                 "test": "has_equipment",
-                "domain": "head",
                 "subject": "other",
-                "operator": "not",
+                "domain": "head",
                 "value": "carved_pumpkin"
             }
         ]
@@ -34827,15 +33439,27 @@ enderman
 }
 ```
 
-</Spoiler>
+enderman
+
+```json
+"minecraft:looked_at": {
+    "search_radius": 64.0,
+    "set_target": "once_and_stop_scanning",
+    "find_players_only": true,
+    "looked_at_cooldown": 5.0,
+    "filters": {
+        "test": "has_equipment",
+        "domain": "head",
+        "subject": "other",
+        "operator": "not",
+        "value": "carved_pumpkin"
+    }
+}
+```
 
 ## loot
 
-<Spoiler title="Show">
-
 armor_stand
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -34845,8 +33469,6 @@ armor_stand
 
 blaze
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/blaze.json"
@@ -34855,17 +33477,29 @@ blaze
 
 boat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/boat.json"
 }
 ```
 
-cat
+bogged
 
-<CodeHeader>#component_groups/minecraft:cat_adult</CodeHeader>
+```json
+"minecraft:loot": {
+    "table": "loot_tables/entities/bogged.json"
+}
+```
+
+breeze
+
+```json
+"minecraft:loot": {
+    "table": "loot_tables/entities/breeze.json"
+}
+```
+
+cat
 
 ```json
 "minecraft:loot": {
@@ -34875,8 +33509,6 @@ cat
 
 cave_spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/spider.json"
@@ -34884,8 +33516,6 @@ cave_spider
 ```
 
 chicken
-
-<CodeHeader>#component_groups/minecraft:chicken_adult</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -34895,8 +33525,6 @@ chicken
 
 cow
 
-<CodeHeader>#component_groups/minecraft:cow_adult</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/cow.json"
@@ -34904,8 +33532,6 @@ cow
 ```
 
 creeper
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -34915,8 +33541,6 @@ creeper
 
 dolphin
 
-<CodeHeader>#component_groups/dolphin_adult</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/dolphin.json"
@@ -34924,8 +33548,6 @@ dolphin
 ```
 
 donkey
-
-<CodeHeader>#component_groups/minecraft:donkey_adult</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -34935,8 +33557,6 @@ donkey
 
 drowned
 
-<CodeHeader>#component_groups/minecraft:adult_drowned</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/drowned.json"
@@ -34944,8 +33564,6 @@ drowned
 ```
 
 elder_guardian
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -34955,8 +33573,6 @@ elder_guardian
 
 enderman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/enderman.json"
@@ -34964,8 +33580,6 @@ enderman
 ```
 
 evocation_illager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -34975,8 +33589,6 @@ evocation_illager
 
 cod
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/fish.json"
@@ -34985,15 +33597,11 @@ cod
 
 fishing_hook
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/gameplay/fishing.json"
 }
 ```
-
-<CodeHeader>#component_groups/loot_jungle</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35003,8 +33611,6 @@ fishing_hook
 
 fox
 
-<CodeHeader>#component_groups/minecraft:fox_adult</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/fox.json"
@@ -35012,8 +33618,6 @@ fox
 ```
 
 ghast
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35023,8 +33627,6 @@ ghast
 
 glow_squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/glow_squid.json"
@@ -35032,8 +33634,6 @@ glow_squid
 ```
 
 goat
-
-<CodeHeader>#component_groups/goat_adult</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35043,8 +33643,6 @@ goat
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/guardian.json"
@@ -35052,8 +33650,6 @@ guardian
 ```
 
 hoglin
-
-<CodeHeader>#component_groups/minecraft:hoglin_adult</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35063,8 +33659,6 @@ hoglin
 
 horse
 
-<CodeHeader>#component_groups/minecraft:horse_adult</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/horse.json"
@@ -35072,8 +33666,6 @@ horse
 ```
 
 husk
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35083,8 +33675,6 @@ husk
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/iron_golem.json"
@@ -35092,8 +33682,6 @@ iron_golem
 ```
 
 llama
-
-<CodeHeader>#component_groups/minecraft:llama_adult</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35103,15 +33691,11 @@ llama
 
 magma_cube
 
-<CodeHeader>#component_groups/minecraft:slime_large</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/magma_cube.json"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:slime_medium</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35120,8 +33704,6 @@ magma_cube
 ```
 
 mooshroom
-
-<CodeHeader>#component_groups/minecraft:cow_adult</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35131,8 +33713,6 @@ mooshroom
 
 mule
 
-<CodeHeader>#component_groups/minecraft:mule_adult</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/horse.json"
@@ -35140,8 +33720,6 @@ mule
 ```
 
 npc
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35151,8 +33729,6 @@ npc
 
 ocelot
 
-<CodeHeader>#component_groups/minecraft:ocelot_adult</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/ocelot.json"
@@ -35160,8 +33736,6 @@ ocelot
 ```
 
 panda
-
-<CodeHeader>#component_groups/minecraft:panda_adult</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35171,8 +33745,6 @@ panda
 
 parrot
 
-<CodeHeader>#component_groups/minecraft:parrot_adult</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/parrot.json"
@@ -35180,8 +33752,6 @@ parrot
 ```
 
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35191,15 +33761,11 @@ phantom
 
 pig
 
-<CodeHeader>#component_groups/minecraft:pig_adult</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/pig.json"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:pig_saddled</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35209,8 +33775,6 @@ pig
 
 piglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/piglin.json"
@@ -35218,8 +33782,6 @@ piglin
 ```
 
 piglin_brute
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35229,15 +33791,11 @@ piglin_brute
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/pillager.json"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35245,9 +33803,19 @@ pillager
 }
 ```
 
-player
+```json
+"minecraft:loot": {
+    "table": "loot_tables/entities/pillager_captain.json"
+}
+```
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:loot": {
+    "table": "loot_tables/entities/pillager_captain.json"
+}
+```
+
+player
 
 ```json
 "minecraft:loot": {
@@ -35257,8 +33825,6 @@ player
 
 polar_bear
 
-<CodeHeader>#component_groups/minecraft:adult</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/polar_bear.json"
@@ -35266,8 +33832,6 @@ polar_bear
 ```
 
 pufferfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35277,8 +33841,6 @@ pufferfish
 
 rabbit
 
-<CodeHeader>#component_groups/adult</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/rabbit.json"
@@ -35286,8 +33848,6 @@ rabbit
 ```
 
 ravager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35297,23 +33857,17 @@ ravager
 
 salmon
 
-<CodeHeader>#component_groups/scale_small</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/salmon_normal.json"
 }
 ```
 
-<CodeHeader>#component_groups/scale_normal</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/salmon_normal.json"
 }
 ```
-
-<CodeHeader>#component_groups/scale_large</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35323,15 +33877,11 @@ salmon
 
 sheep
 
-<CodeHeader>#component_groups/minecraft:loot_sheared</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/sheep_sheared.json"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:loot_wooly</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35341,8 +33891,6 @@ sheep
 
 shulker
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/shulker.json"
@@ -35350,8 +33898,6 @@ shulker
 ```
 
 silverfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35361,8 +33907,6 @@ silverfish
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/skeleton.json"
@@ -35370,8 +33914,6 @@ skeleton
 ```
 
 skeleton_horse
-
-<CodeHeader>#component_groups/minecraft:skeleton_horse_adult</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35381,8 +33923,6 @@ skeleton_horse
 
 slime
 
-<CodeHeader>#component_groups/minecraft:slime_small</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/slime.json"
@@ -35390,8 +33930,6 @@ slime
 ```
 
 snow_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35401,8 +33939,6 @@ snow_golem
 
 spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/spider.json"
@@ -35410,8 +33946,6 @@ spider
 ```
 
 squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35421,8 +33955,6 @@ squid
 
 stray
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/stray.json"
@@ -35431,15 +33963,11 @@ stray
 
 strider
 
-<CodeHeader>#component_groups/minecraft:strider_saddled</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/strider_saddled.json"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:strider_adult</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35449,8 +33977,6 @@ strider
 
 trader_llama
 
-<CodeHeader>#component_groups/minecraft:llama_adult</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/llama.json"
@@ -35458,8 +33984,6 @@ trader_llama
 ```
 
 tripod_camera
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35469,8 +33993,6 @@ tripod_camera
 
 tropicalfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/tropicalfish.json"
@@ -35478,8 +34000,6 @@ tropicalfish
 ```
 
 turtle
-
-<CodeHeader>#component_groups/minecraft:adult</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35489,15 +34009,11 @@ turtle
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/vindication_illager.json"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35505,9 +34021,19 @@ vindicator
 }
 ```
 
-warden
+```json
+"minecraft:loot": {
+    "table": "loot_tables/entities/pillager_captain.json"
+}
+```
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:loot": {
+    "table": "loot_tables/entities/pillager_captain.json"
+}
+```
+
+warden
 
 ```json
 "minecraft:loot": {
@@ -35517,8 +34043,6 @@ warden
 
 witch
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/witch.json"
@@ -35526,8 +34050,6 @@ witch
 ```
 
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35537,8 +34059,6 @@ wither
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/wither_skeleton.json"
@@ -35546,8 +34066,6 @@ wither_skeleton
 ```
 
 wolf
-
-<CodeHeader>#component_groups/minecraft:wolf_adult</CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35557,8 +34075,6 @@ wolf
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/zoglin.json"
@@ -35566,8 +34082,6 @@ zoglin
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35577,8 +34091,6 @@ zombie
 
 zombie_horse
 
-<CodeHeader>#component_groups/minecraft:horse_adult</CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/zombie_horse.json"
@@ -35586,8 +34098,6 @@ zombie_horse
 ```
 
 zombie_pigman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:loot": {
@@ -35597,8 +34107,6 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/zombie.json"
@@ -35607,37 +34115,23 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/zombie.json"
 }
 ```
 
-</Spoiler>
-
 ## managed_wandering_trader
 
-<Spoiler title="Show">
-
 wandering_trader
-
-<CodeHeader>#component_groups/managed</CodeHeader>
 
 ```json
 "minecraft:managed_wandering_trader": {}
 ```
 
-</Spoiler>
-
 ## mark_variant
 
-<Spoiler title="Show">
-
 bee
-
-<CodeHeader>#component_groups/countdown_to_perish</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35647,15 +34141,11 @@ bee
 
 horse
 
-<CodeHeader>#component_groups/minecraft:markings_none</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:markings_white_details</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35663,23 +34153,17 @@ horse
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:markings_white_fields</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 2
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:markings_white_dots</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 3
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:markings_black_dots</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35689,8 +34173,6 @@ horse
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 0
@@ -35699,23 +34181,17 @@ llama
 
 mooshroom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": -1
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:mooshroom_fed_nothing</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": -1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:mooshroom_brown_fed_poppy</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35723,15 +34199,11 @@ mooshroom
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:mooshroom_brown_fed_cornflower</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:mooshroom_brown_fed_tulips</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35739,15 +34211,11 @@ mooshroom
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:mooshroom_brown_fed_azure_bluet</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 3
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:mooshroom_brown_fed_lily_of_the_valley</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35755,15 +34223,11 @@ mooshroom
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:mooshroom_brown_fed_dandelion</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 5
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:mooshroom_brown_fed_blue_orchid</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35771,15 +34235,11 @@ mooshroom
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:mooshroom_brown_fed_allium</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 7
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:mooshroom_brown_fed_oxeye_daisy</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35787,17 +34247,31 @@ mooshroom
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:mooshroom_brown_fed_wither_rose</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 9
 }
 ```
 
-trader_llama
+```json
+"minecraft:mark_variant": {
+    "value": 10
+}
+```
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:mark_variant": {
+    "value": 11
+}
+```
+
+```json
+"minecraft:mark_variant": {
+    "value": 12
+}
+```
+
+trader_llama
 
 ```json
 "minecraft:mark_variant": {
@@ -35807,23 +34281,17 @@ trader_llama
 
 tropicalfish
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_variant_pattern_1</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 0
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_variant_pattern_2</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_variant_pattern_3</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35831,15 +34299,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_variant_pattern_4</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 3
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_variant_pattern_5</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35847,23 +34311,17 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_variant_pattern_6</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 5
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:anenonme</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:black_tang</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35871,15 +34329,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:blue_dory</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:butterfly_fish</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35887,15 +34341,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:cichlid</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:clownfish</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35903,15 +34353,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:cc_betta</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 5
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:dog_fish</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35919,23 +34365,17 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:e_red_snapper</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 5
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:goat_fish</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 5
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:moorish_idol</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35943,15 +34383,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:ornate_butterfly</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 5
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:parrot_fish</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35959,23 +34395,17 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:queen_angel_fish</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 4
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:red_cichlid</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 4
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:red_lipped_benny</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35983,15 +34413,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:red_snapper</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 3
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:threadfin</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -35999,7 +34425,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:tomato_clown</CodeHeader>
+```json
+"minecraft:mark_variant": {
+    "value": 1
+}
+```
 
 ```json
 "minecraft:mark_variant": {
@@ -36007,23 +34437,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:triggerfish</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:yellow_tang</CodeHeader>
-
-```json
-"minecraft:mark_variant": {
-    "value": 1
-}
-```
-
-<CodeHeader>#component_groups/minecraft:yellowtail_parrot</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -36033,15 +34451,11 @@ tropicalfish
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/desert_villager</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -36049,15 +34463,11 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/jungle_villager</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 2
 }
 ```
-
-<CodeHeader>#component_groups/savanna_villager</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -36065,23 +34475,17 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/snow_villager</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 4
 }
 ```
 
-<CodeHeader>#component_groups/swamp_villager</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 5
 }
 ```
-
-<CodeHeader>#component_groups/taiga_villager</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -36091,15 +34495,11 @@ villager_v2
 
 zombie_villager_v2
 
-<CodeHeader>#component_groups/desert_villager</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/jungle_villager</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -36107,15 +34507,11 @@ zombie_villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/savanna_villager</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 3
 }
 ```
-
-<CodeHeader>#component_groups/snow_villager</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -36123,15 +34519,11 @@ zombie_villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/swamp_villager</CodeHeader>
-
 ```json
 "minecraft:mark_variant": {
     "value": 5
 }
 ```
-
-<CodeHeader>#component_groups/taiga_villager</CodeHeader>
 
 ```json
 "minecraft:mark_variant": {
@@ -36139,15 +34531,9 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## mob_effect
 
-<Spoiler title="Show">
-
 pufferfish
-
-<CodeHeader>#component_groups/minecraft:full_puff</CodeHeader>
 
 ```json
 "minecraft:mob_effect": {
@@ -36173,8 +34559,6 @@ pufferfish
 
 warden
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:mob_effect": {
     "effect_range": 20,
@@ -36199,15 +34583,31 @@ warden
 }
 ```
 
-</Spoiler>
+## mob_effect_immunity
+
+silverfish
+
+```json
+"minecraft:mob_effect_immunity": {
+    "mob_effects": [
+        "infested"
+    ]
+}
+```
+
+slime
+
+```json
+"minecraft:mob_effect_immunity": {
+    "mob_effects": [
+        "oozing"
+    ]
+}
+```
 
 ## movement
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36215,9 +34615,21 @@ allay
 }
 ```
 
-axolotl
+armadillo
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:movement": {
+    "value": 0.14
+}
+```
+
+```json
+"minecraft:movement": {
+    "value": 0.0
+}
+```
+
+axolotl
 
 ```json
 "minecraft:movement": {
@@ -36227,8 +34639,6 @@ axolotl
 
 bat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.1
@@ -36236,8 +34646,6 @@ bat
 ```
 
 bee
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36247,17 +34655,37 @@ bee
 
 blaze
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.23
 }
 ```
 
-cat
+bogged
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:movement": {
+    "value": 0.25
+}
+```
+
+breeze
+
+```json
+"minecraft:movement": {
+    "value": 0.4
+}
+```
+
+camel
+
+```json
+"minecraft:movement": {
+    "value": 0.09
+}
+```
+
+cat
 
 ```json
 "minecraft:movement": {
@@ -36267,8 +34695,6 @@ cat
 
 cave_spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.3
@@ -36276,8 +34702,6 @@ cave_spider
 ```
 
 chicken
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36287,17 +34711,27 @@ chicken
 
 cow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.25
 }
 ```
 
-creeper
+creaking
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:movement": {
+    "value": 0.4
+}
+```
+
+```json
+"minecraft:movement": {
+    "value": 0.0
+}
+```
+
+creeper
 
 ```json
 "minecraft:movement": {
@@ -36307,8 +34741,6 @@ creeper
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.1
@@ -36316,8 +34748,6 @@ dolphin
 ```
 
 donkey
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36327,15 +34757,11 @@ donkey
 
 drowned
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.23
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:baby_drowned</CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36345,8 +34771,6 @@ drowned
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.3
@@ -36355,15 +34779,11 @@ elder_guardian
 
 enderman
 
-<CodeHeader>#component_groups/minecraft:enderman_calm</CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.3
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:enderman_angry</CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36373,8 +34793,6 @@ enderman
 
 endermite
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.25
@@ -36382,8 +34800,6 @@ endermite
 ```
 
 ender_dragon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36393,8 +34809,6 @@ ender_dragon
 
 evocation_illager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.5
@@ -36402,8 +34816,6 @@ evocation_illager
 ```
 
 cod
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36413,8 +34825,6 @@ cod
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.3
@@ -36422,8 +34832,6 @@ fox
 ```
 
 frog
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36433,8 +34841,6 @@ frog
 
 ghast
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.03
@@ -36442,8 +34848,6 @@ ghast
 ```
 
 glow_squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36453,8 +34857,6 @@ glow_squid
 
 goat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.4
@@ -36462,8 +34864,6 @@ goat
 ```
 
 guardian
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36473,15 +34873,11 @@ guardian
 
 hoglin
 
-<CodeHeader>#component_groups/minecraft:hoglin_baby</CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.36
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:hoglin_adult</CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36490,8 +34886,6 @@ hoglin
 ```
 
 horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36504,15 +34898,11 @@ horse
 
 husk
 
-<CodeHeader>#component_groups/minecraft:zombie_husk_baby</CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.35
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:zombie_husk_adult</CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36522,8 +34912,6 @@ husk
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.25
@@ -36531,8 +34919,6 @@ iron_golem
 ```
 
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36542,23 +34928,17 @@ llama
 
 magma_cube
 
-<CodeHeader>#component_groups/minecraft:slime_large</CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.75
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:slime_medium</CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.66
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:slime_small</CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36568,8 +34948,6 @@ magma_cube
 
 mooshroom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.25
@@ -36577,8 +34955,6 @@ mooshroom
 ```
 
 mule
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36588,8 +34964,6 @@ mule
 
 npc
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.5
@@ -36597,8 +34971,6 @@ npc
 ```
 
 ocelot
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36608,15 +34980,11 @@ ocelot
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.15
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:panda_lazy</CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36626,8 +34994,6 @@ panda
 
 parrot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.4
@@ -36635,8 +35001,6 @@ parrot
 ```
 
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36646,8 +35010,6 @@ phantom
 
 pig
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.25
@@ -36656,15 +35018,11 @@ pig
 
 piglin
 
-<CodeHeader>#component_groups/piglin_baby</CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.42
 }
 ```
-
-<CodeHeader>#component_groups/piglin_adult</CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36674,8 +35032,6 @@ piglin
 
 piglin_brute
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.35
@@ -36683,8 +35039,6 @@ piglin_brute
 ```
 
 pillager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36694,8 +35048,6 @@ pillager
 
 player
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.1
@@ -36703,8 +35055,6 @@ player
 ```
 
 polar_bear
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36714,8 +35064,6 @@ polar_bear
 
 pufferfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.13
@@ -36723,8 +35071,6 @@ pufferfish
 ```
 
 rabbit
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36734,15 +35080,11 @@ rabbit
 
 ravager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:hostile</CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36752,8 +35094,6 @@ ravager
 
 salmon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.12
@@ -36762,8 +35102,6 @@ salmon
 
 sheep
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.25
@@ -36771,8 +35109,6 @@ sheep
 ```
 
 shulker
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36783,8 +35119,6 @@ shulker
 
 silverfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.25
@@ -36793,8 +35127,6 @@ silverfish
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.25
@@ -36802,8 +35134,6 @@ skeleton
 ```
 
 skeleton_horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36813,15 +35143,11 @@ skeleton_horse
 
 slime
 
-<CodeHeader>#component_groups/minecraft:slime_large</CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.6
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:slime_medium</CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36829,17 +35155,21 @@ slime
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:slime_small</CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.3
 }
 ```
 
-snow_golem
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:movement": {
+    "value": 0.09
+}
+```
+
+snow_golem
 
 ```json
 "minecraft:movement": {
@@ -36849,8 +35179,6 @@ snow_golem
 
 spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.3
@@ -36858,8 +35186,6 @@ spider
 ```
 
 squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36869,8 +35195,6 @@ squid
 
 stray
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.25
@@ -36878,8 +35202,6 @@ stray
 ```
 
 strider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36889,8 +35211,6 @@ strider
 
 tadpole
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.1
@@ -36898,8 +35218,6 @@ tadpole
 ```
 
 trader_llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36909,8 +35227,6 @@ trader_llama
 
 tropicalfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.12
@@ -36918,8 +35234,6 @@ tropicalfish
 ```
 
 turtle
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36929,8 +35243,6 @@ turtle
 
 vex
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 1.0
@@ -36938,8 +35250,6 @@ vex
 ```
 
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36949,8 +35259,6 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.5
@@ -36958,8 +35266,6 @@ villager_v2
 ```
 
 vindicator
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36969,8 +35275,6 @@ vindicator
 
 wandering_trader
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.5
@@ -36978,8 +35282,6 @@ wandering_trader
 ```
 
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -36989,8 +35291,6 @@ warden
 
 witch
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.25
@@ -36998,8 +35298,6 @@ witch
 ```
 
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -37009,8 +35307,6 @@ wither
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.25
@@ -37018,8 +35314,6 @@ wither_skeleton
 ```
 
 wolf
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -37029,8 +35323,6 @@ wolf
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.25
@@ -37039,15 +35331,11 @@ zoglin
 
 zombie
 
-<CodeHeader>#component_groups/minecraft:zombie_baby</CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.35
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:zombie_adult</CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -37056,8 +35344,6 @@ zombie
 ```
 
 zombie_horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -37067,8 +35353,6 @@ zombie_horse
 
 zombie_pigman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.23
@@ -37077,15 +35361,11 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.35
 }
 ```
-
-<CodeHeader>#component_groups/adult</CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -37095,15 +35375,11 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:movement": {
     "value": 0.35
 }
 ```
-
-<CodeHeader>#component_groups/adult</CodeHeader>
 
 ```json
 "minecraft:movement": {
@@ -37111,15 +35387,9 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## movement.amphibious
 
-<Spoiler title="Show">
-
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.amphibious": {
@@ -37129,15 +35399,11 @@ axolotl
 
 frog
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.amphibious": {}
 ```
 
 turtle
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.amphibious": {
@@ -37145,15 +35411,15 @@ turtle
 }
 ```
 
-</Spoiler>
-
 ## movement.basic
 
-<Spoiler title="Show">
+armadillo
+
+```json
+"minecraft:movement.basic": {}
+```
 
 bat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37161,7 +35427,23 @@ bat
 
 blaze
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:movement.basic": {}
+```
+
+bogged
+
+```json
+"minecraft:movement.basic": {}
+```
+
+breeze
+
+```json
+"minecraft:movement.basic": {}
+```
+
+camel
 
 ```json
 "minecraft:movement.basic": {}
@@ -37169,15 +35451,11 @@ blaze
 
 cat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 cave_spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37185,15 +35463,17 @@ cave_spider
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 cow
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:movement.basic": {}
+```
+
+creaking
 
 ```json
 "minecraft:movement.basic": {}
@@ -37201,15 +35481,11 @@ cow
 
 creeper
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 donkey
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37217,15 +35493,11 @@ donkey
 
 enderman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 endermite
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37233,15 +35505,11 @@ endermite
 
 evocation_illager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37249,15 +35517,11 @@ fox
 
 glow_squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 goat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37265,15 +35529,11 @@ goat
 
 hoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37281,15 +35541,11 @@ horse
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37297,15 +35553,11 @@ iron_golem
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 mooshroom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37313,15 +35565,11 @@ mooshroom
 
 mule
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 ocelot
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37329,15 +35577,11 @@ ocelot
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 pig
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37345,15 +35589,11 @@ pig
 
 piglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 piglin_brute
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37361,15 +35601,11 @@ piglin_brute
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 polar_bear
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37377,15 +35613,11 @@ polar_bear
 
 ravager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 sheep
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37393,15 +35625,11 @@ sheep
 
 shulker
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 silverfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37409,15 +35637,17 @@ silverfish
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:movement.basic": {}
+```
+
+sniffer
 
 ```json
 "minecraft:movement.basic": {}
@@ -37425,15 +35655,11 @@ skeleton_horse
 
 snow_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37441,15 +35667,11 @@ spider
 
 squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 stray
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37457,15 +35679,11 @@ stray
 
 strider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 trader_llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37473,15 +35691,11 @@ trader_llama
 
 vex
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37489,15 +35703,11 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 vindicator
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37505,15 +35715,11 @@ vindicator
 
 wandering_trader
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37521,15 +35727,11 @@ warden
 
 witch
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {
@@ -37539,15 +35741,11 @@ wither
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 wolf
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37555,15 +35753,11 @@ wolf
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37571,15 +35765,11 @@ zombie
 
 zombie_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 zombie_pigman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.basic": {}
@@ -37587,57 +35777,35 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.basic": {}
 ```
 
-</Spoiler>
-
 ## movement.fly
 
-<Spoiler title="Show">
-
 parrot
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.fly": {}
 ```
 
-</Spoiler>
-
 ## movement.generic
 
-<Spoiler title="Show">
-
 drowned
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.generic": {}
 ```
 
-</Spoiler>
-
 ## movement.glide
 
-<Spoiler title="Show">
-
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.glide": {
@@ -37646,15 +35814,9 @@ phantom
 }
 ```
 
-</Spoiler>
-
 ## movement.hover
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.hover": {}
@@ -37662,22 +35824,14 @@ allay
 
 bee
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.hover": {}
 ```
 
-</Spoiler>
-
 ## movement.jump
-
-<Spoiler title="Show">
 
 magma_cube
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.jump": {
     "jump_delay": [
@@ -37687,8 +35841,6 @@ magma_cube
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:slime_calm</CodeHeader>
-
 ```json
 "minecraft:movement.jump": {
     "jump_delay": [
@@ -37697,8 +35849,6 @@ magma_cube
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:slime_aggressive</CodeHeader>
 
 ```json
 "minecraft:movement.jump": {
@@ -37711,8 +35861,6 @@ magma_cube
 
 slime
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.jump": {
     "jump_delay": [
@@ -37722,8 +35870,6 @@ slime
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:slime_calm</CodeHeader>
-
 ```json
 "minecraft:movement.jump": {
     "jump_delay": [
@@ -37732,8 +35878,6 @@ slime
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:slime_aggressive</CodeHeader>
 
 ```json
 "minecraft:movement.jump": {
@@ -37744,37 +35888,23 @@ slime
 }
 ```
 
-</Spoiler>
-
 ## movement.skip
 
-<Spoiler title="Show">
-
 rabbit
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.skip": {}
 ```
 
-</Spoiler>
-
 ## movement.sway
 
-<Spoiler title="Show">
-
 elder_guardian
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.sway": {}
 ```
 
 cod
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.sway": {
@@ -37784,15 +35914,11 @@ cod
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.sway": {}
 ```
 
 pufferfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.sway": {
@@ -37802,8 +35928,6 @@ pufferfish
 
 salmon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.sway": {
     "sway_amplitude": 0.0
@@ -37811,8 +35935,6 @@ salmon
 ```
 
 tadpole
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement.sway": {
@@ -37822,23 +35944,15 @@ tadpole
 
 tropicalfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:movement.sway": {
     "sway_amplitude": 0.0
 }
 ```
 
-</Spoiler>
-
 ## movement_sound_distance_offset
 
-<Spoiler title="Show">
-
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:movement_sound_distance_offset": {
@@ -37846,15 +35960,15 @@ warden
 }
 ```
 
-</Spoiler>
-
 ## nameable
-
-<Spoiler title="Show">
 
 allay
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:nameable": {}
+```
+
+armadillo
 
 ```json
 "minecraft:nameable": {}
@@ -37862,15 +35976,11 @@ allay
 
 armor_stand
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -37878,15 +35988,11 @@ axolotl
 
 bat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 bee
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -37894,7 +36000,23 @@ bee
 
 blaze
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:nameable": {}
+```
+
+bogged
+
+```json
+"minecraft:nameable": {}
+```
+
+breeze
+
+```json
+"minecraft:nameable": {}
+```
+
+camel
 
 ```json
 "minecraft:nameable": {}
@@ -37902,15 +36024,11 @@ blaze
 
 cat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 cave_spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -37918,15 +36036,17 @@ cave_spider
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 cow
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:nameable": {}
+```
+
+creaking
 
 ```json
 "minecraft:nameable": {}
@@ -37934,15 +36054,11 @@ cow
 
 creeper
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 dolphin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -37950,15 +36066,11 @@ dolphin
 
 donkey
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 drowned
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -37966,15 +36078,11 @@ drowned
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 enderman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -37982,15 +36090,11 @@ enderman
 
 endermite
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 evocation_illager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -37998,15 +36102,11 @@ evocation_illager
 
 cod
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38014,15 +36114,11 @@ fox
 
 frog
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 ghast
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38030,15 +36126,11 @@ ghast
 
 glow_squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 goat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38046,15 +36138,11 @@ goat
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 hoglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38062,15 +36150,11 @@ hoglin
 
 horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 husk
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38078,15 +36162,11 @@ husk
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38094,15 +36174,11 @@ llama
 
 magma_cube
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 mooshroom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38110,15 +36186,11 @@ mooshroom
 
 mule
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 npc
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {
@@ -38129,15 +36201,11 @@ npc
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38145,15 +36213,11 @@ panda
 
 parrot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38161,15 +36225,11 @@ phantom
 
 pig
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 piglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38177,23 +36237,17 @@ piglin
 
 piglin_brute
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 player
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {
@@ -38204,15 +36258,11 @@ player
 
 polar_bear
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 pufferfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38220,15 +36270,11 @@ pufferfish
 
 rabbit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 ravager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38236,15 +36282,11 @@ ravager
 
 salmon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 sheep
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38252,15 +36294,11 @@ sheep
 
 shulker
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 silverfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38268,15 +36306,11 @@ silverfish
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 skeleton_horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38284,7 +36318,11 @@ skeleton_horse
 
 slime
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:nameable": {}
+```
+
+sniffer
 
 ```json
 "minecraft:nameable": {}
@@ -38292,15 +36330,11 @@ slime
 
 snow_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38308,15 +36342,11 @@ spider
 
 squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 stray
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38324,15 +36354,11 @@ stray
 
 strider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 tadpole
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38340,15 +36366,11 @@ tadpole
 
 trader_llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 tropicalfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38356,15 +36378,11 @@ tropicalfish
 
 turtle
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 vex
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38372,23 +36390,17 @@ vex
 
 villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 vindicator
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {
@@ -38410,15 +36422,11 @@ vindicator
 
 wandering_trader
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38426,15 +36434,11 @@ warden
 
 witch
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38442,15 +36446,11 @@ wither
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 wolf
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38458,15 +36458,11 @@ wolf
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38474,15 +36470,11 @@ zombie
 
 zombie_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 zombie_pigman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:nameable": {}
@@ -38490,29 +36482,19 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:nameable": {}
 ```
 
-</Spoiler>
-
 ## navigation.climb
 
-<Spoiler title="Show">
-
 cave_spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.climb": {
@@ -38522,23 +36504,15 @@ cave_spider
 
 spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.climb": {
     "can_path_over_water": true
 }
 ```
 
-</Spoiler>
-
 ## navigation.float
 
-<Spoiler title="Show">
-
 bat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.float": {
@@ -38548,23 +36522,15 @@ bat
 
 ghast
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.float": {
     "can_path_over_water": true
 }
 ```
 
-</Spoiler>
-
 ## navigation.fly
 
-<Spoiler title="Show">
-
 parrot
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.fly": {
@@ -38573,15 +36539,9 @@ parrot
 }
 ```
 
-</Spoiler>
-
 ## navigation.generic
 
-<Spoiler title="Show">
-
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.generic": {
@@ -38596,8 +36556,6 @@ axolotl
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.generic": {
     "is_amphibious": true,
@@ -38608,8 +36566,6 @@ dolphin
     "can_sink": false
 }
 ```
-
-<CodeHeader>#component_groups/dolphin_swimming_navigation</CodeHeader>
 
 ```json
 "minecraft:navigation.generic": {
@@ -38622,8 +36578,6 @@ dolphin
 }
 ```
 
-<CodeHeader>#component_groups/dolphin_on_land</CodeHeader>
-
 ```json
 "minecraft:navigation.generic": {
     "is_amphibious": true,
@@ -38634,8 +36588,6 @@ dolphin
     "can_jump": false
 }
 ```
-
-<CodeHeader>#component_groups/dolphin_on_land_in_rain</CodeHeader>
 
 ```json
 "minecraft:navigation.generic": {
@@ -38650,8 +36602,6 @@ dolphin
 
 drowned
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.generic": {
     "is_amphibious": true,
@@ -38663,8 +36613,6 @@ drowned
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:hunter_mode</CodeHeader>
-
 ```json
 "minecraft:navigation.generic": {
     "is_amphibious": true,
@@ -38675,8 +36623,6 @@ drowned
     "avoid_sun": true
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:wander_mode</CodeHeader>
 
 ```json
 "minecraft:navigation.generic": {
@@ -38691,8 +36637,6 @@ drowned
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.generic": {
     "is_amphibious": true,
@@ -38704,8 +36648,6 @@ elder_guardian
 ```
 
 cod
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.generic": {
@@ -38720,8 +36662,6 @@ cod
 
 frog
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.generic": {
     "is_amphibious": true,
@@ -38735,8 +36675,6 @@ frog
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.generic": {
     "is_amphibious": true,
@@ -38748,8 +36686,6 @@ guardian
 ```
 
 pufferfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.generic": {
@@ -38764,8 +36700,6 @@ pufferfish
 
 salmon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.generic": {
     "is_amphibious": false,
@@ -38779,8 +36713,6 @@ salmon
 
 tadpole
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.generic": {
     "can_path_over_water": true,
@@ -38792,8 +36724,6 @@ tadpole
 ```
 
 tropicalfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.generic": {
@@ -38808,8 +36738,6 @@ tropicalfish
 
 turtle
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.generic": {
     "is_amphibious": true,
@@ -38821,15 +36749,9 @@ turtle
 }
 ```
 
-</Spoiler>
-
 ## navigation.hover
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.hover": {
@@ -38845,8 +36767,6 @@ allay
 
 bee
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.hover": {
     "can_path_over_water": true,
@@ -38859,15 +36779,19 @@ bee
 }
 ```
 
-</Spoiler>
-
 ## navigation.walk
 
-<Spoiler title="Show">
+armadillo
+
+```json
+"minecraft:navigation.walk": {
+    "can_path_over_water": true,
+    "avoid_damage_blocks": true,
+    "avoid_water": true
+}
+```
 
 blaze
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -38877,9 +36801,38 @@ blaze
 }
 ```
 
-cat
+bogged
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:navigation.walk": {
+    "is_amphibious": true,
+    "avoid_sun": true,
+    "avoid_water": true
+}
+```
+
+breeze
+
+```json
+"minecraft:navigation.walk": {
+    "blocks_to_avoid": [
+        {
+            "tags": "query.any_tag('trapdoors')"
+        }
+    ]
+}
+```
+
+camel
+
+```json
+"minecraft:navigation.walk": {
+    "can_path_over_water": true,
+    "avoid_damage_blocks": true
+}
+```
+
+cat
 
 ```json
 "minecraft:navigation.walk": {
@@ -38891,8 +36844,6 @@ cat
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -38902,8 +36853,6 @@ chicken
 
 cow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -38912,9 +36861,25 @@ cow
 }
 ```
 
-creeper
+creaking
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:navigation.walk": {
+    "can_path_over_water": true,
+    "can_path_over_lava": false,
+    "avoid_damage_blocks": true
+}
+```
+
+```json
+"minecraft:navigation.walk": {
+    "can_path_over_water": true,
+    "can_path_over_lava": true,
+    "avoid_damage_blocks": false
+}
+```
+
+creeper
 
 ```json
 "minecraft:navigation.walk": {
@@ -38923,8 +36888,6 @@ creeper
 ```
 
 donkey
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -38936,8 +36899,6 @@ donkey
 
 enderman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": false,
@@ -38947,8 +36908,6 @@ enderman
 
 endermite
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true
@@ -38956,8 +36915,6 @@ endermite
 ```
 
 evocation_illager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -38970,8 +36927,6 @@ evocation_illager
 
 fox
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -38982,8 +36937,6 @@ fox
 
 glow_squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -38992,8 +36945,6 @@ glow_squid
 ```
 
 goat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39010,8 +36961,6 @@ goat
 
 hoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -39022,8 +36971,6 @@ hoglin
 
 horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -39033,8 +36980,6 @@ horse
 ```
 
 husk
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39047,8 +36992,6 @@ husk
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": false,
@@ -39059,8 +37002,6 @@ iron_golem
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -39070,8 +37011,6 @@ llama
 
 magma_cube
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -39080,8 +37019,6 @@ magma_cube
 ```
 
 mooshroom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39093,8 +37030,6 @@ mooshroom
 
 mule
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -39104,8 +37039,6 @@ mule
 ```
 
 ocelot
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39117,8 +37050,6 @@ ocelot
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_float": true,
@@ -39128,8 +37059,6 @@ panda
 ```
 
 pig
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39141,8 +37070,6 @@ pig
 
 piglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -39151,8 +37078,6 @@ piglin
 ```
 
 piglin_brute
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39163,8 +37088,6 @@ piglin_brute
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true
@@ -39172,8 +37095,6 @@ pillager
 ```
 
 polar_bear
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39184,8 +37105,6 @@ polar_bear
 
 rabbit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -39194,8 +37113,6 @@ rabbit
 ```
 
 ravager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39207,8 +37124,6 @@ ravager
 
 sheep
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -39218,15 +37133,11 @@ sheep
 
 shulker
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {}
 ```
 
 silverfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39235,8 +37146,6 @@ silverfish
 ```
 
 skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39248,8 +37157,6 @@ skeleton
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "is_amphibious": true,
@@ -39259,8 +37166,6 @@ skeleton_horse
 
 slime
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -39268,9 +37173,17 @@ slime
 }
 ```
 
-snow_golem
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:navigation.walk": {
+    "can_path_over_water": true,
+    "avoid_water": true,
+    "avoid_damage_blocks": true
+}
+```
+
+snow_golem
 
 ```json
 "minecraft:navigation.walk": {
@@ -39279,8 +37192,6 @@ snow_golem
 ```
 
 squid
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39291,8 +37202,6 @@ squid
 
 stray
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "is_amphibious": true,
@@ -39302,8 +37211,6 @@ stray
 ```
 
 strider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39316,8 +37223,6 @@ strider
 
 trader_llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -39327,8 +37232,6 @@ trader_llama
 
 vex
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true
@@ -39336,8 +37239,6 @@ vex
 ```
 
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39352,8 +37253,6 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -39365,15 +37264,11 @@ villager_v2
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39384,8 +37279,6 @@ vindicator
 ```
 
 wandering_trader
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39398,8 +37291,6 @@ wandering_trader
 
 warden
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -39410,8 +37301,6 @@ warden
 
 witch
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -39421,8 +37310,6 @@ witch
 
 wither
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -39431,8 +37318,6 @@ wither
 ```
 
 wither_skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39444,8 +37329,6 @@ wither_skeleton
 
 wolf
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
@@ -39454,8 +37337,6 @@ wolf
 ```
 
 zoglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39468,8 +37349,6 @@ zoglin
 
 zombie
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "is_amphibious": true,
@@ -39481,8 +37360,6 @@ zombie
 
 zombie_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "is_amphibious": true,
@@ -39491,8 +37368,6 @@ zombie_horse
 ```
 
 zombie_pigman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39506,8 +37381,6 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "is_amphibious": true,
@@ -39516,8 +37389,6 @@ zombie_villager
     "avoid_sun": false
 }
 ```
-
-<CodeHeader>#component_groups/from_abandoned_village</CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39531,8 +37402,6 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:navigation.walk": {
     "is_amphibious": true,
@@ -39541,8 +37410,6 @@ zombie_villager_v2
     "avoid_sun": false
 }
 ```
-
-<CodeHeader>#component_groups/from_abandoned_village</CodeHeader>
 
 ```json
 "minecraft:navigation.walk": {
@@ -39554,15 +37421,9 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## npc
 
-<Spoiler title="Show">
-
 npc
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:npc": {
@@ -39777,15 +37638,9 @@ npc
 }
 ```
 
-</Spoiler>
-
 ## on_death
 
-<Spoiler title="Show">
-
 ender_dragon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:on_death": {
@@ -39794,15 +37649,9 @@ ender_dragon
 }
 ```
 
-</Spoiler>
-
 ## on_friendly_anger
 
-<Spoiler title="Show">
-
 panda
-
-<CodeHeader>#component_groups/minecraft:panda_aggressive</CodeHeader>
 
 ```json
 "minecraft:on_friendly_anger": {
@@ -39813,8 +37662,6 @@ panda
 
 polar_bear
 
-<CodeHeader>#component_groups/minecraft:adult_wild</CodeHeader>
-
 ```json
 "minecraft:on_friendly_anger": {
     "event": "minecraft:on_anger",
@@ -39824,8 +37671,6 @@ polar_bear
 
 trader_llama
 
-<CodeHeader>#component_groups/minecraft:llama_wandering_trader</CodeHeader>
-
 ```json
 "minecraft:on_friendly_anger": {
     "event": "minecraft:defend_wandering_trader",
@@ -39833,15 +37678,9 @@ trader_llama
 }
 ```
 
-</Spoiler>
-
 ## on_hurt
 
-<Spoiler title="Show">
-
 blaze
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:on_hurt": {
@@ -39852,8 +37691,6 @@ blaze
 
 ender_crystal
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:on_hurt": {
     "event": "minecraft:crystal_explode",
@@ -39863,7 +37700,12 @@ ender_crystal
 
 pillager
 
-<CodeHeader>#component_groups/minecraft:illager_squad_captain</CodeHeader>
+```json
+"minecraft:on_hurt": {
+    "event": "minecraft:ranged_mode",
+    "target": "self"
+}
+```
 
 ```json
 "minecraft:on_hurt": {
@@ -39872,33 +37714,16 @@ pillager
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:patrol_captain</CodeHeader>
-
 ```json
 "minecraft:on_hurt": {
     "event": "minecraft:ranged_mode",
     "target": "self"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:patrol_follower</CodeHeader>
-
-```json
-"minecraft:on_hurt": {
-    "event": "minecraft:ranged_mode",
-    "target": "self"
-}
-```
-
-</Spoiler>
 
 ## on_hurt_by_player
 
-<Spoiler title="Show">
-
 blaze
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:on_hurt_by_player": {
@@ -39909,7 +37734,12 @@ blaze
 
 pillager
 
-<CodeHeader>#component_groups/minecraft:illager_squad_captain</CodeHeader>
+```json
+"minecraft:on_hurt_by_player": {
+    "event": "minecraft:ranged_mode",
+    "target": "self"
+}
+```
 
 ```json
 "minecraft:on_hurt_by_player": {
@@ -39918,33 +37748,16 @@ pillager
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:patrol_captain</CodeHeader>
-
 ```json
 "minecraft:on_hurt_by_player": {
     "event": "minecraft:ranged_mode",
     "target": "self"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:patrol_follower</CodeHeader>
-
-```json
-"minecraft:on_hurt_by_player": {
-    "event": "minecraft:ranged_mode",
-    "target": "self"
-}
-```
-
-</Spoiler>
 
 ## on_start_landing
 
-<Spoiler title="Show">
-
 ender_dragon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:on_start_landing": {
@@ -39953,15 +37766,9 @@ ender_dragon
 }
 ```
 
-</Spoiler>
-
 ## on_start_takeoff
 
-<Spoiler title="Show">
-
 ender_dragon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:on_start_takeoff": {
@@ -39970,15 +37777,9 @@ ender_dragon
 }
 ```
 
-</Spoiler>
-
 ## on_target_acquired
 
-<Spoiler title="Show">
-
 bee
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:on_target_acquired": {
@@ -39989,8 +37790,6 @@ bee
 
 cave_spider
 
-<CodeHeader>#component_groups/minecraft:spider_neutral</CodeHeader>
-
 ```json
 "minecraft:on_target_acquired": {
     "event": "minecraft:become_angry"
@@ -39999,8 +37798,6 @@ cave_spider
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:on_target_acquired": {
     "event": "become_angry",
@@ -40008,15 +37805,11 @@ dolphin
 }
 ```
 
-<CodeHeader>#component_groups/dolphin_angry</CodeHeader>
-
 ```json
 "minecraft:on_target_acquired": {}
 ```
 
 drowned
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:on_target_acquired": {
@@ -40027,8 +37820,6 @@ drowned
 
 enderman
 
-<CodeHeader>#component_groups/minecraft:enderman_calm</CodeHeader>
-
 ```json
 "minecraft:on_target_acquired": {
     "event": "minecraft:become_angry",
@@ -40038,8 +37829,6 @@ enderman
 
 hoglin
 
-<CodeHeader>#component_groups/minecraft:hoglin_adult</CodeHeader>
-
 ```json
 "minecraft:on_target_acquired": {
     "event": "become_angry_event",
@@ -40048,8 +37837,6 @@ hoglin
 ```
 
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:on_target_acquired": {
@@ -40075,8 +37862,6 @@ llama
 
 magma_cube
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:on_target_acquired": {
     "event": "minecraft:become_aggressive",
@@ -40086,16 +37871,12 @@ magma_cube
 
 panda
 
-<CodeHeader>#component_groups/minecraft:panda_baby</CodeHeader>
-
 ```json
 "minecraft:on_target_acquired": {
     "event": "minecraft:on_scared",
     "target": "self"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:panda_adult</CodeHeader>
 
 ```json
 "minecraft:on_target_acquired": {
@@ -40104,15 +37885,11 @@ panda
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:panda_angry</CodeHeader>
-
 ```json
 "minecraft:on_target_acquired": {}
 ```
 
 piglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:on_target_acquired": {
@@ -40123,8 +37900,6 @@ piglin
 
 piglin_brute
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:on_target_acquired": {
     "event": "become_angry_event",
@@ -40134,16 +37909,12 @@ piglin_brute
 
 polar_bear
 
-<CodeHeader>#component_groups/minecraft:baby_wild</CodeHeader>
-
 ```json
 "minecraft:on_target_acquired": {
     "event": "minecraft:on_scared",
     "target": "self"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:adult_wild</CodeHeader>
 
 ```json
 "minecraft:on_target_acquired": {
@@ -40154,8 +37925,6 @@ polar_bear
 
 silverfish
 
-<CodeHeader>#component_groups/minecraft:silverfish_calm</CodeHeader>
-
 ```json
 "minecraft:on_target_acquired": {
     "event": "minecraft:become_angry",
@@ -40164,8 +37933,6 @@ silverfish
 ```
 
 slime
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:on_target_acquired": {
@@ -40176,15 +37943,11 @@ slime
 
 spider
 
-<CodeHeader>#component_groups/minecraft:spider_neutral</CodeHeader>
-
 ```json
 "minecraft:on_target_acquired": {
     "event": "minecraft:become_angry"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:spider_hostile</CodeHeader>
 
 ```json
 "minecraft:on_target_acquired": {
@@ -40193,8 +37956,6 @@ spider
 ```
 
 trader_llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:on_target_acquired": {
@@ -40220,8 +37981,6 @@ trader_llama
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:on_target_acquired": {
     "event": "minecraft:become_aggro",
@@ -40231,25 +37990,28 @@ vindicator
 
 wolf
 
-<CodeHeader>#component_groups/minecraft:wolf_angry</CodeHeader>
-
 ```json
 "minecraft:on_target_acquired": {}
 ```
 
-<CodeHeader>#component_groups/minecraft:wolf_wild</CodeHeader>
-
 ```json
 "minecraft:on_target_acquired": {
     "event": "minecraft:become_angry",
+    "target": "self"
+}
+```
+
+zoglin
+
+```json
+"minecraft:on_target_acquired": {
+    "event": "become_angry_event",
     "target": "self"
 }
 ```
 
 zombie_pigman
 
-<CodeHeader>#component_groups/minecraft:pig_zombie_calm</CodeHeader>
-
 ```json
 "minecraft:on_target_acquired": {
     "event": "minecraft:become_angry",
@@ -40257,15 +38019,9 @@ zombie_pigman
 }
 ```
 
-</Spoiler>
-
 ## on_target_escape
 
-<Spoiler title="Show">
-
 creeper
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:on_target_escape": {
@@ -40274,21 +38030,15 @@ creeper
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:forced_exploding</CodeHeader>
-
 ```json
 "minecraft:on_target_escape": {}
 ```
-
-<CodeHeader>#component_groups/minecraft:forced_charged_exploding</CodeHeader>
 
 ```json
 "minecraft:on_target_escape": {}
 ```
 
 dolphin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:on_target_escape": {
@@ -40298,8 +38048,6 @@ dolphin
 
 drowned
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:on_target_escape": {
     "event": "minecraft:lost_target",
@@ -40308,8 +38056,6 @@ drowned
 ```
 
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:on_target_escape": {
@@ -40335,8 +38081,6 @@ llama
 
 magma_cube
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:on_target_escape": {
     "event": "minecraft:become_calm",
@@ -40345,8 +38089,6 @@ magma_cube
 ```
 
 panda
-
-<CodeHeader>#component_groups/minecraft:panda_adult</CodeHeader>
 
 ```json
 "minecraft:on_target_escape": {
@@ -40357,16 +38099,12 @@ panda
 
 pillager
 
-<CodeHeader>#component_groups/minecraft:patrol_captain</CodeHeader>
-
 ```json
 "minecraft:on_target_escape": {
     "event": "minecraft:calm",
     "target": "self"
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:patrol_follower</CodeHeader>
 
 ```json
 "minecraft:on_target_escape": {
@@ -40377,8 +38115,6 @@ pillager
 
 slime
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:on_target_escape": {
     "event": "minecraft:become_calm",
@@ -40387,8 +38123,6 @@ slime
 ```
 
 trader_llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:on_target_escape": {
@@ -40414,8 +38148,6 @@ trader_llama
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:on_target_escape": {
     "event": "minecraft:stop_aggro",
@@ -40423,15 +38155,9 @@ vindicator
 }
 ```
 
-</Spoiler>
-
 ## on_wake_with_owner
 
-<Spoiler title="Show">
-
 cat
-
-<CodeHeader>#component_groups/minecraft:cat_tame</CodeHeader>
 
 ```json
 "minecraft:on_wake_with_owner": {
@@ -40440,21 +38166,13 @@ cat
 }
 ```
 
-</Spoiler>
-
 ## out_of_control
 
-<Spoiler title="Show">
-
 boat
-
-<CodeHeader>#component_groups/minecraft:above_bubble_column_down</CodeHeader>
 
 ```json
 "minecraft:out_of_control": {}
 ```
-
-<CodeHeader>#component_groups/minecraft:above_bubble_column_up</CodeHeader>
 
 ```json
 "minecraft:out_of_control": {}
@@ -40462,27 +38180,17 @@ boat
 
 chest_boat
 
-<CodeHeader>#component_groups/minecraft:above_bubble_column_down</CodeHeader>
-
 ```json
 "minecraft:out_of_control": {}
 ```
 
-<CodeHeader>#component_groups/minecraft:above_bubble_column_up</CodeHeader>
-
 ```json
 "minecraft:out_of_control": {}
 ```
-
-</Spoiler>
 
 ## peek
 
-<Spoiler title="Show">
-
 shulker
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:peek": {
@@ -40498,15 +38206,15 @@ shulker
 }
 ```
 
-</Spoiler>
-
 ## persistent
-
-<Spoiler title="Show">
 
 armor_stand
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:persistent": {}
+```
+
+breeze
 
 ```json
 "minecraft:persistent": {}
@@ -40514,21 +38222,15 @@ armor_stand
 
 ender_dragon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:persistent": {}
 ```
 
 evocation_illager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:persistent": {}
 ```
-
-<CodeHeader>#component_groups/minecraft:raid_persistence</CodeHeader>
 
 ```json
 "minecraft:persistent": {}
@@ -40536,15 +38238,11 @@ evocation_illager
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:persistent": {}
 ```
 
 npc
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:persistent": {}
@@ -40552,15 +38250,17 @@ npc
 
 pillager
 
-<CodeHeader>#component_groups/minecraft:raid_persistence</CodeHeader>
-
 ```json
 "minecraft:persistent": {}
 ```
 
 ravager
 
-<CodeHeader>#component_groups/minecraft:raid_persistence</CodeHeader>
+```json
+"minecraft:persistent": {}
+```
+
+sniffer
 
 ```json
 "minecraft:persistent": {}
@@ -40568,15 +38268,11 @@ ravager
 
 snow_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:persistent": {}
 ```
 
 trader_llama
-
-<CodeHeader>#component_groups/minecraft:llama_persistence</CodeHeader>
 
 ```json
 "minecraft:persistent": {}
@@ -40584,15 +38280,11 @@ trader_llama
 
 villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:persistent": {}
 ```
 
 villager_v2
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:persistent": {}
@@ -40600,15 +38292,11 @@ villager_v2
 
 vindicator
 
-<CodeHeader>#component_groups/minecraft:raid_persistence</CodeHeader>
-
 ```json
 "minecraft:persistent": {}
 ```
 
 witch
-
-<CodeHeader>#component_groups/minecraft:raid_persistence</CodeHeader>
 
 ```json
 "minecraft:persistent": {}
@@ -40616,21 +38304,13 @@ witch
 
 wither
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:persistent": {}
 ```
 
-</Spoiler>
-
 ## physics
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {
@@ -40640,17 +38320,19 @@ allay
 
 area_effect_cloud
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {
     "has_collision": false
 }
 ```
 
-armor_stand
+armadillo
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:physics": {}
+```
+
+armor_stand
 
 ```json
 "minecraft:physics": {}
@@ -40658,15 +38340,11 @@ armor_stand
 
 arrow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -40674,15 +38352,11 @@ axolotl
 
 bat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 bee
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -40690,15 +38364,35 @@ bee
 
 blaze
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 boat
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:physics": {}
+```
+
+bogged
+
+```json
+"minecraft:physics": {}
+```
+
+breeze
+
+```json
+"minecraft:physics": {}
+```
+
+breeze_wind_charge_projectile
+
+```json
+"minecraft:physics": {}
+```
+
+camel
 
 ```json
 "minecraft:physics": {}
@@ -40706,15 +38400,11 @@ boat
 
 cat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 cave_spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -40722,15 +38412,11 @@ cave_spider
 
 chest_boat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 chest_minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -40738,15 +38424,11 @@ chest_minecart
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 command_block_minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -40754,7 +38436,11 @@ command_block_minecart
 
 cow
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:physics": {}
+```
+
+creaking
 
 ```json
 "minecraft:physics": {}
@@ -40762,15 +38448,11 @@ cow
 
 creeper
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 dolphin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -40778,7 +38460,11 @@ dolphin
 
 donkey
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:physics": {}
+```
+
+dragon_fireball
 
 ```json
 "minecraft:physics": {}
@@ -40786,15 +38472,11 @@ donkey
 
 drowned
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 egg
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -40802,15 +38484,11 @@ egg
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 enderman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -40818,23 +38496,17 @@ enderman
 
 endermite
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 ender_crystal
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 ender_dragon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {
@@ -40845,15 +38517,11 @@ ender_dragon
 
 ender_pearl
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 evocation_illager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -40861,15 +38529,11 @@ evocation_illager
 
 eye_of_ender_signal
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 fireball
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -40877,15 +38541,11 @@ fireball
 
 fireworks_rocket
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 cod
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {
@@ -40895,15 +38555,11 @@ cod
 
 fishing_hook
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -40911,15 +38567,11 @@ fox
 
 frog
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 ghast
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -40927,15 +38579,11 @@ ghast
 
 glow_squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 goat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -40943,15 +38591,11 @@ goat
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 hoglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -40959,15 +38603,11 @@ hoglin
 
 hopper_minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -40975,15 +38615,11 @@ horse
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -40991,15 +38627,11 @@ iron_golem
 
 lingering_potion
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41007,15 +38639,11 @@ llama
 
 llama_spit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 magma_cube
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41023,15 +38651,11 @@ magma_cube
 
 minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 mooshroom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41039,15 +38663,11 @@ mooshroom
 
 mule
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 npc
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41055,15 +38675,11 @@ npc
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41071,15 +38687,11 @@ panda
 
 parrot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {
@@ -41089,15 +38701,11 @@ phantom
 
 pig
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 piglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41105,15 +38713,11 @@ piglin
 
 piglin_brute
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 pillager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41121,23 +38725,19 @@ pillager
 
 player
 
-<CodeHeader></CodeHeader>
-
 ```json
-"minecraft:physics": {}
+"minecraft:physics": {
+    "push_towards_closest_space": true
+}
 ```
 
 polar_bear
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
 ```
 
 pufferfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {
@@ -41147,23 +38747,17 @@ pufferfish
 
 rabbit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 ravager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 salmon
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {
@@ -41173,23 +38767,17 @@ salmon
 
 sheep
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 shulker
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 shulker_bullet
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {
@@ -41199,15 +38787,11 @@ shulker_bullet
 
 silverfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41215,15 +38799,11 @@ skeleton
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 slime
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41231,7 +38811,11 @@ slime
 
 small_fireball
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:physics": {}
+```
+
+sniffer
 
 ```json
 "minecraft:physics": {}
@@ -41239,15 +38823,11 @@ small_fireball
 
 snowball
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 snow_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41255,15 +38835,11 @@ snow_golem
 
 spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 splash_potion
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41271,15 +38847,11 @@ splash_potion
 
 squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 stray
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41287,15 +38859,11 @@ stray
 
 strider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 tadpole
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41303,15 +38871,11 @@ tadpole
 
 thrown_trident
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 tnt
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41319,15 +38883,11 @@ tnt
 
 tnt_minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 trader_llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41335,15 +38895,11 @@ trader_llama
 
 tripod_camera
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 tropicalfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {
@@ -41353,15 +38909,11 @@ tropicalfish
 
 turtle
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 vex
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {
@@ -41372,15 +38924,11 @@ vex
 
 villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 villager_v2
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41388,15 +38936,11 @@ villager_v2
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 wandering_trader
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41404,7 +38948,11 @@ wandering_trader
 
 warden
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:physics": {}
+```
+
+wind_charge_projectile
 
 ```json
 "minecraft:physics": {}
@@ -41412,15 +38960,11 @@ warden
 
 witch
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41428,15 +38972,11 @@ wither
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 wither_skull
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41444,15 +38984,11 @@ wither_skull
 
 wither_skull_dangerous
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 wolf
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41460,15 +38996,11 @@ wolf
 
 xp_bottle
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 xp_orb
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41476,15 +39008,11 @@ xp_orb
 
 zoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41492,15 +39020,11 @@ zombie
 
 zombie_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 zombie_pigman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:physics": {}
@@ -41508,29 +39032,19 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:physics": {}
 ```
 
-</Spoiler>
-
 ## player.exhaustion
 
-<Spoiler title="Show">
-
 player
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:player.exhaustion": {
@@ -41539,15 +39053,9 @@ player
 }
 ```
 
-</Spoiler>
-
 ## player.experience
 
-<Spoiler title="Show">
-
 player
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:player.experience": {
@@ -41556,15 +39064,9 @@ player
 }
 ```
 
-</Spoiler>
-
 ## player.level
 
-<Spoiler title="Show">
-
 player
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:player.level": {
@@ -41573,15 +39075,9 @@ player
 }
 ```
 
-</Spoiler>
-
 ## player.saturation
 
-<Spoiler title="Show">
-
 player
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:player.saturation": {
@@ -41590,15 +39086,9 @@ player
 }
 ```
 
-</Spoiler>
-
 ## preferred_path
 
-<Spoiler title="Show">
-
 iron_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:preferred_path": {
@@ -41617,26 +39107,119 @@ iron_golem
             "blocks": [
                 "cobblestone",
                 "stone",
-                "stonebrick",
+                "granite",
+                "polished_granite",
+                "diorite",
+                "polished_diorite",
+                "andesite",
+                "polished_andesite",
+                "stone_bricks",
+                "mossy_stone_bricks",
+                "cracked_stone_bricks",
+                "chiseled_stone_bricks",
                 "sandstone",
+                "cut_sandstone",
+                "chiseled_sandstone",
+                "smooth_sandstone",
                 "mossy_cobblestone",
-                "stone_slab",
-                "stone_slab2",
-                "stone_slab3",
-                "stone_slab4",
-                "double_stone_slab",
-                "double_stone_slab2",
-                "double_stone_slab3",
-                "double_stone_slab4",
-                "wooden_slab",
-                "double_wooden_slab",
-                "planks",
+                "smooth_stone_slab",
+                "sandstone_slab",
+                "cobblestone_slab",
+                "brick_slab",
+                "stone_brick_slab",
+                "quartz_slab",
+                "nether_brick_slab",
+                "red_sandstone_slab",
+                "purpur_slab",
+                "prismarine_slab",
+                "dark_prismarine_slab",
+                "prismarine_brick_slab",
+                "mossy_cobblestone_slab",
+                "smooth_sandstone_slab",
+                "red_nether_brick_slab",
+                "end_stone_brick_slab",
+                "smooth_red_sandstone_slab",
+                "polished_andesite_slab",
+                "andesite_slab",
+                "diorite_slab",
+                "polished_diorite_slab",
+                "granite_slab",
+                "polished_granite_slab",
+                "mossy_stone_brick_slab",
+                "smooth_quartz_slab",
+                "normal_stone_slab",
+                "cut_sandstone_slab",
+                "cut_red_sandstone_slab",
+                "smooth_stone_double_slab",
+                "sandstone_double_slab",
+                "cobblestone_double_slab",
+                "brick_double_slab",
+                "stone_brick_double_slab",
+                "quartz_double_slab",
+                "nether_brick_double_slab",
+                "red_sandstone_double_slab",
+                "purpur_double_slab",
+                "prismarine_double_slab",
+                "dark_prismarine_double_slab",
+                "prismarine_brick_double_slab",
+                "mossy_cobblestone_double_slab",
+                "smooth_sandstone_double_slab",
+                "red_nether_brick_double_slab",
+                "end_stone_brick_double_slab",
+                "smooth_red_sandstone_double_slab",
+                "polished_andesite_double_slab",
+                "andesite_double_slab",
+                "diorite_double_slab",
+                "polished_diorite_double_slab",
+                "granite_double_slab",
+                "polished_granite_double_slab",
+                "mossy_stone_brick_double_slab",
+                "smooth_quartz_double_slab",
+                "normal_stone_double_slab",
+                "cut_sandstone_double_slab",
+                "cut_red_sandstone_double_slab",
+                "oak_slab",
+                "spruce_slab",
+                "birch_slab",
+                "jungle_slab",
+                "acacia_slab",
+                "dark_oak_slab",
+                "oak_double_slab",
+                "spruce_double_slab",
+                "birch_double_slab",
+                "jungle_double_slab",
+                "acacia_double_slab",
+                "dark_oak_double_slab",
+                "oak_planks",
+                "spruce_planks",
+                "birch_planks",
+                "jungle_planks",
+                "acacia_planks",
+                "dark_oak_planks",
                 "brick_block",
                 "nether_brick",
                 "red_nether_brick",
                 "end_bricks",
                 "red_sandstone",
-                "stained_glass",
+                "cut_red_sandstone",
+                "chiseled_red_sandstone",
+                "smooth_red_sandstone",
+                "white_stained_glass",
+                "orange_stained_glass",
+                "magenta_stained_glass",
+                "light_blue_stained_glass",
+                "yellow_stained_glass",
+                "lime_stained_glass",
+                "pink_stained_glass",
+                "gray_stained_glass",
+                "light_gray_stained_glass",
+                "cyan_stained_glass",
+                "purple_stained_glass",
+                "blue_stained_glass",
+                "brown_stained_glass",
+                "green_stained_glass",
+                "red_stained_glass",
+                "black_stained_glass",
                 "glass",
                 "glowstone",
                 "prismarine",
@@ -41688,8 +39271,6 @@ iron_golem
 
 villager_v2
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:preferred_path": {
     "max_fall_blocks": 1,
@@ -41707,26 +39288,119 @@ villager_v2
             "blocks": [
                 "cobblestone",
                 "stone",
-                "stonebrick",
+                "granite",
+                "polished_granite",
+                "diorite",
+                "polished_diorite",
+                "andesite",
+                "polished_andesite",
+                "stone_bricks",
+                "mossy_stone_bricks",
+                "cracked_stone_bricks",
+                "chiseled_stone_bricks",
                 "sandstone",
+                "cut_sandstone",
+                "chiseled_sandstone",
+                "smooth_sandstone",
                 "mossy_cobblestone",
-                "stone_slab",
-                "stone_slab2",
-                "stone_slab3",
-                "stone_slab4",
-                "double_stone_slab",
-                "double_stone_slab2",
-                "double_stone_slab3",
-                "double_stone_slab4",
-                "wooden_slab",
-                "double_wooden_slab",
-                "planks",
+                "smooth_stone_slab",
+                "sandstone_slab",
+                "cobblestone_slab",
+                "brick_slab",
+                "stone_brick_slab",
+                "quartz_slab",
+                "nether_brick_slab",
+                "red_sandstone_slab",
+                "purpur_slab",
+                "prismarine_slab",
+                "dark_prismarine_slab",
+                "prismarine_brick_slab",
+                "mossy_cobblestone",
+                "smooth_sandstone_slab",
+                "red_nether_brick_slab",
+                "end_stone_brick_slab",
+                "smooth_red_sandstone_slab",
+                "polished_andesite_slab",
+                "andesite_slab",
+                "diorite_slab",
+                "polished_diorite_slab",
+                "granite_slab",
+                "polished_granite_slab",
+                "mossy_stone_brick_slab",
+                "smooth_quartz_slab",
+                "normal_stone_slab",
+                "cut_sandstone_slab",
+                "cut_red_sandstone_slab",
+                "smooth_stone_double_slab",
+                "sandstone_double_slab",
+                "cobblestone_double_slab",
+                "brick_double_slab",
+                "stone_brick_double_slab",
+                "quartz_double_slab",
+                "nether_brick_double_slab",
+                "red_sandstone_double_slab",
+                "purpur_double_slab",
+                "prismarine_double_slab",
+                "dark_prismarine_double_slab",
+                "prismarine_brick_double_slab",
+                "mossy_cobblestone_double_slab",
+                "smooth_sandstone_double_slab",
+                "red_nether_brick_double_slab",
+                "end_stone_brick_double_slab",
+                "smooth_red_sandstone_double_slab",
+                "polished_andesite_double_slab",
+                "andesite_double_slab",
+                "diorite_double_slab",
+                "polished_diorite_double_slab",
+                "granite_double_slab",
+                "polished_granite_double_slab",
+                "mossy_stone_brick_double_slab",
+                "smooth_quartz_double_slab",
+                "normal_stone_double_slab",
+                "cut_sandstone_double_slab",
+                "cut_red_sandstone_double_slab",
+                "oak_slab",
+                "spruce_slab",
+                "birch_slab",
+                "jungle_slab",
+                "acacia_slab",
+                "dark_oak_slab",
+                "oak_double_slab",
+                "spruce_double_slab",
+                "birch_double_slab",
+                "jungle_double_slab",
+                "acacia_double_slab",
+                "dark_oak_double_slab",
+                "oak_planks",
+                "spruce_planks",
+                "birch_planks",
+                "jungle_planks",
+                "acacia_planks",
+                "dark_oak_planks",
                 "brick_block",
                 "nether_brick",
                 "red_nether_brick",
                 "end_bricks",
                 "red_sandstone",
-                "stained_glass",
+                "cut_red_sandstone",
+                "chiseled_red_sandstone",
+                "smooth_red_sandstone",
+                "white_stained_glass",
+                "orange_stained_glass",
+                "magenta_stained_glass",
+                "light_blue_stained_glass",
+                "yellow_stained_glass",
+                "lime_stained_glass",
+                "pink_stained_glass",
+                "gray_stained_glass",
+                "light_gray_stained_glass",
+                "cyan_stained_glass",
+                "purple_stained_glass",
+                "blue_stained_glass",
+                "brown_stained_glass",
+                "green_stained_glass",
+                "red_stained_glass",
+                "black_stained_glass",
                 "glass",
                 "glowstone",
                 "prismarine",
@@ -41775,8 +39449,6 @@ villager_v2
     ]
 }
 ```
-
-<CodeHeader>#component_groups/adult</CodeHeader>
 
 ```json
 "minecraft:preferred_path": {
@@ -41795,26 +39467,119 @@ villager_v2
             "blocks": [
                 "cobblestone",
                 "stone",
-                "stonebrick",
+                "granite",
+                "polished_granite",
+                "diorite",
+                "polished_diorite",
+                "andesite",
+                "polished_andesite",
+                "stone_bricks",
+                "mossy_stone_bricks",
+                "cracked_stone_bricks",
+                "chiseled_stone_bricks",
                 "sandstone",
+                "cut_sandstone",
+                "chiseled_sandstone",
+                "smooth_sandstone",
                 "mossy_cobblestone",
-                "stone_slab",
-                "stone_slab2",
-                "stone_slab3",
-                "stone_slab4",
-                "double_stone_slab",
-                "double_stone_slab2",
-                "double_stone_slab3",
-                "double_stone_slab4",
-                "wooden_slab",
-                "double_wooden_slab",
-                "planks",
+                "smooth_stone_slab",
+                "sandstone_slab",
+                "cobblestone_slab",
+                "brick_slab",
+                "stone_brick_slab",
+                "quartz_slab",
+                "nether_brick_slab",
+                "red_sandstone_slab",
+                "purpur_slab",
+                "prismarine_slab",
+                "dark_prismarine_slab",
+                "prismarine_brick_slab",
+                "mossy_cobblestone_slab",
+                "smooth_sandstone_slab",
+                "red_nether_brick_slab",
+                "end_stone_brick_slab",
+                "smooth_red_sandstone_slab",
+                "polished_andesite_slab",
+                "andesite_slab",
+                "diorite_slab",
+                "polished_diorite_slab",
+                "granite_slab",
+                "polished_granite_slab",
+                "mossy_stone_brick_slab",
+                "smooth_quartz_slab",
+                "normal_stone_slab",
+                "cut_sandstone_slab",
+                "cut_red_sandstone_slab",
+                "smooth_stone_double_slab",
+                "sandstone_double_slab",
+                "cobblestone_double_slab",
+                "brick_double_slab",
+                "stone_brick_double_slab",
+                "quartz_double_slab",
+                "nether_brick_double_slab",
+                "red_sandstone_double_slab",
+                "purpur_double_slab",
+                "prismarine_double_slab",
+                "dark_prismarine_double_slab",
+                "prismarine_brick_double_slab",
+                "mossy_cobblestone_double_slab",
+                "smooth_sandstone_double_slab",
+                "red_nether_brick_double_slab",
+                "end_stone_brick_double_slab",
+                "smooth_red_sandstone_double_slab",
+                "polished_andesite_double_slab",
+                "andesite_double_slab",
+                "diorite_double_slab",
+                "polished_diorite_double_slab",
+                "granite_double_slab",
+                "polished_granite_double_slab",
+                "mossy_stone_brick_double_slab",
+                "smooth_quartz_double_slab",
+                "normal_stone_double_slab",
+                "cut_sandstone_double_slab",
+                "cut_red_sandstone_double_slab",
+                "oak_slab",
+                "spruce_slab",
+                "birch_slab",
+                "jungle_slab",
+                "acacia_slab",
+                "dark_oak_slab",
+                "oak_double_slab",
+                "spruce_double_slab",
+                "birch_double_slab",
+                "jungle_double_slab",
+                "acacia_double_slab",
+                "dark_oak_double_slab",
+                "oak_planks",
+                "spruce_planks",
+                "birch_planks",
+                "jungle_planks",
+                "acacia_planks",
+                "dark_oak_planks",
                 "brick_block",
                 "nether_brick",
                 "red_nether_brick",
                 "end_bricks",
                 "red_sandstone",
-                "stained_glass",
+                "cut_red_sandstone",
+                "chiseled_red_sandstone",
+                "smooth_red_sandstone",
+                "white_stained_glass",
+                "orange_stained_glass",
+                "magenta_stained_glass",
+                "light_blue_stained_glass",
+                "yellow_stained_glass",
+                "lime_stained_glass",
+                "pink_stained_glass",
+                "gray_stained_glass",
+                "light_gray_stained_glass",
+                "cyan_stained_glass",
+                "purple_stained_glass",
+                "blue_stained_glass",
+                "brown_stained_glass",
+                "green_stained_glass",
+                "red_stained_glass",
+                "black_stained_glass",
                 "glass",
                 "glowstone",
                 "prismarine",
@@ -41866,23 +39631,15 @@ villager_v2
 
 warden
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:preferred_path": {
     "max_fall_blocks": 20
 }
 ```
 
-</Spoiler>
-
 ## projectile
 
-<Spoiler title="Show">
-
 arrow
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:projectile": {
@@ -41899,7 +39656,9 @@ arrow
         "stick_in_ground": {
             "shake_time": 0.35
         },
-        "arrow_effect": {}
+        "arrow_effect": {
+            "apply_effect_to_blocking_targets": false
+        }
     },
     "hit_sound": "bow.hit",
     "power": 1.6,
@@ -41915,8 +39674,6 @@ arrow
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:hard_arrow</CodeHeader>
 
 ```json
 "minecraft:projectile": {
@@ -41933,7 +39690,9 @@ arrow
         "stick_in_ground": {
             "shake_time": 0.35
         },
-        "arrow_effect": {}
+        "arrow_effect": {
+            "apply_effect_to_blocking_targets": false
+        }
     },
     "hit_sound": "bow.hit",
     "power": 1.6,
@@ -41949,8 +39708,6 @@ arrow
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:player_arrow</CodeHeader>
 
 ```json
 "minecraft:projectile": {
@@ -41967,7 +39724,9 @@ arrow
         "stick_in_ground": {
             "shake_time": 0.35
         },
-        "arrow_effect": {}
+        "arrow_effect": {
+            "apply_effect_to_blocking_targets": false
+        }
     },
     "hit_sound": "bow.hit",
     "power": 5.0,
@@ -41984,8 +39743,6 @@ arrow
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:pillager_arrow</CodeHeader>
-
 ```json
 "minecraft:projectile": {
     "on_hit": {
@@ -42001,7 +39758,9 @@ arrow
         "stick_in_ground": {
             "shake_time": 0.35
         },
-        "arrow_effect": {}
+        "arrow_effect": {
+            "apply_effect_to_blocking_targets": false
+        }
     },
     "hit_sound": "bow.hit",
     "power": 1.6,
@@ -42018,9 +39777,33 @@ arrow
 }
 ```
 
-dragon_fireball
+breeze_wind_charge_projectile
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:projectile": {
+    "on_hit": {
+        "impact_damage": {
+            "damage": 1,
+            "knockback": true
+        },
+        "wind_burst_on_hit": {}
+    },
+    "power": 0.7,
+    "gravity": 0.0,
+    "inertia": 1.0,
+    "liquid_inertia": 1.0,
+    "uncertainty_base": 5.0,
+    "uncertainty_multiplier": 4.0,
+    "reflect_on_hurt": true,
+    "ignored_entities": [
+        "ender_crystal",
+        "wind_charge_projectile",
+        "breeze_wind_charge_projectile"
+    ]
+}
+```
+
+dragon_fireball
 
 ```json
 "minecraft:projectile": {
@@ -42059,8 +39842,6 @@ dragon_fireball
 
 egg
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:projectile": {
     "on_hit": {
@@ -42093,8 +39874,6 @@ egg
 
 ender_pearl
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:projectile": {
     "on_hit": {
@@ -42114,8 +39893,6 @@ ender_pearl
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:no_spawn</CodeHeader>
-
 ```json
 "minecraft:projectile": {
     "on_hit": {
@@ -42131,8 +39908,6 @@ ender_pearl
 ```
 
 fireball
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:projectile": {
@@ -42156,10 +39931,10 @@ fireball
     "liquid_inertia": 1,
     "uncertainty_base": 0,
     "uncertainty_multiplier": 0,
-    "anchor": 1,
+    "anchor": 2,
     "offset": [
         0,
-        -0.1,
+        -1.5,
         0
     ],
     "reflect_on_hurt": true,
@@ -42168,8 +39943,6 @@ fireball
 ```
 
 fishing_hook
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:projectile": {
@@ -42180,8 +39953,6 @@ fishing_hook
 ```
 
 lingering_potion
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:projectile": {
@@ -42203,8 +39974,6 @@ lingering_potion
 ```
 
 llama_spit
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:projectile": {
@@ -42231,8 +40000,6 @@ llama_spit
 ```
 
 shulker_bullet
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:projectile": {
@@ -42274,8 +40041,6 @@ shulker_bullet
 
 small_fireball
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:projectile": {
     "on_hit": {
@@ -42308,8 +40073,6 @@ small_fireball
 
 snowball
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:projectile": {
     "on_hit": {
@@ -42340,8 +40103,6 @@ snowball
 
 splash_potion
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:projectile": {
     "on_hit": {
@@ -42357,8 +40118,6 @@ splash_potion
 ```
 
 thrown_trident
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:projectile": {
@@ -42392,9 +40151,36 @@ thrown_trident
 }
 ```
 
-wither_skull
+wind_charge_projectile
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:projectile": {
+    "on_hit": {
+        "impact_damage": {
+            "damage": 1,
+            "max_critical_damage": 1.0,
+            "knockback": true
+        },
+        "wind_burst_on_hit": {}
+    },
+    "power": 1.5,
+    "gravity": 0.0,
+    "inertia": 1.0,
+    "liquid_inertia": 1.0,
+    "uncertainty_base": 1.0,
+    "uncertainty_multiplier": 0.0,
+    "reflect_on_hurt": true,
+    "multiple_targets": false,
+    "reflect_immunity": 0.5,
+    "ignored_entities": [
+        "ender_crystal",
+        "wind_charge_projectile",
+        "breeze_wind_charge_projectile"
+    ]
+}
+```
+
+wither_skull
 
 ```json
 "minecraft:projectile": {
@@ -42433,8 +40219,6 @@ wither_skull
 ```
 
 wither_skull_dangerous
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:projectile": {
@@ -42476,8 +40260,6 @@ wither_skull_dangerous
 
 xp_bottle
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:projectile": {
     "on_hit": {
@@ -42494,15 +40276,18 @@ xp_bottle
 }
 ```
 
-</Spoiler>
-
 ## pushable
-
-<Spoiler title="Show">
 
 allay
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:pushable": {
+    "is_pushable": true,
+    "is_pushable_by_piston": true
+}
+```
+
+armadillo
 
 ```json
 "minecraft:pushable": {
@@ -42513,8 +40298,6 @@ allay
 
 armor_stand
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": false,
@@ -42523,8 +40306,6 @@ armor_stand
 ```
 
 arrow
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42535,8 +40316,6 @@ arrow
 
 axolotl
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42545,8 +40324,6 @@ axolotl
 ```
 
 bee
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42557,8 +40334,6 @@ bee
 
 blaze
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42568,7 +40343,14 @@ blaze
 
 boat
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:pushable": {
+    "is_pushable": true,
+    "is_pushable_by_piston": true
+}
+```
+
+bogged
 
 ```json
 "minecraft:pushable": {
@@ -42577,9 +40359,41 @@ boat
 }
 ```
 
-cat
+breeze
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:pushable": {
+    "is_pushable": true,
+    "is_pushable_by_piston": true
+}
+```
+
+breeze_wind_charge_projectile
+
+```json
+"minecraft:pushable": {
+    "is_pushable": false,
+    "is_pushable_by_piston": true
+}
+```
+
+camel
+
+```json
+"minecraft:pushable": {
+    "is_pushable": true,
+    "is_pushable_by_piston": true
+}
+```
+
+```json
+"minecraft:pushable": {
+    "is_pushable": false,
+    "is_pushable_by_piston": true
+}
+```
+
+cat
 
 ```json
 "minecraft:pushable": {
@@ -42590,8 +40404,6 @@ cat
 
 cave_spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42601,8 +40413,6 @@ cave_spider
 
 chest_boat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42611,8 +40421,6 @@ chest_boat
 ```
 
 chest_minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42623,8 +40431,6 @@ chest_minecart
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42633,8 +40439,6 @@ chicken
 ```
 
 command_block_minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42645,7 +40449,14 @@ command_block_minecart
 
 cow
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:pushable": {
+    "is_pushable": true,
+    "is_pushable_by_piston": true
+}
+```
+
+creaking
 
 ```json
 "minecraft:pushable": {
@@ -42654,9 +40465,14 @@ cow
 }
 ```
 
-creeper
+```json
+"minecraft:pushable": {
+    "is_pushable": false,
+    "is_pushable_by_piston": false
+}
+```
 
-<CodeHeader></CodeHeader>
+creeper
 
 ```json
 "minecraft:pushable": {
@@ -42667,8 +40483,6 @@ creeper
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42678,7 +40492,14 @@ dolphin
 
 donkey
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:pushable": {
+    "is_pushable": true,
+    "is_pushable_by_piston": true
+}
+```
+
+dragon_fireball
 
 ```json
 "minecraft:pushable": {
@@ -42689,8 +40510,6 @@ donkey
 
 drowned
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42699,8 +40518,6 @@ drowned
 ```
 
 egg
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42711,8 +40528,6 @@ egg
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42721,8 +40536,6 @@ elder_guardian
 ```
 
 enderman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42733,8 +40546,6 @@ enderman
 
 endermite
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42743,8 +40554,6 @@ endermite
 ```
 
 ender_crystal
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42755,8 +40564,6 @@ ender_crystal
 
 ender_pearl
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42765,8 +40572,6 @@ ender_pearl
 ```
 
 evocation_illager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42777,8 +40582,6 @@ evocation_illager
 
 eye_of_ender_signal
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42787,8 +40590,6 @@ eye_of_ender_signal
 ```
 
 fireball
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42799,8 +40600,6 @@ fireball
 
 fireworks_rocket
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42809,8 +40608,6 @@ fireworks_rocket
 ```
 
 cod
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42821,8 +40618,6 @@ cod
 
 fishing_hook
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": false,
@@ -42831,8 +40626,6 @@ fishing_hook
 ```
 
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42843,15 +40636,11 @@ fox
 
 frog
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {}
 ```
 
 ghast
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42862,8 +40651,6 @@ ghast
 
 glow_squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42872,8 +40659,6 @@ glow_squid
 ```
 
 goat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42884,8 +40669,6 @@ goat
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42895,8 +40678,6 @@ guardian
 
 hoglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42905,8 +40686,6 @@ hoglin
 ```
 
 hopper_minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42917,8 +40696,6 @@ hopper_minecart
 
 horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42927,8 +40704,6 @@ horse
 ```
 
 husk
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42939,8 +40714,6 @@ husk
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42949,8 +40722,6 @@ iron_golem
 ```
 
 lingering_potion
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42961,8 +40732,6 @@ lingering_potion
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42971,8 +40740,6 @@ llama
 ```
 
 llama_spit
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -42983,8 +40750,6 @@ llama_spit
 
 magma_cube
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -42993,8 +40758,6 @@ magma_cube
 ```
 
 minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43005,8 +40768,6 @@ minecart
 
 mooshroom
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43015,8 +40776,6 @@ mooshroom
 ```
 
 mule
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43027,8 +40786,6 @@ mule
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43037,8 +40794,6 @@ ocelot
 ```
 
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43049,8 +40804,6 @@ panda
 
 parrot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43059,8 +40812,6 @@ parrot
 ```
 
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43071,8 +40822,6 @@ phantom
 
 pig
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43081,8 +40830,6 @@ pig
 ```
 
 piglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43093,8 +40840,6 @@ piglin
 
 piglin_brute
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43104,8 +40849,6 @@ piglin_brute
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43114,8 +40857,6 @@ pillager
 ```
 
 player
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43126,8 +40867,6 @@ player
 
 polar_bear
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43136,8 +40875,6 @@ polar_bear
 ```
 
 pufferfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43148,8 +40885,6 @@ pufferfish
 
 rabbit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43158,8 +40893,6 @@ rabbit
 ```
 
 ravager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43170,8 +40903,6 @@ ravager
 
 salmon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43180,8 +40911,6 @@ salmon
 ```
 
 sheep
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43192,8 +40921,6 @@ sheep
 
 silverfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43202,8 +40929,6 @@ silverfish
 ```
 
 skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43214,8 +40939,6 @@ skeleton
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43224,8 +40947,6 @@ skeleton_horse
 ```
 
 slime
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43236,7 +40957,14 @@ slime
 
 small_fireball
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:pushable": {
+    "is_pushable": true,
+    "is_pushable_by_piston": true
+}
+```
+
+sniffer
 
 ```json
 "minecraft:pushable": {
@@ -43247,8 +40975,6 @@ small_fireball
 
 snowball
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43257,8 +40983,6 @@ snowball
 ```
 
 snow_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43269,8 +40993,6 @@ snow_golem
 
 spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43279,8 +41001,6 @@ spider
 ```
 
 splash_potion
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43291,8 +41011,6 @@ splash_potion
 
 squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43301,8 +41019,6 @@ squid
 ```
 
 stray
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43313,8 +41029,6 @@ stray
 
 strider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43324,15 +41038,11 @@ strider
 
 tadpole
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {}
 ```
 
 thrown_trident
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43343,8 +41053,6 @@ thrown_trident
 
 tnt
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": false,
@@ -43353,8 +41061,6 @@ tnt
 ```
 
 tnt_minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43365,8 +41071,6 @@ tnt_minecart
 
 trader_llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43375,8 +41079,6 @@ trader_llama
 ```
 
 tropicalfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43387,8 +41089,6 @@ tropicalfish
 
 turtle
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43397,8 +41097,6 @@ turtle
 ```
 
 villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43409,8 +41107,6 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43419,8 +41115,6 @@ villager_v2
 ```
 
 vindicator
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43431,8 +41125,6 @@ vindicator
 
 wandering_trader
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43442,8 +41134,6 @@ wandering_trader
 
 warden
 
-<CodeHeader>#component_groups/pushable</CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43451,9 +41141,16 @@ warden
 }
 ```
 
-witch
+wind_charge_projectile
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:pushable": {
+    "is_pushable": false,
+    "is_pushable_by_piston": true
+}
+```
+
+witch
 
 ```json
 "minecraft:pushable": {
@@ -43464,8 +41161,6 @@ witch
 
 wither
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43474,8 +41169,6 @@ wither
 ```
 
 wither_skeleton
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43486,8 +41179,6 @@ wither_skeleton
 
 wither_skull
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43496,8 +41187,6 @@ wither_skull
 ```
 
 wither_skull_dangerous
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43508,8 +41197,6 @@ wither_skull_dangerous
 
 wolf
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43518,8 +41205,6 @@ wolf
 ```
 
 xp_bottle
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43530,18 +41215,14 @@ xp_bottle
 
 xp_orb
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
-    "is_pushable": true,
+    "is_pushable": false,
     "is_pushable_by_piston": true
 }
 ```
 
 zoglin
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43552,8 +41233,6 @@ zoglin
 
 zombie
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43562,8 +41241,6 @@ zombie
 ```
 
 zombie_horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43574,8 +41251,6 @@ zombie_horse
 
 zombie_pigman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43584,8 +41259,6 @@ zombie_pigman
 ```
 
 zombie_villager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:pushable": {
@@ -43596,8 +41269,6 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
@@ -43605,15 +41276,9 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## raid_trigger
 
-<Spoiler title="Show">
-
 player
-
-<CodeHeader>#component_groups/minecraft:raid_trigger</CodeHeader>
 
 ```json
 "minecraft:raid_trigger": {
@@ -43624,23 +41289,15 @@ player
 }
 ```
 
-</Spoiler>
-
 ## rail_movement
 
-<Spoiler title="Show">
-
 chest_minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:rail_movement": {}
 ```
 
 command_block_minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:rail_movement": {}
@@ -43648,15 +41305,11 @@ command_block_minecart
 
 hopper_minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:rail_movement": {}
 ```
 
 minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:rail_movement": {}
@@ -43664,21 +41317,13 @@ minecart
 
 tnt_minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:rail_movement": {}
 ```
 
-</Spoiler>
-
 ## rail_sensor
 
-<Spoiler title="Show">
-
 command_block_minecart
-
-<CodeHeader>#component_groups/minecraft:command_block_active</CodeHeader>
 
 ```json
 "minecraft:rail_sensor": {
@@ -43692,8 +41337,6 @@ command_block_minecart
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:command_block_inactive</CodeHeader>
 
 ```json
 "minecraft:rail_sensor": {
@@ -43710,8 +41353,6 @@ command_block_minecart
 
 hopper_minecart
 
-<CodeHeader>#component_groups/minecraft:hopper_active</CodeHeader>
-
 ```json
 "minecraft:rail_sensor": {
     "on_activate": {
@@ -43719,8 +41360,6 @@ hopper_minecart
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:hopper_inactive</CodeHeader>
 
 ```json
 "minecraft:rail_sensor": {
@@ -43732,8 +41371,6 @@ hopper_minecart
 
 minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:rail_sensor": {
     "eject_on_activate": true
@@ -43742,19 +41379,13 @@ minecart
 
 tnt_minecart
 
-<CodeHeader>#component_groups/minecraft:primed_tnt</CodeHeader>
-
 ```json
 "minecraft:rail_sensor": {}
 ```
 
-<CodeHeader>#component_groups/minecraft:instant_explode_tnt</CodeHeader>
-
 ```json
 "minecraft:rail_sensor": {}
 ```
-
-<CodeHeader>#component_groups/minecraft:inactive</CodeHeader>
 
 ```json
 "minecraft:rail_sensor": {
@@ -43774,15 +41405,9 @@ tnt_minecart
 }
 ```
 
-</Spoiler>
-
 ## ravager_blocked
 
-<Spoiler title="Show">
-
 ravager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:ravager_blocked": {
@@ -43802,19 +41427,44 @@ ravager
 }
 ```
 
-</Spoiler>
+## reflect_projectiles
+
+breeze
+
+```json
+"minecraft:reflect_projectiles": {
+    "reflected_projectiles": [
+        "xp_bottle",
+        "thrown_trident",
+        "shulker_bullet",
+        "dragon_fireball",
+        "arrow",
+        "snowball",
+        "egg",
+        "fireball",
+        "splash_potion",
+        "ender_pearl",
+        "wither_skull",
+        "wither_skull_dangerous",
+        "small_fireball",
+        "lingering_potion",
+        "llama_spit",
+        "fireworks_rocket",
+        "fishing_hook"
+    ],
+    "azimuth_angle": "180.0 + Math.random(-20.0, 20.0)",
+    "reflection_scale": "0.5"
+}
+```
 
 ## rideable
 
-<Spoiler title="Show">
-
 boat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:rideable": {
     "seat_count": 2,
+    "passenger_max_width": 1.375,
     "interact_text": "action.interact.ride.boat",
     "pull_in_entities": true,
     "seats": [
@@ -43855,11 +41505,10 @@ boat
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:can_ride</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 2,
+    "passenger_max_width": 1.375,
     "interact_text": "action.interact.ride.boat",
     "pull_in_entities": true,
     "seats": [
@@ -43895,14 +41544,90 @@ boat
             "max_rider_count": 2,
             "rotate_rider_by": "query.has_any_family('blaze', 'creeper', 'enderman', 'illager', 'magmacube', 'piglin', 'player', 'skeleton', 'slime', 'villager', 'wandering_trader', 'witch', 'zombie', 'zombie_pigman') ? -90 : 0",
             "lock_rider_rotation": 90
+        }
+    ]
+}
+```
+
+```json
+"minecraft:rideable": {
+    "seat_count": 2,
+    "passenger_max_width": 1.375,
+    "interact_text": "action.interact.ride.boat",
+    "pull_in_entities": true,
+    "seats": [
+        {
+            "position": [
+                0.0,
+                0.1,
+                0.0
+            ],
+            "min_rider_count": 0,
+            "max_rider_count": 1,
+            "rotate_rider_by": -90,
+            "lock_rider_rotation": 90
+        },
+        {
+            "position": [
+                0.2,
+                0.1,
+                0.0
+            ],
+            "min_rider_count": 2,
+            "max_rider_count": 2,
+            "rotate_rider_by": "query.has_any_family('blaze', 'creeper', 'enderman', 'illager', 'magmacube', 'piglin', 'player', 'skeleton', 'slime', 'villager', 'wandering_trader', 'witch', 'zombie', 'zombie_pigman') ? -90 : 0",
+            "lock_rider_rotation": 90
+        },
+        {
+            "position": [
+                -0.6,
+                0.1,
+                0.0
+            ],
+            "min_rider_count": 2,
+            "max_rider_count": 2,
+            "rotate_rider_by": "query.has_any_family('blaze', 'creeper', 'enderman', 'illager', 'magmacube', 'piglin', 'player', 'skeleton', 'slime', 'villager', 'wandering_trader', 'witch', 'zombie', 'zombie_pigman') ? -90 : 0",
+            "lock_rider_rotation": 90
+        }
+    ]
+}
+```
+
+camel
+
+```json
+"minecraft:rideable": {
+    "seat_count": 2,
+    "crouching_skip_interact": true,
+    "pull_in_entities": true,
+    "family_types": [
+        "player"
+    ],
+    "interact_text": "action.interact.ride.horse",
+    "seats": [
+        {
+            "min_rider_count": 0,
+            "max_rider_count": 2,
+            "position": [
+                0.0,
+                1.905,
+                0.5
+            ]
+        },
+        {
+            "min_rider_count": 1,
+            "max_rider_count": 2,
+            "position": [
+                0.0,
+                1.905,
+                -0.5
+            ]
         }
     ]
 }
 ```
 
 cat
-
-<CodeHeader>#component_groups/minecraft:cat_wild</CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -43922,8 +41647,6 @@ cat
 
 cave_spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -43940,8 +41663,6 @@ cave_spider
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:spider_jockey</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -43958,8 +41679,6 @@ cave_spider
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:spider_stray_jockey</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -43975,8 +41694,6 @@ cave_spider
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:spider_wither_jockey</CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -43996,11 +41713,10 @@ cave_spider
 
 chest_boat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
+    "passenger_max_width": 1.375,
     "interact_text": "action.interact.ride.boat",
     "pull_in_entities": true,
     "seats": [
@@ -44019,11 +41735,10 @@ chest_boat
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:can_ride</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
+    "passenger_max_width": 1.375,
     "interact_text": "action.interact.ride.boat",
     "pull_in_entities": true,
     "seats": [
@@ -44031,6 +41746,28 @@ chest_boat
             "position": [
                 0.2,
                 -0.2,
+                0.0
+            ],
+            "min_rider_count": 0,
+            "max_rider_count": 1,
+            "rotate_rider_by": "query.has_any_family('blaze', 'creeper', 'enderman', 'illager', 'magmacube', 'piglin', 'player', 'skeleton', 'slime', 'villager', 'wandering_trader', 'witch', 'zombie', 'zombie_pigman') ? -90 : 0",
+            "lock_rider_rotation": 90
+        }
+    ]
+}
+```
+
+```json
+"minecraft:rideable": {
+    "seat_count": 1,
+    "passenger_max_width": 1.375,
+    "interact_text": "action.interact.ride.boat",
+    "pull_in_entities": true,
+    "seats": [
+        {
+            "position": [
+                0.2,
+                0.1,
                 0.0
             ],
             "min_rider_count": 0,
@@ -44043,8 +41780,6 @@ chest_boat
 ```
 
 chicken
-
-<CodeHeader>#component_groups/minecraft:chicken_adult</CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44064,8 +41799,6 @@ chicken
 
 cow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44084,8 +41817,6 @@ cow
 
 donkey
 
-<CodeHeader>#component_groups/minecraft:donkey_wild</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44103,8 +41834,6 @@ donkey
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:donkey_tamed</CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44125,8 +41854,6 @@ donkey
 ```
 
 hoglin
-
-<CodeHeader>#component_groups/minecraft:hoglin_baby</CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44165,8 +41892,6 @@ hoglin
 
 horse
 
-<CodeHeader>#component_groups/minecraft:horse_wild</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44184,8 +41909,6 @@ horse
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:horse_tamed</CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44207,8 +41930,6 @@ horse
 
 husk
 
-<CodeHeader>#component_groups/minecraft:zombie_husk_adult</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44228,8 +41949,6 @@ husk
 
 llama
 
-<CodeHeader>#component_groups/minecraft:llama_wild</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44246,8 +41965,6 @@ llama
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:llama_tamed</CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44269,8 +41986,6 @@ llama
 
 minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44287,8 +42002,6 @@ minecart
 ```
 
 mooshroom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44308,8 +42021,6 @@ mooshroom
 
 mule
 
-<CodeHeader>#component_groups/minecraft:mule_wild</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44327,8 +42038,6 @@ mule
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:mule_tamed</CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44350,8 +42059,6 @@ mule
 
 ocelot
 
-<CodeHeader>#component_groups/minecraft:ocelot_wild</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44369,8 +42076,6 @@ ocelot
 ```
 
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44390,8 +42095,6 @@ panda
 
 pig
 
-<CodeHeader>#component_groups/minecraft:pig_unsaddled</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44407,8 +42110,6 @@ pig
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:pig_saddled</CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44428,8 +42129,6 @@ pig
 ```
 
 player
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44465,8 +42164,6 @@ player
 
 ravager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44487,8 +42184,6 @@ ravager
 
 sheep
 
-<CodeHeader>#component_groups/minecraft:rideable_sheared</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44504,8 +42199,6 @@ sheep
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:rideable_wooly</CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44524,8 +42217,6 @@ sheep
 ```
 
 skeleton_horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44546,13 +42237,9 @@ skeleton_horse
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:skeleton_horse_r5_upgrade</CodeHeader>
-
 ```json
 "minecraft:rideable": {}
 ```
-
-<CodeHeader>#component_groups/minecraft:skeleton_horse_adult</CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44575,8 +42262,6 @@ skeleton_horse
 
 spider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44593,8 +42278,6 @@ spider
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:spider_jockey</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44611,8 +42294,6 @@ spider
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:spider_stray_jockey</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44628,8 +42309,6 @@ spider
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:spider_wither_jockey</CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44649,8 +42328,6 @@ spider
 
 strider
 
-<CodeHeader>#component_groups/minecraft:strider_saddled</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44668,8 +42345,6 @@ strider
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:strider_piglin_jockey</CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44690,8 +42365,6 @@ strider
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:strider_parent_jockey</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44710,8 +42383,6 @@ strider
 
 trader_llama
 
-<CodeHeader>#component_groups/minecraft:llama_wild</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44728,8 +42399,6 @@ trader_llama
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:llama_tamed</CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44751,8 +42420,6 @@ trader_llama
 
 wolf
 
-<CodeHeader>#component_groups/minecraft:wolf_angry</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44768,8 +42435,6 @@ wolf
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:wolf_wild</CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44789,8 +42454,6 @@ wolf
 
 zombie
 
-<CodeHeader>#component_groups/minecraft:zombie_adult</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44809,8 +42472,6 @@ zombie
 ```
 
 zombie_horse
-
-<CodeHeader>#component_groups/minecraft:horse_adult</CodeHeader>
 
 ```json
 "minecraft:rideable": {
@@ -44831,8 +42492,6 @@ zombie_horse
 
 zombie_pigman
 
-<CodeHeader>#component_groups/minecraft:pig_zombie_adult</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44852,8 +42511,6 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader>#component_groups/adult</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44872,8 +42529,6 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader>#component_groups/adult</CodeHeader>
-
 ```json
 "minecraft:rideable": {
     "seat_count": 1,
@@ -44890,15 +42545,17 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## scale
 
-<Spoiler title="Show">
+armadillo
+
+```json
+"minecraft:scale": {
+    "value": 0.6
+}
+```
 
 axolotl
-
-<CodeHeader>#component_groups/axolotl_baby</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -44908,25 +42565,27 @@ axolotl
 
 bee
 
-<CodeHeader>#component_groups/bee_baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.5
 }
 ```
 
-cat
+camel
 
-<CodeHeader>#component_groups/minecraft:cat_baby</CodeHeader>
+```json
+"minecraft:scale": {
+    "value": 0.45
+}
+```
+
+cat
 
 ```json
 "minecraft:scale": {
     "value": 0.4
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:cat_adult</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -44936,8 +42595,6 @@ cat
 
 chicken
 
-<CodeHeader>#component_groups/minecraft:chicken_baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.5
@@ -44945,8 +42602,6 @@ chicken
 ```
 
 cow
-
-<CodeHeader>#component_groups/minecraft:cow_baby</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -44956,8 +42611,6 @@ cow
 
 dolphin
 
-<CodeHeader>#component_groups/dolphin_baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.65
@@ -44965,8 +42618,6 @@ dolphin
 ```
 
 drowned
-
-<CodeHeader>#component_groups/minecraft:baby_drowned</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -44976,8 +42627,6 @@ drowned
 
 cod
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 1.0
@@ -44985,8 +42634,6 @@ cod
 ```
 
 fox
-
-<CodeHeader>#component_groups/minecraft:fox_baby</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -44996,8 +42643,6 @@ fox
 
 glow_squid
 
-<CodeHeader>#component_groups/minecraft:squid_baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.5
@@ -45005,8 +42650,6 @@ glow_squid
 ```
 
 goat
-
-<CodeHeader>#component_groups/goat_baby</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -45016,8 +42659,6 @@ goat
 
 hoglin
 
-<CodeHeader>#component_groups/minecraft:hoglin_baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.5
@@ -45026,25 +42667,13 @@ hoglin
 
 husk
 
-<CodeHeader>#component_groups/minecraft:zombie_husk_baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
-    "value": 0.53125
-}
-```
-
-<CodeHeader>#component_groups/minecraft:zombie_husk_adult</CodeHeader>
-
-```json
-"minecraft:scale": {
-    "value": 1.0625
+    "value": 0.5
 }
 ```
 
 llama
-
-<CodeHeader>#component_groups/minecraft:llama_baby</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -45054,8 +42683,6 @@ llama
 
 mooshroom
 
-<CodeHeader>#component_groups/minecraft:cow_baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.5
@@ -45064,15 +42691,11 @@ mooshroom
 
 ocelot
 
-<CodeHeader>#component_groups/minecraft:ocelot_baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.5
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:ocelot_adult</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -45082,15 +42705,11 @@ ocelot
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 1.0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:panda_baby</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -45100,8 +42719,6 @@ panda
 
 pig
 
-<CodeHeader>#component_groups/minecraft:pig_baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.5
@@ -45109,8 +42726,6 @@ pig
 ```
 
 piglin
-
-<CodeHeader>#component_groups/piglin_baby</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -45120,8 +42735,6 @@ piglin
 
 polar_bear
 
-<CodeHeader>#component_groups/minecraft:baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.5
@@ -45129,8 +42742,6 @@ polar_bear
 ```
 
 pufferfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -45140,23 +42751,17 @@ pufferfish
 
 rabbit
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.6
 }
 ```
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.4
 }
 ```
-
-<CodeHeader>#component_groups/adult</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -45166,23 +42771,17 @@ rabbit
 
 salmon
 
-<CodeHeader>#component_groups/scale_small</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.5
 }
 ```
 
-<CodeHeader>#component_groups/scale_normal</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/scale_large</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -45192,17 +42791,21 @@ salmon
 
 sheep
 
-<CodeHeader>#component_groups/minecraft:sheep_baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.5
 }
 ```
 
-squid
+sniffer
 
-<CodeHeader>#component_groups/minecraft:squid_baby</CodeHeader>
+```json
+"minecraft:scale": {
+    "value": 0.45
+}
+```
+
+squid
 
 ```json
 "minecraft:scale": {
@@ -45212,8 +42815,6 @@ squid
 
 strider
 
-<CodeHeader>#component_groups/minecraft:strider_baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.5
@@ -45221,8 +42822,6 @@ strider
 ```
 
 trader_llama
-
-<CodeHeader>#component_groups/minecraft:llama_baby</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -45232,8 +42831,6 @@ trader_llama
 
 tropicalfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 1.3
@@ -45241,8 +42838,6 @@ tropicalfish
 ```
 
 turtle
-
-<CodeHeader>#component_groups/minecraft:baby</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -45252,8 +42847,6 @@ turtle
 
 villager
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.5
@@ -45261,8 +42854,6 @@ villager
 ```
 
 villager_v2
-
-<CodeHeader>#component_groups/baby</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -45272,8 +42863,6 @@ villager_v2
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 1.2
@@ -45281,8 +42870,6 @@ wither_skeleton
 ```
 
 wolf
-
-<CodeHeader>#component_groups/minecraft:wolf_baby</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -45292,8 +42879,6 @@ wolf
 
 zoglin
 
-<CodeHeader>#component_groups/zoglin_baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.5
@@ -45301,8 +42886,6 @@ zoglin
 ```
 
 zombie
-
-<CodeHeader>#component_groups/minecraft:zombie_baby</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -45312,8 +42895,6 @@ zombie
 
 zombie_pigman
 
-<CodeHeader>#component_groups/minecraft:pig_zombie_baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.5
@@ -45321,8 +42902,6 @@ zombie_pigman
 ```
 
 zombie_villager
-
-<CodeHeader>#component_groups/baby</CodeHeader>
 
 ```json
 "minecraft:scale": {
@@ -45332,23 +42911,15 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader>#component_groups/baby</CodeHeader>
-
 ```json
 "minecraft:scale": {
     "value": 0.5
 }
 ```
 
-</Spoiler>
-
 ## scale_by_age
 
-<Spoiler title="Show">
-
 donkey
-
-<CodeHeader>#component_groups/minecraft:donkey_baby</CodeHeader>
 
 ```json
 "minecraft:scale_by_age": {
@@ -45359,8 +42930,6 @@ donkey
 
 horse
 
-<CodeHeader>#component_groups/minecraft:horse_baby</CodeHeader>
-
 ```json
 "minecraft:scale_by_age": {
     "start_scale": 0.5,
@@ -45369,8 +42938,6 @@ horse
 ```
 
 mule
-
-<CodeHeader>#component_groups/minecraft:mule_baby</CodeHeader>
 
 ```json
 "minecraft:scale_by_age": {
@@ -45381,8 +42948,6 @@ mule
 
 skeleton_horse
 
-<CodeHeader>#component_groups/minecraft:skeleton_horse_baby</CodeHeader>
-
 ```json
 "minecraft:scale_by_age": {
     "start_scale": 0.5,
@@ -45392,8 +42957,6 @@ skeleton_horse
 
 zombie_horse
 
-<CodeHeader>#component_groups/minecraft:horse_baby</CodeHeader>
-
 ```json
 "minecraft:scale_by_age": {
     "start_scale": 0.5,
@@ -45401,15 +42964,9 @@ zombie_horse
 }
 ```
 
-</Spoiler>
-
 ## scheduler
 
-<Spoiler title="Show">
-
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:scheduler": {
@@ -45471,8 +43028,6 @@ fox
 
 villager_v2
 
-<CodeHeader>#component_groups/work_schedule</CodeHeader>
-
 ```json
 "minecraft:scheduler": {
     "min_delay_secs": 0,
@@ -45567,8 +43122,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/basic_schedule</CodeHeader>
-
 ```json
 "minecraft:scheduler": {
     "min_delay_secs": 0,
@@ -45662,8 +43215,6 @@ villager_v2
     ]
 }
 ```
-
-<CodeHeader>#component_groups/child_schedule</CodeHeader>
 
 ```json
 "minecraft:scheduler": {
@@ -45725,8 +43276,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/jobless_schedule</CodeHeader>
-
 ```json
 "minecraft:scheduler": {
     "min_delay_secs": 0,
@@ -45804,8 +43353,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/fisher_schedule</CodeHeader>
-
 ```json
 "minecraft:scheduler": {
     "min_delay_secs": 0,
@@ -45899,8 +43446,6 @@ villager_v2
     ]
 }
 ```
-
-<CodeHeader>#component_groups/librarian_schedule</CodeHeader>
 
 ```json
 "minecraft:scheduler": {
@@ -45996,8 +43541,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/farmer_schedule</CodeHeader>
-
 ```json
 "minecraft:scheduler": {
     "min_delay_secs": 0,
@@ -46091,19 +43634,234 @@ villager_v2
     ]
 }
 ```
-
-</Spoiler>
 
 ## shareables
 
-<Spoiler title="Show">
-
-drowned
-
-<CodeHeader></CodeHeader>
+bogged
 
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
+    "items": [
+        {
+            "item": "minecraft:netherite_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+        },
+        {
+            "item": "minecraft:diamond_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+        },
+        {
+            "item": "minecraft:iron_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+        },
+        {
+            "item": "minecraft:stone_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+        },
+        {
+            "item": "minecraft:golden_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+        },
+        {
+            "item": "minecraft:wooden_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+        },
+        {
+            "item": "minecraft:bow",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 6
+        },
+        {
+            "item": "minecraft:netherite_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+        },
+        {
+            "item": "minecraft:diamond_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+        },
+        {
+            "item": "minecraft:iron_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+        },
+        {
+            "item": "minecraft:chainmail_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+        },
+        {
+            "item": "minecraft:golden_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+        },
+        {
+            "item": "minecraft:leather_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+        },
+        {
+            "item": "minecraft:turtle_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 6
+        },
+        {
+            "item": "minecraft:skull:0",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+        },
+        {
+            "item": "minecraft:skull:1",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+        },
+        {
+            "item": "minecraft:carved_pumpkin",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+        },
+        {
+            "item": "minecraft:netherite_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+        },
+        {
+            "item": "minecraft:diamond_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+        },
+        {
+            "item": "minecraft:iron_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+        },
+        {
+            "item": "minecraft:chainmail_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+        },
+        {
+            "item": "minecraft:golden_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+        },
+        {
+            "item": "minecraft:leather_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+        },
+        {
+            "item": "minecraft:netherite_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+        },
+        {
+            "item": "minecraft:diamond_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+        },
+        {
+            "item": "minecraft:iron_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+        },
+        {
+            "item": "minecraft:chainmail_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+        },
+        {
+            "item": "minecraft:golden_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+        },
+        {
+            "item": "minecraft:leather_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+        },
+        {
+            "item": "minecraft:netherite_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+        },
+        {
+            "item": "minecraft:diamond_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+        },
+        {
+            "item": "minecraft:iron_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+        },
+        {
+            "item": "minecraft:chainmail_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+        },
+        {
+            "item": "minecraft:golden_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+        },
+        {
+            "item": "minecraft:leather_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+        }
+    ]
+}
+```
+
+drowned
+
+```json
+"minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:nautilus_shell",
@@ -46325,12 +44083,26 @@ drowned
 }
 ```
 
-fox
-
-<CodeHeader></CodeHeader>
+evocation_illager
 
 ```json
 "minecraft:shareables": {
+    "items": [
+        {
+            "item": "minecraft:banner:15",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+        }
+    ]
+}
+```
+
+fox
+
+```json
+"minecraft:shareables": {
+    "singular_pickup": true,
     "all_items": true,
     "all_items_max_amount": 1,
     "items": [
@@ -46367,6 +44139,11 @@ fox
         {
             "item": "minecraft:bread",
             "priority": 0,
+            "max_amount": 1
+        },
+        {
+            "item": "minecraft:bundle",
+            "priority": 1,
             "max_amount": 1
         },
         {
@@ -46535,10 +44312,9 @@ fox
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:netherite_sword",
@@ -46750,10 +44526,9 @@ husk
 
 piglin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:golden_sword",
@@ -46785,13 +44560,6 @@ piglin
         },
         {
             "item": "minecraft:golden_shovel",
-            "priority": 2,
-            "admire": true,
-            "pickup_limit": 1,
-            "stored_in_inventory": true
-        },
-        {
-            "item": "minecraft:golden_rail",
             "priority": 2,
             "admire": true,
             "pickup_limit": 1,
@@ -47120,8 +44888,6 @@ piglin
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:shareables": {
     "items": [
@@ -47137,10 +44903,9 @@ pillager
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:netherite_sword",
@@ -47358,10 +45123,9 @@ skeleton
 
 stray
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:netherite_sword",
@@ -47579,8 +45343,6 @@ stray
 
 villager
 
-<CodeHeader>#component_groups/behavior_peasant</CodeHeader>
-
 ```json
 "minecraft:shareables": {
     "items": [
@@ -47633,8 +45395,6 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/behavior_non_peasant</CodeHeader>
-
 ```json
 "minecraft:shareables": {
     "items": [
@@ -47668,8 +45428,6 @@ villager
 
 villager_v2
 
-<CodeHeader>#component_groups/work_schedule_farmer</CodeHeader>
-
 ```json
 "minecraft:shareables": {
     "items": [
@@ -47706,6 +45464,20 @@ villager_v2
         },
         {
             "item": "minecraft:beetroot_seeds",
+            "want_amount": 64,
+            "surplus_amount": 64,
+            "stored_in_inventory": true,
+            "pickup_only": true
+        },
+        {
+            "item": "minecraft:torchflower_seeds",
+            "want_amount": 64,
+            "surplus_amount": 64,
+            "stored_in_inventory": true,
+            "pickup_only": true
+        },
+        {
+            "item": "minecraft:pitcher_pod",
             "want_amount": 64,
             "surplus_amount": 64,
             "stored_in_inventory": true,
@@ -47728,8 +45500,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/behavior_peasant</CodeHeader>
-
 ```json
 "minecraft:shareables": {
     "items": [
@@ -47782,8 +45552,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/behavior_non_peasant</CodeHeader>
-
 ```json
 "minecraft:shareables": {
     "items": [
@@ -47815,12 +45583,26 @@ villager_v2
 }
 ```
 
-wither_skeleton
-
-<CodeHeader></CodeHeader>
+vindicator
 
 ```json
 "minecraft:shareables": {
+    "items": [
+        {
+            "item": "minecraft:banner:15",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+        }
+    ]
+}
+```
+
+wither_skeleton
+
+```json
+"minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:netherite_sword",
@@ -48176,10 +45958,9 @@ wither_skeleton
 
 zombie
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:netherite_sword",
@@ -48391,8 +46172,6 @@ zombie
 
 zombie_pigman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:shareables": {
     "items": [
@@ -48606,10 +46385,9 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:netherite_sword",
@@ -48821,10 +46599,9 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:netherite_sword",
@@ -49034,15 +46811,9 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## shooter
 
-<Spoiler title="Show">
-
 blaze
-
-<CodeHeader>#component_groups/ranged_mode</CodeHeader>
 
 ```json
 "minecraft:shooter": {
@@ -49050,30 +46821,34 @@ blaze
 }
 ```
 
-drowned
-
-<CodeHeader>#component_groups/minecraft:ranged_mode</CodeHeader>
+bogged
 
 ```json
 "minecraft:shooter": {
-    "def": "minecraft:thrown_trident"
+    "def": "minecraft:arrow",
+    "sound": "bow",
+    "aux_val": 26
+}
+```
+
+drowned
+
+```json
+"minecraft:shooter": {
+    "def": "minecraft:thrown_trident",
+    "sound": "item.trident.throw"
 }
 ```
 
 ender_dragon
 
-<CodeHeader>#component_groups/dragon_flying</CodeHeader>
-
 ```json
 "minecraft:shooter": {
-    "type": "dragonfireball",
     "def": "minecraft:dragon_fireball"
 }
 ```
 
 ghast
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:shooter": {
@@ -49083,8 +46858,6 @@ ghast
 
 llama
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:shooter": {
     "def": "minecraft:llama_spit"
@@ -49092,8 +46865,6 @@ llama
 ```
 
 piglin
-
-<CodeHeader>#component_groups/ranged_unit</CodeHeader>
 
 ```json
 "minecraft:shooter": {
@@ -49103,8 +46874,6 @@ piglin
 
 pillager
 
-<CodeHeader>#component_groups/minecraft:ranged_attack</CodeHeader>
-
 ```json
 "minecraft:shooter": {
     "def": "minecraft:arrow"
@@ -49112,8 +46881,6 @@ pillager
 ```
 
 shulker
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:shooter": {
@@ -49123,25 +46890,20 @@ shulker
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:shooter": {
     "def": "minecraft:arrow"
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:ranged_attack</CodeHeader>
-
 ```json
 "minecraft:shooter": {
-    "def": "minecraft:arrow"
+    "def": "minecraft:arrow",
+    "sound": "bow"
 }
 ```
 
 snow_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:shooter": {
@@ -49151,8 +46913,6 @@ snow_golem
 
 stray
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:shooter": {
     "def": "minecraft:arrow",
@@ -49160,18 +46920,15 @@ stray
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:ranged_attack</CodeHeader>
-
 ```json
 "minecraft:shooter": {
     "def": "minecraft:arrow",
+    "sound": "bow",
     "aux_val": 19
 }
 ```
 
 trader_llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:shooter": {
@@ -49179,15 +46936,127 @@ trader_llama
 }
 ```
 
-</Spoiler>
+witch
+
+```json
+"minecraft:shooter": {
+    "power": 0.75,
+    "def": "minecraft:splash_potion",
+    "aux_val": 23,
+    "sound": "throw",
+    "projectiles": [
+        {
+            "def": "minecraft:splash_potion",
+            "aux_val": 21,
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "is_raider",
+                        "subject": "other",
+                        "value": true
+                    },
+                    {
+                        "test": "actor_health",
+                        "subject": "other",
+                        "value": 4,
+                        "operator": "<="
+                    }
+                ]
+            },
+            "lose_target": true
+        },
+        {
+            "def": "minecraft:splash_potion",
+            "aux_val": 28,
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "is_raider",
+                        "subject": "other",
+                        "value": true
+                    }
+                ]
+            },
+            "lose_target": true
+        },
+        {
+            "def": "minecraft:splash_potion",
+            "aux_val": 17,
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "target_distance",
+                        "subject": "self",
+                        "value": 8.0,
+                        "operator": ">="
+                    },
+                    {
+                        "none_of": [
+                            {
+                                "test": "has_mob_effect",
+                                "subject": "other",
+                                "value": "slowness"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "def": "minecraft:splash_potion",
+            "aux_val": 25,
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "actor_health",
+                        "subject": "other",
+                        "value": 8,
+                        "operator": ">="
+                    },
+                    {
+                        "none_of": [
+                            {
+                                "test": "has_mob_effect",
+                                "subject": "other",
+                                "value": "poison"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "def": "minecraft:splash_potion",
+            "aux_val": 34,
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "target_distance",
+                        "subject": "self",
+                        "value": 3,
+                        "operator": "<="
+                    },
+                    {
+                        "none_of": [
+                            {
+                                "test": "has_mob_effect",
+                                "subject": "other",
+                                "value": "weakness"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "chance": 0.25
+        }
+    ],
+    "magic": true
+}
+```
 
 ## sittable
 
-<Spoiler title="Show">
-
 cat
-
-<CodeHeader>#component_groups/minecraft:cat_tame</CodeHeader>
 
 ```json
 "minecraft:sittable": {}
@@ -49195,15 +47064,11 @@ cat
 
 ocelot
 
-<CodeHeader>#component_groups/minecraft:ocelot_tame</CodeHeader>
-
 ```json
 "minecraft:sittable": {}
 ```
 
 parrot
-
-<CodeHeader>#component_groups/minecraft:parrot_tame</CodeHeader>
 
 ```json
 "minecraft:sittable": {}
@@ -49211,21 +47076,13 @@ parrot
 
 wolf
 
-<CodeHeader>#component_groups/minecraft:wolf_tame</CodeHeader>
-
 ```json
 "minecraft:sittable": {}
 ```
 
-</Spoiler>
-
 ## skin_id
 
-<Spoiler title="Show">
-
 villager_v2
-
-<CodeHeader>#component_groups/villager_skin_0</CodeHeader>
 
 ```json
 "minecraft:skin_id": {
@@ -49233,15 +47090,11 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/villager_skin_1</CodeHeader>
-
 ```json
 "minecraft:skin_id": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/villager_skin_2</CodeHeader>
 
 ```json
 "minecraft:skin_id": {
@@ -49249,23 +47102,17 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/villager_skin_3</CodeHeader>
-
 ```json
 "minecraft:skin_id": {
     "value": 3
 }
 ```
 
-<CodeHeader>#component_groups/villager_skin_4</CodeHeader>
-
 ```json
 "minecraft:skin_id": {
     "value": 4
 }
 ```
-
-<CodeHeader>#component_groups/villager_skin_5</CodeHeader>
 
 ```json
 "minecraft:skin_id": {
@@ -49275,15 +47122,11 @@ villager_v2
 
 zombie_villager_v2
 
-<CodeHeader>#component_groups/villager_skin_0</CodeHeader>
-
 ```json
 "minecraft:skin_id": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/villager_skin_1</CodeHeader>
 
 ```json
 "minecraft:skin_id": {
@@ -49291,15 +47134,11 @@ zombie_villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/villager_skin_2</CodeHeader>
-
 ```json
 "minecraft:skin_id": {
     "value": 2
 }
 ```
-
-<CodeHeader>#component_groups/villager_skin_3</CodeHeader>
 
 ```json
 "minecraft:skin_id": {
@@ -49307,15 +47146,11 @@ zombie_villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/villager_skin_4</CodeHeader>
-
 ```json
 "minecraft:skin_id": {
     "value": 4
 }
 ```
-
-<CodeHeader>#component_groups/villager_skin_5</CodeHeader>
 
 ```json
 "minecraft:skin_id": {
@@ -49323,15 +47158,22 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
-
 ## spawn_entity
 
-<Spoiler title="Show">
+armadillo
+
+```json
+"minecraft:spawn_entity": {
+    "entities": {
+        "min_wait_time": 300,
+        "max_wait_time": 600,
+        "spawn_sound": "mob.armadillo.scute_drop",
+        "spawn_item": "armadillo_scute"
+    }
+}
+```
 
 chicken
-
-<CodeHeader>#component_groups/minecraft:chicken_adult</CodeHeader>
 
 ```json
 "minecraft:spawn_entity": {
@@ -49351,8 +47193,6 @@ chicken
 ```
 
 ocelot
-
-<CodeHeader>#component_groups/minecraft:wild_child_ocelot_spawn</CodeHeader>
 
 ```json
 "minecraft:spawn_entity": {
@@ -49375,9 +47215,25 @@ ocelot
 }
 ```
 
-wandering_trader
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:spawn_entity": {
+    "entities": {
+        "min_wait_time": 0,
+        "max_wait_time": 0,
+        "spawn_sound": "plop",
+        "spawn_item": "sniffer_egg",
+        "spawn_item_event": {
+            "event": "on_egg_spawned",
+            "target": "self"
+        },
+        "single_use": true
+    }
+}
+```
+
+wandering_trader
 
 ```json
 "minecraft:spawn_entity": {
@@ -49395,46 +47251,56 @@ wandering_trader
 }
 ```
 
-</Spoiler>
-
 ## spell_effects
 
-<Spoiler title="Show">
-
-player
-
-<CodeHeader>#component_groups/minecraft:add_bad_omen</CodeHeader>
+bee
 
 ```json
 "minecraft:spell_effects": {
     "add_effects": [
         {
-            "effect": "bad_omen",
-            "duration": 6000,
-            "visible": false,
+            "effect": "poison",
+            "duration": 25,
             "display_on_screen_animation": true
         }
-    ]
+    ],
+    "remove_effects": "poison"
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:clear_bad_omen_spell_effect</CodeHeader>
+```json
+"minecraft:spell_effects": {
+    "add_effects": [
+        {
+            "effect": "wither",
+            "duration": 40,
+            "display_on_screen_animation": true
+        }
+    ],
+    "remove_effects": "wither"
+}
+```
+
+player
+
+```json
+"minecraft:spell_effects": {
+    "add_effects": [
+        {
+            "effect": "raid_omen",
+            "duration": 30,
+            "display_on_screen_animation": true
+        }
+    ],
+    "remove_effects": "bad_omen"
+}
+```
 
 ```json
 "minecraft:spell_effects": {}
 ```
 
-<CodeHeader>#component_groups/minecraft:raid_trigger</CodeHeader>
-
-```json
-"minecraft:spell_effects": {
-    "remove_effects": "bad_omen"
-}
-```
-
 zombie_villager
-
-<CodeHeader>#component_groups/to_villager</CodeHeader>
 
 ```json
 "minecraft:spell_effects": {
@@ -49454,33 +47320,25 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader>#component_groups/to_villager</CodeHeader>
-
 ```json
 "minecraft:spell_effects": {
     "add_effects": [
         {
             "effect": "strength",
-            "duration": 100
+            "duration": 300
         },
         {
             "effect": "heal",
-            "duration": 100
+            "duration": 300
         }
     ],
     "remove_effects": "weakness"
 }
 ```
 
-</Spoiler>
-
 ## strength
 
-<Spoiler title="Show">
-
 llama
-
-<CodeHeader>#component_groups/minecraft:strength_1</CodeHeader>
 
 ```json
 "minecraft:strength": {
@@ -49489,16 +47347,12 @@ llama
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:strength_2</CodeHeader>
-
 ```json
 "minecraft:strength": {
     "value": 2,
     "max": 5
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:strength_3</CodeHeader>
 
 ```json
 "minecraft:strength": {
@@ -49507,16 +47361,12 @@ llama
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:strength_4</CodeHeader>
-
 ```json
 "minecraft:strength": {
     "value": 4,
     "max": 5
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:strength_5</CodeHeader>
 
 ```json
 "minecraft:strength": {
@@ -49527,16 +47377,12 @@ llama
 
 trader_llama
 
-<CodeHeader>#component_groups/minecraft:strength_1</CodeHeader>
-
 ```json
 "minecraft:strength": {
     "value": 1,
     "max": 5
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:strength_2</CodeHeader>
 
 ```json
 "minecraft:strength": {
@@ -49545,16 +47391,12 @@ trader_llama
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:strength_3</CodeHeader>
-
 ```json
 "minecraft:strength": {
     "value": 3,
     "max": 5
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:strength_4</CodeHeader>
 
 ```json
 "minecraft:strength": {
@@ -49563,8 +47405,6 @@ trader_llama
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:strength_5</CodeHeader>
-
 ```json
 "minecraft:strength": {
     "value": 5,
@@ -49572,29 +47412,17 @@ trader_llama
 }
 ```
 
-</Spoiler>
-
 ## suspect_tracking
 
-<Spoiler title="Show">
-
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:suspect_tracking": {}
 ```
 
-</Spoiler>
-
 ## tameable
 
-<Spoiler title="Show">
-
 cat
-
-<CodeHeader>#component_groups/minecraft:cat_wild</CodeHeader>
 
 ```json
 "minecraft:tameable": {
@@ -49612,8 +47440,6 @@ cat
 
 parrot
 
-<CodeHeader>#component_groups/minecraft:parrot_wild</CodeHeader>
-
 ```json
 "minecraft:tameable": {
     "probability": 0.33,
@@ -49621,7 +47447,9 @@ parrot
         "wheat_seeds",
         "pumpkin_seeds",
         "melon_seeds",
-        "beetroot_seeds"
+        "beetroot_seeds",
+        "pitcher_pod",
+        "torchflower_seeds"
     ],
     "tame_event": {
         "event": "minecraft:on_tame",
@@ -49631,8 +47459,6 @@ parrot
 ```
 
 wolf
-
-<CodeHeader>#component_groups/minecraft:wolf_wild</CodeHeader>
 
 ```json
 "minecraft:tameable": {
@@ -49645,15 +47471,9 @@ wolf
 }
 ```
 
-</Spoiler>
-
 ## tamemount
 
-<Spoiler title="Show">
-
 donkey
-
-<CodeHeader>#component_groups/minecraft:donkey_wild</CodeHeader>
 
 ```json
 "minecraft:tamemount": {
@@ -49713,8 +47533,6 @@ donkey
 
 horse
 
-<CodeHeader>#component_groups/minecraft:horse_wild</CodeHeader>
-
 ```json
 "minecraft:tamemount": {
     "min_temper": 0,
@@ -49773,8 +47591,6 @@ horse
 
 llama
 
-<CodeHeader>#component_groups/minecraft:llama_wild</CodeHeader>
-
 ```json
 "minecraft:tamemount": {
     "min_temper": 0,
@@ -49791,23 +47607,6 @@ llama
             "temper_mod": 6
         }
     ],
-    "auto_reject_items": [
-        {
-            "item": "horsearmorleather"
-        },
-        {
-            "item": "horsearmoriron"
-        },
-        {
-            "item": "horsearmorgold"
-        },
-        {
-            "item": "horsearmordiamond"
-        },
-        {
-            "item": "saddle"
-        }
-    ],
     "tame_event": {
         "event": "minecraft:on_tame",
         "target": "self"
@@ -49816,8 +47615,6 @@ llama
 ```
 
 mule
-
-<CodeHeader>#component_groups/minecraft:mule_wild</CodeHeader>
 
 ```json
 "minecraft:tamemount": {
@@ -49877,8 +47674,6 @@ mule
 
 trader_llama
 
-<CodeHeader>#component_groups/minecraft:llama_wild</CodeHeader>
-
 ```json
 "minecraft:tamemount": {
     "min_temper": 0,
@@ -49919,15 +47714,9 @@ trader_llama
 }
 ```
 
-</Spoiler>
-
 ## target_nearby_sensor
 
-<Spoiler title="Show">
-
 blaze
-
-<CodeHeader>#component_groups/mode_switcher</CodeHeader>
 
 ```json
 "minecraft:target_nearby_sensor": {
@@ -49946,8 +47735,6 @@ blaze
 ```
 
 creeper
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:target_nearby_sensor": {
@@ -49969,21 +47756,15 @@ creeper
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:forced_exploding</CodeHeader>
-
 ```json
 "minecraft:target_nearby_sensor": {}
 ```
-
-<CodeHeader>#component_groups/minecraft:forced_charged_exploding</CodeHeader>
 
 ```json
 "minecraft:target_nearby_sensor": {}
 ```
 
 drowned
-
-<CodeHeader>#component_groups/minecraft:mode_switcher</CodeHeader>
 
 ```json
 "minecraft:target_nearby_sensor": {
@@ -50002,8 +47783,6 @@ drowned
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:target_nearby_sensor": {
     "inside_range": 3.0,
@@ -50015,8 +47794,6 @@ guardian
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:guardian_aggressive</CodeHeader>
-
 ```json
 "minecraft:target_nearby_sensor": {
     "inside_range": 3.0,
@@ -50027,16 +47804,10 @@ guardian
     }
 }
 ```
-
-</Spoiler>
 
 ## teleport
 
-<Spoiler title="Show">
-
 enderman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:teleport": {
@@ -50053,15 +47824,9 @@ enderman
 }
 ```
 
-</Spoiler>
-
 ## timer
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader>#component_groups/pickup_item_delay</CodeHeader>
 
 ```json
 "minecraft:timer": {
@@ -50073,9 +47838,20 @@ allay
 }
 ```
 
-bee
+armadillo
 
-<CodeHeader>#component_groups/escape_fire</CodeHeader>
+```json
+"minecraft:timer": {
+    "looping": true,
+    "time": 4,
+    "randomInterval": false,
+    "time_down_event": {
+        "event": "minecraft:unroll"
+    }
+}
+```
+
+bee
 
 ```json
 "minecraft:timer": {
@@ -50092,8 +47868,6 @@ bee
 }
 ```
 
-<CodeHeader>#component_groups/countdown_to_perish</CodeHeader>
-
 ```json
 "minecraft:timer": {
     "looping": false,
@@ -50109,8 +47883,6 @@ bee
 }
 ```
 
-<CodeHeader>#component_groups/take_nearest_target</CodeHeader>
-
 ```json
 "minecraft:timer": {
     "looping": true,
@@ -50122,8 +47894,6 @@ bee
 }
 ```
 
-<CodeHeader>#component_groups/look_for_food</CodeHeader>
-
 ```json
 "minecraft:timer": {
     "looping": true,
@@ -50133,8 +47903,6 @@ bee
     }
 }
 ```
-
-<CodeHeader>#component_groups/find_hive</CodeHeader>
 
 ```json
 "minecraft:timer": {
@@ -50146,8 +47914,6 @@ bee
     }
 }
 ```
-
-<CodeHeader>#component_groups/hive_full</CodeHeader>
 
 ```json
 "minecraft:timer": {
@@ -50166,8 +47932,6 @@ bee
 
 boat
 
-<CodeHeader>#component_groups/minecraft:above_bubble_column_down</CodeHeader>
-
 ```json
 "minecraft:timer": {
     "looping": false,
@@ -50181,8 +47945,6 @@ boat
 
 chest_boat
 
-<CodeHeader>#component_groups/minecraft:above_bubble_column_down</CodeHeader>
-
 ```json
 "minecraft:timer": {
     "looping": false,
@@ -50195,8 +47957,6 @@ chest_boat
 ```
 
 guardian
-
-<CodeHeader>#component_groups/minecraft:guardian_passive</CodeHeader>
 
 ```json
 "minecraft:timer": {
@@ -50214,8 +47974,6 @@ guardian
 
 hoglin
 
-<CodeHeader>#component_groups/start_zombification</CodeHeader>
-
 ```json
 "minecraft:timer": {
     "looping": false,
@@ -50227,8 +47985,6 @@ hoglin
 ```
 
 husk
-
-<CodeHeader>#component_groups/minecraft:start_zombie_transformation</CodeHeader>
 
 ```json
 "minecraft:timer": {
@@ -50242,8 +47998,6 @@ husk
 
 piglin
 
-<CodeHeader>#component_groups/start_zombification</CodeHeader>
-
 ```json
 "minecraft:timer": {
     "looping": false,
@@ -50255,8 +48009,6 @@ piglin
 ```
 
 piglin_brute
-
-<CodeHeader>#component_groups/start_zombification</CodeHeader>
 
 ```json
 "minecraft:timer": {
@@ -50270,8 +48022,6 @@ piglin_brute
 
 player
 
-<CodeHeader>#component_groups/minecraft:add_bad_omen</CodeHeader>
-
 ```json
 "minecraft:timer": {
     "time": [
@@ -50280,15 +48030,13 @@ player
     ],
     "looping": false,
     "time_down_event": {
-        "event": "minecraft:clear_add_bad_omen",
+        "event": "minecraft:clear_add_raid_omen",
         "target": "self"
     }
 }
 ```
 
 pufferfish
-
-<CodeHeader>#component_groups/minecraft:half_puff_primary</CodeHeader>
 
 ```json
 "minecraft:timer": {
@@ -50301,8 +48049,6 @@ pufferfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:half_puff_secondary</CodeHeader>
-
 ```json
 "minecraft:timer": {
     "looping": false,
@@ -50314,8 +48060,6 @@ pufferfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:deflate_sensor_buffer</CodeHeader>
-
 ```json
 "minecraft:timer": {
     "looping": false,
@@ -50326,8 +48070,6 @@ pufferfish
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:start_deflate</CodeHeader>
 
 ```json
 "minecraft:timer": {
@@ -50342,8 +48084,6 @@ pufferfish
 
 ravager
 
-<CodeHeader>#component_groups/stunned</CodeHeader>
-
 ```json
 "minecraft:timer": {
     "looping": false,
@@ -50356,8 +48096,6 @@ ravager
 
 skeleton
 
-<CodeHeader>#component_groups/in_powder_snow</CodeHeader>
-
 ```json
 "minecraft:timer": {
     "looping": false,
@@ -50368,9 +48106,23 @@ skeleton
 }
 ```
 
-wandering_trader
+vex
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:timer": {
+    "looping": false,
+    "randomInterval": true,
+    "time": [
+        30,
+        119
+    ],
+    "time_down_event": {
+        "event": "minecraft:add_periodic_damage"
+    }
+}
+```
+
+wandering_trader
 
 ```json
 "minecraft:timer": {
@@ -50394,8 +48146,6 @@ wandering_trader
 
 zombie
 
-<CodeHeader>#component_groups/minecraft:start_drowned_transformation</CodeHeader>
-
 ```json
 "minecraft:timer": {
     "looping": false,
@@ -50406,29 +48156,17 @@ zombie
 }
 ```
 
-</Spoiler>
-
 ## trade_resupply
 
-<Spoiler title="Show">
-
 villager_v2
-
-<CodeHeader>#component_groups/trade_resupply_component_group</CodeHeader>
 
 ```json
 "minecraft:trade_resupply": {}
 ```
 
-</Spoiler>
-
 ## trade_table
 
-<Spoiler title="Show">
-
 villager
-
-<CodeHeader>#component_groups/farmer</CodeHeader>
 
 ```json
 "minecraft:trade_table": {
@@ -50438,8 +48176,6 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/fisherman</CodeHeader>
-
 ```json
 "minecraft:trade_table": {
     "display_name": "entity.villager.fisherman",
@@ -50447,8 +48183,6 @@ villager
     "convert_trades_economy": true
 }
 ```
-
-<CodeHeader>#component_groups/shepherd</CodeHeader>
 
 ```json
 "minecraft:trade_table": {
@@ -50458,8 +48192,6 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/fletcher</CodeHeader>
-
 ```json
 "minecraft:trade_table": {
     "display_name": "entity.villager.fletcher",
@@ -50467,8 +48199,6 @@ villager
     "convert_trades_economy": true
 }
 ```
-
-<CodeHeader>#component_groups/librarian</CodeHeader>
 
 ```json
 "minecraft:trade_table": {
@@ -50478,8 +48208,6 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/cartographer</CodeHeader>
-
 ```json
 "minecraft:trade_table": {
     "display_name": "entity.villager.cartographer",
@@ -50487,8 +48215,6 @@ villager
     "convert_trades_economy": true
 }
 ```
-
-<CodeHeader>#component_groups/cleric</CodeHeader>
 
 ```json
 "minecraft:trade_table": {
@@ -50498,8 +48224,6 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/armorer</CodeHeader>
-
 ```json
 "minecraft:trade_table": {
     "display_name": "entity.villager.armor",
@@ -50507,8 +48231,6 @@ villager
     "convert_trades_economy": true
 }
 ```
-
-<CodeHeader>#component_groups/weaponsmith</CodeHeader>
 
 ```json
 "minecraft:trade_table": {
@@ -50518,8 +48240,6 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/toolsmith</CodeHeader>
-
 ```json
 "minecraft:trade_table": {
     "display_name": "entity.villager.tool",
@@ -50527,8 +48247,6 @@ villager
     "convert_trades_economy": true
 }
 ```
-
-<CodeHeader>#component_groups/butcher</CodeHeader>
 
 ```json
 "minecraft:trade_table": {
@@ -50538,8 +48256,6 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/leatherworker</CodeHeader>
-
 ```json
 "minecraft:trade_table": {
     "display_name": "entity.villager.leather",
@@ -50548,15 +48264,9 @@ villager
 }
 ```
 
-</Spoiler>
-
 ## trail
 
-<Spoiler title="Show">
-
 snow_golem
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:trail": {
@@ -50569,32 +48279,24 @@ snow_golem
 }
 ```
 
-</Spoiler>
-
 ## transformation
 
-<Spoiler title="Show">
-
 hoglin
-
-<CodeHeader>#component_groups/become_zombie</CodeHeader>
 
 ```json
 "minecraft:transformation": {
     "into": "minecraft:zoglin",
-    "transformation_sound": "converted_to_zombified",
+    "transformation_sound": "mob.hoglin.converted_to_zombified",
     "keep_level": true
 }
 ```
 
 husk
 
-<CodeHeader>#component_groups/minecraft:convert_to_zombie</CodeHeader>
-
 ```json
 "minecraft:transformation": {
     "into": "minecraft:zombie<minecraft:as_adult>",
-    "transformation_sound": "convert_to_drowned",
+    "transformation_sound": "mob.husk.convert_to_zombie",
     "drop_equipment": true,
     "delay": {
         "value": 15
@@ -50602,12 +48304,10 @@ husk
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:convert_to_baby_zombie</CodeHeader>
-
 ```json
 "minecraft:transformation": {
     "into": "minecraft:zombie<minecraft:as_baby>",
-    "transformation_sound": "convert_to_drowned",
+    "transformation_sound": "mob.husk.convert_to_zombie",
     "drop_equipment": true,
     "delay": {
         "value": 15
@@ -50617,8 +48317,6 @@ husk
 
 mooshroom
 
-<CodeHeader>#component_groups/minecraft:mooshroom_become_cow</CodeHeader>
-
 ```json
 "minecraft:transformation": {
     "into": "minecraft:cow"
@@ -50627,18 +48325,15 @@ mooshroom
 
 pig
 
-<CodeHeader>#component_groups/minecraft:pig_transform</CodeHeader>
-
 ```json
 "minecraft:transformation": {
     "into": "minecraft:pig_zombie",
+    "transformation_sound": "mob.pig.death",
     "delay": 0.5
 }
 ```
 
 piglin
-
-<CodeHeader>#component_groups/become_zombie</CodeHeader>
 
 ```json
 "minecraft:transformation": {
@@ -50652,8 +48347,6 @@ piglin
 
 piglin_brute
 
-<CodeHeader>#component_groups/become_zombie</CodeHeader>
-
 ```json
 "minecraft:transformation": {
     "into": "minecraft:zombie_pigman",
@@ -50664,8 +48357,6 @@ piglin_brute
 ```
 
 skeleton
-
-<CodeHeader>#component_groups/become_stray</CodeHeader>
 
 ```json
 "minecraft:transformation": {
@@ -50679,8 +48370,6 @@ skeleton
 
 stray
 
-<CodeHeader>#component_groups/minecraft:revert_to_skeleton</CodeHeader>
-
 ```json
 "minecraft:transformation": {
     "into": "minecraft:skeleton",
@@ -50689,8 +48378,6 @@ stray
 ```
 
 tadpole
-
-<CodeHeader>#component_groups/grow_up</CodeHeader>
 
 ```json
 "minecraft:transformation": {
@@ -50701,8 +48388,6 @@ tadpole
 
 villager
 
-<CodeHeader>#component_groups/become_witch</CodeHeader>
-
 ```json
 "minecraft:transformation": {
     "into": "minecraft:witch",
@@ -50710,16 +48395,12 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/become_villager_v2</CodeHeader>
-
 ```json
 "minecraft:transformation": {
     "into": "minecraft:villager_v2",
     "keep_level": true
 }
 ```
-
-<CodeHeader>#component_groups/become_zombie</CodeHeader>
 
 ```json
 "minecraft:transformation": {
@@ -50729,16 +48410,12 @@ villager
 
 villager_v2
 
-<CodeHeader>#component_groups/become_witch</CodeHeader>
-
 ```json
 "minecraft:transformation": {
     "into": "minecraft:witch",
     "delay": 0.5
 }
 ```
-
-<CodeHeader>#component_groups/become_zombie</CodeHeader>
 
 ```json
 "minecraft:transformation": {
@@ -50748,8 +48425,6 @@ villager_v2
 ```
 
 zombie
-
-<CodeHeader>#component_groups/minecraft:convert_to_drowned</CodeHeader>
 
 ```json
 "minecraft:transformation": {
@@ -50761,8 +48436,6 @@ zombie
     }
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:convert_to_baby_drowned</CodeHeader>
 
 ```json
 "minecraft:transformation": {
@@ -50777,16 +48450,12 @@ zombie
 
 zombie_villager
 
-<CodeHeader>#component_groups/become_zombie_villager_v2</CodeHeader>
-
 ```json
 "minecraft:transformation": {
     "into": "minecraft:zombie_villager_v2",
     "keep_level": false
 }
 ```
-
-<CodeHeader>#component_groups/to_villager</CodeHeader>
 
 ```json
 "minecraft:transformation": {
@@ -50808,16 +48477,17 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader>#component_groups/to_villager</CodeHeader>
-
 ```json
 "minecraft:transformation": {
     "into": "minecraft:villager_v2",
     "begin_transform_sound": "remedy",
     "transformation_sound": "unfect",
+    "drop_equipment": true,
     "keep_level": true,
     "delay": {
         "value": 100,
+        "range_min": 80,
+        "range_max": 200,
         "block_assist_chance": 0.01,
         "block_radius": 4,
         "block_chance": 0.3,
@@ -50829,29 +48499,31 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
+## transient
+
+creaking
+
+```json
+"minecraft:transient": {}
+```
+
+fishing_hook
+
+```json
+"minecraft:transient": {}
+```
 
 ## trust
 
-<Spoiler title="Show">
-
 fox
-
-<CodeHeader>#component_groups/minecraft:trusting_fox</CodeHeader>
 
 ```json
 "minecraft:trust": {}
 ```
 
-</Spoiler>
-
 ## trusting
 
-<Spoiler title="Show">
-
 ocelot
-
-<CodeHeader>#component_groups/minecraft:ocelot_wild</CodeHeader>
 
 ```json
 "minecraft:trusting": {
@@ -50867,15 +48539,9 @@ ocelot
 }
 ```
 
-</Spoiler>
-
 ## type_family
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -50886,9 +48552,18 @@ allay
 }
 ```
 
-armor_stand
+armadillo
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:type_family": {
+    "family": [
+        "armadillo",
+        "mob"
+    ]
+}
+```
+
+armor_stand
 
 ```json
 "minecraft:type_family": {
@@ -50902,8 +48577,6 @@ armor_stand
 
 axolotl
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -50914,8 +48587,6 @@ axolotl
 ```
 
 bat
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -50928,8 +48599,6 @@ bat
 
 bee
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -50939,8 +48608,6 @@ bee
     ]
 }
 ```
-
-<CodeHeader>#component_groups/countdown_to_perish</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -50955,8 +48622,6 @@ bee
 
 blaze
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -50969,8 +48634,6 @@ blaze
 
 boat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -50980,9 +48643,55 @@ boat
 }
 ```
 
-cat
+bogged
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:type_family": {
+    "family": [
+        "bogged",
+        "skeleton",
+        "monster",
+        "mob",
+        "undead"
+    ]
+}
+```
+
+breeze
+
+```json
+"minecraft:type_family": {
+    "family": [
+        "breeze",
+        "monster",
+        "mob"
+    ]
+}
+```
+
+breeze_wind_charge_projectile
+
+```json
+"minecraft:type_family": {
+    "family": [
+        "wind_charge",
+        "wind_charge_projectile"
+    ]
+}
+```
+
+camel
+
+```json
+"minecraft:type_family": {
+    "family": [
+        "camel",
+        "mob"
+    ]
+}
+```
+
+cat
 
 ```json
 "minecraft:type_family": {
@@ -50994,8 +48703,6 @@ cat
 ```
 
 cave_spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51010,8 +48717,6 @@ cave_spider
 
 chest_boat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51022,8 +48727,6 @@ chest_boat
 ```
 
 chest_minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51036,8 +48739,6 @@ chest_minecart
 
 chicken
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51048,8 +48749,6 @@ chicken
 ```
 
 command_block_minecart
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51062,8 +48761,6 @@ command_block_minecart
 
 cow
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51073,9 +48770,19 @@ cow
 }
 ```
 
-creeper
+creaking
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:type_family": {
+    "family": [
+        "creaking",
+        "monster",
+        "mob"
+    ]
+}
+```
+
+creeper
 
 ```json
 "minecraft:type_family": {
@@ -51089,8 +48796,6 @@ creeper
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51102,8 +48807,6 @@ dolphin
 
 donkey
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51114,8 +48817,6 @@ donkey
 ```
 
 drowned
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51131,8 +48832,6 @@ drowned
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51145,8 +48844,6 @@ elder_guardian
 
 enderman
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51158,8 +48855,6 @@ enderman
 ```
 
 endermite
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51175,8 +48870,6 @@ endermite
 
 ender_dragon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51187,8 +48880,6 @@ ender_dragon
 ```
 
 evocation_illager
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51203,8 +48894,6 @@ evocation_illager
 
 cod
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51215,8 +48904,6 @@ cod
 ```
 
 fox
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51230,8 +48917,6 @@ fox
 
 frog
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51242,8 +48927,6 @@ frog
 ```
 
 ghast
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51257,8 +48940,6 @@ ghast
 
 glow_squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51270,8 +48951,6 @@ glow_squid
 
 goat
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51282,8 +48961,6 @@ goat
 ```
 
 guardian
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51297,8 +48974,6 @@ guardian
 
 hoglin
 
-<CodeHeader>#component_groups/minecraft:hoglin_baby</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51309,8 +48984,6 @@ hoglin
 }
 ```
 
-<CodeHeader>#component_groups/unhuntable_adult</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51320,8 +48993,6 @@ hoglin
     ]
 }
 ```
-
-<CodeHeader>#component_groups/huntable_adult</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51336,8 +49007,6 @@ hoglin
 
 hopper_minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51349,8 +49018,6 @@ hopper_minecart
 
 horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51361,8 +49028,6 @@ horse
 ```
 
 husk
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51378,8 +49043,6 @@ husk
 
 iron_golem
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51391,8 +49054,6 @@ iron_golem
 
 lightning_bolt
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51402,8 +49063,6 @@ lightning_bolt
 ```
 
 llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51415,8 +49074,6 @@ llama
 ```
 
 magma_cube
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51430,8 +49087,6 @@ magma_cube
 
 minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51442,8 +49097,6 @@ minecart
 ```
 
 mooshroom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51456,8 +49109,6 @@ mooshroom
 
 mule
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51468,8 +49119,6 @@ mule
 ```
 
 npc
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51482,8 +49131,6 @@ npc
 
 ocelot
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51495,8 +49142,6 @@ ocelot
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51504,8 +49149,6 @@ panda
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:panda_aggressive</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51519,8 +49162,6 @@ panda
 
 parrot
 
-<CodeHeader>#component_groups/minecraft:parrot_wild</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51529,8 +49170,6 @@ parrot
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:parrot_tame</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51542,8 +49181,6 @@ parrot
 ```
 
 phantom
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51558,8 +49195,6 @@ phantom
 
 pig
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51571,8 +49206,6 @@ pig
 
 piglin
 
-<CodeHeader>#component_groups/hunter</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51582,8 +49215,6 @@ piglin
     ]
 }
 ```
-
-<CodeHeader>#component_groups/not_hunter</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51595,8 +49226,6 @@ piglin
 ```
 
 piglin_brute
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51611,8 +49240,6 @@ piglin_brute
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51626,8 +49253,6 @@ pillager
 
 player
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51637,8 +49262,6 @@ player
 ```
 
 polar_bear
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51651,8 +49274,6 @@ polar_bear
 
 pufferfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51663,8 +49284,6 @@ pufferfish
 ```
 
 rabbit
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51678,8 +49297,6 @@ rabbit
 
 ravager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51692,8 +49309,6 @@ ravager
 
 salmon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51704,8 +49319,6 @@ salmon
 ```
 
 sheep
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51718,8 +49331,6 @@ sheep
 
 shulker
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51731,8 +49342,6 @@ shulker
 ```
 
 silverfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51748,8 +49357,6 @@ silverfish
 
 skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51763,8 +49370,6 @@ skeleton
 
 skeleton_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51777,8 +49382,6 @@ skeleton_horse
 
 slime
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51789,9 +49392,18 @@ slime
 }
 ```
 
-snow_golem
+sniffer
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:type_family": {
+    "family": [
+        "sniffer",
+        "mob"
+    ]
+}
+```
+
+snow_golem
 
 ```json
 "minecraft:type_family": {
@@ -51803,8 +49415,6 @@ snow_golem
 ```
 
 spider
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51819,8 +49429,6 @@ spider
 
 squid
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51831,8 +49439,6 @@ squid
 ```
 
 stray
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51848,8 +49454,6 @@ stray
 
 strider
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51858,8 +49462,6 @@ strider
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:strider_baby</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51870,8 +49472,6 @@ strider
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:strider_adult</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51885,8 +49485,6 @@ strider
 
 tadpole
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51897,8 +49495,6 @@ tadpole
 ```
 
 tnt
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51911,8 +49507,6 @@ tnt
 
 tnt_minecart
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51923,8 +49517,6 @@ tnt_minecart
 ```
 
 trader_llama
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51938,8 +49530,6 @@ trader_llama
 
 tripod_camera
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51952,8 +49542,6 @@ tripod_camera
 
 tropicalfish
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51965,8 +49553,6 @@ tropicalfish
 
 turtle
 
-<CodeHeader>#component_groups/minecraft:baby</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -51976,8 +49562,6 @@ turtle
     ]
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:adult</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -51989,8 +49573,6 @@ turtle
 ```
 
 vex
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52004,8 +49586,6 @@ vex
 
 villager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52014,8 +49594,6 @@ villager
     ]
 }
 ```
-
-<CodeHeader>#component_groups/farmer</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52028,8 +49606,6 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/fisherman</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52040,8 +49616,6 @@ villager
     ]
 }
 ```
-
-<CodeHeader>#component_groups/shepherd</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52054,8 +49628,6 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/fletcher</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52067,8 +49639,6 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/librarian</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52079,8 +49649,6 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/cartographer</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52090,8 +49658,6 @@ villager
     ]
 }
 ```
-
-<CodeHeader>#component_groups/cleric</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52104,8 +49670,6 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/armorer</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52116,8 +49680,6 @@ villager
     ]
 }
 ```
-
-<CodeHeader>#component_groups/weaponsmith</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52130,8 +49692,6 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/toolsmith</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52143,8 +49703,6 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/butcher</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52155,8 +49713,6 @@ villager
     ]
 }
 ```
-
-<CodeHeader>#component_groups/leatherworker</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52171,8 +49727,6 @@ villager
 
 villager_v2
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52181,8 +49735,6 @@ villager_v2
     ]
 }
 ```
-
-<CodeHeader>#component_groups/unskilled</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52195,8 +49747,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/farmer</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52207,8 +49757,6 @@ villager_v2
     ]
 }
 ```
-
-<CodeHeader>#component_groups/fisherman</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52221,8 +49769,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/shepherd</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52233,8 +49779,6 @@ villager_v2
     ]
 }
 ```
-
-<CodeHeader>#component_groups/fletcher</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52247,8 +49791,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/librarian</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52259,8 +49801,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/cartographer</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52270,8 +49810,6 @@ villager_v2
     ]
 }
 ```
-
-<CodeHeader>#component_groups/cleric</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52284,8 +49822,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/armorer</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52296,8 +49832,6 @@ villager_v2
     ]
 }
 ```
-
-<CodeHeader>#component_groups/weaponsmith</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52310,8 +49844,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/toolsmith</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52322,8 +49854,6 @@ villager_v2
     ]
 }
 ```
-
-<CodeHeader>#component_groups/butcher</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52336,8 +49866,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/leatherworker</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52349,8 +49877,6 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/mason</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52361,8 +49887,6 @@ villager_v2
     ]
 }
 ```
-
-<CodeHeader>#component_groups/nitwit</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52377,8 +49901,6 @@ villager_v2
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52392,8 +49914,6 @@ vindicator
 
 wandering_trader
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52402,8 +49922,6 @@ wandering_trader
     ]
 }
 ```
-
-<CodeHeader>#component_groups/despawning</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52417,8 +49935,6 @@ wandering_trader
 
 warden
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52429,9 +49945,18 @@ warden
 }
 ```
 
-witch
+wind_charge_projectile
 
-<CodeHeader></CodeHeader>
+```json
+"minecraft:type_family": {
+    "family": [
+        "wind_charge",
+        "wind_charge_projectile"
+    ]
+}
+```
+
+witch
 
 ```json
 "minecraft:type_family": {
@@ -52444,8 +49969,6 @@ witch
 ```
 
 wither
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52461,8 +49984,6 @@ wither
 
 wither_skeleton
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52477,8 +49998,6 @@ wither_skeleton
 
 wolf
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52490,8 +50009,6 @@ wolf
 
 xp_orb
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52502,20 +50019,17 @@ xp_orb
 
 zoglin
 
-<CodeHeader>#component_groups/zoglin_baby</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
         "zoglin",
         "zoglin_baby",
         "undead",
+        "monster",
         "mob"
     ]
 }
 ```
-
-<CodeHeader>#component_groups/zoglin_adult</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52523,14 +50037,13 @@ zoglin
         "zoglin",
         "zoglin_adult",
         "undead",
+        "monster",
         "mob"
     ]
 }
 ```
 
 zombie
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52545,8 +50058,6 @@ zombie
 
 zombie_horse
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52558,8 +50069,6 @@ zombie_horse
 ```
 
 zombie_pigman
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52574,8 +50083,6 @@ zombie_pigman
 
 zombie_villager
 
-<CodeHeader>#component_groups/farmer</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52588,8 +50095,6 @@ zombie_villager
     ]
 }
 ```
-
-<CodeHeader>#component_groups/fisherman</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52604,8 +50109,6 @@ zombie_villager
 }
 ```
 
-<CodeHeader>#component_groups/shepherd</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52618,8 +50121,6 @@ zombie_villager
     ]
 }
 ```
-
-<CodeHeader>#component_groups/fletcher</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52634,8 +50135,6 @@ zombie_villager
 }
 ```
 
-<CodeHeader>#component_groups/librarian</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52648,8 +50147,6 @@ zombie_villager
     ]
 }
 ```
-
-<CodeHeader>#component_groups/cartographer</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52664,8 +50161,6 @@ zombie_villager
 }
 ```
 
-<CodeHeader>#component_groups/cleric</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52678,8 +50173,6 @@ zombie_villager
     ]
 }
 ```
-
-<CodeHeader>#component_groups/armorer</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52694,8 +50187,6 @@ zombie_villager
 }
 ```
 
-<CodeHeader>#component_groups/weaponsmith</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52708,8 +50199,6 @@ zombie_villager
     ]
 }
 ```
-
-<CodeHeader>#component_groups/toolsmith</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52724,8 +50213,6 @@ zombie_villager
 }
 ```
 
-<CodeHeader>#component_groups/butcher</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52738,8 +50225,6 @@ zombie_villager
     ]
 }
 ```
-
-<CodeHeader>#component_groups/leatherworker</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52755,8 +50240,6 @@ zombie_villager
 ```
 
 zombie_villager_v2
-
-<CodeHeader>#component_groups/unskilled</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52771,23 +50254,6 @@ zombie_villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/nitwit</CodeHeader>
-
-```json
-"minecraft:type_family": {
-    "family": [
-        "nitwit",
-        "zombie",
-        "zombie_villager",
-        "undead",
-        "monster",
-        "mob"
-    ]
-}
-```
-
-<CodeHeader>#component_groups/farmer</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52800,8 +50266,6 @@ zombie_villager_v2
     ]
 }
 ```
-
-<CodeHeader>#component_groups/fisherman</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52816,8 +50280,6 @@ zombie_villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/shepherd</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52830,8 +50292,6 @@ zombie_villager_v2
     ]
 }
 ```
-
-<CodeHeader>#component_groups/fletcher</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52846,8 +50306,6 @@ zombie_villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/librarian</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52860,8 +50318,6 @@ zombie_villager_v2
     ]
 }
 ```
-
-<CodeHeader>#component_groups/cartographer</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52876,8 +50332,6 @@ zombie_villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/cleric</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52890,8 +50344,6 @@ zombie_villager_v2
     ]
 }
 ```
-
-<CodeHeader>#component_groups/armorer</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52906,8 +50358,6 @@ zombie_villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/weaponsmith</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52920,8 +50370,6 @@ zombie_villager_v2
     ]
 }
 ```
-
-<CodeHeader>#component_groups/toolsmith</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52936,8 +50384,6 @@ zombie_villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/butcher</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52950,8 +50396,6 @@ zombie_villager_v2
     ]
 }
 ```
-
-<CodeHeader>#component_groups/leatherworker</CodeHeader>
 
 ```json
 "minecraft:type_family": {
@@ -52966,8 +50410,6 @@ zombie_villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/mason</CodeHeader>
-
 ```json
 "minecraft:type_family": {
     "family": [
@@ -52981,15 +50423,22 @@ zombie_villager_v2
 }
 ```
 
-</Spoiler>
+```json
+"minecraft:type_family": {
+    "family": [
+        "nitwit",
+        "zombie",
+        "zombie_villager",
+        "undead",
+        "monster",
+        "mob"
+    ]
+}
+```
 
 ## underwater_movement
 
-<Spoiler title="Show">
-
 axolotl
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:underwater_movement": {
@@ -52999,8 +50448,6 @@ axolotl
 
 dolphin
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:underwater_movement": {
     "value": 0.15
@@ -53009,15 +50456,11 @@ dolphin
 
 drowned
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:underwater_movement": {
     "value": 0.06
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:baby_drowned</CodeHeader>
 
 ```json
 "minecraft:underwater_movement": {
@@ -53027,8 +50470,6 @@ drowned
 
 elder_guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:underwater_movement": {
     "value": 0.3
@@ -53037,8 +50478,6 @@ elder_guardian
 
 cod
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:underwater_movement": {
     "value": 0.1
@@ -53046,8 +50485,6 @@ cod
 ```
 
 frog
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:underwater_movement": {
@@ -53057,8 +50494,6 @@ frog
 
 guardian
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:underwater_movement": {
     "value": 0.12
@@ -53066,8 +50501,6 @@ guardian
 ```
 
 pufferfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:underwater_movement": {
@@ -53077,8 +50510,6 @@ pufferfish
 
 salmon
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:underwater_movement": {
     "value": 0.12
@@ -53086,8 +50517,6 @@ salmon
 ```
 
 skeleton_horse
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:underwater_movement": {
@@ -53097,8 +50526,6 @@ skeleton_horse
 
 tadpole
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:underwater_movement": {
     "value": 0.1
@@ -53106,8 +50533,6 @@ tadpole
 ```
 
 tropicalfish
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:underwater_movement": {
@@ -53117,15 +50542,11 @@ tropicalfish
 
 turtle
 
-<CodeHeader>#component_groups/minecraft:baby</CodeHeader>
-
 ```json
 "minecraft:underwater_movement": {
     "value": 0.06
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:adult</CodeHeader>
 
 ```json
 "minecraft:underwater_movement": {
@@ -53133,15 +50554,39 @@ turtle
 }
 ```
 
-</Spoiler>
+## variable_max_auto_step
+
+camel
+
+```json
+"minecraft:variable_max_auto_step": {
+    "base_value": 1.5625,
+    "controlled_value": 1.5625,
+    "jump_prevented_value": 0.5625
+}
+```
+
+creaking
+
+```json
+"minecraft:variable_max_auto_step": {
+    "base_value": 1.0625,
+    "jump_prevented_value": 0.5625
+}
+```
+
+enderman
+
+```json
+"minecraft:variable_max_auto_step": {
+    "base_value": 1.0625,
+    "jump_prevented_value": 0.5625
+}
+```
 
 ## variant
 
-<Spoiler title="Show">
-
 axolotl
-
-<CodeHeader>#component_groups/axolotl_lucy</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53149,15 +50594,11 @@ axolotl
 }
 ```
 
-<CodeHeader>#component_groups/axolotl_cyan</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/axolotl_gold</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53165,15 +50606,11 @@ axolotl
 }
 ```
 
-<CodeHeader>#component_groups/axolotl_wild</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 3
 }
 ```
-
-<CodeHeader>#component_groups/axolotl_blue</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53183,15 +50620,11 @@ axolotl
 
 cat
 
-<CodeHeader>#component_groups/minecraft:cat_white</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:cat_tuxedo</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53199,15 +50632,11 @@ cat
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:cat_red</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 2
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:cat_siamese</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53215,15 +50644,11 @@ cat
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:cat_british</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 4
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:cat_calico</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53231,15 +50656,11 @@ cat
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:cat_persian</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 6
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:cat_ragdoll</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53247,23 +50668,17 @@ cat
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:cat_tabby</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 8
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:cat_black</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 9
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:cat_jellie</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53273,15 +50688,11 @@ cat
 
 fox
 
-<CodeHeader>#component_groups/minecraft:fox_red</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:fox_arctic</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53291,23 +50702,17 @@ fox
 
 frog
 
-<CodeHeader>#component_groups/temperate_frog</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
 
-<CodeHeader>#component_groups/cold_frog</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/warm_frog</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53317,15 +50722,11 @@ frog
 
 goat
 
-<CodeHeader>#component_groups/goat_default</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/goat_screamer</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53335,15 +50736,11 @@ goat
 
 horse
 
-<CodeHeader>#component_groups/minecraft:base_white</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:base_creamy</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53351,15 +50748,11 @@ horse
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:base_chestnut</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 2
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:base_brown</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53367,23 +50760,17 @@ horse
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:base_black</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 4
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:base_gray</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 5
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:base_darkbrown</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53393,8 +50780,6 @@ horse
 
 husk
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 2
@@ -53403,15 +50788,11 @@ husk
 
 llama
 
-<CodeHeader>#component_groups/minecraft:llama_creamy</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:llama_white</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53419,15 +50800,11 @@ llama
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:llama_brown</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 2
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:llama_gray</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53437,23 +50814,17 @@ llama
 
 magma_cube
 
-<CodeHeader>#component_groups/minecraft:slime_large</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 4
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:slime_medium</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 2
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:slime_small</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53463,15 +50834,11 @@ magma_cube
 
 mooshroom
 
-<CodeHeader>#component_groups/minecraft:mooshroom_red</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:mooshroom_brown</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53481,15 +50848,11 @@ mooshroom
 
 panda
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:panda_lazy</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53497,15 +50860,11 @@ panda
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:panda_worried</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 2
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:panda_playful</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53513,23 +50872,17 @@ panda
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:panda_brown</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 4
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:panda_weak</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 5
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:panda_aggressive</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53539,15 +50892,11 @@ panda
 
 parrot
 
-<CodeHeader>#component_groups/minecraft:parrot_red</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:parrot_blue</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53555,23 +50904,17 @@ parrot
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:parrot_green</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 2
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:parrot_cyan</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 3
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:parrot_silver</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53581,15 +50924,11 @@ parrot
 
 piglin
 
-<CodeHeader>#component_groups/ranged_unit</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/melee_unit</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53599,8 +50938,6 @@ piglin
 
 piglin_brute
 
-<CodeHeader>#component_groups/melee_unit</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 1
@@ -53609,23 +50946,17 @@ piglin_brute
 
 pillager
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:illager_squad_captain</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:patrol_captain</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53635,31 +50966,23 @@ pillager
 
 pufferfish
 
-<CodeHeader>#component_groups/minecraft:normal_puff</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:half_puff_primary</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 1
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:half_puff_secondary</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:full_puff</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53669,15 +50992,11 @@ pufferfish
 
 rabbit
 
-<CodeHeader>#component_groups/coat_brown</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/coat_white</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53685,15 +51004,11 @@ rabbit
 }
 ```
 
-<CodeHeader>#component_groups/coat_black</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 2
 }
 ```
-
-<CodeHeader>#component_groups/coat_splotched</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53701,15 +51016,11 @@ rabbit
 }
 ```
 
-<CodeHeader>#component_groups/coat_desert</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 4
 }
 ```
-
-<CodeHeader>#component_groups/coat_salt</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53719,15 +51030,11 @@ rabbit
 
 shulker
 
-<CodeHeader>#component_groups/minecraft:shulker_purple</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 5
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:shulker_black</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53735,15 +51042,11 @@ shulker
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:shulker_blue</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 4
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:shulker_brown</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53751,15 +51054,11 @@ shulker
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:shulker_cyan</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 6
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:shulker_gray</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53767,15 +51066,11 @@ shulker
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:shulker_green</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 2
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:shulker_light_blue</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53783,15 +51078,11 @@ shulker
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:shulker_lime</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 10
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:shulker_magenta</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53799,15 +51090,11 @@ shulker
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:shulker_orange</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 14
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:shulker_pink</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53815,15 +51102,11 @@ shulker
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:shulker_red</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:shulker_silver</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53831,23 +51114,17 @@ shulker
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:shulker_undyed</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 16
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:shulker_white</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 15
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:shulker_yellow</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53857,23 +51134,17 @@ shulker
 
 slime
 
-<CodeHeader>#component_groups/minecraft:slime_large</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 4
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:slime_medium</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 2
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:slime_small</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53883,15 +51154,11 @@ slime
 
 trader_llama
 
-<CodeHeader>#component_groups/minecraft:llama_creamy</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:llama_white</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53899,15 +51166,11 @@ trader_llama
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:llama_brown</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 2
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:llama_gray</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53917,15 +51180,11 @@ trader_llama
 
 tropicalfish
 
-<CodeHeader>#component_groups/minecraft:tropicalfish_variant_a</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:tropicalfish_variant_b</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53933,7 +51192,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:anenonme</CodeHeader>
+```json
+"minecraft:variant": {
+    "value": 1
+}
+```
 
 ```json
 "minecraft:variant": {
@@ -53941,7 +51204,35 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:black_tang</CodeHeader>
+```json
+"minecraft:variant": {
+    "value": 0
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 0
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 0
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 0
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 0
+}
+```
 
 ```json
 "minecraft:variant": {
@@ -53949,47 +51240,17 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:blue_dory</CodeHeader>
+```json
+"minecraft:variant": {
+    "value": 1
+}
+```
 
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:butterfly_fish</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 0
-}
-```
-
-<CodeHeader>#component_groups/minecraft:cichlid</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 0
-}
-```
-
-<CodeHeader>#component_groups/minecraft:clownfish</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 0
-}
-```
-
-<CodeHeader>#component_groups/minecraft:cc_betta</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 0
-}
-```
-
-<CodeHeader>#component_groups/minecraft:dog_fish</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -53997,15 +51258,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:e_red_snapper</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:goat_fish</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54013,23 +51270,17 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:moorish_idol</CodeHeader>
+```json
+"minecraft:variant": {
+    "value": 0
+}
+```
 
 ```json
 "minecraft:variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:ornate_butterfly</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 1
-}
-```
-
-<CodeHeader>#component_groups/minecraft:parrot_fish</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54037,15 +51288,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:queen_angel_fish</CodeHeader>
-
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:red_cichlid</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54053,7 +51300,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:red_lipped_benny</CodeHeader>
+```json
+"minecraft:variant": {
+    "value": 0
+}
+```
 
 ```json
 "minecraft:variant": {
@@ -54061,47 +51312,11 @@ tropicalfish
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:red_snapper</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:threadfin</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 1
-}
-```
-
-<CodeHeader>#component_groups/minecraft:tomato_clown</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 0
-}
-```
-
-<CodeHeader>#component_groups/minecraft:triggerfish</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 0
-}
-```
-
-<CodeHeader>#component_groups/minecraft:yellow_tang</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 1
-}
-```
-
-<CodeHeader>#component_groups/minecraft:yellowtail_parrot</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54111,7 +51326,11 @@ tropicalfish
 
 villager
 
-<CodeHeader>#component_groups/farmer</CodeHeader>
+```json
+"minecraft:variant": {
+    "value": 0
+}
+```
 
 ```json
 "minecraft:variant": {
@@ -54119,31 +51338,17 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/fisherman</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
 
-<CodeHeader>#component_groups/shepherd</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/fletcher</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 0
-}
-```
-
-<CodeHeader>#component_groups/librarian</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54151,15 +51356,11 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/cartographer</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/cleric</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54167,7 +51368,11 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/armorer</CodeHeader>
+```json
+"minecraft:variant": {
+    "value": 3
+}
+```
 
 ```json
 "minecraft:variant": {
@@ -54175,31 +51380,17 @@ villager
 }
 ```
 
-<CodeHeader>#component_groups/weaponsmith</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 3
 }
 ```
-
-<CodeHeader>#component_groups/toolsmith</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 3
-}
-```
-
-<CodeHeader>#component_groups/butcher</CodeHeader>
 
 ```json
 "minecraft:variant": {
     "value": 4
 }
 ```
-
-<CodeHeader>#component_groups/leatherworker</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54209,15 +51400,11 @@ villager
 
 villager_v2
 
-<CodeHeader>#component_groups/unskilled</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/farmer</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54225,15 +51412,11 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/fisherman</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 2
 }
 ```
-
-<CodeHeader>#component_groups/shepherd</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54241,15 +51424,11 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/fletcher</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 4
 }
 ```
-
-<CodeHeader>#component_groups/librarian</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54257,15 +51436,11 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/cartographer</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 6
 }
 ```
-
-<CodeHeader>#component_groups/cleric</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54273,15 +51448,11 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/armorer</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 8
 }
 ```
-
-<CodeHeader>#component_groups/weaponsmith</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54289,15 +51460,11 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/toolsmith</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 10
 }
 ```
-
-<CodeHeader>#component_groups/butcher</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54305,23 +51472,17 @@ villager_v2
 }
 ```
 
-<CodeHeader>#component_groups/leatherworker</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 12
 }
 ```
 
-<CodeHeader>#component_groups/mason</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 13
 }
 ```
-
-<CodeHeader>#component_groups/nitwit</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54331,15 +51492,11 @@ villager_v2
 
 vindicator
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/minecraft:illager_squad_captain</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54347,65 +51504,25 @@ vindicator
 }
 ```
 
-<CodeHeader>#component_groups/minecraft:patrol_captain</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 1
 }
 ```
 
-zombie_villager
-
-<CodeHeader>#component_groups/farmer</CodeHeader>
+wolf
 
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
-
-<CodeHeader>#component_groups/fisherman</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 0
-}
-```
-
-<CodeHeader>#component_groups/shepherd</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 0
-}
-```
-
-<CodeHeader>#component_groups/fletcher</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 0
-}
-```
-
-<CodeHeader>#component_groups/librarian</CodeHeader>
 
 ```json
 "minecraft:variant": {
     "value": 1
 }
 ```
-
-<CodeHeader>#component_groups/cartographer</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 1
-}
-```
-
-<CodeHeader>#component_groups/cleric</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54413,31 +51530,11 @@ zombie_villager
 }
 ```
 
-<CodeHeader>#component_groups/armorer</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 3
 }
 ```
-
-<CodeHeader>#component_groups/weaponsmith</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 3
-}
-```
-
-<CodeHeader>#component_groups/toolsmith</CodeHeader>
-
-```json
-"minecraft:variant": {
-    "value": 3
-}
-```
-
-<CodeHeader>#component_groups/butcher</CodeHeader>
 
 ```json
 "minecraft:variant": {
@@ -54445,7 +51542,97 @@ zombie_villager
 }
 ```
 
-<CodeHeader>#component_groups/leatherworker</CodeHeader>
+```json
+"minecraft:variant": {
+    "value": 5
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 6
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 7
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 8
+}
+```
+
+zombie_villager
+
+```json
+"minecraft:variant": {
+    "value": 0
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 0
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 0
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 0
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 1
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 1
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 2
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 3
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 3
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 3
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 4
+}
+```
 
 ```json
 "minecraft:variant": {
@@ -54455,149 +51642,107 @@ zombie_villager
 
 zombie_villager_v2
 
-<CodeHeader>#component_groups/unskilled</CodeHeader>
-
 ```json
 "minecraft:variant": {
     "value": 0
 }
 ```
 
-<CodeHeader>#component_groups/nitwit</CodeHeader>
-
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 1
 }
 ```
 
-<CodeHeader>#component_groups/farmer</CodeHeader>
-
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 2
 }
 ```
 
-<CodeHeader>#component_groups/fisherman</CodeHeader>
-
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 3
 }
 ```
 
-<CodeHeader>#component_groups/shepherd</CodeHeader>
-
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 4
 }
 ```
 
-<CodeHeader>#component_groups/fletcher</CodeHeader>
-
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 5
 }
 ```
 
-<CodeHeader>#component_groups/librarian</CodeHeader>
-
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 6
 }
 ```
 
-<CodeHeader>#component_groups/cartographer</CodeHeader>
-
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 7
 }
 ```
 
-<CodeHeader>#component_groups/cleric</CodeHeader>
-
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 8
 }
 ```
 
-<CodeHeader>#component_groups/armorer</CodeHeader>
-
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 9
 }
 ```
 
-<CodeHeader>#component_groups/weaponsmith</CodeHeader>
-
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 10
 }
 ```
 
-<CodeHeader>#component_groups/toolsmith</CodeHeader>
-
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 11
 }
 ```
 
-<CodeHeader>#component_groups/butcher</CodeHeader>
-
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 12
 }
 ```
 
-<CodeHeader>#component_groups/leatherworker</CodeHeader>
-
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 13
 }
 ```
 
-<CodeHeader>#component_groups/mason</CodeHeader>
-
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 14
 }
 ```
-
-</Spoiler>
 
 ## vibration_damper
 
-<Spoiler title="Show">
-
 warden
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:vibration_damper": {}
 ```
 
-</Spoiler>
-
 ## vibration_listener
 
-<Spoiler title="Show">
-
 allay
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:vibration_listener": {}
@@ -54605,21 +51750,13 @@ allay
 
 warden
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:vibration_listener": {}
 ```
 
-</Spoiler>
-
 ## water_movement
 
-<Spoiler title="Show">
-
 panda
-
-<CodeHeader></CodeHeader>
 
 ```json
 "minecraft:water_movement": {
@@ -54629,8 +51766,6 @@ panda
 
 polar_bear
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:water_movement": {
     "drag_factor": 0.98
@@ -54639,13 +51774,9 @@ polar_bear
 
 turtle
 
-<CodeHeader></CodeHeader>
-
 ```json
 "minecraft:water_movement": {
     "drag_factor": 0.9
 }
 ```
-
-</Spoiler>
 
