@@ -1,9 +1,12 @@
 ---
 title: Skin Packs
 mentions:
-	- MedicalJewel105
-category:
-    - General
+    - MedicalJewel105
+    - SirLich
+    - Joelant05
+    - TheItsNameless
+category: General
+description: Create your own skin pack.
 ---
 
 Many people wrongly assume that skin packs are only available for creation to Marketplace Partners. No! It's a very easy process, which can easily be fully automated by python. But that's not it. Let's learn how to make a skin pack!
@@ -18,12 +21,10 @@ Here is what is needed:
 
 <FolderView
 	:paths="[
-
     'com.mojang/skin_packs/my_skin_pack/texts/en_US.lang',
 	'com.mojang/skin_packs/my_skin_pack/my_skin.png',
 	'com.mojang/skin_packs/my_skin_pack/manifest.json',
 	'com.mojang/skin_packs/my_skin_pack/skins.json'
-
 ]"
 ></FolderView>
 
@@ -37,21 +38,13 @@ Here is what is needed:
     "header": {
         "name": "Tutorial Skin Pack",
         "uuid": "bb9616eb-327c-4a81-9f00-064cae820cd5",
-        "version": [
-            1,
-            0,
-            0
-        ]
+        "version": [1, 0, 0]
     },
     "modules": [
         {
             "type": "skin_pack",
             "uuid": "e4bc71b6-8f9b-4094-9d47-dc3824f8a3dc",
-            "version": [
-                1,
-                0,
-                0
-            ]
+            "version": [1, 0, 0]
         }
     ]
 }
@@ -92,12 +85,12 @@ This file is used to define textures and shortnames for skins. Most of the optio
 
 -   The `geometry` object must be the same as on the example code in every object. Mojang removed the ability to add custom geometries via skin packs, because the feature was abused.
 -   `serialize_name` is for marketplace.
--	`localization_name` is a pack identifier. **Don't use in other skin packs** as it affects translations.
+-   `localization_name` is a pack identifier. **Don't use in other skin packs** as it affects translations.
 -   `skins` array, where you define your each skin. The skins will be displayed in the same order in minecraft as they are defined here.
->-	`localization_name` is going to be used in the .lang file. Think of it as the skins identifier.
->-	`geometry` you can use `geometry.humanoid.custom` and `geometry.humanoid.customSlim` here.
->-  `texture` is the name of the image file, located in the main skin pack folder.
->-	`type` is only accessible to marketplace partners, leave it as `free`, otherwise it will be locked.
+    > -   `localization_name` is going to be used in the .lang file. Think of it as the skins identifier.
+    > -   `geometry` you can use `geometry.humanoid.custom` and `geometry.humanoid.customSlim` here.
+    > -   `texture` is the name of the image file, located in the main skin pack folder.
+    > -   `type` is only accessible to marketplace partners, leave it as `free`, otherwise it will be locked.
 
 ## texts/en_US.lang
 
@@ -128,9 +121,8 @@ If you play on MC version lower than 1.18.30, you might experience a bug when "E
 
 ![](/assets/images/visuals/skin-packs/troubleshooting-1.png)
 
-<BButton
-    link="/assets/packs/visuals/skin-packs/equip_button_fix.mcpack" download
-    color=default
->Download Equip Button Fix</BButton>
+<Button link="/assets/packs/visuals/skin-packs/equip_button_fix.mcpack" download>
+    Download Equip Button Fix
+</Button>
 
 ![](/assets/images/visuals/skin-packs/troubleshooting-2.png)
