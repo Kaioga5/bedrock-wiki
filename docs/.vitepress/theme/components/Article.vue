@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import { useMediaQuery } from "@vueuse/core";
 import useData from "../composables/data";
 
@@ -8,10 +9,14 @@ import Contributors from "./content/Contributors.vue";
 import EditLink from "./content/EditLink.vue";
 import Outline from "./content/Outline.vue";
 import Spoiler from "./content/Spoiler.vue";
+import License from "./content/License.vue";
+import NavLink from "./navigation/NavLink.vue";
 
-const { frontmatter } = useData();
+const { frontmatter, page } = useData();
 
 const isMobileOutline = useMediaQuery("(max-width: 1300px)");
+
+const isLicensePage = computed(() => page.value.relativePath.startsWith("licenses/"));
 </script>
 
 <template>
@@ -21,6 +26,8 @@ const isMobileOutline = useMediaQuery("(max-width: 1300px)");
     <div v-if="frontmatter.tags !== undefined" style="margin-block: 1em">
       <Tag v-for="name in frontmatter.tags" :key="name" :name />
     </div>
+
+    <NavLink v-if="isLicensePage" :link="frontmatter.source">Source</NavLink>
 
     <div v-if="frontmatter.show_outline ?? true">
       <Spoiler v-if="isMobileOutline" title="Contents" open>
@@ -34,10 +41,12 @@ const isMobileOutline = useMediaQuery("(max-width: 1300px)");
 
     <ClientOnly>
       <Suspense>
-        <Contributors v-if="frontmatter.show_contributors ?? true" />
+        <Contributors v-if="frontmatter.show_contributors ?? !isLicensePage" />
       </Suspense>
     </ClientOnly>
 
-    <EditLink v-if="frontmatter.show_edit_link ?? true" />
+    <EditLink v-if="frontmatter.show_edit_link ?? !isLicensePage" />
+
+    <License v-if="frontmatter.license" />
   </article>
 </template>

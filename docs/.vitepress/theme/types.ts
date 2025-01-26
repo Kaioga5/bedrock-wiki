@@ -7,6 +7,7 @@ export interface ThemeConfig {
   navigation: NavigationItem[];
   redirects: Redirects;
   sidebar: Sidebar;
+  licenses: Licenses;
   tags: Tags;
 }
 
@@ -45,11 +46,21 @@ export interface SidebarLink {
   data: Record<string, any>;
 }
 
+export interface License {
+  name: string;
+  link: string;
+  source: string;
+  title: string;
+  content: string;
+}
+
 export interface Tag {
   color: AccentColor;
   text?: string;
   sidebar?: boolean | { text: string };
 }
+
+export type Licenses = Record<string, License>;
 
 export type Tags = Record<string, Tag>;
 
