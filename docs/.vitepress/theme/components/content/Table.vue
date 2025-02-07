@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import TableCell from "./TableCell.vue";
 
-import { data as tables } from "../../data/tables.data";
+import { data as tables } from "../../tables/tables.data";
 import useData from "../../composables/data";
 
 const { page } = useData();
@@ -33,10 +33,9 @@ const table = computed(() => tables[tablePath.value]);
         <th
           v-for="(column, columnId) in table.columns"
           :key="columnId"
-          :style="{ textAlign: column.text_align }"
-        >
-          {{ column.name }}
-        </th>
+          :style="{ textAlign: column.textAlign }"
+          v-html="column.name"
+        />
       </tr>
     </thead>
 

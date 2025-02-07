@@ -1,6 +1,8 @@
 import { defineLoader } from "vitepress";
-import { Table } from "../types";
 import { readFileSync } from "fs";
+import { Table } from "../types";
+
+import parseTable from "./parseTable";
 
 export interface Tables {
   [path: string]: Table;
@@ -15,7 +17,9 @@ export default defineLoader({
     const data = {};
 
     for (const path of watchedFiles) {
-      data[path] = JSON.parse(readFileSync(path, "utf-8"));
+      const table = JSON.parse(readFileSync(path, "utf-8"));
+
+      data[path] = parseTable(table);
     }
 
     return data;

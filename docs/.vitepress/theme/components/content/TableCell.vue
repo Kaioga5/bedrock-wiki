@@ -1,44 +1,64 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
-import { TableCell, TableColumn } from "../../types";
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import { TableValue, TableColumn } from "../../types";
 
 const props = defineProps<{
   column: TableColumn;
-  value: TableCell;
+  value: TableValue;
 }>();
 
 const shortListLength = 10;
-const shortTextLength = 500;
+
+const showMore = ref(false);
+
+const content = ref<HTMLElement | null>(null);
+const isOverflowing = ref(false);
 
 const canShowMore = computed(() => {
   if (Array.isArray(props.value)) return props.value.length > shortListLength;
 
-  if (typeof props.value === "string") return props.value.length > shortTextLength;
+  if (typeof props.value === "string") return isOverflowing.value;
 
   return false;
 });
 
-const showMore = ref(false);
+const checkOverflow = () => {
+  if (content.value === null) return;
+
+  isOverflowing.value = content.value.scrollHeight > content.value.clientHeight;
+};
+
+onMounted(() => {
+  checkOverflow();
+  window.addEventListener("resize", checkOverflow);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", checkOverflow);
+});
 </script>
 
 <template>
-  <td :style="{ textAlign: column.text_align }">
-    <ul v-if="Array.isArray(value)">
+  <td :style="{ textAlign: column.textAlign }">
+    <ul v-if="Array.isArray(value)" class="content">
       <li
         v-for="(item, itemIndex) in showMore ? value : value.slice(0, shortListLength)"
         :key="itemIndex"
-      >
-        {{ item }}
-      </li>
+        v-html="item"
+      />
     </ul>
 
-    <span v-else-if="typeof value === 'string'">{{
-      showMore ? value : value.substring(0, shortTextLength)
-    }}</span>
+    <div
+      v-else-if="typeof value === 'string'"
+      ref="content"
+      class="content"
+      :data-show-more="showMore"
+      v-html="value"
+    />
 
-    <span v-else-if="typeof value === 'boolean'">{{ value ? "✔️" : "❌" }}</span>
+    <div v-else-if="typeof value === 'boolean'" class="content">{{ value ? "✔️" : "❌" }}</div>
 
-    <span v-else>{{ value }}</span>
+    <div v-else class="content">{{ value }}</div>
 
     <template v-if="canShowMore">
       <button
@@ -57,10 +77,17 @@ const showMore = ref(false);
 </template>
 
 <style lang="scss" scoped>
+.content[data-show-more="false"] {
+  max-height: 5lh;
+  overflow: hidden;
+}
+
+td {
+  position: relative;
+}
+
 .show-more-button,
 .show-less-button {
-  margin-left: 0.5em;
-
   color: var(--accent-color);
   cursor: pointer;
 
@@ -70,17 +97,21 @@ const showMore = ref(false);
 }
 
 .show-more-button {
-  position: relative;
+  margin-left: 0.5em;
+  position: absolute;
+  right: 1em;
+  bottom: 0.5em;
+  background-color: var(--cell-bg-color);
 
   &::before {
     content: "";
     position: absolute;
 
-    left: -2em;
+    left: -1.5em;
     width: 1.5em;
     height: 1lh;
 
-    background: linear-gradient(90deg, transparent, var(--cell-bg-color));
+    background: linear-gradient(90deg, transparent, var(--cell-bg-color) 80%);
   }
 }
 </style>

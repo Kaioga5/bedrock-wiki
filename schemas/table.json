@@ -26,7 +26,7 @@
             },
             "default": {
               "title": "Default Cell Value",
-              "$ref": "#/definitions/cell"
+              "$ref": "#/definitions/value"
             }
           }
         }
@@ -43,15 +43,15 @@
         "patternProperties": {
           "[a-z0-9_]": {
             "title": "Cell Value",
-            "$ref": "#/definitions/cell"
+            "$ref": "#/definitions/value"
           }
         }
       }
     }
   },
   "definitions": {
-    "cell": {
-      "description": "Cells can display booleans (as ticks and crosses), numbers, strings and arrays (as a bullet-point list).",
+    "value": {
+      "description": "Cells can display booleans (as ticks and crosses), numbers, strings and arrays (as bullet-point lists).",
       "oneOf": [
         {
           "type": ["boolean", "number", "string"]
@@ -60,7 +60,7 @@
           "type": "array",
           "additionalItems": false,
           "items": {
-            "type": ["number", "string"]
+            "type": "string"
           }
         }
       ]

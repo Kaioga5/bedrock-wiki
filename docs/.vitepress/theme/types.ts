@@ -64,12 +64,12 @@ export interface Table {
 
 export interface TableColumn {
   name: string;
-  text_align: "left" | "center" | "right";
-  default: TableCell;
+  default?: TableValue;
+  textAlign?: "left" | "center" | "right";
 }
 
 export interface TableRow {
-  [column: string]: TableCell;
+  [column: string]: TableValue;
 }
 
-export type TableCell = (boolean | number | string) | (string | number)[];
+export type TableValue = boolean | number | string | string[];
