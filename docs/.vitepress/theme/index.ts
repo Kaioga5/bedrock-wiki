@@ -13,10 +13,10 @@ import FolderView from "./components/content/FolderView.vue";
 import Label from "./components/content/Label.vue";
 import MolangGraph from "./components/content/MolangGraph.vue";
 import Spoiler from "./components/content/Spoiler.vue";
+import Table from "./components/content/Table.vue";
 import Tag from "./components/content/Tag.vue";
 import WikiImage from "./components/content/WikiImage.vue";
 import YouTubeEmbed from "./components/content/YouTubeEmbed.vue";
-import Table from "./components/content/Table.vue";
 
 const contentComponents: Record<string, Component> = {
   Button,
@@ -27,10 +27,10 @@ const contentComponents: Record<string, Component> = {
   Label,
   MolangGraph,
   Spoiler,
+  Table,
   Tag,
   WikiImage,
   YouTubeEmbed,
-  Table,
 };
 
 export default {
