@@ -1,6 +1,5 @@
 import { createMarkdownRenderer } from "vitepress";
-
-const config = globalThis.VITEPRESS_CONFIG;
+import config from "./config";
 
 export default await createMarkdownRenderer(
   config.srcDir,

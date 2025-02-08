@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import TableCell from "./TableCell.vue";
 
-import { data as tables } from "../../tables/tables.data";
+import { data as tables } from "../../data/tables/tables.data";
 import useData from "../../composables/data";
 
 const { page } = useData();

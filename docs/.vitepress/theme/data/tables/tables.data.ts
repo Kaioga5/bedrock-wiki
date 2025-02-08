@@ -1,6 +1,7 @@
 import { defineLoader } from "vitepress";
 import { readFileSync } from "fs";
-import { Table } from "../types";
+
+import { Table } from "../../types";
 
 import parseTable from "./parseTable";
 

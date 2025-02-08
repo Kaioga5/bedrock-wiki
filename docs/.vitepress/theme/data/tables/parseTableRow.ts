@@ -1,5 +1,5 @@
-import isObject from "../utils/isObject";
-import { Table, TableRow } from "../types";
+import isObject from "../../utils/isObject";
+import { Table, TableRow } from "../../types";
 
 import parseTableValue from "./parseTableValue";
 

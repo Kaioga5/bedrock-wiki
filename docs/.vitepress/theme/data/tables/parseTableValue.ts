@@ -1,6 +1,6 @@
-import { TableValue } from "../types";
+import { TableValue } from "../../types";
 
-import markdown from "./markdown";
+import markdown from "../markdown";
 
 export default function parseTableValue(value: unknown) {
   if (typeof value === "boolean") {

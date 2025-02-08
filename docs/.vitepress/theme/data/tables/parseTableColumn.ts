@@ -1,7 +1,7 @@
-import isObject from "../utils/isObject";
-import { TableColumn } from "../types";
+import isObject from "../../utils/isObject";
+import { TableColumn } from "../../types";
 
-import markdown from "./markdown";
+import markdown from "../markdown";
 import parseTableValue from "./parseTableValue";
 
 export default function parseTableColumn(id: string, data: unknown) {
