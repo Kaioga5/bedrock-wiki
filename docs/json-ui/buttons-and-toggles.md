@@ -22,7 +22,7 @@ For this tutorial, we will use the existing vanilla buttons and toggles for simp
 
 In this example, we will reference `ui/ui_template_toggles.json`
 
-<CodeHeader>*/ui/your_file.json</CodeHeader>
+<CodeHeader>RP/ui/your_file.json</CodeHeader>
 ```json
 {
   "our_toggle@common_toggles.light_text_toggle": {
@@ -41,7 +41,7 @@ And that's it! You now have a working toggle. You can test it by adding it to an
 
 Additionally, you can utilize toggles to control the visibility of UI elements.
 
-<CodeHeader>*/ui/your_file.json</CodeHeader>
+<CodeHeader>RP/ui/your_file.json</CodeHeader>
 ```json
 {
   "our_toggle@common_toggles.light_text_toggle": {
@@ -82,7 +82,7 @@ Generally, buttons have limited functionality, as they are primarily used in har
 
 In this example, we will reference `ui/ui_template_buttons.json`
 
-<CodeHeader>*/ui/your_file.json</CodeHeader>
+<CodeHeader>RP/ui/your_file.json</CodeHeader>
 ```json
 {
   "our_button@common_buttons.light_text_button": {
@@ -106,7 +106,7 @@ In order to make buttons that shows a text when you hover into it, we will need 
 
 In this example, we will reference `ui/ui_template_buttons.json` and `ui/ui_common.json`
 
-<CodeHeader>*/ui/your_file.json</CodeHeader>
+<CodeHeader>RP/ui/your_file.json</CodeHeader>
 ```json
 {
   "our_button@common_buttons.light_content_button": {
