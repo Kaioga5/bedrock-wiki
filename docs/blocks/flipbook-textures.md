@@ -98,7 +98,7 @@ After making block have animated texture, it is time to figure out how it all wo
 
 ## Flipbook Texture Parameters
 
-While looking up for something in vanilla flipbook texture file, you may notice some additional paramters:
+While looking up for something in vanilla flipbook texture file, you may notice some additional parameters:
 
 | Component          | Type             | Description                                                                                                 |
 | ------------------ | ---------------- | ----------------------------------------------------------------------------------------------------------- |
