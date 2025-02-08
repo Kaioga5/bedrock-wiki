@@ -3,6 +3,7 @@ import { computed } from "vue";
 import TableCell from "./TableCell.vue";
 
 import { data as tables } from "../../data/tables/tables.data";
+import displayError from "../../utils/displayError";
 import useData from "../../composables/data";
 
 const { page } = useData();
@@ -11,8 +12,8 @@ const props = defineProps<{
   data: string;
 }>();
 
-const tablePath = computed(() => {
-  let path = "docs/public";
+const table = computed(() => {
+  let path = "public";
 
   if (props.data[0] !== "/") {
     path += "/assets/tables/" + page.value.relativePath.replace(/\.md$/, "/");
@@ -20,10 +21,14 @@ const tablePath = computed(() => {
 
   path += props.data;
 
-  return path;
-});
+  const table = tables[path];
 
-const table = computed(() => tables[tablePath.value]);
+  if (!table) {
+    displayError(new TypeError(`No table with the path "${path}" exists.`));
+  }
+
+  return table;
+});
 </script>
 
 <template>

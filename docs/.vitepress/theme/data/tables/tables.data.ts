@@ -1,6 +1,6 @@
 import { defineLoader } from "vitepress";
 import { readFileSync } from "fs";
-import { join } from "path";
+import { join, relative, sep } from "path";
 
 import { Table } from "../../types";
 import config from "../config";
@@ -15,14 +15,15 @@ declare const data: Tables;
 export { data };
 
 export default defineLoader({
-  watch: join(config.srcDir, "/public/assets/tables/**/*.json"),
+  watch: join(config.srcDir, "public/assets/tables/**/*.json"),
   load(watchedFiles: string[]) {
     const data = {};
 
     for (const path of watchedFiles) {
       const table = JSON.parse(readFileSync(path, "utf-8"));
+      const relativePath = relative(config.srcDir, path).replaceAll(sep, "/");
 
-      data[path] = parseTable(table);
+      data[relativePath] = parseTable(table);
     }
 
     return data;
