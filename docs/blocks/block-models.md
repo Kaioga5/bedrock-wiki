@@ -70,7 +70,7 @@ Textures can be created in Blockbench by clicking `Create Texture` and selecting
 
 The "paper_bag" model has multiple pre-made textures, listed below:
 
-- `textures/blocks/paper_bag.png`
+-   `textures/blocks/paper_bag.png`
 
     <WikiImage
         src="/assets/images/blocks/block-models/paper_bag.png"
@@ -79,7 +79,7 @@ The "paper_bag" model has multiple pre-made textures, listed below:
         width="128"
     />
 
-- `textures/blocks/paper_bag_bottom_fold.png`
+-   `textures/blocks/paper_bag_bottom_fold.png`
 
     <WikiImage
         src="/assets/images/blocks/block-models/paper_bag_bottom_fold.png"
@@ -88,7 +88,7 @@ The "paper_bag" model has multiple pre-made textures, listed below:
         width="128"
     />
 
-- `textures/blocks/paper_bag_side_gusset.png`
+-   `textures/blocks/paper_bag_side_gusset.png`
 
     <WikiImage
         src="/assets/images/blocks/block-models/paper_bag_side_gusset.png"
