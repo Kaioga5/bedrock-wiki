@@ -32,18 +32,19 @@ Lots and lots of content!
 ### Frontmatter
 
 | Field               | Required | Default | Description                                                                                                                                                                                                                                                                                                                           |
-| ------------------- | :------: | :-----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title`             |   Yes    |  None   | The title of the page which will be displayed as a level 1 heading before the main content and in link embeds when posted somewhere.                                                                                                                                                                                                  |
-| `description`       |    No    |  None   | The description of the page which will be displayed in link embeds when posted somewhere. `:`, `"` symbols are **not** allowed here.                                                                                                                                                                                                  |
-| `category`          |    No    |  None   | The sidebar category in which the link for this page will be displayed. Available categories are listed in the section's `index.md` file.                                                                                                                                                                                             |
-| `tags`              |    No    |  `[]`   | A list of tags that will be displayed at the top of the page. Some will be displayed on the sidebar, such as "guide" or "info". If a page is in a section or category that makes the tag redundant, it should not be included in the tags list. For example, if a page is in the "Tutorials" category, the "guide" tag is not needed. |
-| `nav_order`         |    No    |  None   | The order in which the article will appear in the sidebar. Lower number will be higher. All nav_order pages will appear above pages without a nav_order.                                                                                                                                                                              |
-| `outline_depth`     |    No    |   `3`   | The maximum heading level that should be displayed in the page's outline. This may be decreased from the default to hide headings that are repetitive or increased to show headings in pages that have more layers for easier navigation.                                                                                             |
-| `show_contributors` |    No    | `true`  | Whether a list of the provided `mentions` should be shown at the end of the page.                                                                                                                                                                                                                                                     |
-| `show_edit_link`    |    No    | `true`  | Whether a link should be shown which leads to the page in the GitHub repository.                                                                                                                                                                                                                                                      |
-| `show_outline`      |    No    | `true`  | Whether a list of heading links should be generated for the page.                                                                                                                                                                                                                                                                     |
-| `hidden`            |    No    | `false` | Whether the page should be hidden from the sidebar. This should be used on content that is no longer supported but may still be accessed through a direct link.                                                                                                                                                                       |
-| `mentions`          |    No    |  `[]`   | The usernames of all GitHub users that have contributed to this page. Get that credit! Make sure you add your username here for any pages you edit.                                                                                                                                                                                   |
+| ------------------- | :------: | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `title`             |    ✔️    | None    | The title of the page which will be displayed as a level 1 heading before the main content and in link embeds when posted somewhere.                                                                                                                                                                                                  |
+| `description`       |    ✔️    | None    | The description of the page which will be displayed in link embeds when posted somewhere. `:`, `"` symbols are **not** allowed here.                                                                                                                                                                                                  |
+| `category`          |    ❌    | None    | The sidebar category in which the link for this page will be displayed. Available categories are listed in the section's `index.md` file.                                                                                                                                                                                             |
+| `tags`              |    ❌    | `[]`    | A list of tags that will be displayed at the top of the page. Some will be displayed on the sidebar, such as "guide" or "info". If a page is in a section or category that makes the tag redundant, it should not be included in the tags list. For example, if a page is in the "Tutorials" category, the "guide" tag is not needed. |
+| `nav_order`         |    ❌    | None    | The order in which the article will appear in the sidebar. Lower number will be higher. All nav_order pages will appear above pages without a nav_order.                                                                                                                                                                              |
+| `outline_depth`     |    ❌    | `3`     | The maximum heading level that should be displayed in the page's outline. This may be decreased from the default to hide headings that are repetitive or increased to show headings in pages that have more layers for easier navigation.                                                                                             |
+| `show_contributors` |    ❌    | `true`  | Whether a list of the provided `mentions` should be shown at the end of the page.                                                                                                                                                                                                                                                     |
+| `show_edit_link`    |    ❌    | `true`  | Whether a link should be shown which leads to the page in the GitHub repository.                                                                                                                                                                                                                                                      |
+| `show_outline`      |    ❌    | `true`  | Whether a list of heading links should be generated for the page.                                                                                                                                                                                                                                                                     |
+| `hidden`            |    ❌    | `false` | Whether the page should be hidden from the sidebar. This should be used on content that is no longer supported but may still be accessed through a direct link.                                                                                                                                                                       |
+| `license`           |    ✔️    | None    | How content on the page is licensed. This should either be a string referencing a license ID such as `MIT`, or an object defining separate `main` and `code` licenses.                                                                                                                                                                |
+| `mentions`          |    ✔️    | `[]`    | The usernames of all GitHub users that have contributed to this page. Get that credit! Make sure you add your username here for any pages you edit.                                                                                                                                                                                   |
 
 The title is required, as it is the name shown in the bar on the left side. Mentions isn't needed, but it would be great if everyone knows who made the great article they are reading!
 
@@ -53,9 +54,9 @@ The list of available categories in a section can be found in the section's `ind
 
 Here are some of the common categories that you'll be able to use in most sections, check the page sidebar for others:
 
-- General
-- Tutorials
-- Documentation
+-   General
+-   Tutorials
+-   Documentation
 
 #### Available Tags
 
@@ -63,20 +64,20 @@ Tags are defined in the `docs/.vitepress/tags.ts` file. If you'd like to add a n
 
 If you're just looking for existing tags, here is the list of tags that this wiki currently supports:
 
-- <Tag name="beginner" />
-- <Tag name="beta" />
-- <Tag name="deprecated" />
-- <Tag name="easy" />
-- <Tag name="experimental" />
-- <Tag name="expert" />
-- <Tag name="function" />
-- <Tag name="guide" />
-- <Tag name="help" />
-- <Tag name="info" />
-- <Tag name="intermediate" />
-- <Tag name="method" />
-- <Tag name="outdated" />
-- <Tag name="scripting" />
+-   <Tag name="beginner" />
+-   <Tag name="beta" />
+-   <Tag name="deprecated" />
+-   <Tag name="easy" />
+-   <Tag name="experimental" />
+-   <Tag name="expert" />
+-   <Tag name="function" />
+-   <Tag name="guide" />
+-   <Tag name="help" />
+-   <Tag name="info" />
+-   <Tag name="intermediate" />
+-   <Tag name="method" />
+-   <Tag name="outdated" />
+-   <Tag name="scripting" />
 
 ### Content
 
@@ -279,16 +280,16 @@ Every page that is inside a folder has to be accessed by writing the name of the
 A regular bullet-pointed list.
 
 ```md
-- This
-- Is
-- A
-- List
+-   This
+-   Is
+-   A
+-   List
 ```
 
-- This
-- Is
-- A
-- List
+-   This
+-   Is
+-   A
+-   List
 
 ---
 
@@ -315,16 +316,16 @@ A list with consecutive numbers in place of bullet points.
 A list where each item is either checked or unchecked. An `x` between the square brackets marks the item as checked.
 
 ```md
-- [x] This
-- [x] Is
-- [ ] A
-- [x] List
+-   [x] This
+-   [x] Is
+-   [ ] A
+-   [x] List
 ```
 
-- [x] This
-- [x] Is
-- [ ] A
-- [x] List
+-   [x] This
+-   [x] Is
+-   [ ] A
+-   [x] List
 
 ## Working with Components
 
@@ -341,11 +342,11 @@ We have snippets for our components. To see them, start typing `wiki.` in Markdo
 Some components support a `color` attribute which can be used to add more visual flair!
 Here are the values that the wiki currently supports:
 
-- <Label color="red">red</Label>
-- <Label color="orange">orange</Label>
-- <Label color="yellow">yellow</Label>
-- <Label color="green">green</Label>
-- <Label color="blue">blue</Label>
+-   <Label color="red">red</Label>
+-   <Label color="orange">orange</Label>
+-   <Label color="yellow">yellow</Label>
+-   <Label color="green">green</Label>
+-   <Label color="blue">blue</Label>
 
 ### Button
 
@@ -475,13 +476,13 @@ Remember to format json. You can use [this](https://jsonformatter.curiousconcept
 
 The filepath goes between the two HTML-Tags. Make sure to follow our [Style-Guide](/meta/style-guide) when describing filepaths:
 
-- If you link inside a Behavior-Pack, place `BP` in front of all other files:
+-   If you link inside a Behavior-Pack, place `BP` in front of all other files:
 
     ✔️ `BP/blocks/example.json`
 
     ❌ `YourBehaviorPack/blocks/example.json`
 
-- Same for the Resource-Pack, use `RP` in front of all other files:
+-   Same for the Resource-Pack, use `RP` in front of all other files:
 
     ✔️ `RP/manifest.json`
 
@@ -655,8 +656,8 @@ Wrong:
 Correct:
 
 ````md
-- one
-- two
+-   one
+-   two
 
 <CodeHeader>BP/blocks/example.json</CodeHeader>
 
@@ -688,9 +689,9 @@ Title case is a casing style that must be used in page titles and headings.
 
 Some examples:
 
-- `Welcome to the Wiki!`
-- `Your First Add-On`
-- `How It Works`
+-   `Welcome to the Wiki!`
+-   `Your First Add-On`
+-   `How It Works`
 
 ### Headings
 
@@ -701,19 +702,19 @@ Some examples:
 
 Some examples:
 
-- ✔️ `## A Page`
+-   ✔️ `## A Page`
 
     ❌ `# A Page`
 
-- ✔️ `### Some Other Layer`
+-   ✔️ `### Some Other Layer`
 
     ❌ `###### Some Other Layer`
 
-- ✔️ `## My Own Article`
+-   ✔️ `## My Own Article`
 
     ❌ `## my own: article`
 
-- ✔️ `## Next Steps`
+-   ✔️ `## Next Steps`
 
     ❌ `## Next Steps:`
 
@@ -721,7 +722,7 @@ Some examples:
 
 1.  Use CodeHeaders, unless it is illogical or not possible.
 2.  Fully extend JSON Code if it improves readability aka. as ["Prettified Code"](https://jsonformatter.curiousconcept.com/#).
-    - Do not extend `.geo.json` files as it would be too long.
+    -   Do not extend `.geo.json` files as it would be too long.
 3.  If the code is too long or not necessary, wrap it in a spoiler component.
 4.  Use `RP` and `BP` as root folders.
 5.  Make comments but not many.
@@ -752,11 +753,11 @@ Example:
 }
 ```
 
-- `minecraft:max_stack_size`
+-   `minecraft:max_stack_size`
 
     ...
 
-- `minecraft:icon`
+-   `minecraft:icon`
 
     ...
 
@@ -778,7 +779,7 @@ The above steps will be done automatically if you install the [Prettier](https:/
 ✔️
 
 ```md
-- list
+-   list
 ```
 
 ❌
