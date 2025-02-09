@@ -1,7 +1,8 @@
 {
   "columns": {
     "number_column": {
-      "name": "Number Column",
+      "name": "Number",
+      "sortable": true,
       "text_align": "right"
     },
     "boolean_column": {

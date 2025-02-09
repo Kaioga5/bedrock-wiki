@@ -20,13 +20,18 @@
               "description": "Name displayed in the header of the column.",
               "type": "string"
             },
-            "text_align": {
-              "title": "Column Text Alignment",
-              "enum": ["left", "center", "right"]
-            },
             "default": {
               "title": "Default Cell Value",
               "$ref": "#/definitions/value"
+            },
+            "sortable": {
+              "title": "Sortable Column",
+              "description": "Whether rows can be sorted based on their value for this column.",
+              "type": "boolean"
+            },
+            "text_align": {
+              "title": "Column Text Alignment",
+              "enum": ["left", "center", "right"]
             }
           }
         }

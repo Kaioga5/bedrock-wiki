@@ -65,6 +65,7 @@ export interface Table {
 export interface TableColumn {
   name: string;
   default?: TableValue;
+  sortable?: boolean;
   textAlign?: "left" | "center" | "right";
 }
 
@@ -72,4 +73,4 @@ export interface TableRow {
   [column: string]: TableValue;
 }
 
-export type TableValue = boolean | number | string | string[];
+export type TableValue = undefined | boolean | number | string | string[];

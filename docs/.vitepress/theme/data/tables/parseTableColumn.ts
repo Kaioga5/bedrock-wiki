@@ -25,6 +25,15 @@ export default function parseTableColumn(id: string, data: unknown) {
     column.default = parseTableValue(data.default);
   }
 
+  // Sortable
+  if ("sortable" in data) {
+    if (typeof data.sortable !== "boolean") {
+      throw new TypeError(`The "sortable" field of column "${id}" must be a boolean.`);
+    }
+
+    column.sortable = data.sortable;
+  }
+
   // Text Align
   if ("text_align" in data) {
     if (

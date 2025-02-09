@@ -97,10 +97,10 @@ td {
 }
 
 .show-more-button {
-  margin-left: 0.5em;
   position: absolute;
   right: 1em;
   bottom: 0.5em;
+
   background-color: var(--cell-bg-color);
 
   &::before {

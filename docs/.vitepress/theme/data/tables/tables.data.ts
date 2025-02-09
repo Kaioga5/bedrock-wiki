@@ -1,6 +1,6 @@
+import { join, relative, sep } from "path";
 import { defineLoader } from "vitepress";
 import { readFileSync } from "fs";
-import { join, relative, sep } from "path";
 
 import { Table } from "../../types";
 import config from "../config";

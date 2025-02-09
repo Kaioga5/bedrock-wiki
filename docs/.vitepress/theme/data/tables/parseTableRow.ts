@@ -11,13 +11,23 @@ export default function parseTableRow(index: number, data: unknown, columns: Tab
   }
 
   for (const columnId in data) {
-    if (!(columnId in columns)) {
+    const column = columns[columnId];
+
+    if (!column) {
       throw new TypeError(
         `Table row ${index} contains a value for the non-existent column "${columnId}".`
       );
     }
 
-    row[columnId] = parseTableValue(data[columnId]);
+    const value = parseTableValue(data[columnId]);
+
+    if (column.sortable && Array.isArray(value)) {
+      throw new TypeError(
+        `Table row ${index} contains an array value for the column "${columnId}" which is not supported as that column is sortable.`
+      );
+    }
+
+    row[columnId] = value;
   }
 
   return row;
