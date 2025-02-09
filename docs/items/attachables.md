@@ -96,7 +96,7 @@ Making attachables is a little more involved than making a client entity file. W
 
 ## Method 1 - Attached to the Skeleton
 
-<Label name="Beginner" color="blue"></Label>
+<Tag name="beginner" />
 
 In this first method we will construct the attachable using a copy of the player's skeleton, by attaching your model to one of the player's bones.
 
@@ -152,7 +152,7 @@ With this all set up, go through and delete the _cubes_ from the player skeleton
 
 ## Method 2 - Bound to a Bone
 
-<Label name="Intermediate" color="orange"></Label>
+<Tag name="intermediate" />
 
 In this second method, the attachable geometry will be constructed using model binding. This allows a model to be directly attached to a bone within a mob's geometry corresponding to the slot it is equipped in. Minecraft employs model binding for its attachable items, including the trident, spyglass, bow, and shield.
 

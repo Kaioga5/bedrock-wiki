@@ -162,9 +162,7 @@ playanimation @e[type=fox,tag=FMBE] animation.ender_dragon.neck_head_movement no
 ```
 ![commandBlockChain3](/assets/images/commands/commandBlockChain/3.png)
 
-## Advanced Video Tutorial
-
-If you've mastered the basics and want to explore more advanced features of FMBE using Molang, consider watching this video:
+## Video Tutorial
 
 <YouTubeEmbed
     id="DdYq_nOFeKM"

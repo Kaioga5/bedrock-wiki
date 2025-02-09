@@ -15,6 +15,7 @@ mentions:
     - Noruaric
     - JaylyDev
     - zheaEvyline
+    - phoenixr-codes
 description: Useful links for developing add-ons.
 ---
 
@@ -83,6 +84,7 @@ Important links have a ⭐.
 -   [.mcpack Generator](https://mcbe-essentials.github.io/instant-pack/)
 -   [Molang Grapher](https://jannisx11.github.io/molang-grapher/)
 -   [Molang Playground](https://bridge-core.github.io/molang-playground/)
+-   [NBT Explorer](https://phoenixr-codes.github.io/mcnbt/)
 -   [Nine Slice Visualiser (UI)](https://minato-mba.github.io/content/9slice.html)
 -   [Selector Generator](https://mcbe-essentials.github.io/selector-generator/)
 -   [Structure Editor](https://mcbe-essentials.github.io/structure-editor/)
