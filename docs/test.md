@@ -215,4 +215,4 @@ Some text...
 
 ## Tables
 
-<Table data="my-table.json" />
+<Table data="my_table.json" />
