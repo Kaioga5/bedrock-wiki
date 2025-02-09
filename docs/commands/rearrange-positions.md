@@ -67,46 +67,46 @@ The number of derangement possibilities increases rapidly as the number of eleme
 
 An ID system is required to index the position of all targets from 1 to N, allowing us to track the original position of each target. We will run this file in the `tick.json` to automatically assign the IDs.
 
-<CodeHeader>BP/functions/scoreboards/player/id.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/scoreboard/players/id.mcfunction</CodeHeader>
 
 ```yaml
-## Register New Players to the ID Objective
-scoreboard players add @a id 0
+## Register New Players to ID Objective
+scoreboard players add @a wiki:id 0
 
 ## Create New ID
-execute if entity @a [scores={id=0}] run scoreboard players add Total id 1
+execute if entity @a[scores={wiki:id=0}] run scoreboard players add .Total wiki:id 1
 
 ## Assign the New ID
-scoreboard players operation @r [scores={id=0}] id = Total id
+scoreboard players operation @r[scores={wiki:id=0}] wiki:id = .Total wiki:id
 ```
 
 <br>
 
 This is the function you run (once) each time you need to derange the positions of all targets:
 
-- `/function events/player/derange_position/initiate`
+- `/function wiki/derange_position/initiate`
 
-<CodeHeader>BP/functions/events/player/derange_position/initiate.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/derange_position/initiate.mcfunction</CodeHeader>
 
 ```yaml
 ## Summon Position Marker
-execute at @a run summon armor_stand "Position Marker" ~~~
+execute at @a run summon armor_stand "wiki:position_marker" ~~~
 
 ## Save Original Position to Ignore
-execute as @a at @s run scoreboard players operation @e [type=armor_stand, name="Position Marker", r=0.01, c=1] id = @s id
+execute as @a at @s run scoreboard players operation @e[type=armor_stand,name="wiki:position_marker",r=0.01,c=1] wiki:id = @s wiki:id
 
-## Initiate Position Derangement Process
-function events/player/derange_position/process
+## Initiate Position Derangement Process for All Targets
+function wiki/derange_position/process
 
 ## Run Process One Last Time if Final Player Has a Valid Position Available
-execute if score NonAllocatedPlayers count matches 1 unless score @a [tag=!posAllocated, c=1] id = @e [type=armor_stand, name="Position Marker", c=1] id run function events/player/derange_position/process
+execute if score .Players.NotAllocated wiki:count matches 1 unless score @a[tag=!wiki:pos.allocated, c=1] wiki:id = @e [type=armor_stand, name="wiki:position_marker", c=1] wiki:id run function wiki/derange_position/process
 
 ## Resolve Collision if Final Player Has No Valid Position Available
-### Relocate the allocated player to their colliding player's original position to free their position for the colliding player
-execute as @a [tag=!posAllocated] at @s run tp @r [tag=posAllocated, r=0.01] @e [type=armor_stand, name="Position Marker", c=1]
-### Remove colliding player's position marker and tag
-kill @e [type=armor_stand, name="Position Marker"]
-tag @a remove posAllocated
+### relocate the allocated player to their colliding player's original position to free their position for the colliding player
+execute as @a[tag=!wiki:pos.allocated] at @s run tp @r[tag=wiki:pos.allocated,r=0.01] @e[type=armor_stand,name="wiki:position_marker",c=1]
+### remove colliding player's position marker and tag
+kill @e[type=armor_stand,name="wiki:position_marker"]
+tag @a[tag=wiki:pos.allocated] remove wiki:pos.allocated
 ```
 
 In case a single target is left with no available position except its original, the final 3 commands will resolve the collision. We call it a collision because when this occurs, the target will be at the allocated position of another target.
@@ -115,75 +115,75 @@ In case a single target is left with no available position except its original, 
 
 The actual randomized derangement process will be performed by this function below:
 
-<CodeHeader>BP/functions/events/player/derange_position/process.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/derange_position/process.mcfunction</CodeHeader>
 
 ```yaml
 ## Move to a Different Position
-execute as @a [tag=!posAllocated] at @s run function events/player/derange_position/teleport
+execute as @a[tag=!wiki:pos.allocated] at @s run function wiki/derange_position/teleport
 
-## Move Again if Returned to Original Position
-execute as @a [tag=!posAllocated] at @s if score @s id = @e [type=armor_stand, name="Position Marker", r=0.01, c=1] id run function events/player/derange_position/teleport
+## If Returned to Original Position: Move Again
+execute as @a[tag=!wiki:pos.allocated] at @s if score @s wiki:id = @e[type=armor_stand,name="wiki:position_marker",r=0.01,c=1] wiki:id run function wiki/derange_position/teleport
 
 ## Add Tag to Ignore Players with a Position Allocated
-execute as @e [type=armor_stand, name="Position Marker"] at @s run tag @a [tag=!posAllocated, r=0.01, c=1] add posAllocated
+execute as @e[type=armor_stand,name="wiki:position_marker"] at @s run tag @a[tag=!wiki:pos.allocated,r=0.01,c=1] add wiki:pos.allocated
 
 ## Remove Allocated Position Markers
-execute as @a [tag=posAllocated] at @s run kill @e [type=armor_stand, name="Position Marker", r=0.01, c=1]
+execute as @a[tag=wiki:pos.allocated] at @s run kill @e[type=armor_stand,name="wiki:position_marker",r=0.01,c=1]
 
 
 # ENTITY COUNTER
 
 ## Get Player Count of Players Without a Position Allocated
-scoreboard players set NonAllocatedPlayers count 0
-execute as @a [tag=!posAllocated] run scoreboard players add NonAllocatedPlayers count 1
+scoreboard players set .Players.NotAllocated wiki:count 0
+execute as @a[tag=!wiki:pos.allocated] run scoreboard players add .Players.NotAllocated wiki:count 1
 
-## Loop Function if 2+ Players Are Not Allocated a Position
-execute if score NonAllocatedPlayers count matches 2.. run function events/player/derange_position/process
+## If 2+ Players Are Not Allocated a Position: Loop Function
+execute if score .Players.NotAllocated wiki:count matches 2.. run function wiki/derange_position/process
 ```
 
 <br>
 
--   ❌️ `tp @s @r [type=armor_stand, name="Position Marker", rm=0.01]`
+-   ❌️ `tp @s @r[type=armor_stand,name="wiki:position_marker",rm=0.01]`
 
 Directly using this command to teleport to a new position only works within the current dimension. Therefore, instead of that, we use the following three-command function for cross-dimensional compatibility:
 
-<CodeHeader>BP/functions/events/player/derange_position/teleport.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/derange_position/teleport.mcfunction</CodeHeader>
 
 ```yaml
-tag @e [type=armor_stand, name="Position Marker", r=0.01, c=1] add ignoredPos
-tp @s @r [type=armor_stand, name="Position Marker", tag=!ignoredPos]
-tag @e remove ignoredPos
+tag @e[type=armor_stand,name="wiki:position_marker",r=0.01] add wiki:pos.ignored
+tp @s @r[type=armor_stand,name="wiki:position_marker",tag=!wiki:pos.ignored]
+tag @e remove wiki:pos.ignored
 ```
 
 <br>
 
 Now, for our functions to actually work, we will need to add the following objectives on our world:
 
-<CodeHeader>BP/functions/scoreboards/objective/add_all.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/scoreboard/objectives/add_all.mcfunction</CodeHeader>
 
 ```yaml
-scoreboard objectives add id dummy
-scoreboard objectives add count dummy
+scoreboard objectives add wiki:id dummy
+scoreboard objectives add wiki:count dummy
 ```
 
 <br>
 
 If you wish to add the objectives automatically as soon as you load the world, you may create the function file below:
 
-<CodeHeader>BP/functions/events/world/on_initialise.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/event/worlds/on_initialise.mcfunction</CodeHeader>
 
 ```yaml
 ## Initialisation
 ### Add objective
-scoreboard objectives add world dummy
+scoreboard objectives add wiki:world dummy
 ### Register to objective
-scoreboard players add Initialised world 0
+scoreboard players add .Initialised wiki:world 0
 
 ## Commands to Execute
-execute if score Initialised world matches 0 run function scoreboards/objective/add_all
+execute if score .Initialised wiki:world matches 0 run function wiki/scoreboard/objectives/add_all
 
-## Mark as Initialised
-scoreboard players set Initialised world 1
+## Mark As Initialised
+scoreboard players set .Initialised wiki:world 1
 ```
 
 ## Tick JSON
@@ -195,8 +195,8 @@ Finally, create your `tick.json` file:
 ```json
 {
   "values": [
-    "events/world/on_initialise",
-    "scoreboards/player/id"
+    "wiki/event/worlds/on_initialise",
+    "wiki/scoreboard/players/id"
   ]
 }
 ```
@@ -209,19 +209,19 @@ Finally, create your `tick.json` file:
     'BP/functions',
     'BP/manifest.json',
     'BP/pack_icon.png',
-    'BP/functions/scoreboards',
-    'BP/functions/scoreboards/player',
-    'BP/functions/scoreboards/player/id.mcfunction',
-    'BP/functions/scoreboards/objective',
-    'BP/functions/scoreboards/objective/add_all.mcfunction',
-    'BP/functions/events',
-    'BP/functions/events/world',
-    'BP/functions/events/world/on_initialise.mcfunction',
-    'BP/functions/events/player',
-    'BP/functions/events/player/derange_position',
-    'BP/functions/events/player/derange_position/initiate.mcfunction',
-    'BP/functions/events/player/derange_position/process.mcfunction',
-    'BP/functions/events/player/derange_position/teleport.mcfunction',
+    'BP/functions/wiki',
+    'BP/functions/wiki/scoreboard',
+    'BP/functions/wiki/scoreboard/players',
+    'BP/functions/wiki/scoreboard/players/id.mcfunction',
+    'BP/functions/wiki/scoreboard/objectives',
+    'BP/functions/wiki/scoreboard/objectives/add_all.mcfunction',
+    'BP/functions/wiki/event',
+    'BP/functions/wiki/event/worlds',
+    'BP/functions/wiki/event/worlds/on_initialise.mcfunction',
+    'BP/functions/wiki/derange_position',
+    'BP/functions/wiki/derange_position/initiate.mcfunction',
+    'BP/functions/wiki/derange_position/process.mcfunction',
+    'BP/functions/wiki/derange_position/teleport.mcfunction',
     'BP/functions/tick.json'
 ]"
 ></FolderView>
@@ -237,5 +237,5 @@ For convenience, you can download the `.mcpack` for the Function Pack here:
 Simply activate the pack on your world and run once (each time you need) the following command in multiplayer:
 
 ```yaml
-/function events/player/derange_position/initiate
+/function wiki/derange_position/initiate
 ```
