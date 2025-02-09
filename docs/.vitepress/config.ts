@@ -5,7 +5,6 @@ import { ThemeConfig } from "./theme";
 
 import head, { transformHead } from "./head";
 import redirects from "./redirects";
-import sidebar from "./sidebar";
 import tags from "./tags";
 
 const isFastBuild = process.env.FAST_BUILD?.trim() === "true";
@@ -66,7 +65,6 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     redirects,
-    sidebar,
     tags,
   },
 
