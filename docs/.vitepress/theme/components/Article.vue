@@ -40,11 +40,7 @@ const isLicensePage = computed(() => page.value.relativePath.startsWith("license
 
     <Content />
 
-    <ClientOnly>
-      <Suspense>
-        <Contributors v-if="frontmatter.show_contributors ?? !isLicensePage" />
-      </Suspense>
-    </ClientOnly>
+    <Contributors v-if="frontmatter.show_contributors ?? !isLicensePage" />
 
     <EditLink v-if="frontmatter.show_edit_link ?? !isLicensePage" />
 
