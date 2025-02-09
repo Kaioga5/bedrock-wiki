@@ -12,7 +12,7 @@ description: Randomly relocate all selected targets among each other, ensuring n
 
 ## Introduction
 
-[Sourced By Bedrock Commands Community Discord](https://discord.gg/SYstTYx5G5)
+[Sourced by Bedrock Commands Community Discord](https://discord.gg/SYstTYx5G5)
 
 Multiplayer Position Rearrangement function, or more accurately Multiplayer Position Derangement function, created by @ZheaEvyline, allows you to randomly relocate all selected targets among each other, ensuring no target remains in its original position.
 
