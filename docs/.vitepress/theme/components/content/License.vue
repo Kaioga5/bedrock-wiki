@@ -3,7 +3,9 @@ import { computed } from "vue";
 import useData from "../../composables/data";
 import NavLink from "../navigation/NavLink.vue";
 
-const { site, frontmatter } = useData();
+import { data as licenses } from "../../data/licenses/licenses.data";
+
+const { frontmatter } = useData();
 
 const normalizedLicenses = computed(() => {
   const { license } = frontmatter.value;
@@ -12,8 +14,8 @@ const normalizedLicenses = computed(() => {
   return license;
 });
 
-const mainLicense = computed(() => site.value.themeConfig.licenses[normalizedLicenses.value.main]);
-const codeLicense = computed(() => site.value.themeConfig.licenses[normalizedLicenses.value.code]);
+const mainLicense = computed(() => licenses[normalizedLicenses.value.main]);
+const codeLicense = computed(() => licenses[normalizedLicenses.value.code]);
 </script>
 
 <template>

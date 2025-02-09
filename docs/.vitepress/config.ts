@@ -5,7 +5,6 @@ import { ThemeConfig } from "./theme";
 
 import head, { transformHead } from "./head";
 import redirects from "./redirects";
-import licenses from "./licenses";
 import sidebar from "./sidebar";
 import tags from "./tags";
 
@@ -67,7 +66,6 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     redirects,
-    licenses,
     sidebar,
     tags,
   },
