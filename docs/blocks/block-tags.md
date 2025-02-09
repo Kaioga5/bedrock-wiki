@@ -1,7 +1,9 @@
 ---
 title: Block Tags
+description: Block tags can be used to ensure that a block meets certain conditions.
 category: General
 nav_order: 3
+license: true
 mentions:
     - SirLich
     - yanasakana
@@ -15,7 +17,6 @@ mentions:
     - QuazChick
     - Kaioga5
     - Xterionix
-description: Block tags can be used to ensure that a block meets certain conditions.
 ---
 
 Block tags can be used to ensure that a block meets certain conditions.

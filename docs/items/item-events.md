@@ -5,6 +5,7 @@ category: General
 nav_order: 4
 tags:
     - scripting
+license: true
 mentions:
     - SmokeyStack
 ---

@@ -5,6 +5,7 @@ category: General
 nav_order: 9
 tags:
     - help
+license: true
 mentions:
     - QuazChick
 ---

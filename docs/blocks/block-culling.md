@@ -4,6 +4,7 @@ description: Block culling rules benefit performance, allowing you to remove fac
 category: General
 tags:
     - intermediate
+license: true
 mentions:
     - legopitstop
     - QuazChick

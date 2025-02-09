@@ -5,6 +5,7 @@ category: General
 nav_order: 8
 tags:
     - scripting
+license: true
 mentions:
     - SirLich
     - solvedDev

@@ -1,6 +1,8 @@
 ---
 title: Rotatable Blocks
+description: Create rotatable blocks.
 category: Tutorials
+license: true
 mentions:
     - Ultr4Anubis
     - SmokeyStack
@@ -8,7 +10,6 @@ mentions:
     - MedicalJewel105
     - MajestikButter
     - QuazChick
-description: Create rotatable blocks.
 ---
 
 ::: tip FORMAT & MIN ENGINE VERSION `1.21.40`

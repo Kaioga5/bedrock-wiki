@@ -5,6 +5,7 @@ category: Tutorials
 tags:
     - beginner
     - easy
+license: true
 mentions:
     - QuazChick
     - SmokeyStack

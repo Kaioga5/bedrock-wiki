@@ -3,6 +3,7 @@ title: Block States
 description: Block states allow your blocks to have variants, each with its own functionality and appearance through use of permutations.
 category: General
 nav_order: 4
+license: true
 mentions:
     - QuazChick
     - SmokeyStack

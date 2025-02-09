@@ -4,6 +4,7 @@ description: Learn about items that represent blocks in the UI, in containers an
 category: General
 tags:
     - experimental
+license: true
 mentions:
     - QuazChick
 ---

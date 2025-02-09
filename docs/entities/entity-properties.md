@@ -2,6 +2,7 @@
 title: Entity Properties
 description: Entity properties allow data to be stored on entities without needing the use of components or attributes in the server-side of the entity, similar to block states.
 category: General
+license: true
 mentions:
     - SirLich
     - sermah

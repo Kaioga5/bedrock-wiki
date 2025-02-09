@@ -4,6 +4,7 @@ description: Block models that are built into the game for use with custom block
 category: Documentation
 tags:
     - beginner
+license: true
 mentions:
     - QuazChick
 ---

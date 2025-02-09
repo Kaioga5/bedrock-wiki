@@ -1,16 +1,17 @@
 ---
 title: Applying Constant Effects
+description: This tutorial aims to show how to apply status effects to entities as long as these entities stand on the block.
 category: Tutorials
 tags:
     - easy
     - scripting
+license: true
 mentions:
     - MysticChair
     - SirLich
     - MedicalJewel105
     - QuazChick
     - SmokeyStack
-description: This tutorial aims to show how to apply status effects to entities as long as these entities stand on the block.
 ---
 
 ::: tip FORMAT & MIN ENGINE VERSION `1.21.40`

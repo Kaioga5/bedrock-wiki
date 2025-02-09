@@ -3,6 +3,7 @@ title: Block Format History
 description: A list of all the changes to the data-driven block format over each Minecraft version.
 category: Documentation
 outline_depth: 2
+license: true
 mentions:
     - QuazChick
 ---

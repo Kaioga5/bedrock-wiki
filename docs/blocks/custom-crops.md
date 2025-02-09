@@ -1,16 +1,17 @@
 ---
 title: Custom Crops
+description: Re-creation of vanilla crops.
 category: Vanilla Re-Creations
 tags:
     - intermediate
     - scripting
+license: true
 mentions:
     - Ivyman1992
     - Provedule
     - ThomasOrs
     - QuazChick
     - SmokeyStack
-description: Re-creation of vanilla crops.
 ---
 
 :::tip FORMAT & MIN ENGINE VERSION `1.21.40`
@@ -24,8 +25,8 @@ Making crops is not as difficult as you may think, it just takes a little practi
 
 **Issues:**
 
-- Custom crops cannot be destroyed by flowing liquids ([see feedback post](https://discord.com/channels/1138536747932864532/1191224284765491230)).
-- Growth rate cannot be impacted by light level ([see feedback post](https://discord.com/channels/1138536747932864532/1231369171577602179)).
+-   Custom crops cannot be destroyed by flowing liquids ([see feedback post](https://discord.com/channels/1138536747932864532/1191224284765491230)).
+-   Growth rate cannot be impacted by light level ([see feedback post](https://discord.com/channels/1138536747932864532/1231369171577602179)).
 
 ## Crop Model
 
@@ -86,8 +87,8 @@ This code example also includes the base components of our crop which will be ac
 
 The events below do three important functions to make your crop work:
 
-- The [`onRandomTick`](/blocks/block-events#random-tick) event hook is used to increment the `wiki:growth` state at a random interval.
-- The [`onPlayerInteract`](/blocks/block-events#player-interact) event hook is for bone meal support, adding a random value to `wiki:growth` in survival mode or fully growing the crop in creative mode.
+-   The [`onRandomTick`](/blocks/block-events#random-tick) event hook is used to increment the `wiki:growth` state at a random interval.
+-   The [`onPlayerInteract`](/blocks/block-events#player-interact) event hook is for bone meal support, adding a random value to `wiki:growth` in survival mode or fully growing the crop in creative mode.
 
 <CodeHeader>BP/scripts/custom_crop.js</CodeHeader>
 

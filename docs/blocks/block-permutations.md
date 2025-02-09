@@ -3,6 +3,7 @@ title: Block Permutations
 description: Block permutations represent all state configurations that blocks can possibly be in.
 category: General
 nav_order: 7
+license: true
 mentions:
     - QuazChick
     - SmokeyStack

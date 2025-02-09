@@ -1,12 +1,13 @@
 ---
 title: Item Tags
+description: Item tags can be used to ensure that an item meets certain conditions.
 category: General
 nav_order: 3
+license: true
 mentions:
     - Xterionix
     - SmokeyStack
     - QuazChick
-description: Item tags can be used to ensure that an item meets certain conditions.
 ---
 
 Item tags can be used to ensure that an item meets certain conditions.

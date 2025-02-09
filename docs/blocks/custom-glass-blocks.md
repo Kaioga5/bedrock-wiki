@@ -5,6 +5,7 @@ category: Vanilla Re-Creations
 tags:
     - beginner
     - easy
+license: true
 mentions:
     - Eko-byte
     - QuazChick
