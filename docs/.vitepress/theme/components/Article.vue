@@ -6,11 +6,12 @@ import useData from "../composables/data";
 import Tag from "./content/Tag.vue";
 
 import Contributors from "./content/Contributors.vue";
+import ExternalIcon from "./icons/ExternalIcon.vue";
 import EditLink from "./content/EditLink.vue";
 import Outline from "./content/Outline.vue";
 import Spoiler from "./content/Spoiler.vue";
 import License from "./content/License.vue";
-import NavLink from "./navigation/NavLink.vue";
+import Button from "./content/Button.vue";
 
 const { frontmatter, page } = useData();
 
@@ -27,7 +28,7 @@ const isLicensePage = computed(() => page.value.relativePath.startsWith("license
       <Tag v-for="name in frontmatter.tags" :key="name" :name />
     </div>
 
-    <NavLink v-if="isLicensePage" :link="frontmatter.source">Source</NavLink>
+    <Button v-if="isLicensePage" :link="frontmatter.source">View Source <ExternalIcon /></Button>
 
     <div v-if="frontmatter.show_outline ?? true">
       <Spoiler v-if="isMobileOutline" title="Contents" open>

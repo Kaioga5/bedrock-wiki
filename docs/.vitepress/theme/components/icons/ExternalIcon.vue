@@ -3,7 +3,7 @@
     xmlns="http://www.w3.org/2000/svg"
     width="1.3em"
     height="1.3em"
-    style="vertical-align: middle"
+    style="vertical-align: -0.2lh"
     viewBox="0 0 20 20"
     fill="currentColor"
   >
