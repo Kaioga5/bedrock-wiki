@@ -10,6 +10,7 @@ const { frontmatter } = useData();
 const normalizedLicenses = computed(() => {
   const { license } = frontmatter.value;
 
+  if (license === true) return { main: "CC-BY-4.0", code: "MIT" };
   if (typeof license === "string") return { main: license };
   return license;
 });
