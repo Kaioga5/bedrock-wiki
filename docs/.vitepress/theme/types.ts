@@ -6,7 +6,6 @@ export interface ThemeConfig {
   algolia: DefaultTheme.AlgoliaSearchOptions;
   navigation: NavigationItem[];
   redirects: Redirects;
-  sidebar: Sidebar;
   tags: Tags;
 }
 

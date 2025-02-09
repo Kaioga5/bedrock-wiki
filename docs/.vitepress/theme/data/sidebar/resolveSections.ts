@@ -1,19 +1,21 @@
-import matter, { GrayMatterFile } from "gray-matter";
+import matter from "gray-matter";
 import path from "path";
 import fs from "fs";
 
-import { Sidebar, SidebarSection } from "../theme";
+import { Sidebar, SidebarSection } from "../../types";
+import config from "../config";
+
+import validateSection from "./validateSection";
 import sort from "./sort";
 
-import { resolveCategories } from "./categories";
-import { resolveLinks } from "./links";
-import { docsDirectory } from ".";
+import resolveCategories from "./resolveCategories";
+import resolveLinks from "./resolveLinks";
 
-export function resolveSections(sidebar: Sidebar) {
-  const entries = fs.readdirSync(docsDirectory);
+export default function resolveSections(sidebar: Sidebar) {
+  const entries = fs.readdirSync(config.srcDir);
 
   for (const entry of entries) {
-    const joinedPath = path.join(docsDirectory, entry);
+    const joinedPath = path.join(config.srcDir, entry);
     const stats = fs.statSync(joinedPath);
     const indexPath = path.join(joinedPath, "index.md");
 
@@ -41,16 +43,4 @@ export function resolveSections(sidebar: Sidebar) {
   }
 
   sort(sidebar.sections);
-}
-
-export default function validateSection(id: string, { data }: GrayMatterFile<string>) {
-  const errors: string[] = [];
-
-  if (data.title === undefined) {
-    errors.push("A section title must be defined but none was found.");
-  }
-
-  if (errors.length > 0) {
-    throw new Error(`Section "${id}" has invalid frontmatter:\n- ${errors.join("\n- ")}\n`);
-  }
 }
