@@ -45,6 +45,11 @@ export interface SidebarLink {
   data: Record<string, any>;
 }
 
+export interface License {
+  title: string;
+  link: string;
+}
+
 export interface Tag {
   color: AccentColor;
   text?: string;
