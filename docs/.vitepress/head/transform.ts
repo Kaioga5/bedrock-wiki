@@ -17,7 +17,7 @@ export function transformHead({ pageData, siteConfig }: TransformContext) {
   let url = config.themeConfig.url;
   if (path !== "index") url += `/${path}`;
 
-  const data = {
+  const data: Record<string, string> = {
     // Open Graph (used by Discord)
     "og:type": "website",
     "og:title": title,
@@ -34,6 +34,8 @@ export function transformHead({ pageData, siteConfig }: TransformContext) {
     "twitter:image:alt": imageAlt,
     "twitter:site": site,
   };
+
+  if (frontmatter.hidden) data.robots = "noindex";
 
   const out: HeadConfig[] = [];
 
