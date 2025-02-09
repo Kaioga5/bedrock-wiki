@@ -38,14 +38,11 @@ export default defineLoader({
 
       validateLicense(licenseId, frontMatter);
 
-      const { data, content } = frontMatter;
+      const { data } = frontMatter;
 
       licenses[licenseId] = {
-        name: licenseId.replaceAll("-", " "),
         link: "/licenses/" + licenseId,
-        source: data.source,
         title: data.title,
-        content,
       };
     }
 

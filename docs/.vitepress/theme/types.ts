@@ -46,11 +46,8 @@ export interface SidebarLink {
 }
 
 export interface License {
-  name: string;
-  link: string;
-  source: string;
   title: string;
-  content: string;
+  link: string;
 }
 
 export interface Tag {
