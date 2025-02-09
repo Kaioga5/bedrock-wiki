@@ -28,6 +28,8 @@ export default defineConfigWithTheme<ThemeConfig>({
   title: "Bedrock Wiki",
   description: "A knowledge-sharing website for technical features of Minecraft Bedrock.",
 
+  cleanUrls: true,
+
   head,
   transformHead,
 

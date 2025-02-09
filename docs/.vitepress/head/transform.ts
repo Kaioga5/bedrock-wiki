@@ -12,10 +12,10 @@ export function transformHead({ pageData, siteConfig }: TransformContext) {
   const image = `${config.themeConfig.url}/assets/images/homepage/wikilogo.png`;
   const imageAlt = "Bedrock Wiki Logo";
 
-  const path = relativePath.replace(".md", ".html");
+  const path = relativePath.replace(".md", "");
 
   let url = config.themeConfig.url;
-  if (path !== "index.html") url += `/${path}`;
+  if (path !== "index") url += `/${path}`;
 
   const data = {
     // Open Graph (used by Discord)
