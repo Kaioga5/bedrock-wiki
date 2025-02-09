@@ -1,6 +1,7 @@
 ---
 title: MIT License
 source: https://opensource.org/license/MIT
+show_outline: false
 ---
 
 Copyright (c) {{ new Date().getFullYear() }} Bedrock OSS
