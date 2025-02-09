@@ -20,6 +20,9 @@ In order to apply other components, such as a 2D icon for your block, you'll nee
 :::warning FORMAT VERSION 1.21.40 (EXPERIMENTAL)
 Replacing block items requires the `Upcoming Creator Features` experiment to be enabled.
 :::
+:::danger BEFORE PLAYER PLACE
+Replaced block items do not trigger the [`beforeOnPlayerPlace`](/blocks/block-events#before-player-place) event hook.
+:::
 
 In order to replace a block item, you will need to create a new item JSON file that has the same identifier as the block.
 
