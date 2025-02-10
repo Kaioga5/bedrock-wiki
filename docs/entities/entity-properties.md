@@ -7,7 +7,7 @@ mentions:
     - SirLich
     - sermah
     - MedicalJewel105
-    - Luthorius
+    - Lufurrius
     - stirante
     - TheItsNameless
     - SmokeyStack

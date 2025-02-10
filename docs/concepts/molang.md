@@ -7,7 +7,7 @@ mentions:
     - TheDoctor15
     - MedicalJewel105
     - DoubleShotgun
-    - Luthorius
+    - Lufurrius
     - TheItsNameless
     - QuazChick
 description: Learn about the basics of Molang.

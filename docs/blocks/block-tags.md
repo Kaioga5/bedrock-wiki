@@ -10,7 +10,7 @@ mentions:
     - aexer0e
     - SmokeyStack
     - MedicalJewel105
-    - Luthorius
+    - Lufurrius
     - Chikorita-Lover
     - victorsigma
     - TheItsNameless

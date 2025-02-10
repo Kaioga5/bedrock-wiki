@@ -6,7 +6,7 @@ tags:
 mentions:
     - SirLich
     - MedicalJewel105
-    - Luthorius
+    - Lufurrius
     - SmokeyStack
 ---
 
@@ -38,11 +38,11 @@ Different resources have different methods of overwriting, so be careful to use 
 
 Assets that are referenced by _path_, and do _not have an identifier_ can be overwritten by simply placing a new asset into the same path. The following can be overwritten in this way:
 
-- Functions
-- Loot tables
-- Textures
-- Sounds
-- Trade Tables
+-   Functions
+-   Loot tables
+-   Textures
+-   Sounds
+-   Trade Tables
 
 When you overwrite these files, the overwriting is absolute: The new asset will fully replace the old asset.
 
@@ -54,15 +54,15 @@ When you overwrite these files, the overwriting is absolute: The new asset will 
 
 Many assets are defined not by their name, but by their identifier! To overwrite these assets, simply create a new file that shares the same identifier, regardless of file-path. The following can be overwritten in this way:
 
-- BP Entities
-- RP Entities
-- Animations
-- Models
-- Animation Controllers
-- Spawn Rules
-- Recipes
-- Particles
-- Render Controllers
+-   BP Entities
+-   RP Entities
+-   Animations
+-   Models
+-   Animation Controllers
+-   Spawn Rules
+-   Recipes
+-   Particles
+-   Render Controllers
 
 When you overwrite these files, the overwriting is absolute: The new asset will fully replace the old asset.
 
@@ -78,14 +78,14 @@ Many assets can also be registered into some kind of "registration system" file.
 
 The following files work in this way:
 
-- All UI files
-- [All language files](/concepts/text-and-translations)
-- `item_texture.json`
-- `flipbook_textures.json`
-- `terrain_texture.json`
-- `sounds.json`
-- `music_definitions.json`
-- `sound_definitions.json`
+-   All UI files
+-   [All language files](/concepts/text-and-translations)
+-   `item_texture.json`
+-   `flipbook_textures.json`
+-   `terrain_texture.json`
+-   `sounds.json`
+-   `music_definitions.json`
+-   `sound_definitions.json`
 
 :::tip
 **Example:** Lets say you want to override the `sugar` texture, using the reference files. You can do so by creating a new `item_texture.json`, with the following contents:
@@ -116,6 +116,6 @@ This is mostly a problem with `player.json` (in either the RP or the BP), since 
 
 Not everything can be overwritten, the following is a list of things that cannot be overwritten using any of the described methods:
 
-- Vanilla items (Not all)
-- Vanilla blocks
-- Vanilla fogs (create a fog with another namespace and change it everywhere it is used)
+-   Vanilla items (Not all)
+-   Vanilla blocks
+-   Vanilla fogs (create a fog with another namespace and change it everywhere it is used)

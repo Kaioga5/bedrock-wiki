@@ -12,7 +12,7 @@ mentions:
     - sermah
     - SmokeyStack
     - MedicalJewel105
-    - Luthorius
+    - Lufurrius
     - TheDoctor15
     - TheItsNameless
 ---

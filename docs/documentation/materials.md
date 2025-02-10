@@ -6,7 +6,7 @@ tags:
     - expert
 mentions:
     - SirLich
-    - Luthorius
+    - Lufurrius
     - MedicalJewel105
     - SmokeyStack
     - ThomasOrs

@@ -2,7 +2,7 @@
 title: Reading NBT Example
 category: NBT in Depth
 mentions:
-    - ConsoleTerm
+    - conmaster2112
 tags:
     - expert
 description: NBT reading step by step.

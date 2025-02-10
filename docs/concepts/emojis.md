@@ -4,12 +4,12 @@ description: Learn how to add your own emojis and symbols to Minecraft.
 mentions:
     - SirLich
     - Joelant05
-    - sovledDev
+    - solvedDev
     - stirante
     - Dreamedc2015
     - MedicalJewel105
     - JaylyDev
-    - RealBashy21
+    - realbashy
     - ColinTimBarndt
     - Citicx
     - TheItsNameless
@@ -348,4 +348,5 @@ _Note: The following steps apply only to emojis that do not fill their slot widt
 Sometimes, it appears that if you put 2 glyphs near to each other, there will be a couple of empty pixels between them. The only fix for it is to scale the glyph (png file) itself. Ex: 256×256 → 512×512
 
 ### Resizing the Emoji
+
 To resize the emoji, change the resolution of the glyph (PNG file) to 512×512. The reason for doubling the resolution is that it increases the number of pixels, providing more room for editing. Once you've done this, open an image editor of your choice, select the new emoji, resize it, and center it within the emoji slot. This will give the emoji more space around it when used in the game.

@@ -14,7 +14,7 @@ mentions:
     - TheDoctor15
     - SmokeyStack
     - unickorn
-    - Sprunkles317
+    - Sprunkles137
     - ThomasOrs
     - davedavis
     - QuazChick
@@ -28,8 +28,8 @@ In this tutorial we are going to learn how to create a simple "ectoplasm" item, 
 
 Conceptually, items are made up of two parts:
 
-- The visuals (texture, name)
-- The behaviors (how the item should behave)
+-   The visuals (texture, name)
+-   The behaviors (how the item should behave)
 
 First, we will learn how to create a new simple item & define its behaviors. In the next section we will assign a texture to this item, so you can see it in game.
 
@@ -67,8 +67,8 @@ In order for the game to apply the correct components to the correct item, we ne
 
 An identifier is a name unique to this item. For a vanilla minecraft egg it's identifier is `minecraft:egg`. An identifier is made of two parts,
 
-- The namespace (`minecraft`)
-- The id (`egg`)
+-   The namespace (`minecraft`)
+-   The id (`egg`)
 
 The namespace is unique to your add-on and you will use it throughout the project. This is to reduce issues if someone adds two packs to your game which both add an ectoplasm item; the namespace reduces the chance of the identifier being the same.
 The namespace that Minecraft use is `minecraft`. Your namespace should be unique to you, for example the authors initials or an abbreviation of the pack name. We will use the namespace `wiki` in our example; for more information on making a namespace check out our page [here](/concepts/namespaces).
@@ -307,10 +307,10 @@ If you're having some trouble, check the [Troubleshooting page](/items/troublesh
 
 ## Your Progress So Far
 
-- [x] Setup your pack
-- [x] Create a custom item
-- [x] How to format the behavior and resource files for an item
-- [x] What components are and how to use them
-- [x] How to set an items texture
-- [ ] Create a custom entity
-- [ ] Create the entity's loot, spawn rules, and a custom recipe
+-   [x] Setup your pack
+-   [x] Create a custom item
+-   [x] How to format the behavior and resource files for an item
+-   [x] What components are and how to use them
+-   [x] How to set an items texture
+-   [ ] Create a custom entity
+-   [ ] Create the entity's loot, spawn rules, and a custom recipe

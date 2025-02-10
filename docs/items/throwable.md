@@ -6,7 +6,7 @@ tags:
 mentions:
     - Fabrimat
     - MedicalJewel105
-    - Luthorius
+    - Lufurrius
     - IlkinQafarov
     - seeit360
     - TheItsNameless

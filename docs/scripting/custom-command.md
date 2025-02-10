@@ -15,10 +15,10 @@ mentions:
     - CrackedMatter
     - JaylyDev
     - Herobrine643928
-    - ConsoleTerm
+    - conmaster2112
     - kumja1
     - modmaker101
-    - AmethystDevbyFK
+    - SimpleDevMCBE
     - QuazChick
 ---
 

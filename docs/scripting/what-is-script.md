@@ -3,7 +3,7 @@ title: What is Script API?
 category: General
 nav_order: 2
 mentions:
-    - ConsoleTerm
+    - conmaster2112
     - Herobrine643928
     - JaylyDev
     - SmokeyStack
@@ -36,4 +36,4 @@ The API is divided into other sub-modules according to functionality. Some API f
 
 Modules should be named after the functionality they contain.
 
-[Original Credits](https://github.com/JaylyDev/ScriptAPI/tree/main/docs/MinecraftApi#readme) - Written by [ConMaster2112](https://github.com/ConsoleTerm)
+[Original Credits](https://github.com/JaylyDev/ScriptAPI/tree/main/docs/MinecraftApi#readme) - Written by [ConMaster2112](https://github.com/conmaster2112)

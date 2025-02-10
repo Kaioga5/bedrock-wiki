@@ -6,7 +6,7 @@ nav_order: 4
 prefix: "4. "
 mentions:
     - SirLich
-    - sovledDev
+    - solvedDev
     - Joelant05
     - Dreamedc2015
     - BlueFrog130

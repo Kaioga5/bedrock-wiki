@@ -9,7 +9,7 @@ mentions:
     - MedicalJewel105
     - SirLich
     - solvedDev
-    - omuhu
+    - Studio0rbit
     - Sprunkles137
     - ThomasOrs
     - QuazChick

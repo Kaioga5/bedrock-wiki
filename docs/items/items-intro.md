@@ -16,7 +16,7 @@ mentions:
     - stirante
     - ChibiMango
     - MedicalJewel105
-    - Sprunkles317
+    - Sprunkles137
     - mark-wiemer
     - TheItsNameless
     - s1050613
@@ -53,9 +53,9 @@ Below is the **minimum** behavior-side code to get a custom item into the creati
 
 ### Item Description
 
-- Defines the item's identifier - a unique ID in the format of `namespace:identifier`.
-- Configures which `menu_category` the item is placed into.
-    - Also takes the optional parameters `group` and `is_hidden_in_commands`.
+-   Defines the item's identifier - a unique ID in the format of `namespace:identifier`.
+-   Configures which `menu_category` the item is placed into.
+    -   Also takes the optional parameters `group` and `is_hidden_in_commands`.
 
 ## Adding Components
 
@@ -141,7 +141,7 @@ tile.wiki:custom_item.name=Custom Item
 
 In this page, you've learnt about the following:
 
-- [x] Basic features of items
-- [x] How to apply a texture
-- [x] How to link textures using shortnames in `item_texture.json`
-- [x] How to define names in the language file
+-   [x] Basic features of items
+-   [x] How to apply a texture
+-   [x] How to link textures using shortnames in `item_texture.json`
+-   [x] How to define names in the language file

@@ -7,13 +7,14 @@ mentions:
     - NhanAZ
     - SmokeyStack
     - Joemanasdawd
-    - mdisprgrm
+    - mdisprgm
     - Superice666
-    - GreenFrogMCBE
+    - vanistillhere
     - KanadeDev
     - HUYDGD
     - TheItsNameless
-    - ProtectorYT364
+    - hvlxh
+    - rac14
     - ThomasOrs
     - lapismyt
     - ModMaker101
@@ -34,18 +35,19 @@ Alongside the Vanilla BDS offering, many community projects exist, in a variety 
 These other projects get separated into Custom Server Software (Custom) and BDS-Based.
 
 Types of Server Software:
-- Custom Server Software = Server software developed entirely from scratch.
-- BDS-Based = Server software built on top of BDS, with modifications.
+
+-   Custom Server Software = Server software developed entirely from scratch.
+-   BDS-Based = Server software built on top of BDS, with modifications.
 
 You may observe a significant prevalence of Custom Server Software in comparison to BDS-Based solutions. This disparity can be attributed to several factors, the most notable of which are:
 
-- The lack of an official server software for an extended period, with the first release of BDS occurring on August 28, 2018, approximately seven years after the initial release of Bedrock Edition in 2011.
-- The removal of Symbols (also known as Mappings) in version 1.21.10, initially stripped to reduce the amount of information, which led to the decline of many BDS-Based software solutions.
+-   The lack of an official server software for an extended period, with the first release of BDS occurring on August 28, 2018, approximately seven years after the initial release of Bedrock Edition in 2011.
+-   The removal of Symbols (also known as Mappings) in version 1.21.10, initially stripped to reduce the amount of information, which led to the decline of many BDS-Based software solutions.
 
 ## Active Software
 
 | Name                                                                            | Description                                                                                      | Language                     | Type      |
-|---------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|------------------------------|-----------|
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ---------------------------- | --------- |
 | [Endstone](https://github.com/EndstoneMC/endstone)                              | A High-level Plugin API for Modding Bedrock Dedicated Servers, in both Python and C++.           | C++, Python                  | BDS-Based |
 | [LeviLamina](https://github.com/LiteLDev/LeviLamina)                            | A lightweight, modular and versatile mod loader for Minecraft Bedrock Edition.                   | C++                          | BDS-Based |
 | [RAstra](https://github.com/bedrock-crustaceans/RAstra)                         | Modern Minecraft Bedrock Server Software written in Rust.                                        | Rust, JavaScript, TypeScript | Custom    |
@@ -64,7 +66,7 @@ You may observe a significant prevalence of Custom Server Software in comparison
 ## Discontinued Software
 
 | Name                                                                                   | Description                                                                                                                       | Language   | Type      |
-|----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|------------|-----------|
+| -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------- |
 | [AllayBE](https://github.com/AllayBE/AllayBE)                                          |                                                                                                                                   | C++        | Custom    |
 | [BedrockPowder](https://github.com/BedrockPowder/BedrockPowder)                        | A Bedrock Edition Server software written on C++                                                                                  | C++        | Custom    |
 | [Cenisys](https://github.com/iTXTech/Cenisys)                                          | Clean, concurrent, coroutine-enabled Minecraft server written in C++.                                                             | C++        | Custom    |
@@ -83,7 +85,7 @@ You may observe a significant prevalence of Custom Server Software in comparison
 | [BDSX](https://github.com/bdsx/bdsx)                                                   | Minecraft, Bedrock Dedicated Server mod with node.js                                                                              | JavaScript | BDS-Based |
 | [BlueBird](https://github.com/BlueBirdMC/Server)                                       | BlackBirdMC server                                                                                                                | JavaScript | Custom    |
 | [DirtServer](https://github.com/Falkirks/DirtServer)                                   | An MCPE server written in Javascript                                                                                              | JavaScript | Custom    |
-| [GreenFrogMCBE](https://github.com/GreenFrogMCBE/GreenFrogMCBE)                        |                                                                                                                                   | JavaScript | Custom    |
+| [GreenFrogMCBE](https://github.com/vanistillhere/GreenFrogMCBE)                        |                                                                                                                                   | JavaScript | Custom    |
 | [MineJS](https://github.com/organization/MineJS)                                       | A server software for Minecraft : Pocket Edition, MineJS is based Node JS.                                                        | JavaScript | Custom    |
 | [NodeMine](https://github.com/NodeMine/NodeMine)                                       | A mcpe server software WIP DO NOT USE ATM                                                                                         | JavaScript | Custom    |
 | [Numerous-alpaca](https://github.com/numerous-alpaca/numerous-alpaca)                  | A Minecraft Bedrock Edition server in JavaScript                                                                                  | JavaScript | Custom    |
@@ -154,7 +156,7 @@ You may observe a significant prevalence of Custom Server Software in comparison
 
 ::: tip
 Since new software gets created all the time, and old software becomes unmaintained it is always important to update this list.
-So if you know a server software that is missing here or know that a server software is no longer maintained, then please update this list and create a PR. 
+So if you know a server software that is missing here or know that a server software is no longer maintained, then please update this list and create a PR.
 :::
 
 ## Further Information

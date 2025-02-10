@@ -10,7 +10,7 @@ mentions:
     - MedicalJewel105
     - Overload1252
     - ChibiMango
-    - Luthorius
+    - Lufurrius
     - TheItsNameless
     - SmokeyStack
     - ThomasOrs
@@ -215,9 +215,9 @@ The scripts key defines certain scripts which the entity runs at certain times. 
 
 Some useful things in Molang are:
 
-- queries. These are values which change depending on the condition. For example the `query.time_of_day` or `q.time_of_day` query returns the time of day.
-- variables. These are values can you edit to hold values to use later. For example, you can set the variable `variable.my_number` or `v.my_number` to be say 2.
-- evaluating. In Molang, we can use operators to return values. For example, we can return the value 1 if `q.time_of_day` is greater than `v.my_number` by writing `q.time_of_day > v.my_number`.
+-   queries. These are values which change depending on the condition. For example the `query.time_of_day` or `q.time_of_day` query returns the time of day.
+-   variables. These are values can you edit to hold values to use later. For example, you can set the variable `variable.my_number` or `v.my_number` to be say 2.
+-   evaluating. In Molang, we can use operators to return values. For example, we can return the value 1 if `q.time_of_day` is greater than `v.my_number` by writing `q.time_of_day > v.my_number`.
 
 ### Initialize
 
