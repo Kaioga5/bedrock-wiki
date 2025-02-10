@@ -329,7 +329,7 @@ As you can see not much has changed, we just update the categories/slots to the 
             },
             // We tell it to hide the helmet layer as we will be showing our armor on top
             "scripts": {
-                "parent_setup": "v.chest_layer_visible = 0.0;"
+                "parent_setup": "v.helmet_layer_visible = 0.0;"
             },
             // We tell it what controller to use (default armor one)
             "render_controllers": ["controller.render.armor"]
@@ -423,7 +423,7 @@ The custom boots texture if you need it.
             },
             // We tell it to hide the boots layer as we will be showing our armor on top
             "scripts": {
-                "parent_setup": "v.chest_layer_visible = 0.0;"
+                "parent_setup": "v.boot_layer_visible = 0.0;"
             },
             // We tell it what controller to use (default armor one)
             "render_controllers": ["controller.render.armor"]
