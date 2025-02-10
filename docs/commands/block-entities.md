@@ -71,7 +71,7 @@ playanimation @e [type=armor_stand, name=Grumm] animation.fireworks_rocket.move 
 execute as @e [type=armor_stand, name=Grumm] at @s run tp ~~~
 
 ## Hide Armor Stand Body
-effect @e [type=armor_stand, name=Grumm] invisibility infinite true
+effect @e [type=armor_stand, name=Grumm] invisibility infinite 1 true
 ```
 
 ![commandBlockChain6](/assets/images/commands/commandBlockChain/6.png)
