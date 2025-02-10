@@ -156,7 +156,7 @@ Type: Boolean/Object
 
 -   `seconds_to_destroy`: Double
     -   Sets the number of seconds it takes to destroy the block with base equipment. Greater numbers result in greater mining times.
-    -   Note: It actually takes 2x the amount of seconds defined.
+    -   Note: It actually takes 1.5&times; the amount of seconds defined.
 
 #### Example using Boolean
 
