@@ -66,7 +66,7 @@ One example of a situation where replacing the block item is necessary is with f
             "identifier": "wiki:daffodil", // Same as the block's ID
             "menu_category": {
                 "category": "nature",
-                "group": "itemGroup.name.flower"
+                "group": "minecraft:itemGroup.name.flower"
             }
         },
         "components": {

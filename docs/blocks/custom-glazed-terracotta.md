@@ -32,7 +32,7 @@ This will create a vanilla-like custom glazed terracotta.
             "identifier": "wiki:glazed_terracotta_template",
             "menu_category": {
                 "category": "construction",
-                "group": "itemGroup.name.glazedTerracotta"
+                "group": "minecraft:itemGroup.name.glazedTerracotta"
             },
             "traits": {
                 "minecraft:placement_direction": {

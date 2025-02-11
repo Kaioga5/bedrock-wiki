@@ -554,7 +554,7 @@ Holding a crop block in your hand wouldn't look right, so we place the crop with
             "identifier": "wiki:custom_seeds", // Make sure this is different from your crop's ID.
             "menu_category": {
                 "category": "nature",
-                "group": "itemGroup.name.seed"
+                "group": "minecraft:itemGroup.name.seed"
             }
         },
         "components": {
@@ -581,7 +581,7 @@ Your crop can't only drop seeds! Create a custom food using the template below.
             "identifier": "wiki:custom_food", // Make sure this is different from your crop and seeds' ID.
             "menu_category": {
                 "category": "nature",
-                "group": "itemGroup.name.crop"
+                "group": "minecraft:itemGroup.name.crop"
             }
         },
         "components": {

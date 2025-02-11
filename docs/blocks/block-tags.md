@@ -97,7 +97,7 @@ Example of an item querying a block's tags:
             "identifier": "wiki:custom_pickaxe",
             "menu_category": {
                 "category": "equipment",
-                "group": "itemGroup.name.pickaxe"
+                "group": "minecraft:itemGroup.name.pickaxe"
             }
         },
         "components": {

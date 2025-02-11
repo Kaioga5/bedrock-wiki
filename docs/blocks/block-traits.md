@@ -29,7 +29,7 @@ Block traits can be used to apply vanilla block states (such as direction) to yo
       "identifier": "wiki:custom_slab",
       "menu_category": {
         "category": "construction",
-        "group": "itemGroup.name.slab"
+        "group": "minecraft:itemGroup.name.slab"
       },
       "traits": {
         "minecraft:placement_position": {

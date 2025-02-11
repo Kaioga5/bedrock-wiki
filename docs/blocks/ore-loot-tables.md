@@ -155,7 +155,7 @@ Here you need to do two things:
             "identifier": "wiki:silver_ore",
             "menu_category": {
                 "category": "nature",
-                "group": "itemGroup.name.ore"
+                "group": "minecraft:itemGroup.name.ore"
             }
         },
         "components": {

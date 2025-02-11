@@ -55,7 +55,7 @@ Below is the **minimum** behavior-side code to get a custom block into the creat
             "identifier": "wiki:custom_block",
             "menu_category": {
                 "category": "construction", // The creative inventory or recipe book tab that the block is placed into
-                "group": "itemGroup.name.concrete", // The expandable group that the block is a part of. (Optional)
+                "group": "minecraft:itemGroup.name.concrete", // The expandable group that the block is a part of. (Optional)
                 "is_hidden_in_commands": false // Is the block hidden from use in commands? (Optional)
             }
         },

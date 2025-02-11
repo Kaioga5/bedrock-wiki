@@ -33,7 +33,7 @@ Like with the other item tutorials we will start by making a simple custom sword
             "identifier": "wiki:my_sword",
             "menu_category": {
                 "category": "equipment",
-                "group": "itemGroup.name.sword"
+                "group": "minecraft:itemGroup.name.sword"
             }
         },
         "components": {

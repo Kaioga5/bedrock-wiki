@@ -38,7 +38,7 @@ Create a chest piece:
             // Notice we give it the equipment category
             "menu_category": {
                 "category": "equipment",
-                "group": "itemGroup.name.chestplate"
+                "group": "minecraft:itemGroup.name.chestplate"
             }
         },
         "components": {
@@ -164,7 +164,7 @@ So while the chest piece alone is great, you probably want a whole set, so from 
             "identifier": "wiki:my_leggings",
             "menu_category": {
                 "category": "equipment",
-                "group": "itemGroup.name.leggings"
+                "group": "minecraft:itemGroup.name.leggings"
             }
         },
         "components": {
@@ -260,7 +260,7 @@ This is just like the chest piece, just we change some of the categories and slo
             "identifier": "wiki:my_helm",
             "menu_category": {
                 "category": "equipment",
-                "group": "itemGroup.name.helmet"
+                "group": "minecraft:itemGroup.name.helmet"
             }
         },
         "components": {
@@ -354,7 +354,7 @@ You already know the pattern so lets make the item and attachable json files.
             "identifier": "wiki:my_boots",
             "menu_category": {
                 "category": "equipment",
-                "group": "itemGroup.name.boots"
+                "group": "minecraft:itemGroup.name.boots"
             }
         },
         "components": {

@@ -30,7 +30,7 @@ If `menu_category` is omitted, the item will only be accessible through commands
 ```json
 "menu_category": {
     "category": "construction", // Tab the item is placed under
-    "group": "itemGroup.name.door", // Optional - Group the item is placed into
+    "group": "minecraft:itemGroup.name.door", // Optional - Group the item is placed into
     "is_hidden_in_commands": false // Optional - default is false (item is usable in commands)
 }
 ```
@@ -51,7 +51,7 @@ Currently, setting the category to "none" in a custom item (not block) prevents 
             "identifier": "wiki:balsa_wood",
             "menu_category": {
                 "category": "nature",
-                "group": "itemGroup.name.wood" // Placed into an expandable group
+                "group": "minecraft:itemGroup.name.wood" // Placed into an expandable group
             }
         }
     }
@@ -95,91 +95,91 @@ _For use with the `menu_category` parameter, `group`._
 
 <!-- page_dumper_start -->
 
-| Creative Categories:              |
-| --------------------------------- |
-| itemGroup.name.anvil              |
-| itemGroup.name.arrow              |
-| itemGroup.name.axe                |
-| itemGroup.name.banner             |
-| itemGroup.name.banner_pattern     |
-| itemGroup.name.bed                |
-| itemGroup.name.boat               |
-| itemGroup.name.boots              |
-| itemGroup.name.bundles            |
-| itemGroup.name.buttons            |
-| itemGroup.name.candles            |
-| itemGroup.name.chalkboard         |
-| itemGroup.name.chest              |
-| itemGroup.name.chestboat          |
-| itemGroup.name.chestplate         |
-| itemGroup.name.compounds          |
-| itemGroup.name.concrete           |
-| itemGroup.name.concretePowder     |
-| itemGroup.name.cookedFood         |
-| itemGroup.name.copper             |
-| itemGroup.name.coral              |
-| itemGroup.name.coral_decorations  |
-| itemGroup.name.crop               |
-| itemGroup.name.door               |
-| itemGroup.name.dye                |
-| itemGroup.name.enchantedBook      |
-| itemGroup.name.fence              |
-| itemGroup.name.fenceGate          |
-| itemGroup.name.firework           |
-| itemGroup.name.fireworkStars      |
-| itemGroup.name.flower             |
-| itemGroup.name.glass              |
-| itemGroup.name.glassPane          |
-| itemGroup.name.glazedTerracotta   |
-| itemGroup.name.goatHorn           |
-| itemGroup.name.grass              |
-| itemGroup.name.hanging_sign       |
-| itemGroup.name.helmet             |
-| itemGroup.name.hoe                |
-| itemGroup.name.horseArmor         |
-| itemGroup.name.leaves             |
-| itemGroup.name.leggings           |
-| itemGroup.name.lingeringPotion    |
-| itemGroup.name.log                |
-| itemGroup.name.minecart           |
-| itemGroup.name.miscFood           |
-| itemGroup.name.mobEgg             |
-| itemGroup.name.monsterStoneEgg    |
-| itemGroup.name.mushroom           |
-| itemGroup.name.netherWartBlock    |
-| itemGroup.name.ominousBottle      |
-| itemGroup.name.ore                |
-| itemGroup.name.permission         |
-| itemGroup.name.pickaxe            |
-| itemGroup.name.planks             |
-| itemGroup.name.potion             |
-| itemGroup.name.potterySherds      |
-| itemGroup.name.pressurePlate      |
-| itemGroup.name.products           |
-| itemGroup.name.rail               |
-| itemGroup.name.rawFood            |
-| itemGroup.name.record             |
-| itemGroup.name.sandstone          |
-| itemGroup.name.sapling            |
-| itemGroup.name.sculk              |
-| itemGroup.name.seed               |
-| itemGroup.name.shovel             |
-| itemGroup.name.shulkerBox         |
-| itemGroup.name.sign               |
-| itemGroup.name.skull              |
-| itemGroup.name.slab               |
-| itemGroup.name.smithing_templates |
-| itemGroup.name.splashPotion       |
-| itemGroup.name.stainedClay        |
-| itemGroup.name.stairs             |
-| itemGroup.name.stone              |
-| itemGroup.name.stoneBrick         |
-| itemGroup.name.sword              |
-| itemGroup.name.trapdoor           |
-| itemGroup.name.walls              |
-| itemGroup.name.wood               |
-| itemGroup.name.wool               |
-| itemGroup.name.woolCarpet         |
+| Creative Categories:                        |
+| ------------------------------------------- |
+| minecraft:itemGroup.name.anvil              |
+| minecraft:itemGroup.name.arrow              |
+| minecraft:itemGroup.name.axe                |
+| minecraft:itemGroup.name.banner             |
+| minecraft:itemGroup.name.banner_pattern     |
+| minecraft:itemGroup.name.bed                |
+| minecraft:itemGroup.name.boat               |
+| minecraft:itemGroup.name.boots              |
+| minecraft:itemGroup.name.bundles            |
+| minecraft:itemGroup.name.buttons            |
+| minecraft:itemGroup.name.candles            |
+| minecraft:itemGroup.name.chalkboard         |
+| minecraft:itemGroup.name.chest              |
+| minecraft:itemGroup.name.chestboat          |
+| minecraft:itemGroup.name.chestplate         |
+| minecraft:itemGroup.name.compounds          |
+| minecraft:itemGroup.name.concrete           |
+| minecraft:itemGroup.name.concretePowder     |
+| minecraft:itemGroup.name.cookedFood         |
+| minecraft:itemGroup.name.copper             |
+| minecraft:itemGroup.name.coral              |
+| minecraft:itemGroup.name.coral_decorations  |
+| minecraft:itemGroup.name.crop               |
+| minecraft:itemGroup.name.door               |
+| minecraft:itemGroup.name.dye                |
+| minecraft:itemGroup.name.enchantedBook      |
+| minecraft:itemGroup.name.fence              |
+| minecraft:itemGroup.name.fenceGate          |
+| minecraft:itemGroup.name.firework           |
+| minecraft:itemGroup.name.fireworkStars      |
+| minecraft:itemGroup.name.flower             |
+| minecraft:itemGroup.name.glass              |
+| minecraft:itemGroup.name.glassPane          |
+| minecraft:itemGroup.name.glazedTerracotta   |
+| minecraft:itemGroup.name.goatHorn           |
+| minecraft:itemGroup.name.grass              |
+| minecraft:itemGroup.name.hanging_sign       |
+| minecraft:itemGroup.name.helmet             |
+| minecraft:itemGroup.name.hoe                |
+| minecraft:itemGroup.name.horseArmor         |
+| minecraft:itemGroup.name.leaves             |
+| minecraft:itemGroup.name.leggings           |
+| minecraft:itemGroup.name.lingeringPotion    |
+| minecraft:itemGroup.name.log                |
+| minecraft:itemGroup.name.minecart           |
+| minecraft:itemGroup.name.miscFood           |
+| minecraft:itemGroup.name.mobEgg             |
+| minecraft:itemGroup.name.monsterStoneEgg    |
+| minecraft:itemGroup.name.mushroom           |
+| minecraft:itemGroup.name.netherWartBlock    |
+| minecraft:itemGroup.name.ominousBottle      |
+| minecraft:itemGroup.name.ore                |
+| minecraft:itemGroup.name.permission         |
+| minecraft:itemGroup.name.pickaxe            |
+| minecraft:itemGroup.name.planks             |
+| minecraft:itemGroup.name.potion             |
+| minecraft:itemGroup.name.potterySherds      |
+| minecraft:itemGroup.name.pressurePlate      |
+| minecraft:itemGroup.name.products           |
+| minecraft:itemGroup.name.rail               |
+| minecraft:itemGroup.name.rawFood            |
+| minecraft:itemGroup.name.record             |
+| minecraft:itemGroup.name.sandstone          |
+| minecraft:itemGroup.name.sapling            |
+| minecraft:itemGroup.name.sculk              |
+| minecraft:itemGroup.name.seed               |
+| minecraft:itemGroup.name.shovel             |
+| minecraft:itemGroup.name.shulkerBox         |
+| minecraft:itemGroup.name.sign               |
+| minecraft:itemGroup.name.skull              |
+| minecraft:itemGroup.name.slab               |
+| minecraft:itemGroup.name.smithing_templates |
+| minecraft:itemGroup.name.splashPotion       |
+| minecraft:itemGroup.name.stainedClay        |
+| minecraft:itemGroup.name.stairs             |
+| minecraft:itemGroup.name.stone              |
+| minecraft:itemGroup.name.stoneBrick         |
+| minecraft:itemGroup.name.sword              |
+| minecraft:itemGroup.name.trapdoor           |
+| minecraft:itemGroup.name.walls              |
+| minecraft:itemGroup.name.wood               |
+| minecraft:itemGroup.name.wool               |
+| minecraft:itemGroup.name.woolCarpet         |
 
 _Last updated for 1.21.50_
 

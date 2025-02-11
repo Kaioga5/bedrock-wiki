@@ -32,7 +32,7 @@ This is the block JSON you'll need for basic trapdoor functionality. It includes
             "identifier": "wiki:custom_trapdoor",
             "menu_category": {
                 "category": "construction",
-                "group": "itemGroup.name.trapdoor"
+                "group": "minecraft:itemGroup.name.trapdoor"
             },
             "states": {
                 "wiki:open": [false, true]

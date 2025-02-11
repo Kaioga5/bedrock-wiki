@@ -35,7 +35,7 @@ By the end you should be able to create something like this!
             "identifier": "wiki:custom_glass",
             "menu_category": {
                 "category": "construction",
-                "group": "itemGroup.name.glass"
+                "group": "minecraft:itemGroup.name.glass"
             }
         },
         "components": {
