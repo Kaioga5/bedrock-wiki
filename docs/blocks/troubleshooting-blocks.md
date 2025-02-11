@@ -72,7 +72,7 @@ Dirt like block example:
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:dirt_like"
@@ -94,7 +94,7 @@ Log like block example:
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:custom_log"
@@ -121,7 +121,7 @@ Grass-like block example:
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:custom_grass"
@@ -176,7 +176,7 @@ Solution: Navigate to your block file. Navigate to your `material_instances` com
 
 ```json
 {
-  "format_version": "1.21.40",
+  "format_version": "1.21.60",
   "minecraft:block": {
     ...
     "components": {
@@ -214,9 +214,9 @@ Problem: You get a content error similar to:
 
 Solution: Check your `minecraft:collision_box` or `minecraft:selection_box` components and do the following:
 
-- Make sure the X and Z values are in the range `-8` - `8`.
-- Make sure the Y value is in the range `0` - `16`.
-- Make sure the box doesn't exit the block's 16&times;16&times;16 unit area.
+-   Make sure the X and Z values are in the range `-8` - `8`.
+-   Make sure the Y value is in the range `0` - `16`.
+-   Make sure the box doesn't exit the block's 16&times;16&times;16 unit area.
 
 ## 3.2 - Model Errors
 

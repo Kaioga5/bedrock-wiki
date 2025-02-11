@@ -26,18 +26,18 @@ No need to panic! This page will help debug common issues.
 
 ### Item Doesn't Exist
 
-- Confirm that your pack is actually applied to your world
-- Confirm that your item is in the folder `BP/items/`
-- Confirm that your item is valid, according to [jsonlint](https://jsonlint.com/).
-- Confirm that your identifier is all lowercase, and looks similar to this: `wiki:my_item`
+-   Confirm that your pack is actually applied to your world
+-   Confirm that your item is in the folder `BP/items/`
+-   Confirm that your item is valid, according to [jsonlint](https://jsonlint.com/).
+-   Confirm that your identifier is all lowercase, and looks similar to this: `wiki:my_item`
 
 ### Missing Textures
 
 Navigate to your `item_texture.json` file. Ensure that it is properly named, and in the correct folder. Some examples of wrong names:
 
-- ⚠️ `texture/item_texture.json`
-- ⚠️ `textures/Item_texture.json`
-- ⚠️ `textures/item_textures.json`
+-   ⚠️ `texture/item_texture.json`
+-   ⚠️ `textures/Item_texture.json`
+-   ⚠️ `textures/item_textures.json`
 
 Here is an example file to compare against:
 
@@ -61,7 +61,7 @@ Next, navigate to your items BP file. Place the `minecraft:icon` component in yo
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:your_item",

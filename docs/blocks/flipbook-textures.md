@@ -13,8 +13,8 @@ description: Flipbook (animated) textures for blocks.
 
 From this page you will learn:
 
-- How to apply flipbook textures to a block.
-- Which values you can apply in `RP/textures/flipbook_textures.json` and what they do.
+-   How to apply flipbook textures to a block.
+-   Which values you can apply in `RP/textures/flipbook_textures.json` and what they do.
 
 ## Applying Flipbook Textures
 
@@ -32,7 +32,7 @@ You can simply apply animated magma's texture to your block by changing `texture
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:flipbook_block",

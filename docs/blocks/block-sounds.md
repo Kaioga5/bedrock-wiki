@@ -16,7 +16,7 @@ This property is used to determine general block sounds, such as the mining soun
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "wiki:custom_log": {
         "sound": "wood" // Define sound here
     }
@@ -26,7 +26,8 @@ This property is used to determine general block sounds, such as the mining soun
 The following are valid values for the sound property:
 
 <!-- page_dumper_start -->
-| *Last updated for 1.21.50* |
+
+| _Last updated for 1.21.50_ |
 | -------------------------- |
 | amethyst_block             |
 | amethyst_cluster           |
@@ -135,4 +136,5 @@ The following are valid values for the sound property:
 | web                        |
 | wet_sponge                 |
 | wood                       |
+
 <!-- page_dumper_end -->

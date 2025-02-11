@@ -18,9 +18,6 @@ In order to apply other components, such as a 2D icon for your block, you'll nee
 
 ## Replacing Block Items
 
-:::warning FORMAT VERSION 1.21.40 (EXPERIMENTAL)
-Replacing block items requires the `Upcoming Creator Features` experiment to be enabled.
-:::
 :::danger BEFORE PLAYER PLACE
 Replaced block items do not trigger the [`beforeOnPlayerPlace`](/blocks/block-events#before-player-place) event hook.
 :::
@@ -38,7 +35,7 @@ One example of a situation where replacing the block item is necessary is with f
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:daffodil"
@@ -60,7 +57,7 @@ One example of a situation where replacing the block item is necessary is with f
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:daffodil", // Same as the block's ID

@@ -45,7 +45,7 @@ Currently, setting the category to "none" in a custom item (not block) prevents 
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:balsa_wood",
@@ -64,7 +64,7 @@ Currently, setting the category to "none" in a custom item (not block) prevents 
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:dagger",
