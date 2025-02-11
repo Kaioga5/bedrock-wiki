@@ -339,6 +339,8 @@ Type: Object
 -   `geometry`: String/Object - the displayed [geometry](#geometry) component.
 -   `material_instances`: Object - the displayed [material instances](#material-instances) component.
 
+_Released from experiment `Upcoming Creator Features` for format versions 1.21.60 and higher._
+
 <CodeHeader>minecraft:block > components</CodeHeader>
 
 ```json
@@ -387,6 +389,8 @@ Type: Object
     -   `can_contain_liquid`: Boolean - whether the liquid type can occupy the same space as this block e.g., waterlogging.
     -   `on_liquid_touches`: String - determines what happens when the liquid type flows into the block.
     -   `stops_liquid_flowing_from_direction`: Array - determines an array of directions that the liquid cannot flow out of this block from.
+
+_Released from experiment `Upcoming Creator Features` for format versions 1.21.60 and higher._
 
 <CodeHeader>minecraft:block > components</CodeHeader>
 

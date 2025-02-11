@@ -127,6 +127,8 @@ Type: Object
 -   `composting_chance`: Float (0-100)
     -   How likely the compost level is to increase as a percentage.
 
+_Released from experiment `Upcoming Creator Features` for format versions 1.21.60 and higher._
+
 <CodeHeader>minecraft:item > components</CodeHeader>
 
 ```json
