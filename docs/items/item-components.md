@@ -65,6 +65,8 @@ Type: Object
 
 -   `block`: String/Object
     -   Defines the block that will be placed.
+-   `replace_block_item`: Boolean
+    -   Learn more about replacing block items [here](/blocks/blocks-as-items#replacing-block-items).
 -   `use_on`: Array
     -   List of block descriptors that contain blocks that this item can be used on. If left empty, all blocks will be allowed. See Custom Item Use Priority for more information on use behavior.
     -   This applies to Creative Mode as well.
@@ -113,6 +115,23 @@ Type: Boolean
 ```json
 "minecraft:can_destroy_in_creative": {
     "value": true
+}
+```
+
+### Compostable
+
+Allows this item to be used in a composter.
+
+Type: Object
+
+-   `composting_chance`: Float (0-100)
+    -   How likely the compost level is to increase as a percentage.
+
+<CodeHeader>minecraft:item > components</CodeHeader>
+
+```json
+"minecraft:compostable": {
+    "composting_chance": 50 // 50% chance to increment the compost level
 }
 ```
 
@@ -836,26 +855,44 @@ Type: Object
 -   `max_slots`: Integer (1-64)
     -   Defines the number of slots in the container.
 -   `max_weight_limit`: Integer
-    -   Defines the maximum allowed total weight of all items in the container.
-        -   To calculate the weight of an item, divide 64 by its max stack size.
-        -   Items that stack to 64 weigh 1 each, those that stack to 16 weigh 4 each and unstackable items weigh 64.
--   `weight_in_storage_item`: Integer (0-64)
-    -   Defines the additional weight the item adds when inside another storage item.
-        -   A value of 0 means that this item is not allowed inside another storage item.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
 ```json
 "minecraft:storage_item": {
     "max_slots": 64,
-    "max_weight_limit": 64,
-    "weight_in_storage_item": 4,
     "allow_nested_storage_items": true,
     "banned_items": [
         "minecraft:shulker_box",
         "minecraft:undyed_shulker_box"
     ]
 }
+```
+
+### Storage Weight Limit
+
+Defines the maximum allowed total weight of all items in the storage item container.
+The item must have the `minecraft:storage_item` component for this component to function.
+
+-   To calculate the weight of an item, divide 64 by its max stack size.
+-   Items that stack to 64 weigh 1 each, those that stack to 16 weigh 4 each and unstackable items weigh 64.
+
+Type: Integer
+
+```json
+"minecraft:storage_weight_limit": 64
+```
+
+### Storage Weight Modifier
+
+Defines the additional weight the item adds when inside another storage item.
+
+-   A value of 0 means that this item is not allowed inside another storage item.
+
+Type: Integer (0-64)
+
+```json
+"minecraft:storage_weight_modifier": 4
 ```
 
 ### Tags
