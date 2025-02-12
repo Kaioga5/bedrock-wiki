@@ -29,6 +29,12 @@ An experiment must be enabled in your world for experimental changes to take eff
         -   `tint_method` which allows the `color` to be tinted based on the biome the block is in.
             -   There are currently 6 supported tint methods: `none`, `birch_foliage`, `default_foliage`, `evergreen_foliage`, `grass` and `water`.
 
+<Tag name="experimental" />
+<Label color="blue">Upcoming Creator Features</Label>
+
+-   Updated `minecraft:material_instances`
+    -   Added `isotropic` instance parameter which determines whether face UVs should randomly rotate based on the block's position in the world.
+
 ## 1.21.60
 
 ### Description
