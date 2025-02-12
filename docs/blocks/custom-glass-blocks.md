@@ -59,7 +59,7 @@ For the correct face culling to apply to your glass block, textures must be defi
 
 ```json
 {
-    "format_version": "1.21.60",
+    "format_version": "1.21.40",
     "wiki:custom_glass": {
         "textures": "custom_glass", // Shortname defined in `RP/textures/terrain_texture.json`
         "sound": "glass"
