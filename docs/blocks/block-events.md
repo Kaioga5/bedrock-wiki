@@ -178,7 +178,7 @@ onRandomTick(event) {
 ### Step Off
 
 :::tip DEPENDENCY
-The step off event requires the the [`minecraft:collision_box`](/blocks/block-components#collision-box) component to be 4 or higher on the Y-axis in order to trigger.
+The step off event requires the [`minecraft:collision_box`](/blocks/block-components#collision-box) component to be 4 or higher on the Y-axis in order to trigger.
 :::
 
 Runs when an entity steps off the block.
@@ -196,7 +196,7 @@ onStepOff(event) {
 ### Step On
 
 :::tip DEPENDENCY
-The step on event requires the the [`minecraft:collision_box`](/blocks/block-components#collision-box) component to be 4 or higher on the Y-axis in order to trigger.
+The step on event requires the [`minecraft:collision_box`](/blocks/block-components#collision-box) component to be 4 or higher on the Y-axis in order to trigger.
 :::
 
 Runs when an entity steps onto the block.
