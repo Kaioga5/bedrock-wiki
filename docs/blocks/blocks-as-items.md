@@ -3,7 +3,7 @@ title: Blocks as Items
 description: Learn about items that represent blocks in the UI, in containers and when dropped on the ground.
 category: General
 tags:
-    - experimental
+    - intermediate
 license: true
 mentions:
     - QuazChick
