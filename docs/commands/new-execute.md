@@ -84,7 +84,7 @@ Currently accepted values are `overworld`, `nether`, and `the_end`.
 For example, to execute as a target if in The End, run:
 
 ```
-/execute in the_end positioned 0 -100 0 as @a [rm=1] run say I'm in the End dimension
+/execute in the_end positioned 0 -100 0 as @a[rm=1] run say I'm in the End dimension
 ```
 
 Note: Change in dimension will respect that dimension's scale; going from the Overworld to The Nether will apply a scale of x0.125 to the position, and vice versa will apply a x8 scale to the position.
@@ -259,7 +259,7 @@ Now for some examples of things that were not possible to do in one command, or 
 /execute if score game_settings var matches 3.. run say [Game] Difficulty set to Hard.
 
 # Comparing if two scores are equal:
-/execute as @a if score @s x = @s y run say My X is equal to my Y.
+/execute as @a if score @s wiki:cash = @s wiki:bank run say My cash balance is equal to my bank balance.
 
 # Test for an entity without targeting it:
 /execute as @a at @s if entity @e[type=armor_stand,r=10] run gamemode survival @s

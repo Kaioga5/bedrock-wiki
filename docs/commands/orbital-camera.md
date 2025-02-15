@@ -9,7 +9,7 @@ description: This technique allows you to confine your camera rotations to an or
 
 ## Introduction
 
-[Sourced By Bedrock Commands Community Discord](https://discord.gg/SYstTYx5G5)
+[Sourced by the Bedrock Commands Community (BCC) Discord](https://discord.gg/SYstTYx5G5)
 
 This technique allows you to confine your camera rotations to an orbit around the player, an entity, or position, with the height and radius of the orbit being fully adjustable.
 
@@ -21,7 +21,7 @@ This technique allows you to confine your camera rotations to an orbit around th
 
 ## Command
 
-<CodeHeader>BP/functions/cameras/orbital.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/camera/orbital.mcfunction</CodeHeader>
 
 ```yaml
 execute as @p at @s anchored eyes rotated ~ 0 positioned ^^1^-2 run camera @s set minecraft:free ease 0.1 linear pos ~~~ facing @s
@@ -63,15 +63,15 @@ execute as @p at @s anchored eyes rotated ~ 0 positioned ^^1^-2 run camera @s se
 
 **Similar Examples:**
 
-<CodeHeader>BP/functions/cameras/orbital.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/camera/orbital.mcfunction</CodeHeader>
 
 ```yaml
-# To orbit camera around entity tagged with 'orbit_center'
-execute as @p at @e [tag=orbit_center] anchored eyes rotated as @s rotated ~ 0 positioned ^^1^-5 run camera @s set minecraft:free ease 0.1 linear pos ~~~ facing @e [tag=orbit_center]
+# To orbit camera around entity tagged with 'wiki:orbital_camera.focus'
+execute as @p at @e[tag=wiki:wiki:orbital_camera.focus] anchored eyes rotated as @s rotated ~ 0 positioned ^^1^-5 run camera @s set minecraft:free ease 0.1 linear pos ~~~ facing @e[tag=wiki:orbital_camera.focus]
 ```
 ![One Repeating Command Block](/assets/images/commands/commandBlockChain/1.png)
 
-<CodeHeader>BP/functions/cameras/orbital.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/camera/orbital.mcfunction</CodeHeader>
 
 ```yaml
 # To orbit camera around position 6 7 8

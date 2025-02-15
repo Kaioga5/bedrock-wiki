@@ -9,7 +9,7 @@ description: /damage command explained.
 
 ## Introduction
 
-[Sourced By Bedrock Commands Community Discord](https://discord.gg/SYstTYx5G5)
+[Sourced by the Bedrock Commands Community (BCC) Discord](https://discord.gg/SYstTYx5G5)
 
 Introduced in Minecraft Release `1.18.10`, the /damage command deals precise damage to specified entities. With this change, the clunky methods like using `/effect` command to damage entities are rendered obsolete, making maps and other creations more powerful.
 
@@ -47,10 +47,10 @@ Introduced in Minecraft Release `1.18.10`, the /damage command deals precise dam
 /damage @a 4
 
 # Deal 3 'fire' damage to all entities of type 'sheep'
-/damage @e [type=sheep] 3 fire
+/damage @e[type=sheep] 3 fire
 
 # Deal 40 'entity attack' damage from a random player to all entities of type 'sheep'
-/damage @e [type=sheep] 40 entity_attack entity @r
+/damage @e[type=sheep] 40 entity_attack entity @r
 ```
 
 ## Damage Cause List

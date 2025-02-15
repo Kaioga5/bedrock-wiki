@@ -10,7 +10,7 @@ description: Max's Block Entity system using commands.
 
 ## Introduction
 
-[Sourced By Bedrock Commands Community Discord](https://discord.gg/SYstTYx5G5)
+[Sourced by the Bedrock Commands Community (BCC) Discord](https://discord.gg/SYstTYx5G5)
 
 This method, developed by Reddit user [u/Maxed_Out10](https://www.reddit.com/user/Maxed_Out10/) allows you to create near-perfect entity replications of any Minecraft block using armor stands and some sequential `/playanimation` commands.
 
@@ -45,33 +45,33 @@ _To be typed in chat:_
 
 :::tip
 
--   `/replaceitem entity @e [name=Grumm] slot.weapon.offhand 0 <itemID>`
+-   `/replaceitem entity @e[name="Grumm"] slot.weapon.offhand 0 <itemID>`
     -   Instead of manually placing the desired block item in the armor stand's main-hand, use this command to place it in it's off-hand to prevent players from taking the item.
 
 :::
 
 ## System
 
-<CodeHeader>BP/functions/mbe/render.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/mbe/render.mcfunction</CodeHeader>
 
 ```yaml
 ## Align Arms
-playanimation @e [type=armor_stand, name=Grumm] animation.armor_stand.entertain_pose null 0 "0" wiki:align.arms
+playanimation @e[type=armor_stand,name="Grumm"] animation.armor_stand.entertain_pose null 0 "0" wiki:align.arms
 
 ## Mini Block Size
-playanimation @e [type=armor_stand, name=Grumm] animation.player.move.arms.zombie null 0 "0" wiki:size.mini_block
+playanimation @e[type=armor_stand,name="Grumm"] animation.player.move.arms.zombie null 0 "0" wiki:size.mini_block
 
 ## Full Block (optional)
 ### Size
-playanimation @e [type=armor_stand, name=Grumm] animation.ghast.scale null 0 "0" wiki:size.full_block
+playanimation @e[type=armor_stand,name="Grumm"] animation.ghast.scale null 0 "0" wiki:size.full_block
 ### Align
-playanimation @e [type=armor_stand, name=Grumm] animation.fireworks_rocket.move null 0 "0" wiki:align.full_block
+playanimation @e[type=armor_stand,name="Grumm"] animation.fireworks_rocket.move null 0 "0" wiki:align.full_block
 
 ## Freeze Armor Stand
-execute as @e [type=armor_stand, name=Grumm] at @s run tp ~~~
+execute as @e[type=armor_stand,name="Grumm"] at @s run tp ~~~
 
 ## Hide Armor Stand Body
-effect @e [type=armor_stand, name=Grumm] invisibility infinite true
+effect @e[type=armor_stand,name="Grumm"] invisibility infinite 1 true
 ```
 
 ![commandBlockChain6](/assets/images/commands/commandBlockChain/6.png)
@@ -102,16 +102,16 @@ Using the same controller names above is not required. However, it can help avoi
 
 ```yaml
 # Face north
-/tp @e [type=armor_stand, name=Grumm, c=1] ~-1.1245 ~0.2260 ~-0.097 81
+/tp @e[type=armor_stand,name="Grumm",c=1] ~-1.1245 ~0.2260 ~-0.097 81
 
 # Face south
-/tp @e [type=armor_stand, name=Grumm, c=1] ~1.1245 ~0.2260 ~0.097 260
+/tp @e[type=armor_stand,name="Grumm",c=1] ~1.1245 ~0.2260 ~0.097 260
 
 # Face east
-/tp @e [type=armor_stand, name=Grumm, c=1] ~0.097 ~0.2260 ~-1.1245 171
+/tp @e[type=armor_stand,name="Grumm",c=1] ~0.097 ~0.2260 ~-1.1245 171
 
 # Face west
-/tp @e [type=armor_stand, name=Grumm, c=1] ~-0.097 ~0.2260 ~1.1245 350
+/tp @e[type=armor_stand,name="Grumm",c=1] ~-0.097 ~0.2260 ~1.1245 350
 ```
 
 </Spoiler>
@@ -122,16 +122,16 @@ Using the same controller names above is not required. However, it can help avoi
 
 ```yaml
 # Face north
-/tp @e [type=armor_stand, name=Grumm, c=1] ~-0.417~-0.5 ~-0.035 81
+/tp @e[type=armor_stand,name="Grumm",c=1] ~-0.417~-0.5 ~-0.035 81
 
 # Face south
-/tp @e [type=armor_stand, name=Grumm, c=1] ~0.417 ~-0.5 ~0.035 260
+/tp @e[type=armor_stand,name="Grumm",c=1] ~0.417 ~-0.5 ~0.035 260
 
 # Face east
-/tp @e [type=armor_stand, name=Grumm, c=1] ~0.035 ~-0.5 ~-0.417 171
+/tp @e[type=armor_stand,name="Grumm",c=1] ~0.035 ~-0.5 ~-0.417 171
 
 # Face west
-/tp @e [type=armor_stand, name=Grumm, c=1] ~-0.035 ~-0.5 ~0.417 350
+/tp @e[type=armor_stand,name="Grumm",c=1] ~-0.035 ~-0.5 ~0.417 350
 ```
 
 </Spoiler>
@@ -142,16 +142,16 @@ Using the same controller names above is not required. However, it can help avoi
 
 ```yaml
 # Face north
-/tp @e [type=armor_stand, name=Grumm, c=1] ~-0.097 ~0.2325 ~1.1245 350
+/tp @e[type=armor_stand,name="Grumm",c=1] ~-0.097 ~0.2325 ~1.1245 350
 
 # Face south
-/tp @e [type=armor_stand, name=Grumm, c=1] ~0.097 ~0.2325 ~-1.1245 171
+/tp @e[type=armor_stand,name="Grumm",c=1] ~0.097 ~0.2325 ~-1.1245 171
 
 # Face east
-/tp @e [type=armor_stand, name=Grumm, c=1] ~-1.1245 ~0.2325 ~-0.097 81
+/tp @e[type=armor_stand,name="Grumm",c=1] ~-1.1245 ~0.2325 ~-0.097 81
 
 # Face west
-/tp @e [type=armor_stand, name=Grumm, c=1] ~1.1245 ~0.2325 ~0.097 260
+/tp @e[type=armor_stand,name="Grumm",c=1] ~1.1245 ~0.2325 ~0.097 260
 ```
 
 </Spoiler>
@@ -162,16 +162,16 @@ Using the same controller names above is not required. However, it can help avoi
 
 ```yaml
 # Face north
-/tp @e [type=armor_stand, name=Grumm, c=1] ~-0.097 ~0.2325 ~1.1245 350
+/tp @e[type=armor_stand,name="Grumm",c=1] ~-0.097 ~0.2325 ~1.1245 350
 
 # Face south
-/tp @e [type=armor_stand, name=Grumm, c=1] ~0.097 ~0.2325 ~-1.1245 171
+/tp @e[type=armor_stand,name="Grumm",c=1] ~0.097 ~0.2325 ~-1.1245 171
 
 # Face east
-/tp @e [type=armor_stand, name=Grumm, c=1] ~-1.1245 ~0.2325 ~-0.097 81
+/tp @e[type=armor_stand,name="Grumm",c=1] ~-1.1245 ~0.2325 ~-0.097 81
 
 # Face west
-/tp @e [type=armor_stand, name=Grumm, c=1] ~1.1245 ~0.2325 ~0.097 260
+/tp @e[type=armor_stand,name="Grumm",c=1] ~1.1245 ~0.2325 ~0.097 260
 ```
 
 </Spoiler>
@@ -182,16 +182,16 @@ Using the same controller names above is not required. However, it can help avoi
 
 ```yaml
 # Face north
-/tp @e [type=armor_stand, name=Grumm, c=1] ~-1.1245 ~0.484 ~-0.097 81
+/tp @e[type=armor_stand,name="Grumm",c=1] ~-1.1245 ~0.484 ~-0.097 81
 
 # Face south
-/tp @e [type=armor_stand, name=Grumm, c=1] ~1.1245 ~0.484 ~0.097 260
+/tp @e[type=armor_stand,name="Grumm",c=1] ~1.1245 ~0.484 ~0.097 260
 
 # Face east
-/tp @e [type=armor_stand, name=Grumm, c=1] ~0.097 ~0.484 ~-1.1245 171
+/tp @e[type=armor_stand,name="Grumm",c=1] ~0.097 ~0.484 ~-1.1245 171
 
 # Face west
-/tp @e [type=armor_stand, name=Grumm, c=1] ~-0.097 ~0.484 ~1.1245 350
+/tp @e[type=armor_stand,name="Grumm",c=1] ~-0.097 ~0.484 ~1.1245 350
 ```
 
 </Spoiler>
@@ -200,9 +200,9 @@ Using the same controller names above is not required. However, it can help avoi
 
 1. To save, run:
 
-    - `/execute at @e [type=armor_stand, name=Grumm, c=1] run structure save wiki ~~~ ~~~ true disk false`
+    - `/execute at @e[type=armor_stand,name="Grumm",c=1] run structure save wiki:mbe ~~~ ~~~ true disk false`
 
 2. To load, run:
-    - `/structure load wiki <to: x y z>`
+    - `/structure load wiki:mbe <to: x y z>`
 
-> Note: Structure name `wiki` can be changed to your preference.
+> Note: Structure name `wiki:mbe` can be changed to your preference.

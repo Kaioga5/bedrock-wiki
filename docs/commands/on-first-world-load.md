@@ -12,7 +12,7 @@ description: This system will run your desired commands on the event that the wo
 
 ## Introduction
 
-[Sourced By Bedrock Commands Community Discord](https://discord.gg/SYstTYx5G5)
+[Sourced by the Bedrock Commands Community (BCC) Discord](https://discord.gg/SYstTYx5G5)
 
 This system will run your desired commands on the event that the world is loaded for the first time after applying your pack.
 > Note: A [Function](/commands/mcfunctions) Pack is required to achieve this system, since it is the `tick.json` file which allows us to run commands as soon as the world is initialised.
@@ -24,26 +24,26 @@ This system will run your desired commands on the event that the world is loaded
 ```json
 {
   "values": [
-    "events/world/on_initialise"
+    "wiki/event/worlds/on_initialise"
   ]
 }
 ```
 
 ## System
 
-<CodeHeader>BP/functions/events/world/on_initialise.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/event/worlds/on_initialise.mcfunction</CodeHeader>
 ```yaml
 ## Initialisation
 ### Add objective
-scoreboard objectives add world dummy
+scoreboard objectives add wiki:world dummy
 ### Register to objective
-scoreboard players add Initialised world 0
+scoreboard players add .Initialised wiki:world 0
 
 ## Your Commands Here (Example)
-execute if score Initialised world matches 0 run say New world created!
+execute if score .Initialised wiki:world matches 0 run say World initialised! Pack loaded for the first time.
 
 ## Mark as Initialised
-scoreboard players set Initialised world 1
+scoreboard players set .Initialised wiki:world 1
 ```
 
 Here, we have used an `/execute - say` command as an example, but you can use any command you prefer and as many as you need.
@@ -52,14 +52,14 @@ Just make sure to follow the given order and properly apply the `/execute if sco
 
 ## Explanation
 
-- **` Initialised=0 `** world has just initialised and we are yet to run the initialisation commands we need.
-- **` Initialised=1 `** world has been initialised and we have executed the initialisation commands.
+- **` .Initialised=0 `** world has just initialised and we are yet to run the initialisation commands we need.
+- **` .Initialised=1 `** world has been initialised and we have executed the initialisation commands.
 
-An objective of the name `world` is added for us to save scores to it so that we can track whether the world has been initialised or not. This also allows us to structure our commands to only execute at world initialisation.
+An objective of the name `wiki:world` is added for us to save scores to it so that we can track whether the world has been initialised or not. This also allows us to structure our commands to only execute at world initialisation.
 
-Following the creation of the objective, a score of `0` is added to the fake-player-name 'initialised'. This will register it to the objective and enable us to use the `/execute if score` condition to run our desired commands.
+Following the creation of the objective, a score of `0` is added to the score holder '.Initialised'. This will register it to the objective and enable us to use the `/execute if score` condition to run our desired commands.
 
-Finally, the score for fake-player-name 'initialised' is set to `1` after all the commands are executed. This is to prevent it from entering a loop and executing more than once.
+Finally, the score for the score holder '.Initialised' is set to `1` after all the commands are executed. This prevents it from executing more than once.
 
 ## Folder Structure
 
@@ -67,19 +67,12 @@ Finally, the score for fake-player-name 'initialised' is set to `1` after all th
 	:paths="[
     'BP',
     'BP/functions',
+    'BP/functions/wiki',
     'BP/pack_icon.png',
     'BP/manifest.json',
-    'BP/functions/events',
-    'BP/functions/events/world',
-    'BP/functions/events/world/on_initialise.mcfunction',
+    'BP/functions/wiki/event',
+    'BP/functions/wiki/event/worlds',
+    'BP/functions/wiki/event/worlds/on_initialise.mcfunction',
     'BP/functions/tick.json'
 ]"
 ></FolderView>
-
-:::info NOTE:
-
-The scoreboard names (in this case: 'world') may end up being used by other people. Appending ` _ ` and a set of randomly generated characters after would be a choice that reduces the probability of collisions. Similar technique can be employed for the ` .mcfunction ` filenames. Ex:
-- ` world_0fe678 `
-- ` on_initialise_0fe678.mcfunction `
-
-:::

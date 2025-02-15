@@ -10,7 +10,7 @@ description: This system will run your desired commands on the event that a play
 
 ## Introduction
 
-[Sourced By Bedrock Commands Community Discord](https://discord.gg/SYstTYx5G5)
+[Sourced by the Bedrock Commands Community (BCC) Discord](https://discord.gg/SYstTYx5G5)
 
 This system will run your desired commands on the event that a player joins the world.
 
@@ -18,37 +18,37 @@ This system will run your desired commands on the event that a player joins the 
 
 _To be typed in Chat:_
 
-`/scoreboard objectives add joined dummy`
+`/scoreboard objectives add wiki:joined dummy`
 
 If you are working with functions and prefer to have the objective added automatically on world initialisation, follow the process outlined in [On First World Load.](/commands/on-first-world-load)
 
 ## System
 
-<CodeHeader>BP/functions/events/player/on_join.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/event/players/on_join.mcfunction</CodeHeader>
 
 ```yaml
-## Register Players to 'joined' Objective Who Joined For First Time or Were Cleared from 'joined' Previously
-scoreboard players add @a joined 0
+## Register Players to 'wiki:joined' Objective Who Joined For First Time or Were Cleared from 'wiki:joined' Previously
+scoreboard players add @a wiki:joined 0
 
 ## Your Commands Here (Example)
-tp @a [scores={joined=0}] 0 65 0
+tp @a[scores={wiki:joined=0}] 0 65 0
 
 ### Mark Players as Joined
 ### Clear 'joined' score of online and offline players
-scoreboard players reset * joined
+scoreboard players reset * wiki:joined
 ### Set online players score to 1
-scoreboard players set @a joined 1
+scoreboard players set @a wiki:joined 1
 ```
 
 ![Chain of 4 Command Blocks](/assets/images/commands/commandBlockChain/4.png)
 
 Here, we have used a `/tp` command as an example, but you can use any command you prefer and as many as you need.
 
-Just make sure to follow the given order and properly apply the `scores={joined=0}` selector argument as shown for your desired commands.
+Just make sure to follow the given order and properly apply the `scores={wiki:joined=0}` selector argument as shown for your desired commands.
 
 ## Explanation
 
-When the player joins, a score of `0` is added to their `joined` objective. This allows us to run commands from them using the `scores` selector argument.
+When the player joins, a score of `0` is added to their `wiki:joined` objective. This allows us to run commands from them using the `scores` selector argument.
 
 Immediately after the commands are run, we reset all the scores on the objective using wildcard **`*`**. And only the players who stayed online will have their score set to `1`.
 
@@ -66,7 +66,7 @@ If you are using functions instead of command blocks, the `on_join` function mus
 ```json
 {
   "values": [
-    "events/player/on_join"
+    "wiki/event/players/on_join"
   ]
 }
 ```
@@ -77,20 +77,12 @@ If using functions, your pack folder structure will be as follows:
 	:paths="[
     'BP',
     'BP/functions',
+    'BP/functions/wiki',
     'BP/pack_icon.png',
     'BP/manifest.json',
-    'BP/functions/events',
-    'BP/functions/events/player',
-    'BP/functions/events/player/on_join.mcfunction',
+    'BP/functions/wiki/event',
+    'BP/functions/wiki/event/players',
+    'BP/functions/wiki/event/players/on_join.mcfunction',
     'BP/functions/tick.json'
 ]"
 ></FolderView>
-
-:::info NOTE:
-
-The scoreboard names (in this case: 'joined') may end up being used by other people. Appending `_` and a set of randomly generated characters after would be a choice that reduces the probability of collisions. Similar technique can be employed for the `.mcfunction` filenames. Ex:
-
--   `joined_0fe678`
--   `on_join_0fe678.mcfunction`
-
-:::

@@ -11,7 +11,7 @@ description: Introduction to MCBE command blocks.
 
 ## Introduction
 
-[Sourced By Bedrock Commands Community Discord](https://discord.gg/SYstTYx5G5)
+[Sourced by the Bedrock Commands Community (BCC) Discord](https://discord.gg/SYstTYx5G5)
 
 Command Blocks are special blocks in Minecraft. The same commands (cheats) you type in chat can be run automatically using command blocks and it can be reused without needing to type all over again.
 
@@ -37,7 +37,7 @@ They can only be placed or destroyed by a player with the Operator permission in
 
 ## Command Block Conditions
 
-**Conditional** command blocks will run the command only if the previous command block it was connecting from had an output that was successful. (`true`)
+**Conditional** command blocks will run the command only if the previous command block it was connecting from had an output that was successful (`true`).
 
 > Conditional command block states are shown by a small indent into the command block's arrow texture, as shown below:
 >

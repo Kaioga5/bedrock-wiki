@@ -12,7 +12,7 @@ description: Randomly relocate all selected targets among each other, ensuring n
 
 ## Introduction
 
-[Sourced by Bedrock Commands Community Discord](https://discord.gg/SYstTYx5G5)
+[Sourced by the Bedrock Commands Community (BCC) Discord](https://discord.gg/SYstTYx5G5)
 
 Multiplayer Position Rearrangement function, or more accurately Multiplayer Position Derangement function, created by @ZheaEvyline, allows you to randomly relocate all selected targets among each other, ensuring no target remains in its original position.
 
@@ -67,7 +67,7 @@ The number of derangement possibilities increases rapidly as the number of eleme
 
 An ID system is required to index the position of all targets from 1 to N, allowing us to track the original position of each target. We will run this file in the `tick.json` to automatically assign the IDs.
 
-<CodeHeader>BP/functions/scoreboard/players/id.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/scoreboard/players/id.mcfunction</CodeHeader>
 
 ```yaml
 ## Register New Players to ID Objective
@@ -99,7 +99,7 @@ execute as @a at @s run scoreboard players operation @e[type=armor_stand,name="w
 function wiki/derange_position/process
 
 ## Run Process One Last Time if Final Player Has a Valid Position Available
-execute if score .Players.NotAllocated wiki:count matches 1 unless score @a[tag=!wiki:pos.allocated, c=1] wiki:id = @e [type=armor_stand, name="wiki:position_marker", c=1] wiki:id run function wiki/derange_position/process
+execute if score .Players.NotAllocated wiki:count matches 1 unless score @a[tag=!wiki:pos.allocated,c=1] wiki:id = @e[type=armor_stand,name="wiki:position_marker",c=1] wiki:id run function wiki/derange_position/process
 
 ## Resolve Collision if Final Player Has No Valid Position Available
 ### relocate the allocated player to their colliding player's original position to free their position for the colliding player
@@ -162,8 +162,8 @@ Now, for our functions to actually work, we will need to add the following objec
 <CodeHeader>BP/functions/scoreboard/objectives/add_all.mcfunction</CodeHeader>
 
 ```yaml
-scoreboard objectives add wiki:id dummy
-scoreboard objectives add wiki:count dummy
+scoreboard objectives add wiki:wiki:id dummy
+scoreboard objectives add wiki:wiki:count dummy
 ```
 
 <br>

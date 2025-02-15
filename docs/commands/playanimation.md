@@ -71,7 +71,7 @@ If a non-existent animation controller is specified, it will be registered as a 
 <CodeHeader></CodeHeader>
 
 ```yaml
-/playanimation @a animation.piglin.celebrate_hunt_special animation.ender_dragon.neck_head_movement 0 "v.head_position_y=0;v.head_rotation_y=q.target_y_rotation;return q.is_sneaking;" wiki:head
+/playanimation @a animation.piglin.celebrate_hunt_special animation.ender_dragon.neck_head_movement 0 "v.head_position_y=0;v.head_rotation_y=q.target_y_rotation;return q.is_sneaking;" wiki:dance
 ```
 
 These commands register a new animation controller that:  
@@ -322,3 +322,5 @@ For a detailed guide, visit: [Bedrock.dev - Molang Documentation](https://bedroc
     - `head_rotation_x` — rotate the entity's head along the X-axis.
     - `head_rotation_y` — rotate the entity's head along the Y-axis.
     - `head_rotation_z` — rotate the entity's head along the Z-axis.
+
+**(Recommended) Read Next: [FMBE - A New Way to Create Display Entities](/commands/display-entities)**
