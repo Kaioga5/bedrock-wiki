@@ -6,7 +6,7 @@ mentions:
     - SirLich
     - ThijsHankelMC
     - MedicalJewel105
-    - Esatz77
+    - Ersatz77
     - ChibiMango
     - TheItsNameless
     - JaylyDev

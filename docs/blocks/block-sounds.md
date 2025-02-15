@@ -1,16 +1,18 @@
 ---
 title: Block Sounds
-description: Block sounds refers to the sound property in your block entry inside blocks.json.
+description: Learn how to modify the sounds that blocks play after actions such as placement.
 category: Documentation
-show_outline: false
 mentions:
     - MedicalJewel105
     - TheItsNameless
     - QuazChick
 ---
 
-Block sounds refers to the sound property in your block entry inside `blocks.json`.
-This property is used to determine general block sounds, such as the mining sound, step on sound, breaking sound, and placement sound. You can apply sound to your block this way:
+## Applying Sounds
+
+This `sounds` parameter in `RP/blocks.json` is used to determine general block sounds, such as the mining sound, step on sound, breaking sound, and placement sound.
+
+You can apply a set of sounds to your block using this parameter:
 
 <CodeHeader>RP/blocks.json</CodeHeader>
 
@@ -23,10 +25,48 @@ This property is used to determine general block sounds, such as the mining soun
 }
 ```
 
+## Adding Custom Sounds
+
+:::danger UNSUPPORTED EVENTS
+Only the `break`, `hit` and `place` block sound events can be modified by custom block sound definitions.
+
+Defining sounds for other events, such as `step`, will have no effect.
+:::
+
+<CodeHeader>RP/sounds.json</CodeHeader>
+
+```json
+{
+    "block_sounds": {
+        "wiki:custom_wood": {
+            "events": {
+                "break": "random.levelup",
+                "hit": "random.pop",
+                "place": "random.pop"
+            }
+        }
+    }
+}
+```
+
+<CodeHeader>RP/blocks.json</CodeHeader>
+
+```json
+{
+    "format_version": "1.21.40",
+    "wiki:custom_log": {
+        "sound": "wiki:custom_wood"
+    }
+}
+```
+
+## List of Vanilla Sounds
+
 The following are valid values for the sound property:
 
 <!-- page_dumper_start -->
-| *Last updated for 1.21.50* |
+
+| _Last updated for 1.21.50_ |
 | -------------------------- |
 | amethyst_block             |
 | amethyst_cluster           |
@@ -135,4 +175,5 @@ The following are valid values for the sound property:
 | web                        |
 | wet_sponge                 |
 | wood                       |
+
 <!-- page_dumper_end -->

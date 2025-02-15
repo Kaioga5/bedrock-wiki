@@ -11,7 +11,7 @@ mentions:
     - aexer0e
     - imsolucid
     - nebulacrab
-    - Luthorius
+    - Lufurrius
     - TheItsNameless
     - Halo333X
 description: Learn how to make a flying behavior for your entity.
@@ -130,34 +130,30 @@ It's recommended that you link this animation controller to the player.
 
 ```json
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.base": {
-			"initial_state": "default",
-			"states": {
-				"default": {
-					"transitions": [
-						{
-							"base": "(1.0)"
-						}
-					],
-					"on_entry": [
-                        "/function dragon_control"
-                    ]
-				},
-				"base": {
-					"transitions": [
-						{
-							"default": "(1.0)"
-						}
-					],
-					"on_entry": [
-                        "/function dragon_control"
-                    ]
-				}
-			}
-		}
-	}
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.base": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "base": "(1.0)"
+                        }
+                    ],
+                    "on_entry": ["/function dragon_control"]
+                },
+                "base": {
+                    "transitions": [
+                        {
+                            "default": "(1.0)"
+                        }
+                    ],
+                    "on_entry": ["/function dragon_control"]
+                }
+            }
+        }
+    }
 }
 ```
 
@@ -445,9 +441,9 @@ import { system, world } from "@minecraft/server";
 import Utils from "./utils";
 
 system.runInterval(() => {
-    const dim = world.getDimension('overworld');
+    const dim = world.getDimension("overworld");
     // You can use tags instead of family type
-    for (const entity of dim.getEntities({ families: [ "wiki:can_fly" ] })) {
+    for (const entity of dim.getEntities({ families: ["wiki:can_fly"] })) {
         const utils = new Utils(entity);
         // Recommended values
         utils.flySystem(0.09, 0.07, 5);

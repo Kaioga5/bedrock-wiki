@@ -12,7 +12,7 @@ mentions:
     - destruc7ion
     - Dreamedc2015
     - MedicalJewel105
-    - Luthorius
+    - Lufurrius
     - SmokeyStack
 ---
 

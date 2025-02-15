@@ -13,7 +13,7 @@ mentions:
     - TreaBeane
     - r4isen1920
     - ChillRx
-    - Luthorius
+    - Lufurrius
     - TheItsNameless
     - ThomasOrs
 ---

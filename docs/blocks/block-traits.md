@@ -3,12 +3,13 @@ title: Block Traits
 description: Block traits can be used to apply vanilla block states (such as direction) to your custom blocks easily, without the need for events and triggers.
 category: General
 nav_order: 5
+license: true
 mentions:
     - QuazChick
     - SmokeyStack
 ---
 
-:::tip FORMAT & MIN ENGINE VERSION `1.21.40`
+:::tip FORMAT & MIN ENGINE VERSION `1.21.60`
 Before you learn about block traits, you should be confident with [block states](/blocks/block-states).
 
 When working with block states, ensure that the `min_engine_version` in your pack manifest is `1.20.20` or higher.
@@ -22,13 +23,13 @@ Block traits can be used to apply vanilla block states (such as direction) to yo
 
 ```json
 {
-  "format_version": "1.21.40",
+  "format_version": "1.21.60",
   "minecraft:block": {
     "description": {
       "identifier": "wiki:custom_slab",
       "menu_category": {
         "category": "construction",
-        "group": "itemGroup.name.slab"
+        "group": "minecraft:itemGroup.name.slab"
       },
       "traits": {
         "minecraft:placement_position": {

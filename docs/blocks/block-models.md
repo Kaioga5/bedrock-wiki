@@ -5,6 +5,7 @@ category: Tutorials
 tags:
     - beginner
     - easy
+license: true
 mentions:
     - QuazChick
     - SmokeyStack
@@ -12,7 +13,7 @@ mentions:
 
 Although custom blocks are unable to make use of vanilla [block shapes](/blocks/block-shapes), we can create our own models which follow a similar format to entity models. This tutorial will walk you through the process of creating a custom block model for a "paper bag" using [Blockbench](https://blockbench.net). You should learn the main features of Minecraft geometry tailored towards creating custom blocks from this tutorial.
 
-**NOTE:** Custom block models must be within the [model size limits](/blocks/block-components.html#geometry).
+**NOTE:** Custom block models must be within the [model size limits](/blocks/block-components#geometry).
 
 ## Model Setup
 
@@ -141,7 +142,7 @@ If you have textures for your block defined in that file, make sure you migrate 
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:paper_bag",
@@ -155,16 +156,16 @@ If you have textures for your block defined in that file, make sure you migrate 
             // Apply textures and other rendering configuration
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "paper_bag",
+                    "texture": "wiki:paper_bag",
                     "render_method": "alpha_test" // Disable backface culling and allow transparency
                 },
                 "down": {
-                    "texture": "paper_bag_bottom_fold",
+                    "texture": "wiki:paper_bag_bottom_fold",
                     "render_method": "alpha_test" // Must be the same in all instances
                 },
                 // Custom instance name used in model
                 "side_gusset": {
-                    "texture": "paper_bag_side_gusset",
+                    "texture": "wiki:paper_bag_side_gusset",
                     "render_method": "alpha_test" // Must be the same in all instances
                 }
             },

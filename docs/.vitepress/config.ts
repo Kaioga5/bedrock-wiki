@@ -5,7 +5,6 @@ import { ThemeConfig } from "./theme";
 
 import head, { transformHead } from "./head";
 import redirects from "./redirects";
-import sidebar from "./sidebar";
 import tags from "./tags";
 
 const isFastBuild = process.env.FAST_BUILD?.trim() === "true";
@@ -28,6 +27,8 @@ if (isFastBuild) {
 export default defineConfigWithTheme<ThemeConfig>({
   title: "Bedrock Wiki",
   description: "A knowledge-sharing website for technical features of Minecraft Bedrock.",
+
+  cleanUrls: true,
 
   head,
   transformHead,
@@ -66,7 +67,6 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     redirects,
-    sidebar,
     tags,
   },
 
@@ -80,6 +80,16 @@ export default defineConfigWithTheme<ThemeConfig>({
     lineNumbers: true,
     config(md) {
       md.use(taskListsPlugin, { label: true });
+    },
+  },
+
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: "modern",
+        },
+      },
     },
   },
 });

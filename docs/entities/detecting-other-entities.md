@@ -8,7 +8,7 @@ mentions:
     - SmokeyStack
     - MedicalJewel105
     - SirLich
-    - Luthorius
+    - Lufurrius
     - TheItsNameless
     - QuazChick
 description: Fire an event when other entities are nearby.

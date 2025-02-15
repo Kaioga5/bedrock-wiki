@@ -7,7 +7,7 @@ mentions:
     - SirLich
     - MedicalJewel105
     - TheHyperWhale
-    - Luthorius
+    - Lufurrius
     - QuazChick
 description: Recipes are the means of handling several item transactions, namely those occurring in crafting tables, furnaces, campfires, and brewing stands.
 ---

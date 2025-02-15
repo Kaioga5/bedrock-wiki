@@ -4,6 +4,7 @@ description: Block culling rules benefit performance, allowing you to remove fac
 category: General
 tags:
     - intermediate
+license: true
 mentions:
     - legopitstop
     - QuazChick
@@ -23,10 +24,10 @@ Culling rules are added in your resource pack's "block_culling" folder and appea
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block_culling_rules": {
         "description": {
-            "identifier": "wiki:lamp_culling" // Identifier to be referenced in block JSON geometry component.
+            "identifier": "wiki:culling.lamp" // Identifier to be referenced in block JSON geometry component.
         },
         "rules": [ ... ] // An array that can contain multiple culling rules.
     }
@@ -40,7 +41,7 @@ They are then applied to block models in your block's [`minecraft:geometry`](/bl
 ```json
 "minecraft:geometry": {
     "identifier": "geometry.lamp", // Model identifier
-    "culling": "wiki:lamp_culling" // Block culling rules identifier
+    "culling": "wiki:culling.lamp" // Block culling rules identifier
 }
 ```
 

@@ -27,13 +27,13 @@ Like with the other item tutorials we will start by making a simple custom sword
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:my_sword",
             "menu_category": {
                 "category": "equipment",
-                "group": "itemGroup.name.sword"
+                "group": "minecraft:itemGroup.name.sword"
             }
         },
         "components": {
@@ -51,7 +51,7 @@ Like with the other item tutorials we will start by making a simple custom sword
                 "slot": "sword"
             },
             // This texture is used for both inventory and the hand model
-            "minecraft:icon": "my_sword",
+            "minecraft:icon": "wiki:my_sword",
             "minecraft:display_name": {
                 "value": "My Custom Sword"
             },
@@ -78,7 +78,7 @@ So at a bare minimum that is enough to get a sword put into the game, we still n
     "resource_pack_name": "custom-weapon",
     "texture_name": "atlas.items",
     "texture_data": {
-        "my_sword": {
+        "wiki:my_sword": {
             // Make sure you have put an icon texture called my_sword.png here
             "textures": "textures/items/my_sword"
         }
@@ -144,7 +144,7 @@ You should probably make a recipe for it, which is covered in previous chapters,
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:recipe_shaped": {
         "description": {
             "identifier": "wiki:my_sword"

@@ -7,7 +7,7 @@ mentions:
     - SirLich
     - Joelant05
     - MedicalJewel105
-    - Luthorius
+    - Lufurrius
 description: Learn about materials in Minecraft Bedrock.
 ---
 
@@ -214,25 +214,15 @@ This was not an issue before 1.16.100.
 {
     "materials": {
         "version": "1.0.0",
-        "prefix:window_glass:entity": { //now throws a content log error.
-            "+states": [
-                "Blending"
-            ],
-            "defines": [
-                "ENABLE_FOG",
-                "ENABLE_LIGHT",
-                "USE_ONLY_EMISSIVE"
-            ]
+        "prefix:window_glass:entity": {
+            //now throws a content log error.
+            "+states": ["Blending"],
+            "defines": ["ENABLE_FOG", "ENABLE_LIGHT", "USE_ONLY_EMISSIVE"]
         },
-        "prefix:window_glass:": { //corrects the content log error. Note: may have to also define the old inherited values.
-            "+states": [
-                "Blending"
-            ],
-            "defines": [
-                "ENABLE_FOG",
-                "ENABLE_LIGHT",
-                "USE_ONLY_EMISSIVE"
-            ]
+        "prefix:window_glass:": {
+            //corrects the content log error. Note: may have to also define the old inherited values.
+            "+states": ["Blending"],
+            "defines": ["ENABLE_FOG", "ENABLE_LIGHT", "USE_ONLY_EMISSIVE"]
         }
     }
 }

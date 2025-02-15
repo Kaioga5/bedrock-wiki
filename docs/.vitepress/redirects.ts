@@ -38,6 +38,8 @@ export default {
   "/items/3d-items": "/items/attachables",
   "/items/item-categories": "/items/creative-categories",
 
+  "/json-ui/custom-buttons": "/json-ui/buttons-and-toggles",
+
   "/knowledge/addon-performance": "/meta/addon-performance",
   "/knowledge/addon-programming": "/meta/addon-programming",
   "/knowledge/bedrock-modeling": "/visuals/bedrock-modeling",

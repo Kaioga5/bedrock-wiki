@@ -7,16 +7,21 @@ table {
   width: max-content;
   max-width: 100%;
   overflow-x: auto;
-  background-color: var(--light-bg-color);
+  --cell-bg-color: var(--light-bg-color);
+
+  thead,
+  tr {
+    background-color: var(--cell-bg-color);
+  }
 }
 
 thead,
 tr:nth-child(2n) {
-  background-color: var(--bg-color);
+  --cell-bg-color: var(--bg-color);
 }
 
-tr,
-thead {
+thead,
+tr {
   &:not(:last-child) {
     border-bottom: var(--border);
   }

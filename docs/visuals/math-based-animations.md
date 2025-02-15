@@ -9,7 +9,7 @@ mentions:
     - Joelant05
     - MedicalJewel105
     - yanasakana
-    - Luthorius
+    - Lufurrius
     - TheItsNameless
     - SmokeyStack
     - ThomasOrs
@@ -26,7 +26,7 @@ Math animations are a powerful alternative to keyframe animations. Generally spe
 },
 ```
 
-As you can see, math-based animations can be quite complicated and difficult to understand. Thus, they should be treated as a _specialized-alternative_ to using key-frames - not a *total* replacement.
+As you can see, math-based animations can be quite complicated and difficult to understand. Thus, they should be treated as a _specialized-alternative_ to using key-frames - not a _total_ replacement.
 
 This is the cost of the smooth and ideal loop of the animation.
 
@@ -38,7 +38,7 @@ This is the cost of the smooth and ideal loop of the animation.
 
 To write such an animation by hand, simply create an animation file and substitute keyframes for singular arrays of values; strings values are accepted, and it is in a string that one may place a math expression. The Vanilla files can prove an invaluable reference for these types of animations, and it is **strongly** recommended you download and preview them!
 
-As an important tip for those who wish to *visualise* their processes, the tool, [Molang Grapher](https://jannisx11.github.io/molang-grapher/) from [Jannis](https://twitter.com/jannisx11) may simulate expressions on a proper graph!
+As an important tip for those who wish to _visualise_ their processes, the tool, [Molang Grapher](https://jannisx11.github.io/molang-grapher/) from [Jannis](https://twitter.com/jannisx11) may simulate expressions on a proper graph!
 
 ### In Blockbench
 
@@ -74,26 +74,24 @@ A specific application example of a Math-Based animation may be found below. The
 
 ```json
 {
-	"format_version": "1.12.0",
-	"animations": {
-		"animation.car.wheel_spin": {
-			"loop": true,
-			"bones": {
-			
-				"front_wheels": {
-					"rotation": [ "q.modified_distance_moved * -30", 0, 0 ]
-				},
-				
-				"back_wheels": {
-					"rotation": [ "q.modified_distance_moved * -30", 0, 0 ]
-				}
-				
-			}
-		}
-	}
+    "format_version": "1.12.0",
+    "animations": {
+        "animation.car.wheel_spin": {
+            "loop": true,
+            "bones": {
+                "front_wheels": {
+                    "rotation": ["q.modified_distance_moved * -30", 0, 0]
+                },
+
+                "back_wheels": {
+                    "rotation": ["q.modified_distance_moved * -30", 0, 0]
+                }
+            }
+        }
+    }
 }
 ```
 
 In this example, the model's bones, `front_wheels` and `back_wheels`, are rotated on the X-axis based on information passed from `q.modified_distance_moved`, then multiplied by -30.
 
-This means that a car at *rest* **will not** spin, and a car that is *driving* **will spin** - doing so at a rate proportional to the car's movement speed.
+This means that a car at _rest_ **will not** spin, and a car that is _driving_ **will spin** - doing so at a rate proportional to the car's movement speed.

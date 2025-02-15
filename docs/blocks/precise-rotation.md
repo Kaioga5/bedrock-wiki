@@ -1,16 +1,17 @@
 ---
 title: Precise Rotation
+description: This tutorial guides you through making a block with sub-cardinal rotation (e.g. creeper heads and signs), providing examples of a shell block with this rotation type.
 category: Tutorials
 tags:
     - expert
     - scripting
+license: true
 mentions:
     - QuazChick
     - SmokeyStack
-description: This tutorial guides you through making a block with sub-cardinal rotation (e.g. creeper heads and signs), providing examples of a shell block with this rotation type.
 ---
 
-::: tip FORMAT & MIN ENGINE VERSION `1.21.40`
+::: tip FORMAT & MIN ENGINE VERSION `1.21.60`
 This tutorial assumes an advanced understanding of blocks and scripting.
 Check out the [blocks guide](/blocks/blocks-intro) before starting.
 :::
@@ -58,7 +59,7 @@ The following model for a "shell" block can be used as a reference:
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:geometry": [
         {
             "description": {
@@ -186,7 +187,7 @@ Below is the base "shell" block we will be adding advanced rotation to.
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:shell",
@@ -206,7 +207,7 @@ Below is the base "shell" block we will be adding advanced rotation to.
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "shell" // Shortname defined in `RP/textures/terrain_texture.json`
+                    "texture": "wiki:shell" // Shortname defined in `RP/textures/terrain_texture.json`
                 }
             },
             // Prevent block from being placed on `down` face
@@ -380,10 +381,10 @@ Add the following component to your block:
 "minecraft:geometry": {
   "identifier": "geometry.shell", // Model created in first step
   "bone_visibility": {
-    "up_0": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation'), 4)",
-    "up_22_5": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation') - 1, 4)",
-    "up_45": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation') - 2, 4)",
-    "up_67_5": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation') - 3, 4)",
+    "up_0": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('wiki:rotation'), 4) == 0",
+    "up_22_5": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('wiki:rotation'), 4) == 1",
+    "up_45": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('wiki:rotation'), 4) == 2",
+    "up_67_5": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('wiki:rotation'), 4) == 3",
     "side": "q.block_state('minecraft:block_face') != 'up'"
   }
 }
@@ -422,7 +423,7 @@ Your block JSON and script files after the above steps should look similar to th
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:shell",
@@ -452,16 +453,16 @@ Your block JSON and script files after the above steps should look similar to th
             "minecraft:geometry": {
                 "identifier": "geometry.shell",
                 "bone_visibility": {
-                    "up_0": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation'), 4)",
-                    "up_22_5": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation') - 1, 4)",
-                    "up_45": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation') - 2, 4)",
-                    "up_67_5": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation') - 3, 4)",
+                    "up_0": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('wiki:rotation'), 4) == 0",
+                    "up_22_5": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('wiki:rotation'), 4) == 1",
+                    "up_45": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('wiki:rotation'), 4) == 2",
+                    "up_67_5": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('wiki:rotation'), 4) == 3",
                     "side": "q.block_state('minecraft:block_face') != 'up'"
                 }
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "shell"
+                    "texture": "wiki:shell"
                 }
             },
             "minecraft:placement_filter": {

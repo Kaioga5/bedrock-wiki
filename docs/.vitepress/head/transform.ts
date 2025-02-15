@@ -12,12 +12,12 @@ export function transformHead({ pageData, siteConfig }: TransformContext) {
   const image = `${config.themeConfig.url}/assets/images/homepage/wikilogo.png`;
   const imageAlt = "Bedrock Wiki Logo";
 
-  const path = relativePath.replace(".md", ".html");
+  const path = relativePath.replace(".md", "");
 
   let url = config.themeConfig.url;
-  if (path !== "index.html") url += `/${path}`;
+  if (path !== "index") url += `/${path}`;
 
-  const data = {
+  const data: Record<string, string> = {
     // Open Graph (used by Discord)
     "og:type": "website",
     "og:title": title,
@@ -34,6 +34,8 @@ export function transformHead({ pageData, siteConfig }: TransformContext) {
     "twitter:image:alt": imageAlt,
     "twitter:site": site,
   };
+
+  if (frontmatter.hidden) data.robots = "noindex";
 
   const out: HeadConfig[] = [];
 

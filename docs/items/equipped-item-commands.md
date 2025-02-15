@@ -7,7 +7,7 @@ tags:
 mentions:
     - Chikorita-Lover
     - MedicalJewel105
-    - Luthorius
+    - Lufurrius
     - TheItsNameless
 description: Run commands when item is equipped.
 ---

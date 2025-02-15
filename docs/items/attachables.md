@@ -4,10 +4,10 @@ category: Documentation
 tags:
     - beginner
 mentions:
-    - Sprunkles317
+    - Sprunkles137
     - MedicalJewel105
     - AdamRaichu
-    - Luthorius
+    - Lufurrius
     - TheItsNameless
 description: Item attachables documentation.
 ---

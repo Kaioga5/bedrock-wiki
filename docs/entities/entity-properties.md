@@ -2,11 +2,12 @@
 title: Entity Properties
 description: Entity properties allow data to be stored on entities without needing the use of components or attributes in the server-side of the entity, similar to block states.
 category: General
+license: true
 mentions:
     - SirLich
     - sermah
     - MedicalJewel105
-    - Luthorius
+    - Lufurrius
     - stirante
     - TheItsNameless
     - SmokeyStack
@@ -134,7 +135,7 @@ testfor @e[has_property={wiki:enum_property_example="second"}]
 
 ### Script API
 
-The [`Entity.getProperty()`](https://learn.microsoft.comminecraft/creator/scriptapi/minecraft/server/entity#getproperty) method allows you to get the current value of different properties.
+The [`Entity.getProperty()`](https://learn.microsoft.com/minecraft/creator/scriptapi/minecraft/server/entity#getproperty) method allows you to get the current value of different properties.
 
 <CodeHeader>Script</CodeHeader>
 
@@ -162,7 +163,7 @@ With entity events, you may set the entity property to a value with the `set_pro
 
 ### Script API
 
-The [`Entity.setProperty()`](https://learn.microsoft.comminecraft/creator/scriptapi/minecraft/server/entity#setproperty) method allows you to set the value of a properties.
+The [`Entity.setProperty()`](https://learn.microsoft.com/minecraft/creator/scriptapi/minecraft/server/entity#setproperty) method allows you to set the value of a properties.
 
 <CodeHeader>Script</CodeHeader>
 

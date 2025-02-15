@@ -3,12 +3,12 @@ title: Useful Links
 mentions:
     - SirLich
     - MedicalJewel105
-    - MetalManiacMc
+    - MetalManeMc
     - rebrainertv
     - jasonjgardner
     - MADLAD3718
     - cda94581
-    - Luthorius
+    - Lufurrius
     - NhanAZ
     - AndreasHGK
     - mark-wiemer

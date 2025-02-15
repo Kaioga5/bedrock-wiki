@@ -31,19 +31,19 @@ Create a chest piece:
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:my_chest",
             // Notice we give it the equipment category
             "menu_category": {
                 "category": "equipment",
-                "group": "itemGroup.name.chestplate"
+                "group": "minecraft:itemGroup.name.chestplate"
             }
         },
         "components": {
             // The icon we want to use in our INVENTORY
-            "minecraft:icon": "my_chest",
+            "minecraft:icon": "wiki:my_chest",
             // We give it a name
             "minecraft:display_name": {
                 "value": "My Custom Armor"
@@ -158,18 +158,18 @@ So while the chest piece alone is great, you probably want a whole set, so from 
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:my_leggings",
             "menu_category": {
                 "category": "equipment",
-                "group": "itemGroup.name.leggings"
+                "group": "minecraft:itemGroup.name.leggings"
             }
         },
         "components": {
             // Give it an applicable ITEM texture
-            "minecraft:icon": "my_leggings",
+            "minecraft:icon": "wiki:my_leggings",
             "minecraft:display_name": {
                 "value": "My Custom Leggings"
             },
@@ -254,17 +254,17 @@ This is just like the chest piece, just we change some of the categories and slo
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:my_helm",
             "menu_category": {
                 "category": "equipment",
-                "group": "itemGroup.name.helmet"
+                "group": "minecraft:itemGroup.name.helmet"
             }
         },
         "components": {
-            "minecraft:icon": "my_helm",
+            "minecraft:icon": "wiki:my_helm",
             "minecraft:display_name": {
                 "value": "My Custom Helmet"
             },
@@ -329,7 +329,7 @@ As you can see not much has changed, we just update the categories/slots to the 
             },
             // We tell it to hide the helmet layer as we will be showing our armor on top
             "scripts": {
-                "parent_setup": "v.chest_layer_visible = 0.0;"
+                "parent_setup": "v.helmet_layer_visible = 0.0;"
             },
             // We tell it what controller to use (default armor one)
             "render_controllers": ["controller.render.armor"]
@@ -348,17 +348,17 @@ You already know the pattern so lets make the item and attachable json files.
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:my_boots",
             "menu_category": {
                 "category": "equipment",
-                "group": "itemGroup.name.boots"
+                "group": "minecraft:itemGroup.name.boots"
             }
         },
         "components": {
-            "minecraft:icon": "my_boots",
+            "minecraft:icon": "wiki:my_boots",
             "minecraft:display_name": {
                 "value": "My Custom Boots"
             },
@@ -423,7 +423,7 @@ The custom boots texture if you need it.
             },
             // We tell it to hide the boots layer as we will be showing our armor on top
             "scripts": {
-                "parent_setup": "v.chest_layer_visible = 0.0;"
+                "parent_setup": "v.boot_layer_visible = 0.0;"
             },
             // We tell it what controller to use (default armor one)
             "render_controllers": ["controller.render.armor"]

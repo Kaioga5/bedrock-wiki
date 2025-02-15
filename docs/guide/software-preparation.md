@@ -19,6 +19,7 @@ mentions:
     - retr0cube
     - SmokeyStack
     - ThomasOrs
+    - QuazChick
 ---
 
 Before you can start creating add-ons, you first have to install the required tools and applications. While development will be easiest on Windows 10, we have provided mobile alternatives for both Android and iOS, where applicable.
@@ -27,7 +28,7 @@ This page will provide you a list of software to install, and configuration tips
 
 ## Download Minecraft Bedrock Edition
 
--   [Windows 10](https://www.microsoft.com/en-us/p/minecraft-for-windows-10/9nblggh2jhxj?activetab=pivot:overviewtab)
+-   [Windows](https://xbox.com/games/store/minecraft-for-windows/9NBLGGH2JHXJ)
 -   [Android](https://play.google.com/store/apps/details?id=com.mojang.minecraftpe&hl=en)
 -   [iOS](https://apps.apple.com/us/app/minecraft/id479516143)
 -   [Run MC on Linux](https://discord.gg/VJTZ3KaTx6)

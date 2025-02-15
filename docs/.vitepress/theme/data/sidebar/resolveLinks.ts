@@ -1,18 +1,21 @@
 import { readdirSync, readFileSync, statSync } from "fs";
-import matter, { GrayMatterFile } from "gray-matter";
 import { basename, join, relative } from "path";
+import matter from "gray-matter";
 
-import { Sidebar, SidebarSection } from "../theme";
-import tags from "../tags";
+import { Sidebar, SidebarSection } from "../../types";
+import config from "../config";
+
+import validatePage from "./validatePage";
 import sort from "./sort";
-
-import { docsDirectory } from ".";
 
 function formatLink(path: string) {
   return "/" + path.split(/\\|\//g).join("/").replace(".md", "");
 }
 
-export function resolveLinks(context: Sidebar | SidebarSection, dir: string = docsDirectory) {
+export default function resolveLinks(
+  context: Sidebar | SidebarSection,
+  dir: string = config.srcDir
+) {
   const isInSection = "categories" in context;
   const entries = readdirSync(dir);
 
@@ -25,7 +28,7 @@ export function resolveLinks(context: Sidebar | SidebarSection, dir: string = do
       // Don't include non-markdown files, or the section index page
       if (!entry.endsWith(".md") || (isInSection && basename(entry) === "index.md")) continue;
 
-      const path = relative(docsDirectory, joinedPath);
+      const path = relative(config.srcDir, joinedPath);
       const link = formatLink(path);
 
       const pageMarkdown = readFileSync(joinedPath, "utf-8");
@@ -64,29 +67,5 @@ export function resolveLinks(context: Sidebar | SidebarSection, dir: string = do
 
       sort(links);
     }
-  }
-}
-
-export default function validatePage(path: string, { data }: GrayMatterFile<string>) {
-  const errors: string[] = [];
-
-  // Homepage gets its title automatically
-  if (path !== "index.md" && data.title === undefined) {
-    errors.push("A page title must be defined but none was found.");
-  }
-
-  if (data.tags) {
-    if (Array.isArray(data.tags)) {
-      for (const name of data.tags) {
-        if (name in tags) continue;
-        errors.push(`Tag with name "${name}" does not exist.`);
-      }
-    } else {
-      errors.push(`Page tags must be an array of string tag names.`);
-    }
-  }
-
-  if (errors.length > 0) {
-    throw new Error(`Page "${path}" has invalid frontmatter:\n- ${errors.join("\n- ")}\n`);
   }
 }

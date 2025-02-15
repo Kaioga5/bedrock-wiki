@@ -1,5 +1,6 @@
 ---
 title: Troubleshooting Items
+description: Troubleshooting guide to items.
 category: General
 tags:
     - help
@@ -11,7 +12,6 @@ mentions:
     - TheDoctor15
     - ThomasOrs
     - QuazChick
-description: Troubleshooting guide to items.
 ---
 
 :::tip
@@ -48,7 +48,7 @@ Here is an example file to compare against:
     "resource_pack_name": "wiki",
     "texture_name": "atlas.items",
     "texture_data": {
-        "your_item_icon": {
+        "wiki:your_item_icon": {
             "textures": "textures/items/your_item_icon"
         }
     }
@@ -61,7 +61,7 @@ Next, navigate to your items BP file. Place the `minecraft:icon` component in yo
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:your_item",
@@ -70,7 +70,7 @@ Next, navigate to your items BP file. Place the `minecraft:icon` component in yo
             }
         },
         "components": {
-            "minecraft:icon": "your_item_icon" // Make sure this string matches the shortname you put in item_texture.json
+            "minecraft:icon": "wiki:your_item_icon" // Make sure this string matches the shortname you put in item_texture.json
         }
     }
 }

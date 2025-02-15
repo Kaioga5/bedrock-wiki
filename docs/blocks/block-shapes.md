@@ -6,7 +6,7 @@ mentions:
     - yanasakana
     - MedicalJewel105
     - aexer0e
-    - Luthorius
+    - Lufurrius
     - Fabrimat
     - TheItsNameless
     - QuazChick

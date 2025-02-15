@@ -5,12 +5,13 @@ category: General
 nav_order: 4
 tags:
     - scripting
+license: true
 mentions:
     - SmokeyStack
 ---
 
-:::tip FORMAT VERSION `1.21.40`
-Using the latest format version when creating custom items provides access to fresh features and improvements. The wiki aims to share up-to-date information about custom items, and currently targets format version `1.21.40`.
+:::tip FORMAT VERSION `1.21.60`
+Using the latest format version when creating custom items provides access to fresh features and improvements. The wiki aims to share up-to-date information about custom items, and currently targets format version `1.21.60`.
 :::
 
 ## Registering Custom Components

@@ -3,15 +3,15 @@ title: Precise Interaction
 description: Learn how to interact with different parts of the same block.
 category: Tutorials
 tags:
-    - experimental
     - expert
     - scripting
+license: true
 mentions:
     - QuazChick
     - SmokeyStack
 ---
 
-::: tip FORMAT & MIN ENGINE VERSION `1.21.40`
+::: tip FORMAT & MIN ENGINE VERSION `1.21.60`
 This tutorial assumes an advanced understanding of blocks and scripting.
 Check out the [blocks](/blocks/blocks-intro) and [scripting](/scripting/scripting-intro) guides before starting.
 :::
@@ -120,7 +120,7 @@ export default class FaceSelectionPlains {
 
     Creates a new `FaceSelectionPlains` instance.
 
-    <Spoiler title="Parameters">
+      <Spoiler title="Parameters">
 
     -   **plains**: `Object[]`
 
@@ -138,7 +138,7 @@ export default class FaceSelectionPlains {
 
             Custom name to easily identify this plain when it is selected.
 
-    </Spoiler>
+      </Spoiler>
 
 -   #### getSelected
 
@@ -148,7 +148,7 @@ export default class FaceSelectionPlains {
 
     Returns the involved plain's array index, or name if provided. If no plain is selected, `undefined` is returned.
 
-    <Spoiler title="Parameters">
+      <Spoiler title="Parameters">
 
     -   **selection**: `Object`
 
@@ -174,7 +174,7 @@ export default class FaceSelectionPlains {
 
             Vertical axis goes `bottom -> top` rather than `top -> bottom` if true.
 
-    </Spoiler>
+      </Spoiler>
 
 ### Usage
 
@@ -317,7 +317,7 @@ export default class SelectionBoxes {
 
     Creates a new `SelectionBoxes` instance.
 
-    <Spoiler title="Parameters">
+      <Spoiler title="Parameters">
 
     -   **boxes**: `Object[]`
 
@@ -335,7 +335,7 @@ export default class SelectionBoxes {
 
             Custom name to easily identify this box when it is selected.
 
-    </Spoiler>
+      </Spoiler>
 
 -   #### getSelected
 
@@ -347,7 +347,7 @@ export default class SelectionBoxes {
 
     Returns the involved box's array index, or name if provided. If no box is selected, `undefined` is returned.
 
-    <Spoiler title="Parameters">
+      <Spoiler title="Parameters">
 
     -   **faceLocation**: [`Vector3`](https://learn.microsoft.com/minecraft/creator/scriptapi/minecraft/server/vector3)
 
@@ -369,7 +369,7 @@ export default class SelectionBoxes {
 
             Z axis extends `south -> north` rather than `north -> south` if true.
 
-    </Spoiler>
+      </Spoiler>
 
 ### Usage
 
@@ -419,7 +419,7 @@ Interacting with paper will fill the selected slot. Destroying the block release
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:pigeonholes",
@@ -474,10 +474,10 @@ Interacting with paper will fill the selected slot. Destroying the block release
                     "texture": "stripped_bamboo_block"
                 },
                 "empty_slot": {
-                    "texture": "pigeonholes_empty"
+                    "texture": "wiki:pigeonholes_empty"
                 },
                 "occupied_slot": {
-                    "texture": "pigeonholes_occupied"
+                    "texture": "wiki:pigeonholes_occupied"
                 }
             }
         },
@@ -633,7 +633,7 @@ Using our [SelectionBoxes](#selectionboxes-class) class, the player can interact
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:double_flower_pot",
@@ -679,12 +679,12 @@ Using our [SelectionBoxes](#selectionboxes-class) class, the player can interact
                 },
                 // Material instances defined in model:
                 "dirt": {
-                    "texture": "double_flower_pot_dirt", // Apply a darker tint to the dirt texture to replicate vanilla potted dirt
+                    "texture": "wiki:double_flower_pot_dirt", // Apply a darker tint to the dirt texture to replicate vanilla potted dirt
                     "render_method": "alpha_test",
                     "ambient_occlusion": false
                 },
                 "handle": {
-                    "texture": "double_flower_pot_handle",
+                    "texture": "wiki:double_flower_pot_handle",
                     "render_method": "alpha_test"
                 },
                 "dandelion": {

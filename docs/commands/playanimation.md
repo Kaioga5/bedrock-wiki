@@ -75,8 +75,8 @@ If a non-existent animation controller is specified, it will be registered as a 
 ```
 
 These commands register a new animation controller that:  
-- Rotates the player's head when sneaking.  
-- Plays a dancing animation when not sneaking.  
+- Rotates the player's head when not sneaking.  
+- Plays a dancing animation when sneaking.  
 
 :::info NOTE:
 If executed repeatedly, the animation may flicker due to a mismatch in animation transition timing (a 1-frame delay is needed).

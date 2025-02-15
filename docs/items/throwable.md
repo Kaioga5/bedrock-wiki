@@ -6,7 +6,7 @@ tags:
 mentions:
     - Fabrimat
     - MedicalJewel105
-    - Luthorius
+    - Lufurrius
     - IlkinQafarov
     - seeit360
     - TheItsNameless
@@ -29,7 +29,7 @@ First, you'll want to make the actual item:
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:throwable_item"
@@ -42,7 +42,7 @@ First, you'll want to make the actual item:
             "minecraft:projectile": {
                 "projectile_entity": "wiki:throwable_item_entity"
             },
-            "minecraft:icon": "throwable_item"
+            "minecraft:icon": "wiki:throwable_item"
         }
     }
 }

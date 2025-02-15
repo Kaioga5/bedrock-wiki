@@ -1,6 +1,6 @@
-import { SidebarSection } from "../theme";
+import { SidebarSection } from "../../types";
 
-export function resolveCategories(section: SidebarSection) {
+export default function resolveCategories(section: SidebarSection) {
   if (!section.data.categories) return [];
 
   for (const category of section.data.categories) {
