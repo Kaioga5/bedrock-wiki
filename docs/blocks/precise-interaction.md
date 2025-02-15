@@ -3,7 +3,6 @@ title: Precise Interaction
 description: Learn how to interact with different parts of the same block.
 category: Tutorials
 tags:
-    - experimental
     - expert
     - scripting
 license: true
