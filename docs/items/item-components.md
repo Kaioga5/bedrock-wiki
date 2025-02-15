@@ -8,8 +8,8 @@ mentions:
     - QuazChick
 ---
 
-:::tip FORMAT & MIN ENGINE VERSION `1.21.40`
-Using the latest format version when creating custom items provides access to fresh features and improvements. The wiki aims to share up-to-date information about custom items, and currently targets format version `1.21.40`.
+:::tip FORMAT & MIN ENGINE VERSION `1.21.60`
+Using the latest format version when creating custom items provides access to fresh features and improvements. The wiki aims to share up-to-date information about custom items, and currently targets format version `1.21.60`.
 :::
 
 ## Applying Components
@@ -20,7 +20,7 @@ Item components are used to change how your item appears and functions in the wo
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:custom_item",
@@ -31,7 +31,7 @@ Item components are used to change how your item appears and functions in the wo
         "components": {
             "minecraft:icon": {
                 "textures": {
-                    "default": "custom_item"
+                    "default": "wiki:custom_item"
                 }
             }
         }
@@ -57,10 +57,6 @@ Type: Boolean
 
 ### Block Placer
 
-:::warning
-The block placer component does not trigger the [`beforeOnPlayerPlace`](/blocks/block-events#before-player-place) custom component hook.
-:::
-
 Block Placer item component. Items with this component will place a block when used. Released from experiment in format version 1.20.10.
 
 When used in Survival Mode, the item will be consumed.
@@ -69,6 +65,8 @@ Type: Object
 
 -   `block`: String/Object
     -   Defines the block that will be placed.
+-   `replace_block_item`: Boolean
+    -   Learn more about replacing block items [here](/blocks/blocks-as-items#replacing-block-items).
 -   `use_on`: Array
     -   List of block descriptors that contain blocks that this item can be used on. If left empty, all blocks will be allowed. See Custom Item Use Priority for more information on use behavior.
     -   This applies to Creative Mode as well.
@@ -117,6 +115,25 @@ Type: Boolean
 ```json
 "minecraft:can_destroy_in_creative": {
     "value": true
+}
+```
+
+### Compostable
+
+Allows this item to be used in a composter.
+
+Type: Object
+
+-   `composting_chance`: Float (0-100)
+    -   How likely the compost level is to increase as a percentage.
+
+_Released from experiment `Upcoming Creator Features` for format versions 1.21.60 and higher._
+
+<CodeHeader>minecraft:item > components</CodeHeader>
+
+```json
+"minecraft:compostable": {
+    "composting_chance": 50 // 50% chance to increment the compost level
 }
 ```
 
@@ -564,9 +581,9 @@ Type: Object
 <CodeHeader>minecraft:item > components</CodeHeader>
 
 ```json
-"minecraft:icon":{
+"minecraft:icon": {
     "textures": {
-        "default": "custom_item"
+        "default": "wiki:custom_item"
     }
 }
 ```
@@ -840,26 +857,44 @@ Type: Object
 -   `max_slots`: Integer (1-64)
     -   Defines the number of slots in the container.
 -   `max_weight_limit`: Integer
-    -   Defines the maximum allowed total weight of all items in the container.
-        -   To calculate the weight of an item, divide 64 by its max stack size.
-        -   Items that stack to 64 weigh 1 each, those that stack to 16 weigh 4 each and unstackable items weigh 64.
--   `weight_in_storage_item`: Integer (0-64)
-    -   Defines the additional weight the item adds when inside another storage item.
-        -   A value of 0 means that this item is not allowed inside another storage item.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
 ```json
 "minecraft:storage_item": {
     "max_slots": 64,
-    "max_weight_limit": 64,
-    "weight_in_storage_item": 4,
     "allow_nested_storage_items": true,
     "banned_items": [
         "minecraft:shulker_box",
         "minecraft:undyed_shulker_box"
     ]
 }
+```
+
+### Storage Weight Limit
+
+Defines the maximum allowed total weight of all items in the storage item container.
+The item must have the `minecraft:storage_item` component for this component to function.
+
+-   To calculate the weight of an item, divide 64 by its max stack size.
+-   Items that stack to 64 weigh 1 each, those that stack to 16 weigh 4 each and unstackable items weigh 64.
+
+Type: Integer
+
+```json
+"minecraft:storage_weight_limit": 64
+```
+
+### Storage Weight Modifier
+
+Defines the additional weight the item adds when inside another storage item.
+
+-   A value of 0 means that this item is not allowed inside another storage item.
+
+Type: Integer (0-64)
+
+```json
+"minecraft:storage_weight_modifier": 4
 ```
 
 ### Tags

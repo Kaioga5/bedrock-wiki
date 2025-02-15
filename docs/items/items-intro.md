@@ -16,7 +16,7 @@ mentions:
     - stirante
     - ChibiMango
     - MedicalJewel105
-    - Sprunkles317
+    - Sprunkles137
     - mark-wiemer
     - TheItsNameless
     - s1050613
@@ -38,7 +38,7 @@ Below is the **minimum** behavior-side code to get a custom item into the creati
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:custom_item",
@@ -67,7 +67,7 @@ Let's configure our own functionality!
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:custom_item",
@@ -99,7 +99,7 @@ We need to create a texture shortname to link it to an image in `RP/textures/ite
     "resource_pack_name": "wiki",
     "texture_name": "atlas.items",
     "texture_data": {
-        "custom_item": {
+        "wiki:custom_item": {
             "textures": "textures/items/custom_item"
         }
     }
@@ -112,7 +112,7 @@ In our item file, we will add the `minecraft:icon` component to apply the textur
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:custom_item",
@@ -121,7 +121,7 @@ In our item file, we will add the `minecraft:icon` component to apply the textur
             }
         },
         "components": {
-            "minecraft:icon": "custom_item"
+            "minecraft:icon": "wiki:custom_item"
         }
     }
 }
@@ -143,5 +143,5 @@ In this page, you've learnt about the following:
 
 -   [x] Basic features of items
 -   [x] How to apply a texture
--   [x] How to link textures using shortnames in `item_textures.json`
+-   [x] How to link textures using shortnames in `item_texture.json`
 -   [x] How to define names in the language file

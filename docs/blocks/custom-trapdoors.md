@@ -11,7 +11,7 @@ mentions:
     - SmokeyStack
 ---
 
-::: tip FORMAT & MIN ENGINE VERSION `1.21.40`
+::: tip FORMAT & MIN ENGINE VERSION `1.21.60`
 This tutorial assumes a good understanding of blocks and basic knowledge of scripting.
 Check out the [blocks guide](/blocks/blocks-intro) before starting.
 :::
@@ -26,13 +26,13 @@ This is the block JSON you'll need for basic trapdoor functionality. It includes
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:custom_trapdoor",
             "menu_category": {
                 "category": "construction",
-                "group": "itemGroup.name.trapdoor"
+                "group": "minecraft:itemGroup.name.trapdoor"
             },
             "states": {
                 "wiki:open": [false, true]
@@ -60,7 +60,7 @@ This is the block JSON you'll need for basic trapdoor functionality. It includes
             "minecraft:geometry": "geometry.trapdoor",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "acacia_trapdoor",
+                    "texture": "wiki:custom_trapdoor",
                     "render_method": "alpha_test_single_sided"
                 }
             }
@@ -213,7 +213,7 @@ This will be the geometry used for your custom trapdoors.
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:geometry": [
         {
             "description": {

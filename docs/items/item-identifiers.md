@@ -6,7 +6,7 @@ tags:
 mentions:
     - TheDoctor15
     - Medicaljewel105
-    - Luthorius
+    - Lufurrius
     - epxzzy
     - SmokeyStack
 description: Vanilla item identifiers effects.

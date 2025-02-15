@@ -9,7 +9,7 @@ mentions:
     - solvedDev
     - Joelant05
     - MedicalJewel105
-    - Luthorius
+    - Lufurrius
     - TCLynx
     - QuazChick
 ---

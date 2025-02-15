@@ -1,42 +1,21 @@
 <script setup lang="ts">
 import { useData } from "vitepress";
-import { ref, watch } from "vue";
-import { getGitHubAuthor, GitHubAuthor } from "../../utils/cache";
 
 const { frontmatter } = useData();
-
-const getContributors = async function () {
-  if (!Array.isArray(frontmatter.value.mentions)) return [];
-
-  const contributors: GitHubAuthor[] = [];
-
-  for (const login of frontmatter.value.mentions) {
-    const user = await getGitHubAuthor(login);
-    if (user) contributors.push(user);
-  }
-
-  return contributors;
-};
-
-let contributors = ref(await getContributors());
-
-watch(frontmatter, async () => {
-  contributors.value = await getContributors();
-});
 </script>
 
 <template>
   <h2 id="contributors">Contributors</h2>
-  <div v-if="contributors.length > 0" class="contributors">
+  <div class="contributors">
     <a
-      v-for="contributor in contributors"
-      :key="contributor.login"
-      :href="contributor.html_url"
-      :alt="contributor.login"
+      v-for="login in frontmatter.mentions"
+      :key="login"
+      :title="login"
+      :href="'https://github.com/' + login"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img :src="contributor.avatar_url" :alt="contributor.login" :title="contributor.login" />
+      <img :src="'https://github.com/' + login + '.png?size=32'" alt="" />
     </a>
   </div>
 </template>

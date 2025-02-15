@@ -11,7 +11,7 @@ mentions:
     - stirante
     - cda94581
     - ThijsHankelMC
-    - MetalManiacMc
+    - MetalManeMc
     - ThomasOrs
 description: Introduction to animation controllers.
 ---
@@ -121,29 +121,29 @@ Lets look at a simple animation controller from our State Machine example above:
 
 ```json
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.helicopter.blade": {
-			"initial_state": "ground",
-			"states": {
-				"ground": {
-					"transitions": [
-						{
-							"flying": "!q.is_on_ground"
-						}
-					]
-				},
-				"flying": {
-					"animations": ["flying"],
-					"transitions": [
-						{
-							"ground": "q.is_on_ground"
-						}
-					]
-				}
-			}
-		}
-	}
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.helicopter.blade": {
+            "initial_state": "ground",
+            "states": {
+                "ground": {
+                    "transitions": [
+                        {
+                            "flying": "!q.is_on_ground"
+                        }
+                    ]
+                },
+                "flying": {
+                    "animations": ["flying"],
+                    "transitions": [
+                        {
+                            "ground": "q.is_on_ground"
+                        }
+                    ]
+                }
+            }
+        }
+    }
 }
 ```
 
@@ -159,7 +159,9 @@ So this particular example contains two states:
 
 You can note that `"initial_state": "ground"` means that our Animation Controller will begin in the `ground` state.
 
-<CodeHeader>RP/animation_controllers/helicopter.ac.json#animation_controllers/controller.animation.helicopter.blade/states</CodeHeader>
+<CodeHeader>
+    RP/animation_controllers/helicopter.ac.json#animation_controllers/controller.animation.helicopter.blade/states
+</CodeHeader>
 
 ```json
 "ground": {
@@ -173,7 +175,9 @@ You can note that `"initial_state": "ground"` means that our Animation Controlle
 
 The `ground` state contains a list of _transitions_, which is how we get to other states. In this example, the default state is saying: _Move to the `flying` state when `q.is_on_ground` is NOT true_. In other words - start the flying animation when we fly into the air!
 
-<CodeHeader>RP/animation_controllers/helicopter.ac.json#animation_controllers/controller.animation.helicopter.blade/states</CodeHeader>
+<CodeHeader>
+    RP/animation_controllers/helicopter.ac.json#animation_controllers/controller.animation.helicopter.blade/states
+</CodeHeader>
 
 ```json
 "flying": {
@@ -203,38 +207,38 @@ Here is the code for the second state machine from above, with three states this
 
 ```json
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.helicopter.blade": {
-			"initial_state": "ground",
-			"states": {
-				"ground": {
-					"transitions": [
-						{
-							"flying": "!q.is_on_ground"
-						},
-						{
-							"explode": "!q.is_alive"
-						}
-					]
-				},
-				"flying": {
-					"animations": ["flying"],
-					"transitions": [
-						{
-							"ground": "q.is_on_ground"
-						},
-						{
-							"explode": "!q.is_alive"
-						}
-					]
-				},
-				"explode": {
-					"animations": ["explode"]
-				}
-			}
-		}
-	}
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.helicopter.blade": {
+            "initial_state": "ground",
+            "states": {
+                "ground": {
+                    "transitions": [
+                        {
+                            "flying": "!q.is_on_ground"
+                        },
+                        {
+                            "explode": "!q.is_alive"
+                        }
+                    ]
+                },
+                "flying": {
+                    "animations": ["flying"],
+                    "transitions": [
+                        {
+                            "ground": "q.is_on_ground"
+                        },
+                        {
+                            "explode": "!q.is_alive"
+                        }
+                    ]
+                },
+                "explode": {
+                    "animations": ["explode"]
+                }
+            }
+        }
+    }
 }
 ```
 
@@ -256,7 +260,9 @@ Before calling sound or particle in an animation controller, you need to define 
 
 And only then you can call them in the animation controller:
 
-<CodeHeader>RP/animation_controllers/custom_tnt.animation_controllers.json#controller.animation.custom_tnt</CodeHeader>
+<CodeHeader>
+    RP/animation_controllers/custom_tnt.animation_controllers.json#controller.animation.custom_tnt
+</CodeHeader>
 
 ```json
 "states":{
@@ -310,30 +316,30 @@ Here is an example BP animation controller, which exhibits some of this behavior
 
 ```json
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.helicopter.commands": {
-			"initial_state": "ground",
-			"states": {
-				"ground": {
-					"on_entry": ["/say I am now in the ground!"],
-					"transitions": [
-						{
-							"flying": "!q.is_on_ground"
-						}
-					]
-				},
-				"flying": {
-					"on_entry": ["/say I am now in the air!"],
-					"transitions": [
-						{
-							"ground": "q.is_on_ground"
-						}
-					]
-				}
-			}
-		}
-	}
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.helicopter.commands": {
+            "initial_state": "ground",
+            "states": {
+                "ground": {
+                    "on_entry": ["/say I am now in the ground!"],
+                    "transitions": [
+                        {
+                            "flying": "!q.is_on_ground"
+                        }
+                    ]
+                },
+                "flying": {
+                    "on_entry": ["/say I am now in the air!"],
+                    "transitions": [
+                        {
+                            "ground": "q.is_on_ground"
+                        }
+                    ]
+                }
+            }
+        }
+    }
 }
 ```
 

@@ -14,7 +14,7 @@ mentions:
     - TheDoctor15
     - SmokeyStack
     - unickorn
-    - Sprunkles317
+    - Sprunkles137
     - ThomasOrs
     - davedavis
     - QuazChick
@@ -88,7 +88,7 @@ We will create a file `BP/items/ectoplasm.json`. Here is the the basic layout of
 
 ```json
 {
-	"format_version": "1.21.40",
+	"format_version": "1.21.60",
 	"minecraft:item": {
 		"description": { ... },
 		"components": { ... }
@@ -97,7 +97,7 @@ We will create a file `BP/items/ectoplasm.json`. Here is the the basic layout of
 ```
 
 Most files in your pack will have 2 top level definitions, `"format_version"` and `"minecraft:<file_type>"`.
-The format version defines which version of the Add-on system Minecraft will use to read this file. For our item, we will be using `1.21.40` to allow us to use the newest features. For more information on format versions you can check [here](/guide/format-version).
+The format version defines which version of the Add-on system Minecraft will use to read this file. For our item, we will be using `1.21.60` to allow us to use the newest features. For more information on format versions you can check [here](/guide/format-version).
 
 The second definitions defines what kind of file this is. In our case, as this is an item definition, it is `minecraft:item`. Under this is where we will put all our information. This will always contain a `description` key.
 
@@ -134,7 +134,7 @@ With that, we have now fully defined our item's behavior. This is what your file
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:ectoplasm",
@@ -203,14 +203,14 @@ Under `texture_data` will our list of item shortname definitions. An example def
 <CodeHeader>RP/textures/item_texture.json/texture_data</CodeHeader>
 
 ```json
-"wiki_ectoplasm": {
+"wiki:ectoplasm": {
 	"textures": "textures/items/ectoplasm"
 }
 ```
 
-Here `wiki_ectoplasm` is our shortname and under `textures` we have the path to our item. Notice that this is relative to the resource pack, and does not include the file extension. Your shortname should be short and unique. We recommend setting it as the namespace and id for the item we are assigning it to.
+Here `wiki:ectoplasm` is our shortname and under `textures` we have the path to our item. Notice that this is relative to the resource pack, and does not include the file extension. Your shortname should be short and unique. We recommend setting it as the namespace and id for the item we are assigning it to.
 
-Now whenever we want to refer our image, we will use the shortname `wiki_ectoplasm`.
+Now whenever we want to refer our image, we will use the shortname `wiki:ectoplasm`.
 
 ### Icon
 
@@ -221,7 +221,7 @@ To finally apply our texture to our item, we add the `minecraft:icon` component 
 ```json
 "components": {
 	"minecraft:max_stack_size": 16,
-	"minecraft:icon": "wiki_ectoplasm"
+	"minecraft:icon": "wiki:ectoplasm"
 }
 ```
 
@@ -267,7 +267,7 @@ Your folder structure should look like this:
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:ectoplasm",
@@ -277,7 +277,7 @@ Your folder structure should look like this:
         },
         "components": {
             "minecraft:max_stack_size": 16,
-            "minecraft:icon": "wiki_ectoplasm"
+            "minecraft:icon": "wiki:ectoplasm"
         }
     }
 }
@@ -294,7 +294,7 @@ Your folder structure should look like this:
     "resource_pack_name": "Ghostly Guide",
     "texture_name": "atlas.items",
     "texture_data": {
-        "wiki_ectoplasm": {
+        "wiki:ectoplasm": {
             "textures": "textures/items/ectoplasm"
         }
     }

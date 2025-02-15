@@ -24,7 +24,7 @@ which describes every step you need to follow. If you have some questions, there
 
 ### Code and Platform
 
-The wiki uses a custom [VitePress theme](https://vitepress.vuejs.org/), and is statically generated from the `wiki` branch into the `generated` branch.
+The wiki uses a custom [VitePress theme](https://vitepress.dev), and is statically generated from the `wiki` branch into the `generated` branch.
 
 If you are interested in helping us maintain the core platform, as opposed to the Markdown articles, [join the discord](https://discord.gg/XjV87YN)!
 

@@ -1,19 +1,20 @@
 ---
 title: Applying Constant Effects
+description: This tutorial aims to show how to apply status effects to entities as long as these entities stand on the block.
 category: Tutorials
 tags:
     - easy
     - scripting
+license: true
 mentions:
     - MysticChair
     - SirLich
     - MedicalJewel105
     - QuazChick
     - SmokeyStack
-description: This tutorial aims to show how to apply status effects to entities as long as these entities stand on the block.
 ---
 
-::: tip FORMAT & MIN ENGINE VERSION `1.21.40`
+::: tip FORMAT & MIN ENGINE VERSION `1.21.60`
 This tutorial assumes a basic understanding of blocks, including [block states](/blocks/block-states).
 Check out the [blocks guide](/blocks/blocks-intro) before starting.
 :::
@@ -142,7 +143,7 @@ And done! The code above will trigger the desired status effect as long as the e
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:wither_block",
@@ -156,7 +157,7 @@ And done! The code above will trigger the desired status effect as long as the e
             "minecraft:geometry": "geometry.wither_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "wither_block"
+                    "texture": "wiki:wither_block"
                 }
             },
             "minecraft:custom_components": ["wiki:detect_treaders"]

@@ -17,7 +17,7 @@ mentions:
 description: Create vanilla-like loot system for custom ore.
 ---
 
-:::tip FORMAT VERSION `1.21.40`
+:::tip FORMAT VERSION `1.21.60`
 This tutorial assumes a basic understanding of blocks.
 Check out the [blocks guide](/blocks/blocks-intro) before starting.
 :::
@@ -149,13 +149,13 @@ Here you need to do two things:
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:silver_ore",
             "menu_category": {
                 "category": "nature",
-                "group": "itemGroup.name.ore"
+                "group": "minecraft:itemGroup.name.ore"
             }
         },
         "components": {

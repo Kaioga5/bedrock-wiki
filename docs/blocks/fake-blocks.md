@@ -111,7 +111,7 @@ Block used to summon the dummy entity right on the block, and as the block is ce
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:align"
@@ -124,7 +124,7 @@ Block used to summon the dummy entity right on the block, and as the block is ce
             "minecraft:geometry": "geometry.empty",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "empty"
+                    "texture": "wiki:empty"
                 }
             },
             "minecraft:destructible_by_mining": {

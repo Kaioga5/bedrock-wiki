@@ -4,7 +4,7 @@ mentions:
     - SirLich
     - Dreamedc2015
     - yanasakana
-    - MedicalJewel
+    - MedicalJewel105
     - SIsilicon
 description: Shaders for MCBE.
 ---
@@ -31,7 +31,7 @@ material after a colon. For example: `entity_alpha:entity_base`
 ### Common material definition fields
 
 | **Field name**   | **Description**                                                       | **Example value**                                        | **Notes**                                                                                                                                         |
-|------------------|-----------------------------------------------------------------------|----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| ---------------- | --------------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `vertexShader`   | Path to the shader relative to hlsl/glsl folder                       |                                                          | For HLSL shader, `.hlsl` suffix is added.                                                                                                         |
 | `fragmentShader` | Path to the shader relative to hlsl/glsl folder                       |                                                          | For HLSL shader, `.hlsl` suffix is added.                                                                                                         |
 | `vertexFields`   | An array of fields passed to vertex shader                            |                                                          | It's better to copy this field from vanilla material.                                                                                             |
@@ -50,28 +50,24 @@ Example:
 
 ```json
 {
-	"materials": {
-		"version": "1.0.0",
-		"particle_debug": {
-			"vertexShader": "shaders/particle_generic.vertex",
-			"fragmentShader": "shaders/particle_debug.fragment",
+    "materials": {
+        "version": "1.0.0",
+        "particle_debug": {
+            "vertexShader": "shaders/particle_generic.vertex",
+            "fragmentShader": "shaders/particle_debug.fragment",
 
-			"vertexFields": [
-				{ "field": "Position" },
-				{ "field": "Color" },
-				{ "field": "UV0" }
-			],
+            "vertexFields": [{ "field": "Position" }, { "field": "Color" }, { "field": "UV0" }],
 
-			"+samplerStates": [
-				{
-					"samplerIndex": 0,
-					"textureFilter": "Point"
-				}
-			],
+            "+samplerStates": [
+                {
+                    "samplerIndex": 0,
+                    "textureFilter": "Point"
+                }
+            ],
 
-			"msaaSupport": "Both"
-		}
-	}
+            "msaaSupport": "Both"
+        }
+    }
 }
 ```
 

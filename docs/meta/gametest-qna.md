@@ -5,7 +5,7 @@ mentions:
     - GTB3NW
     - SirLich
     - MedicalJewel105
-    - Luthorius
+    - Lufurrius
     - IlkinQafarov
     - Herobrine643928
 ---

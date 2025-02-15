@@ -71,12 +71,12 @@ If a non-existent animation controller is specified, it will be registered as a 
 <CodeHeader></CodeHeader>
 
 ```yaml
-/playanimation @a animation.piglin.celebrate_hunt_special animation.ender_dragon.neck_head_movement 0 "v.head_position_y=0;v.head_rotation_y=q.target_y_rotation;return q.is_sneaking;" wiki:head
+/playanimation @a animation.piglin.celebrate_hunt_special animation.ender_dragon.neck_head_movement 0 "v.head_position_y=0;v.head_rotation_y=q.target_y_rotation;return q.is_sneaking;" wiki:dance
 ```
 
 These commands register a new animation controller that:  
-- Rotates the player's head when sneaking.  
-- Plays a dancing animation when not sneaking.  
+- Rotates the player's head when not sneaking.  
+- Plays a dancing animation when sneaking.  
 
 :::info NOTE:
 If executed repeatedly, the animation may flicker due to a mismatch in animation transition timing (a 1-frame delay is needed).

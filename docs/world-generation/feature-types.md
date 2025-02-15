@@ -6,7 +6,7 @@ tags:
 mentions:
     - SirLich
     - MedicalJewel105
-    - Luthorius
+    - Lufurrius
     - TheItsNameless
 description: World generation feature types explained.
 ---
@@ -29,23 +29,23 @@ Content features are the fundamental feature type responsible for defining block
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:single_block_feature": {
-		"description": {
-			"identifier": "wiki:pier_planks"
-		},
+    "minecraft:single_block_feature": {
+        "description": {
+            "identifier": "wiki:pier_planks"
+        },
 
-		"places_block": "minecraft:planks",
+        "places_block": "minecraft:planks",
 
-		"enforce_placement_rules": true,
-		"enforce_survivability_rules": true,
-		"may_replace": ["minecraft:water"],
-		"may_attach_to": {
-			"top": "minecraft:air",
-			"sides": ["minecraft:planks", "minecraft:water"]
-		}
-	}
+        "enforce_placement_rules": true,
+        "enforce_survivability_rules": true,
+        "may_replace": ["minecraft:water"],
+        "may_attach_to": {
+            "top": "minecraft:air",
+            "sides": ["minecraft:planks", "minecraft:water"]
+        }
+    }
 }
 ```
 
@@ -149,25 +149,25 @@ For attachment along the sides (`"north"`, `"south"`, `"east"`, `"west"`), 2 mor
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:single_block_feature": {
-		"description": {
-			"identifier": "wiki:force_conduit_block"
-		},
+    "minecraft:single_block_feature": {
+        "description": {
+            "identifier": "wiki:force_conduit_block"
+        },
 
-		"places_block": "wiki:force_conduit",
+        "places_block": "wiki:force_conduit",
 
-		"enforce_placement_rules": true,
-		"enforce_survivability_rules": true,
-		"may_replace": ["minecraft:air"],
-		"may_attach_to": {
-			"north": "minecraft:glass",
-			"south": "minecraft:glass",
+        "enforce_placement_rules": true,
+        "enforce_survivability_rules": true,
+        "may_replace": ["minecraft:air"],
+        "may_attach_to": {
+            "north": "minecraft:glass",
+            "south": "minecraft:glass",
 
-			"auto_rotate": true
-		}
-	}
+            "auto_rotate": true
+        }
+    }
 }
 ```
 
@@ -179,21 +179,21 @@ Specifically, with the preceding code, the force conduit block would be sandwich
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:ore_feature": {
-		"description": {
-			"identifier": "wiki:starlite_ore_cluster"
-		},
+    "minecraft:ore_feature": {
+        "description": {
+            "identifier": "wiki:starlite_ore_cluster"
+        },
 
-		"count": 4,
-		"replace_rules": [
-			{
-				"places_block": "wiki:starlite_ore",
-				"may_replace": ["minecraft:stone"]
-			}
-		]
-	}
+        "count": 4,
+        "replace_rules": [
+            {
+                "places_block": "wiki:starlite_ore",
+                "may_replace": ["minecraft:stone"]
+            }
+        ]
+    }
 }
 ```
 
@@ -232,28 +232,28 @@ In ore features, **replacement rules** bind target blocks to replacement lists t
 
 ```json
 {
-	"format_version": "1.13.0",
-	"minecraft:structure_template_feature": {
-		"description": {
-			"identifier": "wiki:blackmoor_castle_feature"
-		},
+    "format_version": "1.13.0",
+    "minecraft:structure_template_feature": {
+        "description": {
+            "identifier": "wiki:blackmoor_castle_feature"
+        },
 
-		"structure_name": "wiki:blackmoor_castle",
+        "structure_name": "wiki:blackmoor_castle",
 
-		"facing_direction": "random",
-		"constraints": {
-			"block_intersection": {
-				"block_allowlist": [
-					"minecraft:air",
-					"minecraft:stone",
-					"minecraft:dirt",
-					"minecraft:grass"
-				]
-			},
-			"unburied": {}
-		},
-		"adjustment_radius": 4
-	}
+        "facing_direction": "random",
+        "constraints": {
+            "block_intersection": {
+                "block_allowlist": [
+                    "minecraft:air",
+                    "minecraft:stone",
+                    "minecraft:dirt",
+                    "minecraft:grass"
+                ]
+            },
+            "unburied": {}
+        },
+        "adjustment_radius": 4
+    }
 }
 ```
 
@@ -268,7 +268,7 @@ The **target structure** is placed with the `"structure_name"` string property. 
 For some examples:
 
 | Structure file location                                     | Associated `"structure_name"`         |
-|:------------------------------------------------------------|:--------------------------------------|
+| :---------------------------------------------------------- | :------------------------------------ |
 | `/structures/well.mcstructure`                              | `"mystructure:well"`                  |
 | `/structures/farmstead/silo.mcstructure`                    | `"farmstead:silo"`                    |
 | `/structures/campsites/taiga/rustic/tents/wool.mcstructure` | `"campsites:taiga/rustic/tents/wool"` |
@@ -294,7 +294,7 @@ For non-South-oriented structures, not all block states are updated to accommoda
 Rotations are performed clockwise from a top-down perspective. Unfortunately, rotations occur around the [structure origin](#), not the center, so large structures may be cut off in random rotation due to [feature limitations](#). Using a set rotation, however, will orient in reliable (albeit inconvenient) ways. All rotations begin inclusively from the [feature origin](#) and are generated with the following orientations:
 
 | Rotation  | _x_ Projection | _z_ Projection | Clockwise Rotation from Above |
-|:----------|:---------------|:---------------|:------------------------------|
+| :-------- | :------------- | :------------- | :---------------------------- |
 | `"east"`  | Positive       | Negative       | 270°                          |
 | `"south"` | Positive       | Positive       | 0°                            |
 | `"west"`  | Negative       | Positive       | 90°                           |
@@ -388,25 +388,25 @@ If vertical adjustment should be used, proxy the structure feature with a [searc
 
 ```json
 {
-	"format_version": "1.13.0",
-	"minecraft:growing_plant_feature": {
-		"description": {
-			"identifier": "wiki:bulbous_cerulon"
-		},
+    "format_version": "1.13.0",
+    "minecraft:growing_plant_feature": {
+        "description": {
+            "identifier": "wiki:bulbous_cerulon"
+        },
 
-		"body_blocks": [
-			["wiki:bulbous_cerulon_stem", 1],
-			["wiki:bulbous_cerulon_spiked_stem", 1]
-		],
-		"head_blocks": [
-			["wiki:bulbous_cerulon_bulb", 1],
-			["wiki:bulbous_cerulon_bulb_exposed", 1]
-		],
-		"age": { "range_min": 1, "range_max": 15 },
+        "body_blocks": [
+            ["wiki:bulbous_cerulon_stem", 1],
+            ["wiki:bulbous_cerulon_spiked_stem", 1]
+        ],
+        "head_blocks": [
+            ["wiki:bulbous_cerulon_bulb", 1],
+            ["wiki:bulbous_cerulon_bulb_exposed", 1]
+        ],
+        "age": { "range_min": 1, "range_max": 15 },
 
-		"growth_direction": "up",
-		"height_distribution": [[{ "range_min": 4, "range_max": 12 }, 1]]
-	}
+        "growth_direction": "up",
+        "height_distribution": [[{ "range_min": 4, "range_max": 12 }, 1]]
+    }
 }
 ```
 
@@ -511,46 +511,46 @@ When true, the optional `"allow_water"` boolean allows the _first available repl
 
 ```json
 {
-	"format_version": "1.13.0",
-	"minecraft:tree_feature": {
-		"description": {
-			"identifier": "wiki:grand_oak"
-		},
+    "format_version": "1.13.0",
+    "minecraft:tree_feature": {
+        "description": {
+            "identifier": "wiki:grand_oak"
+        },
 
-		"base_block": ["minecraft:dirt", "minecraft:coarse_dirt"],
-		"base_cluster": {
-			"num_clusters": 4,
-			"cluster_radius": 3,
-			"may_replace": ["minecraft:air"]
-		},
+        "base_block": ["minecraft:dirt", "minecraft:coarse_dirt"],
+        "base_cluster": {
+            "num_clusters": 4,
+            "cluster_radius": 3,
+            "may_replace": ["minecraft:air"]
+        },
 
-		"may_replace": ["minecraft:air"],
+        "may_replace": ["minecraft:air"],
 
-		"fancy_trunk": {
-			"trunk_block": "minecraft:log",
+        "fancy_trunk": {
+            "trunk_block": "minecraft:log",
 
-			"trunk_height": {
-				"base": 24,
-				"variance": 9,
-				"scale": 1
-			},
-			"trunk_width": 3,
-			"width_scale": 2,
+            "trunk_height": {
+                "base": 24,
+                "variance": 9,
+                "scale": 1
+            },
+            "trunk_width": 3,
+            "width_scale": 2,
 
-			"foliage_altitude_factor": 0.5,
-			"branches": {
-				"slope": 0.33,
-				"density": 0.25,
-				"min_altitude_factor": 0
-			}
-		},
+            "foliage_altitude_factor": 0.5,
+            "branches": {
+                "slope": 0.33,
+                "density": 0.25,
+                "min_altitude_factor": 0
+            }
+        },
 
-		"fancy_canopy": {
-			"height": 3,
-			"radius": 4,
-			"leaf_block": "minecraft:leaves"
-		}
-	}
+        "fancy_canopy": {
+            "height": 3,
+            "radius": 4,
+            "leaf_block": "minecraft:leaves"
+        }
+    }
 }
 ```
 
@@ -723,26 +723,22 @@ Multiface features are currently bugged and should not be used. At most 2 iterat
 
 ```json
 {
-	"format_version": "1.13.0",
-	"minecraft:multiface_feature": {
-		"description": {
-			"identifier": "wiki:decay_spread"
-		},
+    "format_version": "1.13.0",
+    "minecraft:multiface_feature": {
+        "description": {
+            "identifier": "wiki:decay_spread"
+        },
 
-		"places_block": "wiki:decay",
+        "places_block": "wiki:decay",
 
-		"search_range": 8,
-		"chance_of_spreading": 0.5,
+        "search_range": 8,
+        "chance_of_spreading": 0.5,
 
-		"can_place_on_ceiling": false,
-		"can_place_on_floor": false,
-		"can_place_on_wall": true,
-		"can_place_on": [
-			"minecraft:stone",
-			"minecraft:deepslate",
-			"minecraft:tuff"
-		]
-	}
+        "can_place_on_ceiling": false,
+        "can_place_on_floor": false,
+        "can_place_on_wall": true,
+        "can_place_on": ["minecraft:stone", "minecraft:deepslate", "minecraft:tuff"]
+    }
 }
 ```
 
@@ -800,32 +796,32 @@ All proxy features must therefore point to one or multiple **target features**: 
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:scatter_feature": {
-		"description": {
-			"identifier": "wiki:flower_patch"
-		},
+    "minecraft:scatter_feature": {
+        "description": {
+            "identifier": "wiki:flower_patch"
+        },
 
-		"places_feature": "wiki:flowers",
+        "places_feature": "wiki:flowers",
 
-		"scatter_chance": {
-			"numerator": 2,
-			"denominator": 3
-		},
-		"iterations": "v.flower_patch.size = math.random_integer(6, 14); return math.random_integer(math.pow(v.flower_patch.size, 2) / 4, math.pow(v.flower_patch.size, 2) / 3);",
+        "scatter_chance": {
+            "numerator": 2,
+            "denominator": 3
+        },
+        "iterations": "v.flower_patch.size = math.random_integer(6, 14); return math.random_integer(math.pow(v.flower_patch.size, 2) / 4, math.pow(v.flower_patch.size, 2) / 3);",
 
-		"project_input_to_floor": true,
-		"x": {
-			"distribution": "gaussian",
-			"extent": [0, "v.flower_patch.size"]
-		},
-		"z": {
-			"distribution": "gaussian",
-			"extent": [0, "v.flower_patch.size"]
-		},
-		"y": 0
-	}
+        "project_input_to_floor": true,
+        "x": {
+            "distribution": "gaussian",
+            "extent": [0, "v.flower_patch.size"]
+        },
+        "z": {
+            "distribution": "gaussian",
+            "extent": [0, "v.flower_patch.size"]
+        },
+        "y": 0
+    }
 }
 ```
 
@@ -1076,26 +1072,26 @@ When finished with the target’s feature tree, if more iterations have yet to b
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:conditional_list": {
-		"description": {
-			"identifier": "wiki:columns_selection"
-		},
+    "minecraft:conditional_list": {
+        "description": {
+            "identifier": "wiki:columns_selection"
+        },
 
-		"conditional_features": [
-			{
-				"places_feature": "wiki:columns_unweathered",
-				"condition": "q.noise(v.originx, v.originz) < 0"
-			},
-			{
-				"places_feature": "wiki:columns_weathered",
-				"condition": 1
-			}
-		],
+        "conditional_features": [
+            {
+                "places_feature": "wiki:columns_unweathered",
+                "condition": "q.noise(v.originx, v.originz) < 0"
+            },
+            {
+                "places_feature": "wiki:columns_weathered",
+                "condition": 1
+            }
+        ],
 
-		"early_out_scheme": "placement_success"
-	}
+        "early_out_scheme": "placement_success"
+    }
 }
 ```
 
@@ -1132,8 +1128,8 @@ The **conditions list**, `"conditional_features"`, is an ordered array comprised
 
 ```json
 {
-	"places_feature": "verona:evergreen_trees_stumps",
-	"condition": "v.evergreen_forest.type == v.evergreen_forest.types.lumberjack_ruined"
+    "places_feature": "verona:evergreen_trees_stumps",
+    "condition": "v.evergreen_forest.type == v.evergreen_forest.types.lumberjack_ruined"
 }
 ```
 
@@ -1157,19 +1153,16 @@ Feature entry success is considered in light of the optional **early out scheme*
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:aggregate_feature": {
-		"description": {
-			"identifier": "wiki:village_center"
-		},
+    "minecraft:aggregate_feature": {
+        "description": {
+            "identifier": "wiki:village_center"
+        },
 
-		"features": [
-			"wiki:village_center_well",
-			"wiki:village_center_grass_path"
-		],
-		"early_out": "first_failure"
-	}
+        "features": ["wiki:village_center_well", "wiki:village_center_grass_path"],
+        "early_out": "first_failure"
+    }
 }
 ```
 
@@ -1188,7 +1181,7 @@ The features to be placed by the aggregate are given by the required **features 
 By default, every entry in the features list will attempt to be placed. A **placement escape** is provided via the `"early_out"` property, which accepts 3 values:
 
 | Value             | Description                                                      |
-|:------------------|:-----------------------------------------------------------------|
+| :---------------- | :--------------------------------------------------------------- |
 | `"none"`          | Attempt to place each feature (default)                          |
 | `"first_success"` | Stop placing features once the first successful placement occurs |
 | `"first_failure"` | Stop placing features once the first failed placement occurs     |
@@ -1203,19 +1196,15 @@ Sequence features are currently bugged and should not be used. Currently, all fe
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:sequence_feature": {
-		"description": {
-			"identifier": "wiki:totem_pole"
-		},
+    "minecraft:sequence_feature": {
+        "description": {
+            "identifier": "wiki:totem_pole"
+        },
 
-		"features": [
-			"wiki:totem_pole_base",
-			"wiki:totem_pole_body",
-			"wiki:totem_pole_head"
-		]
-	}
+        "features": ["wiki:totem_pole_base", "wiki:totem_pole_body", "wiki:totem_pole_head"]
+    }
 }
 ```
 
@@ -1229,18 +1218,18 @@ Features are ordered via the **features list**, given by the `"features"` proper
 
 ```json
 {
-	"format_version": "1.16.0",
+    "format_version": "1.16.0",
 
-	"minecraft:snap_to_surface_feature": {
-		"description": {
-			"identifier": "wiki:underground_silas_plant_snap"
-		},
+    "minecraft:snap_to_surface_feature": {
+        "description": {
+            "identifier": "wiki:underground_silas_plant_snap"
+        },
 
-		"feature_to_snap": "wiki:underground_silas_plant",
+        "feature_to_snap": "wiki:underground_silas_plant",
 
-		"surface": "floor",
-		"vertical_search_range": 12
-	}
+        "surface": "floor",
+        "vertical_search_range": 12
+    }
 }
 ```
 
@@ -1269,23 +1258,23 @@ The distance that should be searched is given with the required `"vertical_searc
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:search_feature": {
-		"description": {
-			"identifier": "wiki:search_feature"
-		},
+    "minecraft:search_feature": {
+        "description": {
+            "identifier": "wiki:search_feature"
+        },
 
-		"places_feature": "wiki:search_feature_obsidian",
+        "places_feature": "wiki:search_feature_obsidian",
 
-		"search_volume": {
-			"min": [0, 0, 0],
-			"max": [7, 7, 7]
-		},
+        "search_volume": {
+            "min": [0, 0, 0],
+            "max": [7, 7, 7]
+        },
 
-		"search_axis": "y",
-		"required_successes": 512
-	}
+        "search_axis": "y",
+        "required_successes": 512
+    }
 }
 ```
 
@@ -1348,25 +1337,25 @@ Rect layouts are currently bugged and should not be used. No information has bee
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:rect_layout": {
-		"description": {
-			"identifier": "wiki:garden_maze"
-		},
+    "minecraft:rect_layout": {
+        "description": {
+            "identifier": "wiki:garden_maze"
+        },
 
-		"ratio_of_empty_space": 0.5,
-		"feature_areas": [
-			{
-				"feature": "wiki:flower_patch",
-				"area_dimensions": [2, 4]
-			},
-			{
-				"feature": "wiki:garden_hedge",
-				"area_dimensions": [1, 3]
-			}
-		]
-	}
+        "ratio_of_empty_space": 0.5,
+        "feature_areas": [
+            {
+                "feature": "wiki:flower_patch",
+                "area_dimensions": [2, 4]
+            },
+            {
+                "feature": "wiki:garden_hedge",
+                "area_dimensions": [1, 3]
+            }
+        ]
+    }
 }
 ```
 
@@ -1376,15 +1365,15 @@ Rect layouts are currently bugged and should not be used. No information has bee
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:scan_surface": {
-		"description": {
-			"identifier": "wiki:fallen_leaves_cover"
-		},
+    "minecraft:scan_surface": {
+        "description": {
+            "identifier": "wiki:fallen_leaves_cover"
+        },
 
-		"scan_surface_feature": "wiki:fallen_leaves"
-	}
+        "scan_surface_feature": "wiki:fallen_leaves"
+    }
 }
 ```
 
@@ -1398,20 +1387,20 @@ The **target feature** to be placed is given with the `"scan_surface_feature"` p
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:weighted_random_feature": {
-		"description": {
-			"identifier": "wiki:gelatin"
-		},
+    "minecraft:weighted_random_feature": {
+        "description": {
+            "identifier": "wiki:gelatin"
+        },
 
-		"features": [
-			["wiki:gelatin_green", 3],
-			["wiki:gelatin_red", 3],
-			["wiki:gelatin_blue", 2],
-			["wiki:gelatin_purple", 1]
-		]
-	}
+        "features": [
+            ["wiki:gelatin_green", 3],
+            ["wiki:gelatin_red", 3],
+            ["wiki:gelatin_blue", 2],
+            ["wiki:gelatin_purple", 1]
+        ]
+    }
 }
 ```
 
@@ -1435,41 +1424,41 @@ Scene features only allow minimal customizations of their shapes to achieve thei
 
 ```json
 {
-	"format_version": "1.13.0",
-	"minecraft:geode_feature": {
-		"description": {
-			"identifier": "wiki:wasp_hive"
-		},
+    "format_version": "1.13.0",
+    "minecraft:geode_feature": {
+        "description": {
+            "identifier": "wiki:wasp_hive"
+        },
 
-		"max_radius": 12,
+        "max_radius": 12,
 
-		"filler": "minecraft:air",
+        "filler": "minecraft:air",
 
-		"inner_layer": "wiki:wasp_hive_inside",
-		"alternate_inner_layer": "wiki:wasp_hive_spawner_base",
-		"use_alternate_layer0_chance": 0.125,
+        "inner_layer": "wiki:wasp_hive_inside",
+        "alternate_inner_layer": "wiki:wasp_hive_spawner_base",
+        "use_alternate_layer0_chance": 0.125,
 
-		"middle_layer": "wiki:wasp_hive_inside",
+        "middle_layer": "wiki:wasp_hive_inside",
 
-		"outer_layer": "wiki:wasp_hive_shell",
+        "outer_layer": "wiki:wasp_hive_shell",
 
-		"inner_placements": ["wiki:wasp_hive_spawner"],
-		"placements_require_layer0_alternate": true,
-		"use_potential_placements_chance": 1,
+        "inner_placements": ["wiki:wasp_hive_spawner"],
+        "placements_require_layer0_alternate": true,
+        "use_potential_placements_chance": 1,
 
-		"min_distribution_points": 2,
-		"max_distribution_points": 4,
-		"min_outer_wall_distance": 2,
-		"max_outer_wall_distance": 4,
-		"min_point_offset": 0,
-		"max_point_offset": 2,
-		"noise_multiplier": 0.125,
-		"invalid_blocks_threshold": 64,
+        "min_distribution_points": 2,
+        "max_distribution_points": 4,
+        "min_outer_wall_distance": 2,
+        "max_outer_wall_distance": 4,
+        "min_point_offset": 0,
+        "max_point_offset": 2,
+        "noise_multiplier": 0.125,
+        "invalid_blocks_threshold": 64,
 
-		"crack_point_offset": 0,
-		"generate_crack_chance": 1,
-		"base_crack_size": 1
-	}
+        "crack_point_offset": 0,
+        "generate_crack_chance": 1,
+        "base_crack_size": 1
+    }
 }
 ```
 
@@ -1485,24 +1474,24 @@ Beards and shavers are currently bugged and should be avoided. In particular, th
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:beards_and_shavers": {
-		"description": {
-			"identifier": "wiki:highland_tower_foundation"
-		},
+    "minecraft:beards_and_shavers": {
+        "description": {
+            "identifier": "wiki:highland_tower_foundation"
+        },
 
-		"places_feature": "wiki:highland_tower",
-		"y_delta": 0,
+        "places_feature": "wiki:highland_tower",
+        "y_delta": 0,
 
-		"bounding_box_min": [-4, 0, -4],
-		"bounding_box_max": [5, 12, 5],
-		"beard_raggedness_min": 0.25,
-		"beard_raggedness_max": 0.5,
+        "bounding_box_min": [-4, 0, -4],
+        "bounding_box_max": [5, 12, 5],
+        "beard_raggedness_min": 0.25,
+        "beard_raggedness_max": 0.5,
 
-		"surface_block_type": "minecraft:grass",
-		"subsurface_block_type": "minecraft:dirt"
-	}
+        "surface_block_type": "minecraft:grass",
+        "subsurface_block_type": "minecraft:dirt"
+    }
 }
 ```
 
@@ -1514,27 +1503,27 @@ Beards and shavers are currently bugged and should be avoided. In particular, th
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:vegetation_patch_feature": {
-		"description": {
-			"identifier": "wiki:shiitake_patch"
-		},
+    "minecraft:vegetation_patch_feature": {
+        "description": {
+            "identifier": "wiki:shiitake_patch"
+        },
 
-		"horizontal_radius": 4,
-		"extra_edge_column_chance": 0.5,
+        "horizontal_radius": 4,
+        "extra_edge_column_chance": 0.5,
 
-		"surface": "floor",
-		"vertical_range": 5,
+        "surface": "floor",
+        "vertical_range": 5,
 
-		"ground_block": "minecraft:mycelium",
-		"replaceable_blocks": ["minecraft:dirt", "minecraft:grass"],
-		"depth": 4,
-		"extra_deep_block_chance": 0.5,
+        "ground_block": "minecraft:mycelium",
+        "replaceable_blocks": ["minecraft:dirt", "minecraft:grass"],
+        "depth": 4,
+        "extra_deep_block_chance": 0.5,
 
-		"vegetation_feature": "wiki:shiitake_mushroom",
-		"vegetation_chance": 0.125
-	}
+        "vegetation_feature": "wiki:shiitake_mushroom",
+        "vegetation_chance": 0.125
+    }
 }
 ```
 
@@ -1655,15 +1644,15 @@ The block intersection set for carvers currently cannot be customized. Only vani
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:cave_carver_feature": {
-		"description": {
-			"identifier": "wiki:massive_cave"
-		},
+    "minecraft:cave_carver_feature": {
+        "description": {
+            "identifier": "wiki:massive_cave"
+        },
 
-		"width_modifier": 4
-	}
+        "width_modifier": 4
+    }
 }
 ```
 
@@ -1677,15 +1666,15 @@ Overworld caves naturally extend from just above the bedrock layer at _y_-3 to *
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:underwater_cave_carver_feature": {
-		"description": {
-			"identifier": "wiki:underwater_thick_caves"
-		},
+    "minecraft:underwater_cave_carver_feature": {
+        "description": {
+            "identifier": "wiki:underwater_thick_caves"
+        },
 
-		"width_modifier": 8
-	}
+        "width_modifier": 8
+    }
 }
 ```
 
@@ -1707,16 +1696,16 @@ Underwater cave carvers won’t function in custom biomes — even if that biome
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:hell_cave_carver_feature": {
-		"description": {
-			"identifier": "wiki:nether_caves"
-		},
+    "minecraft:hell_cave_carver_feature": {
+        "description": {
+            "identifier": "wiki:nether_caves"
+        },
 
-		"fill_with": "minecraft:magma",
-		"width_modifier": 1
-	}
+        "fill_with": "minecraft:magma",
+        "width_modifier": 1
+    }
 }
 ```
 

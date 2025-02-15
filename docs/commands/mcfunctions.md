@@ -2,7 +2,7 @@
 title: Functions
 category: General
 mentions:
-    - Bedrock Commands
+    - BedrockCommands
     - cda94581
     - zheaEvyline
     - jordanparki7

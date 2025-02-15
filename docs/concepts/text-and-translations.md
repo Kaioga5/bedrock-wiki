@@ -1,17 +1,17 @@
 ---
 title: Text and Localization
 mentions:
-  - ThijsHankelMC
-  - SirLich
-  - aexer0e
-  - MedicalJewel105
-  - Luthorius
-  - Fabrimat
-  - TheDoctor15
-  - Hatchibombotar
-  - ChibiMango
-  - SmokeyStack
-  - Sprunkles
+    - ThijsHankelMC
+    - SirLich
+    - aexer0e
+    - MedicalJewel105
+    - Lufurrius
+    - Fabrimat
+    - TheDoctor15
+    - Hatchibombotar
+    - ChibiMango
+    - SmokeyStack
+    - Sprunkles
 description: Minecraft is a game with fully localized text in languages all over the world.
 ---
 
@@ -83,11 +83,7 @@ When editing language files one must also add a `languages.json` file in the `te
 <CodeHeader>RP/texts/languages.json</CodeHeader>
 
 ```json
-[
-  "en_US",
-  "en_GB",
-  "fr_FR"
-]
+["en_US", "en_GB", "fr_FR"]
 ```
 
 ### Custom Languages
@@ -99,10 +95,7 @@ For the following examples, lets assume that we have 2 fully functional language
 <CodeHeader>RP/texts/languages.json</CodeHeader>
 
 ```json
-[
-  "xx_XX",
-  "yy_YY"
-]
+["xx_XX", "yy_YY"]
 ```
 
 `language_names.json` is an array as well, but this time to define the names to display for the languages.
@@ -111,22 +104,23 @@ For the following examples, lets assume that we have 2 fully functional language
 
 ```json
 [
-  [ "xx_XX", "New Language (Custom Language #1)" ],
-  [ "yy_YY", "Wiki-Speak (Custom Language #2)" ]
+    ["xx_XX", "New Language (Custom Language #1)"],
+    ["yy_YY", "Wiki-Speak (Custom Language #2)"]
 ]
 ```
 
 :::warning
- Whenever using a custom language, make sure to unequip the language before you disable the Resource Pack which it is stored in, or else Minecraft will crash.
+Whenever using a custom language, make sure to unequip the language before you disable the Resource Pack which it is stored in, or else Minecraft will crash.
 :::
 
 ### Tools
-If Microsoft are localizing your .lang file there are specific technical requirements that your .lang must follow. 
 
-- Ensure &lt;tab&gt;# before comments (**not** spaces).
-- Ensure line breaks are the Windows style (CR+LF), not Unix style.
-- Must not contain duplicate keys.
-- Strings must be commented to ease translation.
+If Microsoft are localizing your .lang file there are specific technical requirements that your .lang must follow.
+
+-   Ensure &lt;tab&gt;# before comments (**not** spaces).
+-   Ensure line breaks are the Windows style (CR+LF), not Unix style.
+-   Must not contain duplicate keys.
+-   Strings must be commented to ease translation.
 
 You can use the free browser-based [LangUtil tool](https://langutil.bedrockexplorer.com) to assist with this.
 
@@ -135,7 +129,7 @@ You can use the free browser-based [LangUtil tool](https://langutil.bedrockexplo
 The following is a table of the 29 languages Minecraft supports by default.
 
 | File ID | Language              | Country        |
-|---------|-----------------------|----------------|
+| ------- | --------------------- | -------------- |
 | id_ID   | Indonesian            | Indonesia      |
 | da_DK   | Danish                | Denmark        |
 | de_DE   | German                | Germany        |

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 
+import { data as sidebar } from "../../data/sidebar/sidebar.data";
+
 import useData from "../../composables/data";
 import useIsMobile from "../../composables/isMobile";
 
@@ -9,7 +11,7 @@ import SidebarSection from "./SidebarSection.vue";
 import SidebarLink from "./SidebarLink.vue";
 
 const { page, theme } = useData();
-const { links, sections } = theme.value.sidebar;
+const { links, sections } = sidebar;
 
 const isMobile = useIsMobile();
 

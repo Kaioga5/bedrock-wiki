@@ -5,6 +5,7 @@ category: General
 nav_order: 8
 tags:
     - scripting
+license: true
 mentions:
     - SirLich
     - solvedDev
@@ -21,8 +22,8 @@ mentions:
     - BlazeDrake
 ---
 
-:::tip FORMAT VERSION `1.21.40`
-Using the latest format version when creating custom blocks provides access to fresh features and improvements. The wiki aims to share up-to-date information about custom blocks, and currently targets format version `1.21.40`.
+:::tip FORMAT VERSION `1.21.60`
+Using the latest format version when creating custom blocks provides access to fresh features and improvements. The wiki aims to share up-to-date information about custom blocks, and currently targets format version `1.21.60`.
 :::
 
 ## Registering Custom Components
@@ -177,7 +178,7 @@ onRandomTick(event) {
 ### Step Off
 
 :::tip DEPENDENCY
-The step off event requires the the [`minecraft:collision_box`](/blocks/block-components#collision-box) component to be 4 or higher on the Y-axis in order to trigger.
+The step off event requires the [`minecraft:collision_box`](/blocks/block-components#collision-box) component to be 4 or higher on the Y-axis in order to trigger.
 :::
 
 Runs when an entity steps off the block.
@@ -195,7 +196,7 @@ onStepOff(event) {
 ### Step On
 
 :::tip DEPENDENCY
-The step on event requires the the [`minecraft:collision_box`](/blocks/block-components#collision-box) component to be 4 or higher on the Y-axis in order to trigger.
+The step on event requires the [`minecraft:collision_box`](/blocks/block-components#collision-box) component to be 4 or higher on the Y-axis in order to trigger.
 :::
 
 Runs when an entity steps onto the block.

@@ -3,12 +3,13 @@ title: Block Permutations
 description: Block permutations represent all state configurations that blocks can possibly be in.
 category: General
 nav_order: 7
+license: true
 mentions:
     - QuazChick
     - SmokeyStack
 ---
 
-:::tip FORMAT & MIN ENGINE VERSION `1.21.40`
+:::tip FORMAT & MIN ENGINE VERSION `1.21.60`
 Before you learn about block permutations, you should be confident with [block states](/blocks/block-states).
 
 When working with block states, ensure that the `min_engine_version` in your pack manifest is `1.20.20` or higher.
@@ -61,7 +62,7 @@ _Released from experiment `Holiday Creator Features` for format versions 1.19.70
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:custom_block",

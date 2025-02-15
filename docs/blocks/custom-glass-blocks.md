@@ -5,13 +5,14 @@ category: Vanilla Re-Creations
 tags:
     - beginner
     - easy
+license: true
 mentions:
     - Eko-byte
     - QuazChick
     - SmokeyStack
 ---
 
-::: tip FORMAT VERSION `1.21.40`
+::: tip FORMAT VERSION `1.21.60`
 This example requires basic knowledge of blocks to understand.
 Check out the [blocks guide](/blocks/blocks-intro) before starting.
 :::
@@ -28,13 +29,13 @@ By the end you should be able to create something like this!
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:custom_glass",
             "menu_category": {
                 "category": "construction",
-                "group": "itemGroup.name.glass"
+                "group": "minecraft:itemGroup.name.glass"
             }
         },
         "components": {

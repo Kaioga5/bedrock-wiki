@@ -87,7 +87,7 @@ _Last Updated for 1.21.50_
 | Format      | Version    | Count |
 | ----------- | ---------- | ----: |
 | Entity      | 1.21.50 ⭐ |     9 |
-| Entity      | 1.21.40    |    17 |
+| Entity      | 1.21.60    |    17 |
 | Entity      | 1.21.30    |     1 |
 | Entity      | 1.21.20    |     2 |
 | Entity      | 1.21.10    |     9 |
@@ -113,7 +113,7 @@ _Last Updated for 1.21.50_
 | Item        | 1.14       |     1 |
 | Item        | 1.10       |    45 |
 | Recipe      | 1.21.50 ⭐ |    13 |
-| Recipe      | 1.21.40    |     4 |
+| Recipe      | 1.21.60    |     4 |
 | Recipe      | 1.21.30    |     2 |
 | Recipe      | 1.20.60    |     3 |
 | Recipe      | 1.20.30    |    19 |

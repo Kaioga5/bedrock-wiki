@@ -5,7 +5,7 @@ tags:
     - experimental
 mentions:
     - JaylyDev
-    - ConsoleTerm
+    - conmaster2112
     - SmokeyStack
     - ThomasOrs
 description: API of script requests for Bedrock Dedicated Server.
@@ -29,12 +29,12 @@ Like other modules, you will need to add the dependency into your `manifest.json
 
 ```json
 {
-	"dependencies": [
-		{
-			"module_name": "@minecraft/server-net",
-			"version": "1.0.0-beta"
-		}
-	]
+    "dependencies": [
+        {
+            "module_name": "@minecraft/server-net",
+            "version": "1.0.0-beta"
+        }
+    ]
 }
 ```
 
@@ -70,14 +70,14 @@ This is the tree for a default Bedrock Dedicated Server:
 
 ```json
 {
-  "allowed_modules": [
-    "@minecraft/server-gametest",
-    "@minecraft/server",
-    "@minecraft/server-ui",
-    "@minecraft/server-admin",
-    "@minecraft/server-editor",
-    "@minecraft/server-net"
-  ]
+    "allowed_modules": [
+        "@minecraft/server-gametest",
+        "@minecraft/server",
+        "@minecraft/server-ui",
+        "@minecraft/server-admin",
+        "@minecraft/server-editor",
+        "@minecraft/server-net"
+    ]
 }
 ```
 
@@ -85,30 +85,30 @@ This is the tree for a default Bedrock Dedicated Server:
 
 Script API supports the following HTTP request methods:
 
-- [`DELETE`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/DELETE)
-- [`GET`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET)
-- [`HEAD`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/HEAD)
-- [`POST`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)
-- [`PUT`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PUT)
+-   [`DELETE`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/DELETE)
+-   [`GET`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET)
+-   [`HEAD`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/HEAD)
+-   [`POST`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)
+-   [`PUT`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PUT)
 
 ## Simple HTTP Request
 
 `http.get(url)` - Performs a simple HTTP get request in behavior packs.
 
-- `url`: `string`
-- Returns: `Promise<`[`HttpResponse`](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server-net/httpresponse)`>`
+-   `url`: `string`
+-   Returns: `Promise<`[`HttpResponse`](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server-net/httpresponse)`>`
 
 Since most requests are GET requests without bodies, @minecraft/server-net provides this convenience method. The only difference between this method and `http.request()` is that it sets the method to `GET` automatically.
 
 Example:
 
 ```js
-import { http } from '@minecraft/server-net';
+import { http } from "@minecraft/server-net";
 
-http.get('http://example.com/').then((response) => {
-  // Body content of the HTTP response.
-  // Type: string
-  const body = response.body;
+http.get("http://example.com/").then((response) => {
+    // Body content of the HTTP response.
+    // Type: string
+    const body = response.body;
 });
 ```
 
@@ -118,8 +118,8 @@ http.get('http://example.com/').then((response) => {
 
 Makes a request to a web server.
 
-- `config`: [`HttpRequest`](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server-net/httprequest)
-- Returns: `Promise<`[`HttpResponse`](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server-net/httpresponse)`>`
+-   `config`: [`HttpRequest`](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server-net/httprequest)
+-   Returns: `Promise<`[`HttpResponse`](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server-net/httpresponse)`>`
 
 Config must be a new HttpRequest instance in order to structuring a request.
 
@@ -142,35 +142,35 @@ More information on HTTP request methods: https://developer.mozilla.org/en-US/do
 **GET**
 
 ```js
-import { HttpRequestMethod } from '@minecraft/server-net';
+import { HttpRequestMethod } from "@minecraft/server-net";
 request.method = HttpRequestMethod.Get;
 ```
 
 **HEAD**
 
 ```js
-import { HttpRequestMethod } from '@minecraft/server-net';
+import { HttpRequestMethod } from "@minecraft/server-net";
 request.method = HttpRequestMethod.Head;
 ```
 
 **POST**
 
 ```js
-import { HttpRequestMethod } from '@minecraft/server-net';
+import { HttpRequestMethod } from "@minecraft/server-net";
 request.method = HttpRequestMethod.Post;
 ```
 
 **PUT**
 
 ```js
-import { HttpRequestMethod } from '@minecraft/server-net';
+import { HttpRequestMethod } from "@minecraft/server-net";
 request.method = HttpRequestMethod.Put;
 ```
 
 **DELETE**
 
 ```js
-import { HttpRequestMethod } from '@minecraft/server-net';
+import { HttpRequestMethod } from "@minecraft/server-net";
 request.method = HttpRequestMethod.Delete;
 ```
 
@@ -179,7 +179,7 @@ request.method = HttpRequestMethod.Delete;
 A HTTP header can be used in an HTTP request to provide information about the request context, so that the server can tailor the response.
 
 ```js
-import { HttpHeader } from '@minecraft/server-net';
+import { HttpHeader } from "@minecraft/server-net";
 request.headers = [
     new HttpHeader("Content-Type", "application/json"),
     new HttpHeader("auth", "my-auth-token"),
@@ -189,13 +189,11 @@ request.headers = [
 HttpHeader value parameter also accept SecretString object in '@minecraft/server-admin' module.
 
 ```js
-import { HttpHeader } from '@minecraft/server-net';
-import { secrets } from '@minecraft/server-admin';
+import { HttpHeader } from "@minecraft/server-net";
+import { secrets } from "@minecraft/server-admin";
 
-const secret = secrets.get('TOKEN');
-request.headers = [
-  new HttpHeader('Authorization', secret)
-];
+const secret = secrets.get("TOKEN");
+request.headers = [new HttpHeader("Authorization", secret)];
 ```
 
 **Set request body**
@@ -203,7 +201,7 @@ request.headers = [
 Content of the body of the HTTP request, this information will be sent to a web server.
 
 ```js
-request.body = 'Message';
+request.body = "Message";
 ```
 
 **Set response timeout**
@@ -216,16 +214,15 @@ This property is not frequently used in HTTP requests.
 request.timeout = 10; // 10 seconds
 ```
 
-
 **Send request**
 
 Send the request to a web server, returns a promise HttpResponse.
 
 ```js
 http.request(request).then((response) => {
-  // Body content of the HTTP response.
-  // Type: string
-  response.body;
+    // Body content of the HTTP response.
+    // Type: string
+    response.body;
 });
 ```
 
@@ -239,33 +236,30 @@ import { http, HttpRequest, HttpRequestMethod, HttpHeader } from "@minecraft/ser
 
 // Note that this event requires server module version 1.14.0-beta.
 world.afterEvents.chatSend.subscribe((data) => {
-	// The message a player sent.
-	const chatMsg = data.message;
+    // The message a player sent.
+    const chatMsg = data.message;
 
-	// Create a new request to a discord webhook URL.
-	const request = new HttpRequest("https://discord.com/api/webhooks/your-webhook-here");
+    // Create a new request to a discord webhook URL.
+    const request = new HttpRequest("https://discord.com/api/webhooks/your-webhook-here");
 
-	// Set the method to a post type (sending only)
-	request.method = HttpRequestMethod.Post;
+    // Set the method to a post type (sending only)
+    request.method = HttpRequestMethod.Post;
 
-	// Set the body of the request to the format discord requires.
-	// More on this topic can be found here: https://discord.com/developers/docs/resources/webhook
-	request.body = JSON.stringify({
-		content: chatMsg,
-	});
+    // Set the body of the request to the format discord requires.
+    // More on this topic can be found here: https://discord.com/developers/docs/resources/webhook
+    request.body = JSON.stringify({
+        content: chatMsg,
+    });
 
-	// Set the headers of the request.
-	request.headers = [
-		new HttpHeader("Content-Type", "application/json")
-	];
+    // Set the headers of the request.
+    request.headers = [new HttpHeader("Content-Type", "application/json")];
 
-	// Perform the request.
-	http.request(request).then((response) => {
-		// Body of the HTTP request response.
-		response.body;
-	});
+    // Perform the request.
+    http.request(request).then((response) => {
+        // Body of the HTTP request response.
+        response.body;
+    });
 });
-
 ```
 
 ---

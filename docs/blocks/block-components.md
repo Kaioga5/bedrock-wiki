@@ -11,7 +11,7 @@ mentions:
     - MedicalJewel105
     - aexer0e
     - Chikorita-Lover
-    - Luthorius
+    - Lufurrius
     - TheDoctor15
     - XxPoggyisLitxX
     - TheItsNameless
@@ -20,8 +20,8 @@ mentions:
     - QuazChick
 ---
 
-:::tip FORMAT & MIN ENGINE VERSION `1.21.40`
-Using the latest format version when creating custom blocks provides access to fresh features and improvements. The wiki aims to share up-to-date information about custom blocks, and currently targets format version `1.21.40`.
+:::tip FORMAT & MIN ENGINE VERSION `1.21.60`
+Using the latest format version when creating custom blocks provides access to fresh features and improvements. The wiki aims to share up-to-date information about custom blocks, and currently targets format version `1.21.60`.
 :::
 :::danger OVERRIDING COMPONENTS
 Only one instance of each component can be active at once. Duplicate components will be overridden by the latest [permutations](/blocks/block-permutations) entry.
@@ -35,7 +35,7 @@ Block components are used to change how your block appears and functions in the 
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:lamp",
@@ -50,10 +50,10 @@ Block components are used to change how your block appears and functions in the 
             "minecraft:geometry": "geometry.lamp",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "lamp"
+                    "texture": "wiki:lamp"
                 },
                 "shade": {
-                    "texture": "lamp_shade"
+                    "texture": "wiki:lamp_shade"
                 }
             }
         }
@@ -156,7 +156,7 @@ Type: Boolean/Object
 
 -   `seconds_to_destroy`: Double
     -   Sets the number of seconds it takes to destroy the block with base equipment. Greater numbers result in greater mining times.
-    -   Note: It actually takes 2x the amount of seconds defined.
+    -   Note: It actually takes 1.5&times; the amount of seconds defined.
 
 #### Example using Boolean
 
@@ -267,7 +267,7 @@ Type: Double
 
 ### Geometry
 
-The description identifier of the geometry to use to render this block. This identifier must match an existing geometry identifier in any of the loaded resource packs or be one of the currently supported Vanilla identifiers: `minecraft:geometry.full_block` or `minecraft:geometry.cross`.
+The description identifier of the geometry to use to render this block. This identifier must match an existing geometry identifier in any of the loaded resource packs or refer to one of the currently supported [vanilla models](/blocks/vanilla-block-models).
 
 **Custom block model limitations:**
 
@@ -330,6 +330,30 @@ _Molang expressions supported in `bone_visibility` for format versions 1.20.10 a
 }
 ```
 
+### Item Visual
+
+Determines how this block is displayed as an item.
+
+Type: Object
+
+-   `geometry`: String/Object - the displayed [geometry](#geometry) component.
+-   `material_instances`: Object - the displayed [material instances](#material-instances) component.
+
+_Released from experiment `Upcoming Creator Features` for format versions 1.21.60 and higher._
+
+<CodeHeader>minecraft:block > components</CodeHeader>
+
+```json
+"minecraft:item_visual": {
+    "geometry": "minecraft:geometry.full_block",
+    "material_instances": {
+        "*": {
+            "texture": "wiki:block_texture"
+        }
+    }
+}
+```
+
 ### Light Dampening
 
 The amount that light will be dampened when it passes through the block, in a range (0-15). Higher value means the light will be dampened more.
@@ -352,6 +376,34 @@ Type: Int
 
 ```json
 "minecraft:light_emission": 10
+```
+
+### Liquid Detection
+
+Determines how this blocks behaves with different types of liquid.
+
+Type: Object
+
+-   `detection_rules`: Array
+    -   `liquid_type`: String - which type of liquid this rule applies to. Currently only `water` is supported.
+    -   `can_contain_liquid`: Boolean - whether the liquid type can occupy the same space as this block e.g., waterlogging.
+    -   `on_liquid_touches`: String - determines what happens when the liquid type flows into the block.
+    -   `stops_liquid_flowing_from_direction`: Array - determines an array of directions that the liquid cannot flow out of this block from.
+
+_Released from experiment `Upcoming Creator Features` for format versions 1.21.60 and higher._
+
+<CodeHeader>minecraft:block > components</CodeHeader>
+
+```json
+"minecraft:liquid_detection": {
+    "detection_rules": [
+        {
+            "liquid_type": "water",
+            "can_contain_liquid": true, // Waterloggable
+            "on_liquid_touches": "no_reaction", // Water flows through the block like air
+        }
+    ]
+}
 ```
 
 ### Loot
@@ -429,10 +481,10 @@ Render methods essentially control how a block appears in the world, much like e
   // '*' instance required - default instance for cube faces
   // Instance names 'up', 'down', 'north', 'east', 'south' and 'west' are built in
   "*": {
-    "texture": "texture_name", // Shortname defined in `RP/textures/terrain_textures.json`
+    "texture": "wiki:texture_name", // Shortname defined in `RP/textures/terrain_texture.json`
     "render_method": "blend", // One of the render methods in the above table
     "face_dimming": true, // Defaults to true; should faces with this material be dimmed by their direction?
-    "ambient_occlusion": true // Defaults to true; should shadows be created based on surrounding blocks?
+    "ambient_occlusion": true // Defaults to true (1); should shadows be created based on surrounding blocks? Floats determine ambient occlusion intensity.
   }
 }
 ```
@@ -450,19 +502,19 @@ Custom instance names can be defined within material instances, and can be refer
 ```json
 "minecraft:material_instances": {
   "*": {
-    "texture": "texture_name",
+    "texture": "wiki:texture_name",
     "render_method": "blend" // Must match other instances
   },
   // Custom instance name
   "end": {
-    "texture": "texture_name_end",
+    "texture": "wiki:texture_name_end",
     "render_method": "blend" // Must match other instances
   },
   "up": "end",
   "down": "end",
   // Instance name defined in model:
   "flower": {
-    "texture": "texture_name_flower",
+    "texture": "wiki:texture_name_flower",
     "render_method": "blend" // Must match other instances
   }
 }
@@ -478,18 +530,7 @@ Type: Object
 
 -   `conditions`: Array - List of conditions where the block can be placed/survive. Limited to 64 conditions. Each condition is a JSON Object that must contain at least one (and can contain both) of the parameters `allowed_faces` or `block_filter` as shown below.
     -   `allowed_faces`: Array - List of any of the following strings describing which face(s) this block can be placed on: `up`, `down`, `north`, `south`, `east`, `west`, `side`, `all`. Limited to 6 faces.
-    -   `block_filter`: Array - List of blocks that this block can be placed against in the `allowed_faces` direction. Limited to 64 blocks. Each block in this list can either be specified as a String (block name) or as a BlockDescriptor.
-
-#### Block Descriptor
-
-A BlockDescriptor is an object that allows you to reference a block (or multiple blocks) based on its tags, or based on its name and states. The fields of a BlockDescriptor are described below.
-
--   `name`: String
-    -   The name of a block.
--   `states`: Object
-    -   The list of Vanilla block states and their values that the block can have, expressed in key/value pairs.
--   `tags`: String
-    -   A condition using Molang queries that results to true/false that can be used to query for blocks with certain tags.
+    -   `block_filter`: Array - List of blocks that this block can be placed against in the `allowed_faces` direction. Limited to 64 blocks. Each block in this list can either be specified as a String (block name) or as a [block descriptor](/documentation/shared-constructs#block-descriptors).
 
 <CodeHeader>minecraft:block > components</CodeHeader>
 

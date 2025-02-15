@@ -211,22 +211,22 @@ Just copy/paste it.
 
 ```json
 {
-	"format_version": "1.8.0",
-	"animations": {
-		"animation.sleeping_entity.sleep": {
-			"loop": "hold_on_last_frame",
-			"animation_length": 0.5,
-			"bones": {
-				"body": {
-					"rotation": {
-						"0.0": [0, 0, 0],
-						"0.5": [-90, 0, 0]
-					},
-					"position": [0, 2, -15]
-				}
-			}
-		}
-	}
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.sleeping_entity.sleep": {
+            "loop": "hold_on_last_frame",
+            "animation_length": 0.5,
+            "bones": {
+                "body": {
+                    "rotation": {
+                        "0.0": [0, 0, 0],
+                        "0.5": [-90, 0, 0]
+                    },
+                    "position": [0, 2, -15]
+                }
+            }
+        }
+    }
 }
 ```
 
@@ -238,29 +238,29 @@ Again just copy/paste it if you need.
 
 ```json
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.sleeping_entity.sleep": {
-			"initial_state": "default",
-			"states": {
-				"default": {
-					"transitions": [
-						{
-							"sleep": "q.is_sleeping"
-						}
-					]
-				},
-				"sleep": {
-					"animations": ["sleeping"],
-					"transitions": [
-						{
-							"default": "!q.is_sleeping"
-						}
-					]
-				}
-			}
-		}
-	}
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.sleeping_entity.sleep": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "sleep": "q.is_sleeping"
+                        }
+                    ]
+                },
+                "sleep": {
+                    "animations": ["sleeping"],
+                    "transitions": [
+                        {
+                            "default": "!q.is_sleeping"
+                        }
+                    ]
+                }
+            }
+        }
+    }
 }
 ```
 
@@ -368,30 +368,30 @@ In our resource pack you can run an animation when entity starts to sleep.
 
 ```json
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.sleeping_entity.sleep": {
-			"initial_state": "default",
-			"states": {
-				"default": {
-					"transitions": [
-						{
-							"sleep": "q.is_sleeping"
-						}
-					]
-				},
-				"sleep": {
-					"animations": ["sleeping"],
-					"transitions": [
-						{
-							"default": "!q.is_sleeping"
-						}
-					]
-				}
-			}
-		}
-	}
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.sleeping_entity.sleep": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "sleep": "q.is_sleeping"
+                        }
+                    ]
+                },
+                "sleep": {
+                    "animations": ["sleeping"],
+                    "transitions": [
+                        {
+                            "default": "!q.is_sleeping"
+                        }
+                    ]
+                }
+            }
+        }
+    }
 }
 ```
 
-The last thing, you will have to create and register a sleeping animation for you entity. If you don't know how to do it check out the [BlockBench page](/guide/blockbench.html#animating).
+The last thing, you will have to create and register a sleeping animation for you entity. If you don't know how to do it check out the [BlockBench page](/guide/blockbench#animating).

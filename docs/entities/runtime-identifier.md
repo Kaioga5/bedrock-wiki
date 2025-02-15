@@ -4,7 +4,7 @@ category: Documentation
 mentions:
     - MedicalJewel105
     - aexer0e
-    - Luthorius
+    - Lufurrius
     - SirLich
     - TheDoctor15
     - ChibiMango
@@ -73,10 +73,11 @@ Not every runtime id/effect is mentioned here. Try experimenting yourself to fin
 ---
 
 ### minecraft:axolotl
+
 -   Doesn't affect any swimming/movement/gravitational behavior.
 -   Same case as tropical fish, different variant and mark variant values give a different bucket name, such as `Bucket of Adult Leucistic Axolotl` or `Bucket of Baby Yellow Axolotl`.
-Age: Adult, Baby
-Color Variant: Leucistic, Wild, Yellow, Cyan, Blue.
+    Age: Adult, Baby
+    Color Variant: Leucistic, Wild, Yellow, Cyan, Blue.
 
 ---
 
@@ -152,7 +153,7 @@ Color Variant: Leucistic, Wild, Yellow, Cyan, Blue.
 
 ### minecraft:donkey
 
--  Changes texture, model and animations to the donkey's one.
+-   Changes texture, model and animations to the donkey's one.
 
 ---
 
@@ -236,7 +237,6 @@ Color Variant: Leucistic, Wild, Yellow, Cyan, Blue.
 
 ---
 
-
 ### minecraft:iron_golem
 
 -   Allows launching attack (attacks deal increased knockback with a vertical amplification).
@@ -247,7 +247,7 @@ Color Variant: Leucistic, Wild, Yellow, Cyan, Blue.
 
 ### minecraft:llama_spit
 
-- Adds llama spit's particles
+-   Adds llama spit's particles
 
 ---
 

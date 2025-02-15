@@ -42,22 +42,22 @@ Navigate to your `RP/textures/terrain_texture.json`. Ensure that the file is pro
     "padding": 8,
     "num_mip_levels": 4,
     "texture_data": {
-        "dirt_like": {
+        "wiki:dirt_like": {
             "textures": "textures/blocks/dirt_like" // You can replace this with anything, just remember the name
         },
-        "log_like_top": {
-            "textures": "textures/blocks/log_like_top" // You can replace this with anything, just remember the name
+        "wiki:custom_log_top": {
+            "textures": "textures/blocks/custom_log_top" // You can replace this with anything, just remember the name
         },
-        "log_like_side": {
-            "textures": "textures/blocks/log_like_side" // You can replace this with anything, just remember the name
+        "wiki:custom_log_side": {
+            "textures": "textures/blocks/custom_log_side" // You can replace this with anything, just remember the name
         },
-        "custom_grass_top": {
+        "wiki:custom_grass_top": {
             "textures": "textures/blocks/custom_grass_top" // You can replace this with anything, just remember the name
         },
-        "custom_grass_bottom": {
+        "wiki:custom_grass_bottom": {
             "textures": "textures/blocks/custom_grass_bottom" // You can replace this with anything, just remember the name
         },
-        "custom_grass_side": {
+        "wiki:custom_grass_side": {
             "textures": "textures/blocks/custom_grass_side" // You can replace this with anything, just remember the name
         }
     }
@@ -72,7 +72,7 @@ Dirt like block example:
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:dirt_like"
@@ -80,7 +80,7 @@ Dirt like block example:
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "dirt_like"
+                    "texture": "wiki:dirt_like"
                 }
             }
         }
@@ -90,22 +90,22 @@ Dirt like block example:
 
 Log like block example:
 
-<CodeHeader>BP/blocks/log_like.json</CodeHeader>
+<CodeHeader>BP/blocks/custom_log.json</CodeHeader>
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
-            "identifier": "wiki:log_like"
+            "identifier": "wiki:custom_log"
         },
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "log_like_side"
+                    "texture": "wiki:custom_log_side"
                 },
                 "end": {
-                    "texture": "log_like_top"
+                    "texture": "wiki:custom_log_top"
                 },
                 "up": "end",
                 "down": "end"
@@ -121,7 +121,7 @@ Grass-like block example:
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:custom_grass"
@@ -129,13 +129,13 @@ Grass-like block example:
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "custom_grass_side"
+                    "texture": "wiki:custom_grass_side"
                 },
                 "up": {
-                    "texture": "custom_grass_top"
+                    "texture": "wiki:custom_grass_top"
                 },
                 "down": {
-                    "texture": "custom_grass_bottom"
+                    "texture": "wiki:custom_grass_bottom"
                 }
             }
         }
@@ -176,7 +176,7 @@ Solution: Navigate to your block file. Navigate to your `material_instances` com
 
 ```json
 {
-  "format_version": "1.21.40",
+  "format_version": "1.21.60",
   "minecraft:block": {
     ...
     "components": {

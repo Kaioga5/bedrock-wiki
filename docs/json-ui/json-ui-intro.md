@@ -767,32 +767,15 @@ Like before, here's a more complicated example of conditional rendering with bin
 
 ## String Formatting
 
-You can get specific part of a string by using `%.#s` format where `#` is a number by multiplying it to a string. An example:
+There are several format specifiers like formats that allows us to access or manipulate strings in JSON UI. They work by multiplying them with a string in bindings and variables.
 
-```json
-{
-    "label_element": {
-        "type": "label",
-        "text": "#text",
-        "layer": 2,
-        "bindings": [
-            {
-                "binding_type": "global",
-                "binding_name": "#hud_title_text_string"
-            },
-            {
-                "binding_type": "view",
-                "source_property_name": "('%.3s' * #hud_title_text_string)",
-                "target_property_name": "#text"
-            }
-        ]
-    }
-}
-```
-
-In the above example we are getting the first 3 characters of the title text. So if the title text is `abcdefghi`, the label will only have `abc` in it. Another example is where we have a variable: `"$var": "abcdefghijklmn"`,
-`'%.5s' * $var` this will return abcde.
-`$var - ('%.7s' * $var)` will return `hijklm`.
+Let's assume we have a variable `"$var": "abcdefghijklmn"`. Here are the known formats:
+- `'%.ns'` can be used to get first n characters of a string. For example: `('%.7s' * $var)` will return `abcdefg`.
+- `'%0ns'` returns the string if there are n or greater than n characters in the string otherwise returns 0 or false. For example: `('%04s' * $var)` will return `abcdefghijklmn` while `('%015s' * $var)` will return `0` or `false`.
+- `'%n.xs'` returns x characters of a string and adds padding of empty space at start till string length becomes n. For example: `('%7.4s' * $var)` will return `   abcd`.
+- `'%-n.xs'` returns x characters of a string and adds padding of empty space at end till string length becomes n. For example: `('%-7.4s' * $var)` will return `abcd   `.
+- `'%ns'` seems to add empty space at the start. For example:  `('%15s' * $var)` will return ` abcdefghijklmn`. If n is smaller or equal to string length, it just returns the string.
+- `'%-ns'` seems to add empty space at the end. For example:  `('%-15s' * $var)` will return `abcdefghijklmn `. If n is smaller or equal to string length, it just returns the string.
 
 Remember that the usage of this format is limited.
 

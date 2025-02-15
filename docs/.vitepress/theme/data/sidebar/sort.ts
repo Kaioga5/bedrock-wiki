@@ -1,4 +1,4 @@
-import { SidebarLink, SidebarSection } from "../theme";
+import { SidebarSection, SidebarLink } from "../../types";
 
 export default function sort<T extends SidebarSection[] | SidebarLink[]>(items: T) {
   return items.sort(({ data: dataA, title: titleA }, { data: dataB, title: titleB }) => {
