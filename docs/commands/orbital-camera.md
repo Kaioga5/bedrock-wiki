@@ -67,7 +67,7 @@ execute as @p at @s anchored eyes rotated ~ 0 positioned ^^1^-2 run camera @s se
 
 ```yaml
 # To orbit camera around entity tagged with 'wiki:orbital_camera.focus'
-execute as @p at @e[tag=wiki:wiki:orbital_camera.focus] anchored eyes rotated as @s rotated ~ 0 positioned ^^1^-5 run camera @s set minecraft:free ease 0.1 linear pos ~~~ facing @e[tag=wiki:orbital_camera.focus]
+execute as @p at @e[tag=wiki:orbital_camera.focus] anchored eyes rotated as @s rotated ~ 0 positioned ^^1^-5 run camera @s set minecraft:free ease 0.1 linear pos ~~~ facing @e[tag=wiki:orbital_camera.focus]
 ```
 ![One Repeating Command Block](/assets/images/commands/commandBlockChain/1.png)
 
