@@ -322,3 +322,5 @@ For a detailed guide, visit: [Bedrock.dev - Molang Documentation](https://bedroc
     - `head_rotation_x` — rotate the entity's head along the X-axis.
     - `head_rotation_y` — rotate the entity's head along the Y-axis.
     - `head_rotation_z` — rotate the entity's head along the Z-axis.
+
+**(Recommended) Read Next: [FMBE - A New Way to Create Display Entities](/commands/display-entities)**

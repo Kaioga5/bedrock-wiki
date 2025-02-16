@@ -44,11 +44,11 @@ To complete the setup, place down one final dropper where you want players to be
 
 ## System
 
-<CodeHeader>BP/functions/custom_crafting.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/custom_crafting.mcfunction</CodeHeader>
 
 ```yaml
 ## If Recipe Matches Crafter: Clone Recipe Output to Crafter
-execute if blocks <recipe> <recipe> <crafter> masked run clone <recipe_out> <recipe_output> <crafter>
+execute if blocks <recipe> <recipe> <crafter> masked run clone <recipe_output> <recipe_output> <crafter>
 ```
 ![commandBlockChain1](/assets/images/commands/commandBlockChain/1.png)
 
@@ -74,11 +74,11 @@ For convenience, you may download the .mcstructure sample shared by @TwigYT:
 
 You may add a playsound command to slightly enhance the crafting experience like so:
 
-<CodeHeader>BP/functions/custom_crafting.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/custom_crafting.mcfunction</CodeHeader>
 
 ```yaml
-## Play Sound Upon Crafting (optional)
-execute if blocks <recipe> <recipe> <crafter> masked positioned <crafter> run playsound smithing_table.use @a [r=7]
+## If Recipe Matches Crafter: Play Sound Upon Crafting (optional)
+execute if blocks <recipe> <recipe> <crafter> masked positioned <crafter> run playsound smithing_table.use @a[r=7]
 ## If Recipe Matches Crafter: Clone Recipe Output to Crafter
 execute if blocks <recipe> <recipe> <crafter> masked run clone <recipe_out> <recipe_output> <crafter>
 ```

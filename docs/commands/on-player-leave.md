@@ -20,33 +20,33 @@ This system will run your desired commands on the event that a player leaves the
 
 *To be typed in chat:*
 
-`/scoreboard objectives add total dummy`
+`/scoreboard objectives add wiki:player_count dummy`
 
 If you are working with functions and prefer to have the objective added automatically when the world initializes, follow the process outlined in [On First World Load.](/commands/on-first-world-load)
 
 ## System
 
-<CodeHeader>BP/functions/events/player/on_leave.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/event/players/on_leave.mcfunction</CodeHeader>
 
 ```yaml
-## Entity Counter
-### Reset current player count
-scoreboard players reset NewPlayerCount total
-### Get current player count 
-execute as @a run scoreboard players add NewPlayerCount total 1
+## Get Current Tick Player Count
+### Reset score
+scoreboard players reset .CurrentTick wiki:player_count
+### Tally score 
+execute as @a run scoreboard players add .CurrentTick wiki:player_count 1
 
 ## Get Difference (Current - Previous)
-scoreboard players operation NewPlayerCount total -= PlayerCount total
+scoreboard players operation .CurrentTick wiki:player_count -= .PreviousTick wiki:player_count
 
 ## Your Commands Here (Example)
 ### Message if there is a difference of -1 or less
-execute if score NewPlayerCount total matches ..-1 run say One or more players have left the world
+execute if score .CurrentTick wiki:player_count matches ..-1 run say One or more players have left the world
 
-## Entity Counter
-### Reset current player count
-scoreboard players reset PlayerCount total
-### Get current player count (to check the difference in the next game tick)
-execute as @a run scoreboard players add PlayerCount total 1
+## Save Current Tick Player Count to Compare Next Game Tick
+### Reset score
+scoreboard players reset .PreviousTick wiki:player_count
+### Tally score
+execute as @a run scoreboard players add .PreviousTick wiki:player_count 1
 ```
 
 ![Chain of 6 Command Blocks](/assets/images/commands/commandBlockChain/6.png)
@@ -57,28 +57,25 @@ Just make sure to follow the given order and properly apply the `/execute if sco
 
 ## Explanation
 
-- **`NewPlayerCount`**: The total number of players in the world at the start of the command loop (in the current game tick).
-- **`PlayerCount`**: The total number of players in the world at the end of the command loop (in the current game tick).
+Since `.PreviousTick` score is updated at the end of the command loop, it can be used at the start of the next game tick to compare with the score of `.CurrentTick`.
 
-Since `PlayerCount` is updated at the end of the command loop, it can be used at the start of the next game tick to compare with `NewPlayerCount`.
+The player count is obtained using the [Entity Counter](/commands/entity-counter) system. Reading that page is recommended to better understand this system.
 
-The count is obtained using the [Entity Counter](/commands/entity-counter) system. It may be beneficial to refer to that page for better understanding. You will notice that we have used the objective name `total` instead of `count` to prevent conflicts between systems.
-
-By subtracting `PlayerCount total` from `NewPlayerCount total`, we can determine if the player count has:
+By subtracting `.PreviousTick` score from `.CurrentTick` score, we can determine if the player count has:
 - Decreased (`..-1`)
 - Increased (`1..`)
-- Remained unchanged (`0`)
+- Remains unchanged (`0`)
 
 If it has decreased, it means one or more players have left the game.
-Using this, we can execute commands when `NewPlayerCount` is `-1` or lower.
-- Example: If there were 10 players and one leaves:
-    - `NewPlayerCount - PlayerCount = 9 - 10 = -1`
+Using this, we can execute commands when `.CurrentTick` is `-1` or lower.
+- For example, if there were 10 players and one leaves:
+    - `.CurrentTick - .PreviousTick = 9 - 10 = -1`
     - We detect this using `..-1`
 
-- `NewPlayerCount` is obtained first, subtraction is performed next, commands are executed based on the result, and finally, `PlayerCount` is updated for the next game tick.
+- `.CurrentTick` is obtained first, subtraction is performed next, commands are executed based on the result, and finally, `.PreviousTick` is updated to be used in the next game tick.
 
 :::tip
-All commands in a command-block chain or function will execute sequentially but within the same game tick, regardless of the number of commands involved. This system works because commands execute at the end of a game tick after all events (such as player logins, logouts, deaths, etc.) occur.
+All commands in a command-block chain or function will execute sequentially but within the same game tick, regardless of the number of commands involved. This system works because commands execute at the end of a game tick after all events (such as player join, leave, death, etc.) occur.
 
 ![Game Tick](/assets/images/commands/gametick.png)
 :::
@@ -91,7 +88,7 @@ If you are using functions instead of command blocks, the `on_leave` function mu
 ```json
 {
   "values": [
-    "events/player/on_leave"
+    "wiki/event/players/on_leave"
   ]
 }
 ```
@@ -102,20 +99,12 @@ If using functions, your pack folder structure should be as follows:
 	:paths="[
     'BP',
     'BP/functions',
+    'BP/functions/wiki',
     'BP/pack_icon.png',
     'BP/manifest.json',
-    'BP/functions/events',
-    'BP/functions/events/player',
-    'BP/functions/events/player/on_leave.mcfunction',
+    'BP/functions/wiki/event',
+    'BP/functions/wiki/event/players',
+    'BP/functions/wiki/event/players/on_leave.mcfunction',
     'BP/functions/tick.json'
 ]"
 ></FolderView>
-
-:::info **NOTE:**
-
-The scoreboard names (e.g., `total`) might be used by other people. To minimize conflicts, you can append an underscore and a randomly generated set of characters. A similar technique can be used for `.mcfunction` filenames.  
-Examples:
-- `total_0fe678`
-- `on_leave_0fe678.mcfunction`
-
-:::

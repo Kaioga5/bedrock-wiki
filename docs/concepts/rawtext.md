@@ -4,12 +4,13 @@ mentions:
   - BedrockCommands
   - GTB3NW
   - SpacebarNinja
+  - zheaEvyline
 description: Understanding Rawtext JSON Components used in the /tellraw  and /titleraw commands.
 ---
 
 ## Introduction
 
-[Sourced By Bedrock Commands Community Discord](https://discord.gg/SYstTYx5G5)
+[Sourced by the Bedrock Commands Community (BCC) Discord](https://discord.gg/SYstTYx5G5)
 
 ![](/assets/images/documentation/tellrawshow.png)
 
@@ -87,9 +88,9 @@ Displays the name of a target of your choice. Target Selector arguments are allo
 ```json
 /tellraw @a {"rawtext":[{"selector":"@a"}]}
 ```
-2. Send name of all players tagged 'winner' in chat:
+2. Send name of all players tagged 'wiki:winner' in chat:
 ```json
-/tellraw @a {"rawtext":[{"selector":"@a [tag=winner]"}]}
+/tellraw @a {"rawtext":[{"selector":"@a [tag=wiki:winner]"}]}
 ```
 
 ## Score Component
@@ -109,13 +110,13 @@ Both are required when using the score component.
 
 **Examples:**
 
-1. Display the points score of the closest player in chat:
+1. Display the `wiki:points` score of the closest player in chat:
 ```json
-/tellraw @a {"rawtext" :[{"score":{"name":"@p","objective":"points"}}]}
+/tellraw @a {"rawtext" :[{"score":{"name":"@p","objective":"wiki:points"}}]}
 ```
-2. Display the money score of the reader in chat:
+2. Display the `wiki:money` score of the reader in chat:
 ```json
-/titleraw @a title {"rawtext":[{"score":{"name":"*","objective":"money"}}]}
+/titleraw @a title {"rawtext":[{"score":{"name":"*","objective":"wiki:money"}}]}
 ```
 
 ## Translate Component
@@ -188,17 +189,17 @@ And instead of an array, you can use a rawtext component, like so.
 *Additional example shared by @CornyFlex:*
 
 ```json
-/tellraw @a {"rawtext":[{"translate":"Role: %%%%s","with":{"rawtext":[{"score":{"name":"*","objective":"role"}},{"text":"Member"},{"text":"Moderator"},{"text":"Admin"}]}}]}
+/tellraw @a {"rawtext":[{"translate":"Role: %%%%s","with":{"rawtext":[{"score":{"name":"*","objective":"wiki:role"}},{"text":"Member"},{"text":"Moderator"},{"text":"Admin"}]}}]}
 ```
 This structure allows you to display different text to the selected players based on scores.
 
 - Output in chat:
     - Member
-        - When 'role' score of the player equals 1.
+        - When 'wiki:role' score of the player equals 1.
     - Moderator
-        - When 'role' score of the player equals 2.
+        - When 'wiki:role' score of the player equals 2.
     - Admin
-        - When 'role' score of the player equals 3.
+        - When 'wiki:role' score of the player equals 3.
 > Note: Score must be a positive integer.
 
 **How It Works:**

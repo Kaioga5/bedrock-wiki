@@ -10,7 +10,7 @@ description: Understanding /playsound command.
 
 ## Introduction
 
-[Sourced By Bedrock Commands Community Discord](https://discord.gg/SYstTYx5G5)
+[Sourced by the Bedrock Commands Community (BCC) Discord](https://discord.gg/SYstTYx5G5)
 
 You can use the `/playsound` command to play sound effects to players present anywhere in your world.
 

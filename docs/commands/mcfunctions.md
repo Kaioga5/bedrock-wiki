@@ -12,7 +12,7 @@ description: Learn about functions in MCBE.
 
 ## Introduction
 
-[Sourced By Bedrock Commands Community Discord](https://discord.gg/SYstTYx5G5)
+[Sourced by the Bedrock Commands Community (BCC) Discord](https://discord.gg/SYstTYx5G5)
 
 Functions are `.mcfunction` files which contain multiple lines of commands. They are run with the `/function` command in-game.
 
@@ -36,59 +36,62 @@ Functions are useful in many ways to reduce the time spent going from command bl
 
 To help create a consistent format, make it easier for everyone to follow, and to maintain uniformity across your functions, it is advised to follow these best-practices for your folder structure:
 
-1. Folders and files in a pack must be named using `snake_case`
-    - This means only **lowercase** alphanumeric characters and underscores (`_`) are allowed.
-    - ✅️ `BP/functions/scoreboards/objective/add_all.mcfunction`
-    - ❌️ `BP/functions/SCOREBOARDS/Objective/Add-all.mcfunction`
-2. They must be properly nested:
-    - ✅️ `function teleport/zone/hell`
-    - ❌ `function teleport_hellzone`
-3. The names must follow an `action_object` structure. Meaning verbs should come before subjects.
+1. All your `.mcfunction` files must be  go in a namespaced root-folder within the functions folder. On Bedrock Wiki, we use the `wiki` namespace. However, you may choose a namespace based on your name or project. For more info, refer to the [namespaces](/concepts/namespaces) page.
+    - ✅️ `BP/functions/wiki/random_number.mcfunction`
+    - ❌️ `BP/functions/random_number.mcfunction`
+2. Folders and files in a pack must be named using `snake_case`
+    - This means only **lowercase** alpha-numeric characters and underscores (`_`) are allowed.
+    - ✅️ `BP/functions/wiki/scoreboard/objectives/add_all.mcfunction`
+    - ❌️ `BP/functions/wiki/scoreboard/objectives/Add-All.mcfunction`
+3. They must be properly nested:
+    - ✅️ `BP/functions/wiki/teleport/zone/hell`
+    - ❌ `BP/functions/wiki/teleport_hellzone`
+4. The names must follow an `action_object` structure. Meaning verbs should come before subjects.
     - ✅️ `add_all`
-    - ✅️ `shuffle_position`
     - ❌️ `all_add`
+    - ✅️ `shuffle_position`
     - ❌️ `position_shuffle`
-4. The total character length of any path must not exceed 80 characters (console limitation).
-5. Content folders should use consistent pluralization: Stick with names that are either all plural or all singular, don't mix and match. Example:
+5. The total character length of any path must not exceed 80 characters (console limitation).
+6. Content folders should use consistent pluralization: Stick with names that are either all plural or all singular, don't mix and match. Example:
 
-✅️ Consistent:
-
-```
-BP/functions/abilities/ice_blast.mcfunction
-BP/functions/events/player/on_death.mcfunction
-BP/functions/events/world/on_initialise.mcfunction
-BP/functions/quests/jungle/1.mcfunction
-```
-
--   All content folders `abilities`, `events`, and `quests` are consistently pluralized.
--   The content folders in `events` are also consistent, as both `player` and `world` are singular.
-
-❌️ Inconsistent:
+✅️ **Consistent**:
 
 ```
-BP/functions/ability/ice_blast.mcfunction
-BP/functions/event/players/on_death.mcfunction
-BP/functions/event/world/on_initialise.mcfunction
-BP/functions/quests/jungle/1.mcfunction
+BP/functions/wiki/ability/ice_blast.mcfunction
+BP/functions/wiki/ability/fire_trail.mcfunction
+BP/functions/wiki/event/players/on_death.mcfunction
+BP/functions/wiki/event/worlds/on_initialise.mcfunction
 ```
 
--   Only `quests` content folder is pluralized while `ability`, and `event` are singular.
+- All content folders `ability` and `event` are consistently singular.
+- The content folders in `event` are also consistent, as both `players` and `worlds` are plural.
+
+❌️ **Inconsistent**:
+
+```
+BP/functions/wiki/abilities/ice_blast.mcfunction
+BP/functions/wiki/abilities/fire_trail.mcfunction
+BP/functions/wiki/event/players/on_death.mcfunction
+BP/functions/wiki/event/world/on_initialise.mcfunction
+```
+
+-   Only `abilities` content folder is pluralized while `event` is singular.
 -   Also, in the `event` folder, the `players` folder is plural while `world` is singular.
 
 ## Notes For Beginners
 
 _Below is an example function file for beginners reference:_
 
-<CodeHeader>BP/functions/effects.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/effects.mcfunction</CodeHeader>
 
 ```yaml
 # These effects are for the spawn
-effect @a [tag=atSpawn] regeneration 12 255 true
-effect @a [tag=atSpawn] saturation 12 255 true
-effect @a [tag=atSpawn] weakness 12 255 true
+effect @a[tag=wiki:at_spawn] regeneration 12 255 true
+effect @a[tag=wiki:at_spawn] saturation 12 255 true
+effect @a[tag=wiki:at_spawn] weakness 12 255 true
 
 # These effects are for the nether
-effect @a [tag=inNether] fire_resistance 12 255 true
+effect @a[tag=wiki:in_nether] fire_resistance 12 255 true
 ```
 
 -   Commands in a function may not begin with a slash (`/`). Each new line in a function file represents a new command (ignored if left blank). You may start a line with a hashtag ( `#`) to add comments — the space after `#` is only a format preference. For comments style guide for functions, see the section **[below](#comments-style-guide)**.
@@ -103,40 +106,40 @@ effect @a [tag=inNether] fire_resistance 12 255 true
 
 ## Comments Style Guide
 
--   When working with functions that contain many commands, it's helpful to keep them organized by using multiple hashtags in comments to indicate different header levels.
--   _Optionally_, to further distinguish these levels, you can apply different styles:
-    -   level 1 headers - **# UPPERCASE**
-    -   level 2 headers - **## Title Case**
-    -   level 3 headers - **### Sentence Case**
--   Try to avoid the use of more than three header levels or too many headers overall, as this can make the code look cluttered. For your reference, see the example file below:
+-    When working with functions that contain many commands, it's helpful to keep them organized by using multiple hashtags in comments to indicate different header levels.
+-    *Optionally*, to further distinguish these levels, you can apply different styles:
+    -    level 1 headers - **# UPPERCASE**
+    -    level 2 headers - **## Title Case**
+    -    level 3 headers - **### Sentence case**
+-    Try to avoid the use of more than three header levels or too many headers overall, as this can make the code look cluttered. For your reference, see the example file below:
 
 <Spoiler title="Example Function File">
 
-<CodeHeader>BP/functions/abilities/fire_trail.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/ability/fire_trail.mcfunction</CodeHeader>
 
 ```yaml
 # ON PLAYER ITEM DROP
 
 ## Give Effects
 ### Fire resistance
-execute at @e [type=item, name="Fire Trail Ability"] run effect @p [r=3] fire_resistance 10 255
+execute at @e[type=item,name="Fire Trail Ability"] run effect @p[r=3] fire_resistance 10 255
 ### Speed
-execute at @e [type=item, name="Fire Trail Ability"] run effect @p [r=3] speed 10 1 true
+execute at @e[type=item,name="Fire Trail Ability"] run effect @p[r=3] speed 10 1 true
 
 ## Add Particle Time (10s)
-execute at @e [type=item, name="Fire Trail Ability"] run scoreboard players set @p [r=3] abilities.fire_trail 200
+execute at @e[type=item,name="Fire Trail Ability"] run scoreboard players set @p[r=3] abilities.fire_trail 200
 
 ## Delete Item
-kill @e [type=item, name="Fire Trail Ability"]
+kill @e[type=item,name="Fire Trail Ability"]
 
 
 # ENTITY TIMER
 
 ## Emit Particle Trail
-execute at @a [scores={abilities.fire_trail=1..}] run particle minecraft:basic_flame_particle ~~~
+execute at @a[scores={wiki:ability.fire_trail=1..}] run particle minecraft:basic_flame_particle ~~~
 
 ## Countdown Timer
-scoreboard players remove @a [scores={abilities.fire_trail=1..}] abilities.fire_trail 1
+scoreboard players remove @a [scores={wiki:ability.fire_trail=1..}] wiki:ability.fire_trail 1
 ```
 
 </Spoiler>
@@ -144,8 +147,7 @@ scoreboard players remove @a [scores={abilities.fire_trail=1..}] abilities.fire_
 Note the use of two lines of spacing before level 1 headers and one line of spacing before level 2 headers for improved readability.
 
 This practice helps create a consistent format, making it easier for everyone to follow, and maintain uniformity across your functions.
-
-For Scoreboard and Tags style guide, see **[here](/meta/style-guide#scoreboard-and-tags)**.
+For Scoreboard and Tags convention, see the **[Style Guide](/meta/style-guide#scoreboard-objectives-tags)** page.
 
 ## Creating a Function
 
@@ -216,18 +218,18 @@ Functions are versioned; therefore, they will run in the version listed in the `
 
 Functions can be executed in-game by typing `/function name_of_function`. This will execute all the commands in the function file, all in a single tick.
 
-Nested functions, for example `BP/functions/lobby/items/1.mcfunction` can be run using the nested folder path, in this case `/function lobby/items/1`
+Nested functions, for example `BP/functions/wiki/teleport/zone/hell` can be run using the nested folder path, in this case `/function wiki/teleport/zone/hell`
 
 ## Tick JSON
 
-The final file within a function is the **tick.json** file. This specifies functions to run server-side on every game tick, (similar to a repeating command block). It is located in the `BP/functions` folder. By default, functions running in this file execute at origin `0, 0, 0` in the overworld.
+The final file within a functions folder is the **`tick.json`** file. This specifies functions to run server-side on every game tick, (similar to a repeating command block). It is located in the `BP/functions` folder. By default, functions running in this file execute at origin (`0, 0, 0`) in the overworld. Example **tick.json`** file:
 
 <CodeHeader>BP/functions/tick.json</CodeHeader>
 ```json
 {
   "values": [
-    "function_1",
-    "function_2"
+    "wiki/function_1",
+    "wiki/function_2"
   ]
 }
 ```

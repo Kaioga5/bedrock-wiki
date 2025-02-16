@@ -11,7 +11,7 @@ description: This command-technique allows you to detect when a target looks at 
 
 ## Introduction
 
-[Sourced By Bedrock Commands Community Discord](https://discord.gg/SYstTYx5G5)
+[Sourced by the Bedrock Commands Community (BCC) Discord](https://discord.gg/SYstTYx5G5)
 
 **Credits:** *@AjaxGb*
 
@@ -19,17 +19,17 @@ This command-technique allows you to detect when a target looks at a player/enti
 
 ## Command
 
-<CodeHeader>BP/functions/states/player/is_looking_at.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/detect_state/player/is_looking_at.mcfunction</CodeHeader>
 
 ```yaml
-execute as <target> at @s anchored eyes facing <entity | coordinate> positioned ^^^1 positioned ~~-1.62~ rotated as @s positioned ^^^-1 if entity @s [r=0.2] run <command>
+execute as <target> at @s anchored eyes facing <entity | coordinate> positioned ^^^1 positioned ~~-1.62~ rotated as @s positioned ^^^-1 if entity @s[r=0.2] run <command>
 
 ```
 ![A Repeating Command Block](/assets/images/commands/commandBlockChain/1.png)
 
 **Visualisation:**
 
-![Alex Looking At A Pig's Head](/assets/images/commands/lookDetectionVisualRep.gif)
+![Alex Looking at a Pig's Head](/assets/images/commands/lookDetectionVisualRep.gif)
 
 > *Note: This is a rough visual representation, not precise measurements.*
 
@@ -38,7 +38,7 @@ execute as <target> at @s anchored eyes facing <entity | coordinate> positioned 
 - `as <target>`
   - sets the execution target. Example:
       - `as @p` (closest player)
-      - `as @e [type=zombie]` (all zombies)
+      - `as @e[type=zombie]` (all zombies)
 - `at @s`
   - sets the execution position to the target's feet.
 - `anchored eyes`
@@ -46,9 +46,9 @@ execute as <target> at @s anchored eyes facing <entity | coordinate> positioned 
 - `facing <entity | coordinate>`
   - sets the execution rotation facing an entity or coordinate. Example:
       - `facing 0 0 0` facing coordinate: 0,0,0.
-      - `facing entity @e [type=pig, c=1] eyes` (facing eyes of nearest pig)
-      - `facing entity @e [type=cow, r=30] feet` (facing eyes of cows in a 30 block radius)
-      - `facing entity @e [type=zombie] feet` (facing feet of zombies)
+      - `facing entity @e[type=pig,c=1] eyes` (facing eyes of nearest pig)
+      - `facing entity @e[type=cow,r=30] feet` (facing eyes of cows in a 30 block radius)
+      - `facing entity @e[type=zombie] feet` (facing feet of zombies)
 - `positioned ^^^1`
   - from previous point, pushes the execution position 1 block forward in the direction of the entity/coordinate.
 - `positioned ~~-1.62~`
@@ -58,7 +58,7 @@ execute as <target> at @s anchored eyes facing <entity | coordinate> positioned 
   - Reverts the execution rotation to that of the target.
 - `positioned ^^^-1`
   - from previous point, pushes the execution position 1 block backwards from the direction the target is facing.
-- `if entity @s [r=0.2]`
+- `if entity @s[r=0.2]`
   - checks if the target is within a 0.2 block radius from the execution position. ie., check if after this back and forth we've arrived roughly back at the target's feet position.
   - To increase or decrease the tolerance for what is considered "close enough", change the `0.2` distance argument.
       - it needs to be between `0.2` and `2`, as `2` basically means you can look in the opposite direction and it's still "close enough". So, realistically, you want to most likely stay well below `1`.
@@ -68,27 +68,27 @@ execute as <target> at @s anchored eyes facing <entity | coordinate> positioned 
 
 1. Run a `/say` command when looking at the eyes of cows or sheeps tagged 'target':
 
-<CodeHeader>BP/functions/states/player/is_looking_at/target.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/detect_state/player/is_looking_at/target.mcfunction</CodeHeader>
 
 ```yaml
-execute as @a at @s anchored eyes facing entity @e [type=cow, tag=target] eyes positioned ~~-1.62~ positioned ^^^1 rotated as @s positioned ^^^-1 if entity @s [r=0.2] run say hello cow!
-execute as @a at @s anchored eyes facing entity @e [type=sheep, tag=target] eyes positioned ~~-1.62~ positioned ^^^1 rotated as @s positioned ^^^-1 if entity @s [r=0.2] run say hello sheep!
+execute as @a at @s anchored eyes facing entity @e[type=cow,tag=wiki:target] eyes positioned ~~-1.62~ positioned ^^^1 rotated as @s positioned ^^^-1 if entity @s[r=0.2] run say hello cow!
+execute as @a at @s anchored eyes facing entity @e[type=sheep,tag=wiki:target] eyes positioned ~~-1.62~ positioned ^^^1 rotated as @s positioned ^^^-1 if entity @s[r=0.2] run say hello sheep!
 ```
 ![A Repeating Command Block](/assets/images/commands/commandBlockChain/1.png)
 
 2. Run a `/say` command when looking at the position `(10, 20, 30)` or `(6, 7, 8)`:
 
-<CodeHeader>BP/functions/states/player/is_looking_at/position.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/detect_state/player/is_looking_at/position.mcfunction</CodeHeader>
 
 ```yaml
-execute as @a at @s anchored eyes facing 10 20 30 positioned ~~-1.62~ positioned ^^^1 rotated as @s positioned ^^^-1 if entity @s [r=0.2] run say hello block!
-execute as @a at @s anchored eyes facing 6 7 8 positioned ~~-1.62~ positioned ^^^1 rotated as @s positioned ^^^-1 if entity @s [r=0.2] run say hello block!
+execute as @a at @s anchored eyes facing 10 20 30 positioned ~~-1.62~ positioned ^^^1 rotated as @s positioned ^^^-1 if entity @s[r=0.2] run say hello block!
+execute as @a at @s anchored eyes facing 6 7 8 positioned ~~-1.62~ positioned ^^^1 rotated as @s positioned ^^^-1 if entity @s[r=0.2] run say hello block!
 ```
 ![A Repeating Command Block](/assets/images/commands/commandBlockChain/1.png)
 
 **Alternative Structure:**
 
-<CodeHeader>BP/functions/states/player/is_looking_at.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/detect_state/player/is_looking_at.mcfunction</CodeHeader>
 
 ```yaml
 execute as <target> at <coordinate | entity> facing entity @s eyes positioned as @s positioned ^^^1 rotated as @s positioned ^^^1 if entity @s[r=0.02] run <command>

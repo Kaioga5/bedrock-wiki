@@ -71,7 +71,7 @@ Changes the position a selector starts its search at. It also modifies where the
 **Examples:**
 
 Teleport the closest player to (140, 64, -200) ten blocks up:
--   `/teleport @p[x=140, y=64, z=-200] ~ ~10 ~`
+-   `/teleport @p[x=140,y=64,z=-200] ~ ~10 ~`
 
 ### Distance
 
@@ -82,10 +82,10 @@ Limits the selection of targets by their spherical distance from the selector. T
 **Examples:**
 
 Kill all chickens between two and six blocks away:
--   `/kill @e[type=chicken, rm=2, r=6]`
+-   `/kill @e[type=chicken,rm=2,r=6]`
 
 Enchant the held item with Sharpness for all players within one block of (0, 100, 0):
--   `/enchant @a[x=0, y=100, z=0, r=1] sharpness`
+-   `/enchant @a[x=0,y=100,z=0,r=1] sharpness`
 
 ### Volume
 
@@ -103,13 +103,13 @@ dz = z2 - z1
 **Examples:**
 
 List all entities within a 12x30x2 box:
--   `/say @e[dx=12, dz=30, dy=2]`
+-   `/say @e[dx=12,dz=30,dy=2]`
 
-Add the "lobby" tag to all players between (-400, 0, -350) and (-150, 256, 50):
--   `/tag @a[x=-400, y=0, z=-350, dx=250, dy=256, dz=400] add lobby`
+Add the "wiki:lobby" tag to all players between (-400, 0, -350) and (-150, 256, 50):
+-   `/tag @a[x=-400,y=0,z=-350,dx=250,dy=256,dz=400] add wiki:lobby`
 
-Add the "warp" tag to all entities between (-1.5, 0, -2) and (1, 0, 1.5):
--   `/tag @a[x=-1.5, y=0, z=-2, dx=2.5, dz=3.5] add warp`
+Add the "wiki:warp" tag to all entities between (-1.5, 0, -2) and (1, 0, 1.5):
+-   `/tag @a[x=-1.5,y=0,z=-2,dx=2.5,dz=3.5] add wiki:warp`
 
 :::info NOTE:
 
@@ -122,7 +122,7 @@ In this visual representation, we can see that the horse with a larger hitbox is
 :::
 
 Considering the above note, if we want to detect players exactly at a certain Y level (e.g., Y=10) and not partially, we can use a command like this:
--   `/execute as @a at @s if entity @s[y=10, r=1] unless entity @s[y=9, r=1] run say found player`
+-   `/execute as @a at @s if entity @s[y=10,r=1] unless entity @s[y=9,r=1] run say found player`
 
 ### Scores
 
@@ -137,11 +137,11 @@ The range syntax works as follows:
 
 **Examples:**
 
-Set the "points" score for all players with a "points" score of ten to 0:
--   `/scoreboard players set @p[scores={points=10}] points 0`
+Set the "points" score for all players with a "wiki:points" score of ten to 0:
+-   `/scoreboard players set @p[scores={wiki:points=10}] wiki:points 0`
 
-Add the "start" tag to armor stands with both a "started" score of one, and a "timer" score of 20 or less:
--   `/tag @e[type=armor_stand, scores={started=1, timer=..20}] add start`
+Add the "wiki:start" tag to armor stands with both a "wiki:started" score of one, and a "wiki:timer" score of 20 or less:
+-   `/tag @e[type=armor_stand,scores={wiki:started=1,wiki:timer=..20}] add wiki:start`
 
 ### Name
 
@@ -153,10 +153,10 @@ Limits the selection of targets by name. Negating the argument selects entities 
 **Examples:**
 
 List all zombies named Shadow:
--   `/say @e[type=zombie, name="Shadow"]`
+-   `/say @e[type=zombie,name="Shadow"]`
 
 Give one level to players both not named Steve and not named Alex:
--   `/xp 1L @a[name=!Steve, name=!"Alex"]`
+-   `/xp 1L @a[name=!"Steve",name=!"Alex"]`
 
 ### Tag
 
@@ -167,8 +167,8 @@ Limits the selection of targets by their tags. This argument can be repeated to 
 
 **Examples:**
 
-Kill all mobs with the tag "marked", and without the tag "exempt":
--   `/kill @e[tag=marked, tag=!exempt]`
+Kill all mobs with the tag "wiki:marked", and without the tag "wiki:exempt":
+-   `/kill @e[tag=wiki:marked,tag=!wiki:exempt]`
 
 ### Family
 
@@ -207,16 +207,16 @@ Damage all players facing generally south:
 
 **All Facing Directions:**
 
-| Facing Direction | Range (`ry`, `rym`)            |
+| Facing Direction | Range (`ry`,`rym`)            |
 |------------------|--------------------------------|
-| North            | `[ry=-135, rym=135]`           |
-| South            | `[ry=45, rym=-45]`             |
-| East             | `[ry=-45, rym=-135]`           |
-| West             | `[ry=135, rym=45]`             |
-| North West       | `[ry=180, rym=90]`             |
-| North East       | `[ry=-90, rym=-180]`           |
-| South West       | `[ry=90, rym=0]`               |
-| South East       | `[ry=0, rym=-90]`              |
+| North            | `[ry=-135,rym=135]`           |
+| South            | `[ry=45,rym=-45]`             |
+| East             | `[ry=-45,rym=-135]`           |
+| West             | `[ry=135,rym=45]`             |
+| North West       | `[ry=180,rym=90]`             |
+| North East       | `[ry=-90,rym=-180]`           |
+| South West       | `[ry=90,rym=0]`               |
+| South East       | `[ry=0,rym=-90]`              |
 
 ### Level
 
@@ -257,7 +257,7 @@ List all players in Creative mode:
 -   `/say @a[m=creative]`
 
 Set the game mode to Creative mode for players both not in Survival mode, and not in Adventure mode:
--   `/gamemode creative @a[m=!survival, m=!adventure]`
+-   `/gamemode creative @a[m=!survival,m=!adventure]`
 
 ### Items
 

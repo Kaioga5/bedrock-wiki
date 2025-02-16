@@ -50,3 +50,7 @@ For example: `controller.animation.namespace.entity_name.action` is better than 
 The actual file structure does not need namespaces.
 
 `animations/namespace/my_entity/animation` is more confusing than `animations/my_entity/animation`.
+
+- **Note:** The following folders are exceptions: `functions`, `structures`, `loot_tables`, `trade_tables`, `sounds`, and `textures`.
+    - Using a **namespace** in these folders is recommended to prevent conflicts with other packs.
+    - **Example:** `BP/functions/namespace/test.mcfunction`

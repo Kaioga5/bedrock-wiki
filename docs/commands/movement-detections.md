@@ -9,7 +9,7 @@ description: These command-techniques allow you to detect certain player/entity 
 
 ## Introduction
 
-[Sourced By Bedrock Commands Community Discord](https://discord.gg/SYstTYx5G5)
+[Sourced by the Bedrock Commands Community (BCC) Discord](https://discord.gg/SYstTYx5G5)
 
 [Image Credits: Unofficial Minecraft Wiki - ](https://minecraft.wiki/)**[CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/)**
 
@@ -31,28 +31,28 @@ This technique allows you to detect when your target is/isn't moving, accounting
 
 **Commands:**
 
--   Make sure you add the `is_moving` scoreboard objective:
-    -   `/scoreboard objectives add is_moving dummy`
+-   Make sure you add the `wiki:q.is_moving` scoreboard objective:
+    -   `/scoreboard objectives add wiki:q.is_moving dummy`
 
-<CodeHeader>BP/functions/states/player/is_moving.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/detect_state/player/is_moving.mcfunction</CodeHeader>
 
 ```yaml
 ## Movement Detection
 ### Mark as not moving
-execute as @a at @s positioned ~~10000~ if entity @e [type=leash_knot, r=0.1252] run scoreboard players set @s is_moving 0
+execute as @a at @s positioned ~~10000~ if entity @e[type=leash_knot,r=0.1252] run scoreboard players set @s wiki:q.is_moving 0
 ### Mark as moving
-execute as @a at @s positioned ~~10000~ unless entity @e [type=leash_knot, r=0.1252] run scoreboard players add @s is_moving 1
+execute as @a at @s positioned ~~10000~ unless entity @e[type=leash_knot, r=0.1252] run scoreboard players add @s wiki:q.is_moving 1
 
 ## Update Point
 ### Delete previous point
-execute as @e [type=leash_knot] at @s unless entity @s [y=-80, dy=9974] run kill @s
+execute as @e[type=leash_knot] at @s unless entity @s[y=-80, dy=9974] run kill @s
 ### Mark current point
 execute at @a positioned ~~10000~ run summon leash_knot ~~~
 
 ## Your Commands Here (Examples)
-execute as @a [scores={is_moving=0}] run say I'm not moving
-execute as @a [scores={is_moving=1}] run say I started moving
-execute as @a [scores={is_moving=1..}] run say I'm still moving
+execute as @a[scores=wiki:q.is_moving=0}] run say I'm not moving
+execute as @a[scores=wiki:q.is_moving=1}] run say I started moving
+execute as @a[scores=wiki:q.is_moving=1..}] run say I'm still moving
 ```
 
 ![commandBlockChain7](/assets/images/commands/commandBlockChain/7.png)
@@ -61,9 +61,9 @@ It is a requirement to follow this same sequence and properly apply the `scores`
 
 **States:**
 
--   **`is_moving=0`** target is _not_ moving.
--   **`is_moving=1`** target started moving. (used for 'trigger' actions)
--   **`is_moving=1..`** target is still moving. (used for repeating actions)
+-   ** wiki:q.is_moving=0`** target is _not_ moving.
+-   ** wiki:q.is_moving=1`** target started moving. (used for 'trigger' actions)
+-   ** wiki:q.is_moving=1..`** target is still moving. (used for repeating actions)
 
 **Purpose of Each Command:**
 
@@ -84,36 +84,36 @@ If you desperately need to detect walking and sprinting separately **solely usin
 Walk/Sprint Detection may not work as intended with effects & enchantments.
 :::
 
-<CodeHeader>BP/functions/states/player/is_moving.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/detect_state/player/is_moving.mcfunction</CodeHeader>
 
 ```yaml
 ## Movement Detection
 ### Mark as not moving
-execute as @a at @s positioned ~~10000~ if entity @e [type=leash_knot, r=0.1252] run scoreboard players set @s is_moving 0
+execute as @a at @s positioned ~~10000~ if entity @e[type=leash_knot,r=0.1252] run scoreboard players set @s wiki:q.is_moving 0
 ### Mark as moving
-execute as @a at @s positioned ~~10000~ unless entity @e [type=leash_knot, r=0.1252] run scoreboard players add @s is_moving 1
+execute as @a at @s positioned ~~10000~ unless entity @e[type=leash_knot,r=0.1252] run scoreboard players add @s wiki:q.is_moving 1
 
 ## Walk Detection
 ### Mark as not walking
-scoreboard players set @a is_walking 0
+scoreboard players set @a wiki:q.is_walking 0
 ### Mark as walking
-execute as @a at @s positioned ~~10000~ if entity @e [type=leash_knot, rm=0.21585, r=0.2805] run scoreboard players set @s is_walking 1
+execute as @a at @s positioned ~~10000~ if entity @e[type=leash_knot,rm=0.21585,r=0.2805] run scoreboard players set @s wiki:q.is_walking 1
 
 ## Sprint Detection
 ### Mark as not sprinting
-scoreboard players set @a is_sprinting 0
+scoreboard players set @a wiki:q.is_sprinting 0
 ### Mark as sprinting
-execute as @a at @s positioned ~~10000~ if entity @e [type=leash_knot, rm=0.2806, r=0.9] run scoreboard players set @s is_sprinting 1
+execute as @a at @s positioned ~~10000~ if entity @e[type=leash_knot, rm=0.2806,r=0.9] run scoreboard players set @s wiki:q.is_sprinting 1
 
 ## Update Point
 ### Delete previous point
-execute as @e [type=leash_knot] at @s unless entity @s [y=-80, dy=9974] run kill @s
+execute as @e[type=leash_knot] at @s unless entity @s[y=-80,dy=9974] run kill @s
 ### Mark current point
 execute at @a positioned ~~10000~ run summon leash_knot ~~~
 
 ## Your Commands Here (Examples)
-execute as @a [scores={is_walking=0}] run say I'm not walking
-execute as @a [scores={is_walking=1}] run say I'm walking
+execute as @a[scores={wiki:q.is_walking=0}] run say I'm not walking
+execute as @a[scores={wiki:q.is_walking=1}] run say I'm walking
 ```
 
 ![commandBlockChain10](/assets/images/commands/commandBlockChain/10.png)
@@ -148,22 +148,22 @@ Note: When sleeping, the player's hitbox is reduced to 0.2 blocks.
 
 **Commands:**
 
--   Make sure you add the `is_sleeping` scoreboard objective:
-    -   `/scoreboard objectives add is_sleeping dummy`
+-   Make sure you add the `wiki:q.is_sleeping` scoreboard objective:
+    -   `/scoreboard objectives add wiki:wiki:q.is_sleeping dummy`
 
-<CodeHeader>BP/functions/states/player/is_sleeping.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/detect_state/player/is_sleeping.mcfunction</CodeHeader>
 
 ```yaml
 ## Sleep Detection
 ### Mark as not sleeping
-execute as @a at @s if entity @s [y=~0.3, dy=0] scoreboard players set @s is_sleeping 0
+execute as @a at @s if entity @s[y=~0.3, dy=0] scoreboard players set @s wiki:q.is_sleeping 0
 ### Mark as sleeping
-execute as @a at @s unless entity @s [y=~0.3, dy=0] run scoreboard players add @s is_sleeping 1
+execute as @a at @s unless entity @s[y=~0.3, dy=0] run scoreboard players add @s wiki:q.is_sleeping 1
 
 ## Your Commands Here (Examples)
-execute as @a [scores={is_sleeping=0}] run say I'm not sleeping
-execute as @a [scores={is_sleeping=1}] run say I started sleeping
-execute as @a [scores={is_sleeping=1..}] run say I'm still sleeping
+execute as @a[scores={wiki:q.is_sleeping=0}] run say I'm not sleeping
+execute as @a[scores={wiki:q.is_sleeping=1}] run say I started sleeping
+execute as @a[scores={wiki:q.is_sleeping=1..}] run say I'm still sleeping
 ```
 
 ![commandBlockChain5](/assets/images/commands/commandBlockChain/5.png)
@@ -172,9 +172,9 @@ It is a requirement to follow this same sequence and properly apply the `scores`
 
 **States:**
 
--   **`is_sleeping=0`** player is _not_ sleeping.
--   **`is_sleeping=1`** player started sleeping. (used for 'trigger' actions)
--   **`is_sleeping=1..`** player is still sleeping. (used for repeating actions)
+-   **`wiki:q.is_sleeping=0`** player is _not_ sleeping.
+-   **`wiki:q.is_sleeping=1`** player started sleeping. (used for 'trigger' actions)
+-   **`wiki:q.is_sleeping=1..`** player is still sleeping. (used for repeating actions)
 
 **Purpose of Each Command:**
 
@@ -193,22 +193,22 @@ Thanks to the introduction of Short Sneaking parity in 1.20.10 which reduces the
 
 **Commands:**
 
--   Make sure you add the `is_sneaking` scoreboard objective:
-    -   `/scoreboard objectives add is_sneaking dummy`
+-   Make sure you add the `wiki:q.is_sneaking` scoreboard objective:
+    -   `/scoreboard objectives add wiki:wiki:q.is_sneaking dummy`
 
-<CodeHeader>BP/functions/states/player/is_sneaking.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/detect_state/player/is_sneaking.mcfunction</CodeHeader>
 
 ```yaml
 ## Sneak Detection
 ### Mark as not sneaking
-execute as @a at @s if entity @s [y=~1.5, dy=0] run scoreboard players set @s is_sneaking 0
+execute as @a at @s if entity @s[y=~1.5, dy=0] run scoreboard players set @s wiki:q.is_sneaking 0
 ### Mark as sneaking
-execute as @a at @s unless entity @s [y=~1.5, dy=0] if entity @s [y=~0.7, dy=0] run scoreboard players add @s is_sneaking 1
+execute as @a at @s unless entity @s[y=~1.5, dy=0] if entity @s[y=~0.7, dy=0] run scoreboard players add @s wiki:q.is_sneaking 1
 
 ## Your Commands Here (Examples)
-execute as @a [scores={is_sneaking=0}] run say I'm not sneaking
-execute as @a [scores={is_sneaking=1}] run say I started sneaking
-execute as @a [scores={is_sneaking=1..}] run say I'm still sneaking
+execute as @a[scores={wiki:q.is_sneaking=0}] run say I'm not sneaking
+execute as @a[scores={wiki:q.is_sneaking=1}] run say I started sneaking
+execute as @a[scores={wiki:q.is_sneaking=1..}] run say I'm still sneaking
 ```
 
 ![commandBlockChain5](/assets/images/commands/commandBlockChain/5.png)
@@ -217,9 +217,9 @@ It is a requirement to follow this same sequence and properly apply the `scores`
 
 **States:**
 
--   **`is_sneaking=0`** player is _not_ sneaking.
--   **`is_sneaking=1`** player started sneaking. (used for 'trigger' actions)
--   **`is_sneaking=1..`** player is still sneaking. (used for repeating actions)
+-   **`wiki:q.is_sneaking=0`** player is _not_ sneaking.
+-   **`wiki:q.is_sneaking=1`** player started sneaking. (used for 'trigger' actions)
+-   **`wiki:q.is_sneaking=1..`** player is still sneaking. (used for repeating actions)
 
 **Purpose of Each Command:**
 
@@ -243,22 +243,22 @@ Swimming in water or gliding with Elytra will be detected as crawling.
 
 **Commands:**
 
--   Make sure you add the `is_crawling` scoreboard objective:
-    -   `/scoreboard objectives add is_crawling dummy`
+-   Make sure you add the `wiki:q.is_crawling` scoreboard objective:
+    -   `/scoreboard objectives add wiki:wiki:q.is_crawling dummy`
 
-<CodeHeader>BP/functions/states/player/is_crawling.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/detect_state/player/is_crawling.mcfunction</CodeHeader>
 
 ```yaml
 ## Crawl Detection
 ### Mark as not crawling
-execute as @a at @s if entity @s [y=~0.7, dy=0] run scoreboard players set @s is_crawling 0
+execute as @a at @s if entity @s[y=~0.7, dy=0] run scoreboard players set @s wiki:q.is_crawling 0
 ### Mark as crawling
-execute as @a at @s unless entity @s [y=~0.7, dy=0] if entity @s [y=~0.3, dy=0] run scoreboard players add @s is_crawling 1
+execute as @a at @s unless entity @s[y=~0.7, dy=0] if entity @s[y=~0.3, dy=0] run scoreboard players add @s wiki:q.is_crawling 1
 
 ## Your Commands Here (Examples)
-execute as @a [scores={is_crawling=0}] run say I'm not crawling
-execute as @a [scores={is_crawling=1}] run say I started crawling
-execute as @a [scores={is_sneaking=1..}] run say I'm still crawling
+execute as @a[scores={wiki:q.is_crawling=0}] run say I'm not crawling
+execute as @a[scores={wiki:q.is_crawling=1}] run say I started crawling
+execute as @a[scores={wiki:q.is_crawling=1..}] run say I'm still crawling
 ```
 
 ![commandBlockChain5](/assets/images/commands/commandBlockChain/5.png)
@@ -267,9 +267,9 @@ It is a requirement to follow this same sequence and properly apply the `scores`
 
 **States:**
 
--   **`is_crawling=0`** player is _not_ crawling.
--   **`is_crawling=1`** player started crawling. (used for 'trigger' actions)
--   **`is_crawling=1..`** player is still crawling. (used for repeating actions)
+-   **`wiki:q.is_crawling=0`** player is _not_ crawling.
+-   **`wiki:q.is_crawling=1`** player started crawling. (used for 'trigger' actions)
+-   **`wiki:q.is_crawling=1..`** player is still crawling. (used for repeating actions)
 
 **Purpose of Each Command:**
 
@@ -293,29 +293,29 @@ If you desperately need to detect all three states separately **solely using com
 
 :::
 
-<CodeHeader>BP/functions/states/player/is_crawling.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/detect_state/player/is_crawling.mcfunction</CodeHeader>
 
 ```yaml
 ## Set Player States
 ### Not gliding
-execute as @a at @s if entity @s [y=~0.7, dy=0] run scoreboard players set @s is_gliding 0
+execute as @a at @s if entity @s[y=~0.7, dy=0] run scoreboard players set @s wiki:q.is_gliding 0
 ### Not crawling
-execute as @a at @s if entity @s [y=~0.7, dy=0] run scoreboard players set @s is_crawling 0
+execute as @a at @s if entity @s[y=~0.7, dy=0] run scoreboard players set @s wiki:q.is_crawling 0
 ### Not swimming
-execute as @a at @s if entity @s [y=~0.7, dy=0] run scoreboard players set @s is_swimming 0
+execute as @a at @s if entity @s[y=~0.7, dy=0] run scoreboard players set @s wiki:q.is_swimming 0
 
 ## Detect Player States
 ### Gliding
-execute as @a [hasitem={item=elytra,location=slot.armor.chest}] at @s unless entity @s [y=~0.7, dy=0] if entity @s [y=~0.3, dy=0] if block ~~1.01~ air if block ~~-0.01~ air rotated ~ 0 if block ^^1.01^-1 air if block ^^-0.01^-1 air if block ^^1.01^1 air if block ^^-0.01^1 air run scoreboard players add @s is_gliding 1
+execute as @a[hasitem={item=elytra,location=slot.armor.chest}] at @s unless entity @s[y=~0.7,dy=0] if entity @s[y=~0.3,dy=0] if block ~~1.01~ air if block ~~-0.01~ air rotated ~ 0 if block ^^1.01^-1 air if block ^^-0.01^-1 air if block ^^1.01^1 air if block ^^-0.01^1 air run scoreboard players add @s wiki:q.is_gliding 1
 ### Crawling
-execute as @a [scores={is_gliding=0}] at @s unless entity @s [y=~0.7, dy=0] if entity @s [y=~0.3, dy=0] unless block ~~~ water unless block ~~1.01~ water run scoreboard players add @s is_crawling 1
+execute as @a[scores={wiki:q.is_gliding=0}] at @s unless entity @s[y=~0.7,dy=0] if entity @s[y=~0.3,dy=0] unless block ~~~ water unless block ~~1.01~ water run scoreboard players add @s wiki:q.is_crawling 1
 ### Swimming
-execute as @a [scores={is_gliding=0,is_crawling=0}] at @s unless entity @s [y=~0.7, dy=0] if entity @s [y=~0.3, dy=0] run scoreboard players add @s is_swimming 1
+execute as @a[scores={wiki:q.is_gliding=0,wiki:q.is_crawling=0}] at @s unless entity @s[y=~0.7, dy=0] if entity @s[y=~0.3,dy=0] run scoreboard players add @s wiki:q.is_swimming 1
 
 ## Your Commands Here (Examples)
-execute as @a [scores={is_swimming=0}] run say I'm not swimming
-execute as @a [scores={is_crawling=1}] run say I started crawling
-execute as @a [scores={is_gliding=1..}] run say I'm still gliding
+execute as @a[scores={wiki:q.is_swimming=0}] run say I'm not swimming
+execute as @a[scores={wiki:q.is_crawling=1}] run say I started crawling
+execute as @a[scores={wiki:q.is_gliding=1..}] run say I'm still gliding
 ```
 
 ![commandBlockChain9](/assets/images/commands/commandBlockChain/9.png)
@@ -340,11 +340,12 @@ If you are working with functions, your folder structure may look something like
     'BP/functions',
     'BP/manifest.json',
     'BP/pack_icon.png',
-    'BP/functions/states',
-    'BP/functions/states/player',
-    'BP/functions/states/player/is_moving.mcfunction',
-    'BP/functions/states/player/is_sleeping.mcfunction',
-    'BP/functions/states/player/is_crawling.mcfunction',
+    'BP/functions/wiki',
+    'BP/functions/wiki/detect_state',
+    'BP/functions/wiki/detect_state/player',
+    'BP/functions/wiki/detect_state/player/is_moving.mcfunction',
+    'BP/functions/wiki/detect_state/player/is_sleeping.mcfunction',
+    'BP/functions/wiki/detect_state/player/is_crawling.mcfunction',
     'BP/functions/tick.json'
 ]"
 ></FolderView>

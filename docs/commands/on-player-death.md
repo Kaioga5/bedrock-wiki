@@ -10,7 +10,7 @@ description: This system will run your desired commands on the event that a play
 
 ## Introduction
 
-[Sourced By Bedrock Commands Community Discord](https://discord.gg/SYstTYx5G5)
+[Sourced by the Bedrock Commands Community (BCC) Discord](https://discord.gg/SYstTYx5G5)
 
 This system will run your desired commands on the event that a player dies.
 
@@ -18,7 +18,7 @@ This system will run your desired commands on the event that a player dies.
 
 _To be typed in Chat:_
 
-`/scoreboard objectives add is_alive dummy`
+`/scoreboard objectives add wiki:alive dummy`
 
 If you are working with functions and prefer to have the objective added automatically on world initialisation, follow the process outlined in [On First World Load.](/commands/on-first-world-load)
 
@@ -29,28 +29,28 @@ If you are working with functions and prefer to have the objective added automat
 ```yaml
 ## Set Player States
 ### Not alive
-scoreboard players set @a [scores={is_alive=!2}] is_alive 0
+scoreboard players set @a[scores={wiki:alive=!2}] wiki:alive 0
 ### Alive
-scoreboard players set @e [type=player] is_alive 1
+scoreboard players set @e[type=player] wiki:alive 1
 
 ## Your Commands Here (Example)
-execute as @a [scores={is_alive=0}] run say I died
+execute as @a[scores={wiki:alive=0}] run say I died
 
 ## Mark that Commands for Dead Players Have Been Executed
-scoreboard players set @a [scores={is_alive=0}] is_alive 2
+scoreboard players set @a[scores={wiki:alive=0}] wiki:alive 2
 ```
 
 ![commandBlockChain4](/assets/images/commands/commandBlockChain/4.png)
 
 Here, we have used an `/execute - say` command as an example, but you can use any command you prefer and as many as you need.
 
-Just make sure to follow the given order and properly apply the `scores={alive=0}` selector argument as shown for your desired commands.
+Just make sure to follow the given order and properly apply the `scores={wiki:alive=0}` selector argument as shown for your desired commands.
 
 ## Explanation
 
--   **`is_alive=0`** player is _not_ alive (dead).
--   **`is_alive=1`** player is alive.
--   **`is_alive=2`** player is dead and we have executed our desired commands on/from them.
+-   **`wiki:alive=0`** player is _not_ alive (dead).
+-   **`wiki:alive=1`** player is alive.
+-   **`wiki:alive=2`** player is dead and we have executed our desired commands on/from them.
 
 **Purpose of Each Command:**
 
@@ -70,7 +70,7 @@ If you are using functions instead of command blocks, the `on_death` function mu
 ```json
 {
   "values": [
-    "events/player/on_death"
+    "wiki/event/players/on_death"
   ]
 }
 ```
@@ -81,23 +81,15 @@ If using functions, your pack folder structure will be as follows:
 	:paths="[
     'BP',
     'BP/functions',
+    'BP/functions/wiki',
     'BP/pack_icon.png',
     'BP/manifest.json',
-    'BP/functions/events',
-    'BP/functions/events/player',
-    'BP/functions/events/player/on_death.mcfunction',
+    'BP/functions/wiki/event',
+    'BP/functions/wiki/event/players',
+    'BP/functions/wiki/event/players/on_death.mcfunction',
     'BP/functions/tick.json'
 ]"
 ></FolderView>
-
-:::info NOTE:
-
-The scoreboard names (in this case: 'is*alive') may end up being used by other people. Appending ` * `and a set of randomly generated characters after would be a choice that reduces the probability of collisions. Similar technique can be employed for the` .mcfunction ` filenames. Ex:
-
--   `is_alive_0fe678`
--   `on_death_0fe678.mcfunction`
-
-:::
 
 ## Alternative Method
 
@@ -107,32 +99,32 @@ This method was possible after the introduction of the new `/execute` syntax in 
 If two or more players are teleported to the same point and one of them dies but the remaining players do not move, the system will fail to execute the commands.
 :::
 
--   Make sure you add the `is_dead` scoreboard objective:
-    -   `/scoreboard objectives add is_dead dummy`
+-   Make sure you add the `wiki:q.is_dead` scoreboard objective:
+    -   `/scoreboard objectives add wiki:q.is_dead dummy`
 
-<CodeHeader>BP/functions/states/is_dead.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/detect_state/player/is_dead.mcfunction</CodeHeader>
 
 ```yaml
 ## Set Player States
 ### Not dead
-scoreboard players set @e [type=player] is_dead 0
+scoreboard players set @e[type=player] wiki:q.is_dead 0
 ### Dead
-execute as @a at @s unless entity @e [type=player, r=0.01] run scoreboard players add @s is_dead 1
+execute as @a at @s unless entity @e[type=player,r=0.01] run scoreboard players add @s wiki:q.is_dead 1
 
 ## Your Commands Here (examples)
 ### Summon armor stand at death position
-execute as @a [scores={is_dead=1}] at @s run summon armor_stand "Dead Player" ~~~
+execute as @a[scores={wiki:q.is_dead=1}] at @s run summon armor_stand "Corpse" ~~~
 ### Death message in chat
-execute as @a [scores={is_dead=1..}] run say I died and haven't respawned yet..
+execute as @a[scores={wiki:q.is_dead=1..}] run say I died and haven't respawned yet..
 ```
 
 ![commandBlockChain4](/assets/images/commands/commandBlockChain/4.png)
 
 **States:**
 
--   **`is_dead=0`** player is _not_ dead (alive).
--   **`is_dead=1`** player just died. (used for 'trigger' actions)
--   **`is_dead=1..`** player is still dead. (used for repeating actions)
+-   **`wiki:q.is_dead=0`** player is _not_ dead (alive).
+-   **`wiki:q.is_dead=1`** player just died. (used for 'trigger' actions)
+-   **`wiki:q.is_dead=1..`** player is still dead. (used for repeating actions)
 
 **Purpose of Each Command:**
 
