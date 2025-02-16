@@ -23,28 +23,28 @@ The style guide is a living, breathing document, which will evolve as add-on cre
 -   The total character length of any path must not exceed 80 characters (console limitation).
 -   Content folders should use consistent pluralization: Stick with names that are either all plural or all singular, don't mix and match. Example:
 
-✅️ Consistent:
+✅️ **Consistent**:
 
 ```
-BP/functions/abilities/ice_blast.mcfunction
-BP/functions/events/player/on_death.mcfunction
-BP/functions/events/world/on_initialise.mcfunction
-BP/functions/quests/jungle/1.mcfunction
+BP/functions/wiki/ability/ice_blast.mcfunction
+BP/functions/wiki/ability/fire_trail.mcfunction
+BP/functions/wiki/event/players/on_death.mcfunction
+BP/functions/wiki/event/worlds/on_initialise.mcfunction
 ```
 
--   All content folders `abilities`, `events`, and `quests` are consistently pluralized.
--   The content folders in `events` are also consistent, as both `player` and `world` are singular.
+- All content folders `ability` and `event` are consistently singular.
+- The content folders in `event` are also consistent, as both `players` and `worlds` are plural.
 
-❌️ Inconsistent:
+❌️ **Inconsistent**:
 
 ```
-BP/functions/ability/ice_blast.mcfunction
-BP/functions/event/players/on_death.mcfunction
-BP/functions/event/world/on_initialise.mcfunction
-BP/functions/quests/jungle/1.mcfunction
+BP/functions/wiki/abilities/ice_blast.mcfunction
+BP/functions/wiki/abilities/fire_trail.mcfunction
+BP/functions/wiki/event/players/on_death.mcfunction
+BP/functions/wiki/event/world/on_initialise.mcfunction
 ```
 
--   Only `quests` content folder is pluralized while `ability`, and `event` are singular.
+-   Only `abilities` content folder is pluralized while `event` is singular.
 -   Also, in the `event` folder, the `players` folder is plural while `world` is singular.
 
 ## Identifiers
@@ -93,7 +93,8 @@ Where to use namespaces:
 
 When not to use namespaces:
 
--   do not include your namespace in any folder path or file name
+-   do not include your namespace in any folder path or file name.
+    - Note: the functions folder is an exception, see [here](meta/style-guide#functions). 
 
 ## Sub-Indexing
 
@@ -133,14 +134,16 @@ When we make short-names of this form, we can use a generic "sit" animation cont
 
 ## Functions
 
-1. **Functions should be nested.** You can put functions in folders to achieve this.
-    - ✅️ `function teleport/zone/hell`
-    - ❌ `function teleport_hellzone`
-
-2. **Function file/folder names must follow an `action_object` structure.** Meaning verbs should always come before the subjects.
+1. All your `.mcfunction` files must be  go in a namespaced root-folder within the functions folder. On Bedrock Wiki, we use the `wiki` namespace. However, you may choose a namespace based on your name or project. For more info, refer to the [namespaces](/concepts/namespaces) page.
+    - ✅️ `BP/functions/wiki/random_number.mcfunction`
+    - ❌️ `BP/functions/random_number.mcfunction`
+2. They must be properly nested:
+    - ✅️ `BP/functions/wiki/teleport/zone/hell`
+    - ❌ `BP/functions/wiki/teleport_hellzone`
+3. The names must follow an `action_object` structure. Meaning verbs should come before subjects.
     - ✅️ `add_all`
-    - ✅️ `shuffle_position`
     - ❌️ `all_add`
+    - ✅️ `shuffle_position`
     - ❌️ `position_shuffle`
 
 ### Comments in Functions
@@ -154,31 +157,31 @@ When we make short-names of this form, we can use a generic "sit" animation cont
 
 <Spoiler title="Example Function File">
 
-<CodeHeader>BP/functions/abilities/fire_trail.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/ability/fire_trail.mcfunction</CodeHeader>
 
 ```yaml
 # ON PLAYER ITEM DROP
 
 ## Give Effects
 ### Fire resistance
-execute at @e [type=item, name="Fire Trail Ability"] run effect @p [r=3] fire_resistance 10 255
+execute at @e[type=item,name="Fire Trail Ability"] run effect @p[r=3] fire_resistance 10 255
 ### Speed
-execute at @e [type=item, name="Fire Trail Ability"] run effect @p [r=3] speed 10 1 true
+execute at @e[type=item,name="Fire Trail Ability"] run effect @p[r=3] speed 10 1 true
 
 ## Add Particle Time (10s)
-execute at @e [type=item, name="Fire Trail Ability"] run scoreboard players set @p [r=3] abilities.fire_trail 200
+execute at @e[type=item,name="Fire Trail Ability"] run scoreboard players set @p[r=3] abilities.fire_trail 200
 
 ## Delete Item
-kill @e [type=item, name="Fire Trail Ability"]
+kill @e[type=item,name="Fire Trail Ability"]
 
 
 # ENTITY TIMER
 
 ## Emit Particle Trail
-execute at @a [scores={abilities.fire_trail=1..}] run particle minecraft:basic_flame_particle ~~~
+execute at @a[scores={wiki:ability.fire_trail=1..}] run particle minecraft:basic_flame_particle ~~~
 
 ## Countdown Timer
-scoreboard players remove @a [scores={abilities.fire_trail=1..}] abilities.fire_trail 1
+scoreboard players remove @a [scores={wiki:ability.fire_trail=1..}] wiki:ability.fire_trail 1
 ```
 
 </Spoiler>
@@ -187,42 +190,41 @@ Note the use of two lines of spacing before level 1 headers and one line of spac
 
 This practice helps create a consistent format, making it easier for everyone to follow, and maintain uniformity across your functions.
 
-## Scoreboards and Tags
+## Scorboard Objectives & Tags
 
-- Scoreboard objectives should be named using `snake_case`, while scoreboard fake-player-names should use **PascalCase**. This distinction makes it easier to differentiate between the two when typing scoreboard commands.
-- Tags should use `camelCase`, as they usually represent states or conditions and align with common conventions for variable names.
+- Must begin with a namespace and use `snake_case`.
+    - This prevents conflicts with packs using identical tags or objectives.
+- Only use lowercase letters (a–z), underscores (`_`), and dots (`.`) as special characters.
 
-**Example Tag Names:**
+**Example Objectives:**
+- `wiki:blocks_travelled.overworld`
+- `wiki:q.is_sneaking`
+- `wiki:q.is_armed_any`
 
-- `admin`
-- `inNether`
-- `isFlying`
-- `abilityFireTrail`
-- `abilityWallClimb`
+**Example Tags:**
+- `wiki:inventory.full`
+- `wiki:inventory.empty`
+- `wiki:is_flying`
 
-*Only alphanumeric characters.*
+:::info NOTE:
+Tags describe a definite state—if a tag exists, its condition is true. This is why MoLang queries represented as tags in a similar manner do not use the `q.` prefix.
+:::
 
-**Example Fake Player Names:**
+### Score Holders
 
-- `AlivePlayer`
-- `ZombieHorse`
-- `OresEmerald`
-- `OresDiamond`
-- `OresDeepslateDiamond`
+- Must be prefixed with either a dot (`.`) or hashtag (`#`) and use `PascalCase`.
+  - This prevents conflicts with gamertags using identical names and provides a clear visual distinction since score holders are used closely with objectives.
+  - A prefix is used instead of a namespace to keep it concise, as the namespaced objective already prevents conflicts with other packs.
+- No special characters other than dots (`.`).
 
-*Only alphanumeric characters.*
+**Examples:**
+- `.Ores.Iron`
+- `.Ores.DeepslateIron`
+- `.200`
 
-**Example Objective Names:**
-
-- `ticks`
-- `entity_timer`
-- `abilities.fire_trail`
-- `abilities.wall_climb`
-- `abilities.ice_blast`
-
-*Only **lowercase** alphanumeric characters, underscores (`_`), and dots (`.`).*
-
-For objectives, dot notation (`dot.notation`) may be used to represent groups or categories. However, use it sparingly to avoid clutter and maintain readability.
+:::tip **TIP:**
+Score holders prefixed with a hashtag (`#`) will not be displayed on the scoreboard sidebar. However, they must be enclosed in double quotes (`" "`) to avoid a syntax error.
+:::
 
 ## Group Animations Files when Possible
 
