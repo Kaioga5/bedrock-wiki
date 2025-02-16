@@ -94,7 +94,7 @@ Where to use namespaces:
 When not to use namespaces:
 
 -   do not include your namespace in any folder path or file name.
-- **Note:** The following folders are exceptions: `functions`, `structures`, `loot_tables`, `trade_tables`, and `textures`.
+- **Note:** The following folders are exceptions: `functions`, `structures`, `loot_tables`, `trade_tables`, `sounds`, and `textures`.
     - Using a **namespace** in these folders is recommended to prevent conflicts with other packs.
     - **Example:** `BP/functions/namespace/test.mcfunction`
 
