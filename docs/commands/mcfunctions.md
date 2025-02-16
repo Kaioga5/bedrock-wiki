@@ -36,7 +36,7 @@ Functions are useful in many ways to reduce the time spent going from command bl
 
 To help create a consistent format, make it easier for everyone to follow, and to maintain uniformity across your functions, it is advised to follow these best-practices for your folder structure:
 
-1. All your `.mcfunction` files must be  go in a namespaced root-folder within the functions folder. On Bedrock Wiki, we use the `wiki` namespace. However, you may choose a namespace based on your name or project. For more info, refer to namespaces page.
+1. All your `.mcfunction` files must be  go in a namespaced root-folder within the functions folder. On Bedrock Wiki, we use the `wiki` namespace. However, you may choose a namespace based on your name or project. For more info, refer to the [namespaces](/concepts/namespaces) page.
     - ✅️ `BP/functions/wiki/random_number.mcfunction`
     - ❌️ `BP/functions/random_number.mcfunction`
 2. Folders and files in a pack must be named using `snake_case`
@@ -106,31 +106,31 @@ effect @a[tag=wiki:in_nether] fire_resistance 12 255 true
 
 ## Comments Style Guide
 
--   When working with functions that contain many commands, it's helpful to keep them organized by using multiple hashtags in comments to indicate different header levels.
--   _Optionally_, to further distinguish these levels, you can apply different styles:
-    -   level 1 headers - **# UPPERCASE**
-    -   level 2 headers - **## Title Case**
-    -   level 3 headers - **### Sentence Case**
--   Try to avoid the use of more than three header levels or too many headers overall, as this can make the code look cluttered. For your reference, see the example file below:
+-    When working with functions that contain many commands, it's helpful to keep them organized by using multiple hashtags in comments to indicate different header levels.
+-    *Optionally*, to further distinguish these levels, you can apply different styles:
+    -    level 1 headers - **# UPPERCASE**
+    -    level 2 headers - **## Title Case**
+    -    level 3 headers - **### Sentence case**
+-    Try to avoid the use of more than three header levels or too many headers overall, as this can make the code look cluttered. For your reference, see the example file below:
 
 <Spoiler title="Example Function File">
 
-<CodeHeader>BP/functions/abilities/fire_trail.mcfunction</CodeHeader>
+<CodeHeader>BP/functions/wiki/ability/fire_trail.mcfunction</CodeHeader>
 
 ```yaml
 # ON PLAYER ITEM DROP
 
 ## Give Effects
 ### Fire resistance
-execute at @e[type=item,name="wiki:item.ability.fire_trail"] run effect @p[r=3] fire_resistance 10 255
+execute at @e[type=item,name="Fire Trail Ability"] run effect @p[r=3] fire_resistance 10 255
 ### Speed
-execute at @e[type=item,name="wiki:item.ability.fire_trail"] run effect @p[r=3] speed 10 1 true
+execute at @e[type=item,name="Fire Trail Ability"] run effect @p[r=3] speed 10 1 true
 
 ## Add Particle Time (10s)
-execute at @e[type=item,name="wiki:item.ability.fire_trail"] run scoreboard players set @p[r=3] wiki:ability.fire_trail 200
+execute at @e[type=item,name="Fire Trail Ability"] run scoreboard players set @p[r=3] abilities.fire_trail 200
 
 ## Delete Item
-kill @e[type=item,name="wiki:item.ability.fire_trail"]
+kill @e[type=item,name="Fire Trail Ability"]
 
 
 # ENTITY TIMER
@@ -139,7 +139,7 @@ kill @e[type=item,name="wiki:item.ability.fire_trail"]
 execute at @a[scores={wiki:ability.fire_trail=1..}] run particle minecraft:basic_flame_particle ~~~
 
 ## Countdown Timer
-scoreboard players remove @a[scores={wiki:ability.fire_trail=1..}] wiki:ability.fire_trail 1
+scoreboard players remove @a [scores={wiki:ability.fire_trail=1..}] wiki:ability.fire_trail 1
 ```
 
 </Spoiler>
@@ -147,8 +147,7 @@ scoreboard players remove @a[scores={wiki:ability.fire_trail=1..}] wiki:ability.
 Note the use of two lines of spacing before level 1 headers and one line of spacing before level 2 headers for improved readability.
 
 This practice helps create a consistent format, making it easier for everyone to follow, and maintain uniformity across your functions.
-
-For Scoreboard and Tags convention, see the **[Style Guide](/meta/style-guide#scoreboard-and-tags)** page.
+For Scoreboard and Tags convention, see the **[Style Guide](/meta/style-guide#scoreboard-objectives-tags)** page.
 
 ## Creating a Function
 
