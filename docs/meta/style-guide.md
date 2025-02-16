@@ -94,8 +94,9 @@ Where to use namespaces:
 When not to use namespaces:
 
 -   do not include your namespace in any folder path or file name.
-    - - Note: The functions folder is an exception. Using a namespace in the functions folder is recommended to avoid conflicts with other packs. Example:
-    - `BP/functions/wiki/test.mcfunction`
+- **Note:** The following folders are exceptions: `functions`, `structures`, `loot_tables`, `trade_tables`, and `textures`.
+    - Using a **namespace** in these folders is recommended to prevent conflicts with other packs.
+    - **Example:** `BP/functions/namespace/test.mcfunction`
 
 ## Sub-Indexing
 
