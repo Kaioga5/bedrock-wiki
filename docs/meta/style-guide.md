@@ -94,7 +94,8 @@ Where to use namespaces:
 When not to use namespaces:
 
 -   do not include your namespace in any folder path or file name.
-    - Note: the functions folder is an exception, see [here](#functions). 
+    - - Note: The functions folder is an exception. Using a namespace in the functions folder is recommended to avoid conflicts with other packs. Example:
+    - `BP/functions/wiki/test.mcfunction`
 
 ## Sub-Indexing
 
