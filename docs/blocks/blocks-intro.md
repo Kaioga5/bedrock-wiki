@@ -229,11 +229,12 @@ The `blocks.json` entry would look like this:
 }
 ```
 
-Or, if you're using [material instances](/blocks/block-components#material-instances), they should look like this:
+Or, if you'd like to use [material instances](/blocks/block-components#material-instances) instead, they should look like this:
 
 <CodeHeader>minecraft:block > components</CodeHeader>
 
 ```json
+"minecraft:geometry": "minecraft:geometry.full_block",
 "minecraft:material_instances": {
   "*": {
     "texture": "wiki:compass_block_down" // This texture appears in destruction particles
