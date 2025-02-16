@@ -103,7 +103,7 @@ If using functions, your pack folder structure should be as follows:
     'BP/pack_icon.png',
     'BP/manifest.json',
     'BP/functions/wiki/event',
-    'BP/functions/wiki/event/players,
+    'BP/functions/wiki/event/players',
     'BP/functions/wiki/event/players/on_leave.mcfunction',
     'BP/functions/tick.json'
 ]"
