@@ -51,6 +51,6 @@ The actual file structure does not need namespaces.
 
 `animations/namespace/my_entity/animation` is more confusing than `animations/my_entity/animation`.
 
-- Note: The functions folder is an exception. Using a namespace in the functions folder is recommended to avoid conflicts with other packs. Example:
-    - `BP/functions/namespace/test.mcfunction`
-
+- **Note:** The following folders are exceptions: `functions`, `structures`, `loot_tables`, `trade_tables`, and `textures`.
+    - Using a **namespace** in these folders is recommended to prevent conflicts with other packs.
+    - **Example:** `BP/functions/namespace/test.mcfunction`
