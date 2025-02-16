@@ -208,7 +208,7 @@ This practice helps create a consistent format, making it easier for everyone to
 - `wiki:is_flying`
 
 :::info NOTE:
-Tags describe a definite state—if a tag exists, its condition is true. This is why MoLang queries represented as tags in a similar manner do not use the `q.` prefix.
+Tags describe a definite state—if a tag exists, its condition is true. This is why Molang queries represented as tags in a similar manner do not use the `q.` prefix.
 :::
 
 ### Score Holders
