@@ -25,7 +25,7 @@ Making crops is not as difficult as you may think, it just takes a little practi
 
 **Issues:**
 
--   Custom crops cannot be destroyed by flowing liquids ([see feedback post](https://discord.com/channels/1138536747932864532/1191224284765491230)).
+-   Custom crops cannot be destroyed by flowing lava.
 -   Growth rate cannot be impacted by light level ([see feedback post](https://discord.com/channels/1138536747932864532/1231369171577602179)).
 
 ## Crop Model
@@ -75,6 +75,15 @@ This code example also includes the base components of our crop which will be ac
                     {
                         "allowed_faces": ["up"],
                         "block_filter": ["minecraft:farmland"]
+                    }
+                ]
+            },
+            // Break the crop when water flows into it.
+            "minecraft:liquid_detection": {
+                "detection_rules": [
+                    {
+                        "liquid_type": "water",
+                        "on_liquid_touches": "broken"
                     }
                 ]
             }
@@ -604,15 +613,13 @@ Your crop can't only drop seeds! Create a custom food using the template below.
 
 Your pack should now contain the following files:
 
-<FolderView
-    :paths="[
-        'BP/blocks/custom_crop.json',
-        'BP/items/custom_food.json',
-        'BP/items/custom_seeds.json',
-        'BP/loot_tables/blocks/custom_crop_mature.json',
-        'BP/loot_tables/blocks/custom_crop_young.json'
-    ]"
-></FolderView>
+<FolderView :paths="[
+    'BP/blocks/custom_crop.json',
+    'BP/items/custom_food.json',
+    'BP/items/custom_seeds.json',
+    'BP/loot_tables/blocks/custom_crop_mature.json',
+    'BP/loot_tables/blocks/custom_crop_young.json'
+]" />
 
 With the help of this tutorial/template, you now have the knowledge and skills to create your own custom crop, as well as its seed and food items.
 
