@@ -50,10 +50,10 @@ This is a basic overview of the file:
 
 ```json
 {
-	"format_version": "1.16.0",
+	"format_version": "1.21.60",
 	"minecraft:entity": {
-		"description": {...},
-		"components": {...}
+		"description": { ... },
+		"components": { ... }
 	}
 }
 ```
@@ -68,8 +68,7 @@ For entities we have a little bit more information under `description`:
 "description": {
 	"identifier": "wiki:ghost",
 	"is_summonable": true,
-	"is_spawnable": true,
-	"is_experimental": false
+	"is_spawnable": true
 }
 ```
 
@@ -78,7 +77,6 @@ The other keys determine what ways we can add the entity to our world:
 
 -   `is_summonable` : Whether it can be summoned using the `/summon` command.
 -   `is_spawnable` : Whether it can spawn in the world using a spawn egg or spawn rules.
--   `is_experimental`: Whether the entity is experimental (if so it can only be added to Experimental Worlds).
 
 We recommend leaving the settings as they are here as any changes will make it harder to test your entity in game.
 
@@ -252,13 +250,12 @@ In general, important behaviors will have a priority of `0` or `1`.
 
 ```json
 {
-    "format_version": "1.16.0",
+    "format_version": "1.21.60",
     "minecraft:entity": {
         "description": {
             "identifier": "wiki:ghost",
             "is_summonable": true,
-            "is_spawnable": true,
-            "is_experimental": false
+            "is_spawnable": true
         },
         "components": {
             "minecraft:type_family": {
@@ -805,7 +802,7 @@ In order for these resources to be rendered, we need to tell the game which reso
 The render controller is defined in a separate file and uses the shortnames we defined in our entity file.
 The file is called `ghost.rc.json` and is under `RP/render_controllers/`:
 
-<CodeHeader>RP/render_controllers/entity/ghost.rc.json</CodeHeader>
+<CodeHeader>RP/render_controllers/ghost.rc.json</CodeHeader>
 
 ```json
 {
@@ -1009,13 +1006,12 @@ Your folder structure should look like this:
 
 ```json
 {
-    "format_version": "1.16.0",
+    "format_version": "1.21.60",
     "minecraft:entity": {
         "description": {
             "identifier": "wiki:ghost",
             "is_summonable": true,
-            "is_spawnable": true,
-            "is_experimental": false
+            "is_spawnable": true
         },
         "components": {
             "minecraft:type_family": {
@@ -1395,7 +1391,7 @@ Your folder structure should look like this:
 
 <Spoiler title="Full ghost.rc.json">
 
-<CodeHeader>RP/render_controllers/entity/ghost.rc.json</CodeHeader>
+<CodeHeader>RP/render_controllers/ghost.rc.json</CodeHeader>
 
 ```json
 {
@@ -1418,10 +1414,10 @@ Your folder structure should look like this:
 
 ## Your Progress So Far
 
--   [x] Setup your pack
+-   [x] Set up your pack
 -   [x] Create a custom item
 -   [x] Create a custom entity
--   [x] -   How to format the behavior- and resource files for an item
--   [x] -   How to set an entities texture
--   [x] -   How to use models, animations, and animation controllers to make your entity more exciting
+-   [x] How to format the behavior and resource files for an item
+-   [x] How to set an entities texture
+-   [x] How to use models, animations, and animation controllers to make your entity more exciting
 -   [ ] Create the entity's loot, spawn rules, and a custom recipe
