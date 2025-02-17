@@ -188,7 +188,7 @@ For example, if `wiki:growth` is 7, the texture is set to `custom_crop_3` and th
             "minecraft:material_instances": {
                 "*": {
                     "texture": "wiki:custom_crop_0",
-                    "render_method": "alpha_test",
+                    "render_method": "alpha_test_single_sided",
                     "ambient_occlusion": false,
                     "face_dimming": false
                 }
@@ -219,7 +219,7 @@ For example, if `wiki:growth` is 7, the texture is set to `custom_crop_3` and th
             "minecraft:material_instances": {
                 "*": {
                     "texture": "wiki:custom_crop_1",
-                    "render_method": "alpha_test",
+                    "render_method": "alpha_test_single_sided",
                     "ambient_occlusion": false,
                     "face_dimming": false
                 }
@@ -250,7 +250,7 @@ For example, if `wiki:growth` is 7, the texture is set to `custom_crop_3` and th
             "minecraft:material_instances": {
                 "*": {
                     "texture": "wiki:custom_crop_2",
-                    "render_method": "alpha_test",
+                    "render_method": "alpha_test_single_sided",
                     "ambient_occlusion": false,
                     "face_dimming": false
                 }
@@ -290,7 +290,7 @@ For example, if `wiki:growth` is 7, the texture is set to `custom_crop_3` and th
             "minecraft:material_instances": {
                 "*": {
                     "texture": "wiki:custom_crop_3",
-                    "render_method": "alpha_test",
+                    "render_method": "alpha_test_single_sided",
                     "ambient_occlusion": false,
                     "face_dimming": false
                 }
@@ -362,7 +362,7 @@ Here is the entire `wiki:custom_crop` file for reference.
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "wiki:custom_crop_0",
-                            "render_method": "alpha_test",
+                            "render_method": "alpha_test_single_sided",
                             "ambient_occlusion": false,
                             "face_dimming": false
                         }
@@ -402,7 +402,7 @@ Here is the entire `wiki:custom_crop` file for reference.
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "wiki:custom_crop_1",
-                            "render_method": "alpha_test",
+                            "render_method": "alpha_test_single_sided",
                             "ambient_occlusion": false,
                             "face_dimming": false
                         }
@@ -433,7 +433,7 @@ Here is the entire `wiki:custom_crop` file for reference.
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "wiki:custom_crop_2",
-                            "render_method": "alpha_test",
+                            "render_method": "alpha_test_single_sided",
                             "ambient_occlusion": false,
                             "face_dimming": false
                         }
@@ -464,7 +464,7 @@ Here is the entire `wiki:custom_crop` file for reference.
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "wiki:custom_crop_3",
-                            "render_method": "alpha_test",
+                            "render_method": "alpha_test_single_sided",
                             "ambient_occlusion": false,
                             "face_dimming": false
                         }
