@@ -8,7 +8,7 @@ hidden: true
 ---
 
 This page was created with [Wiki Content Generator](https://github.com/Bedrock-OSS/bedrock-wiki-content-generator). If there are issues, contact us on [Bedrock OSS](https://discord.gg/XjV87YN) Discord server.
-Includes all examples. Namespace `minecraft` and some formatting have been removed to make the page load quickly. *Last updated for 1.21.50*
+Includes all examples. Namespace `minecraft` and some formatting have been removed to make the page load quickly. *Last updated for 1.21.60*
 
 ## addrider
 
@@ -774,6 +774,18 @@ creaking
 "minecraft:ambient_sound_interval": {}
 ```
 
+```json
+"minecraft:ambient_sound_interval": {
+    "event_name": "undefined"
+}
+```
+
+donkey
+
+```json
+"minecraft:ambient_sound_interval": {}
+```
+
 evocation_illager
 
 ```json
@@ -806,6 +818,24 @@ fox
 }
 ```
 
+```json
+"minecraft:ambient_sound_interval": {
+    "event_name": "mad"
+}
+```
+
+horse
+
+```json
+"minecraft:ambient_sound_interval": {}
+```
+
+mule
+
+```json
+"minecraft:ambient_sound_interval": {}
+```
+
 pillager
 
 ```json
@@ -824,6 +854,12 @@ ravager
     "range": 8.0,
     "event_name": "ambient.in.raid"
 }
+```
+
+skeleton_horse
+
+```json
+"minecraft:ambient_sound_interval": {}
 ```
 
 vindicator
@@ -864,6 +900,12 @@ witch
     "range": 4.0,
     "event_name": "ambient.in.raid"
 }
+```
+
+zombie_horse
+
+```json
+"minecraft:ambient_sound_interval": {}
 ```
 
 ## anger_level
@@ -16259,6 +16301,7 @@ cat
     "require_tame": true,
     "require_full_health": true,
     "allow_sitting": true,
+    "combine_parent_colors": true,
     "breeds_with": {
         "mate_type": "minecraft:cat",
         "baby_type": "minecraft:cat",
@@ -16621,6 +16664,7 @@ sheep
 ```json
 "minecraft:breedable": {
     "require_tame": false,
+    "combine_parent_colors": true,
     "breeds_with": {
         "mate_type": "minecraft:sheep",
         "baby_type": "minecraft:sheep"
@@ -16725,6 +16769,7 @@ wolf
 "minecraft:breedable": {
     "require_tame": true,
     "require_full_health": true,
+    "combine_parent_colors": true,
     "breeds_with": {
         "mate_type": "minecraft:wolf",
         "baby_type": "minecraft:wolf",
@@ -20592,7 +20637,7 @@ skeleton_horse
                 "value": "lightning"
             }
         },
-        "deals_damage": false
+        "deals_damage": "no"
     }
 }
 ```
@@ -20894,6 +20939,14 @@ chicken
 ```
 
 cow
+
+```json
+"minecraft:despawn": {
+    "despawn_from_distance": {}
+}
+```
+
+creaking
 
 ```json
 "minecraft:despawn": {
@@ -22722,6 +22775,107 @@ creaking
                 ]
             },
             "event": "minecraft:become_neutral"
+        }
+    ]
+}
+```
+
+```json
+"minecraft:environment_sensor": {
+    "triggers": [
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "any_of": [
+                            {
+                                "test": "enum_property",
+                                "domain": "minecraft:creaking_state",
+                                "value": "hostile_observed"
+                            },
+                            {
+                                "test": "enum_property",
+                                "domain": "minecraft:creaking_state",
+                                "value": "hostile_unobserved"
+                            }
+                        ]
+                    },
+                    {
+                        "any_of": [
+                            {
+                                "test": "has_target",
+                                "value": false
+                            },
+                            {
+                                "test": "actor_health",
+                                "subject": "target",
+                                "value": 0
+                            },
+                            {
+                                "test": "target_distance",
+                                "operator": ">",
+                                "value": 24
+                            }
+                        ]
+                    }
+                ]
+            },
+            "event": "minecraft:become_neutral"
+        },
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "none_of": [
+                            {
+                                "test": "enum_property",
+                                "domain": "minecraft:creaking_state",
+                                "value": "twitching"
+                            },
+                            {
+                                "test": "has_nametag"
+                            }
+                        ]
+                    },
+                    {
+                        "any_of": [
+                            {
+                                "test": "home_distance",
+                                "operator": ">",
+                                "value": 34
+                            },
+                            {
+                                "test": "hourly_clock_time",
+                                "operator": ">",
+                                "value": 23400
+                            },
+                            {
+                                "test": "hourly_clock_time",
+                                "operator": "<=",
+                                "value": 12600
+                            }
+                        ]
+                    }
+                ]
+            },
+            "event": "minecraft:crumble_and_notify_creaking_heart"
+        },
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "enum_property",
+                        "domain": "minecraft:creaking_state",
+                        "operator": "not",
+                        "value": "twitching"
+                    },
+                    {
+                        "test": "is_bound_to_creaking_heart",
+                        "value": false
+                    }
+                ]
+            },
+            "event": "minecraft:crumble"
         },
         {
             "filters": {
@@ -22801,6 +22955,36 @@ dolphin
             "event": "start_dryingout"
         }
     ]
+}
+```
+
+enderman
+
+```json
+"minecraft:environment_sensor": {
+    "triggers": {
+        "filters": {
+            "test": "is_riding",
+            "subject": "self",
+            "operator": "==",
+            "value": false
+        },
+        "event": "minecraft:stopped_riding"
+    }
+}
+```
+
+```json
+"minecraft:environment_sensor": {
+    "triggers": {
+        "filters": {
+            "test": "is_riding",
+            "subject": "self",
+            "operator": "==",
+            "value": true
+        },
+        "event": "minecraft:started_riding"
+    }
 }
 ```
 
@@ -24586,7 +24770,7 @@ shulker
 
 ```json
 "minecraft:experience_reward": {
-    "on_death": "query.last_hit_by_player ? 5 : 0"
+    "on_death": "query.last_hit_by_player ? 5: 0"
 }
 ```
 
@@ -27239,9 +27423,7 @@ cave_spider
         {
             "filters": {
                 "test": "in_lava",
-                "subject": "self",
-                "operator": "==",
-                "value": true
+                "subject": "self"
             },
             "cause": "lava",
             "damage_per_tick": 4
@@ -28137,9 +28319,7 @@ spider
         {
             "filters": {
                 "test": "in_lava",
-                "subject": "self",
-                "operator": "==",
-                "value": true
+                "subject": "self"
             },
             "cause": "lava",
             "damage_per_tick": 4
@@ -33446,7 +33626,7 @@ enderman
     "search_radius": 64.0,
     "set_target": "once_and_stop_scanning",
     "find_players_only": true,
-    "looked_at_cooldown": 5.0,
+    "min_looked_at_duration": 0.25,
     "filters": {
         "test": "has_equipment",
         "domain": "head",
@@ -34765,7 +34945,7 @@ drowned
 
 ```json
 "minecraft:movement": {
-    "value": 0.25
+    "value": 0.35
 }
 ```
 
@@ -35951,6 +36131,14 @@ tropicalfish
 ```
 
 ## movement_sound_distance_offset
+
+strider
+
+```json
+"minecraft:movement_sound_distance_offset": {
+    "value": 0.6
+}
+```
 
 warden
 
@@ -41455,6 +41643,44 @@ breeze
     "azimuth_angle": "180.0 + Math.random(-20.0, 20.0)",
     "reflection_scale": "0.5"
 }
+```
+
+## renders_when_invisible
+
+cave_spider
+
+```json
+"minecraft:renders_when_invisible": {}
+```
+
+creaking
+
+```json
+"minecraft:renders_when_invisible": {}
+```
+
+enderman
+
+```json
+"minecraft:renders_when_invisible": {}
+```
+
+phantom
+
+```json
+"minecraft:renders_when_invisible": {}
+```
+
+shulker
+
+```json
+"minecraft:renders_when_invisible": {}
+```
+
+spider
+
+```json
+"minecraft:renders_when_invisible": {}
 ```
 
 ## rideable
@@ -47824,6 +48050,21 @@ enderman
 }
 ```
 
+```json
+"minecraft:teleport": {
+    "random_teleports": true,
+    "max_random_teleport_time": 30,
+    "random_teleport_cube": [
+        32,
+        32,
+        32
+    ],
+    "target_distance": 16,
+    "target_teleport_chance": 0.05,
+    "light_teleport_chance": 0.05
+}
+```
+
 ## timer
 
 allay
@@ -48500,12 +48741,6 @@ zombie_villager_v2
 ```
 
 ## transient
-
-creaking
-
-```json
-"minecraft:transient": {}
-```
 
 fishing_hook
 

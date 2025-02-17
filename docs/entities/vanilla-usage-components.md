@@ -8,7 +8,7 @@ description: Automatically generated list of entity components used in vanilla.
 
 This page was created with [Wiki Content Generator](https://github.com/Bedrock-OSS/bedrock-wiki-content-generator). If there are issues, contact us on [Bedrock OSS](https://discord.gg/XjV87YN) Discord server.
 Note that to keep this page fast to load and informative, there are not more than 8 example(s) for each component and not more than 3 example(s) from each entity are shown. Namespace `minecraft` was also removed.
-If you want to see full page, you can do it [here](/entities/vuc-full). *Last updated for 1.21.50*
+If you want to see full page, you can do it [here](/entities/vuc-full). *Last updated for 1.21.60*
 
 ## addrider
 
@@ -339,6 +339,22 @@ creaking
 "minecraft:ambient_sound_interval": {}
 ```
 
+<CodeHeader>#component_groups/minecraft:hostile</CodeHeader>
+
+```json
+"minecraft:ambient_sound_interval": {
+    "event_name": "undefined"
+}
+```
+
+donkey
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:ambient_sound_interval": {}
+```
+
 evocation_illager
 
 <CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
@@ -348,24 +364,6 @@ evocation_illager
     "value": 2.0,
     "range": 4.0,
     "event_name": "ambient.in.raid"
-}
-```
-
-fox
-
-<CodeHeader>#component_groups/minecraft:fox_ambient_normal</CodeHeader>
-
-```json
-"minecraft:ambient_sound_interval": {
-    "event_name": "ambient"
-}
-```
-
-<CodeHeader>#component_groups/minecraft:fox_ambient_sleep</CodeHeader>
-
-```json
-"minecraft:ambient_sound_interval": {
-    "event_name": "sleep"
 }
 ```
 
@@ -9673,6 +9671,7 @@ cat
     "require_tame": true,
     "require_full_health": true,
     "allow_sitting": true,
+    "combine_parent_colors": true,
     "breeds_with": {
         "mate_type": "minecraft:cat",
         "baby_type": "minecraft:cat",
@@ -10394,7 +10393,7 @@ tropicalfish
 
 wolf
 
-<CodeHeader>#component_groups/minecraft:wolf_tame</CodeHeader>
+<CodeHeader>#component_groups/minecraft:on_tame_collar_color</CodeHeader>
 
 ```json
 "minecraft:color": {
@@ -15259,7 +15258,7 @@ enderman
     "search_radius": 64.0,
     "set_target": "once_and_stop_scanning",
     "find_players_only": true,
-    "looked_at_cooldown": 5.0,
+    "min_looked_at_duration": 0.25,
     "filters": {
         "test": "has_equipment",
         "domain": "head",
@@ -15960,6 +15959,16 @@ tropicalfish
 ## movement_sound_distance_offset
 
 <Spoiler title="Show">
+
+strider
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:movement_sound_distance_offset": {
+    "value": 0.6
+}
+```
 
 warden
 
@@ -18413,6 +18422,60 @@ breeze
     "azimuth_angle": "180.0 + Math.random(-20.0, 20.0)",
     "reflection_scale": "0.5"
 }
+```
+
+</Spoiler>
+
+## renders_when_invisible
+
+<Spoiler title="Show">
+
+cave_spider
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:renders_when_invisible": {}
+```
+
+creaking
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:renders_when_invisible": {}
+```
+
+enderman
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:renders_when_invisible": {}
+```
+
+phantom
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:renders_when_invisible": {}
+```
+
+shulker
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:renders_when_invisible": {}
+```
+
+spider
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:renders_when_invisible": {}
 ```
 
 </Spoiler>
@@ -21571,6 +21634,23 @@ enderman
 }
 ```
 
+<CodeHeader>#component_groups/minecraft:not_riding</CodeHeader>
+
+```json
+"minecraft:teleport": {
+    "random_teleports": true,
+    "max_random_teleport_time": 30,
+    "random_teleport_cube": [
+        32,
+        32,
+        32
+    ],
+    "target_distance": 16,
+    "target_teleport_chance": 0.05,
+    "light_teleport_chance": 0.05
+}
+```
+
 </Spoiler>
 
 ## timer
@@ -21890,14 +21970,6 @@ skeleton
 ## transient
 
 <Spoiler title="Show">
-
-creaking
-
-<CodeHeader>#component_groups/minecraft:spawned_by_creaking_heart</CodeHeader>
-
-```json
-"minecraft:transient": {}
-```
 
 fishing_hook
 

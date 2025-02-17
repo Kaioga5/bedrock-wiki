@@ -65,8 +65,7 @@ Defining sounds for other events, such as `step`, will have no effect.
 The following are valid values for the sound property:
 
 <!-- page_dumper_start -->
-
-| _Last updated for 1.21.50_ |
+| *Last updated for 1.21.60* |
 | -------------------------- |
 | amethyst_block             |
 | amethyst_cluster           |
@@ -113,6 +112,7 @@ The following are valid values for the sound property:
 | hanging_sign               |
 | heavy_core                 |
 | honey_block                |
+| iron                       |
 | itemframe                  |
 | ladder                     |
 | lantern                    |
@@ -173,7 +173,7 @@ The following are valid values for the sound property:
 | vault                      |
 | vines                      |
 | web                        |
+| weeping_vines              |
 | wet_sponge                 |
 | wood                       |
-
 <!-- page_dumper_end -->

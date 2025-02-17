@@ -7,7 +7,7 @@ description: Automatically generated sounds from sound_definitions.json sorted b
 
 Sounds from `sound_definitions.json` sorted by categories and subcategories based on their names.
 This page was created with [Wiki Content Generator](https://github.com/Bedrock-OSS/bedrock-wiki-content-generator). If there are issues, contact us on [Bedrock OSS](https://discord.gg/XjV87YN) Discord server.
-*Last updated for 1.21.50*
+*Last updated for 1.21.60*
 
 ## ambient
 
@@ -122,6 +122,8 @@ This page was created with [Wiki Content Generator](https://github.com/Bedrock-O
 `block.campfire.crackle`
 
 `block.cartography_table.use`
+
+`block.cave_vines.place`
 
 `block.chorusflower.death`
 
@@ -305,6 +307,14 @@ This page was created with [Wiki Content Generator](https://github.com/Bedrock-O
 
 `block.turtle_egg.drop`
 
+`block.weeping_vines.break`
+
+`block.weeping_vines.hit`
+
+`block.weeping_vines.place`
+
+`block.weeping_vines.use`
+
 #### bloom
 ---
 `bloom.sculk_catalyst`
@@ -352,6 +362,8 @@ This page was created with [Wiki Content Generator](https://github.com/Bedrock-O
 `break.hanging_sign`
 
 `break.heavy_core`
+
+`break.iron`
 
 `break.large_amethyst_bud`
 
@@ -705,6 +717,8 @@ This page was created with [Wiki Content Generator](https://github.com/Bedrock-O
 
 `hit.honey_block`
 
+`hit.iron`
+
 `hit.ladder`
 
 `hit.moss`
@@ -1008,6 +1022,8 @@ This page was created with [Wiki Content Generator](https://github.com/Bedrock-O
 `place.dripstone_block`
 
 `place.hanging_roots`
+
+`place.iron`
 
 `place.large_amethyst_bud`
 
@@ -2513,6 +2529,14 @@ This page was created with [Wiki Content Generator](https://github.com/Bedrock-O
 
 `block.resin_brick.step`
 
+`block.weeping_vines.fall`
+
+`block.weeping_vines.jump`
+
+`block.weeping_vines.land`
+
+`block.weeping_vines.step`
+
 #### brush
 ---
 `brush.generic`
@@ -2880,6 +2904,8 @@ This page was created with [Wiki Content Generator](https://github.com/Bedrock-O
 `step.heavy_core`
 
 `step.honey_block`
+
+`step.iron`
 
 `step.ladder`
 

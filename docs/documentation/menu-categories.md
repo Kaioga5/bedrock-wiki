@@ -94,7 +94,6 @@ _For use with `menu_category` parameter, `category`._
 _For use with the `menu_category` parameter, `group`._
 
 <!-- page_dumper_start -->
-
 | Creative Categories:                        |
 | ------------------------------------------- |
 | minecraft:itemGroup.name.anvil              |
@@ -181,6 +180,5 @@ _For use with the `menu_category` parameter, `group`._
 | minecraft:itemGroup.name.wool               |
 | minecraft:itemGroup.name.woolCarpet         |
 
-_Last updated for 1.21.50_
-
+*Last updated for 1.21.60*
 <!-- page_dumper_end -->

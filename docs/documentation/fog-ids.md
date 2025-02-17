@@ -82,5 +82,5 @@ show_outline: false
 | minecraft:fog_the_end                          | the_end                          | 
 | minecraft:fog_warm_ocean                       | warm_ocean                       | 
 | minecraft:fog_warped_forest                    | warped_forest                    | 
-*Last updated for 1.21.50*
+*Last updated for 1.21.60*
 <!-- page_dumper_end -->
