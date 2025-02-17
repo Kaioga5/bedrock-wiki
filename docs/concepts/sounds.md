@@ -2,6 +2,17 @@
 title: Sounds
 tags:
     - intermediate
+mentions:
+    - SirLich
+    - solvedDev
+    - Joelant05
+    - aexer0e
+    - MedicalJewel105
+    - Justash01
+    - DasEtwas
+    - TheItsNameless
+    - ThomasOrs
+description: Add custom sounds without overwriting any vanilla ones.
 ---
 
 In bedrock, we can add custom sounds without overwriting any vanilla sounds. This is done by adding files to the resource pack.
@@ -12,18 +23,16 @@ The best way to learn about sounds is by downloading and playing around with the
 
 ### Folder Structure
 
-There are two main files that we edit when we want to add sounds. Note how `sound_definition` is nestedinside `sounds`.
+There are two main files that we edit when we want to add sounds. Note how `sound_definition` is nested inside `sounds`.
 
 Sound files themselves are added inside of the `sounds` folder, and can be any of the following formats.
 
 <FolderView :paths="[
-
-'RP/sounds.json',
-'RP/sounds/sound_definitions.json',
-'RP/sounds/example.wav',
-'RP/sounds/example.ogg',
-'RP/sounds/example.fsb',
-
+	'RP/sounds.json',
+	'RP/sounds/sound_definitions.json',
+	'RP/sounds/example.wav',
+	'RP/sounds/example.ogg',
+	'RP/sounds/example.fsb',
 ]"></FolderView>
 
 ## sound_definitions.json
@@ -70,7 +79,6 @@ For example, `mob.ghast.affectionate_scream` sets `"min_distance": 100.0`, but c
 
 To make a sound which can be heard far away but also drops in volume continuously over distance, one can add e.g. `"volume": 0.01`and use large `<volume>` values in the playsound command. The high value for the `/playsound` volume will produce a large audible range (e.g. a volume of 4 is 64 blocks as calculated above), while the low volume will prevent the played sound from capping at 1.0 too soon.
 
-
 ### Top Level Keys
 
 In the example above, I showed two `top-level` fields: `category` and `sounds`. Sounds will be discussed in further detail below, but the other `top-level` keys will be discussed here:
@@ -80,7 +88,7 @@ In the example above, I showed two `top-level` fields: `category` and `sounds`. 
 Categories are used internally by the engine to decide how each sound is played. We can utilize different channels to get other effects.
 
 | Category | Note                                            |
-| -------- | ----------------------------------------------- |
+|----------|-------------------------------------------------|
 | weather  |                                                 |
 | block    |                                                 |
 | bucket   |                                                 |
@@ -99,7 +107,7 @@ The distance from the sound source after which sound volume is attenuated. Defau
 #### max_distance
 
 The distance from the sound source after which the sound volume is the quietest (if in range). It must be a float (eg. 1.0), or the property will be ignored.
-	
+
 ### Sound definitions
 
 In the example above, I showed `sounds` as simply a list with a single path. This is good for simple sounds but does not have much power. For starts, I can add multiple sounds to the list. These sounds will be randomized when played:
@@ -153,7 +161,7 @@ The pitch of the sound (how low/high it sounds). Should be a positive value. For
 
 Set to `true` by default.
 
-### weight
+#### weight
 
 If there is more than one sound in the list, the sound to be played is chosen randomly. `"weight"` (integer value like 5) will give the relative chance that this sound is chosen from the list. For example, if there are two sounds in the list, one with `"weight": 10` and the other with `"weight": 2`, the first will be played approximately 5 times more likely than the second (accurately: `10 / (10 + 2) = 83.3%` chance vs. `2 / (10 + 2) = 16.7%` chance) . Set to `1` by default.
 
@@ -186,7 +194,7 @@ If we want our sounds to run automatically, we can add them into the `sounds.jso
 Sounds can be added into various categories:
 
 | Category                | Note                                                                             |
-| ----------------------- | -------------------------------------------------------------------------------- |
+|-------------------------|----------------------------------------------------------------------------------|
 | individual_event_sounds | Contains sounds like beacon activation, chest-close, or explode                  |
 | block_sounds            | Contains hit, step, and break sounds for blocks                                  |
 | entity_sounds           | Contains death, ambient, hurt, etc. sounds for entities (Including custom ones!) |
@@ -198,22 +206,25 @@ I assume that sounds can be added in other categories, but I personally only hav
 
 Common events:
 
-| Events     | Note                                                     |
-| ---------- | -------------------------------------------------------- |
-| ambient    | Played randomly, such as grunts, clucks, or ghast noises |
-| hurt       | Played when damaged                                      |
-| death      | Played when it dies                                      |
-| step       | Played when the entity moves along the ground            |
-| fall.big   | For hitting the ground from a high height                |
-| fall.small | For hitting the ground from a low height                 |
-| splash     | For splashing in the water                               |
-| attack     | For melee attacking                                      |
-| shoot      | For shooting projectiles                                 |
+| Events         | Note                                                     |
+|----------------|----------------------------------------------------------|
+| ambient        | Played randomly, such as grunts, clucks, or ghast noises |
+| hurt           | Played when damaged                                      |
+| death          | Played when it dies                                      |
+| step           | Played when the entity moves along the ground            |
+| fall.big       | For hitting the ground from a high height                |
+| fall.small     | For hitting the ground from a low height                 |
+| splash         | For splashing in the water                               |
+| attack         | For melee attacking                                      |
+| shoot          | For shooting projectiles                                 |
+| cast.spell     | For starting summon                                      |
+| prepare.attack | For finishing summon                                     |
+| roar           | For roaring                                              |
 
 There are also many sound events, which _most likely_ trigger automatically, but which I don't have details for, such as:
 
 | Unknown Categories |
-| ------------------ |
+|--------------------|
 | breathe            |
 | splash             |
 | swim               |
@@ -269,7 +280,7 @@ This example shows playing a wing-flap sound, synced with an animation.
 
 ```json
 "sound_effects": {
-    "wing_flap": "wiki.dragon.wing_flap" //where wiki.dragon.roar is a sound definited in sound_definitions
+    "wing_flap": "wiki.dragon.wing_flap" //where wiki.dragon.roar is a sound defined in sound_definitions
 }
 ```
 
@@ -293,7 +304,7 @@ This example shows playing an explosion sound, synced using an animation control
 
 ```json
 "sound_effects": {
-    "explosion": "wiki.custom_tnt.explosion" //where wiki.custom_tnt.explosion is a sound definited in sound_definitions just like animation sounds.
+    "explosion": "wiki.custom_tnt.explosion" //where wiki.custom_tnt.explosion is a sound defined in sound_definitions just like animation sounds.
 }
 ```
 
@@ -304,7 +315,7 @@ This example shows playing an explosion sound, synced using an animation control
     "default":{
         "transitions":[
             {
-                "explode_state":"query.mark_variant == 1"
+                "explode_state":"q.mark_variant == 1"
             }
         ]
     },
@@ -316,7 +327,7 @@ This example shows playing an explosion sound, synced using an animation control
         ],
         "transitions":[
             {
-                "default":"query.mark_variant == 0"
+                "default":"q.mark_variant == 0"
             }
         ]
     }

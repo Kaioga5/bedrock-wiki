@@ -1,12 +1,19 @@
 ---
-title: Addon Performance
+title: Add-On Performance
+mentions:
+    - SirLich
+    - Joelant05
+    - MedicalJewel105
+    - TheItsNameless
+    - SmokeyStack
+description: Learn how to optimize your add-on.
 ---
 
 ::: warning
-This page was compiled primarily using community feedback from multiple sources. As a result, some information may be generalized, subjective, or conflicting. Always use your own best judgment when optimizing your addons. This page is not a substitute for testing your addon on a wide range of devices.
+This page was compiled primarily using community feedback from multiple sources. As a result, some information may be generalized, subjective, or conflicting. Always use your own best judgment when optimizing your add-ons. This page is not a substitute for testing your add-on on a wide range of devices.
 :::
 
-Performance in addons is crucial, as the most technically fantastic addon is mainly useless if the majority of the player base cannot experience it. When developing addons, it should always be considered that many Bedrock players will be experiencing your addon on a significantly lower power device than you are developing on. This is especially true for mobile users. Therefore, addons should be developed with performance in mind and tested for performance on lower-end devices when possible.
+Performance in add-ons is crucial, as the most technically fantastic add-on is mainly useless if the majority of the player base cannot experience it. When developing add-ons, it should always be considered that many Bedrock players will be experiencing your add-on on a significantly lower power device than you are developing on. This is especially true for mobile users. Therefore, add-ons should be developed with performance in mind and tested for performance on lower-end devices when possible.
 
 This guide is a non-exhaustive list of specific performance considerations separated by the various subsystems of Bedrock Edition. No single point should be taken as a hard and fast rule. Instead, these performance considerations should help you to recognize potential areas for improvement.
 
@@ -117,7 +124,7 @@ This guide is a non-exhaustive list of specific performance considerations separ
 #### Comparison Table
 
 |     Light Source | Score | Redstone Updates | Animted Texture | Light Updates | Tick Updates | Particles | Renders |
-| ---------------: | :---: | :--------------: | :-------------: | :-----------: | :----------: | :-------: | :-----: |
+|-----------------:|:-----:|:----------------:|:---------------:|:-------------:|:------------:|:---------:|:-------:|
 |     Light Blocks |   1   |      False       |      False      |     True      |    False     |   False   |  False  |
 |         Lanterns |   4   |      False       |      True       |     True      |     True     |   False   |  True   |
 |    Custom Blocks |   2   |      False       |      False      |     True      |    False     |   False   |  True   |
@@ -149,7 +156,7 @@ This guide is a non-exhaustive list of specific performance considerations separ
 
 ### texture_list.json
 
--   Tons of textures badly affect game performance. Create a [`texture_list.json`](/concepts/texture-list) file. 
+-   Tons of textures badly affect game performance. Create a [`texture_list.json`](/concepts/textures-list) file.
 
 ### Quantity
 
@@ -164,6 +171,12 @@ This guide is a non-exhaustive list of specific performance considerations separ
 -   The recommended maximum texture resolution is 4096x4096 to maintain compatibility with low-end devices
 -   Keep in mind that textures are atlased, and larger textures can mess with atlas generation on lower-end devices
 -   Only make textures as significant as needed to convey the detail needed at the needed distance
+
+## Trades
+
+Villager trades cause performance issues and even crashes on all devices at 60 trades or greater. Avoid tons of trades for one entity.
+Your best bet to resolve this issue is to split your trades in half and move them to another villager or custom entity/npc, 30 trades is a good safe number from testing.
+*probably JSON UI issues*
 
 ## Sounds
 

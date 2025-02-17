@@ -3,6 +3,17 @@ title: Intro to Animation Controllers
 nav_order: 1
 tags:
     - guide
+mentions:
+    - SirLich
+    - solvedDev
+    - Joelant05
+    - MedicalJewel105
+    - stirante
+    - cda94581
+    - ThijsHankelMC
+    - MetalManeMc
+    - ThomasOrs
+description: Introduction to animation controllers.
 ---
 
 Animation controllers (AC) are state-machines that can be used in both the resource pack, and the behavior pack. In the resource pack, animation controllers (RPAC) are used to play animations, and in the behavior pack (BPAC), they are used to play commands, and command "animations".
@@ -86,7 +97,7 @@ If you want to conditionally play an animation controller, you can supply an opt
 	"animate": [
 		{
 			// Only play the blade_controller if the helicopter has a rider.
-			"blade_controller": "query.has_rider"
+			"blade_controller": "q.has_rider"
 		}
 	]
 }
@@ -110,29 +121,29 @@ Lets look at a simple animation controller from our State Machine example above:
 
 ```json
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.helicopter.blade": {
-			"initial_state": "ground",
-			"states": {
-				"ground": {
-					"transitions": [
-						{
-							"flying": "!query.is_on_ground"
-						}
-					]
-				},
-				"flying": {
-					"animations": ["flying"],
-					"transitions": [
-						{
-							"ground": "query.is_on_ground"
-						}
-					]
-				}
-			}
-		}
-	}
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.helicopter.blade": {
+            "initial_state": "ground",
+            "states": {
+                "ground": {
+                    "transitions": [
+                        {
+                            "flying": "!q.is_on_ground"
+                        }
+                    ]
+                },
+                "flying": {
+                    "animations": ["flying"],
+                    "transitions": [
+                        {
+                            "ground": "q.is_on_ground"
+                        }
+                    ]
+                }
+            }
+        }
+    }
 }
 ```
 
@@ -148,21 +159,25 @@ So this particular example contains two states:
 
 You can note that `"initial_state": "ground"` means that our Animation Controller will begin in the `ground` state.
 
-<CodeHeader>RP/animation_controllers/helicopter.ac.json#animation_controllers/controller.animation.helicopter.blade/states</CodeHeader>
+<CodeHeader>
+    RP/animation_controllers/helicopter.ac.json#animation_controllers/controller.animation.helicopter.blade/states
+</CodeHeader>
 
 ```json
 "ground": {
     "transitions": [
         {
-            "flying": "!query.is_on_ground"
+            "flying": "!q.is_on_ground"
         }
     ]
 }
 ```
 
-The `ground` state contains a list of _transitions_, which is how we get to other states. In this example, the default state is saying: _Move to the `flying` state when `query.is_on_ground` is NOT true_. In other words - start the flying animation when we fly into the air!
+The `ground` state contains a list of _transitions_, which is how we get to other states. In this example, the default state is saying: _Move to the `flying` state when `q.is_on_ground` is NOT true_. In other words - start the flying animation when we fly into the air!
 
-<CodeHeader>RP/animation_controllers/helicopter.ac.json#animation_controllers/controller.animation.helicopter.blade/states</CodeHeader>
+<CodeHeader>
+    RP/animation_controllers/helicopter.ac.json#animation_controllers/controller.animation.helicopter.blade/states
+</CodeHeader>
 
 ```json
 "flying": {
@@ -171,13 +186,13 @@ The `ground` state contains a list of _transitions_, which is how we get to othe
     ],
     "transitions": [
         {
-            "ground": "query.is_on_ground"
+            "ground": "q.is_on_ground"
         }
     ]
 }
 ```
 
-The `flying` state also contains a list of transitions. In this case it contains the opposite transition: _Move to the `ground` state when `query.is_on_ground` is true_. In other words - move back to the default state when we land on the ground!
+The `flying` state also contains a list of transitions. In this case it contains the opposite transition: _Move to the `ground` state when `q.is_on_ground` is true_. In other words - move back to the default state when we land on the ground!
 
 Alongside the `transition` list, there is also a list of `animations` to play while inside of this state. In this case, playing the `flying` animation. This animation will need to be defined in the entity definition file for this entity.
 
@@ -192,67 +207,69 @@ Here is the code for the second state machine from above, with three states this
 
 ```json
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.helicopter.blade": {
-			"initial_state": "ground",
-			"states": {
-				"ground": {
-					"transitions": [
-						{
-							"flying": "!query.is_on_ground"
-						},
-						{
-							"explode": "!query.is_alive"
-						}
-					]
-				},
-				"flying": {
-					"animations": ["flying"],
-					"transitions": [
-						{
-							"ground": "query.is_on_ground"
-						},
-						{
-							"explode": "!query.is_alive"
-						}
-					]
-				},
-				"explode": {
-					"animations": ["explode"]
-				}
-			}
-		}
-	}
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.helicopter.blade": {
+            "initial_state": "ground",
+            "states": {
+                "ground": {
+                    "transitions": [
+                        {
+                            "flying": "!q.is_on_ground"
+                        },
+                        {
+                            "explode": "!q.is_alive"
+                        }
+                    ]
+                },
+                "flying": {
+                    "animations": ["flying"],
+                    "transitions": [
+                        {
+                            "ground": "q.is_on_ground"
+                        },
+                        {
+                            "explode": "!q.is_alive"
+                        }
+                    ]
+                },
+                "explode": {
+                    "animations": ["explode"]
+                }
+            }
+        }
+    }
 }
 ```
 
 ## RP Animation Controllers
 
 Resource Pack animation controllers can run things like sounds and particles too.
-Before calling sound or particle in ac, you need to define them in client entity file.
+Before calling sound or particle in an animation controller, you need to define them in client entity file.
 
 <CodeHeader>RP/entities/custom_tnt.json#minecraft:client_entity/description</CodeHeader>
 
 ```json
 "sound_effects": {
-    "explosion": "wiki.custom_tnt.explosion" //where wiki.custom_tnt.explosion is a sound definited in sound_definitions just like animation sounds.
+    "explosion": "wiki.custom_tnt.explosion" //where wiki.custom_tnt.explosion is a sound defined in sound_definitions just like animation sounds.
 },
 "particle_effects": {
     "fuse_lit": "wiki:tnt_fuse_lit_particle"
 }
 ```
 
-And only then you can call them in ac:
+And only then you can call them in the animation controller:
 
-<CodeHeader>RP/animation_controllers/custom_tnt.animation_controllers.json#controller.animation.custom_tnt</CodeHeader>
+<CodeHeader>
+    RP/animation_controllers/custom_tnt.animation_controllers.json#controller.animation.custom_tnt
+</CodeHeader>
 
 ```json
 "states":{
     "default":{
         "transitions":[
             {
-                "explode_state":"query.mark_variant == 1"
+                "explode_state":"q.mark_variant == 1"
             }
         ]
     },
@@ -270,19 +287,19 @@ And only then you can call them in ac:
 		],
         "transitions":[
             {
-                "default":"query.mark_variant == 0"
+                "default":"q.mark_variant == 0"
             }
         ]
     }
 }
 ```
 
-:::warning Warning! Not every particle works there. If you have problems, consider trying another particle. For example, use one from blaze ac.
+:::warning Warning! Not every particle works there. If you have problems, consider trying another particle. For example, use one from the blaze animation controller.
 :::
 
 ## BP Animation Controllers
 
-Behavior Pack animation controllers use the same general format as RP Animation Controllers, except instead of triggering animations, they allow you to trigger commands. In general, they introduce two new fields:
+Behavior Pack animation controllers use the same general format as RP Animation Controllers, except instead of triggering animations, they allow you to trigger commands, events, or execute Molang code. In general, they introduce two new fields:
 
 -   `on_entry`: Commands to play when the state is entered
 -   `on_exit`: Commands to play when the state is exited
@@ -291,7 +308,7 @@ Commands in this context mean three distinct things:
 
 -   A slash command, such as `/say Hello there!`
 -   An event trigger, on the entity, such as: `@s wiki:transform_into_plane`
--   An arbitrary molang expression, such as `variable.tickets += 1;`
+-   An arbitrary Molang expression, such as `v.tickets += 1;` (this also works in Resource Pack animation controllers)
 
 Here is an example BP animation controller, which exhibits some of this behavior:
 
@@ -299,30 +316,30 @@ Here is an example BP animation controller, which exhibits some of this behavior
 
 ```json
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.helicopter.commands": {
-			"initial_state": "ground",
-			"states": {
-				"ground": {
-					"on_entry": ["/say I am now in the ground!"],
-					"transitions": [
-						{
-							"flying": "!query.is_on_ground"
-						}
-					]
-				},
-				"flying": {
-					"on_entry": ["/say I am now in the air!"],
-					"transitions": [
-						{
-							"ground": "query.is_on_ground"
-						}
-					]
-				}
-			}
-		}
-	}
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.helicopter.commands": {
+            "initial_state": "ground",
+            "states": {
+                "ground": {
+                    "on_entry": ["/say I am now in the ground!"],
+                    "transitions": [
+                        {
+                            "flying": "!q.is_on_ground"
+                        }
+                    ]
+                },
+                "flying": {
+                    "on_entry": ["/say I am now in the air!"],
+                    "transitions": [
+                        {
+                            "ground": "q.is_on_ground"
+                        }
+                    ]
+                }
+            }
+        }
+    }
 }
 ```
 
@@ -344,3 +361,36 @@ Because of the way animation controllers are setup, it will only move from state
 ### Resetting
 
 Animation Controllers "reset" when an entity reloads (player join/leave, chunk reload, etc). This means that it will "jump" back to the default state. You should always have logic in your default state that can handle restarting any critical animations.
+
+## Notes
+
+You can create variables (and remap their values) in animation controllers too!
+
+```json
+{
+    "format_version": "1.17.30",
+    "animation_controllers": {
+        "controller.animation.sheep.move": {
+            "states": {
+                "default": {
+                    "variables": {
+                        "ground_speed_curve": {
+                            "input": "q.ground_speed",
+                            "remap_curve": {
+                                "0.0": 0.2,
+                                "1.0": 0.7
+                            }
+                        }
+                    },
+                    "animations": [
+                        "wiggle_nose",
+                        {
+                            "walk": "v.ground_speed_curve"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
+```
