@@ -208,7 +208,7 @@ const quadrants = new FaceSelectionPlains(
 This could be used in a [custom component](/blocks/block-events) to get the selected quadrant:
 
 ```js
-const QuadrantInteractionBlockComponent = {
+const BlockQuadrantInteractionComponent = {
     onPlayerInteract({ block, face, faceLocation }) {
         // Work around the faceLocation bug - get the location relative to the block
         const relativeFaceLocation = {
@@ -600,7 +600,7 @@ function releasePaper({ block, destroyedBlockPermutation, dimension }) {
 }
 
 /** @type {import("@minecraft/server").BlockCustomComponent} */
-const PigeonholesStorageBlockComponent = {
+const BlockPigeonholesStorageComponent = {
     onPlayerInteract: handleInteract,
     onPlayerDestroy: releasePaper,
 };
@@ -608,7 +608,7 @@ const PigeonholesStorageBlockComponent = {
 world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent(
         "wiki:pigeonholes_storage",
-        PigeonholesStorageBlockComponent
+        BlockPigeonholesStorageComponent
     );
 });
 ```

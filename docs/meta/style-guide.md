@@ -32,8 +32,8 @@ BP/functions/wiki/event/players/on_death.mcfunction
 BP/functions/wiki/event/worlds/on_initialise.mcfunction
 ```
 
-- All content folders `ability` and `event` are consistently singular.
-- The content folders in `event` are also consistent, as both `players` and `worlds` are plural.
+-   All content folders `ability` and `event` are consistently singular.
+-   The content folders in `event` are also consistent, as both `players` and `worlds` are plural.
 
 ❌️ **Inconsistent**:
 
@@ -61,7 +61,7 @@ Do not use identifiers that begin with a number, and especially don't use an ide
 | Animations            | dragon.animation.json<br>dragon.anim.json                         |
 | Animation Controllers | dragon.animation_controllers.json<br>dragon.ac.json               |
 | RP Entity             | dragon.entity.json<br>dragon.client_entity.json<br>dragon.ce.json |
-| BP Entity             | dragon.behavior.json<br>dragon.se.json<br>*(se: server entity)*   |
+| BP Entity             | dragon.behavior.json<br>dragon.se.json<br>_(se: server entity)_   |
 | Item                  | dragon_tooth.item.json                                            |
 | Legacy Item (BP)      | dragon_tooth.item.bp.json                                         |
 | Legacy Item (RP)      | dragon_tooth.item.rp.json                                         |
@@ -94,9 +94,9 @@ Where to use namespaces:
 When not to use namespaces:
 
 -   do not include your namespace in any folder path or file name.
-- **Note:** The following folders are exceptions: `functions`, `structures`, `loot_tables`, `trade_tables`, `sounds`, and `textures`.
-    - Using a **namespace** in these folders is recommended to prevent conflicts with other packs.
-    - **Example:** `BP/functions/namespace/test.mcfunction`
+-   **Note:** The following folders are exceptions: `functions`, `structures`, `loot_tables`, `trade_tables`, `sounds`, and `textures`.
+    -   Using a **namespace** in these folders is recommended to prevent conflicts with other packs.
+    -   **Example:** `BP/functions/namespace/test.mcfunction`
 
 ## Sub-Indexing
 
@@ -136,7 +136,7 @@ When we make short-names of this form, we can use a generic "sit" animation cont
 
 ## Functions
 
-1. All your `.mcfunction` files must be  go in a namespaced root-folder within the functions folder. On Bedrock Wiki, we use the `wiki` namespace. However, you may choose a namespace based on your name or project. For more info, refer to the [namespaces](/concepts/namespaces) page.
+1. All your `.mcfunction` files must be go in a namespaced root-folder within the functions folder. On Bedrock Wiki, we use the `wiki` namespace. However, you may choose a namespace based on your name or project. For more info, refer to the [namespaces](/concepts/namespaces) page.
     - ✅️ `BP/functions/wiki/random_number.mcfunction`
     - ❌️ `BP/functions/random_number.mcfunction`
 2. They must be properly nested:
@@ -150,12 +150,12 @@ When we make short-names of this form, we can use a generic "sit" animation cont
 
 ### Comments in Functions
 
-- When working with functions that contain many commands, it's helpful to keep them organized by using multiple hashtags in comments to indicate different header levels.
-- *Optionally*, to further distinguish these levels, you can apply different styles:
-    - level 1 headers - **# UPPERCASE**
-    - level 2 headers - **## Title Case**
-    - level 3 headers - **### Sentence case**
-- Try to avoid the use of more than three header levels or too many headers overall, as this can make the code look cluttered. For your reference, see the example file below:
+-   When working with functions that contain many commands, it's helpful to keep them organized by using multiple hashtags in comments to indicate different header levels.
+-   _Optionally_, to further distinguish these levels, you can apply different styles:
+    -   level 1 headers - **# UPPERCASE**
+    -   level 2 headers - **## Title Case**
+    -   level 3 headers - **### Sentence case**
+-   Try to avoid the use of more than three header levels or too many headers overall, as this can make the code look cluttered. For your reference, see the example file below:
 
 <Spoiler title="Example Function File">
 
@@ -194,19 +194,21 @@ This practice helps create a consistent format, making it easier for everyone to
 
 ## Scorboard Objectives & Tags
 
-- Must begin with a namespace and use `snake_case`.
-    - This prevents conflicts with packs using identical tags or objectives.
-- Only use lowercase letters (a–z), underscores (`_`), and dots (`.`) as special characters.
+-   Must begin with a namespace and use `snake_case`.
+    -   This prevents conflicts with packs using identical tags or objectives.
+-   Only use lowercase letters (a–z), underscores (`_`), and dots (`.`) as special characters.
 
 **Example Objectives:**
-- `wiki:blocks_travelled.overworld`
-- `wiki:q.is_sneaking`
-- `wiki:q.is_armed_any`
+
+-   `wiki:blocks_travelled.overworld`
+-   `wiki:q.is_sneaking`
+-   `wiki:q.is_armed_any`
 
 **Example Tags:**
-- `wiki:inventory.full`
-- `wiki:inventory.empty`
-- `wiki:is_flying`
+
+-   `wiki:inventory.full`
+-   `wiki:inventory.empty`
+-   `wiki:is_flying`
 
 :::info NOTE:
 Tags describe a definite state—if a tag exists, its condition is true. This is why Molang queries represented as tags in a similar manner do not use the `q.` prefix.
@@ -214,15 +216,16 @@ Tags describe a definite state—if a tag exists, its condition is true. This is
 
 ### Score Holders
 
-- Must be prefixed with either a dot (`.`) or hashtag (`#`) and use `PascalCase`.
-  - This prevents conflicts with gamertags using identical names and provides a clear visual distinction since score holders are used closely with objectives.
-  - A prefix is used instead of a namespace to keep it concise, as the namespaced objective already prevents conflicts with other packs.
-- No special characters other than dots (`.`).
+-   Must be prefixed with either a dot (`.`) or hashtag (`#`) and use `PascalCase`.
+    -   This prevents conflicts with gamertags using identical names and provides a clear visual distinction since score holders are used closely with objectives.
+    -   A prefix is used instead of a namespace to keep it concise, as the namespaced objective already prevents conflicts with other packs.
+-   No special characters other than dots (`.`).
 
 **Examples:**
-- `.Ores.Iron`
-- `.Ores.DeepslateIron`
-- `.200`
+
+-   `.Ores.Iron`
+-   `.Ores.DeepslateIron`
+-   `.200`
 
 :::tip **TIP:**
 Score holders prefixed with a hashtag (`#`) will not be displayed on the scoreboard sidebar. However, they must be enclosed in double quotes (`" "`) to avoid a syntax error.
@@ -296,7 +299,7 @@ Blocks, entities and items should follow the format order below.
         -   `identifier`
         -   `menu_category`
             -   `category`
-            -   `group`  
+            -   `group`
         -   `states`
         -   `traits`
     -   `components`
@@ -326,12 +329,13 @@ Blocks, entities and items should follow the format order below.
         -   `identifier`
         -   `menu_category`
             -   `category`
-            -   `group`  
+            -   `group`
     -   `components`
 
 ## Custom Components
 
 ### Variable Names
 
-PascalCase should be used with `BlockComponent` or `ItemComponent` as a suffix. As an example, `const MeltableBlockComponent = { ... }` rather than `const meltable = { ... }`.
+PascalCase should be used with `Block` or `Item` as a prefix and `Component` as a suffix. As an example, `const BlockMeltableComponent = { ... }` rather than `const meltable = { ... }`.
+
 This helps to differentiate what we're using in `registerCustomComponent` and what we're using as values elsewhere.

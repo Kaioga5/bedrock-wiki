@@ -302,7 +302,7 @@ Think of a unique custom component identifier. There can't be duplicate custom c
 
 ```js
 /** @type {import("@minecraft/server").BlockCustomComponent} */
-const ShellRotationBlockComponent = {
+const BlockShellRotationComponent = {
     beforeOnPlayerPlace(event) {
         const { player } = event;
         if (!player) return; // Exit if the player is undefined
@@ -322,7 +322,7 @@ const ShellRotationBlockComponent = {
 world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent(
         "wiki:shell_rotation",
-        ShellRotationBlockComponent
+        BlockShellRotationComponent
     );
 });
 ```
@@ -529,7 +529,7 @@ function getPreciseRotation(playerYRotation) {
 }
 
 /** @type {import("@minecraft/server").BlockCustomComponent} */
-const ShellRotationBlockComponent = {
+const BlockShellRotationComponent = {
     beforeOnPlayerPlace(event) {
         const { player } = event;
         if (!player) return;
@@ -547,7 +547,7 @@ const ShellRotationBlockComponent = {
 world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent(
         "wiki:shell_rotation",
-        ShellRotationBlockComponent
+        BlockShellRotationComponent
     );
 });
 ```

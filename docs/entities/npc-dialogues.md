@@ -322,14 +322,14 @@ Lastly, create an item that will open the dialogue when right-clicked/interacted
 ```js
 import { world } from "@minecraft/server";
 
-const TeleportMenuItemComponent = {
+const ItemTeleportMenuComponent = {
     onUse({ source }) {
         source.runCommand("dialogue open @e[type=npc, c=1] @s main_teleport_menu");
     },
 };
 
 world.beforeEvents.worldInitialize.subscribe(({ itemComponentRegistry }) => {
-    itemComponentRegistry.registerCustomComponent("wiki:teleport_menu", TeleportMenuItemComponent);
+    itemComponentRegistry.registerCustomComponent("wiki:teleport_menu", ItemTeleportMenuComponent);
 });
 ```
 

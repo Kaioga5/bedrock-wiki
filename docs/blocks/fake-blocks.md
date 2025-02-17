@@ -142,7 +142,7 @@ For our custom component script, we'll utilize the `beforeOnPlayerPlace` event. 
 import { world } from "@minecraft/server";
 
 /** @type {import("@minecraft/server").BlockCustomComponent} */
-const AlignEntityBlockComponent = {
+const BlockAlignEntityComponent = {
     beforeOnPlayerPlace(event) {
         event.cancel = true;
 
@@ -152,7 +152,7 @@ const AlignEntityBlockComponent = {
 };
 
 world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
-    blockComponentRegistry.registerCustomComponent("wiki:align_entity", AlignEntityBlockComponent);
+    blockComponentRegistry.registerCustomComponent("wiki:align_entity", BlockAlignEntityComponent);
 });
 ```
 

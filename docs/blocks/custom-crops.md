@@ -114,7 +114,7 @@ const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + mi
 const maxGrowth = 7;
 
 /** @type {import("@minecraft/server").BlockCustomComponent} */
-const CustomCropGrowthBlockComponent = {
+const BlockCustomCropGrowthComponent = {
     onRandomTick({ block }) {
         const growthChance = 1 / 3;
         if (Math.random() > growthChance) return;
@@ -156,7 +156,7 @@ const CustomCropGrowthBlockComponent = {
 world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent(
         "wiki:custom_crop_growth",
-        CustomCropGrowthBlockComponent
+        BlockCustomCropGrowthComponent
     );
 });
 ```

@@ -181,7 +181,7 @@ Now, it's time to put these permutations to use. The following script will allow
 import { world } from "@minecraft/server";
 
 /** @type {import("@minecraft/server").BlockCustomComponent} */
-const CustomTrapdoorBlockComponent = {
+const BlockCustomTrapdoorComponent = {
     onPlayerInteract({ block, dimension }) {
         const isOpen = block.permutation.getState("wiki:open");
         const sound = isOpen ? "close.wooden_trapdoor" : "open.wooden_trapdoor";
@@ -198,7 +198,7 @@ const CustomTrapdoorBlockComponent = {
 world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent(
         "wiki:custom_trapdoor",
-        CustomTrapdoorBlockComponent
+        BlockCustomTrapdoorComponent
     );
 });
 ```

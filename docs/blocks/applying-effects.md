@@ -41,19 +41,19 @@ Now we need to register our custom components to hook onto the [`stepOn`](/block
 
 ```json
 "minecraft:custom_components": [
-    "wiki:detect_treaders"
+    "wiki:treader_detection"
 ]
 ```
 
 ### Custom Component Script
 
-<CodeHeader>BP/scripts/detect_treaders.js</CodeHeader>
+<CodeHeader>BP/scripts/treader_detection.js</CodeHeader>
 
 ```js
 import { BlockPermutation, GameMode, Player, world } from "@minecraft/server";
 
 /** @type {import("@minecraft/server").BlockCustomComponent} */
-const DetectTreadersBlockComponent = {
+const BlockTreaderDetectionComponent = {
     onStepOn({ entity, block }) {
         if (entity instanceof Player && entity.getGameMode() === GameMode.creative) return;
 
@@ -76,8 +76,8 @@ const DetectTreadersBlockComponent = {
 
 world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent(
-        "wiki:detect_treaders",
-        DetectTreadersBlockComponent
+        "wiki:treader_detection",
+        BlockTreaderDetectionComponent
     );
 });
 ```
@@ -95,7 +95,7 @@ We also need the block to tick in order to apply the desired effect every tick. 
     {
         "condition": "q.block_state('wiki:stood_on')",
         "components": {
-            "minecraft:custom_components": ["wiki:detect_treaders", "wiki:wither_treaders"],
+            "minecraft:custom_components": ["wiki:treader_detection", "wiki:wither_treaders"],
             "minecraft:tick": {
                 "interval_range": [1, 1],
                 "looping": true
@@ -115,7 +115,7 @@ Now, let's add our event that will give the entity the wither effect:
 import { Entity, GameMode, Player, world } from "@minecraft/server";
 
 /** @type {import("@minecraft/server").BlockCustomComponent} */
-const WitherTreadersBlockComponent = {
+const BlockWitherTreadersComponent = {
     onTick(event) {
         const entities = event.dimension.getEntitiesAtBlockLocation(event.block.above().location);
 
@@ -128,7 +128,7 @@ const WitherTreadersBlockComponent = {
 world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent(
         "wiki:wither_treaders",
-        WitherTreadersBlockComponent
+        BlockWitherTreadersComponent
     );
 });
 ```
@@ -160,13 +160,16 @@ And done! The code above will trigger the desired status effect as long as the e
                     "texture": "wiki:wither_block"
                 }
             },
-            "minecraft:custom_components": ["wiki:detect_treaders"]
+            "minecraft:custom_components": ["wiki:treader_detection"]
         },
         "permutations": [
             {
                 "condition": "q.block_state('wiki:stood_on')",
                 "components": {
-                    "minecraft:custom_components": ["wiki:detect_treaders", "wiki:wither_treaders"],
+                    "minecraft:custom_components": [
+                        "wiki:treader_detection",
+                        "wiki:wither_treaders"
+                    ],
                     "minecraft:tick": {
                         "interval_range": [1, 1],
                         "looping": true
