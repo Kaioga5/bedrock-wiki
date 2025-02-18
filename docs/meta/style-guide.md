@@ -192,7 +192,7 @@ Note the use of two lines of spacing before level 1 headers and one line of spac
 
 This practice helps create a consistent format, making it easier for everyone to follow, and maintain uniformity across your functions.
 
-## Scorboard Objectives & Tags
+## Scoreboard Objectives & Tags
 
 -   Must begin with a namespace and use `snake_case`.
     -   This prevents conflicts with packs using identical tags or objectives.
