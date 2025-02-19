@@ -345,7 +345,9 @@ _Note: The following steps apply only to emojis that do not fill their slot widt
 
 ### Glyph Separation Space
 
-Sometimes, it appears that if you put 2 glyphs near to each other, there will be a couple of empty pixels between them. The only fix for it is to scale the glyph (png file) itself. Ex: 256×256 → 512×512
+Sometimes, displaying two glyphs close together in-game may leave a few empty pixels between them. The only way to fix this is by scaling the glyph (PNG file) so that your emoji, which originally spans multiple slots, fits within a single slot.
+
+For example, if you created an emoji in the `glyph_E1` file using two 16×16 slots, you would need to double the resolution of the default file (from **256×256** to **512×512**). Then, simply align your **16×32** emoji into one of the **32×32** slots in the scaled glyph file.
 
 ### Resizing the Emoji
 
