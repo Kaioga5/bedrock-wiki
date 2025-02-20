@@ -2,8 +2,15 @@
 title: Solid Entities
 category: Tutorials
 tags:
-    - recipe
     - intermediate
+mentions:
+    - SirLich
+    - Joelant05
+    - Chikorita-Lover
+    - Lufurrius
+    - MedicalJewel105
+    - ThomasOrs
+description: Solid entities are entities that the player can bump into, step on, or otherwise physically interact with without passing through.
 ---
 
 Solid entities are entities that the player can bump into, step on, or otherwise physically interact with without passing through. Entities like this have many uses, such as emulating blocks.
@@ -14,7 +21,7 @@ Not all techniques are ideal for all scenarios. Experiment, and figure out what 
 
 ## Runtime Identifiers
 
-[Runtime identifiers](/entities/runtime-identifier) can be used to achieve solid entities, but currently only 2, each with a specific shape, and their own side effects. Neither colision shapes are possible to change or scale.
+[Runtime identifiers](/entities/runtime-identifier) can be used to achieve solid entities, but currently only 2, each with a specific shape, and their own side effects. Neither collision shapes are possible to change or scale.
 
 ### Boat
 
@@ -53,7 +60,7 @@ Not all techniques are ideal for all scenarios. Experiment, and figure out what 
 }
 ```
 
--   1x1 block sized solid colision.
+-   1x1 block sized solid collision.
 -   Sticks to block grid.
 -   Teleports randomly when supporting block removed.
 
@@ -81,3 +88,9 @@ Places barriers in a 1x1x2 area.
 Removes barriers within a 3x3x3 area.
 
 These [commands](/animation-controllers/entity-commands) will have to be triggering at a constant rate, for consistency. They can either be triggered through entity components, or animation controllers.
+
+## Commands Method
+
+This method, developed by Reddit user [u/Maxed_Out10](https://www.reddit.com/user/Maxed_Out10/) allows you to create near-perfect entity replications of any Minecraft block using armour stands and some sequential `/playanimation` commands.
+
+<Button link="/commands/block-entities">Block Entities</Button>

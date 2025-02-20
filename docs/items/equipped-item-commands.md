@@ -4,23 +4,25 @@ category: Tutorials
 tags:
     - experimental
     - intermediate
-mention:
+mentions:
     - Chikorita-Lover
+    - MedicalJewel105
+    - Lufurrius
+    - TheItsNameless
+description: Run commands when item is equipped.
 ---
 
 ## Introduction
 
-A common concept for add-ons is implementing new armor sets with unique effects, just like the turtle shell and netherite armor. While items have a knockback resistance component, they don't have a component for inflicting mob effects, emitting particles, etc. under certain conditions. However, using server animations, MoLang and item tags, this can easily be done!
+A common concept for add-ons is implementing new armor sets with unique effects, just like the turtle shell and netherite armor. While items have a knockback resistance component, they don't have a component for inflicting mob effects, emitting particles, etc. under certain conditions. However, using server animations, Molang and item tags, this can easily be done!
 
 Keep in mind that this requires modifying the player behavior, which is a common theme for many add-ons; thus, your add-on may not be compatible with others if you wish to do this.
 
 > However some people found a way not to use player.json. They replace it with dummy entity-rider. Try experimenting yourself!
 
-The use of Holiday Creator Features is also required to add item tags and easily equip our item in armor or off-hand slots.
-
 ## Server Animation
 
-The first step will be to create a server animation, which is a file that runs commands or events at certain keyframes. While client animations are in the resource pack, server animations are in the behavior pack. You can read a bit more [here](/entities/timers.html#animation-based-timers). We can start by using the following as a template:
+The first step will be to create a server animation, which is a file that runs commands or events at certain keyframes. While client animations are in the resource pack, server animations are in the behavior pack. You can read a bit more [here](/entities/timers#animation-based-timers). We can start by using the following as a template:
 
 <CodeHeader>BP/animations/player.json</CodeHeader>
 
@@ -41,10 +43,10 @@ The first step will be to create a server animation, which is a file that runs c
 
 Let's go over what's in this template and what everything does:
 
-- `animation.player.emerald_armor` is our animation's identifier; you can change this to something else, such as `animation.player.phantom_armor`.
-- `timeline` runs commands and events at given keyframes.
-- `animation_length` is how long the animation lasts; we'll use 0.05 seconds, as that's the length of an in-game tick.
-- `loop` is quite straight-forward; setting it to true makes the animation loop.
+-   `animation.player.emerald_armor` is our animation's identifier; you can change this to something else, such as `animation.player.phantom_armor`.
+-   `timeline` runs commands and events at given keyframes.
+-   `animation_length` is how long the animation lasts; we'll use 0.05 seconds, as that's the length of an in-game tick.
+-   `loop` is quite straight-forward; setting it to true makes the animation loop.
 
 We can add commands to the `0.0` array in our timeline to execute, such as an `/effect` command, like such:
 
@@ -52,9 +54,7 @@ We can add commands to the `0.0` array in our timeline to execute, such as an `/
 
 ```json
 {
-    "0.0": [
-        "/effect @s speed 1 0"
-    ]
+    "0.0": ["/effect @s speed 1 0"]
 }
 ```
 
@@ -68,8 +68,8 @@ To actually check if our item is equipped, we can use a Molang query that checks
 
 You can skip this section if:
 
-- You want check for a vanilla item instead, such as an iron armor piece through the `minecraft:iron_tier` tag
-- You want to check for the item via `query.is_item_name_any`, which checks for an item identifier in any slot
+-   You want check for a vanilla item instead, such as an iron armor piece through the `minecraft:iron_tier` tag
+-   You want to check for the item via `q.is_item_name_any`, which checks for an item identifier in any slot
 
 In our item's behavior, we'll have to add a tag to `components`. For example, if we wanted to add the `example:emerald_tier` tag, we would add the `tag:example:emerald_tier` component:
 
@@ -105,22 +105,25 @@ Now with a short name set, we can run our animation.
 
 Add `scripts` to `description`, and set a Molang query to run. To check for the item, we can use one of the following:
 
-- `query.is_item_name_any`, to check for a given item identifier in any slot. This example will check for `example:totem_of_retreat` in either hand:
+-   `q.is_item_name_any`, to check for a given item identifier in any slot. This example will check for `example:totem_of_retreat` in either hand:
+
 ```
-query.is_item_name_any('slot.weapon.mainhand',0,'example:totem_of_retreat') || query.is_item_name_any('slot.weapon.offhand',0,'example:totem_of_retreat')
+q.is_item_name_any('slot.weapon.mainhand',0,'example:totem_of_retreat') || q.is_item_name_any('slot.weapon.offhand',0,'example:totem_of_retreat')
 ```
 
-- `query.equipped_item_any_tag`, to check for at least one of any given tag in a given slot. This example will allow an emerald- or phantom- tier armor piece to be used:
+-   `q.equipped_item_any_tag`, to check for at least one of any given tag in a given slot. This example will allow an emerald- or phantom- tier armor piece to be used:
+
 ```
-query.equipped_item_any_tag('slot.armor.head','example:emerald_tier','example:phantom_tier')
+q.equipped_item_any_tag('slot.armor.head','example:emerald_tier','example:phantom_tier')
 ```
 
-- `query.equipped_item_all_tags`, to check for all given tags in a given slot. This example will only allow an armor piece that's both emerald- and ancient- tier:
+-   `q.equipped_item_all_tags`, to check for all given tags in a given slot. This example will only allow an armor piece that's both emerald- and ancient- tier:
+
 ```
-query.equipped_item_all_tags('slot.armor.head','example:ancient_tier','example:emerald_tier')
+q.equipped_item_all_tags('slot.armor.head','example:ancient_tier','example:emerald_tier')
 ```
 
-Let's take a look at an example using `query.equipped_item_any_tag`:
+Let's take a look at an example using `q.equipped_item_any_tag`:
 
 <CodeHeader>BP/entities/player.json#description</CodeHeader>
 
@@ -136,7 +139,7 @@ Let's take a look at an example using `query.equipped_item_any_tag`:
     "scripts": {
         "animate": [
             {
-                "emerald_armor": "query.equipped_item_any_tag('slot.armor.head','example:emerald_tier')"
+                "emerald_armor": "q.equipped_item_any_tag('slot.armor.head','example:emerald_tier')"
             }
         ]
     }
@@ -145,7 +148,7 @@ Let's take a look at an example using `query.equipped_item_any_tag`:
 
 This example will run a server animation with the `emerald_armor` short name if an emerald-tier item is equipped in the helmet slot. You can change the Molang field to match your item tag, use a different query, or add additional queries.
 
-You can view a list of additional slot identifiers at the [Minecraft Wiki](https://minecraft.fandom.com/wiki/Commands/replaceitem#:~:text=Slot-,Slot%20Numbers,-Restrictions).
+You can view a list of additional slot identifiers at the [Minecraft Wiki](https://minecraft.wiki/w/Slot#Bedrock_Edition).
 
 ## Conclusion
 
@@ -162,7 +165,7 @@ If you want to run a command when multiple of the armor set's pieces are equippe
 ```json
 "animate": [
     {
-        "emerald_armor": "query.equipped_item_any_tag('slot.armor.head','example:emerald_tier') && query.equipped_item_any_tag('slot.armor.chest','example:emerald_tier') && query.equipped_item_any_tag('slot.armor.legs','example:emerald_tier') && query.equipped_item_any_tag('slot.armor.feet','example:emerald_tier')"
+        "emerald_armor": "q.equipped_item_any_tag('slot.armor.head','example:emerald_tier') && q.equipped_item_any_tag('slot.armor.chest','example:emerald_tier') && q.equipped_item_any_tag('slot.armor.legs','example:emerald_tier') && q.equipped_item_any_tag('slot.armor.feet','example:emerald_tier')"
     }
 ]
 ```
@@ -178,7 +181,7 @@ The turtle shell doesn't always inflict Water Breathing, but instead only for 10
 ```json
 "animate": [
     {
-        "emerald_armor": "query.equipped_item_any_tag('slot.armor.head','example:emerald_tier') && query.health <= 5"
+        "emerald_armor": "q.equipped_item_any_tag('slot.armor.head','example:emerald_tier') && q.health <= 5"
     }
 ]
 ```
@@ -193,7 +196,7 @@ We can also apply this to requiring multiple armor pieces, with even longer Mola
 {
     "animate": [
         {
-            "emerald_armor": "query.equipped_item_any_tag('slot.armor.head','example:emerald_tier') && query.equipped_item_any_tag('slot.armor.chest','example:emerald_tier') && query.equipped_item_any_tag('slot.armor.legs','example:emerald_tier') && query.equipped_item_any_tag('slot.armor.feet','example:emerald_tier') && query.health <= 5"
+            "emerald_armor": "q.equipped_item_any_tag('slot.armor.head','example:emerald_tier') && q.equipped_item_any_tag('slot.armor.chest','example:emerald_tier') && q.equipped_item_any_tag('slot.armor.legs','example:emerald_tier') && q.equipped_item_any_tag('slot.armor.feet','example:emerald_tier') && q.health <= 5"
         }
     ]
 }
@@ -246,10 +249,10 @@ In our player behavior, you'll have to add on to `animations` and `scripts` as w
     "scripts": {
         "animate": [
             {
-                "emerald_armor": "query.equipped_item_any_tag('slot.armor.head','example:emerald_tier')"
+                "emerald_armor": "q.equipped_item_any_tag('slot.armor.head','example:emerald_tier')"
             },
             {
-                "phantom_armor": "query.equipped_item_any_tag('slot.armor.head','example:phantom_tier')"
+                "phantom_armor": "q.equipped_item_any_tag('slot.armor.head','example:phantom_tier')"
             }
         ]
     }

@@ -1,5 +1,12 @@
 ---
 title: Shaders
+mentions:
+    - SirLich
+    - Dreamedc2015
+    - yanasakana
+    - MedicalJewel105
+    - SIsilicon
+description: Shaders for MCBE.
 ---
 
 :::warning
@@ -43,28 +50,24 @@ Example:
 
 ```json
 {
-	"materials": {
-		"version": "1.0.0",
-		"particle_debug": {
-			"vertexShader": "shaders/particle_generic.vertex",
-			"fragmentShader": "shaders/particle_debug.fragment",
+    "materials": {
+        "version": "1.0.0",
+        "particle_debug": {
+            "vertexShader": "shaders/particle_generic.vertex",
+            "fragmentShader": "shaders/particle_debug.fragment",
 
-			"vertexFields": [
-				{ "field": "Position" },
-				{ "field": "Color" },
-				{ "field": "UV0" }
-			],
+            "vertexFields": [{ "field": "Position" }, { "field": "Color" }, { "field": "UV0" }],
 
-			"+samplerStates": [
-				{
-					"samplerIndex": 0,
-					"textureFilter": "Point"
-				}
-			],
+            "+samplerStates": [
+                {
+                    "samplerIndex": 0,
+                    "textureFilter": "Point"
+                }
+            ],
 
-			"msaaSupport": "Both"
-		}
-	}
+            "msaaSupport": "Both"
+        }
+    }
 }
 ```
 

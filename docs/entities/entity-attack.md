@@ -1,10 +1,16 @@
 ---
 title: Entity Attacks
 category: Tutorials
-mention:
-    - Luthorius
+mentions:
+    - Lufurrius
+    - TheDoctor15
+    - SirLich
+    - MedicalJewel105
+    - epxzzy
+    - ThomasOrs
 tags:
     - intermediate
+description: Learn how to make entity attacks in a proper way.
 ---
 
 Entity attacks are a complex subject that require many different things to work correctly:
@@ -226,7 +232,7 @@ Both the mob effect and duration timer are optional, but when they are used, the
 
 ### Ranged
 
-Fires specified [projectiles](/documentation/projectiles) towards target at set intervals.
+Fires specified [projectiles](/entities/projectiles) towards target at set intervals.
 
 <CodeHeader></CodeHeader>
 
@@ -445,7 +451,7 @@ These component groups won't actually do anything by themselves. Another compone
 <CodeHeader></CodeHeader>
 
 ```json
-"wiki:ranged_swap": {   //When triggered, adds component froup for melee and removes ranged component group
+"wiki:ranged_swap": {   //When triggered, adds component group for melee and removes ranged component group
   "remove": {
     "component_groups": [
       "wiki:melee_components"

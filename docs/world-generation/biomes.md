@@ -4,9 +4,28 @@ category: General
 tags:
     - guide
     - experimental
+mentions:
+    - SirLich
+    - solvedDev
+    - stirante
+    - Joelant05
+    - destruc7ion
+    - SmokeyStack
+    - MedicalJewel105
+    - aexer0e
+    - Apex360
+    - Lufurrius
+    - TheItsNameless
+    - ThomasOrs
+    - SmokeyStack
+description: Biomes guide.
 ---
 
 _Last updated for 1.16.210_
+
+:::warning
+As of 1.18, Custom Biomes are broken for Minecraft Bedrock
+:::
 
 :::warning
 Biome customization is _experimental_. An experimental gameplay toggle must be enabled for each world that uses behavior packs containing biome definitions. What is currently available works well if declared correctly; however, incorrectly declared components and properties may result in crashing as opposed to just logged errors. Furthermore, due to issues caused by the [inheritance model](#inheritance), the schema used for custom biomes is currently not well constructed.
@@ -48,52 +67,52 @@ Like all constructed assets in a behavior pack, biome definitions are written in
 
 ```json
 {
-	"format_version": "1.13.0",
+    "format_version": "1.13.0",
 
-	"minecraft:biome": {
-		"description": {
-			"identifier": "pumpkin_pastures"
-		},
+    "minecraft:biome": {
+        "description": {
+            "identifier": "pumpkin_pastures"
+        },
 
-		"components": {
-			"minecraft:surface_parameters": {
-				"foundation_material": "minecraft:stone",
+        "components": {
+            "minecraft:surface_parameters": {
+                "foundation_material": "minecraft:stone",
 
-				"top_material": "minecraft:grass",
-				"mid_material": "minecraft:dirt",
+                "top_material": "minecraft:grass",
+                "mid_material": "minecraft:dirt",
 
-				"sea_floor_depth": 4,
-				"sea_material": "minecraft:water",
-				"sea_floor_material": "minecraft:sand"
-			},
-			"minecraft:overworld_height": {
-				"noise_params": [0.125, 0.0625]
-			},
+                "sea_floor_depth": 4,
+                "sea_material": "minecraft:water",
+                "sea_floor_material": "minecraft:sand"
+            },
+            "minecraft:overworld_height": {
+                "noise_params": [0.125, 0.0625]
+            },
 
-			"minecraft:climate": {
-				"temperature": 0.375,
-				"downfall": 0.25,
-				"snow_accumulation": [0, 0.5]
-			},
+            "minecraft:climate": {
+                "temperature": 0.375,
+                "downfall": 0.25,
+                "snow_accumulation": [0, 0.5]
+            },
 
-			"minecraft:overworld_generation_rules": {
-				"generate_for_climates": [["cold", 1]],
+            "minecraft:overworld_generation_rules": {
+                "generate_for_climates": [["cold", 1]],
 
-				"hills_transformation": "pumpkin_pastures_hills",
-				"shore_transformation": "pumpkin_pastures"
-			},
+                "hills_transformation": "pumpkin_pastures_hills",
+                "shore_transformation": "pumpkin_pastures"
+            },
 
-			"overworld": {},
-			"pumpkin_pastures": {},
+            "overworld": {},
+            "pumpkin_pastures": {},
 
-			"animal": {},
-			"monster": {}
-		}
-	}
+            "animal": {},
+            "monster": {}
+        }
+    }
 }
 ```
 
-> Invalid JSON — like with all aspects of addons — causes a biome definition to fail; that biome will not generate in the world. Unfortunately, no error will be thrown. A JSON validator and/or syntax highlighter easily makes this a non-problem.
+> Invalid JSON — like with all aspects of add-ons — causes a biome definition to fail; that biome will not generate in the world. Unfortunately, no error will be thrown. A JSON validator and/or syntax highlighter easily makes this a non-problem.
 
 #### Format Version
 
@@ -133,7 +152,7 @@ The other top-level property is `"minecraft:biome"`, which establishes the schem
 
 The `"description"` property of the `"minecraft:biome"` property is used as the metadata for the biome. It currently contains only one property, `"identifier"`, which is used to uniquely identify a biome. The value here must match the file name, sans the `.json` or `.biome.json` extensions. For example, if the identifier is `prairie`, the filename must be either `prairie.json` or `prairie.biome.json`. This identifier is used for referencing from a number of biome definition properties.
 
-> Unlike other aspects of addons, biomes do not accept a filename-ignored namespace prefix (such as `elysium:`) in their identifier. Such a prefix may be provided, but the file would have to contain the prefix, including the colon; such a filename is invalid on many Minecraft-supporting file systems, so this traditional namespace system should not be used. Consider a [reverse domain name system](#biome-definitions) instead.
+> Unlike other aspects of add-ons, biomes do not accept a filename-ignored namespace prefix (such as `elysium:`) in their identifier. Such a prefix may be provided, but the file would have to contain the prefix, including the colon; such a filename is invalid on many Minecraft-supporting file systems, so this traditional namespace system should not be used. Consider a [reverse domain name system](#biome-definitions) instead.
 
 ##### Components
 
@@ -220,7 +239,7 @@ The rules for how a biome is selected for placement in a world depend on 3 thing
 
 > A **slot** may represent an entire dimension or a subset of its surface area. The concept of slots does not exist in the actual documentation or schemas. This term is used here to represent a dedicated region for which a biome can be selected from a pool or where a collection of biomes are independently connected for a singular purpose.
 
-_Biome layout is not randomized per world, only per seed._ This means that if the same addons containing the same custom biome definitions are applied to two new worlds with the same seed, each dimension in both worlds will contain the exact same biome layout. This is obvious for vanilla generation, as the same seed will always generate the same vanilla biomes in the same places.
+_Biome layout is not randomized per world, only per seed._ This means that if the same add-ons containing the same custom biome definitions are applied to two new worlds with the same seed, each dimension in both worlds will contain the exact same biome layout. This is obvious for vanilla generation, as the same seed will always generate the same vanilla biomes in the same places.
 
 Minecraft currently has no way of creating new dimensions. The End does not allow for either adding new biomes or removing the default one, leaving only Overworld and Nether customization possible.
 
@@ -295,7 +314,7 @@ Minecraft only allows the player’s first load in a select few biomes:
 -   Savanna
 -   Jungle
 
-The variants of these biomes, such as Shattered Savannas and Flower Forests, also allow for player load-in. If none of thesse biomes are present due to de-weighting (and in the case of the Plains and Forest biomes, additionally being unlisted as [sub-biomes of Deep Oceans](#islands)), the player usually will not be able to load in to the world: the game most often will search for a valid spawn location endlessly.
+The variants of these biomes, such as Shattered Savannas and Flower Forests, also allow for player load-in. If none of these biomes are present due to de-weighting (and in the case of the Plains and Forest biomes, additionally being unlisted as [sub-biomes of Deep Oceans](#islands)), the player usually will not be able to load in to the world: the game most often will search for a valid spawn location endlessly.
 
 > In some rare, inexplicable cases, the player will be thrown into a biome not ordained for player loading at the world origin after enough time has passed attempting to find a valid load-in spot.
 
@@ -395,7 +414,7 @@ The rest of the Overworld is covered in oceans. Oceans are a misnomer as they do
 
 The oceans are prevalently split by normal and deep depths with about equal weight. Scattered islands can generate inside the ocean region. By default, there are ten ocean biomes in total: one for each combination of the five temperatures and two depths. Ocean biomes do not have to actually generate as aquatic biomes; they can be land. Furthermore, oceans can contain land sub-biomes. Plains, Forests, and Beaches, for example, are not exclusive to oceans but can generate as a part of ocean islands, themselves contained within the ocean regions.
 
-> Ocean weighting behaves differently from other distributions. Seemingly, oceans weren’t intended to compete for space: vanilla biomes have exclusively one ocean biome for each depth-climate combination. Competing oceans of similar weights are separated on a very small scale: approximately several blocks across each instance. A greater difference in weights does more cleanly separate competing biomes, but the lesser-weighted biome will still only generate in very small clumps. Generally, it is wiser to use [surface adjusments](#surface-adjustments) or [features](#features) to transform oceans.
+> Ocean weighting behaves differently from other distributions. Seemingly, oceans weren’t intended to compete for space: vanilla biomes have exclusively one ocean biome for each depth-climate combination. Competing oceans of similar weights are separated on a very small scale: approximately several blocks across each instance. A greater difference in weights does more cleanly separate competing biomes, but the lesser-weighted biome will still only generate in very small clumps. Generally, it is wiser to use [surface adjustments](#surface-adjustments) or [features](#features) to transform oceans.
 
 > If all oceans are set not to generate via [de-weighting](#climates), the game falls back to Frozen Ocean and Deep Frozen Ocean. Because of this fallback, the addition of a custom biome may be the only way to remove all the vanilla ocean biomes
 
@@ -1005,11 +1024,11 @@ Stateful notations are objects with a `"name"` string property referring to the 
 
 ```json
 {
-	"name": "minecraft:concrete",
+    "name": "minecraft:concrete",
 
-	"states": {
-		"color": "red"
-	}
+    "states": {
+        "color": "red"
+    }
 }
 ```
 
@@ -1056,7 +1075,7 @@ The second value of the array determines height variation. Negative values behav
 The terrain becomes more radical with larger values, which should generally not be used for several reasons:
 
 -   If outside creative mode, player annoyance will be high due to limited mobility options in the early game.
--   Typically useful MoLang queries, such as `"query.heightmap()"`, becomes less helpful as Nether-like shelves of land generate instead of smoother, simpler terrain.
+-   Typically useful Molang queries, such as `"q.heightmap()"`, becomes less helpful as Nether-like shelves of land generate instead of smoother, simpler terrain.
 -   Performance issues may arise with weaker computers.
 
 The maximum and minimum offsets from the average height when using noise parameters depends on the height variation. In general, a ∆ of 1 in the second noise parameter will result in _at most_ a ∆ of +/- 16 blocks in these offsets.
@@ -1174,7 +1193,7 @@ A noise curve that is dependent upon the seed of a world can be used to restrict
 
 The exact value generated from the noise curve at a particular location is inconsequential to the resultant surface adjustment. The only consideration is whether the value at that location meets the conditional check.
 
-> Although both curves are formed based on the world seed, the noise curve used for surface adjustments is not equivalent to the noise curve used with `"query.noise"`. Their correspondence cannot be depended upon for generation.
+> Although both curves are formed based on the world seed, the noise curve used for surface adjustments is not equivalent to the noise curve used with `"q.noise"`. Their correspondence cannot be depended upon for generation.
 
 ##### Intervals
 
@@ -1211,7 +1230,7 @@ The surface adjustment noise curve uses a default mapping relative to the dimens
 
 Height restrictions can be provided to limit the valid transformation region. These restrictions are independent of limitations using the noise curve and much simpler, too. Height restrictions are provided as an interval and simply target a range of _y_-heights to transform a region. The first value of the `"height_range"` array must be less than the second value or else the adjustment will fail.
 
-Using integers directly will create boring layers of adjustments. However, unlike the properties establishing checks against the noise curve, the `"height_range"` property accepts MoLang expressions for its elements. Using math functions, intervals can be created that are randomly spread for higher quality adjustments. Additionally, a `sea_level` variable is available that returns the sea level of the dimension for that individual instance of generation:
+Using integers directly will create boring layers of adjustments. However, unlike the properties establishing checks against the noise curve, the `"height_range"` property accepts Molang expressions for its elements. Using math functions, intervals can be created that are randomly spread for higher quality adjustments. Additionally, a `sea_level` variable is available that returns the sea level of the dimension for that individual instance of generation:
 
 | Dimension  | Sea level |
 | :--------- | --------: |
@@ -1429,8 +1448,8 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
 ```json
 "minecraft:forced_features": {
 	"surface_pass": {
-		"identifier": "pioneercraft:grasslands_caravan_feature",
-		"places_feature": "pioneercraft:caravan_feature",
+		"identifier": "wiki:grasslands_caravan_feature",
+		"places_feature": "wiki:caravan_feature",
 
 		"scatter_chance": "100 * math.pow(2, -4)",
 
@@ -1442,7 +1461,7 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
 			"distribution": "uniform",
 			"extent": [0, 16]
 		},
-		"y": "query.heightmap(variable.worldx, variable.worldz)"
+		"y": "q.heightmap(v.worldx, v.worldz)"
 	}
 },
 "minecraft:ignore_automatic_features": {}
@@ -1473,7 +1492,7 @@ Features are mostly outside the scope of biomes, but the two components within a
 				"distribution": "uniform",
 				"extent": [0, 16]
 			},
-			"y": "query.heightmap(variable.worldx, variable.worldz)"
+			"y": "q.heightmap(v.worldx, v.worldz)"
 		}
 	]
 }

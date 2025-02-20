@@ -2,8 +2,19 @@
 title: Flying Entities
 category: Tutorials
 tags:
-    - recipe
     - intermediate
+mentions:
+    - SirLich
+    - Joelant05
+    - Dreamedc2015
+    - MedicalJewel105
+    - aexer0e
+    - imsolucid
+    - nebulacrab
+    - Lufurrius
+    - TheItsNameless
+    - Halo333X
+description: Learn how to make a flying behavior for your entity.
 ---
 
 Whether making a plane or a dragon, adding controllability to flying entities will probably challenge most devs who haven't dabbled around this concept. Since there is no "right" way of adding a piloting mechanic to flying entities, I'll showcase 3 main workaround ways you can use to achieve this.
@@ -44,14 +55,14 @@ Now we will give it slow falling and speed as it's falling so that it doesn't in
         "default":{
             "transitions":[
                 {
-                    "jumping":"!query.is_on_ground"
+                    "jumping":"!q.is_on_ground"
                 }
             ]
         },
         "jumping":{
             "transitions":[
                 {
-                    "default":"query.is_on_ground"
+                    "default":"q.is_on_ground"
                 }
             ],
             "on_entry":[
@@ -100,12 +111,12 @@ There are multiple ways of achieving that, but in this tutorial, we'll be using 
 <CodeHeader></CodeHeader>
 
 ```
-execute @a[rxm=-90,rx=-25] ~~~ effect @e[type=wiki:dragon,r=1] levitation 1 6 true
-execute @a[rxm=-25,rx=-15] ~~~ effect @e[type=wiki:dragon,r=1] levitation 1 3 true
-execute @a[rxm=-15,rx=-5] ~~~ effect @e[type=wiki:dragon,r=1] levitation 1 2 true
-execute @a[rxm=-5,rx=20] ~~~ effect @e[type=wiki:dragon,r=1] levitation 1 1 true
-execute @a[rxm=20,rx=35] ~~~ effect @e[type=wiki:dragon,r=1] slow_falling 1 1 true
-execute @a[rxm=35,rx=90] ~~~ effect @e[type=wiki:dragon,r=1] clear
+execute as @a[rxm=-90,rx=-25] run effect @e[type=wiki:dragon,r=1] levitation 1 6 true
+execute as @a[rxm=-25,rx=-15] run effect @e[type=wiki:dragon,r=1] levitation 1 3 true
+execute as @a[rxm=-15,rx=-5] run effect @e[type=wiki:dragon,r=1] levitation 1 2 true
+execute as @a[rxm=-5,rx=20] run effect @e[type=wiki:dragon,r=1] levitation 1 1 true
+execute as @a[rxm=20,rx=35] run effect @e[type=wiki:dragon,r=1] slow_falling 1 1 true
+execute as @a[rxm=35,rx=90] run effect @e[type=wiki:dragon,r=1] clear
 ```
 
 **Depending on how big your entity is and how far away the player's seat is from its pivot, you might need to change the radius `r` to a more significant value.**
@@ -119,34 +130,30 @@ It's recommended that you link this animation controller to the player.
 
 ```json
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.base": {
-			"initial_state": "default",
-			"states": {
-				"default": {
-					"transitions": [
-						{
-							"base": "(1.0)"
-						}
-					],
-					"on_entry": [
-                        "/function dragon_control"
-                    ]
-				},
-				"base": {
-					"transitions": [
-						{
-							"default": "(1.0)"
-						}
-					],
-					"on_entry": [
-                        "/function dragon_control"
-                    ]
-				}
-			}
-		}
-	}
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.base": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "base": "(1.0)"
+                        }
+                    ],
+                    "on_entry": ["/function dragon_control"]
+                },
+                "base": {
+                    "transitions": [
+                        {
+                            "default": "(1.0)"
+                        }
+                    ],
+                    "on_entry": ["/function dragon_control"]
+                }
+            }
+        }
+    }
 }
 ```
 
@@ -160,14 +167,14 @@ The entity will probably still be too slow when flying, so we'll borrow our anim
         "default":{
             "transitions":[
                 {
-                    "jumping_1":"!query.is_on_ground"
+                    "jumping_1":"!q.is_on_ground"
                 }
             ]
         },
         "jumping_1":{
             "transitions":[
                 {
-                    "transition_to_default":"query.is_on_ground"
+                    "transition_to_default":"q.is_on_ground"
                 },
                 {
                     "jumping_2":"true"
@@ -180,7 +187,7 @@ The entity will probably still be too slow when flying, so we'll borrow our anim
         "jumping_2":{
             "transitions":[
                 {
-                    "transition_to_default":"query.is_on_ground"
+                    "transition_to_default":"q.is_on_ground"
                 },
                 {
                     "jumping_1":"true"
@@ -216,14 +223,14 @@ You might also notice that the entity levitates when you go near it. We can fix 
         "default":{
             "transitions":[
                 {
-                    "has_rider":"query.has_rider"
+                    "has_rider":"q.has_rider"
                 }
             ]
         },
         "has_rider":{
             "transitions":[
                 {
-                    "default":"!query.has_rider"
+                    "default":"!q.has_rider"
                 }
             ],
             "on_entry":[
@@ -240,12 +247,12 @@ You might also notice that the entity levitates when you go near it. We can fix 
 <CodeHeader></CodeHeader>
 
 ```
-execute @a[rxm=-90,rx=-25] ~~~ effect @e[type=wiki:dragon,r=1,tag=has_rider] levitation 1 6 true
-execute @a[rxm=-25,rx=-15] ~~~ effect @e[type=wiki:dragon,r=1,tag=has_rider] levitation 1 3 true
-execute @a[rxm=-15,rx=-5] ~~~ effect @e[type=wiki:dragon,r=1,tag=has_rider] levitation 1 2 true
-execute @a[rxm=-5,rx=20] ~~~ effect @e[type=wiki:dragon,r=1,tag=has_rider] levitation 1 1 true
-execute @a[rxm=20,rx=35] ~~~ effect @e[type=wiki:dragon,r=1,tag=has_rider] slow_falling 1 1 true
-execute @a[rxm=35,rx=90] ~~~ effect @e[type=wiki:dragon,r=1,tag=has_rider] clear
+execute as @a[rxm=-90,rx=-25] run effect @e[type=wiki:dragon,r=1,tag=has_rider] levitation 1 6 true
+execute as @a[rxm=-25,rx=-15] run effect @e[type=wiki:dragon,r=1,tag=has_rider] levitation 1 3 true
+execute as @a[rxm=-15,rx=-5] run effect @e[type=wiki:dragon,r=1,tag=has_rider] levitation 1 2 true
+execute as @a[rxm=-5,rx=20] run effect @e[type=wiki:dragon,r=1,tag=has_rider] levitation 1 1 true
+execute as @a[rxm=20,rx=35] run effect @e[type=wiki:dragon,r=1,tag=has_rider] slow_falling 1 1 true
+execute as @a[rxm=35,rx=90] run effect @e[type=wiki:dragon,r=1,tag=has_rider] clear
 ```
 
 ## Controlling Through Jumping
@@ -279,7 +286,7 @@ Next, we need an animation controller that causes the entity to levitate when th
             ],
             "transitions":[
                 {
-                    "rising":"query.is_jumping"
+                    "rising":"q.is_jumping"
                 }
             ]
         },
@@ -289,7 +296,7 @@ Next, we need an animation controller that causes the entity to levitate when th
             ],
             "transitions":[
                 {
-                    "falling":"!query.is_jumping"
+                    "falling":"!q.is_jumping"
                 }
             ]
         }
@@ -297,7 +304,7 @@ Next, we need an animation controller that causes the entity to levitate when th
 }
 ```
 
-Now, we need a copy of the player's behavior file, which we will modify slightly. You can find the player's behavior file in the vanilla behavior pack provided by Mojang (found [here](https://aka.ms/behaviorpacktemplate)). Once you have copied the player's behavior file to your own behavior pack, find their `"description"` object and add the animation controller. We also want to ensure that the entity will only respond to the player's jump input when the player is riding it, so we can use a MoLang query in the player's behavior to only activate the animation controller when the player is riding.
+Now, we need a copy of the player's behavior file, which we will modify slightly. You can find the player's behavior file in the vanilla behavior pack provided by Mojang (found [here](https://aka.ms/behaviorpacktemplate)). Once you have copied the player's behavior file to your own behavior pack, find their `"description"` object and add the animation controller. We also want to ensure that the entity will only respond to the player's jump input when the player is riding it, so we can use a Molang query in the player's behavior to only activate the animation controller when the player is riding.
 
 <CodeHeader></CodeHeader>
 
@@ -312,7 +319,7 @@ Now, we need a copy of the player's behavior file, which we will modify slightly
     "scripts":{
         "animate":[
             {
-                "fly_dragon":"query.is_riding"
+                "fly_dragon":"q.is_riding"
             }
         ]
     }
@@ -330,7 +337,7 @@ The entity can now be controlled with the jump key, but there's a bug. If the pl
         "no_rider":{
             "transitions":[
                 {
-                    "has_rider":"query.has_rider"
+                    "has_rider":"q.has_rider"
                 }
             ]
         },
@@ -340,10 +347,122 @@ The entity can now be controlled with the jump key, but there's a bug. If the pl
             ],
             "transitions":[
                 {
-                    "no_rider":"!query.has_rider"
+                    "no_rider":"!q.has_rider"
                 }
             ]
         }
     }
 }
 ```
+
+## Controlling by Scripts
+
+This fourth method allows us to adjust the falling speed, movement speed and it works when player jumps. It is essential to add the horse jump function so that when the player jumps, he does not fall off the entity, also it's very important to add the family type that indicates that it can fly, since we handle this in the scripts.
+
+<CodeHeader>minecraft:entity</CodeHeader>
+
+```json
+"components": {
+    "minecraft:behavior.player_ride_tamed": {},
+    "minecraft:input_ground_controlled": {},
+    "minecraft:can_power_jump": {},
+    "minecraft:horse.jump_strength": {
+        "value": 0
+    },
+    "minecraft:damage_sensor": {
+        "triggers": [
+            {
+                "cause": "fall",
+                "deals_damage": false
+            }
+        ]
+    },
+    "minecraft:rideable": {
+        "seat_count": 1,
+        "interact_text": "action.interact.mount",
+        "family_types": ["player"],
+        "seats": {
+            "position": [0.0, 0.63, 0.0]
+        }
+    },
+    "minecraft:type_family": {
+        "family": ["pig", "mob", "wiki:can_fly"] // Indicates that the entity can fly
+    }
+}
+```
+
+After adjusting our entity with the previous configurations, we are going to add the script to give it functionality.
+
+<CodeHeader>BP/scripts/utils.js</CodeHeader>
+
+```js
+import { Entity } from "@minecraft/server";
+class Utils {
+    /**
+     * @param {Entity} entity
+     */
+    constructor(entity) {
+        this.entity = entity;
+        this.rideable = entity?.getComponent("rideable");
+        this.player = this.rideable?.getRiders()[0];
+        this.riding = this.player?.getComponent("riding");
+    }
+
+    /**
+     * @param {number} flySpeed
+     * @param {number} fallSpeed
+     * @param {number} XZspeed
+     */
+    flySystem(flySpeed, fallSpeed, XZspeed) {
+        if (!this.riding) return;
+        const direction = {
+            x: 0,
+            y: this.player.isJumping ? flySpeed : fallSpeed,
+            z: 0,
+        };
+        this.entity.addEffect("speed", 5, {
+            showParticles: false,
+            amplifier: XZspeed,
+        });
+        this.entity.applyImpulse(direction);
+    }
+}
+
+export default Utils;
+```
+
+The utils.js file creates a function to make the entity able to fly.
+Now we need to apply it to our entity for this to work.
+
+<CodeHeader>BP/scripts/index.js</CodeHeader>
+
+```js
+import { system, world } from "@minecraft/server";
+import Utils from "./utils";
+
+system.runInterval(() => {
+    const dim = world.getDimension("overworld");
+    // You can use tags instead of family type
+    for (const entity of dim.getEntities({ families: ["wiki:can_fly"] })) {
+        const utils = new Utils(entity);
+        // Recommended values
+        utils.flySystem(0.09, 0.07, 5);
+    }
+});
+```
+
+You can adjust the speed from index.js.
+
+-   Speed ​​on Y axis (UP)
+
+    **flySpeed: 0.09**
+
+-   Speed ​​on Y axis (DOWN)
+
+    **fallSpeed: 0.07**
+
+-   Speed on X axis (Horizontal)
+
+    **XZspeed: 5**
+
+These are just recommended values, you're free to change the velocity.

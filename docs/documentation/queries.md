@@ -1,6 +1,21 @@
 ---
 title: Molang Queries
-toc_max_level: 2
+description: Some of the MoLang queries explained.
+outline_depth: 2
+mentions:
+    - SirLich
+    - solvedDev
+    - stirante
+    - SmokeyStack
+    - Dreamedc2015
+    - Ultr4Anubis
+    - MedicalJewel105
+    - TreaBeane
+    - r4isen1920
+    - ChillRx
+    - Lufurrius
+    - TheItsNameless
+    - ThomasOrs
 ---
 
 The bedrock documentation for Molang is notoriously bad. This page will attempt to remedy this by providing additional details for individual queries, _where possible_. This page is intended to be searched, not read in full. Use the side-bar, or use `ctrl-f` to navigate.
@@ -37,6 +52,15 @@ Where `x` and `y` are both integer arguments, from the following table:
 | 5        | Elytra                |
 | 6        | Turtle helmet         |
 | 7        | Netherite armor piece |
+
+### Y for horses
+
+| Argument | Type                |
+| -------- | ------------------- |
+| 1        | Leather armor piece |
+| 2        | Iron armor piece    |
+| 3        | Gold armor piece    |
+| 4        | Diamond armor piece |
 
 ### Example
 
@@ -98,13 +122,13 @@ Where `slot` and `channel` are both integer arguments, from the following tables
 
 Query returns color value in specified channel.
 
-## query.get_equiped_item_name
+## query.get_equipped_item_name
 
 :::warning
 **DEPRECATED QUERY:** It is recommended to use the new query (`query.is_item_name_any`) if possible as it is more of an updated version of this query. However, this query will still continue to work in the future for backwards compatibility.
 :::
 
-Formatted like: `query.get_equiped_item_name('main_hand') = 'item_name'`
+Formatted like: `query.get_equipped_item_name('main_hand') = 'item_name'`
 
 Takes one optional hand slot as a parameter (0 or 'main_hand' for main hand, 1 or 'off_hand' for off hand), and a second parameter (0=default) if you would like the equipped item or any non-zero number for the currently rendered item, and returns the name of the item in the requested slot (defaulting to the main hand if no parameter is supplied) if there is one, otherwise returns ''.
 
@@ -212,28 +236,29 @@ Needs to be used in special conditions.
 
 Formatted like: `query.is_item_name_any('slot.weapon.mainhand', 0, 'namespace:item_name')`
 
-Takes the equipment slot name first, followed by the slot index value, and then the list of item names with namespaces after it. 
+Takes the equipment slot name first, followed by the slot index value, and then the list of item names with namespaces after it.
 
 Possible equipment slot are as follows:
-| Slot Name              | Slot Counts   | Description  |
-| ---------------------- | ------------- | ------------ |
-| `slot.weapon.mainhand` | 0             | Usually any held items are in here |
-| `slot.weapon.offhand`  | 0             | Offhand slot for things like `Shield`, `Totem of Undying` or a `Map` |
-| `slot.armor.head`      | 0             | Head armor piece |
-| `slot.armor.chest`     | 0             | Chestplate armor piece |
-| `slot.armor.legs`      | 0             | Leggings armor piece |
-| `slot.armor.feet`      | 0             | Boots armor piece |
-| `slot.armor`           | 0             | Horse armor |
-| `slot.saddle`          | 0             | Saddle slot |
-| `slot.hotbar`          | 0 to 8        | Player hotbar slots |
-| `slot.inventory`       | 0+ (varies)   | Entities that has an inventory, like the player, minecart with chests, donkey, etc. |
-| `slot.enderchest`      | 0 to 26       | Ender chest inventory for players only |
+
+| Slot Name              | Slot Counts | Description                                                                         |
+| ---------------------- | ----------- | ----------------------------------------------------------------------------------- |
+| `slot.weapon.mainhand` | 0           | Usually any held items are in here                                                  |
+| `slot.weapon.offhand`  | 0           | Offhand slot for things like `Shield`, `Totem of Undying` or a `Map`                |
+| `slot.armor.head`      | 0           | Head armor piece                                                                    |
+| `slot.armor.chest`     | 0           | Chestplate armor piece                                                              |
+| `slot.armor.legs`      | 0           | Leggings armor piece                                                                |
+| `slot.armor.feet`      | 0           | Boots armor piece                                                                   |
+| `slot.armor`           | 0           | Horse armor                                                                         |
+| `slot.saddle`          | 0           | Saddle slot                                                                         |
+| `slot.hotbar`          | 0 to 8      | Player hotbar slots                                                                 |
+| `slot.inventory`       | 0+ (varies) | Entities that has an inventory, like the player, minecart with chests, donkey, etc. |
+| `slot.enderchest`      | 0 to 26     | Ender chest inventory for players only                                              |
 
 ### Test for items within the player's inventory
 
-Formatted like: `t.val = 0; t.i = 0; loop(27, {t.val = q.is_item_name_any('slot.inventory', t.i, 'namespace:item_name'); t.val ? {return t.val;}; t.i = t.i+1;});`
+Formatted like: `t.val = 0; t.i = 0; loop(27, {t.val = q.is_item_name_any('slot.inventory', t.i, 'namespace:item_name'); t.val ? break; t.i = t.i+1;});`
 
-Replace `namespace:item_name` with any item you wish to check for. This simply loops through all 27 slots of the inventory and returns `1.0` if it has found any slot that has the specified item provided. Note that the hotbar is in a different slot from the main inventory slot so you will have to check that seperately.
+Replace `namespace:item_name` with any item you wish to check for. This simply loops through all 27 slots of the inventory and returns `1.0` if it has found any slot that has the specified item provided. Note that the hotbar is in a different slot from the main inventory slot so you will have to check that separately.
 
 ## query.is_enchanted
 
@@ -245,9 +270,7 @@ _Currently, can be only used in materials._
 
 ## query.is_eating
 
-This query tracks when certain entities are 'eating'. It's not used for the player. To trigger, use one of the following components:
- - `minecraft:behavior.eat_carried_item`
- - `minecraft:behavior.snacking`
+This query tracks when certain entities are 'eating'. It's not used for the player. To trigger, use one of the following components: - `minecraft:behavior.eat_carried_item` - `minecraft:behavior.snacking`
 
 ## query.is_ghost
 
@@ -384,7 +407,7 @@ query.time_of_day - day time table
 <Spoiler title="Show">
 
 | `query.time_of_day` | Day Time |
-|---------------------|----------|
+| ------------------- | -------- |
 | 0.00                | 18000    |
 | 0.01                | 18240    |
 | 0.02                | 18480    |
@@ -487,7 +510,7 @@ query.time_of_day - day time table
 | 0.99                | 17760    |
 | 1.00                | 18000    |
 
-Credit: [Analysis of query.time_of_day.md](https://gist.github.com/DoubleF3lix/a03afde0a979dfa41e8525ee92f12ca5)
+Credit: [Analysis of query.time_of_day](https://gist.github.com/DoubleF3lix/a03afde0a979dfa41e8525ee92f12ca5)
 
 </Spoiler>
 
@@ -509,7 +532,7 @@ Returns one of the 3 components from the normalized vector of the entity movemen
 
 **Note**: As of writing the documentation, the value returned from any of the axis will change depending on the speed of the entity (If the entity is on the ground the value will be less than the value of the entity if it were in the air even if it is moving in the same direction).
 
-To get the actual normalized velocity vector of the entity movement you will have to normalize the values. Here is the MoLang setup:
+To get the actual normalized velocity vector of the entity movement you will have to normalize the values. Here is the Molang setup:
 
 ```
 variable.mag = math.sqrt( math.pow( query.movement_direction(0), 2 ) + math.pow( query.movement_direction(1), 2) + math.pow( query.movement_direction(2), 2));
@@ -518,7 +541,7 @@ variable.yNorm = query.movement_direction(1) / variable.mag;
 variable.zNorm = query.movement_direction(2) / variable.mag;
 ```
 
-For more information on normalized vectors you can play around with this <a href=https://www.desmos.com/calculator/hhoamwgve2>Desmos graph</a> 
+For more information on normalized vectors you can play around with this <a href=https://www.desmos.com/calculator/hhoamwgve2>Desmos graph</a>
 
 | Argument | Axis |
 | -------- | ---- |
@@ -536,8 +559,9 @@ Requires `Experimental Molang Features` to use. From the docs `Takes a relative 
 The syntax for it is `q.block_neighbor_has_any_tag(x,y,z,'tag_name')` and `q.relative_block_has_any_tag(x,y,z,'tag_name')`.
 
 Example:
-- `q.relative_block_has_any_tag(0,-1,0,'grass')` would try to detect a block with the grass tag one block under the entity.
-- `q.block_neighbor_has_any_tag(0,-1,0,'grass')` would try to detect a block with the grass tag one block under the block.
+
+-   `q.relative_block_has_any_tag(0,-1,0,'grass')` would try to detect a block with the grass tag one block under the entity.
+-   `q.block_neighbor_has_any_tag(0,-1,0,'grass')` would try to detect a block with the grass tag one block under the block.
 
 To do multiple tags you would use `q.correct_query(0,-1,0,'grass', 'plant')` with `correct_query` being replaced by the right query.
 
