@@ -140,8 +140,8 @@ When we make short-names of this form, we can use a generic "sit" animation cont
     - ✅️ `BP/functions/wiki/random_number.mcfunction`
     - ❌️ `BP/functions/random_number.mcfunction`
 2. They must be properly nested:
-    - ✅️ `BP/functions/wiki/teleport/zone/hell`
-    - ❌ `BP/functions/wiki/teleport_hellzone`
+    - ✅️ `BP/functions/wiki/teleport/zone/hell.mcfunction`
+    - ❌ `BP/functions/wiki/teleport_hellzone.mcfunction`
 3. The names must follow an `action_object` structure. Meaning verbs should come before subjects.
     - ✅️ `add_all`
     - ❌️ `all_add`
@@ -256,7 +256,7 @@ Example:
 
 ✔️ `textures/npc/dragon_hunter/archer`
 
-❌ `textures npc/dragon_hunter_archer`
+❌ `textures/npc/dragon_hunter_archer`
 
 ## .lang File Comments
 
