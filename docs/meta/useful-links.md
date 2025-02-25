@@ -60,7 +60,6 @@ Important links have a ⭐.
 -   [Feature Rule Generator v2 (Paid Version)](https://machine-builder.itch.io/frg-v2)
 -   [NBT Editor](https://www.universalminecrafteditor.com/)
 -   [NBT Studio](https://github.com/tryashtar/nbt-studio)
--   [ResourcePack Converter (App)](https://converter.bedrockhub.io)
 -   [SuitcaseJS (MCPack Compressor)](https://github.com/TBroz15/SuitcaseJS)
 -   [World Converter (Paid)](https://www.universalminecraftconverter.com/download)
 
