@@ -2,11 +2,11 @@
 title: Loot Tables
 category: Documentation
 nav_order: 1
-tags:
-- Stable
-- Last updated for Version 1.18.10
-mention:
-- Ciosciaa
+mentions:
+    - Ciosciaa
+    - Etanarvazac
+    - SmokeyStack
+description: All about loot tables.
 ---
 
 ::: warning
@@ -110,7 +110,8 @@ A traditional weighted random pool selects items based on relative weight, choos
 The roll count for a weighted random pool may be altered based on the player's luck using the optional `"bonus_rolls"` property.
 
 ```json
-
+"bonus_rolls": 3,
+"bonus_chance": 0.095
 ```
 
 ##### Entry Weighting
@@ -194,22 +195,22 @@ All [conditions](#) on entries in a tiered pool are ignored. Conditions on the p
 ### Entries
 Entries are the selectable units of a pool. Three different types of entries are available.
 
-```json
-
-```
-
 #### Item Entries
-Item entries are the fundamental entry type for selecting loot. Item entries refer to 
+Item entries are the fundamental entry type for selecting loot. Item entries refer to
 
 ```json
-
+"type": "item",
+"name": "minecraft:apple",
+"weight": 1
 ```
 
 #### Loot Table Entries
 Loot hierarchies can be formed using loot table entries.
 
 ```json
-
+"type": "loot_table",
+"name": "loot_tables/custom/example.json"
+"weight": 1
 ```
 
 #### Empty Entries
@@ -223,7 +224,7 @@ When selected, empty entries won't yield any loot for that roll.
 Empty entries can generally be mimicked using [a roll count](#) whose range includes 0, [random chance conditions](#), or [count functions](#) that could randomly select 0. Their primary advantage is readability when using [weighted random pools](#): denoting by weight when a roll won't yield an entry may be easier to understand.
 
 ### Functions
-Functions are what makes loot tables so powerful. They can do a wide range of tasks for each entry in your loot table. For example, they can change the amount of an item is dropped, what enchantments are present (even on items that normally cannot be enchanted), the item name, it's lore, and it can even write books! View [item functions](https://wiki.bedrock.dev/loot/item-functions.html) for a full list of functions and how they're used.
+Functions are what makes loot tables so powerful. They can do a wide range of tasks for each entry in your loot table. For example, they can change the amount of an item is dropped, what enchantments are present (even on items that normally cannot be enchanted), the item name, it's lore, and it can even write books! View [item functions](/loot/item-functions) for a full list of functions and how they're used.
 
 <CodeHeader>artifacts.json/pools/entries</CodeHeader>
 
@@ -232,7 +233,7 @@ Functions are what makes loot tables so powerful. They can do a wide range of ta
 	"type": "item",
 	"name": "minecraft:dirt",
 	"weight": 10,
-	"functions" [
+	"functions": [
 		{
 			"function": "set_count",
 			"count": {

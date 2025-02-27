@@ -1,6 +1,17 @@
 ---
 title: Spawn Rules
 category: General
+mentions:
+    - SirLich
+    - solvedDev
+    - MedicalJewel105
+    - aexer0e
+    - Ciosciaa
+    - FrankyRay
+    - Lufurrius
+    - TheItsNameless
+    - SmokeyStack
+description: Spawn rules define how entities will spawn into the world.
 ---
 
 Spawn rules define how entities will spawn into the world. You should use spawn rules when you want your custom entity to spawn naturally, just like vanilla entities. The different components allow you to define when, where, and how the entity will spawn in.
@@ -15,49 +26,49 @@ Here is an example spawn rule, with an explanation of the fields.
 
 ```json
 {
-	"format_version": "1.8.0",
-	"minecraft:spawn_rules": {
-		"description": {
-			"identifier": "minecraft:zombie",
-			"population_control": "monster"
-		},
-		"conditions": [
-			{
-				"minecraft:spawns_on_surface": {},
-				"minecraft:spawns_underground": {},
-				"minecraft:brightness_filter": {
-					"min": 0,
-					"max": 7,
-					"adjust_for_weather": true
-				},
-				"minecraft:difficulty_filter": {
-					"min": "easy",
-					"max": "hard"
-				},
-				"minecraft:weight": {
-					"default": 100
-				},
-				"minecraft:herd": {
-					"min_size": 2,
-					"max_size": 4
-				},
-				"minecraft:permute_type": [
-					{
-						"weight": 95
-					},
-					{
-						"weight": 5,
-						"entity_type": "minecraft:zombie_villager"
-					}
-				],
-				"minecraft:biome_filter": {
-					"test": "has_biome_tag",
-					"operator": "==",
-					"value": "monster"
-				}
-			}
-		]
-	}
+    "format_version": "1.8.0",
+    "minecraft:spawn_rules": {
+        "description": {
+            "identifier": "minecraft:zombie",
+            "population_control": "monster"
+        },
+        "conditions": [
+            {
+                "minecraft:spawns_on_surface": {},
+                "minecraft:spawns_underground": {},
+                "minecraft:brightness_filter": {
+                    "min": 0,
+                    "max": 7,
+                    "adjust_for_weather": true
+                },
+                "minecraft:difficulty_filter": {
+                    "min": "easy",
+                    "max": "hard"
+                },
+                "minecraft:weight": {
+                    "default": 100
+                },
+                "minecraft:herd": {
+                    "min_size": 2,
+                    "max_size": 4
+                },
+                "minecraft:permute_type": [
+                    {
+                        "weight": 95
+                    },
+                    {
+                        "weight": 5,
+                        "entity_type": "minecraft:zombie_villager"
+                    }
+                ],
+                "minecraft:biome_filter": {
+                    "test": "has_biome_tag",
+                    "operator": "==",
+                    "value": "monster"
+                }
+            }
+        ]
+    }
 }
 ```
 
@@ -122,7 +133,7 @@ minecraft:player_in_village_filter
 ### minecraft:spawns_above_block_filter
 
 <CodeHeader></CodeHeader>
-    
+
 ```json
         "minecraft:spawns_above_block_filter": {
           "blocks": "minecraft:stone",

@@ -1,25 +1,29 @@
 ---
 title: Overwriting Assets
+description: Overwriting assets explained.
 tags:
     - intermediate
-mention:
+mentions:
     - SirLich
+    - MedicalJewel105
+    - Lufurrius
+    - SmokeyStack
 ---
 
-## Addon Layering
+## Add-on Layering
 
-The addon system is built layer by layer, where each pack is added _on top_ of the ones before it. Even if you only have a single pack added, there is an implicit _vanilla_ pack which is always added. When you add custom content, this content will have full access to all vanilla files.
+The add-on system is built layer by layer, where each pack is added _on top_ of the ones before it. Even if you only have a single pack added, there is an implicit _vanilla_ pack which is always added. When you add custom content, this content will have full access to all vanilla files.
 
 ### Accessing Vanilla Files
 
-This layered structure is very useful, because it allows us to access the files inside of vanilla, without copy/pasting them into our addon. For example you can access `blocks/stone.png` without moving it into your addon! Just set it as the texture for your custom entity - it will work out of the box. This is particularly useful for things like models, or render controllers, or sounds.
+This layered structure is very useful, because it allows us to access the files inside of vanilla, without copy/pasting them into our add-on. For example you can access `blocks/stone.png` without moving it into your add-on! Just set it as the texture for your custom entity - it will work out of the box. This is particularly useful for things like models, or render controllers, or sounds.
 
-If the vanilla assets change, for example if [JAPPA](https://twitter.com/JasperBoerstra?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) updates the stone texture, your addon will also receive the update, since you are relying on the actual dynamic, vanilla resources.
+If the vanilla assets change, for example if [JAPPA](https://twitter.com/JasperBoerstra?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) updates the stone texture, your add-on will also receive the update, since you are relying on the actual dynamic, vanilla resources.
 
-You should try to use this system of layering as often as you can. If you don't *need* to copy/paste something into your addon, don't. 
+You should try to use this system of layering as often as you can. If you don't _need_ to copy/paste something into your add-on, don't.
 
 :::warning
-It is never OK to make an addon inside of a copy of the vanilla resource/behavior pack. This will make the download for your addon incredibly huge, and will reduce performance. Always begin with a blank addon, then copy/paste the files you want to overwrite. 
+It is never OK to make an add-on inside of a copy of the vanilla resource/behavior pack. This will make the download for your add-on incredibly huge, and will reduce performance. Always begin with a blank add-on, then copy/paste the files you want to overwrite.
 :::
 
 ## Overwriting Assets
@@ -76,35 +80,35 @@ The following files work in this way:
 
 -   All UI files
 -   [All language files](/concepts/text-and-translations)
--   `item_textures.json`
+-   `item_texture.json`
 -   `flipbook_textures.json`
--   `terrain_textures.json`
+-   `terrain_texture.json`
 -   `sounds.json`
 -   `music_definitions.json`
 -   `sound_definitions.json`
 
 :::tip
-**Example:** Lets say you want to override the `sugar` texture, using the reference files. You can do so by creating a new `item_textures.json`, with the following contents:
+**Example:** Lets say you want to override the `sugar` texture, using the reference files. You can do so by creating a new `item_texture.json`, with the following contents:
 
 <CodeHeader></CodeHeader>
 
 ```json
 {
-	"resource_pack_name": "vanilla",
-	"texture_data": {
-		"sugar": {
-			"textures": "textures/path/to/my/sugar"
-		}
-	}
+    "resource_pack_name": "vanilla",
+    "texture_data": {
+        "sugar": {
+            "textures": "textures/path/to/my/sugar"
+        }
+    }
 }
 ```
 
-This _definition_ will be merged with the vanilla `item_textures.json`, and will override the short-name `sugar`. When the vanilla item accesses this short-name, it will get a reference to your custom texture path, instead of the actual texture path to sugar.
+This _definition_ will be merged with the vanilla `item_texture.json`, and will override the short-name `sugar`. When the vanilla item accesses this short-name, it will get a reference to your custom texture path, instead of the actual texture path to sugar.
 :::
 
 ## Overwriting Dangers
 
-Since addons mostly _overwrite_ each other rather than _merge_, it can be very difficult to get two incompatible addons to work together. For example, if you try to combine two addons that overwrite the creeper behavior (for example, one makes them very fast, and one makes them very large) the addon you have applied _second_ will overwrite the first.
+Since add-ons mostly _overwrite_ each other rather than _merge_, it can be very difficult to get two incompatible add-ons to work together. For example, if you try to combine two add-ons that overwrite the creeper behavior (for example, one makes them very fast, and one makes them very large) the add-on you have applied _second_ will overwrite the first.
 
 This is mostly a problem with `player.json` (in either the RP or the BP), since this file is often used for gameplay purposes.
 

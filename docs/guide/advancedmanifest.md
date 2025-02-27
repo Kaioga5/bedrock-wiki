@@ -1,8 +1,16 @@
 ---
 title: Advanced Manifest
 category: Extra
+description: How to work with manifests - a more detailed guide [UNDER CONSTRUCTION]
 nav_order: 4
-prefix: 'd.'
+prefix: "d. "
+mentions:
+    - MRBBATES1
+    - Lufurrius
+    - SirLich
+    - smell-of-curry
+    - MedicalJewel105
+    - QuazChick
 ---
 
 ::: tip

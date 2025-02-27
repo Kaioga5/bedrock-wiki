@@ -1,11 +1,13 @@
 ---
 title: Glowing Entity Texture
 category: Tutorials
-mention:
-	- LeGend077
+mentions:
+    - LeGend077
+    - MedicalJewel105
+description: Re-create Enderman's glowing eyes in your own details.
 ---
 
-In this tutorial, you will learn how to make a glowing texture, like enderman's eyes have for an entity by using materials and textures.
+In this tutorial, you will learn how to make a glowing texture, like Enderman's eyes have for an entity by using materials and textures.
 
 ## Texture
 
@@ -72,11 +74,11 @@ We need to modify the `RP/entity/my_entity.entity.json` file of the mob we want 
 				"animate": [
 					"setup",
 					{
-						"walk": "query.modified_move_speed"
+						"walk": "q.modified_move_speed"
 					},
 					"look_at_target",
 					{
-						"baby_transform": "query.is_baby"
+						"baby_transform": "q.is_baby"
 					}
 				]
 			},

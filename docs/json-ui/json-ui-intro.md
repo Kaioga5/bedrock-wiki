@@ -3,16 +3,31 @@ title: Intro to JSON UI
 category: General
 nav_order: 1
 tags:
-  - guide
-mention:
-  - sermah
-  - KalmeMarq
+    - guide
+mentions:
+    - sermah
+    - KalmeMarq
+    - SirLich
+    - solvedDev
+    - Joelant05
+    - GTB3NW
+    - stirante
+    - MedicalJewel105
+    - r4isen1920
+    - shanewolf38
+    - LeGend077
+    - mark-wiemer
+    - TheItsNameless
+    - ThomasOrs
+    - QuazChick
+description: Introduction to JSON UI.
 ---
 
 ## Introduction
 
 :::warning
-JSON UI is being deprecated in favor of [Ore UI](https://github.com/Mojang/ore-ui). Note that any addons using JSON UI will eventually break in the coming years.
+JSON UI is being deprecated in favor of [Ore UI](https://github.com/Mojang/ore-ui). Note that any add-ons using JSON UI will eventually break in the coming years.
+Unlike JSON UI, Ore UI is hardcoded and cannot be modified by resource packs.
 :::
 
 :::tip
@@ -27,23 +42,23 @@ JSON UI may contain the following files:
 
 These are built-in files used in JSON UI:
 
-- `_global_variables.json` - used for denoting default variables for later use
-- `_ui_defs.json` - for referencing the files used on the UI
+-   `_global_variables.json` - used for denoting default variables for later use
+-   `_ui_defs.json` - for referencing the files used on the UI
 
 ### Screens
 
 These are files which contains elements that are called to render a screen:
 
-- `hud_screen.json` - shows the main gameplay screen where in-game features such as the hotbar is rendered
-- `inventory_screen.json` - shows the player's inventory screen
-- etc.
+-   `hud_screen.json` - shows the main gameplay screen where in-game features such as the hotbar is rendered
+-   `inventory_screen.json` - shows the player's inventory screen
+-   etc.
 
 ### Templates
 
 These are files which stores JSON UI elements to be used by other namespaces, such as screens:
 
-- `ui_common.json` - contains elements such as the button which is referenced on most other namespaces such buttons for the settings screen
-- `ui_template_*.json` - contains elements that are neatly organized to be used by other namespaces
+-   `ui_common.json` - contains elements such as the button which is referenced on most other namespaces such buttons for the settings screen
+-   `ui_template_*.json` - contains elements that are neatly organized to be used by other namespaces
 
 ## UI Defs
 
@@ -55,14 +70,14 @@ You can make new files, for example we'll add `RP/ui/button.json` and `RP/my_ui/
 
 ```json
 {
-  "ui_defs": ["ui/button.json", "my_ui/main_menu.json"]
+    "ui_defs": ["ui/button.json", "my_ui/main_menu.json"]
 }
 ```
 
-- Make sure to append the full filepath of the UI you are referencing - including the file extension (e.g. `*.json`), from the resource pack root folder!
-- Only reference new UI files you have added in your pack. You don't need to reference vanilla files nor other third-party JSON UI files, as it automatically gets merged with other packs.
-- You may use custom file paths outside the `RP/ui/...` folder, or reference files in a sub-folder within the `RP/ui/...` folder.
-- You may append custom file extensions other than `*.json` - so long as the file contents are valid and written in JSON.
+-   Make sure to append the full filepath of the UI you are referencing - including the file extension (e.g. `*.json`), from the resource pack root folder!
+-   Only reference new UI files you have added in your pack. You don't need to reference vanilla files nor other third-party JSON UI files, as it automatically gets merged with other packs.
+-   You may use custom file paths outside the `RP/ui/...` folder, or reference files in a sub-folder within the `RP/ui/...` folder.
+-   You may append custom file extensions other than `*.json` - so long as the file contents are valid and written in JSON.
 
 ## Global Variables
 
@@ -72,7 +87,7 @@ We can denote a variable `"$info_text_color"` and its value of `[0.8, 0.8, 0.8]`
 
 ```json
 {
-  "$info_text_color": [0.8, 0.8, 0.8]
+    "$info_text_color": [0.8, 0.8, 0.8]
 }
 ```
 
@@ -102,8 +117,8 @@ Other elements in different JSON UI files can then reference this variable to be
 }
 ```
 
-- You can add denote more variables, seperated in a comma, within the `_global_variables.json` file.
-- Variables stored in this file are constant and _one-sided_. And therefore, you cannot modify the default variable in one namespace to be then used by the other.
+-   You can add more variables with their values in place, separated in a comma, within the `_global_variables.json` file.
+-   Variables stored in this file are constant and _one-sided_. And therefore, you cannot modify the default variable in one namespace to be then used by the other.
 
 ## Namespaces
 
@@ -155,10 +170,10 @@ Here the element `type` is `label` so it will render a text of `Hello World` whe
 
 ```json
 {
-  "test_element": {
-    "type": "label",
-    "text": "Hello World"
-  }
+    "test_element": {
+        "type": "label",
+        "text": "Hello World"
+    }
 }
 ```
 
@@ -166,15 +181,15 @@ Here the element `type` is `label` so it will render a text of `Hello World` whe
 
 The following are some of the element types, which are possible values for the `type` property:
 
-- `label` - for creating text objects
-- `image` - for rendering images from a filepath provided
-- `button` - for creating interactive and clickable elements
-- `panel` - an empty container where you can store all other elements that may overlap to each other
-- `stack_panel` - an empty container where you can store all other elements in a stack that doesn't overlap to each other
-- `grid` - uses another element as a template, and then renders it repeatedly in multiple rows and columns
-- `factory` - renders an element based off of another element, is capable of calling hardcoded values and variables
-- `custom` - is paired with another property `renderer` which renders hardcoded JSON UI elements
-- `screen` - elements that are called by the game directly, usually root panel elements
+-   `label` - for creating text objects
+-   `image` - for rendering images from a filepath provided
+-   `button` - for creating interactive and clickable elements
+-   `panel` - an empty container where you can store all other elements that may overlap to each other
+-   `stack_panel` - an empty container where you can store all other elements in a stack that doesn't overlap to each other
+-   `grid` - uses another element as a template, and then renders it repeatedly in multiple rows and columns
+-   `factory` - renders an element based off of another element, is capable of calling hardcoded values and variables
+-   `custom` - is paired with another property `renderer` which renders hardcoded JSON UI elements
+-   `screen` - elements that are called by the game directly, usually root panel elements
 
 ## Animations
 
@@ -218,15 +233,15 @@ Animation elements can then be referenced on other non-animation element types, 
 
 The following are the list of element types, which are possible values for the `anim_type` property:
 
-- `alpha` - accepts float values, animates the opacity of the element
-- `offset` - accepts an array, animates the position of the element relative to its anchor
-- `size` - accepts an array, animates the size in ( width, height )
-- `flip_book` - accepts integer values, animates the image in flipbook texture or frame by frame
-- `uv` - accepts an array, animates the image depending on the UV texture
-- `color` - accepts float RGB values from 0.0 to 1.0, animates the color of the element
-- `wait` - accepts number values, used for waiting/staying purposes
-- `aseprite_flip_book` - like a `flip_book` animation, uses sprite sheets. More info [here](/json-ui/aseprite-animations)
-- `clip`
+-   `alpha` - accepts float values, animates the opacity of the element
+-   `offset` - accepts an array, animates the position of the element relative to its anchor
+-   `size` - accepts an array, animates the size in ( width, height )
+-   `flip_book` - accepts integer values, animates the image in flipbook texture or frame by frame
+-   `uv` - accepts an array, animates the image depending on the UV texture
+-   `color` - accepts float RGB values from 0.0 to 1.0, animates the color of the element
+-   `wait` - accepts number values, used for waiting/staying purposes
+-   `aseprite_flip_book` - like a `flip_book` animation, uses sprite sheets. More info [here](/json-ui/aseprite-animations)
+-   `clip`
 
 ## Using Operators
 
@@ -236,7 +251,7 @@ You can use operators in JSON UI, along with `$variables` and `#bindings` into c
 | --------------------- | -------- | ----------------------------------------------------------------------------- |
 | Addition              | +        | `"100% + 420px"` `($text + ' my')` `($index + 2)` `('#' + $bdg_nm + '_name')` |
 | Subtraction           | -        | `"100% - 69px"` `($text - ' my')` `($index - 13)`                             |
-| Multiplication        | *        | `($var * 9)` `(#value * 5)`                                                   |
+| Multiplication        | \*       | `($var * 9)` `(#value * 5)`                                                   |
 | Division              | /        | `($var / 12)` `(#value / 2)`                                                  |
 | Equal to              | =        | `($var = 12)` `($var = 'this_text')` `(#name = 'Wither')`                     |
 | Greater than          | >        | `(#value > 13)`                                                               |
@@ -316,15 +331,15 @@ Here it's directly assigning the `#hardtext` value to the `text` property.
 
 ```json
 {
-  "label": {
-    "type": "label",
-    "text": "#hardtext",
-    "bindings": [
-      {
-        "binding_name": "#hardtext"
-      }
-    ]
-  }
+    "label": {
+        "type": "label",
+        "text": "#hardtext",
+        "bindings": [
+            {
+                "binding_name": "#hardtext"
+            }
+        ]
+    }
 }
 ```
 
@@ -334,16 +349,16 @@ Or alternatively, it may sometimes look like as follows:
 
 ```json
 {
-  "label": {
-    "type": "label",
-    "text": "#text",
-    "bindings": [
-      {
-        "binding_name": "#hardtext",
-        "binding_name_override": "#text"
-      }
-    ]
-  }
+    "label": {
+        "type": "label",
+        "text": "#text",
+        "bindings": [
+            {
+                "binding_name": "#hardtext",
+                "binding_name_override": "#text"
+            }
+        ]
+    }
 }
 ```
 
@@ -355,27 +370,28 @@ This happens a lot with the `visible` and `enabled` properties. Here's an exampl
 
 ```json
 {
-  "send_button": {
-    "bindings": [
-      {
-        "binding_name": "#using_touch",
-        "binding_name_override": "#visible"
-      }
-    ]
-  },
+    "send_button": {
+        "bindings": [
+            {
+                "binding_name": "#using_touch",
+                "binding_name_override": "#visible"
+            }
+        ]
+    },
 
-  "play_button": {
-    "bindings": [
-      {
-        "binding_name": "#play_button_enabled"
-        "binding_name_override": "#enabled"
-      }
-    ]
-  }
+    "play_button": {
+        "bindings": [
+            {
+                "binding_name": "#play_button_enabled",
+                "binding_name_override": "#enabled"
+            }
+        ]
+    }
 }
 ```
 
-`#using_touch` and `#play_button_enabled` in this case store boolean values. If you're playing on a touch device, `#using_touch` will be `true` else `false.` `#play_button_enabled` is used in the `Add External Server` screen. So, in this case, it will be `true` if all text fields (`server name`, `server ip` and `server_port`) have text inside them. <br>
+`#using_touch` and `#play_button_enabled` in this case store boolean values. If you're playing on a touch device, `#using_touch` will be `true` else `false.` `#play_button_enabled` is used in the `Add External Server` screen. So, in this case, it will be `true` if all text fields (`server name`, `server ip` and `server_port`) have text inside them.
+
 So the `#using_touch` value will override the `#visible` binding property value, which, in this case, is also a property (`#visible` is used inside `property_bag`, which would be the same as setting `visible` to something).
 And `#play_button_enabled` will override the `#enabled` binding property value, which will then set its value to `enabled` property.
 
@@ -393,7 +409,7 @@ We have to tell the source element where the value will come from, tell which pr
         "binding_type": "view",
         "source_control_name": "my_toggle", // the name of the source element
         "source_property_name": "#toggle_state", // We want this property value which tells in which state the toggle is in
-        "target_property_name": "#visible" // the target property to be overrided
+        "target_property_name": "#visible" // the target property to be overridden
       }
     ]
   },
@@ -453,8 +469,8 @@ The `visible` property is used to conditionally render a UI control when working
 ...
   "hud_actionbar_text": {
     "type": "image",
-    "size": [ "100%c + 12px", "100%c + 5px" ],
-    "offset": [ 0, "50%-68px" ],
+    "size": ["100%c + 12px", "100%c + 5px"],
+    "offset": [0, "50%-68px"],
     "texture": "textures/ui/hud_tip_text_background",
     "alpha": "@hud.anim_actionbar_text_background_alpha_out",
     "controls": [
@@ -468,9 +484,9 @@ The `visible` property is used to conditionally render a UI control when working
           "text": "$actionbar_text",
           "localize": false,
           "alpha": "@hud.anim_actionbar_text_alpha_out",
-	  			// Ignore the text label if the actionbar text is equal to "hello world"
+          // Ignore the text label if the actionbar text is equal to "hello world"
           "$atext": "$actionbar_text",
-	  "visible": "(not ($atext = 'hello world'))"
+          "visible": "(not ($atext = 'hello world'))"
         }
       }
     ]
@@ -479,16 +495,16 @@ The `visible` property is used to conditionally render a UI control when working
 }
 ```
 
-Modifying the above JSON into an unintrusive UI file used in a resource pack should look identical to this:
+Modifying the above JSON into an unobtrusive UI file used in a resource pack should look identical to this:
 
 <CodeHeader>vanilla/ui/hud_screen.json</CodeHeader>
 
 ```json
 {
-  "hud_actionbar_text/actionbar_message": {
-    "$atext": "$actionbar_text",
-    "visible": "(not ($atext = 'hello world'))"
-  }
+    "hud_actionbar_text/actionbar_message": {
+        "$atext": "$actionbar_text",
+        "visible": "(not ($atext = 'hello world'))"
+    }
 }
 ```
 
@@ -500,36 +516,36 @@ Here's a more complicated example of conditional rendering with variables. In th
 
 ```json
 {
-  "black_conditional_image": {
-    "type": "image",
-    "texture": "textures/ui/Black",
-    "size": [16, 16],
-    "layer": 10,
-    "$atext": "$actionbar_text",
-    "visible": "($atext = 'hello world')"
-  },
+    "black_conditional_image": {
+        "type": "image",
+        "texture": "textures/ui/Black",
+        "size": [16, 16],
+        "layer": 10,
+        "$atext": "$actionbar_text",
+        "visible": "($atext = 'hello world')"
+    },
 
-  "black_conditional_image_factory": {
-    "type": "panel",
-    "factory": {
-      "name": "hud_actionbar_text_factory",
-      "control_ids": {
-        "hud_actionbar_text": "black_conditional_image@hud.black_conditional_image"
-      }
-    }
-  },
-
-  "root_panel": {
-    "modifications": [
-      {
-        "array_name": "controls",
-        "operation": "insert_front",
-        "value": {
-          "black_conditional_image_factory@hud.black_conditional_image_factory": {}
+    "black_conditional_image_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_actionbar_text_factory",
+            "control_ids": {
+                "hud_actionbar_text": "black_conditional_image@hud.black_conditional_image"
+            }
         }
-      }
-    ]
-  }
+    },
+
+    "root_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": {
+                    "black_conditional_image_factory@hud.black_conditional_image_factory": {}
+                }
+            }
+        ]
+    }
 }
 ```
 
@@ -680,25 +696,25 @@ You will need to add another binding object to the text to control its visibilit
 }
 ```
 
-Modifying the above JSON into an unintrusive UI file used in a resource pack should look identical to this:
+Modifying the above JSON into an unobtrusive UI file used in a resource pack should look identical to this:
 
 <CodeHeader>RP/ui/hud_screen.json</CodeHeader>
 
 ```json
 {
-  "hud_title_text/title_frame/title": {
-    "modifications": [
-      {
-        "array_name": "bindings",
-        "operation": "insert_back",
-        "value": {
-          "binding_type": "view",
-          "source_property_name": "(not (#text = 'hello world'))",
-          "target_property_name": "#visible"
-        }
-      }
-    ]
-  }
+    "hud_title_text/title_frame/title": {
+        "modifications": [
+            {
+                "array_name": "bindings",
+                "operation": "insert_back",
+                "value": {
+                    "binding_type": "view",
+                    "source_property_name": "(not (#text = 'hello world'))",
+                    "target_property_name": "#visible"
+                }
+            }
+        ]
+    }
 }
 ```
 
@@ -708,46 +724,60 @@ Like before, here's a more complicated example of conditional rendering with bin
 
 ```json
 {
-  "black_conditional_image": {
-    "type": "image",
-    "texture": "textures/ui/Black",
-    "size": [16, 16],
-    "layer": 10,
-    "bindings": [
-      {
-        "binding_name": "#hud_title_text_string"
-      },
-      {
-        "binding_type": "view",
-        "source_property_name": "(#hud_title_text_string = 'hello world')",
-        "target_property_name": "#visible"
-      }
-    ]
-  },
+    "black_conditional_image": {
+        "type": "image",
+        "texture": "textures/ui/Black",
+        "size": [16, 16],
+        "layer": 10,
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#hud_title_text_string = 'hello world')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
 
-  "black_conditional_image_factory": {
-    "type": "panel",
-    "factory": {
-      "name": "hud_title_text_factory",
-      "control_ids": {
-        "hud_title_text": "black_conditional_image@hud.black_conditional_image"
-      }
-    }
-  },
-
-  "root_panel": {
-    "modifications": [
-      {
-        "array_name": "controls",
-        "operation": "insert_front",
-        "value": {
-          "black_conditional_image_factory@hud.black_conditional_image_factory": {}
+    "black_conditional_image_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "black_conditional_image@hud.black_conditional_image"
+            }
         }
-      }
-    ]
-  }
+    },
+
+    "root_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": {
+                    "black_conditional_image_factory@hud.black_conditional_image_factory": {}
+                }
+            }
+        ]
+    }
 }
 ```
+
+## String Formatting
+
+There are several format specifiers like formats that allows us to access or manipulate strings in JSON UI. They work by multiplying them with a string in bindings and variables.
+
+Let's assume we have a variable `"$var": "abcdefghijklmn"`. Here are the known formats:
+- `'%.ns'` can be used to get first n characters of a string. For example: `('%.7s' * $var)` will return `abcdefg`.
+- `'%0ns'` returns the string if there are n or greater than n characters in the string otherwise returns 0 or false. For example: `('%04s' * $var)` will return `abcdefghijklmn` while `('%015s' * $var)` will return `0` or `false`.
+- `'%n.xs'` returns x characters of a string and adds padding of empty space at start till string length becomes n. For example: `('%7.4s' * $var)` will return `   abcd`.
+- `'%-n.xs'` returns x characters of a string and adds padding of empty space at end till string length becomes n. For example: `('%-7.4s' * $var)` will return `abcd   `.
+- `'%ns'` seems to add empty space at the start. For example:  `('%15s' * $var)` will return ` abcdefghijklmn`. If n is smaller or equal to string length, it just returns the string.
+- `'%-ns'` seems to add empty space at the end. For example:  `('%-15s' * $var)` will return `abcdefghijklmn `. If n is smaller or equal to string length, it just returns the string.
+
+Remember that the usage of this format is limited.
 
 ## Buttons Mappings
 
@@ -757,30 +787,30 @@ Here's an example of a button element with the `button_mappings` property:
 
 ```json
 {
-  "sample_button@common.button": {
-    "$pressed_button_name": "button_id",
-    "button_mappings": [
-      {
-        "to_button_id": "$pressed_button_name",
-        "mapping_type": "pressed"
-      },
-      {
-        "from_button_id": "button.menu_select",
-        "to_button_id": "$pressed_button_name",
-        "mapping_type": "pressed"
-      },
-      {
-        "from_button_id": "button.menu_ok",
-        "to_button_id": "$pressed_button_name",
-        "mapping_type": "focused"
-      },
-      {
-        "from_button_id": "button.menu_up",
-        "to_button_id": "$pressed_button_name",
-        "mapping_type": "global"
-      }
-    ]
-  }
+    "sample_button@common.button": {
+        "$pressed_button_name": "button_id",
+        "button_mappings": [
+            {
+                "to_button_id": "$pressed_button_name",
+                "mapping_type": "pressed"
+            },
+            {
+                "from_button_id": "button.menu_ok",
+                "to_button_id": "$pressed_button_name",
+                "mapping_type": "focused"
+            },
+            {
+                "from_button_id": "button.menu_select",
+                "to_button_id": "$pressed_button_name",
+                "mapping_type": "pressed"
+            },
+            {
+                "from_button_id": "button.menu_up",
+                "to_button_id": "$pressed_button_name",
+                "mapping_type": "global"
+            }
+        ]
+    }
 }
 ```
 
@@ -788,11 +818,39 @@ Here's an example of a button element with the `button_mappings` property:
 
 Defines the scope of the specified button mapping:
 
-- `focused` - means when the button is hovered onto first
-- `pressed` - means when the button is interacted with
-- `global` - means when the button is rendered
+-   `focused` - means when the button is hovered onto first
+-   `pressed` - means when the button is clicked or pressed
+-   `global` - means when the button exists and is called on the screen
 
-As long as the `from_button_id` is inputted with it's appropriate `mapping_type`, it will meet the conditions and therefore trigger the `to_button_id` property.
+As long as the `from_button_id` is inputted with it's appropriate `mapping_type`, it will meet the conditions and therefore trigger the `to_button_id` property:
+
+```json
+{
+    "sample_button@common.button": {
+        "$pressed_button_name": "button_id",
+        "button_mappings": [
+            // Trigger this button only if you're hovering the mouse into it first
+            {
+                "from_button_id": "button.menu_ok",
+                "to_button_id": "$pressed_button_name",
+                "mapping_type": "focused"
+            },
+            // Trigger this button if it's clicked or pressed
+            {
+                "from_button_id": "button.menu_select",
+                "to_button_id": "$pressed_button_name",
+                "mapping_type": "pressed"
+            },
+            // Trigger this button if the `button.menu_up` KEY is pressed from anywhere
+            {
+                "from_button_id": "button.menu_up",
+                "to_button_id": "$pressed_button_name",
+                "mapping_type": "global"
+            }
+        ]
+    }
+}
+```
 
 ### Common button IDs
 
@@ -800,7 +858,7 @@ These are the list of common button IDs you can use in `from_button_id` property
 
 **For mouse and keyboard:**
 | Button ID | Description |
-| --------------------------------- | -------------------------------------- |
+|--------------------------------|-------------------|
 | `button.menu_select` | Mouse left click |
 | `button.menu_secondary_select` | Mouse right click |
 | `button.menu_ok` | ENTER key |
@@ -814,7 +872,7 @@ These are the list of common button IDs you can use in `from_button_id` property
 
 **For controllers:**
 | Button ID | Description |
-| --------------------------------- | -------------------------------------- |
+|--------------------------------|----------------|
 | `button.controller_select ` | X/A button |
 | `button.menu_secondary_select` | Y button |
 | `button.menu_exit` | B button |
@@ -823,6 +881,8 @@ These are the list of common button IDs you can use in `from_button_id` property
 | `button.menu_down` | DOWN DPAD key |
 | `button.menu_left` | LEFT DPAD key |
 | `button.menu_right` | RIGHT DPAD key |
+
+It's a good practice in creating UIs to also add support for various different controls across different platforms with different control methods.
 
 ## Modifications
 
@@ -846,214 +906,254 @@ To modify JSON UI in a non-intrusive way, you can use the `modifications` proper
 
 #### Front/Back
 
+Modify anchored from the top (start) or to the bottom (end) of the list.
+
+Prefix the new `foo` control from the top of the list:
+
 ```json
 {
-  "array_name": "controls",
-  "operation": "insert_front",
-  "value": [
-    {
-      "foo@example.bar": {}
+    "array_name": "controls",
+    "operation": "insert_front",
+    "value": [
+        {
+            "foo@example.bar": {}
+        }
+    ]
+}
+```
+
+Append the new `foo` control to the bottom of the list:
+
+```json
+{
+    "array_name": "controls",
+    "operation": "insert_back",
+    "value": [
+        {
+            "foo@example.bar": {}
+        }
+    ]
+}
+```
+
+Move the existing `foo` control to the top of the list:
+
+```json
+{
+    "array_name": "controls",
+    "operation": "move_front",
+    "value": [
+        {
+            "foo@example.bar": {}
+        }
+    ]
+}
+```
+
+Move the existing `foo` control to the bottom of the list:
+
+```json
+{
+    "array_name": "controls",
+    "operation": "move_back",
+    "value": [
+        {
+            "foo@example.bar": {}
+        }
+    ]
+}
+```
+
+Move the existing `#example_binding_2` binding to the top of the list:
+
+```json
+{
+    "array_name": "bindings",
+    "operation": "move_front",
+    "where": {
+        "binding_name": "#example_binding_2"
     }
-  ]
 }
 ```
 
+Move the existing `#example_binding_2` binding to the bottom of the list:
+
 ```json
 {
-  "array_name": "controls",
-  "operation": "insert_back",
-  "value": [
-    {
-      "foo@example.bar": {}
+    "array_name": "bindings",
+    "operation": "move_back",
+    "where": {
+        "binding_name": "#example_binding_1"
     }
-  ]
-}
-```
-
-```json
-{
-  "array_name": "controls",
-  "operation": "move_front",
-  "value": [
-    {
-      "foo@example.bar": {}
-    }
-  ]
-}
-```
-
-```json
-{
-  "array_name": "bindings",
-  "operation": "move_front",
-  "where": {
-    "binding_name": "#example_binding_2"
-  }
-}
-```
-
-```json
-{
-  "array_name": "controls",
-  "operation": "move_back",
-  "value": [
-    {
-      "foo@example.bar": {}
-    }
-  ]
-}
-```
-
-```json
-{
-  "array_name": "bindings",
-  "operation": "move_back",
-  "where": {
-    "binding_name": "#example_binding_1"
-  }
 }
 ```
 
 #### After/Before
 
+Modify anchored below (after) or above (before) an existing control or binding from the list.
+
+Add the new `foo` control below the `second_target` control from the list:
+
 ```json
 {
-  "control_name": "second_target",
-  "operation": "insert_after",
-  "value": [
-    {
-      "foo@example.bar": {}
+    "control_name": "second_target",
+    "operation": "insert_after",
+    "value": [
+        {
+            "foo@example.bar": {}
+        }
+    ]
+}
+```
+
+Add the new `foo` control above the `second_target` control from the list:
+
+```json
+{
+    "control_name": "second_target",
+    "operation": "insert_before",
+    "value": [
+        {
+            "foo@example.bar": {}
+        }
+    ]
+}
+```
+
+Add the new `#my_binding_1` binding below the `#example_binding_2` binding from the list:
+
+```json
+{
+    "array_name": "bindings",
+    "operation": "insert_after",
+    "where": {
+        "binding_name": "#example_binding_2"
+    },
+    "value": [
+        {
+            "binding_name": "#my_binding_1"
+        }
+    ]
+}
+```
+
+Add the new `#my_binding_1` binding above the `#example_binding_2` binding from the list:
+
+```json
+{
+    "array_name": "bindings",
+    "operation": "insert_before",
+    "where": {
+        "binding_name": "#example_binding_2"
+    },
+    "value": [
+        {
+            "binding_name": "#my_binding_1"
+        }
+    ]
+}
+```
+
+Move the existing `foo` control below the `second_target` control from the list:
+
+```json
+{
+    "control_name": "second_target",
+    "operation": "move_after",
+    "value": [
+        {
+            "foo@example.bar": {}
+        }
+    ]
+}
+```
+
+Move the existing `foo` control above the `second_target` control from the list:
+
+```json
+{
+    "control_name": "second_target",
+    "operation": "move_before",
+    "value": [
+        {
+            "foo@example.bar": {}
+        }
+    ]
+}
+```
+
+Move the existing `#example_binding_1` binding below the `#example_binding_2` binding from the list:
+
+```json
+{
+    "array_name": "bindings",
+    "operation": "move_after",
+    "where": {
+        "binding_name": "#example_binding_2"
+    },
+    "target": {
+        "binding_name": "#example_binding_1"
     }
-  ]
 }
 ```
 
+Move the existing `#example_binding_1` binding above the `#example_binding_2` binding from the list:
+
 ```json
 {
-  "array_name": "bindings",
-  "operation": "insert_after",
-  "where": {
-    "binding_name": "#example_binding_2"
-  },
-  "value": [
-    {
-      "binding_name": "#my_binding_1"
+    "array_name": "bindings",
+    "operation": "move_before",
+    "where": {
+        "binding_name": "#example_binding_1"
+    },
+    "target": {
+        "binding_name": "#example_binding_2"
     }
-  ]
-}
-```
-
-```json
-{
-  "control_name": "second_target",
-  "operation": "insert_before",
-  "value": [
-    {
-      "foo@example.bar": {}
-    }
-  ]
-}
-```
-
-```json
-{
-  "array_name": "bindings",
-  "operation": "insert_before",
-  "where": {
-    "binding_name": "#example_binding_2"
-  },
-  "value": [
-    {
-      "binding_name": "#my_binding_1"
-    }
-  ]
-}
-```
-
-```json
-{
-  "control_name": "second_target",
-  "operation": "move_after",
-  "value": [
-    {
-      "foo@example.bar": {}
-    }
-  ]
-}
-```
-
-```json
-{
-  "array_name": "bindings",
-  "operation": "move_after",
-  "where": {
-    "binding_name": "#example_binding_2"
-  },
-  "target": {
-    "binding_name": "#example_binding_1"
-  }
-}
-```
-
-```json
-{
-  "control_name": "second_target",
-  "operation": "move_before",
-  "value": [
-    {
-      "foo@example.bar": {}
-    }
-  ]
-}
-```
-
-```json
-{
-  "array_name": "bindings",
-  "operation": "move_before",
-  "where": {
-    "binding_name": "#example_binding_1"
-  },
-  "target": {
-    "binding_name": "#example_binding_2"
-  }
 }
 ```
 
 #### Swap/Replace/Remove
 
-```json
-{
-  "array_name": "bindings",
-  "operation": "swap",
-  "where": {
-    "binding_name": "#example_binding_1"
-  },
-  "target": {
-    "binding_name": "#example_binding_2"
-  }
-}
-```
+Modify anchored to at least one existing controls or bindings:
+
+Swap the position of the existing `#example_binding_1` and `#example_binding_2` bindings:
 
 ```json
 {
-  "array_name": "bindings",
-  "operation": "replace",
-  "where": {
-    "binding_name": "#example_binding_1"
-  },
-  "value": {
-    "binding_name": "#replacement_binding"
-  }
+    "array_name": "bindings",
+    "operation": "swap",
+    "where": {
+        "binding_name": "#example_binding_1"
+    },
+    "target": {
+        "binding_name": "#example_binding_2"
+    }
 }
 ```
 
+Replace the existing `#example_binding_1` binding to the new `#replacement_binding` binding:
+
 ```json
 {
-  "array_name": "bindings",
-  "operation": "remove",
-  "where": {
-    "binding_name": "#example_binding_1"
-  }
+    "array_name": "bindings",
+    "operation": "replace",
+    "where": {
+        "binding_name": "#example_binding_1"
+    },
+    "value": {
+        "binding_name": "#replacement_binding"
+    }
+}
+```
+
+Remove the existing `#example_binding_1` binding:
+
+```json
+{
+    "array_name": "bindings",
+    "operation": "remove",
+    "where": {
+        "binding_name": "#example_binding_1"
+    }
 }
 ```

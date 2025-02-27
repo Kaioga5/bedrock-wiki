@@ -3,6 +3,12 @@ title: Render Controllers
 category: General
 tags:
     - beginner
+mentions:
+    - SirLich
+    - MedicalJewel105
+    - Overload1252
+    - ChibiMango
+description: Learn about render controllers.
 ---
 
 Render controllers are an often-misunderstood part of the resource pack. But you don't need to be afraid! It would help if you considered render controllers as logic packs that take short-name definitions from the RP Entity File and determine how they will be combined/layered/rendered in-game.
@@ -17,23 +23,23 @@ Lets look at a simplified version of the spider RP entity file:
 
 ```json
 {
-	"format_version": "1.8.0",
-	"minecraft:client_entity": {
-		"description": {
-			"identifier": "minecraft:cave_spider",
-			"materials": {
-				"default": "spider",
-				"invisible": "spider_invisible"
-			},
-			"textures": {
-				"default": "textures/entity/spider/cave_spider"
-			},
-			"geometry": {
-				"default": "geometry.spider.v1.8"
-			},
-			"render_controllers": ["controller.render.spider"]
-		}
-	}
+    "format_version": "1.8.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "minecraft:cave_spider",
+            "materials": {
+                "default": "spider",
+                "invisible": "spider_invisible"
+            },
+            "textures": {
+                "default": "textures/entity/spider/cave_spider"
+            },
+            "geometry": {
+                "default": "geometry.spider.v1.8"
+            },
+            "render_controllers": ["controller.render.spider"]
+        }
+    }
 }
 ```
 
@@ -56,18 +62,18 @@ A simple render controller looks like this:
 
 ```json
 {
-	"format_version": "1.8.0",
-	"render_controllers": {
-		"controller.render.cow": {
-			"geometry": "Geometry.default",
-			"materials": [
-				{
-					"*": "Material.default"
-				}
-			],
-			"textures": ["Texture.default"]
-		}
-	}
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.cow": {
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": ["Texture.default"]
+        }
+    }
 }
 ```
 
@@ -82,10 +88,10 @@ For example, the render controller above is used for the `minecraft:cow` entity.
 :::warning Remember!
 Render controllers work based on short-names. If you want to use the cow render controller, you need to provide the short-names it is using. In this case, you will need to provide:
 
-- `default` geometry
-- `default` texture
-- `default` material
-:::
+-   `default` geometry
+-   `default` texture
+-   `default` material
+    :::
 
 ## Creating custom render controllers
 
@@ -113,22 +119,22 @@ Texture layering is achieved through the use of render controllers. If you aren'
 
 ```json
 {
-	"format_version": "1.10.0",
-	"render_controllers": {
-		"controller.render.texture_layering": {
-			"geometry": "Geometry.default",
-			"materials": [
-				{
-					"*": "Material.default"
-				}
-			],
-			"textures": [
-				//You can add as many layers as you like. Layers are added top to bottom.
-				"Texture.bottom_layer",
-				"Texture.top_layer"
-			]
-		}
-	}
+    "format_version": "1.10.0",
+    "render_controllers": {
+        "controller.render.texture_layering": {
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                //You can add as many layers as you like. Layers are added top to bottom.
+                "Texture.bottom_layer",
+                "Texture.top_layer"
+            ]
+        }
+    }
 }
 ```
 
@@ -174,34 +180,30 @@ Set multiple top textures, which we will index later.
 
 ```json
 {
-	"format_version": "1.10.0",
-	"render_controllers": {
-		"controller.render.wool_only": {
-			"arrays": {
-				"textures": {
-					"Array.top": [
-						"Texture.top_1",
-						"Texture.top_2",
-						"Texture.top_3"
-					]
-				}
-			},
-			"geometry": "Geometry.default",
-			"materials": [
-				{
-					"*": "Material.default"
-				}
-			],
-			"textures": [
-				"Texture.bottom", //static bottom texture
-				"Array.top[query.variant]" //pick top texture based on entity variant.
-			]
-		}
-	}
+    "format_version": "1.10.0",
+    "render_controllers": {
+        "controller.render.wool_only": {
+            "arrays": {
+                "textures": {
+                    "Array.top": ["Texture.top_1", "Texture.top_2", "Texture.top_3"]
+                }
+            },
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.bottom", //static bottom texture
+                "Array.top[q.variant]" //pick top texture based on entity variant.
+            ]
+        }
+    }
 }
 ```
 
-Using arrays and then `query.variant`, we can select the top texture based on the `variant` of the entity.
+Using arrays and then `q.variant`, we can select the top texture based on the `variant` of the entity.
 
 #### Setting variant
 
@@ -225,7 +227,6 @@ If you want to change the texture of an entity during gameplay dynamically, you 
 
 Dynamic layered textures can be achieved by adding more lists of textures and other dummy components as indexes. You can read about dummy components [here](/entities/dummy-components).
 
-
 ### Dynamic Alternate Geometries
 
 Altering geometry dynamically works almost the same way as altering the texture.
@@ -237,49 +238,36 @@ As we change the variant it will use a different geometry.
 Note that unlike textures you can not layer geometries, and such you should not include a "base bottom layer" geometry.
 This still requires the use of `villager_v2_masked` material.
 
-
 <CodeHeader>RP/render_controllers/controller.render.player.third_person.json</CodeHeader>
 
 ```json
 {
-	"format_version": "1.8.0",
-	"render_controllers": {
-		"controller.render.player.third_person": {
-			"materials": [
-				{
-					"*": "Material.default"
-				}
-			],
-			"textures": [
-				"Texture.bottom",
-				"Array.top[query.variant]"
-			],
-			"arrays": {
-				"geometries": {
-					"Array.geo": [
-						"Geometry.default",
-						"Geometry.custom_1",
-						"Geometry.custom_2"
-					]
-				},
-				"textures": {
-					"Array.top": [
-						"Texture.bottom",
-						"Texture.top_1",
-						"Texture.top_2"
-					]
-				}
-			},
-			"geometry": "Array.geo[query.variant]"
-		}
-	}
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.player.third_person": {
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": ["Texture.bottom", "Array.top[q.variant]"],
+            "arrays": {
+                "geometries": {
+                    "Array.geo": ["Geometry.default", "Geometry.custom_1", "Geometry.custom_2"]
+                },
+                "textures": {
+                    "Array.top": ["Texture.bottom", "Texture.top_1", "Texture.top_2"]
+                }
+            },
+            "geometry": "Array.geo[q.variant]"
+        }
+    }
 }
 ```
 
 #### Entity
 
 Remember to include the geometry variants in your entity's file
-
 
 <CodeHeader></CodeHeader>
 
@@ -311,8 +299,8 @@ Followed by:
 
 ```json
 "textures": [
-    "array.skin[query.variant]",
-    "array.dress[query.skin_id]"
+    "array.skin[q.variant]",
+    "array.dress[q.skin_id]"
 ],
-"geometry": "array.geo[query.mark_variant]"
+"geometry": "array.geo[q.mark_variant]"
 ```

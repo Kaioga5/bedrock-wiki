@@ -3,6 +3,12 @@ title: Invulnerable Entities
 category: Tutorials
 tags:
     - beginner
+mentions:
+    - SirLich
+    - Joelant05
+    - solvedDev
+    - MedicalJewel105
+description: Learn how to make invulnerable entities.
 ---
 
 ## Using Damage Sensor
