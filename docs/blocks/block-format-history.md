@@ -26,12 +26,12 @@ An experiment must be enabled in your world for experimental changes to take eff
 -   Updated `minecraft:map_color`
     -   Can now be defined as an object containing the following parameters:
         -   `color` which is the base HEX string color of this block on a map.
-        -   `tint_method` which allows the `color` to be tinted based on the biome the block is in.
-            -   There are currently 6 supported tint methods: `none`, `birch_foliage`, `default_foliage`, `evergreen_foliage`, `grass` and `water`.
 
 <Tag name="experimental" />
 <Label color="blue">Upcoming Creator Features</Label>
 
+-   Updated `minecraft:map_color`
+    -   Added `tint_method` parameter which allows the `color` to be tinted based on the biome the block is in.
 -   Updated `minecraft:material_instances`
     -   Added `isotropic` instance parameter which determines whether face UVs should randomly rotate based on the block's position in the world.
 
