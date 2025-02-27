@@ -34,6 +34,7 @@ An experiment must be enabled in your world for experimental changes to take eff
     -   Added `tint_method` parameter which allows the `color` to be tinted based on the biome the block is in.
 -   Updated `minecraft:material_instances`
     -   Added `isotropic` instance parameter which determines whether face UVs should randomly rotate based on the block's position in the world.
+    -   Added `tint_method` instance parameter which causes the `texture` to be tinted based on the biome the block is placed in, which is always `plains` when an item.
 
 ## 1.21.60
 
