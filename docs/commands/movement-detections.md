@@ -61,9 +61,9 @@ It is a requirement to follow this same sequence and properly apply the `scores`
 
 **States:**
 
--   ** wiki:q.is_moving=0`** target is _not_ moving.
--   ** wiki:q.is_moving=1`** target started moving. (used for 'trigger' actions)
--   ** wiki:q.is_moving=1..`** target is still moving. (used for repeating actions)
+-   **`wiki:q.is_moving=0`** target is _not_ moving.
+-   **`wiki:q.is_moving=1`** target started moving. (used for 'trigger' actions)
+-   **`wiki:q.is_moving=1..`** target is still moving. (used for repeating actions)
 
 **Purpose of Each Command:**
 
