@@ -36,6 +36,15 @@ An experiment must be enabled in your world for experimental changes to take eff
     -   Added `isotropic` instance parameter which determines whether face UVs should randomly rotate based on the block's position in the world.
     -   Added `tint_method` instance parameter which causes the `texture` to be tinted based on the biome the block is placed in, which is always `plains` when an item.
 
+<Tag name="experimental" />
+<Label color="blue">Upcoming Creator Features</Label>
+<Label color="green">Versioned</Label>
+
+-   Added `minecraft:destruction_particles`
+    -   Determines the appearance of the particles created when hitting, destroying, stepping on and falling onto blocks.
+    -   Contains `texture` which specifies the texture atlas shortname to use from `RP/textures/terrain_texture.json`.
+    -   Contains `tint_method` which causes the `texture` to be tinted based on the biome the block is placed in.
+
 ## 1.21.60
 
 ### Description
